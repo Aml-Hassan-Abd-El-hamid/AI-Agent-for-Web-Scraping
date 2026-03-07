@@ -1,0 +1,12 @@
+/code
+/errors
+/html_files
+/logs
+/structural_maps
+generated_code_*.py
+html_content_*.html
+structural_map_*.json
+link_html_*.html
+link_structural_map_*.json
+link_extracted_data_*.json
+link_extraction_code_*.py

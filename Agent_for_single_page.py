@@ -385,22 +385,20 @@ async def main():
     print("🤖 AI WEB SCRAPING AGENT")
     print("="*60)
     
-    # Get API key
     api_key = input("\n🔑 Enter your Gemini API key: ").strip()
     if not api_key:
-        print("❌ API key is required!")
+        print("API key is required!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         return
     
-    # List available models
     print("\n⏳ Checking available models...")
     available_models = await list_available_models(api_key)
     
     if available_models:
-        print(f"\n✓ Found {len(available_models)} available models:")
+        print(f"\n Found {len(available_models)} available models:")
         for i, model in enumerate(available_models, 1):
             print(f"   {i}. {model}")
         
-        print("\n📝 Select a model:")
+        print("\n Select a model:")
         print("   [Enter number] Choose from list above")
         print("   [Press Enter] Use default (gemini-1.5-flash-latest)")
         
@@ -426,8 +424,8 @@ async def main():
         return
     
     # Get extraction requirements
-    print("\n📝 What data do you want to extract?")
-    print("   (e.g., 'title, date, article text, author name')")
+    print("\n What data do you want to extract?")
+    print("   (e.g., 'title, date, article text, author name, links to related articles')")
     requirements = input("   → ").strip()
     if not requirements:
         print("❌ Requirements are required!")
@@ -439,6 +437,7 @@ async def main():
     # Step 1: Fetch page structure
     print(f"\n⏳ Fetching page structure from {url}...")
     html_content, structural_map = await fetch_page_structure(url)
+    
     
     if not html_content or not structural_map:
         print("❌ Failed to fetch page structure!")
