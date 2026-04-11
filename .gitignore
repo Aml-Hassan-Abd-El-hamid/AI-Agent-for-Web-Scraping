@@ -11,3 +11,6 @@ link_html_*.html
 link_structural_map_*.json
 link_extracted_data_*.json
 link_extraction_code_*.py
+/Agent_for_*
+/claude*
+/*run*
