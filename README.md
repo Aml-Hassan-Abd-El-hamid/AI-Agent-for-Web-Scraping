@@ -43,6 +43,51 @@ Ties both agents together to scrape **many articles** from a site in a single ru
 
 6. **Save results** — writes `extracted_data_all.json` (successes) and `failed_links.json` (failures) into a timestamped run directory.
 
+#### System Diagram
+
+```mermaid
+flowchart TD
+    User([🧑 User]) -->|API key, model, listing URL| Orch[🎯 orch.py — Orchestrator]
+
+    subgraph Step1["Step 1 — Extract Article Links"]
+        Orch -->|subprocess call| LinksAgent[🔗 Links_Agent_gemma.py]
+        LinksAgent -->|fetches HTML| ListingPage([🌐 Listing Page])
+        LinksAgent -->|structural map + prompt| Gemma1[🤖 Gemma LLM]
+        Gemma1 -->|generated code| LinksAgent
+        LinksAgent -->|article_links JSON| Orch
+    end
+
+    subgraph Step2["Step 2 — Fetch All Article Pages"]
+        Orch -->|fetch each URL| Articles([🌐 Article Pages])
+        Articles -->|HTML + structural map| Orch
+    end
+
+    subgraph Step3["Step 3 — Cluster by Structure"]
+        Orch --> Cluster{Structural\nSignature\nHashing}
+        Cluster -->|same template| ClusterA[📦 Cluster A]
+        Cluster -->|different template| ClusterB[📦 Cluster B]
+    end
+
+    subgraph Step4["Steps 4 & 5 — Extract Data per Cluster"]
+        ClusterA -->|representative| SingleAgent1[📄 Agent_for_single_page_gemma.py]
+        SingleAgent1 -->|structural map + requirements| Gemma2[🤖 Gemma LLM]
+        Gemma2 -->|extraction code| SingleAgent1
+        SingleAgent1 -->|working code| Orch2[Orchestrator]
+        Orch2 -->|apply same code\nto remaining articles| Execute1[⚙️ Execute]
+
+        ClusterB -->|representative| SingleAgent2[📄 Agent_for_single_page_gemma.py]
+        SingleAgent2 -->|different code| Orch3[Orchestrator]
+        Orch3 -->|apply to remaining| Execute2[⚙️ Execute]
+    end
+
+    subgraph Step6["Step 6 — Save Results"]
+        Execute1 --> Success[✅ extracted_data_all.json]
+        Execute2 --> Success
+        Execute1 -.->|failures| Failures[❌ failed_links.json]
+        Execute2 -.->|failures| Failures
+    end
+```
+
 #### How clustering works:
 
 The orchestrator uses **exact structural signature hashing**:
