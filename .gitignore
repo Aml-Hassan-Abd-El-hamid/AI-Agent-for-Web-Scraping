@@ -4,6 +4,7 @@
 /logs
 /structural_maps
 generated_code_*.py
+extracted*.json
 html_content_*.html
 structural_map_*.json
 link_html_*.html
