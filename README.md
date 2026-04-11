@@ -129,10 +129,11 @@ The orchestrator uses **exact structural signature hashing**:
 
 ## Current Status
 The orchestrator can scrape an entire listing page worth of articles in a single run — extract links, cluster by template, generate code once per cluster, and apply it across all articles.
+
 Tested on those domains:
-    - ✅ youm7 -success from start to end-:
-        - https://www.youm7.com/Section/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B9%D8%A7%D8%AC%D9%84%D8%A9/65/1 
-    - ✅ pchrgaza -success but needs more work-
-        - https://pchrgaza.org/ar/category/genocide-on-gaza-ar/testimonies-from-the-war-ar/
-    - ❌ palestine-studies failed extraction from this page, clodflare related error -failed-
-        -  https://www.palestine-studies.org/ar/blogs/explorer?f%5B0%5D=field_blog_series%3A19943
+- ✅ youm7 -success from start to end-:
+  - https://www.youm7.com/Section/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B9%D8%A7%D8%AC%D9%84%D8%A9/65/1
+- ✅ pchrgaza -success but needs more work-
+  - https://pchrgaza.org/ar/category/genocide-on-gaza-ar/testimonies-from-the-war-ar/
+- ❌ palestine-studies failed extraction from this page, clodflare related error -failed-
+  - https://www.palestine-studies.org/ar/blogs/explorer?f%5B0%5D=field_blog_series%3A19943
