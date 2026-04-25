@@ -26,65 +26,93 @@ Both agents support:
 - **Interactive mode**: run directly, pick a model from the list, enter URL, review results
 - **CLI mode**: called by the orchestrator via `--url`, `--api-key`, `--requirements`, `--model` flags
 
-### 3. Orchestrator (`orch.py`)
-Ties both agents together to scrape **many articles** from a site in a single run.
+### 3. Orchestrators
 
-#### How the orchestrator works:
+There are two orchestrator variants:
 
-1. **Get article links** — either by calling `Links_Agent_gemma.py` on a listing page URL, or by loading an existing JSON file with pre-extracted links.
+#### `orch.py` — Batch Orchestrator (single page)
+Ties both agents together to scrape **many articles from a single listing page** in one run.
 
-2. **Fetch structural maps** — for every article link, it fetches the HTML and generates a structural map (reuses `fetch_page_structure` from the single page agent).
+1. **Get article links** — calls `Links_Agent_gemma.py` on a listing page URL, or loads an existing JSON file.
+2. **Fetch structural maps** — for every article link.
+3. **Cluster articles by structure** — groups articles sharing the same HTML template.
+4. **Extract from representative** — for each cluster, calls `Agent_for_single_page_gemma.py` to generate extraction code.
+5. **Apply code to the rest** — reuses the working code across all articles in the cluster.
+6. **Save results** — `extracted_data_all.json` + `failed_links.json` in a timestamped run directory.
 
-3. **Cluster articles by structure** — groups articles that share the same HTML template so that one piece of extraction code can be reused across the whole group.
+#### `orch_pag_numbered_only.py` — Page-by-Page Pagination Orchestrator
+Extends the batch orchestrator to handle **multi-page listing sites** with numbered pagination. Processes articles **page by page** with incremental saves after every page.
 
-4. **Extract from representative** — for each cluster, picks one article and calls `Agent_for_single_page_gemma.py` (via subprocess) to generate and test extraction code on it.
+##### How pagination works:
 
-5. **Apply code to the rest** — takes the working code from the representative and runs it on all remaining articles in the cluster. If it works → save. If not → log to failures.
+The user provides the **page 1 URL** and the **page 2 URL**. The orchestrator derives the URL pattern automatically by diffing the two URLs (string diff first, LLM fallback if the diff fails). The user confirms the pattern and specifies how many pages to scrape.
 
-6. **Save results** — writes `extracted_data_all.json` (successes) and `failed_links.json` (failures) into a timestamped run directory.
+**Examples of supported URL patterns:**
+| Page 1 | Page 2 | Derived pattern |
+|--------|--------|-----------------|
+| `https://site.com/news` | `https://site.com/news?page=2` | `https://site.com/news?page={page}` |
+| `https://site.com/articles/65/1` | `https://site.com/articles/65/2` | `https://site.com/articles/65/{page}` |
+| `https://site.com/posts/` | `https://site.com/posts/page/2/` | `https://site.com/posts/page/{page}/` |
+| `https://site.com/index?id=10` | `https://site.com/index?id=10&page=2` | `https://site.com/index?id=10&page={page}` |
 
-#### System Diagram
+##### Page-by-page flow:
+
+1. **Phase 1 — Pagination setup** (no LLM needed): User provides page 1 + page 2 URLs → pattern is derived via string diff (or LLM fallback) → user confirms → user enters page count.
+
+2. **Phase 2 — Page 1**: Calls Links Agent to extract article links and generate link-extraction code. Then fetches all article pages, clusters them by structure, and generates extraction code per cluster. Saves incrementally.
+
+3. **Phase 3 — Pages 2..N**: For each subsequent page, fetches the listing page HTML, reuses the link-extraction code from page 1, deduplicates against seen URLs, fetches new articles, clusters them (reusing existing cluster code when possible), and saves after every page.
+
+4. **Phase 4 — Final save**: Writes `extracted_data_all.json`, `failed_links.json`, `progress.json`, and `clusters.json`.
+
+##### LLM call budget:
+- **0–1** for pagination pattern (only if string diff fails)
+- **1** for link extraction code (Links Agent on page 1)
+- **N** for article extraction (one per unique structure cluster — page 1 establishes most)
+- Later pages reuse all generated code; new LLM calls only happen for genuinely novel article structures
+
+#### System Diagram (Page-by-Page Orchestrator)
 
 ```mermaid
 flowchart TD
-    User([🧑 User]) -->|API key, model, listing URL| Orch[🎯 orch.py — Orchestrator]
+    User([🧑 User]) -->|API key, model,\npage 1 URL, page 2 URL,\npage count| Orch["🎯 orch_pag_numbered_only.py"]
 
-    subgraph Step1["Step 1 — Extract Article Links"]
-        Orch -->|subprocess call| LinksAgent[🔗 Links_Agent_gemma.py]
-        LinksAgent -->|fetches HTML| ListingPage([🌐 Listing Page])
-        LinksAgent -->|structural map + prompt| Gemma1[🤖 Gemma LLM]
-        Gemma1 -->|generated code| LinksAgent
-        LinksAgent -->|article_links JSON| Orch
+    subgraph Phase1["Phase 1 — Pagination Setup"]
+        Orch -->|string diff| Diff["🔍 derive_pagination_pattern()"]
+        Diff -->|pattern found| Pattern["URL pattern\n e.g. site.com/page/{page}/"]
+        Diff -.->|diff failed| LLM_Fallback["🤖 LLM fallback"]
+        LLM_Fallback -.->|pattern| Pattern
+        Pattern -->|user confirms + page count| PageURLs["📄 page_urls list\n[page2, page3, ..., pageN]"]
     end
 
-    subgraph Step2["Step 2 — Fetch All Article Pages"]
-        Orch -->|fetch each URL| Articles([🌐 Article Pages])
-        Articles -->|HTML + structural map| Orch
+    subgraph Phase2["Phase 2 — Page 1"]
+        Orch -->|subprocess| LinksAgent["🔗 Links_Agent_gemma.py"]
+        LinksAgent -->|fetches HTML| ListingPage([🌐 Page 1])
+        LinksAgent -->|structural map| Gemma1[🤖 Gemma LLM]
+        Gemma1 -->|link extraction code| LinksAgent
+        LinksAgent -->|article_links + code| Orch
+
+        Orch -->|fetch each article| Articles1([🌐 Article Pages])
+        Articles1 -->|HTML + struct map| Cluster1{Cluster by\nStructure}
+        Cluster1 -->|new cluster| Agent1["📄 Single Page Agent\n(LLM generates code)"]
+        Agent1 -->|code reused for\nsame-structure articles| Extract1[⚙️ Extract]
+        Extract1 -->|💾 incremental save| Save1["extracted_data_all.json"]
     end
 
-    subgraph Step3["Step 3 — Cluster by Structure"]
-        Orch --> Cluster{Structural\nSignature\nHashing}
-        Cluster -->|same template| ClusterA[📦 Cluster A]
-        Cluster -->|different template| ClusterB[📦 Cluster B]
+    subgraph Phase3["Phase 3 — Pages 2..N (loop)"]
+        PageURLs -->|for each page URL| FetchPage["Fetch listing page HTML"]
+        FetchPage -->|reuse link code| ExtractLinks["Extract links\n(no LLM call)"]
+        ExtractLinks -->|dedup against seen_urls| NewLinks["New article links"]
+        NewLinks -->|fetch articles| Articles2([🌐 Article Pages])
+        Articles2 -->|cluster & extract| Cluster2{Reuse cluster\ncode if known}
+        Cluster2 -->|known cluster| Reuse["⚙️ Reuse code\n(no LLM call)"]
+        Cluster2 -.->|new cluster| Agent2["📄 Single Page Agent\n(LLM call)"]
+        Reuse --> Save2["💾 Save after each page"]
+        Agent2 -.-> Save2
     end
 
-    subgraph Step4["Steps 4 & 5 — Extract Data per Cluster"]
-        ClusterA -->|representative| SingleAgent1[📄 Agent_for_single_page_gemma.py]
-        SingleAgent1 -->|structural map + requirements| Gemma2[🤖 Gemma LLM]
-        Gemma2 -->|extraction code| SingleAgent1
-        SingleAgent1 -->|working code| Orch2[Orchestrator]
-        Orch2 -->|apply same code\nto remaining articles| Execute1[⚙️ Execute]
-
-        ClusterB -->|representative| SingleAgent2[📄 Agent_for_single_page_gemma.py]
-        SingleAgent2 -->|different code| Orch3[Orchestrator]
-        Orch3 -->|apply to remaining| Execute2[⚙️ Execute]
-    end
-
-    subgraph Step6["Step 6 — Save Results"]
-        Execute1 --> Success[✅ extracted_data_all.json]
-        Execute2 --> Success
-        Execute1 -.->|failures| Failures[❌ failed_links.json]
-        Execute2 -.->|failures| Failures
+    subgraph Phase4["Phase 4 — Final"]
+        Save2 --> Final["📊 extracted_data_all.json\nfailed_links.json\nprogress.json\nclusters.json"]
     end
 ```
 
@@ -123,17 +151,22 @@ The orchestrator uses **exact structural signature hashing**:
 ### Automate the process:
 - [x] Replace human input with LLM (ex: use LLM to find the CSS selectors)
 - [x] Scale to scrape multiple pages (orchestrator + clustering)
+- [x] Add numbered pagination (user provides page 1 + page 2 URLs, pattern auto-derived)
 
 ### Ship into a simple UI:
 - [ ] Create Streamlit interface
 
 ## Current Status
-The orchestrator can scrape an entire listing page worth of articles in a single run — extract links, cluster by template, generate code once per cluster, and apply it across all articles.
+The page-by-page orchestrator (`orch_pag_numbered_only.py`) can scrape multi-page listing sites end-to-end — derive pagination URLs from two examples, extract links page by page, cluster by template, generate code once per cluster, reuse it across all pages, and save incrementally after every page.
 
 Tested on those domains:
 - ✅ youm7 -success from start to end-:
   - https://www.youm7.com/Section/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B9%D8%A7%D8%AC%D9%84%D8%A9/65/1
 - ✅ pchrgaza -success but needs more work-
   - https://pchrgaza.org/ar/category/genocide-on-gaza-ar/testimonies-from-the-war-ar/
-- ❌ palestine-studies failed extraction from this page, clodflare related error -failed-
+- ✅ gazastory — pagination pattern derived successfully (JS-driven site)
+  - https://www.gazastory.com/testimonies/region/regionAll
+- ✅ almasryalyoum — pagination pattern derived successfully (query-param pagination)
+  - https://www.almasryalyoum.com/news/index?typeid=1&sectionid=10
+- ❌ palestine-studies failed extraction from this page, cloudflare related error -failed-
   - https://www.palestine-studies.org/ar/blogs/explorer?f%5B0%5D=field_blog_series%3A19943
