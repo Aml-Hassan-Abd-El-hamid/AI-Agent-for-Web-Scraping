@@ -170,3 +170,28 @@ Tested on those domains:
   - https://www.almasryalyoum.com/news/index?typeid=1&sectionid=10
 - ❌ palestine-studies failed extraction from this page, cloudflare related error -failed-
   - https://www.palestine-studies.org/ar/blogs/explorer?f%5B0%5D=field_blog_series%3A19943
+- ✅ https://euromedmonitor.org/ar/category/26/%D8%A7%D9%84%D9%86%D8%B2%D8%A7%D8%B9%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D8%AD%D8%A9
+- ❌ Links extraction failed:Failed to fetch page structure cloudflare
+https://acpss.ahram.org.eg/OuterWriter/28/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA/0.aspx
+https://acpss.ahram.org.eg/OuterWriter/28/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA/30.aspx
+
+- 
+https://mana.net/category/articles/page/2/
+https://mana.net/category/articles/page/2/
+
+
+To be tested on:
+
+- Load more button pag:
+  - https://www.arageek.com/tech
+  - https://www.alarabiya.net/views
+  - 
+
+
+- Infinite scroll:
+  - https://arabic.cnn.com/tag/gaza_strip
+  - https://www.aljadeedmagazine.com/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA
+  - https://aawsat.com/%D8%A7%D9%84%D8%B1%D8%A3%D9%8A
+
+- Numbered:
+  - https://mana.net/category/articles/

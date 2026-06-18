@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scraper Evaluation Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #0d0f14;
+  --surface:  #151820;
+  --card:     #1c2030;
+  --border:   #252a3a;
+  --accent:   #4ade80;
+  --accent2:  #60a5fa;
+  --warn:     #fb923c;
+  --danger:   #f87171;
+  --muted:    #4a5270;
+  --text:     #e2e8f0;
+  --text-dim: #94a3b8;
+  --mono:     'DM Mono', monospace;
+  --sans:     'Syne', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ── */
+header {
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--surface);
+}
+.logo-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); display: inline-block; }
+header h1 { font-size: 1.1rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+header span { color: var(--muted); font-size: .8rem; font-family: var(--mono); margin-left: auto; }
+
+/* ── Tabs ── */
+.tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  padding: 0 2rem;
+}
+.tab-btn {
+  padding: .75rem 1.5rem;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all .2s;
+}
+.tab-btn:hover { color: var(--text-dim); }
+.tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* ── Layout ── */
+.container { padding: 2rem; max-width: 1400px; margin: 0 auto; width: 100%; }
+.pane { display: none; }
+.pane.active { display: block; }
+
+/* ── Cards ── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.card-title {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.card-title::before {
+  content: '';
+  width: 3px; height: 14px;
+  background: var(--accent2);
+  border-radius: 2px;
+  display: inline-block;
+}
+
+/* ── Form controls ── */
+label { display: block; font-size: .8rem; color: var(--text-dim); margin-bottom: .4rem; font-family: var(--mono); }
+input[type=text], textarea, select {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: .85rem;
+  padding: .6rem .9rem;
+  outline: none;
+  transition: border-color .2s;
+  resize: vertical;
+}
+input[type=text]:focus, textarea:focus, select:focus { border-color: var(--accent2); }
+textarea { min-height: 120px; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.row-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+
+/* ── Buttons ── */
+.btn {
+  padding: .55rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: .82rem;
+  letter-spacing: .04em;
+  cursor: pointer;
+  transition: all .15s;
+  text-transform: uppercase;
+}
+.btn-primary { background: var(--accent); color: #0a0a0a; }
+.btn-primary:hover { background: #22c55e; }
+.btn-secondary { background: var(--border); color: var(--text-dim); }
+.btn-secondary:hover { background: var(--muted); color: var(--text); }
+.btn-danger { background: #7f1d1d; color: var(--danger); }
+.btn-danger:hover { background: #991b1b; }
+.btn-accent { background: #1e3a5f; color: var(--accent2); }
+.btn-accent:hover { background: #1d4ed8; color: white; }
+.btn-group { display: flex; gap: .75rem; margin-top: 1rem; flex-wrap: wrap; }
+
+/* ── Status badge ── */
+.badge {
+  display: inline-block;
+  padding: .2rem .6rem;
+  border-radius: 4px;
+  font-size: .72rem;
+  font-family: var(--mono);
+  font-weight: 500;
+}
+.badge-green { background: #14532d; color: var(--accent); }
+.badge-blue  { background: #1e3a5f; color: var(--accent2); }
+.badge-red   { background: #7f1d1d; color: var(--danger); }
+.badge-orange { background: #7c2d12; color: var(--warn); }
+
+/* ── Metric cards ── */
+.metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+.metric-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+.metric-val {
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: var(--mono);
+  line-height: 1;
+  margin-bottom: .3rem;
+}
+.metric-label { font-size: .68rem; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+.good  { color: var(--accent); }
+.ok    { color: var(--warn); }
+.bad   { color: var(--danger); }
+
+/* ── Field comparison table ── */
+.eval-table { width: 100%; border-collapse: collapse; font-size: .82rem; }
+.eval-table th {
+  text-align: left;
+  padding: .6rem .8rem;
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  font-family: var(--mono);
+}
+.eval-table td { padding: .6rem .8rem; border-bottom: 1px solid #1a1f2e; vertical-align: top; }
+.eval-table tr:last-child td { border-bottom: none; }
+.eval-table tr:hover td { background: rgba(255,255,255,.02); }
+
+/* ── Diff display ── */
+.diff-view { font-family: var(--mono); font-size: .8rem; line-height: 1.6; word-break: break-word; }
+.diff-equal { color: var(--text-dim); }
+.diff-insert { background: #14532d; color: #86efac; border-radius: 2px; padding: 0 2px; }   /* in pred, not in gold */
+.diff-delete { background: #7f1d1d; color: #fca5a5; border-radius: 2px; padding: 0 2px; text-decoration: line-through; }  /* in gold, not in pred */
+.diff-replace-del { background: #7f1d1d; color: #fca5a5; border-radius: 2px; padding: 0 2px; }
+.diff-replace-ins { background: #14532d; color: #86efac; border-radius: 2px; padding: 0 2px; }
+
+/* ── Article accordion ── */
+.article-block {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+.article-header {
+  background: var(--surface);
+  padding: .85rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  cursor: pointer;
+  user-select: none;
+}
+.article-header:hover { background: var(--card); }
+.article-title { font-size: .85rem; font-weight: 600; flex: 1; }
+.article-body { padding: 1rem; display: none; }
+.article-body.open { display: block; }
+.chevron { transition: transform .2s; color: var(--muted); }
+.chevron.open { transform: rotate(90deg); }
+
+/* ── Per-field summary bar ── */
+.field-row { display: flex; align-items: center; gap: .75rem; margin-bottom: .6rem; }
+.field-name { font-family: var(--mono); font-size: .8rem; color: var(--accent2); min-width: 120px; }
+.f1-bar-wrap { flex: 1; background: var(--border); border-radius: 4px; height: 6px; overflow: hidden; }
+.f1-bar { height: 100%; border-radius: 4px; transition: width .4s; }
+.f1-label { font-family: var(--mono); font-size: .78rem; min-width: 45px; text-align: right; }
+
+/* ── Domain selector ── */
+.domain-tabs { display: flex; gap: .5rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.domain-tab {
+  padding: .4rem .9rem;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: none;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: .78rem;
+  cursor: pointer;
+  transition: all .15s;
+}
+.domain-tab:hover { border-color: var(--accent2); color: var(--accent2); }
+.domain-tab.active { border-color: var(--accent); color: var(--accent); background: #14532d22; }
+
+/* ── GT article list ── */
+.gt-article-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: .35rem .75rem;
+  font-size: .78rem;
+  font-family: var(--mono);
+  margin: .25rem;
+}
+.gt-article-chip button { background: none; border: none; color: var(--danger); cursor: pointer; font-size: .9rem; line-height: 1; }
+
+/* ── Dynamic field inputs ── */
+.field-inputs { display: flex; flex-direction: column; gap: .75rem; }
+.field-input-row { display: grid; grid-template-columns: 160px 1fr; gap: .5rem; align-items: start; }
+.field-label-input {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--accent2);
+  font-family: var(--mono);
+  font-size: .82rem;
+  padding: .5rem .75rem;
+  outline: none;
+}
+.field-label-input:focus { border-color: var(--accent2); }
+
+/* ── Log / status output ── */
+.status-log {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  font-family: var(--mono);
+  font-size: .8rem;
+  color: var(--accent);
+  min-height: 60px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* ── Scrollable ── */
+.scroll-x { overflow-x: auto; }
+
+/* ── Separator ── */
+.sep { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+
+/* ── Tooltip ── */
+.tip { font-size: .75rem; color: var(--muted); margin-top: .3rem; font-family: var(--mono); }
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .row, .row-3 { grid-template-columns: 1fr; }
+  .container { padding: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <span class="logo-dot"></span>
+  <h1>Scraper Evaluation Lab</h1>
+  <span id="domainCount">0 domains loaded</span>
+</header>
+
+<div class="tabs">
+  <button class="tab-btn active" onclick="switchTab('load')">① Load Data</button>
+  <button class="tab-btn" onclick="switchTab('gt')">② Ground Truth</button>
+  <button class="tab-btn" onclick="switchTab('eval')">③ Evaluate</button>
+</div>
+
+<div class="container">
+
+  <!-- ═══════════════════════════ PANE 1: LOAD DATA ═══════════════════════════ -->
+  <div class="pane active" id="pane-load">
+    <div class="card">
+      <div class="card-title">Load Scraped Output</div>
+      <p class="tip" style="margin-bottom:1rem">Paste the contents of <code>extracted_data_all.json</code> from any orchestrator run. Repeat for each domain.</p>
+
+      <div class="row" style="margin-bottom:1rem">
+        <div>
+          <label>Domain name (e.g. youm7, almasryalyoum)</label>
+          <input type="text" id="loadDomain" placeholder="youm7">
+        </div>
+        <div>
+          <label>Article count (auto-filled)</label>
+          <input type="text" id="loadCount" placeholder="—" readonly style="color:var(--accent)">
+        </div>
+      </div>
+
+      <label>Paste JSON content</label>
+      <textarea id="loadJson" placeholder='[{"url":"...","title":"...","data":{"title":"...","date":"...","body":"..."}}]' style="min-height:180px; font-size:.75rem;"></textarea>
+      <p class="tip">Supports both a raw array <code>[...]</code> and <code>{"articles":[...]}</code> shapes.</p>
+
+      <div class="btn-group">
+        <button class="btn btn-primary" onclick="loadScraped()">Load Domain</button>
+        <button class="btn btn-secondary" onclick="clearLoad()">Clear</button>
+      </div>
+
+      <div class="status-log" id="loadLog" style="margin-top:1rem">Waiting for data...</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Loaded Domains</div>
+      <div id="loadedDomainsDisplay" style="color:var(--muted); font-size:.85rem; font-family:var(--mono)">None yet.</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ PANE 2: GROUND TRUTH ═══════════════════════════ -->
+  <div class="pane" id="pane-gt">
+    <div class="card">
+      <div class="card-title">Add Ground-Truth Article</div>
+      <p class="tip" style="margin-bottom:1rem">
+        Copy an article from the actual website. Enter its URL, then fill in the correct field values.
+        You need <strong>5 articles per domain</strong> minimum. The fields should match what your scraper extracts.
+      </p>
+
+      <div class="row" style="margin-bottom:1rem">
+        <div>
+          <label>Domain</label>
+          <select id="gtDomain">
+            <option value="">— select domain —</option>
+          </select>
+        </div>
+        <div>
+          <label>Article URL (optional but recommended)</label>
+          <input type="text" id="gtUrl" placeholder="https://www.youm7.com/..." oninput="autoFillFields()">
+        </div>
+      </div>
+
+      <label>Article title (for your reference)</label>
+      <input type="text" id="gtTitle" placeholder="Article headline..." style="margin-bottom:1rem">
+
+      <hr class="sep">
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:.75rem">
+        <label style="margin:0">Field values (ground truth)</label>
+        <button class="btn btn-secondary" onclick="addFieldRow()" style="font-size:.72rem; padding:.3rem .8rem">+ Add field</button>
+      </div>
+      <div class="field-inputs" id="fieldInputs">
+        <!-- dynamically populated -->
+      </div>
+
+      <div class="btn-group">
+        <button class="btn btn-primary" onclick="saveGroundTruth()">Save Article</button>
+        <button class="btn btn-secondary" onclick="clearGtForm()">Clear Form</button>
+      </div>
+      <div class="status-log" id="gtLog" style="margin-top:1rem">Fill in an article above and click Save.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Saved Ground-Truth Articles</div>
+      <div id="gtArticlesList" style="color:var(--muted); font-size:.85rem">None yet.</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ PANE 3: EVALUATE ═══════════════════════════ -->
+  <div class="pane" id="pane-eval">
+
+    <div style="display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem; flex-wrap:wrap">
+      <div>
+        <label style="display:inline; margin-right:.5rem">Domain:</label>
+        <select id="evalDomainSelect" style="width:auto; display:inline-block; min-width:160px">
+          <option value="all">All domains</option>
+        </select>
+      </div>
+      <button class="btn btn-primary" onclick="runEval()">Run Evaluation</button>
+      <button class="btn btn-accent" onclick="exportResults()">Export JSON</button>
+    </div>
+
+    <div id="evalResults">
+      <div style="text-align:center; padding:3rem; color:var(--muted); font-family:var(--mono)">
+        Results will appear here after you click Run Evaluation.
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+// State
+// ═══════════════════════════════════════════════════════════════
+let loadedDomains = {};    // domain -> {count, sample_fields}
+let gtArticles    = {};    // domain -> [{url, title, fields}]
+
+// ═══════════════════════════════════════════════════════════════
+// Tab switching
+// ═══════════════════════════════════════════════════════════════
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.pane').forEach(p => p.classList.remove('active'));
+  document.querySelector(`[onclick="switchTab('${name}')"]`).classList.add('active');
+  document.getElementById(`pane-${name}`).classList.add('active');
+  if (name === 'gt')   refreshGtDomainSelect();
+  if (name === 'eval') refreshEvalDomainSelect();
+}
+
+// ═══════════════════════════════════════════════════════════════
+// Pane 1 — Load scraped data
+// ═══════════════════════════════════════════════════════════════
+async function loadScraped() {
+  const domain  = document.getElementById('loadDomain').value.trim();
+  const content = document.getElementById('loadJson').value.trim();
+  const log     = document.getElementById('loadLog');
+
+  if (!domain) { log.textContent = '⚠ Enter a domain name first.'; return; }
+  if (!content){ log.textContent = '⚠ Paste JSON content first.';  return; }
+
+  log.textContent = '⏳ Loading...';
+  const res = await fetch('/api/load_scraped', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({domain, json_content: content})
+  });
+  const data = await res.json();
+  if (data.ok) {
+    loadedDomains[domain] = {count: data.count, sample_fields: data.sample_fields};
+    document.getElementById('loadCount').value = data.count;
+    log.textContent = `✓ Loaded ${data.count} articles for "${domain}"\n  Fields: ${data.sample_fields.join(', ')}`;
+    refreshLoadedDisplay();
+    updateDomainCount();
+  } else {
+    log.textContent = `❌ ${data.error}`;
+  }
+}
+
+function clearLoad() {
+  document.getElementById('loadJson').value = '';
+  document.getElementById('loadCount').value = '';
+  document.getElementById('loadLog').textContent = 'Cleared.';
+}
+
+function refreshLoadedDisplay() {
+  const el = document.getElementById('loadedDomainsDisplay');
+  const entries = Object.entries(loadedDomains);
+  if (!entries.length) { el.innerHTML = 'None yet.'; return; }
+  el.innerHTML = entries.map(([d, info]) =>
+    `<div style="margin-bottom:.5rem">
+       <span class="badge badge-green">${d}</span>
+       <span style="color:var(--text-dim); font-size:.8rem; margin-left:.5rem">${info.count} articles</span>
+       <span style="color:var(--muted); font-size:.75rem; margin-left:.5rem">fields: ${(info.sample_fields||[]).join(', ')}</span>
+     </div>`
+  ).join('');
+}
+
+function updateDomainCount() {
+  const total = Object.keys(loadedDomains).length;
+  document.getElementById('domainCount').textContent = `${total} domain${total !== 1 ? 's' : ''} loaded`;
+}
+
+// ═══════════════════════════════════════════════════════════════
+// Pane 2 — Ground truth
+// ═══════════════════════════════════════════════════════════════
+function refreshGtDomainSelect() {
+  const sel = document.getElementById('gtDomain');
+  const cur = sel.value;
+  sel.innerHTML = '<option value="">— select domain —</option>';
+  Object.keys(loadedDomains).forEach(d => {
+    const opt = document.createElement('option');
+    opt.value = d; opt.textContent = d;
+    if (d === cur) opt.selected = true;
+    sel.appendChild(opt);
+  });
+  // Seed fields from first domain with sample fields
+  if (!document.getElementById('fieldInputs').children.length) {
+    const first = Object.values(loadedDomains)[0];
+    if (first?.sample_fields?.length) seedFields(first.sample_fields);
+  }
+}
+
+function seedFields(fields) {
+  const container = document.getElementById('fieldInputs');
+  container.innerHTML = '';
+  fields.forEach(f => addFieldRow(f));
+}
+
+function addFieldRow(fieldName='') {
+  const container = document.getElementById('fieldInputs');
+  const row = document.createElement('div');
+  row.className = 'field-input-row';
+  row.innerHTML = `
+    <input class="field-label-input" type="text" placeholder="field name" value="${fieldName}" list="fieldSuggestions">
+    <textarea placeholder="Paste the correct value from the actual article…" style="min-height:60px"></textarea>
+  `;
+  container.appendChild(row);
+}
+
+// Auto-fill field names when a domain is selected
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('gtDomain').addEventListener('change', function() {
+    const domain = this.value;
+    const info = loadedDomains[domain];
+    if (info?.sample_fields?.length) seedFields(info.sample_fields);
+  });
+});
+
+async function autoFillFields() {
+  const domain = document.getElementById('gtDomain').value;
+  const url    = document.getElementById('gtUrl').value.trim();
+  if (!domain || !url) return;
+  // Just seed fields if not already seeded
+  const info = loadedDomains[domain];
+  if (info?.sample_fields?.length && !document.getElementById('fieldInputs').children.length) {
+    seedFields(info.sample_fields);
+  }
+}
+
+function getFieldValues() {
+  const rows = document.querySelectorAll('#fieldInputs .field-input-row');
+  const fields = {};
+  rows.forEach(row => {
+    const name = row.querySelector('.field-label-input').value.trim();
+    const val  = row.querySelector('textarea').value.trim();
+    if (name) fields[name] = val;
+  });
+  return fields;
+}
+
+async function saveGroundTruth() {
+  const domain = document.getElementById('gtDomain').value;
+  const url    = document.getElementById('gtUrl').value.trim();
+  const title  = document.getElementById('gtTitle').value.trim();
+  const fields = getFieldValues();
+  const log    = document.getElementById('gtLog');
+
+  if (!domain) { log.textContent = '⚠ Select a domain first.'; return; }
+  if (!Object.keys(fields).length) { log.textContent = '⚠ Add at least one field.'; return; }
+
+  const article = {url, title, fields};
+  const res = await fetch('/api/save_ground_truth', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({domain, article})
+  });
+  const data = await res.json();
+  if (data.ok) {
+    if (!gtArticles[domain]) gtArticles[domain] = [];
+    gtArticles[domain].push({url, title, fields});
+    log.textContent = `✓ Saved! Total for "${domain}": ${data.total_gt} article(s)`;
+    refreshGtList();
+    clearGtForm(false);
+  } else {
+    log.textContent = `❌ ${data.error}`;
+  }
+}
+
+function clearGtForm(clearLog=true) {
+  document.getElementById('gtUrl').value   = '';
+  document.getElementById('gtTitle').value = '';
+  document.querySelectorAll('#fieldInputs textarea').forEach(t => t.value = '');
+  if (clearLog) document.getElementById('gtLog').textContent = 'Form cleared.';
+}
+
+function refreshGtList() {
+  const el = document.getElementById('gtArticlesList');
+  const entries = Object.entries(gtArticles);
+  if (!entries.length) { el.innerHTML = '<span style="color:var(--muted)">None yet.</span>'; return; }
+
+  el.innerHTML = entries.map(([domain, arts]) => `
+    <div style="margin-bottom:1.25rem">
+      <div style="display:flex; align-items:center; gap:.75rem; margin-bottom:.5rem">
+        <span class="badge badge-blue">${domain}</span>
+        <span style="font-size:.78rem; color:var(--text-dim); font-family:var(--mono)">${arts.length} article${arts.length!==1?'s':''}</span>
+        ${arts.length >= 5 ? '<span class="badge badge-green">✓ enough</span>' : `<span class="badge badge-orange">need ${5-arts.length} more</span>`}
+      </div>
+      <div>
+        ${arts.map((a, i) => `
+          <span class="gt-article-chip">
+            ${a.title ? a.title.slice(0,40) : (a.url ? a.url.slice(0,40) : `Article ${i+1}`)}
+          </span>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+// ═══════════════════════════════════════════════════════════════
+// Pane 3 — Evaluate
+// ═══════════════════════════════════════════════════════════════
+function refreshEvalDomainSelect() {
+  const sel = document.getElementById('evalDomainSelect');
+  const cur = sel.value;
+  sel.innerHTML = '<option value="all">All domains</option>';
+  Object.keys(loadedDomains).forEach(d => {
+    const opt = document.createElement('option');
+    opt.value = d; opt.textContent = d;
+    if (d === cur) opt.selected = true;
+    sel.appendChild(opt);
+  });
+}
+
+async function runEval() {
+  const domain = document.getElementById('evalDomainSelect').value;
+  document.getElementById('evalResults').innerHTML = '<div style="text-align:center;padding:2rem;color:var(--muted);font-family:var(--mono)">⏳ Evaluating...</div>';
+
+  const res = await fetch('/api/evaluate', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({domain})
+  });
+  const data = await res.json();
+  if (!data.ok || !data.results.length) {
+    document.getElementById('evalResults').innerHTML =
+      '<div style="color:var(--danger);padding:1rem;font-family:var(--mono)">❌ No results — make sure you loaded scraped data and added ground-truth articles.</div>';
+    return;
+  }
+  renderResults(data.results);
+}
+
+function renderResults(results) {
+  const container = document.getElementById('evalResults');
+  container.innerHTML = '';
+
+  // Domain tabs if multiple
+  if (results.length > 1) {
+    const domTabs = document.createElement('div');
+    domTabs.className = 'domain-tabs';
+    results.forEach((r, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'domain-tab' + (i===0?' active':'');
+      btn.textContent = r.domain;
+      btn.onclick = () => {
+        document.querySelectorAll('.domain-tab').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.domain-section').forEach((s,j)=>{
+          s.style.display = j===i?'block':'none';
+        });
+      };
+      domTabs.appendChild(btn);
+    });
+    container.appendChild(domTabs);
+  }
+
+  results.forEach((r, i) => {
+    const section = document.createElement('div');
+    section.className = 'domain-section';
+    if (i > 0) section.style.display = 'none';
+    section.innerHTML = renderDomainResult(r);
+    container.appendChild(section);
+
+    // Attach accordion toggles
+    section.querySelectorAll('.article-header').forEach(h => {
+      h.addEventListener('click', () => {
+        const body = h.nextElementSibling;
+        const chev = h.querySelector('.chevron');
+        body.classList.toggle('open');
+        chev.classList.toggle('open');
+      });
+    });
+  });
+}
+
+function fmtPct(val) {
+  const pct = Math.round(val * 100);
+  const cls = pct >= 80 ? 'good' : pct >= 50 ? 'ok' : 'bad';
+  return `<span class="${cls}">${pct}%</span>`;
+}
+
+function barColor(val) {
+  if (val >= .8) return '#4ade80';
+  if (val >= .5) return '#fb923c';
+  return '#f87171';
+}
+
+function renderDomainResult(r) {
+  const ov = r.overall;
+
+  // Metrics row
+  let html = `
+    <div class="card">
+      <div class="card-title">Overall — ${r.domain}</div>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-val ${ov.mean_f1>=.8?'good':ov.mean_f1>=.5?'ok':'bad'}">${Math.round(ov.mean_f1*100)}%</div>
+          <div class="metric-label">Mean Token F1</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val ${ov.mean_exact>=.8?'good':ov.mean_exact>=.5?'ok':'bad'}">${Math.round(ov.mean_exact*100)}%</div>
+          <div class="metric-label">Exact Match</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val" style="color:var(--accent2)">${ov.articles_matched}</div>
+          <div class="metric-label">Articles Matched</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val" style="color:var(--text-dim)">${ov.articles_evaluated}</div>
+          <div class="metric-label">Articles Evaluated</div>
+        </div>
+      </div>
+
+      <div class="card-title" style="margin-top:1rem">Per-Field F1</div>
+  `;
+
+  // Per-field bars
+  Object.entries(r.per_field).forEach(([field, stats]) => {
+    const pct = Math.round(stats.macro_f1 * 100);
+    html += `
+      <div class="field-row">
+        <span class="field-name">${field}</span>
+        <div class="f1-bar-wrap">
+          <div class="f1-bar" style="width:${pct}%; background:${barColor(stats.macro_f1)}"></div>
+        </div>
+        <span class="f1-label" style="color:${barColor(stats.macro_f1)}">${pct}%</span>
+        <span class="badge ${stats.exact_match>=.8?'badge-green':stats.exact_match>=.5?'badge-orange':'badge-red'}"
+              style="font-size:.68rem; min-width:80px; text-align:center">
+          EM: ${Math.round(stats.exact_match*100)}%
+        </span>
+      </div>
+    `;
+  });
+
+  html += `</div>`;
+
+  // Per-article details
+  html += `<div class="card"><div class="card-title">Article-Level Detail</div>`;
+
+  r.article_details.forEach((art, idx) => {
+    const allExact = Object.values(art.fields).every(f => f.exact);
+    const badge = !art.matched ? 'badge-red' : allExact ? 'badge-green' : 'badge-orange';
+    const badgeTxt = !art.matched ? 'NOT FOUND' : allExact ? 'ALL EXACT' : 'PARTIAL';
+
+    html += `
+      <div class="article-block">
+        <div class="article-header">
+          <span class="chevron">›</span>
+          <span class="article-title">${art.title || art.url || `Article ${idx+1}`}</span>
+          <span class="badge ${badge}">${badgeTxt}</span>
+        </div>
+        <div class="article-body">
+    `;
+
+    if (!art.matched) {
+      html += `<p style="color:var(--danger);font-family:var(--mono);font-size:.82rem">This article URL was not found in the scraped data.</p>`;
+    } else {
+      html += `
+        <div class="scroll-x">
+        <table class="eval-table">
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Match</th>
+              <th>F1</th>
+              <th>Ground Truth</th>
+              <th>Scraped Value + Diff</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      Object.entries(art.fields).forEach(([field, fdata]) => {
+        const rowClass = fdata.exact ? '' : 'style="background:#1a0f0f"';
+        html += `
+          <tr ${rowClass}>
+            <td><code style="color:var(--accent2);font-size:.8rem">${field}</code></td>
+            <td>${fdata.exact
+              ? '<span class="badge badge-green">✓ exact</span>'
+              : `<span class="badge badge-orange">f1=${Math.round(fdata.f1*100)}%</span>`}
+            </td>
+            <td><span style="font-family:var(--mono);font-size:.8rem;color:${barColor(fdata.f1)}">${Math.round(fdata.f1*100)}%</span></td>
+            <td>
+              <div style="background:var(--bg);border-radius:4px;padding:.4rem .6rem;font-family:var(--mono);font-size:.78rem;color:var(--text-dim);max-width:300px;word-break:break-word;max-height:100px;overflow-y:auto">
+                ${escHtml(fdata.gold)}
+              </div>
+            </td>
+            <td>
+              <div style="background:var(--bg);border-radius:4px;padding:.4rem .6rem;max-width:380px;max-height:120px;overflow-y:auto">
+                ${fdata.exact
+                  ? `<span style="font-family:var(--mono);font-size:.78rem;color:var(--accent)">✓ matches exactly (after normalisation)</span>`
+                  : renderDiff(fdata.diff)
+                }
+              </div>
+            </td>
+          </tr>
+        `;
+      });
+
+      html += `</tbody></table></div>`;
+
+      // Normalisation note
+      html += `<p class="tip" style="margin-top:.75rem">Comparison is after normalisation: HTML stripped, whitespace collapsed, unicode NFC, lowercased.</p>`;
+    }
+
+    html += `</div></div>`;   // article-body, article-block
+  });
+
+  html += `</div>`;   // card
+
+  return html;
+}
+
+function renderDiff(diff) {
+  if (!diff || !diff.length) return '<span style="color:var(--muted);font-size:.78rem">—</span>';
+  return `<div class="diff-view">` + diff.map(seg => {
+    if (seg.type === 'equal')   return `<span class="diff-equal">${escHtml(seg.text)}</span>`;
+    if (seg.type === 'insert')  return `<span class="diff-insert">${escHtml(seg.pred_text)}</span>`;
+    if (seg.type === 'delete')  return `<span class="diff-delete">${escHtml(seg.gold_text)}</span>`;
+    if (seg.type === 'replace') return `<span class="diff-replace-del">${escHtml(seg.gold_text)}</span><span class="diff-replace-ins">${escHtml(seg.pred_text)}</span>`;
+    return '';
+  }).join('') + `</div>`;
+}
+
+function escHtml(str) {
+  return String(str||'')
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;');
+}
+
+async function exportResults() {
+  const domain = document.getElementById('evalDomainSelect').value;
+  const res = await fetch('/api/export_results', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({domain})
+  });
+  const data = await res.json();
+  const blob = new Blob([JSON.stringify(data.export, null, 2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `eval_results_${domain}_${new Date().toISOString().slice(0,10)}.json`;
+  a.click();
+}
+</script>
+</body>
+</html>
