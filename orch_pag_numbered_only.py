@@ -40,7 +40,7 @@ from Agent_for_single_page_gemma import (
 )
 
 # --- Configuration ---
-LINKS_AGENT_SCRIPT = "Links_Agent_gemma.py"
+LINKS_AGENT_SCRIPT = "Links_Agent_gemma_cloudflare.py" #"Links_Agent_gemma.py"
 AGENT_SCRIPT = "Agent_for_single_page_gemma.py"
 
 
@@ -93,7 +93,15 @@ def _call_agent_subprocess(cmd, timeout=300):
             if line.startswith("ORCH_RESULT:"):
                 payload = line[len("ORCH_RESULT:"):]
                 result = json.loads(payload)
-                return (result.get("status") == "ok"), result
+                ok = result.get("status") == "ok"
+                if not ok:
+                    # Surface the full subprocess logs so the real cause is visible
+                    print(f"\n{'─' * 40} SUBPROCESS STDOUT {'─' * 40}")
+                    print(proc.stdout)
+                    print(f"{'─' * 40} SUBPROCESS STDERR {'─' * 40}")
+                    print(proc.stderr or "(empty)")
+                    print(f"{'─' * 98}")
+                return ok, result
 
         full_stderr = proc.stderr or ""
         full_stdout = proc.stdout or ""
@@ -112,7 +120,6 @@ def _call_agent_subprocess(cmd, timeout=300):
         tb = traceback.format_exc()
         print(f"\n❌ Subprocess exception:\n{tb}")
         return False, {"status": "error", "error": f"{e}\n{tb}"}
-
 
 def call_links_agent_cli(url, api_key, model="gemma-3-27b-it"):
     """Call Links_Agent_gemma.py via subprocess in CLI mode."""
