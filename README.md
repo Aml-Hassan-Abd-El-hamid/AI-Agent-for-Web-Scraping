@@ -57,13 +57,24 @@ The user provides the **page 1 URL** and the **page 2 URL**. The orchestrator de
 
 ##### Page-by-page flow:
 
+The orchestrator now supports four pagination modes (chosen in Phase 1):
+
+1. **Numbered pagination** — user provides page 1 + page 2 URLs; the URL pattern is derived and pages are fetched one by one.
+2. **Single page** — no pagination.
+3. **Infinite scroll** — the listing page is loaded in a browser and auto-scrolled until the content stops growing, then all links are extracted from the accumulated HTML in one pass.
+4. **Load more button** — the listing page is loaded and a "load more" button is clicked repeatedly (explicit CSS selector or auto-detected by visible text, incl. Arabic) until it disappears, then all links are extracted at once.
+
+For infinite scroll and load-more, the Links Agent generates the link-extraction code on the initial page, and that same code is reused on the fully-expanded HTML — so these modes cost no extra LLM calls beyond the standard budget.
+
+##### Numbered page-by-page flow:
+
 1. **Phase 1 — Pagination setup** (no LLM needed): User provides page 1 + page 2 URLs → pattern is derived via string diff (or LLM fallback) → user confirms → user enters page count.
 
 2. **Phase 2 — Page 1**: Calls Links Agent to extract article links and generate link-extraction code. Then fetches all article pages, clusters them by structure, and generates extraction code per cluster. Saves incrementally.
 
 3. **Phase 3 — Pages 2..N**: For each subsequent page, fetches the listing page HTML, reuses the link-extraction code from page 1, deduplicates against seen URLs, fetches new articles, clusters them (reusing existing cluster code when possible), and saves after every page.
 
-4. **Phase 4 — Final save**: Writes `extracted_data_all.json`, `failed_links.json`, `progress.json`, and `clusters.json`.
+4. **Phase 4 — Final save**: Writes `extracted_data_all.json`, `failed_links.json`, `progress.json`, and `clusters.json`. It also appends a per-run stats section to `results.md` (input URLs, pagination type, pages, articles extracted/failed, number of clusters, number of LLM calls, total time, and any errors) for use in the system paper.
 
 ##### LLM call budget:
 - **0–1** for pagination pattern (only if string diff fails)
@@ -152,6 +163,10 @@ The orchestrator uses **exact structural signature hashing**:
 - [x] Replace human input with LLM (ex: use LLM to find the CSS selectors)
 - [x] Scale to scrape multiple pages (orchestrator + clustering)
 - [x] Add numbered pagination (user provides page 1 + page 2 URLs, pattern auto-derived)
+- [x] Add infinite-scroll and load-more-button pagination
+- [x] Retry transient LLM errors (500/503/429) with backoff
+- [x] Cloudflare-resistant fetch for article pages (stealth browser → headed → plain HTTP)
+- [x] Auto-log per-run stats to `results.md`
 
 ### Ship into a simple UI:
 - [ ] Create Streamlit interface
@@ -182,10 +197,15 @@ Tested on those domains:
   - https://www.theguardian.com/world/gaza
   - https://www.theguardian.com/world/gaza?page=2
 - ❌ UNDP 
-  a Cloudflare/bot challenge marker
+  run is in orch_runs/run_20260627_211446
   - https://stories.undp.org/categories/africa
 - btselem
   No cloudflare issue
+  ✅ Successfully extracted: 31 articles
+  ❌ Failed: 5 articles
+  run is in orch_runs/run_20260627_200110/
+  12 articles out of 30 articles got N/A in the body
+  error in errors.md
   - first page https://www.btselem.org/ota/100/all
   - second page https://www.btselem.org/ota/100/all?page=1
 
@@ -195,13 +215,14 @@ To be tested on:
   - https://www.arageek.com/tech
   - https://www.alarabiya.net/views
   - 
-
-
 - Infinite scroll:
   - https://arabic.cnn.com/tag/gaza_strip
   - https://www.aljadeedmagazine.com/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA
   - https://aawsat.com/%D8%A7%D9%84%D8%B1%D8%A3%D9%8A
 
 - Numbered:
-  - https://mana.net/category/articles/
   - 
+  - 
+
+New challenges:
+- How to extract the full testomnies from here: https://www.btselem.org/voices_from_gaza will it work like an article? Also that link got to pagination

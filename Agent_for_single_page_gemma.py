@@ -2,12 +2,17 @@ import asyncio
 import json
 import os
 import re
+import time
 import random
 from typing import Dict, List, Optional, Tuple
 from playwright.async_api import async_playwright
 from bs4 import BeautifulSoup
 import google.generativeai as genai
 from urllib.parse import urljoin, urlparse
+
+# Robust, Cloudflare-resistant page fetch (stealth browser + headed + requests
+# fallback). Reused so the single-page agent survives Cloudflare/bot challenges.
+from Links_Agent_gemma_cloudflare import fetch_page_structure as _robust_fetch_page_structure
 
 random_num = random.randint(10000, 99999)
 
@@ -110,22 +115,22 @@ def create_structural_map(soup: BeautifulSoup, depth: int = 0) -> List[Dict]:
 
 
 async def fetch_page_structure(url: str) -> Tuple[Optional[str], Optional[List[Dict]]]:
-    """Fetch HTML and generate structural map."""
-    async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
-        page = await browser.new_page()
-        
-        await page.goto(url, wait_until="domcontentloaded", timeout=60000)
-        # Give JS a moment to render after DOM loads
-        await page.wait_for_timeout(2000)
-        html_content = await page.content()
+    """Fetch HTML (Cloudflare-resistant) and generate structural map.
 
-        await browser.close()
-        
-        soup = BeautifulSoup(html_content, 'lxml')
-        structural_map = create_structural_map(soup.body if soup.body else soup)
-        
-        return html_content, structural_map
+    Delegates the actual fetch to the robust collector from
+    Links_Agent_gemma_cloudflare (stealth headless → headed → plain HTTP),
+    then rebuilds the structural map with this module's content-tuned
+    create_structural_map so the single-page extraction prompt is unchanged.
+    """
+    html_content, _ = await _robust_fetch_page_structure(url)
+
+    if not html_content:
+        return None, None
+
+    soup = BeautifulSoup(html_content, 'lxml')
+    structural_map = create_structural_map(soup.body if soup.body else soup)
+
+    return html_content, structural_map
 
 
 # --- LLM Integration ---
@@ -142,6 +147,40 @@ async def list_available_models(api_key: str) -> List[str]:
     except Exception as e:
         print(f"⚠️  Could not list models: {e}")
         return []
+
+
+# Transient server-side errors worth retrying (Gemini 500/503, rate limits, etc.)
+_TRANSIENT_LLM_MARKERS = (
+    "500", "503", "internal error", "internal server", "overloaded",
+    "unavailable", "deadline", "timeout", "429", "rate limit", "resource exhausted",
+)
+
+
+def _is_transient_llm_error(err: Exception) -> bool:
+    msg = str(err).lower()
+    return any(marker in msg for marker in _TRANSIENT_LLM_MARKERS)
+
+
+def _generate_with_retry(model, prompt, max_attempts: int = 4):
+    """Call model.generate_content, retrying transient server errors with backoff.
+
+    Transient failures (e.g. 500 Internal error, 503 overloaded, rate limits)
+    are retried with exponential backoff. Non-transient errors are raised
+    immediately so the caller can surface the real problem.
+    """
+    last_err = None
+    for attempt in range(max_attempts):
+        try:
+            return model.generate_content(prompt)
+        except Exception as e:
+            last_err = e
+            if not _is_transient_llm_error(e) or attempt == max_attempts - 1:
+                raise
+            wait = 2 ** attempt  # 1s, 2s, 4s, ...
+            print(f"  ⏳ Transient LLM error ({str(e)[:120]}). "
+                  f"Retry {attempt + 1}/{max_attempts - 1} in {wait}s...")
+            time.sleep(wait)
+    raise last_err
 
 
 class GemmaAgent:
@@ -239,7 +278,7 @@ Fix the code. Same rules:
 """
 
         try:
-            response = self.model.generate_content(prompt)
+            response = _generate_with_retry(self.model, prompt)
             code = response.text
 
             # ── Extract just the Python function from Gemma's verbose output ──

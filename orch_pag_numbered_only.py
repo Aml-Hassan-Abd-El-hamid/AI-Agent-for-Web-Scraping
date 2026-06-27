@@ -31,6 +31,7 @@ import re as _re
 from urllib.parse import urljoin, urlparse
 
 import google.generativeai as genai
+from playwright.async_api import async_playwright
 
 # Reuse utilities from Agent_for_single_page_gemma
 from Agent_for_single_page_gemma import (
@@ -42,6 +43,21 @@ from Agent_for_single_page_gemma import (
 # --- Configuration ---
 LINKS_AGENT_SCRIPT = "Links_Agent_gemma_cloudflare.py" #"Links_Agent_gemma.py"
 AGENT_SCRIPT = "Agent_for_single_page_gemma.py"
+
+# Running count of LLM generation calls made during a run (links agent,
+# per-cluster article agent, and pagination-pattern LLM fallback). Used for
+# the stats written to results.md. Reset at the start of each main() run.
+_LLM_CALLS = 0
+
+
+def _reset_llm_calls():
+    global _LLM_CALLS
+    _LLM_CALLS = 0
+
+
+def _bump_llm_calls(n=1):
+    global _LLM_CALLS
+    _LLM_CALLS += n
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -130,6 +146,7 @@ def call_links_agent_cli(url, api_key, model="gemma-3-27b-it"):
         "--model", model,
     ]
     print(f"  🔧 Calling: python {LINKS_AGENT_SCRIPT} --url {url[:80]}...")
+    _bump_llm_calls()
     return _call_agent_subprocess(cmd, timeout=300)
 
 
@@ -143,6 +160,7 @@ def call_agent_cli(url, api_key, requirements, model="gemma-3-27b-it"):
         "--model", model,
     ]
     print(f"  🔧 Calling: python {AGENT_SCRIPT} --url {url[:80]}...")
+    _bump_llm_calls()
     return _call_agent_subprocess(cmd, timeout=300)
 
 
@@ -265,6 +283,7 @@ Respond with ONLY the JSON object.
             response_mime_type="application/json",
         )
         response = llm.generate_content(prompt, generation_config=gen_config)
+        _bump_llm_calls()
         raw = response.text
         if not raw:
             print(f"    ⚠️  LLM returned empty response.")
@@ -467,6 +486,183 @@ def run_link_extraction_code(code, html):
 
 
 # ═══════════════════════════════════════════════════════════════
+# Dynamic pagination: infinite scroll & "load more" button
+# ═══════════════════════════════════════════════════════════════
+
+# Common "load more" button selectors/text used as fallbacks when the user
+# does not supply an explicit selector.
+_LOAD_MORE_HINTS = [
+    "load more", "show more", "view more", "see more", "more articles",
+    "load more articles", "المزيد", "تحميل المزيد", "عرض المزيد", "شاهد المزيد",
+]
+
+
+async def _click_load_more(page, selector):
+    """Try to click a 'load more' button. Returns True if a click happened."""
+    # 1) Explicit user-provided CSS selector
+    if selector:
+        try:
+            el = await page.query_selector(selector)
+            if el and await el.is_visible():
+                await el.scroll_into_view_if_needed()
+                await el.click()
+                return True
+        except Exception:
+            pass
+
+    # 2) Common buttons/links matched by visible text
+    try:
+        candidates = await page.query_selector_all(
+            "button, a, span[role='button'], div[role='button']"
+        )
+        for el in candidates:
+            try:
+                if not await el.is_visible():
+                    continue
+                text = (await el.inner_text() or "").strip().lower()
+                if text and any(hint in text for hint in _LOAD_MORE_HINTS):
+                    await el.scroll_into_view_if_needed()
+                    await el.click()
+                    return True
+            except Exception:
+                continue
+    except Exception:
+        pass
+
+    return False
+
+
+async def collect_listing_html(url, mode="scroll", max_rounds=20,
+                               load_more_selector=None, delay_ms=2000):
+    """Load a JS listing page and accumulate all article content into one HTML.
+
+    mode="scroll"     → repeatedly scroll to the bottom (infinite scroll).
+    mode="load_more"  → repeatedly click a 'load more' button.
+
+    Stops when the page height stops growing (scroll) or no 'load more'
+    button remains (load_more), or after *max_rounds* iterations.
+    Returns the final fully-loaded HTML (or None on failure).
+    """
+    label = "infinite scroll" if mode == "scroll" else "load-more button"
+    print(f"\n⏳ Collecting links via {label} (up to {max_rounds} rounds)...")
+
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(
+            headless=True,
+            args=['--disable-blink-features=AutomationControlled', '--no-sandbox'],
+        )
+        context = await browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                       "(KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+            viewport={'width': 1920, 'height': 1080},
+            locale='en-US',
+        )
+        page = await context.new_page()
+        await page.add_init_script(
+            "Object.defineProperty(navigator, 'webdriver', { get: () => undefined });"
+        )
+
+        try:
+            await page.goto(url, wait_until="domcontentloaded", timeout=60000)
+            try:
+                await page.wait_for_load_state("networkidle", timeout=15000)
+            except Exception:
+                pass
+
+            prev_height = 0
+            stagnant = 0
+            for i in range(max_rounds):
+                if mode == "load_more":
+                    clicked = await _click_load_more(page, load_more_selector)
+                    if not clicked:
+                        print(f"  ✓ No more 'load more' button (round {i + 1}) — stopping")
+                        break
+                else:
+                    await page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
+
+                await page.wait_for_timeout(delay_ms)
+                height = await page.evaluate("document.body.scrollHeight")
+                print(f"  round {i + 1}/{max_rounds}: page height = {height}")
+
+                if height <= prev_height:
+                    stagnant += 1
+                    if stagnant >= 2:
+                        print(f"  ✓ Content stopped growing — stopping after {i + 1} rounds")
+                        break
+                else:
+                    stagnant = 0
+                prev_height = height
+
+            html_content = await page.content()
+            print(f"  ✓ Collected HTML ({len(html_content)} bytes)")
+            return html_content
+        except Exception as e:
+            tb = traceback.format_exc()
+            print(f"  ❌ Dynamic collection failed: {e}\n{tb}")
+            return None
+        finally:
+            try:
+                await browser.close()
+            except Exception:
+                pass
+
+
+# ═══════════════════════════════════════════════════════════════
+# Stats reporting → results.md (appended once per run for the paper)
+# ═══════════════════════════════════════════════════════════════
+
+def write_results_md(stats, path="results.md"):
+    """Append a per-run results section to results.md for later analysis."""
+    header_needed = not os.path.exists(path)
+
+    input_urls = stats.get("input_urls", [])
+    errors = stats.get("errors", [])
+    elapsed = stats.get("elapsed_seconds", 0.0)
+    mins, secs = divmod(int(elapsed), 60)
+
+    lines = []
+    if header_needed:
+        lines.append("# Scraping Run Results\n")
+        lines.append("Auto-generated stats, one section per orchestrator run.\n")
+
+    lines.append(f"\n## Run {stats.get('timestamp', '')}\n")
+    lines.append(f"- **Run directory:** `{stats.get('run_dir', 'N/A')}`")
+    lines.append(f"- **Model:** {stats.get('model', 'N/A')}")
+    lines.append(f"- **Pagination type:** {stats.get('pagination_type', 'N/A')}")
+
+    if input_urls:
+        lines.append("- **Input URLs:**")
+        for u in input_urls:
+            lines.append(f"  - {u}")
+
+    lines.append(f"- **Requirements:** {stats.get('requirements', 'N/A')}")
+    lines.append(f"- **Pages requested:** {stats.get('pages_requested', 'N/A')}")
+    lines.append(f"- **Pages processed:** {stats.get('pages_processed', 'N/A')}")
+    lines.append(f"- **Articles extracted:** {stats.get('articles_extracted', 0)}")
+    lines.append(f"- **Articles failed:** {stats.get('articles_failed', 0)}")
+    lines.append(f"- **Clusters (unique structures):** {stats.get('clusters', 0)}")
+    lines.append(f"- **LLM calls:** {stats.get('llm_calls', 0)}")
+    lines.append(f"- **Total time:** {mins}m {secs}s")
+
+    if errors:
+        lines.append(f"- **Errors ({len(errors)}):**")
+        for err in errors[:10]:
+            one_line = str(err).replace("\n", " ")[:200]
+            lines.append(f"  - {one_line}")
+        if len(errors) > 10:
+            lines.append(f"  - ...and {len(errors) - 10} more")
+    else:
+        lines.append("- **Errors:** none")
+
+    lines.append("")
+
+    with open(path, "a", encoding="utf-8") as f:
+        f.write("\n".join(lines) + "\n")
+
+    print(f"\n📝 Results appended to {path}")
+
+
+# ═══════════════════════════════════════════════════════════════
 # Main orchestrator
 # ═══════════════════════════════════════════════════════════════
 
@@ -474,6 +670,11 @@ async def main():
     print("=" * 60)
     print("🎯 ORCHESTRATOR — Numbered Pagination, Page-by-Page")
     print("=" * 60)
+
+    _reset_llm_calls()
+    run_start = time.time()
+    input_urls = []          # every URL the user supplied (for results.md)
+    pagination_type = "single page"
 
     # ── Step 0: Setup ────────────────────────────────────────
     api_key = input("\n🔑 Enter your Gemini API key: ").strip()
@@ -532,6 +733,8 @@ async def main():
             links_data = json.load(f)
         article_links = links_data.get("article_links", [])
         print(f"✓ Found {len(article_links)} article links")
+        input_urls.append(f"(file) {input_file}")
+        pagination_type = "from file"
 
         if not article_links:
             print("❌ No article links found!")
@@ -565,6 +768,22 @@ async def main():
             "failed_count": len(all_failures),
         })
         _print_summary(run_dir, all_extracted, all_failures)
+        write_results_md({
+            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "run_dir": run_dir,
+            "model": model,
+            "pagination_type": pagination_type,
+            "input_urls": input_urls,
+            "requirements": requirements,
+            "pages_requested": 1,
+            "pages_processed": 1,
+            "articles_extracted": len(all_extracted),
+            "articles_failed": len(all_failures),
+            "clusters": len(cluster_registry),
+            "llm_calls": _LLM_CALLS,
+            "elapsed_seconds": time.time() - run_start,
+            "errors": [f.get("reason", "") for f in all_failures],
+        })
         return
 
     # ── From here: listing-page flow ─────────────────────────
@@ -572,6 +791,7 @@ async def main():
     if not listing_url:
         print("❌ URL is required!")
         return
+    input_urls.append(listing_url)
 
     requirements = input(
         "\n📝 What data to extract from each article?\n"
@@ -581,14 +801,43 @@ async def main():
     # ══════════════════════════════════════════════════════════
     # Phase 1: Pagination setup (user-driven, no structural map)
     # ══════════════════════════════════════════════════════════
-    page_urls = []  # URLs for pages 2, 3, 4, ...
+    page_urls = []  # URLs for pages 2, 3, 4, ...  (numbered pagination only)
+    scroll_mode = None        # None | "scroll" | "load_more"
+    scroll_selector = None    # optional CSS selector for the 'load more' button
+    scroll_rounds = 20        # max scroll/click iterations
 
-    print("\n📄 Does this listing page have multiple pages (numbered pagination)?")
-    print("   [1] Yes — I'll provide page 1 and page 2 URLs")
-    print("   [2] No  — single page only")
+    print("\n📄 How is this listing paginated?")
+    print("   [1] Numbered pagination — I'll provide page 1 and page 2 URLs")
+    print("   [2] No pagination — single page only")
+    print("   [3] Infinite scroll — content loads as you scroll down")
+    print("   [4] Load more button — content loads when a button is clicked")
     pag_choice = input("   → ").strip()
 
-    if pag_choice == "1":
+    if pag_choice == "3":
+        pagination_type = "infinite scroll"
+        scroll_mode = "scroll"
+        rounds_str = input(
+            "\n   How many scroll rounds at most? [Enter for 20] → "
+        ).strip()
+        if rounds_str.isdigit() and int(rounds_str) > 0:
+            scroll_rounds = int(rounds_str)
+        print(f"   ✓ Infinite scroll — up to {scroll_rounds} rounds.")
+    elif pag_choice == "4":
+        pagination_type = "load more button"
+        scroll_mode = "load_more"
+        scroll_selector = input(
+            "\n   CSS selector for the 'load more' button "
+            "[Enter to auto-detect by text] → "
+        ).strip() or None
+        rounds_str = input(
+            "   How many clicks at most? [Enter for 20] → "
+        ).strip()
+        if rounds_str.isdigit() and int(rounds_str) > 0:
+            scroll_rounds = int(rounds_str)
+        print(f"   ✓ Load-more — up to {scroll_rounds} clicks"
+              + (f" on '{scroll_selector}'." if scroll_selector else " (auto-detect)."))
+    elif pag_choice == "1":
+        pagination_type = "numbered pagination"
         print(f"\n   Page 1 URL [Enter to use the listing URL above]:")
         print(f"   ({listing_url})")
         url1 = input("   → ").strip() or listing_url
@@ -597,6 +846,7 @@ async def main():
         if not url2:
             print("   ❌ Page 2 URL is required for pagination!")
         else:
+            input_urls.append(url2)
             # Try string diff first
             pattern, p1_num, p2_num = derive_pagination_pattern(url1, url2)
 
@@ -671,6 +921,16 @@ async def main():
     if not link_success:
         error_msg = link_result.get("error", "Unknown error")
         print(f"\n❌ Links extraction failed:\n{error_msg}")
+        write_results_md({
+            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "run_dir": run_dir, "model": model,
+            "pagination_type": pagination_type, "input_urls": input_urls,
+            "requirements": requirements,
+            "pages_requested": len(page_urls) + 1, "pages_processed": 0,
+            "articles_extracted": 0, "articles_failed": 0, "clusters": 0,
+            "llm_calls": _LLM_CALLS, "elapsed_seconds": time.time() - run_start,
+            "errors": [f"Links extraction failed: {error_msg}"],
+        })
         return
 
     page1_links = link_result.get("data", {}).get("article_links", [])
@@ -679,6 +939,16 @@ async def main():
 
     if not page1_links:
         print("❌ No article links found on page 1!")
+        write_results_md({
+            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "run_dir": run_dir, "model": model,
+            "pagination_type": pagination_type, "input_urls": input_urls,
+            "requirements": requirements,
+            "pages_requested": len(page_urls) + 1, "pages_processed": 0,
+            "articles_extracted": 0, "articles_failed": 0, "clusters": 0,
+            "llm_calls": _LLM_CALLS, "elapsed_seconds": time.time() - run_start,
+            "errors": ["No article links found on page 1"],
+        })
         return
 
     # Load link-extraction code for reuse on later pages
@@ -686,6 +956,26 @@ async def main():
     if link_code_file and os.path.exists(link_code_file):
         with open(link_code_file, "r", encoding="utf-8") as f:
             link_extraction_code = f.read()
+
+    # ── Dynamic pagination: expand page 1 with all scrolled/loaded links ──
+    if scroll_mode:
+        if not link_extraction_code:
+            print("\n⚠️  No link-extraction code available — "
+                  "cannot expand dynamic content. Using initial links only.")
+        else:
+            full_html = await collect_listing_html(
+                listing_url, mode=scroll_mode,
+                max_rounds=scroll_rounds, load_more_selector=scroll_selector,
+            )
+            if full_html:
+                expanded = run_link_extraction_code(link_extraction_code, full_html)
+                print(f"  ✓ {len(expanded)} links after {pagination_type} "
+                      f"(was {len(page1_links)} on initial load)")
+                merged = {l["url"]: l for l in page1_links}
+                for l in expanded:
+                    merged.setdefault(l["url"], l)
+                page1_links = list(merged.values())
+                print(f"  ✓ {len(page1_links)} unique links total")
 
     # ══════════════════════════════════════════════════════════
     # Phase 2 cont.: Process page 1 articles (LLM calls #2..N)
@@ -817,6 +1107,25 @@ async def main():
     })
 
     _print_summary(run_dir, all_extracted, all_failures)
+
+    # ── Per-run stats for the paper (results.md) ─────────────
+    pages_processed = (len(page_urls) + 1) if page_urls else 1
+    write_results_md({
+        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "run_dir": run_dir,
+        "model": model,
+        "pagination_type": pagination_type,
+        "input_urls": input_urls,
+        "requirements": requirements,
+        "pages_requested": pages_processed,
+        "pages_processed": pages_processed,
+        "articles_extracted": len(all_extracted),
+        "articles_failed": len(all_failures),
+        "clusters": len(cluster_registry),
+        "llm_calls": _LLM_CALLS,
+        "elapsed_seconds": time.time() - run_start,
+        "errors": [f.get("reason", "") for f in all_failures],
+    })
 
 
 def _print_summary(run_dir, all_extracted, all_failures):

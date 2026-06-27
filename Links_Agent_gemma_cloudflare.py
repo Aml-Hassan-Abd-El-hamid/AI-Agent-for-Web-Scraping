@@ -104,10 +104,53 @@ CHALLENGE_MARKERS = [
     'Performing security verification',
 ]
 
+# Strong markers: if present, the page is almost certainly an interstitial
+# challenge regardless of size.
+STRONG_CHALLENGE_MARKERS = [
+    'cf-browser-verification',
+    'cf_chl_opt',
+    'Just a moment',
+    'Checking your browser',
+    'Performing security verification',
+    'Verifying you are human',
+    'Enable JavaScript and cookies to continue',
+]
+
+# Weak markers: Cloudflare injects these (e.g. /cdn-cgi/challenge-platform/...
+# scripts, Turnstile widgets) into NORMAL served pages too, so they only
+# indicate a challenge when the page has no real content yet.
+WEAK_CHALLENGE_MARKERS = [
+    'challenge-platform',
+    'turnstile',
+]
+
+
+def _has_real_content(html: str) -> bool:
+    """Heuristic: does the HTML contain enough article/body markup to be a
+    real content page (as opposed to a tiny interstitial challenge page)?"""
+    if len(html) < 20000:
+        return False
+    lowered = html.lower()
+    content_signals = (
+        lowered.count('<article') + lowered.count('<p') + lowered.count('<h1')
+        + lowered.count('<h2') + lowered.count('<li')
+    )
+    return content_signals >= 3
+
 
 def _is_challenge_page(html: str) -> bool:
-    """Return True if the HTML looks like a Cloudflare/bot challenge, not real content."""
-    return any(m in html for m in CHALLENGE_MARKERS)
+    """Return True if the HTML looks like a Cloudflare/bot challenge, not real content.
+
+    Strong markers always count. Weak markers (which Cloudflare also injects
+    into normally-served pages) only count when the page lacks real content —
+    this avoids the false positive where a fully-loaded page is mistaken for a
+    challenge just because it carries an injected challenge-platform script.
+    """
+    if any(m in html for m in STRONG_CHALLENGE_MARKERS):
+        return True
+    if any(m in html for m in WEAK_CHALLENGE_MARKERS):
+        return not _has_real_content(html)
+    return False
 
 
 async def _wait_for_content(page, timeout_ms: int = 15000) -> bool:
@@ -359,6 +402,35 @@ _FEW_SHOT_CODE = '''def extract_data(html_content):
     return {"article_links": article_links}'''
 
 
+# Transient server-side errors worth retrying (Gemini 500/503, rate limits, etc.)
+_TRANSIENT_LLM_MARKERS = (
+    "500", "503", "internal error", "internal server", "overloaded",
+    "unavailable", "deadline", "timeout", "429", "rate limit", "resource exhausted",
+)
+
+
+def _is_transient_llm_error(err: Exception) -> bool:
+    msg = str(err).lower()
+    return any(marker in msg for marker in _TRANSIENT_LLM_MARKERS)
+
+
+def _generate_with_retry(model, prompt, max_attempts: int = 4):
+    """Call model.generate_content, retrying transient server errors with backoff."""
+    last_err = None
+    for attempt in range(max_attempts):
+        try:
+            return model.generate_content(prompt)
+        except Exception as e:
+            last_err = e
+            if not _is_transient_llm_error(e) or attempt == max_attempts - 1:
+                raise
+            wait = 2 ** attempt  # 1s, 2s, 4s, ...
+            print(f"  ⏳ Transient LLM error ({str(e)[:120]}). "
+                  f"Retry {attempt + 1}/{max_attempts - 1} in {wait}s...")
+            time.sleep(wait)
+    raise last_err
+
+
 class GemmaAgent:
     """LLM agent using Gemma's prompt format with few-shot examples."""
 
@@ -449,7 +521,7 @@ Fix the code. Same rules:
 """
 
         try:
-            response = self.model.generate_content(prompt)
+            response = _generate_with_retry(self.model, prompt)
             code = response.text
 
             fenced = re.findall(r'```python\s*\n(.*?)```', code, re.DOTALL)
