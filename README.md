@@ -172,13 +172,22 @@ Tested on those domains:
   - https://www.palestine-studies.org/ar/blogs/explorer?f%5B0%5D=field_blog_series%3A19943
 - ✅ https://euromedmonitor.org/ar/category/26/%D8%A7%D9%84%D9%86%D8%B2%D8%A7%D8%B9%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D8%AD%D8%A9
 - ❌ Links extraction failed:Failed to fetch page structure cloudflare
-https://acpss.ahram.org.eg/OuterWriter/28/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA/0.aspx
-https://acpss.ahram.org.eg/OuterWriter/28/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA/30.aspx
-
-- 
-https://mana.net/category/articles/page/2/
-https://mana.net/category/articles/page/2/
-
+  - https://acpss.ahram.org.eg/OuterWriter/28/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA/0.aspx
+  - https://acpss.ahram.org.eg/OuterWriter/28/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA/30.aspx
+- ❌ Mana معني
+  a Cloudflare/bot challenge marker
+  - https://mana.net/category/articles/page/2/
+  - https://mana.net/category/articles/page/2/
+- ✅ the Guardian 3 pages 
+  - https://www.theguardian.com/world/gaza
+  - https://www.theguardian.com/world/gaza?page=2
+- ❌ UNDP 
+  a Cloudflare/bot challenge marker
+  - https://stories.undp.org/categories/africa
+- btselem
+  No cloudflare issue
+  - first page https://www.btselem.org/ota/100/all
+  - second page https://www.btselem.org/ota/100/all?page=1
 
 To be tested on:
 
@@ -195,3 +204,4 @@ To be tested on:
 
 - Numbered:
   - https://mana.net/category/articles/
+  - 

@@ -1,43 +1,21 @@
 """
 LLM:  Gemma (gemma-3-27b-it / gemma-3-12b-it via Google AI API)
 
-Gemma-targeted version with:
-- Prompts formatted using Gemma's <start_of_turn> / <end_of_turn> control tokens
-- Few-shot examples to guide code generation
-- System-style instructions prepended to user turn
-- All other functionality identical to Links_Agent_m2.py
-
-FIXES APPLIED:
-  Fix 1 — fetch_page_structure: don't treat empty structural map as a hard failure.
-           `if not structural_map` was True for [], silently swallowing valid HTML.
-           Now checks `html_content is None` instead, logs a 500-char HTML dump
-           when the map is empty, and still returns the HTML so the LLM can try.
-
-  Fix 2 — _launch_and_fetch: after challenge clears, wait for a real content
-           selector before grabbing page.content(). ASP.NET / JS-rendered sites
-           finish painting their data rows after domcontentloaded; without this
-           wait the structural map was always empty for those pages.
-
-  Fix 3 — main / main_cli: guards updated to match Fix 1 — only bail out when
-           html_content is None, not when structural_map is [].
-
-Tested on:
-- ❌ fields extraction from this page -failed-:
-    https://www.palestine-studies.org/ar/blogs/explorer?f%5B0%5D=field_blog_series%3A19943
-- ✅ youm7:
-    https://www.youm7.com/Section/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B9%D8%A7%D8%AC%D9%84%D8%A9/65/1
-- 🔄 Cloudflare challenge page -failed-:
-    https://www.almasryalyoum.com/section/index/8
-- ✅ pchrgaza.org:
-    https://pchrgaza.org/ar/category/genocide-on-gaza-ar/testimonies-from-the-war-ar/
-- 🔧 ahram.org.eg (target for this fix):
-    https://acpss.ahram.org.eg/OuterWriter/28/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA/0.aspx
+Gemma-targeted Links Agent with error-propagation fixes:
+- _launch_and_fetch now returns (html, status, error) and always closes the browser
+- _fetch_with_requests returns (html, error)
+- fetch_page_structure aggregates every attempt's error into _LAST_FETCH_ERROR
+  and now falls back to plain HTTP on *crash* too, not only on Cloudflare challenge
+- main_cli / main surface the real error instead of a generic message
+- output directories are created up-front
 """
 import asyncio
 import json
 import re
+import os
 import random
 import time
+import traceback
 import requests
 from typing import Dict, List, Optional, Tuple
 from playwright.async_api import async_playwright
@@ -47,6 +25,9 @@ from urllib.parse import urljoin, urlparse
 
 random_num = random.randint(10000, 99999)
 
+# Populated whenever a fetch fully fails, so callers can report the real cause.
+_LAST_FETCH_ERROR = None
+
 # --- Configuration ---
 TARGET_TAGS = ['div', 'section', 'article', 'main', 'header', 'footer', 'nav',
                'ul', 'ol', 'li', 'a', 'h1', 'h2', 'h3', 'h4', 'p', 'span',
@@ -54,14 +35,12 @@ TARGET_TAGS = ['div', 'section', 'article', 'main', 'header', 'footer', 'nav',
 MAX_DEPTH = 10
 MAX_RETRIES = 3
 
-# Selectors to probe for when waiting for content after challenge clears (Fix 2)
 CONTENT_READY_SELECTORS = [
     'article', '.article', 'table', '.listing', 'ul li a',
     '.item', '.post', '.card', '.entry', '.news-item',
     'h2 a', 'h3 a', '.title a',
 ]
 
-# Allowed imports for generated code
 ALLOWED_IMPORTS = {
     'BeautifulSoup': BeautifulSoup,
     're': re,
@@ -69,6 +48,13 @@ ALLOWED_IMPORTS = {
     'urljoin': urljoin,
     'urlparse': urlparse,
 }
+
+
+def _ensure_dirs():
+    """Make sure output folders exist before we try to write into them."""
+    for d in ("html_files", "structural_maps", "code"):
+        os.makedirs(d, exist_ok=True)
+
 
 # --- Structural Map Generation ---
 def create_structural_map(soup: BeautifulSoup, depth: int = 0) -> List[Dict]:
@@ -89,7 +75,6 @@ def create_structural_map(soup: BeautifulSoup, depth: int = 0) -> List[Dict]:
                 attributes['role'] = child.get('role')
             if child.name.lower() == 'a' and child.get('href'):
                 attributes['href'] = child.get('href')
-            # Capture data-* attributes (common in SPAs)
             for attr_name, attr_val in child.attrs.items():
                 if attr_name.startswith('data-') and isinstance(attr_val, str):
                     attributes[attr_name] = attr_val[:80]
@@ -119,18 +104,14 @@ CHALLENGE_MARKERS = [
     'Performing security verification',
 ]
 
+
 def _is_challenge_page(html: str) -> bool:
     """Return True if the HTML looks like a Cloudflare/bot challenge, not real content."""
     return any(m in html for m in CHALLENGE_MARKERS)
 
 
 async def _wait_for_content(page, timeout_ms: int = 15000) -> bool:
-    """
-    FIX 2: After a challenge clears, wait until at least one known content
-    selector appears in the DOM. Returns True if found, False on timeout.
-    This handles ASP.NET / JS-rendered pages that finish painting after
-    domcontentloaded.
-    """
+    """After a challenge clears, wait until a known content selector appears."""
     combined_selector = ', '.join(CONTENT_READY_SELECTORS)
     try:
         await page.wait_for_selector(combined_selector, timeout=timeout_ms)
@@ -141,65 +122,52 @@ async def _wait_for_content(page, timeout_ms: int = 15000) -> bool:
         return False
 
 
-async def _launch_and_fetch(p, url: str, headless: bool) -> Tuple[Optional[str], Optional[str]]:
-    """Low-level: launch browser, navigate, handle challenges, return (html, status)."""
+async def _launch_and_fetch(p, url: str, headless: bool):
+    """Launch browser, navigate, handle challenges.
+    Returns (html_or_None, status, error_or_None)."""
     mode = "headless" if headless else "headed"
-    browser = await p.chromium.launch(
-        headless=headless,
-        args=[
-            '--disable-blink-features=AutomationControlled',
-            '--no-sandbox',
-        ]
-    )
-    context = await browser.new_context(
-        user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                   "(KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
-        viewport={'width': 1920, 'height': 1080},
-        locale='en-US',
-        timezone_id='America/New_York',
-    )
-    page = await context.new_page()
-
-    await page.add_init_script("""
-        Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
-        Object.defineProperty(navigator, 'plugins', { get: () => [1, 2, 3, 4, 5] });
-        Object.defineProperty(navigator, 'languages', { get: () => ['en-US', 'en'] });
-    """)
-
+    browser = None
     try:
+        browser = await p.chromium.launch(
+            headless=headless,
+            args=['--disable-blink-features=AutomationControlled', '--no-sandbox'],
+        )
+        context = await browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                       "(KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+            viewport={'width': 1920, 'height': 1080},
+            locale='en-US',
+            timezone_id='America/New_York',
+        )
+        page = await context.new_page()
+        await page.add_init_script("""
+            Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+            Object.defineProperty(navigator, 'plugins', { get: () => [1, 2, 3, 4, 5] });
+            Object.defineProperty(navigator, 'languages', { get: () => ['en-US', 'en'] });
+        """)
+
         await page.goto(url, wait_until="domcontentloaded", timeout=60000)
         try:
             await page.wait_for_load_state("networkidle", timeout=15000)
         except Exception:
             pass
 
-        # Wait for challenge to resolve (up to 60s headless, 90s headed)
         max_checks = 12 if headless else 18
-        content_waited = False  # FIX 2: track whether we've done the content wait
-
+        content_waited = False
         for attempt in range(max_checks):
-            # The page object may become stale if Cloudflare redirects;
-            # recover by grabbing the latest page from the context.
             try:
                 html_snapshot = await page.content()
             except Exception:
-                try:
-                    live_pages = context.pages
-                    if live_pages:
-                        page = live_pages[-1]
-                        await page.wait_for_load_state("domcontentloaded", timeout=10000)
-                        html_snapshot = await page.content()
-                    else:
-                        print(f"  ❌ Browser has no open pages [{mode}]")
-                        break
-                except Exception as recover_err:
-                    print(f"  ❌ Could not recover page [{mode}]: {recover_err}")
-                    break
+                live_pages = context.pages
+                if live_pages:
+                    page = live_pages[-1]
+                    await page.wait_for_load_state("domcontentloaded", timeout=10000)
+                    html_snapshot = await page.content()
+                else:
+                    raise RuntimeError("Browser has no open pages")
 
             if not _is_challenge_page(html_snapshot):
                 print(f"  ✓ Page loaded [{mode}] (after {(attempt + 1) * 5}s)")
-                # FIX 2: wait for real content selectors to appear before
-                # grabbing the final HTML — critical for ASP.NET pages
                 if not content_waited:
                     content_waited = True
                     await _wait_for_content(page, timeout_ms=15000)
@@ -224,30 +192,27 @@ async def _launch_and_fetch(p, url: str, headless: bool) -> Tuple[Optional[str],
                 window.scrollTo(0, 0);
             }""")
             await page.wait_for_timeout(2000)
-            html_content = await page.content()
         except Exception:
-            try:
-                page = context.pages[-1] if context.pages else page
-                html_content = await page.content()
-            except Exception as e:
-                print(f"  ❌ Failed to get final content [{mode}]: {e}")
-                await browser.close()
-                return None, "error"
+            page = context.pages[-1] if context.pages else page
+
+        html_content = await page.content()
+        status = "challenge" if _is_challenge_page(html_content) else "ok"
+        return html_content, status, None
 
     except Exception as e:
+        err = f"[{mode}] {type(e).__name__}: {e}\n{traceback.format_exc()}"
         print(f"  ❌ Failed [{mode}]: {e}")
-        await browser.close()
-        return None, "error"
+        return None, "error", err
+    finally:
+        if browser is not None:
+            try:
+                await browser.close()
+            except Exception:
+                pass
 
-    await browser.close()
 
-    if _is_challenge_page(html_content):
-        return html_content, "challenge"
-    return html_content, "ok"
-
-
-def _fetch_with_requests(url: str) -> Optional[str]:
-    """Fallback: fetch via requests.Session with browser-like headers."""
+def _fetch_with_requests(url: str):
+    """Fallback: fetch via requests. Returns (html_or_None, error_or_None)."""
     session = requests.Session()
     session.headers.update({
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
@@ -258,7 +223,9 @@ def _fetch_with_requests(url: str) -> Optional[str]:
         'Connection': 'keep-alive',
         'Upgrade-Insecure-Requests': '1',
         'Referer': urlparse(url)._replace(path='/', params='', query='', fragment='').geturl(),
-    })
+    }
+    )
+    last_err = None
     for attempt in range(3):
         try:
             print(f"  [requests] Attempt {attempt + 1}/3...")
@@ -266,59 +233,74 @@ def _fetch_with_requests(url: str) -> Optional[str]:
             resp.raise_for_status()
             html = resp.text
             if _is_challenge_page(html):
+                last_err = "requests received a Cloudflare/bot challenge page"
                 print(f"  [requests] Still got a challenge page")
-                return None
+                return None, last_err
             if any(tag in html.lower() for tag in ['<html', '<body', '<div', '<!doctype']):
                 print(f"  ✓ Page fetched via requests ({len(html)} bytes)")
-                return html
-            print(f"  [requests] Response doesn't look like HTML")
-            return None
+                return html, None
+            last_err = "requests response did not look like HTML"
+            print(f"  [requests] {last_err}")
+            return None, last_err
         except requests.RequestException as e:
+            last_err = f"{type(e).__name__}: {e}"
             print(f"  [requests] Error: {e}")
             if attempt < 2:
                 time.sleep((attempt + 1) * 3)
-    return None
+    return None, last_err
 
 
 async def fetch_page_structure(url: str) -> Tuple[Optional[str], Optional[List[Dict]]]:
+    global _LAST_FETCH_ERROR
+    _LAST_FETCH_ERROR = None
+    errors = []
+
     # Attempt 1: Playwright headless
     async with async_playwright() as p:
-        html_content, status = await _launch_and_fetch(p, url, headless=True)
+        html_content, status, err = await _launch_and_fetch(p, url, headless=True)
+    if err:
+        errors.append("── Headless browser attempt ──\n" + err)
 
-    if status == "challenge":
-        print("  ⚠  Cloudflare blocked headless browser — trying headed browser...")
+    # Attempt 2: headed browser (on challenge OR crash)
+    if status in ("challenge", "error"):
+        why = "blocked by Cloudflare" if status == "challenge" else "crashed"
+        print(f"  ⚠  Headless browser {why} — trying headed browser...")
         async with async_playwright() as p:
-            html_content, status = await _launch_and_fetch(p, url, headless=False)
+            html_content, status, err = await _launch_and_fetch(p, url, headless=False)
+        if err:
+            errors.append("── Headed browser attempt ──\n" + err)
 
-    if status == "challenge":
-        print("  ⚠  Headed browser also blocked — trying plain HTTP...")
-        html_content = _fetch_with_requests(url)
-        if html_content:
-            status = "ok"
+    # Attempt 3: plain HTTP (now also runs when the browser errored, not only on challenge)
+    if status in ("challenge", "error") or html_content is None:
+        print("  ⚠  Browser attempts unusable — trying plain HTTP (requests)...")
+        req_html, req_err = _fetch_with_requests(url)
+        if req_html:
+            html_content, status = req_html, "ok"
+        elif req_err:
+            errors.append("── requests attempt ──\n" + req_err)
 
-    # FIX 1: check html_content is None, not `not structural_map`
     if html_content is None:
-        if status == "challenge":
-            print("  ❌ Could not bypass Cloudflare via browser, headed browser, or HTTP requests.")
+        _LAST_FETCH_ERROR = "\n\n".join(errors) if errors else \
+            "No HTML returned and no underlying error was captured."
+        print("  ❌ Could not fetch page via headless, headed, or HTTP requests.")
+        print(_LAST_FETCH_ERROR)
         return None, None
 
     soup = BeautifulSoup(html_content, 'lxml')
     structural_map = create_structural_map(soup.body if soup.body else soup)
 
-    # FIX 1: empty map is not a fatal error — log it and return the HTML anyway
     if not structural_map:
         print(f"  ⚠  Structural map is empty (no matching tags found).")
         print(f"  ⚠  HTML length: {len(html_content)} bytes")
         print(f"  ⚠  First 500 chars of HTML:\n{html_content[:500]}\n")
         print(f"  ⚠  Proceeding with empty map — LLM will work from raw HTML.")
-        # Return the HTML with an empty map so the caller can still try
         return html_content, []
 
     return html_content, structural_map
 
 
 # --- LLM Integration ---
-async def list_available_models(api_key: str) -> List[str]:
+async def list_available_models(api_key: str) -> List[Dict]:
     """List all available Gemini models."""
     try:
         genai.configure(api_key=api_key)
@@ -334,7 +316,7 @@ async def list_available_models(api_key: str) -> List[str]:
 
 
 # ═══════════════════════════════════════════════════════════
-# FEW-SHOT EXAMPLE (teaches Gemma the exact input→output pattern)
+# FEW-SHOT EXAMPLE
 # ═══════════════════════════════════════════════════════════
 _FEW_SHOT_MAP = '''[
   {"tag": "div", "attributes": {"class": "post-list"}, "children": [
@@ -470,7 +452,6 @@ Fix the code. Same rules:
             response = self.model.generate_content(prompt)
             code = response.text
 
-            # Extract just the Python function from Gemma's verbose output
             fenced = re.findall(r'```python\s*\n(.*?)```', code, re.DOTALL)
             if fenced:
                 code = fenced[-1].strip()
@@ -483,9 +464,7 @@ Fix the code. Same rules:
                 if func_start is not None:
                     code = '\n'.join(lines[func_start:])
 
-            # Remove trailing Gemma turn tokens
             code = re.sub(r'<end_of_turn>\s*$', '', code)
-            # Remove stray markdown leftovers
             code = re.sub(r'^```\w*\s*$', '', code, flags=re.MULTILINE)
             code = code.strip()
 
@@ -563,33 +542,12 @@ def execute_extraction_code(code: str, html_content: str) -> Tuple[bool, any]:
 
     restricted_globals = {
         '__builtins__': {
-            'print': print,
-            'len': len,
-            'str': str,
-            'int': int,
-            'float': float,
-            'bool': bool,
-            'list': list,
-            'dict': dict,
-            'set': set,
-            'tuple': tuple,
-            'range': range,
-            'enumerate': enumerate,
-            'zip': zip,
-            'filter': filter,
-            'map': map,
-            'sorted': sorted,
-            'any': any,
-            'all': all,
-            'max': max,
-            'min': min,
-            'sum': sum,
-            'None': None,
-            'True': True,
-            'False': False,
-            'isinstance': isinstance,
-            'hasattr': hasattr,
-            'getattr': getattr,
+            'print': print, 'len': len, 'str': str, 'int': int, 'float': float,
+            'bool': bool, 'list': list, 'dict': dict, 'set': set, 'tuple': tuple,
+            'range': range, 'enumerate': enumerate, 'zip': zip, 'filter': filter,
+            'map': map, 'sorted': sorted, 'any': any, 'all': all, 'max': max,
+            'min': min, 'sum': sum, 'None': None, 'True': True, 'False': False,
+            'isinstance': isinstance, 'hasattr': hasattr, 'getattr': getattr,
         },
         'BeautifulSoup': BeautifulSoup,
         're': re,
@@ -637,7 +595,6 @@ def execute_extraction_code(code: str, html_content: str) -> Tuple[bool, any]:
         return True, result
 
     except Exception as e:
-        import traceback
         error_detail = traceback.format_exc()
         return False, f"EXECUTION ERROR: {str(e)}\n\n{error_detail}"
 
@@ -645,11 +602,7 @@ def execute_extraction_code(code: str, html_content: str) -> Tuple[bool, any]:
 # --- Output Analysis ---
 def analyze_output(data: Dict) -> Dict:
     """Generate statistics about the extracted data."""
-    stats = {
-        'total_fields': len(data),
-        'fields': list(data.keys()),
-        'field_details': {}
-    }
+    stats = {'total_fields': len(data), 'fields': list(data.keys()), 'field_details': {}}
 
     for key, value in data.items():
         if isinstance(value, str):
@@ -673,31 +626,25 @@ def analyze_output(data: Dict) -> Dict:
                 'preview': str(value)[:100] + '...'
             }
         else:
-            stats['field_details'][key] = {
-                'type': type(value).__name__,
-                'value': str(value)
-            }
+            stats['field_details'][key] = {'type': type(value).__name__, 'value': str(value)}
 
     return stats
 
 
 def display_sample_output(data: Dict, stats: Dict):
     """Display sample output and statistics to the user."""
-    print("\n" + "="*60)
+    print("\n" + "=" * 60)
     print("📊 EXTRACTION RESULTS")
-    print("="*60)
-
+    print("=" * 60)
     print(f"\n✓ Total fields extracted: {stats['total_fields']}")
     print(f"✓ Fields: {', '.join(stats['fields'])}")
-
-    print("\n" + "-"*60)
+    print("\n" + "-" * 60)
     print("SAMPLE OUTPUT:")
-    print("-"*60)
+    print("-" * 60)
 
     for field, details in stats['field_details'].items():
         print(f"\n[{field}]")
         print(f"  Type: {details['type']}")
-
         if details['type'] == 'string':
             status = "❌ EMPTY" if details['is_empty'] else ("⚠️  ERROR" if details['starts_with_error'] else "✓")
             print(f"  Status: {status}")
@@ -709,14 +656,15 @@ def display_sample_output(data: Dict, stats: Dict):
         else:
             print(f"  Preview: {details.get('preview', details.get('value', 'N/A'))}")
 
-    print("\n" + "="*60)
+    print("\n" + "=" * 60)
 
 
 # --- Main Agent Logic ---
 async def main():
-    print("="*60)
+    _ensure_dirs()
+    print("=" * 60)
     print("🤖 AI WEB SCRAPING AGENT (Gemma Edition)")
-    print("="*60)
+    print("=" * 60)
 
     api_key = input("\n🔑 Enter your Gemini API key: ").strip()
     if not api_key:
@@ -737,13 +685,10 @@ async def main():
         for i, model in enumerate(sorted_models, 1):
             marker = " ★" if 'gemma' in model.lower() else ""
             print(f"   {i}. {model}{marker}")
-
         print(f"\n Select a model:")
         print(f"   [Enter number] Choose from list above")
         print(f"   [Press Enter] Use default (gemma-3-27b-it)")
-
         choice = input("   → ").strip()
-
         if choice.isdigit() and 1 <= int(choice) <= len(sorted_models):
             selected_model = sorted_models[int(choice) - 1]
             if selected_model.startswith('models/'):
@@ -766,9 +711,10 @@ async def main():
     print(f"\n⏳ Fetching page structure from {url}...")
     html_content, structural_map = await fetch_page_structure(url)
 
-    # FIX 3: only bail out when html_content is None, not when map is empty
     if html_content is None:
         print("❌ Failed to fetch page structure!")
+        if _LAST_FETCH_ERROR:
+            print(_LAST_FETCH_ERROR)
         return
 
     if not structural_map:
@@ -797,11 +743,8 @@ async def main():
 
     while retry_count <= MAX_RETRIES:
         extraction_code = agent.generate_extraction_code(
-            structural_map_json,
-            page_url=url,
-            error_context=error_context
+            structural_map_json, page_url=url, error_context=error_context
         )
-
         print("✓ Code generated!")
 
         gen_code_filename = f"code/gemma_gen_code_{rand_id}.py"
@@ -809,11 +752,11 @@ async def main():
             f.write(extraction_code)
         print(f"💾 Saved generated code to: {gen_code_filename}")
 
-        print("\n" + "-"*60)
+        print("\n" + "-" * 60)
         print("GENERATED CODE:")
-        print("-"*60)
+        print("-" * 60)
         print(extraction_code)
-        print("-"*60)
+        print("-" * 60)
 
         print("\n⏳ Executing extraction code...")
         success, result = execute_extraction_code(extraction_code, html_content)
@@ -821,12 +764,10 @@ async def main():
         if success:
             stats = analyze_output(result)
             display_sample_output(result, stats)
-
             print("\n❓ Are you satisfied with the results?")
             print("   [s] Save to JSON")
             print("   [r] Retry (generate new code)")
             print("   [q] Quit")
-
             decision = input("   → ").strip().lower()
 
             if decision == 's':
@@ -835,7 +776,6 @@ async def main():
                     json.dump(result, f, indent=2, ensure_ascii=False)
                 print(f"\n✅ Data saved to: {output_filename}")
                 break
-
             elif decision == 'r':
                 if retry_count >= MAX_RETRIES:
                     print(f"\n❌ Maximum retries ({MAX_RETRIES}) reached.")
@@ -843,25 +783,19 @@ async def main():
                 print("\n🔄 Retrying...")
                 error_context = "User requested retry. Improve the extraction logic."
                 retry_count += 1
-
             else:
                 print("\n👋 Exiting without saving.")
                 break
-
         else:
             print(f"\n❌ EXECUTION FAILED!")
             print(f"Error: {result}")
-
             if retry_count >= MAX_RETRIES:
                 print(f"\nMaximum retries ({MAX_RETRIES}) reached.")
                 break
-
             print("\n❓ Would you like to retry?")
             print("   [y] Yes, retry with error context")
             print("   [n] No, quit")
-
             decision = input("   → ").strip().lower()
-
             if decision == 'y':
                 print("\n🔄 Retrying with error context...")
                 error_context = result
@@ -870,22 +804,26 @@ async def main():
                 print("\n👋 Exiting.")
                 break
 
-    print("\n" + "="*60)
+    print("\n" + "=" * 60)
     print("🏁 Agent finished!")
-    print("="*60)
+    print("=" * 60)
 
 
 # --- CLI (non-interactive) mode for orchestration ---
 async def main_cli(url: str, api_key: str, model: str = 'gemma-3-27b-it', max_retries: int = 0):
     """Non-interactive entry point. Returns paths via JSON line on stdout."""
+    _ensure_dirs()
     agent = GemmaAgent(api_key, model)
 
     print(f"⏳ Fetching page structure from {url}...", flush=True)
     html_content, structural_map = await fetch_page_structure(url)
 
-    # FIX 3: only bail out when html_content is None, not when map is empty
     if html_content is None:
-        print("ORCH_RESULT:" + json.dumps({"status": "error", "error": "Failed to fetch page structure"}), flush=True)
+        detail = _LAST_FETCH_ERROR or "no further detail captured"
+        print("ORCH_RESULT:" + json.dumps({
+            "status": "error",
+            "error": f"Failed to fetch page structure for {url}\n\n{detail}"
+        }), flush=True)
         return
 
     if not structural_map:
@@ -908,9 +846,7 @@ async def main_cli(url: str, api_key: str, model: str = 'gemma-3-27b-it', max_re
 
     while retry_count <= max_retries:
         extraction_code = agent.generate_extraction_code(
-            structural_map_json,
-            page_url=url,
-            error_context=error_context
+            structural_map_json, page_url=url, error_context=error_context
         )
 
         gen_code_filename = f"code/gemma_gen_code_{rand_id}.py"
@@ -949,7 +885,7 @@ if __name__ == "__main__":
     parser.add_argument("--url", type=str, help="URL to extract links from (CLI mode)")
     parser.add_argument("--api-key", type=str, help="Gemini API key (CLI mode)")
     parser.add_argument("--model", type=str, default="gemma-3-27b-it", help="Model name")
-    parser.add_argument("--max-retries", type=int, default=0, help="Max retries in CLI mode (default: 0 = single attempt)")
+    parser.add_argument("--max-retries", type=int, default=0, help="Max retries in CLI mode (default: 0)")
     args = parser.parse_args()
 
     if args.url and args.api_key:
