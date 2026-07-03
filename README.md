@@ -196,9 +196,12 @@ Tested on those domains:
 - ✅ the Guardian 3 pages 
   - https://www.theguardian.com/world/gaza
   - https://www.theguardian.com/world/gaza?page=2
-- ❌ UNDP 
-  run is in orch_runs/run_20260627_211446
-  - https://stories.undp.org/categories/africa
+- ✅ UNDP 
+    run is in orch_runs/run_20260627_211446
+    No pagi
+    12 articles, 4 LLM calls
+    in results.md
+    - https://stories.undp.org/categories/africa
 - btselem
   No cloudflare issue
   ✅ Successfully extracted: 31 articles
