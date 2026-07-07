@@ -166,6 +166,7 @@ The orchestrator uses **exact structural signature hashing**:
 - [x] Add infinite-scroll and load-more-button pagination
 - [x] Retry transient LLM errors (500/503/429) with backoff
 - [x] Cloudflare-resistant fetch for article pages (stealth browser → headed → plain HTTP)
+- [x] Faster article fetching (plain-requests first, browser fallback, 2 concurrent)
 - [x] Auto-log per-run stats to `results.md`
 
 ### Ship into a simple UI:

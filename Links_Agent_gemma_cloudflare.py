@@ -23,6 +23,9 @@ from bs4 import BeautifulSoup
 import google.generativeai as genai
 from urllib.parse import urljoin, urlparse
 
+# Shared transient-error LLM retry helper (isolated in utils.py).
+from utils import _generate_with_retry, get_token_usage, reset_token_usage
+
 random_num = random.randint(10000, 99999)
 
 # Populated whenever a fetch fully fails, so callers can report the real cause.
@@ -400,35 +403,6 @@ _FEW_SHOT_CODE = '''def extract_data(html_content):
         article_links.append({"url": url, "title": title})
 
     return {"article_links": article_links}'''
-
-
-# Transient server-side errors worth retrying (Gemini 500/503, rate limits, etc.)
-_TRANSIENT_LLM_MARKERS = (
-    "500", "503", "internal error", "internal server", "overloaded",
-    "unavailable", "deadline", "timeout", "429", "rate limit", "resource exhausted",
-)
-
-
-def _is_transient_llm_error(err: Exception) -> bool:
-    msg = str(err).lower()
-    return any(marker in msg for marker in _TRANSIENT_LLM_MARKERS)
-
-
-def _generate_with_retry(model, prompt, max_attempts: int = 4):
-    """Call model.generate_content, retrying transient server errors with backoff."""
-    last_err = None
-    for attempt in range(max_attempts):
-        try:
-            return model.generate_content(prompt)
-        except Exception as e:
-            last_err = e
-            if not _is_transient_llm_error(e) or attempt == max_attempts - 1:
-                raise
-            wait = 2 ** attempt  # 1s, 2s, 4s, ...
-            print(f"  ⏳ Transient LLM error ({str(e)[:120]}). "
-                  f"Retry {attempt + 1}/{max_attempts - 1} in {wait}s...")
-            time.sleep(wait)
-    raise last_err
 
 
 class GemmaAgent:
@@ -887,6 +861,7 @@ async def main_cli(url: str, api_key: str, model: str = 'gemma-3-27b-it', max_re
     _ensure_dirs()
     agent = GemmaAgent(api_key, model)
 
+    reset_token_usage()
     print(f"⏳ Fetching page structure from {url}...", flush=True)
     html_content, structural_map = await fetch_page_structure(url)
 
@@ -936,7 +911,8 @@ async def main_cli(url: str, api_key: str, model: str = 'gemma-3-27b-it', max_re
                 "status": "ok",
                 "code_file": gen_code_filename,
                 "output_file": output_filename,
-                "data": result
+                "data": result,
+                "token_usage": get_token_usage()
             }), flush=True)
             return
         else:

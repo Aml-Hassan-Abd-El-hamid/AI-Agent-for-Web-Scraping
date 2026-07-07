@@ -31,6 +31,8 @@ import re as _re
 from urllib.parse import urljoin, urlparse
 
 import google.generativeai as genai
+import requests
+from bs4 import BeautifulSoup
 from playwright.async_api import async_playwright
 
 # Reuse utilities from Agent_for_single_page_gemma
@@ -38,26 +40,83 @@ from Agent_for_single_page_gemma import (
     fetch_page_structure,
     execute_extraction_code,
     list_available_models,
+    create_structural_map as _sp_create_structural_map,
 )
+
+# Challenge detection shared with the Cloudflare-resistant fetch, so the fast
+# requests path rejects the same bot/challenge pages the browser path does.
+from Links_Agent_gemma_cloudflare import _is_challenge_page as _cf_is_challenge_page
+
+# Shared standard-library helpers.
+from utils import is_na_value, token_usage_from_response
 
 # --- Configuration ---
 LINKS_AGENT_SCRIPT = "Links_Agent_gemma_cloudflare.py" #"Links_Agent_gemma.py"
 AGENT_SCRIPT = "Agent_for_single_page_gemma.py"
+
+# Price per 1M tokens (USD) used only to show an *indicative* cost in results.md.
+# Adjust to your provider's real rate. Defaults are a Gemini-class estimate;
+# Gemma on Google AI Studio is currently free, so treat this as a paper figure.
+LLM_PRICE_PER_1M_INPUT = 0.075
+LLM_PRICE_PER_1M_OUTPUT = 0.30
 
 # Running count of LLM generation calls made during a run (links agent,
 # per-cluster article agent, and pagination-pattern LLM fallback). Used for
 # the stats written to results.md. Reset at the start of each main() run.
 _LLM_CALLS = 0
 
+# Breakdown of LLM calls by which agent / purpose triggered them, so results.md
+# can show e.g. "4 LLM calls: 3 Links agent, 1 Article agent".
+_LLM_CALLS_BY_AGENT = {}
+
 
 def _reset_llm_calls():
-    global _LLM_CALLS
+    global _LLM_CALLS, _LLM_CALLS_BY_AGENT
     _LLM_CALLS = 0
+    _LLM_CALLS_BY_AGENT = {}
 
 
-def _bump_llm_calls(n=1):
+def _bump_llm_calls(n=1, agent="Other"):
     global _LLM_CALLS
     _LLM_CALLS += n
+    _LLM_CALLS_BY_AGENT[agent] = _LLM_CALLS_BY_AGENT.get(agent, 0) + n
+
+
+# Token usage aggregated across every agent/LLM call in a run, broken down by
+# which agent spent them. Reset at the start of each main() run.
+_TOKENS_BY_AGENT = {}
+
+
+def _reset_tokens():
+    global _TOKENS_BY_AGENT
+    _TOKENS_BY_AGENT = {}
+
+
+def _bump_tokens(agent, usage):
+    """Add a {prompt, candidates, total} usage dict to *agent*'s running total."""
+    if not usage:
+        return
+    slot = _TOKENS_BY_AGENT.setdefault(
+        agent, {"prompt": 0, "candidates": 0, "total": 0})
+    slot["prompt"] += usage.get("prompt", 0) or 0
+    slot["candidates"] += usage.get("candidates", 0) or 0
+    slot["total"] += usage.get("total", 0) or 0
+
+
+# How each article's HTML was ultimately fetched. Reset at the start of each
+# main() run and reported in results.md so we can see how often the fast
+# plain-requests path was used vs. the slower browser fallback.
+_FETCH_VIA = {"requests": 0, "browser": 0}
+
+
+def _reset_fetch_via():
+    global _FETCH_VIA
+    _FETCH_VIA = {"requests": 0, "browser": 0}
+
+
+def _bump_fetch_via(via):
+    if via in _FETCH_VIA:
+        _FETCH_VIA[via] += 1
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -146,8 +205,10 @@ def call_links_agent_cli(url, api_key, model="gemma-3-27b-it"):
         "--model", model,
     ]
     print(f"  🔧 Calling: python {LINKS_AGENT_SCRIPT} --url {url[:80]}...")
-    _bump_llm_calls()
-    return _call_agent_subprocess(cmd, timeout=300)
+    _bump_llm_calls(agent="Links agent")
+    ok, result = _call_agent_subprocess(cmd, timeout=300)
+    _bump_tokens("Links agent", result.get("token_usage"))
+    return ok, result
 
 
 def call_agent_cli(url, api_key, requirements, model="gemma-3-27b-it"):
@@ -160,8 +221,10 @@ def call_agent_cli(url, api_key, requirements, model="gemma-3-27b-it"):
         "--model", model,
     ]
     print(f"  🔧 Calling: python {AGENT_SCRIPT} --url {url[:80]}...")
-    _bump_llm_calls()
-    return _call_agent_subprocess(cmd, timeout=300)
+    _bump_llm_calls(agent="Article agent")
+    ok, result = _call_agent_subprocess(cmd, timeout=300)
+    _bump_tokens("Article agent", result.get("token_usage"))
+    return ok, result
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -283,7 +346,8 @@ Respond with ONLY the JSON object.
             response_mime_type="application/json",
         )
         response = llm.generate_content(prompt, generation_config=gen_config)
-        _bump_llm_calls()
+        _bump_llm_calls(agent="Pagination pattern")
+        _bump_tokens("Pagination pattern", token_usage_from_response(response))
         raw = response.text
         if not raw:
             print(f"    ⚠️  LLM returned empty response.")
@@ -441,34 +505,125 @@ def process_page_articles(articles_with_maps, cluster_registry,
 # Helper: fetch articles, build structural maps
 # ═══════════════════════════════════════════════════════════════
 
-async def fetch_articles(article_links, label=""):
-    """Fetch HTML + structural maps for a list of {url, title} dicts."""
+# How many articles to fetch at the same time. Kept low (2) to stay polite and
+# avoid tripping rate-limiting / Cloudflare on the target site.
+ARTICLE_FETCH_CONCURRENCY = 2
+
+# Minimum HTML size for a plain-requests result to be trusted. Smaller responses
+# are usually JS shells or block pages, so we fall back to the browser.
+_MIN_REQUESTS_HTML_BYTES = 2000
+
+_REQUESTS_HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+                  '(KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36',
+    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+    'Accept-Language': 'ar,en-US;q=0.9,en;q=0.8',
+    'Connection': 'keep-alive',
+    'Upgrade-Insecure-Requests': '1',
+}
+
+
+def _quick_requests_fetch(url):
+    """Single fast plain-HTTP attempt. Returns HTML or None.
+
+    Returns None (so the caller falls back to the browser) when the request
+    fails, returns a Cloudflare/bot challenge, or doesn't look like real HTML.
+    """
+    try:
+        resp = requests.get(url, headers=_REQUESTS_HEADERS, timeout=20)
+        resp.raise_for_status()
+        html = resp.text
+    except Exception:
+        return None
+
+    if not html or len(html) < _MIN_REQUESTS_HTML_BYTES:
+        return None
+    if _cf_is_challenge_page(html):
+        return None
+    lowered = html.lower()
+    if not any(tag in lowered for tag in ('<html', '<body', '<article', '<div')):
+        return None
+    return html
+
+
+async def _fetch_one_article(link):
+    """Fetch a single article: try plain HTTP first, fall back to the browser.
+
+    Returns (item_dict_or_None, failure_dict_or_None).
+    """
+    url = link["url"]
+    title = link.get("title", "")
+
+    # ── Fast path: plain requests (runs in a thread; it's blocking) ──
+    html_content = await asyncio.to_thread(_quick_requests_fetch, url)
+    structural_map = None
+    via = "requests"
+
+    if html_content:
+        soup = BeautifulSoup(html_content, "lxml")
+        structural_map = _sp_create_structural_map(soup.body if soup.body else soup)
+
+    # ── Fallback: full Cloudflare-resistant browser fetch ──
+    if not html_content or not structural_map:
+        via = "browser"
+        html_content, structural_map = await fetch_page_structure(url)
+
+    if html_content and structural_map:
+        return {
+            "url": url,
+            "title": title,
+            "html_content": html_content,
+            "structural_map": structural_map,
+            "_via": via,
+        }, None
+
+    return None, {"url": url, "title": title, "reason": "Empty response"}
+
+
+async def fetch_articles(article_links, label="", concurrency=ARTICLE_FETCH_CONCURRENCY):
+    """Fetch HTML + structural maps for a list of {url, title} dicts.
+
+    Uses a plain-requests-first strategy with a browser fallback, run with
+    bounded concurrency (default 2) to speed up large batches while staying
+    polite to the target site.
+    """
+    total = len(article_links)
+    sem = asyncio.Semaphore(concurrency)
+    results = [None] * total
+    done = {"n": 0}
+
+    async def worker(idx, link):
+        async with sem:
+            try:
+                item, failure = await _fetch_one_article(link)
+            except Exception as e:
+                tb = traceback.format_exc()
+                item, failure = None, {
+                    "url": link["url"], "title": link.get("title", ""),
+                    "reason": f"{e}\n{tb}",
+                }
+            done["n"] += 1
+            n = done["n"]
+            ttl = link.get("title", "")[:50]
+            if item:
+                _bump_fetch_via(item["_via"])
+                print(f"  [{n}/{total}]{label} ✓ {ttl} "
+                      f"({len(item['html_content'])} bytes via {item['_via']})")
+            else:
+                print(f"  [{n}/{total}]{label} ❌ {ttl}: "
+                      f"{failure['reason'].splitlines()[0][:80]}")
+            results[idx] = (item, failure)
+
+    await asyncio.gather(*(worker(i, l) for i, l in enumerate(article_links)))
+
     articles_with_maps = []
     fetch_failures = []
-    total = len(article_links)
-
-    for i, link in enumerate(article_links):
-        url = link["url"]
-        title = link.get("title", "")
-        print(f"  [{i+1}/{total}]{label} Fetching: {title[:50]}...")
-
-        try:
-            html_content, structural_map = await fetch_page_structure(url)
-            if html_content and structural_map:
-                articles_with_maps.append({
-                    "url": url,
-                    "title": title,
-                    "html_content": html_content,
-                    "structural_map": structural_map,
-                })
-                print(f"    ✓ OK ({len(html_content)} bytes)")
-            else:
-                fetch_failures.append({"url": url, "title": title, "reason": "Empty response"})
-                print(f"    ❌ Empty response")
-        except Exception as e:
-            tb = traceback.format_exc()
-            fetch_failures.append({"url": url, "title": title, "reason": f"{e}\n{tb}"})
-            print(f"    ❌ {e}\n{tb}")
+    for item, failure in results:
+        if item:
+            item.pop("_via", None)
+            articles_with_maps.append(item)
+        elif failure:
+            fetch_failures.append(failure)
 
     return articles_with_maps, fetch_failures
 
@@ -611,6 +766,38 @@ async def collect_listing_html(url, mode="scroll", max_rounds=20,
 # Stats reporting → results.md (appended once per run for the paper)
 # ═══════════════════════════════════════════════════════════════
 
+def _field_na_stats(all_extracted):
+    """Count missing/N/A values per field across all extracted articles.
+
+    Returns (total_articles, [(field, na_count, total, percent), ...]).
+    A field absent from an article's data counts as missing for that field.
+    """
+    total = len(all_extracted)
+    if total == 0:
+        return 0, []
+
+    fields = []            # union of field names, in first-seen order
+    seen = set()
+    for item in all_extracted:
+        data = item.get("data") or {}
+        if isinstance(data, dict):
+            for k in data.keys():
+                if k not in seen:
+                    seen.add(k)
+                    fields.append(k)
+
+    stats = []
+    for f in fields:
+        na = 0
+        for item in all_extracted:
+            data = item.get("data") or {}
+            if (not isinstance(data, dict) or f not in data
+                    or is_na_value(data.get(f))):
+                na += 1
+        stats.append((f, na, total, 100.0 * na / total))
+    return total, stats
+
+
 def write_results_md(stats, path="results.md"):
     """Append a per-run results section to results.md for later analysis."""
     header_needed = not os.path.exists(path)
@@ -642,7 +829,72 @@ def write_results_md(stats, path="results.md"):
     lines.append(f"- **Articles failed:** {stats.get('articles_failed', 0)}")
     lines.append(f"- **Clusters (unique structures):** {stats.get('clusters', 0)}")
     lines.append(f"- **LLM calls:** {stats.get('llm_calls', 0)}")
+
+    # ── Which agent made each LLM call ──
+    llm_by_agent = stats.get("llm_calls_by_agent") or {}
+    if llm_by_agent:
+        for agent, cnt in sorted(llm_by_agent.items(), key=lambda kv: (-kv[1], kv[0])):
+            lines.append(f"  - {agent}: {cnt}")
+
+    # ── Cost-efficiency: LLM calls per article & code-reuse rate ──
+    n_extracted = stats.get("articles_extracted", 0) or 0
+    if n_extracted:
+        per_article = stats.get("llm_calls", 0) / n_extracted
+        lines.append(f"- **LLM calls per article:** {per_article:.2f}")
+        # Each new cluster costs one Article-agent generation; the rest reuse it.
+        article_gen = llm_by_agent.get("Article agent", 0)
+        reused = max(n_extracted - article_gen, 0)
+        reuse_pct = 100.0 * reused / n_extracted
+        lines.append(
+            f"- **Code reuse rate:** {reused}/{n_extracted} articles "
+            f"reused cluster code ({reuse_pct:.0f}%)"
+        )
+
+    # ── Token usage & estimated cost ──
+    tokens_by_agent = stats.get("tokens_by_agent") or {}
+    if tokens_by_agent:
+        tot_prompt = sum(v.get("prompt", 0) for v in tokens_by_agent.values())
+        tot_out = sum(v.get("candidates", 0) for v in tokens_by_agent.values())
+        tot_all = sum(v.get("total", 0) for v in tokens_by_agent.values())
+        lines.append(
+            f"- **Tokens:** {tot_all:,} total "
+            f"({tot_prompt:,} prompt + {tot_out:,} output)"
+        )
+        for agent, v in sorted(tokens_by_agent.items(),
+                               key=lambda kv: -kv[1].get("total", 0)):
+            lines.append(f"  - {agent}: {v.get('total', 0):,} tokens")
+        cost = (tot_prompt / 1_000_000 * LLM_PRICE_PER_1M_INPUT
+                + tot_out / 1_000_000 * LLM_PRICE_PER_1M_OUTPUT)
+        lines.append(
+            f"- **Estimated cost:** ${cost:.4f} "
+            f"(at ${LLM_PRICE_PER_1M_INPUT}/${LLM_PRICE_PER_1M_OUTPUT} "
+            f"per 1M input/output tokens)"
+        )
+        if n_extracted:
+            per_1k = cost / n_extracted * 1000
+            lines.append(f"- **Estimated cost per 1,000 articles:** ${per_1k:.4f}")
+
     lines.append(f"- **Total time:** {mins}m {secs}s")
+
+    # ── Fetch method breakdown (fast requests vs. browser fallback) ──
+    fetch_via = stats.get("fetch_via") or {}
+    req_n = fetch_via.get("requests", 0)
+    br_n = fetch_via.get("browser", 0)
+    if req_n or br_n:
+        total_fetch = req_n + br_n
+        req_pct = 100.0 * req_n / total_fetch
+        br_pct = 100.0 * br_n / total_fetch
+        lines.append(
+            f"- **Fetch method:** {req_n} via requests ({req_pct:.0f}%), "
+            f"{br_n} via browser ({br_pct:.0f}%)"
+        )
+
+    # ── Missing / N/A audit of the extracted data ──
+    total_arts, na_stats = _field_na_stats(stats.get("extracted_data") or [])
+    if na_stats:
+        lines.append(f"- **Missing/N/A values (of {total_arts} extracted):**")
+        for field, na, tot, pct in na_stats:
+            lines.append(f"  - `{field}`: {na}/{tot} N/A ({pct:.0f}%)")
 
     if errors:
         lines.append(f"- **Errors ({len(errors)}):**")
@@ -672,6 +924,8 @@ async def main():
     print("=" * 60)
 
     _reset_llm_calls()
+    _reset_fetch_via()
+    _reset_tokens()
     run_start = time.time()
     input_urls = []          # every URL the user supplied (for results.md)
     pagination_type = "single page"
@@ -781,7 +1035,11 @@ async def main():
             "articles_failed": len(all_failures),
             "clusters": len(cluster_registry),
             "llm_calls": _LLM_CALLS,
+            "llm_calls_by_agent": dict(_LLM_CALLS_BY_AGENT),
             "elapsed_seconds": time.time() - run_start,
+            "fetch_via": dict(_FETCH_VIA),
+            "tokens_by_agent": dict(_TOKENS_BY_AGENT),
+            "extracted_data": all_extracted,
             "errors": [f.get("reason", "") for f in all_failures],
         })
         return
@@ -928,7 +1186,10 @@ async def main():
             "requirements": requirements,
             "pages_requested": len(page_urls) + 1, "pages_processed": 0,
             "articles_extracted": 0, "articles_failed": 0, "clusters": 0,
-            "llm_calls": _LLM_CALLS, "elapsed_seconds": time.time() - run_start,
+            "llm_calls": _LLM_CALLS,
+            "llm_calls_by_agent": dict(_LLM_CALLS_BY_AGENT),
+            "tokens_by_agent": dict(_TOKENS_BY_AGENT),
+            "elapsed_seconds": time.time() - run_start,
             "errors": [f"Links extraction failed: {error_msg}"],
         })
         return
@@ -946,7 +1207,10 @@ async def main():
             "requirements": requirements,
             "pages_requested": len(page_urls) + 1, "pages_processed": 0,
             "articles_extracted": 0, "articles_failed": 0, "clusters": 0,
-            "llm_calls": _LLM_CALLS, "elapsed_seconds": time.time() - run_start,
+            "llm_calls": _LLM_CALLS,
+            "llm_calls_by_agent": dict(_LLM_CALLS_BY_AGENT),
+            "tokens_by_agent": dict(_TOKENS_BY_AGENT),
+            "elapsed_seconds": time.time() - run_start,
             "errors": ["No article links found on page 1"],
         })
         return
@@ -1123,7 +1387,11 @@ async def main():
         "articles_failed": len(all_failures),
         "clusters": len(cluster_registry),
         "llm_calls": _LLM_CALLS,
+        "llm_calls_by_agent": dict(_LLM_CALLS_BY_AGENT),
         "elapsed_seconds": time.time() - run_start,
+        "fetch_via": dict(_FETCH_VIA),
+        "tokens_by_agent": dict(_TOKENS_BY_AGENT),
+        "extracted_data": all_extracted,
         "errors": [f.get("reason", "") for f in all_failures],
     })
 

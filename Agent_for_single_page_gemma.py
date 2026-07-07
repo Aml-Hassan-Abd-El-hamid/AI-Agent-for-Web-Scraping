@@ -14,6 +14,9 @@ from urllib.parse import urljoin, urlparse
 # fallback). Reused so the single-page agent survives Cloudflare/bot challenges.
 from Links_Agent_gemma_cloudflare import fetch_page_structure as _robust_fetch_page_structure
 
+# Shared transient-error LLM retry helper (isolated in utils.py).
+from utils import _generate_with_retry, get_token_usage, reset_token_usage
+
 random_num = random.randint(10000, 99999)
 
 # --- Configuration ---
@@ -148,39 +151,7 @@ async def list_available_models(api_key: str) -> List[str]:
         print(f"⚠️  Could not list models: {e}")
         return []
 
-
-# Transient server-side errors worth retrying (Gemini 500/503, rate limits, etc.)
-_TRANSIENT_LLM_MARKERS = (
-    "500", "503", "internal error", "internal server", "overloaded",
-    "unavailable", "deadline", "timeout", "429", "rate limit", "resource exhausted",
-)
-
-
-def _is_transient_llm_error(err: Exception) -> bool:
-    msg = str(err).lower()
-    return any(marker in msg for marker in _TRANSIENT_LLM_MARKERS)
-
-
-def _generate_with_retry(model, prompt, max_attempts: int = 4):
-    """Call model.generate_content, retrying transient server errors with backoff.
-
-    Transient failures (e.g. 500 Internal error, 503 overloaded, rate limits)
-    are retried with exponential backoff. Non-transient errors are raised
-    immediately so the caller can surface the real problem.
-    """
-    last_err = None
-    for attempt in range(max_attempts):
-        try:
-            return model.generate_content(prompt)
-        except Exception as e:
-            last_err = e
-            if not _is_transient_llm_error(e) or attempt == max_attempts - 1:
-                raise
-            wait = 2 ** attempt  # 1s, 2s, 4s, ...
-            print(f"  ⏳ Transient LLM error ({str(e)[:120]}). "
-                  f"Retry {attempt + 1}/{max_attempts - 1} in {wait}s...")
-            time.sleep(wait)
-    raise last_err
+    return html_content, structural_map
 
 
 class GemmaAgent:
@@ -719,6 +690,7 @@ async def main_cli(url: str, api_key: str, requirements: str, model: str = 'gemm
     """
     agent = GemmaAgent(api_key, model)
 
+    reset_token_usage()
     print(f"⏳ Fetching page structure from {url}...", flush=True)
     html_content, structural_map = await fetch_page_structure(url)
 
@@ -765,7 +737,8 @@ async def main_cli(url: str, api_key: str, requirements: str, model: str = 'gemm
                 "status": "ok",
                 "code_file": gen_code_filename,
                 "output_file": output_filename,
-                "data": result
+                "data": result,
+                "token_usage": get_token_usage()
             }), flush=True)
             return
         else:
