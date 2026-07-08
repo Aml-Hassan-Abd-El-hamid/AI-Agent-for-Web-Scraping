@@ -192,7 +192,7 @@ Tested on those domains:
   - https://acpss.ahram.org.eg/OuterWriter/28/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA/30.aspx
 - ❌ Mana معني
   a Cloudflare/bot challenge marker
-  - https://mana.net/category/articles/page/2/
+  - https://mana.net/category/articles/
   - https://mana.net/category/articles/page/2/
 - ✅ the Guardian 3 pages 
   - https://www.theguardian.com/world/gaza
@@ -212,17 +212,29 @@ Tested on those domains:
   error in errors.md
   - first page https://www.btselem.org/ota/100/all
   - second page https://www.btselem.org/ota/100/all?page=1
+- https://arabic.cnn.com/tag/gaza_strip
+  ✅ Successfully extracted: 260 articles
+- https://www.aljadeedmagazine.com/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA
+  -✅ **Articles extracted:** 1060
+  - **Articles failed:** 5
+- https://aawsat.com/%D8%A7%D9%84%D8%B1%D8%A3%D9%8A
+  -✅ **Articles extracted:** 693
+  - **Articles failed:** 2
+- https://www.arageek.com/tech
+  - ✅ **Articles extracted:** 385
+  - **Articles failed:** 0
+
 
 To be tested on:
 
 - Load more button pag:
-  - https://www.arageek.com/tech
-  - https://www.alarabiya.net/views
+  - 
+  - ❌ https://www.alarabiya.net/views issue with finding the "المزيد" button, it exists 4 times :)
   - 
 - Infinite scroll:
-  - https://arabic.cnn.com/tag/gaza_strip
-  - https://www.aljadeedmagazine.com/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA
-  - https://aawsat.com/%D8%A7%D9%84%D8%B1%D8%A3%D9%8A
+  - 
+  - 
+  - 
 
 - Numbered:
   - 

@@ -39,16 +39,16 @@ from playwright.async_api import async_playwright
 from Agent_for_single_page_gemma import (
     fetch_page_structure,
     execute_extraction_code,
-    list_available_models,
     create_structural_map as _sp_create_structural_map,
 )
 
-# Challenge detection shared with the Cloudflare-resistant fetch, so the fast
-# requests path rejects the same bot/challenge pages the browser path does.
-from Links_Agent_gemma_cloudflare import _is_challenge_page as _cf_is_challenge_page
-
-# Shared standard-library helpers.
-from utils import is_na_value, token_usage_from_response
+# Shared core: N/A + token helpers, model listing, and the challenge detector
+# used so the fast requests path rejects the same bot/challenge pages the
+# browser path does.
+from utils import (
+    is_na_value, token_usage_from_response, list_available_models,
+    _is_challenge_page as _cf_is_challenge_page,
+)
 
 # --- Configuration ---
 LINKS_AGENT_SCRIPT = "Links_Agent_gemma_cloudflare.py" #"Links_Agent_gemma.py"
@@ -197,7 +197,7 @@ def _call_agent_subprocess(cmd, timeout=300):
         return False, {"status": "error", "error": f"{e}\n{tb}"}
 
 def call_links_agent_cli(url, api_key, model="gemma-3-27b-it"):
-    """Call Links_Agent_gemma.py via subprocess in CLI mode."""
+    """Call Links_Agent_gemma_cloudflare.py via subprocess in CLI mode."""
     cmd = [
         sys.executable, LINKS_AGENT_SCRIPT,
         "--url", url,
@@ -920,9 +920,9 @@ def write_results_md(stats, path="results.md"):
 
 async def main():
     print("=" * 60)
-    print("🎯 ORCHESTRATOR — Numbered Pagination, Page-by-Page")
+    print("🎯 ORCHESTRATOR")
     print("=" * 60)
-
+    # defense, just in case we started calling main twice in the same process
     _reset_llm_calls()
     _reset_fetch_via()
     _reset_tokens()
@@ -970,81 +970,7 @@ async def main():
     os.makedirs(run_dir, exist_ok=True)
     print(f"\n📂 Run directory: {run_dir}")
 
-    # ── Step 1: Choose link source ───────────────────────────
-    print("\n How do you want to get article links?")
-    print("   [1] Extract from a listing page (calls Links_Agent_gemma.py)")
-    print("   [2] Load from an existing JSON file")
-    link_choice = input("   → ").strip()
-
-    if link_choice == "2":
-        # Load from file — no pagination, process as flat batch
-        input_file = input(
-            "\n📂 Enter JSON file path [Enter for extracted_data_pchrgaza_org.json]: "
-        ).strip() or "extracted_data_pchrgaza_org.json"
-
-        print(f"\n⏳ Loading links from {input_file}...")
-        with open(input_file, "r", encoding="utf-8") as f:
-            links_data = json.load(f)
-        article_links = links_data.get("article_links", [])
-        print(f"✓ Found {len(article_links)} article links")
-        input_urls.append(f"(file) {input_file}")
-        pagination_type = "from file"
-
-        if not article_links:
-            print("❌ No article links found!")
-            return
-
-        _atomic_json_write(os.path.join(run_dir, "input_links.json"), article_links)
-
-        requirements = input(
-            "\n📝 What data to extract from each article?\n"
-            "   (e.g., 'title, date, author, article body text')\n   → "
-        ).strip() or "title, date, author, article body text"
-
-        all_extracted = []
-        all_failures = []
-        cluster_registry = {}
-
-        print(f"\n⏳ Fetching structural maps for {len(article_links)} articles...")
-        arts, fails = await fetch_articles(article_links)
-        all_failures.extend(fails)
-
-        if arts:
-            ext, fl, cluster_registry = process_page_articles(
-                arts, cluster_registry, api_key, model, requirements,
-            )
-            all_extracted.extend(ext)
-            all_failures.extend(fl)
-
-        save_incremental(run_dir, all_extracted, all_failures, {
-            "status": "finished",
-            "extracted_count": len(all_extracted),
-            "failed_count": len(all_failures),
-        })
-        _print_summary(run_dir, all_extracted, all_failures)
-        write_results_md({
-            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "run_dir": run_dir,
-            "model": model,
-            "pagination_type": pagination_type,
-            "input_urls": input_urls,
-            "requirements": requirements,
-            "pages_requested": 1,
-            "pages_processed": 1,
-            "articles_extracted": len(all_extracted),
-            "articles_failed": len(all_failures),
-            "clusters": len(cluster_registry),
-            "llm_calls": _LLM_CALLS,
-            "llm_calls_by_agent": dict(_LLM_CALLS_BY_AGENT),
-            "elapsed_seconds": time.time() - run_start,
-            "fetch_via": dict(_FETCH_VIA),
-            "tokens_by_agent": dict(_TOKENS_BY_AGENT),
-            "extracted_data": all_extracted,
-            "errors": [f.get("reason", "") for f in all_failures],
-        })
-        return
-
-    # ── From here: listing-page flow ─────────────────────────
+    # ── Listing-page flow ────────────────────────────────────
     listing_url = input("\n🌐 Enter the listing page URL: ").strip()
     if not listing_url:
         print("❌ URL is required!")

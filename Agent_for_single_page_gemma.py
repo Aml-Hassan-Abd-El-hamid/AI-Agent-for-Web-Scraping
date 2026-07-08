@@ -10,12 +10,13 @@ from bs4 import BeautifulSoup
 import google.generativeai as genai
 from urllib.parse import urljoin, urlparse
 
-# Robust, Cloudflare-resistant page fetch (stealth browser + headed + requests
-# fallback). Reused so the single-page agent survives Cloudflare/bot challenges.
-from Links_Agent_gemma_cloudflare import fetch_page_structure as _robust_fetch_page_structure
-
-# Shared transient-error LLM retry helper (isolated in utils.py).
-from utils import _generate_with_retry, get_token_usage, reset_token_usage
+# Cloudflare-resistant page fetch lives in the shared core (utils), so this
+# agent no longer depends on the Links agent.
+from utils import (
+    _generate_with_retry, get_token_usage, reset_token_usage,
+    list_available_models,
+    fetch_page_structure as _utils_fetch_page_structure,
+)
 
 random_num = random.randint(10000, 99999)
 
@@ -118,42 +119,16 @@ def create_structural_map(soup: BeautifulSoup, depth: int = 0) -> List[Dict]:
 
 
 async def fetch_page_structure(url: str) -> Tuple[Optional[str], Optional[List[Dict]]]:
-    """Fetch HTML (Cloudflare-resistant) and generate structural map.
+    """Fetch an article page (Cloudflare-resistant) and build its structural map.
 
-    Delegates the actual fetch to the robust collector from
-    Links_Agent_gemma_cloudflare (stealth headless → headed → plain HTTP),
-    then rebuilds the structural map with this module's content-tuned
-    create_structural_map so the single-page extraction prompt is unchanged.
+    Thin wrapper over utils.fetch_page_structure that passes this module's
+    content-tuned create_structural_map, so the single-page extraction prompt
+    is unchanged.
     """
-    html_content, _ = await _robust_fetch_page_structure(url)
-
-    if not html_content:
-        return None, None
-
-    soup = BeautifulSoup(html_content, 'lxml')
-    structural_map = create_structural_map(soup.body if soup.body else soup)
-
-    return html_content, structural_map
+    return await _utils_fetch_page_structure(url, create_structural_map)
 
 
 # --- LLM Integration ---
-async def list_available_models(api_key: str) -> List[str]:
-    """List all available Gemini models."""
-    try:
-        genai.configure(api_key=api_key)
-        models = genai.list_models()
-        available = []
-        for model in models:
-            if 'generateContent' in model.supported_generation_methods:
-                available.append(model.name)
-        return available
-    except Exception as e:
-        print(f"⚠️  Could not list models: {e}")
-        return []
-
-    return html_content, structural_map
-
-
 class GemmaAgent:
     """LLM agent using Gemma's prompt format with few-shot examples."""
 
