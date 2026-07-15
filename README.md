@@ -206,7 +206,7 @@ Tested on those domains:
 - btselem
   No cloudflare issue
   ✅ Successfully extracted: 31 articles
-  ❌ Failed: 5 articles
+  ❌ Failed: 5 articles all those files are videos :)
   run is in orch_runs/run_20260627_200110/
   12 articles out of 30 articles got N/A in the body
   error in errors.md
@@ -223,6 +223,9 @@ Tested on those domains:
 - https://www.arageek.com/tech
   - ✅ **Articles extracted:** 385
   - **Articles failed:** 0
+- https://www.independentarabia.com/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7
+  - ✅ **Articles extracted:** 136
+  - **Articles failed:** 0
 
 
 To be tested on:
@@ -230,10 +233,14 @@ To be tested on:
 - Load more button pag:
   - 
   - ❌ https://www.alarabiya.net/views issue with finding the "المزيد" button, it exists 4 times :)
+  - https://www.majalla.com/sections/%D8%B3%D9%8A%D8%A7%D8%B3%D8%A9
+  - https://lakome2.com/category/art/
   - 
+  - 
+  -
 - Infinite scroll:
   - 
-  - 
+  - https://eg.afedne.com/global-blogs/1/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1_%D9%85%D8%B5%D8%B1
   - 
 
 - Numbered:

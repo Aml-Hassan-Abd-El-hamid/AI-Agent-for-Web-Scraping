@@ -18,3 +18,9 @@ Notes.md
 Gemma_extracted_*
 *.pyc
 
+
+# SWDE benchmark data (large, do not commit)
+swde_data/
+swde_download/
+swde_prepared/
+swde_pred/

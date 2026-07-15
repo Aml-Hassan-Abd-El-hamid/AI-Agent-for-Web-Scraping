@@ -379,3 +379,189 @@ Auto-generated stats, one section per orchestrator run.
   - `article body text`: 0/6 N/A (0%)
 - **Errors:** none
 
+---------------new version------------
+
+
+## Run 2026-07-08 13:45:43
+
+- **Run directory:** `orch_runs/run_20260708_133946`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** numbered pagination
+- **Input URLs:**
+  - https://mana.net/category/articles/
+  - https://mana.net/category/articles/page/2/
+- **Requirements:** 'title, date, author, article body text'
+- **Pages requested:** 3
+- **Pages processed:** 3
+- **Articles extracted:** 1
+- **Articles failed:** 0
+- **Clusters (unique structures):** 1
+- **LLM calls:** 2
+  - Article agent: 1
+  - Links agent: 1
+- **LLM calls per article:** 2.00
+- **Code reuse rate:** 0/1 articles reused cluster code (0%)
+- **Tokens:** 75,667 total (66,781 prompt + 1,229 output)
+  - Links agent: 54,291 tokens
+  - Article agent: 21,376 tokens
+- **Estimated cost:** $0.0054 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $5.3773
+- **Total time:** 6m 10s
+- **Fetch method:** 1 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 1 extracted):**
+  - `title`: 1/1 N/A (100%)
+  - `date`: 0/1 N/A (0%)
+  - `author`: 1/1 N/A (100%)
+  - `article body text`: 0/1 N/A (0%)
+- **Errors:** none
+
+
+## Run 2026-07-11 01:28:32
+
+- **Run directory:** `orch_runs/run_20260711_012244`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** numbered pagination
+- **Input URLs:**
+  - https://mana.net/category/articles/
+  - https://mana.net/category/articles/page/2/
+- **Requirements:** 'title, date, author, article body text'
+- **Pages requested:** 3
+- **Pages processed:** 3
+- **Articles extracted:** 30
+- **Articles failed:** 0
+- **Clusters (unique structures):** 2
+- **LLM calls:** 3
+  - Article agent: 2
+  - Links agent: 1
+- **LLM calls per article:** 0.10
+- **Code reuse rate:** 28/30 articles reused cluster code (93%)
+- **Tokens:** 73,977 total (66,779 prompt + 1,010 output)
+  - Article agent: 47,292 tokens
+  - Links agent: 26,685 tokens
+- **Estimated cost:** $0.0053 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.1770
+- **Total time:** 5m 59s
+- **Fetch method:** 30 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 30 extracted):**
+  - `title`: 0/30 N/A (0%)
+  - `date`: 0/30 N/A (0%)
+  - `author`: 0/30 N/A (0%)
+  - `article body text`: 0/30 N/A (0%)
+- **Errors:** none
+
+
+## Run 2026-07-15 23:15:31
+
+- **Run directory:** `orch_runs/run_20260715_231408`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** infinite scroll
+- **Input URLs:**
+  - https://www.independentarabia.com/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7
+- **Requirements:** 'title, date, author, article body text'
+- **Pages requested:** 1
+- **Pages processed:** 0
+- **Articles extracted:** 0
+- **Articles failed:** 0
+- **Clusters (unique structures):** 0
+- **LLM calls:** 1
+  - Links agent: 1
+- **Total time:** 1m 44s
+- **Errors (1):**
+  - Links extraction failed: All 3 attempt(s) failed. Last error: LLM ERROR: Error generating code: 429 You exceeded your current quota, please check your plan and billing details. For more information on
+
+
+## Run 2026-07-15 23:21:49
+
+- **Run directory:** `orch_runs/run_20260715_231912`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** infinite scroll
+- **Input URLs:**
+  - https://www.independentarabia.com/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7
+- **Requirements:** 'title, date, author, article body text'
+- **Pages requested:** 1
+- **Pages processed:** 0
+- **Articles extracted:** 0
+- **Articles failed:** 0
+- **Clusters (unique structures):** 0
+- **LLM calls:** 1
+  - Links agent: 1
+- **Total time:** 2m 52s
+- **Errors (1):**
+  - Links extraction failed: All 3 attempt(s) failed. Last error: LLM ERROR: Error generating code: 429 You exceeded your current quota, please check your plan and billing details. For more information on
+
+
+## Run 2026-07-16 02:16:03
+
+- **Run directory:** `orch_runs/run_20260716_020819`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** infinite scroll
+- **Input URLs:**
+  - https://www.independentarabia.com/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7
+- **Requirements:** 'title, date, author, article body text'
+- **Pages requested:** 1
+- **Pages processed:** 1
+- **Articles extracted:** 136
+- **Articles failed:** 0
+- **Clusters (unique structures):** 1
+- **LLM calls:** 2
+  - Article agent: 1
+  - Links agent: 1
+- **LLM calls per article:** 0.01
+- **Code reuse rate:** 135/136 articles reused cluster code (99%)
+- **Tokens:** 25,143 total (19,394 prompt + 755 output)
+  - Links agent: 15,565 tokens
+  - Article agent: 9,578 tokens
+- **Estimated cost:** $0.0017 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.0124
+- **Total time:** 7m 51s
+- **Fetch method:** 136 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 136 extracted):**
+  - `title`: 0/136 N/A (0%)
+  - `date`: 0/136 N/A (0%)
+  - `author`: 0/136 N/A (0%)
+  - `article body text`: 0/136 N/A (0%)
+- **Errors:** none
+
+
+## Run 2026-07-16 02:44:46
+
+- **Run directory:** `orch_runs/run_20260716_021841`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** numbered pagination
+- **Input URLs:**
+  - https://www.btselem.org/ota/100/all
+  - https://www.btselem.org/ota/100/all?page=1
+- **Requirements:** 'title, date, author, article body text'
+- **Pages requested:** 4
+- **Pages processed:** 4
+- **Articles extracted:** 47
+- **Articles failed:** 1
+- **Clusters (unique structures):** 5
+- **LLM calls:** 7
+  - Article agent: 6
+  - Links agent: 1
+- **LLM calls per article:** 0.15
+- **Code reuse rate:** 41/47 articles reused cluster code (87%)
+- **Tokens:** 52,619 total (42,805 prompt + 1,700 output)
+  - Article agent: 38,194 tokens
+  - Links agent: 14,425 tokens
+- **Estimated cost:** $0.0037 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.0792
+- **Structural-map depth:** 6 agent call(s), 0 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 10 (~12,352 input tokens)
+  - Article agent: depth 10 (~4,932 input tokens)
+  - Article agent: depth 10 (~4,399 input tokens)
+  - Article agent: depth 10 (~7,222 input tokens)
+  - Article agent: depth 10 (~6,654 input tokens)
+  - Article agent: depth 10 (~7,240 input tokens)
+- **Total time:** 26m 11s
+- **Fetch method:** 1 via requests (2%), 47 via browser (98%)
+- **Missing/N/A values (of 47 extracted):**
+  - `title`: 0/47 N/A (0%)
+  - `date`: 2/47 N/A (4%)
+  - `author`: 47/47 N/A (100%)
+  - `article body text`: 30/47 N/A (64%)
+  - `article_body_text`: 32/47 N/A (68%)
+- **Errors (1):**
+  - Agent failed on new cluster representative: All 1 attempt(s) failed. Last error: LLM ERROR: Error generating code: 429 You exceeded your current quota, please check your plan and billing details. For 
+

@@ -8,6 +8,7 @@ helpers. Each agent supplies its own `create_structural_map` to
 `fetch_page_structure` via the `map_fn` argument, since the two agents build
 structural maps differently.
 """
+import json
 import time
 import traceback
 from typing import Callable, Dict, List, Optional, Tuple
@@ -17,6 +18,67 @@ import google.generativeai as genai
 from bs4 import BeautifulSoup
 from playwright.async_api import async_playwright
 from urllib.parse import urlparse
+
+
+# ─────────────────────────────────────────────────────────────
+# Prompt-size / token budgeting
+# ─────────────────────────────────────────────────────────────
+# Room left for the model's own output when comparing against the context
+# window.
+OUTPUT_TOKEN_RESERVE = 1024
+
+# Default per-request input-token budget. Google's free tier caps input tokens
+# at ~16k per model *per minute* and does NOT expose that quota through the API,
+# so this stays a configurable number (with headroom). Raise it on paid tiers
+# or larger models.
+DEFAULT_INPUT_TOKEN_BUDGET = 15000
+
+
+def estimate_tokens(text: str) -> int:
+    """Cheap, dependency-free token estimate used only as a fallback for
+    count_tokens(). Conservative for non-ASCII scripts (e.g. Arabic), where the
+    usual ~4-chars/token rule underestimates: each non-ASCII char counts as ~1
+    token so we never under-budget."""
+    if not text:
+        return 1
+    ascii_n = sum(1 for c in text if ord(c) < 128)
+    return max(1, ascii_n // 4 + (len(text) - ascii_n))
+
+
+def count_tokens(model, text: str) -> int:
+    """Exact prompt token count via the model's own tokenizer.
+
+    Uses the separate countTokens endpoint, which does NOT consume the
+    generateContent input-token quota, so it is safe to call before generating.
+    Falls back to estimate_tokens() if the call fails (offline, quota, etc.).
+    """
+    try:
+        return int(model.count_tokens(text).total_tokens)
+    except Exception:
+        return estimate_tokens(text)
+
+
+def model_context_limit(model_name: str):
+    """Best-effort input context-window size for *model_name* from the API's
+    model metadata, or None if it can't be determined (so the caller can fall
+    back to the configured per-request budget instead of over-shrinking)."""
+    try:
+        name = model_name if model_name.startswith("models/") else "models/" + model_name
+        info = genai.get_model(name)
+        limit = getattr(info, "input_token_limit", None)
+        return int(limit) if limit else None
+    except Exception:
+        return None
+
+
+def input_token_budget(model_name: str, max_input_tokens: int = DEFAULT_INPUT_TOKEN_BUDGET) -> int:
+    """Effective per-request input-token budget: the smaller of the configured
+    rate-quota budget and the model's context window (minus an output reserve).
+    When the context window is unknown, the configured budget rules."""
+    ctx = model_context_limit(model_name)
+    if not ctx:
+        return max_input_tokens
+    return min(max_input_tokens, max(1000, ctx - OUTPUT_TOKEN_RESERVE))
 
 # Transient server-side errors worth retrying (Gemini 500/503, rate limits, etc.)
 _TRANSIENT_LLM_MARKERS = (

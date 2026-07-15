@@ -16,6 +16,7 @@ from utils import (
     _generate_with_retry, get_token_usage, reset_token_usage,
     list_available_models,
     fetch_page_structure as _utils_fetch_page_structure,
+    count_tokens, input_token_budget, DEFAULT_INPUT_TOKEN_BUDGET,
 )
 
 random_num = random.randint(10000, 99999)
@@ -25,6 +26,7 @@ TARGET_TAGS = ['div', 'section', 'article', 'main', 'header', 'footer', 'nav',
                'ul', 'ol', 'li', 'a', 'h1', 'h2', 'h3', 'h4', 'p', 'span',
                'table', 'tr', 'td', 'th', 'figure', 'figcaption', 'time', 'img']
 MAX_DEPTH = 10
+MIN_MAP_DEPTH = 3      # floor when shrinking a too-large map to fit the token budget
 MAX_RETRIES = 3
 
 # Output folders
@@ -88,9 +90,15 @@ _FEW_SHOT_CODE = '''def extract_data(html_content):
     return data'''
 
 # --- Structural Map Generation ---
-def create_structural_map(soup: BeautifulSoup, depth: int = 0) -> List[Dict]:
-    """Recursively generates a simplified, nested structural map of the HTML."""
-    if depth >= MAX_DEPTH:
+def create_structural_map(soup: BeautifulSoup, depth: int = 0, max_depth: int = None) -> List[Dict]:
+    """Recursively generates a simplified, nested structural map of the HTML.
+
+    *max_depth* defaults to MAX_DEPTH; callers pass a smaller value to shrink an
+    over-large map so the prompt fits the input-token budget.
+    """
+    if max_depth is None:
+        max_depth = MAX_DEPTH
+    if depth >= max_depth:
         return []
 
     structure = []
@@ -106,7 +114,7 @@ def create_structural_map(soup: BeautifulSoup, depth: int = 0) -> List[Dict]:
             node = {
                 'tag': child.name.lower(),
                 'attributes': attributes,
-                'children': create_structural_map(child, depth + 1)
+                'children': create_structural_map(child, depth + 1, max_depth)
             }
             
             if not node['children'] and child.text and len(child.text.strip()) > 5:
@@ -138,12 +146,11 @@ class GemmaAgent:
         self.conversation_history = []
         self.model_name = model_name
     
-    def generate_extraction_code(self, structural_map: str, user_requirements: str = "", page_url: str = "", error_context: Optional[str] = None) -> str:
-        """Generate Python extraction code using Gemma's prompt format with few-shot learning."""
-
+    def _build_prompt(self, structural_map: str, user_requirements: str = "", page_url: str = "", error_context: Optional[str] = None) -> str:
+        """Assemble the Gemma prompt (shared by code generation and token counting)."""
         if not error_context:
             # ── Few-shot turn 1: teach the pattern ──────────────
-            prompt = f"""<start_of_turn>user
+            return f"""<start_of_turn>user
 You are a Python web-scraping expert. You will receive an HTML structural map (JSON), a target URL, and user requirements describing what data to extract. Your job is to write a single Python function called `extract_data(html_content)` that extracts the requested data from the page.
 
 Rules you MUST follow:
@@ -188,7 +195,7 @@ Write only the Python function. No explanation, no imports.
 """
         else:
             # ── Retry turn: include the error ──────────────────
-            prompt = f"""<start_of_turn>user
+            return f"""<start_of_turn>user
 You are a Python web-scraping expert. Your previous code failed. Fix it.
 
 Here is a working example for reference:
@@ -223,6 +230,9 @@ Fix the code. Same rules:
 <start_of_turn>model
 """
 
+    def generate_extraction_code(self, structural_map: str, user_requirements: str = "", page_url: str = "", error_context: Optional[str] = None) -> str:
+        """Generate Python extraction code using Gemma's prompt format with few-shot learning."""
+        prompt = self._build_prompt(structural_map, user_requirements, page_url, error_context)
         try:
             response = _generate_with_retry(self.model, prompt)
             code = response.text
@@ -481,6 +491,43 @@ def display_sample_output(data: Dict, stats: Dict):
 
 
 # --- Main Agent Logic ---
+def _fit_map_to_budget(agent, html_content, structural_map, page_url, requirements, budget):
+    """Return (structural_map, structural_map_json, depth_used, tokens).
+
+    Serializes the map with ensure_ascii=False so non-ASCII scripts (e.g. Arabic)
+    stay single characters instead of 6-char \\uXXXX escapes that would ~6x the
+    token count. If the full-depth prompt still exceeds *budget* tokens, rebuilds
+    the map at progressively shallower depths (MAX_DEPTH-1 down to MIN_MAP_DEPTH)
+    until it fits, so large pages don't blow the model's context window or the
+    per-minute input-token quota.
+    """
+    smj = json.dumps(structural_map, ensure_ascii=False)
+    toks = count_tokens(agent.model, agent._build_prompt(smj, requirements, page_url))
+    print(f"  📏 Input prompt: ~{toks} tokens at full depth {MAX_DEPTH} (budget {budget}).", flush=True)
+    if toks <= budget:
+        return structural_map, smj, MAX_DEPTH, toks
+
+    print(f"  ⚠  Over budget by ~{toks - budget} tokens — shrinking map depth to fit...", flush=True)
+    soup = BeautifulSoup(html_content, 'lxml')
+    body = soup.body if soup.body else soup
+    last = None
+    for d in range(MAX_DEPTH - 1, MIN_MAP_DEPTH - 1, -1):
+        m = create_structural_map(body, max_depth=d)
+        mj = json.dumps(m, ensure_ascii=False)
+        t = count_tokens(agent.model, agent._build_prompt(mj, requirements, page_url))
+        fits = t <= budget
+        print(f"     depth {d}: ~{t} tokens  {'✓ fits' if fits else '✗ still over'}", flush=True)
+        if fits:
+            return m, mj, d, t
+        last = (m, mj, d, t)
+
+    # Nothing fit even at the floor depth — send the smallest map anyway; the
+    # model may still accept it, otherwise it fails loudly instead of truncating.
+    m, mj, d, t = last
+    print(f"  ⚠  Still ~{t} tokens at floor depth {d} (budget {budget}); sending anyway.", flush=True)
+    return m, mj, d, t
+
+
 async def main():
     print("="*60)
     print("🤖 AI WEB SCRAPING AGENT (Gemma Edition)")
@@ -564,7 +611,12 @@ async def main():
 
     print("✓ Page structure fetched successfully!")
     
-    structural_map_json = json.dumps(structural_map, indent=2)
+    budget = input_token_budget(selected_model)
+    structural_map, structural_map_json, depth_used, ntok = _fit_map_to_budget(
+        agent, html_content, structural_map, url, requirements, budget)
+    if depth_used < MAX_DEPTH:
+        print(f"⚠  Large page (~{ntok} prompt tokens, budget {budget}): reduced "
+              f"structural-map depth to {depth_used} to fit the input-token quota.")
     
     # Step 2: Generate extraction code
     print("\n⏳ Generating extraction code with Gemma...")
@@ -655,7 +707,8 @@ async def main():
 
 
 # --- CLI (non-interactive) mode for orchestration ---
-async def main_cli(url: str, api_key: str, requirements: str, model: str = 'gemma-3-27b-it', max_retries: int = 0):
+async def main_cli(url: str, api_key: str, requirements: str, model: str = 'gemma-3-27b-it', max_retries: int = 0,
+                   max_input_tokens: int = DEFAULT_INPUT_TOKEN_BUDGET):
     """Non-interactive entry point. Returns paths via JSON line on stdout.
 
     Prints a JSON object on success:
@@ -683,7 +736,12 @@ async def main_cli(url: str, api_key: str, requirements: str, model: str = 'gemm
     with open(structural_map_filename, "w", encoding="utf-8") as f:
         json.dump(structural_map, f, indent=2, ensure_ascii=False)
 
-    structural_map_json = json.dumps(structural_map, indent=2)
+    budget = input_token_budget(model, max_input_tokens)
+    structural_map, structural_map_json, depth_used, ntok = _fit_map_to_budget(
+        agent, html_content, structural_map, url, requirements, budget)
+    if depth_used < MAX_DEPTH:
+        print(f"  ⚠  Large page (~{ntok} prompt tokens, budget {budget}): reduced "
+              f"structural-map depth to {depth_used} to fit the input-token quota.", flush=True)
 
     retry_count = 0
     error_context = None
@@ -713,6 +771,8 @@ async def main_cli(url: str, api_key: str, requirements: str, model: str = 'gemm
                 "code_file": gen_code_filename,
                 "output_file": output_filename,
                 "data": result,
+                "map_depth": depth_used,
+                "input_tokens": ntok,
                 "token_usage": get_token_usage()
             }), flush=True)
             return
@@ -736,11 +796,13 @@ if __name__ == "__main__":
     parser.add_argument("--requirements", type=str, help="Extraction requirements (CLI mode)")
     parser.add_argument("--model", type=str, default="gemma-3-27b-it", help="Model name")
     parser.add_argument("--max-retries", type=int, default=0, help="Max retries in CLI mode (default: 0 = single attempt)")
+    parser.add_argument("--max-input-tokens", type=int, default=DEFAULT_INPUT_TOKEN_BUDGET,
+                        help=f"Per-request input-token budget (default {DEFAULT_INPUT_TOKEN_BUDGET}, sized for the free-tier per-minute cap; raise for paid tiers/larger models)")
     args = parser.parse_args()
 
     if args.url and args.api_key and args.requirements:
         # Non-interactive CLI mode
-        asyncio.run(main_cli(args.url, args.api_key, args.requirements, args.model, args.max_retries))
+        asyncio.run(main_cli(args.url, args.api_key, args.requirements, args.model, args.max_retries, args.max_input_tokens))
     else:
         # Interactive mode (original behavior)
         asyncio.run(main())

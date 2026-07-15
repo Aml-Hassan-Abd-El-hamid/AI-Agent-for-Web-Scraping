@@ -119,6 +119,35 @@ def _bump_fetch_via(via):
         _FETCH_VIA[via] += 1
 
 
+# Full structural-map depth an agent uses before any token-budget shrinking.
+# Mirrors MAX_DEPTH in the agents; used only to flag reduced-depth runs.
+_FULL_MAP_DEPTH = 10
+
+# Per-agent-call record of how the prompt fit the token budget: the map depth
+# actually sent and the measured input-token size. Reported in results.md and
+# reset at the start of each main() run.
+_MAP_FITS = []
+
+
+def _reset_map_fits():
+    global _MAP_FITS
+    _MAP_FITS = []
+
+
+def _bump_map_fit(agent, result):
+    """Record the map depth + input-token size an agent reported (if any)."""
+    if not isinstance(result, dict):
+        return
+    depth = result.get("map_depth")
+    if depth is None:
+        return
+    _MAP_FITS.append({
+        "agent": agent,
+        "depth": depth,
+        "input_tokens": result.get("input_tokens"),
+    })
+
+
 # ═══════════════════════════════════════════════════════════════
 # Utilities carried over from orch.py
 # ═══════════════════════════════════════════════════════════════
@@ -151,50 +180,93 @@ def cluster_by_structure(articles_with_maps):
 
 
 def _call_agent_subprocess(cmd, timeout=300):
-    """Run a CLI agent subprocess and parse ORCH_RESULT from stdout."""
+    """Run a CLI agent subprocess, streaming its stdout live and parsing the
+    final ORCH_RESULT line.
+
+    stdout is echoed line-by-line (prefixed with '│ ') so token counts, map-depth
+    shrink attempts and progress are visible in real time instead of only after
+    the subprocess finishes. stderr is drained on a background thread to avoid a
+    full-pipe deadlock, and a watchdog timer enforces *timeout*.
+    """
+    import threading
+
     env = os.environ.copy()
     env["PYTHONIOENCODING"] = "utf-8"
 
     try:
-        proc = subprocess.run(
+        proc = subprocess.Popen(
             cmd,
-            capture_output=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
             text=True,
-            timeout=timeout,
             encoding="utf-8",
+            errors="replace",
+            bufsize=1,
             env=env,
         )
-        for line in proc.stdout.splitlines():
-            if line.startswith("ORCH_RESULT:"):
-                payload = line[len("ORCH_RESULT:"):]
-                result = json.loads(payload)
-                ok = result.get("status") == "ok"
-                if not ok:
-                    # Surface the full subprocess logs so the real cause is visible
-                    print(f"\n{'─' * 40} SUBPROCESS STDOUT {'─' * 40}")
-                    print(proc.stdout)
-                    print(f"{'─' * 40} SUBPROCESS STDERR {'─' * 40}")
-                    print(proc.stderr or "(empty)")
-                    print(f"{'─' * 98}")
-                return ok, result
-
-        full_stderr = proc.stderr or ""
-        full_stdout = proc.stdout or ""
-        print(f"\n{'─' * 40} SUBPROCESS STDOUT {'─' * 40}")
-        print(full_stdout)
-        print(f"{'─' * 40} SUBPROCESS STDERR {'─' * 40}")
-        print(full_stderr)
-        print(f"{'─' * 98}")
-        return False, {
-            "status": "error",
-            "error": f"No ORCH_RESULT in output. stderr: {full_stderr}  stdout(tail): {full_stdout[-3000:]}",
-        }
-    except subprocess.TimeoutExpired:
-        return False, {"status": "error", "error": f"Subprocess timed out ({timeout}s)"}
     except Exception as e:
         tb = traceback.format_exc()
         print(f"\n❌ Subprocess exception:\n{tb}")
         return False, {"status": "error", "error": f"{e}\n{tb}"}
+
+    timed_out = {"flag": False}
+    watchdog = threading.Timer(
+        timeout, lambda: (timed_out.__setitem__("flag", True), proc.kill()))
+    watchdog.start()
+
+    stderr_chunks = []
+
+    def _drain_stderr():
+        try:
+            for line in proc.stderr:
+                stderr_chunks.append(line)
+        except Exception:
+            pass
+
+    stderr_thread = threading.Thread(target=_drain_stderr, daemon=True)
+    stderr_thread.start()
+
+    stdout_lines = []
+    result = None
+    ok = False
+    try:
+        for line in proc.stdout:
+            line = line.rstrip("\n")
+            stdout_lines.append(line)
+            if line.startswith("ORCH_RESULT:"):
+                try:
+                    result = json.loads(line[len("ORCH_RESULT:"):])
+                    ok = result.get("status") == "ok"
+                except Exception:
+                    result = None
+            else:
+                print(f"    │ {line}", flush=True)  # live echo from the agent
+    finally:
+        proc.wait()
+        watchdog.cancel()
+        stderr_thread.join(timeout=1)
+
+    full_stderr = "".join(stderr_chunks)
+    full_stdout = "\n".join(stdout_lines)
+
+    if timed_out["flag"]:
+        return False, {"status": "error", "error": f"Subprocess timed out ({timeout}s)"}
+
+    if result is not None:
+        if not ok:
+            # Surface stderr so the real cause is visible (stdout was streamed above)
+            print(f"\n{'─' * 40} SUBPROCESS STDERR {'─' * 40}")
+            print(full_stderr or "(empty)")
+            print(f"{'─' * 98}")
+        return ok, result
+
+    print(f"\n{'─' * 40} SUBPROCESS STDERR {'─' * 40}")
+    print(full_stderr or "(empty)")
+    print(f"{'─' * 98}")
+    return False, {
+        "status": "error",
+        "error": f"No ORCH_RESULT in output. stderr: {full_stderr}  stdout(tail): {full_stdout[-3000:]}",
+    }
 
 def call_links_agent_cli(url, api_key, model="gemma-3-27b-it"):
     """Call Links_Agent_gemma_cloudflare.py via subprocess in CLI mode."""
@@ -208,6 +280,7 @@ def call_links_agent_cli(url, api_key, model="gemma-3-27b-it"):
     _bump_llm_calls(agent="Links agent")
     ok, result = _call_agent_subprocess(cmd, timeout=300)
     _bump_tokens("Links agent", result.get("token_usage"))
+    _bump_map_fit("Links agent", result)
     return ok, result
 
 
@@ -224,6 +297,7 @@ def call_agent_cli(url, api_key, requirements, model="gemma-3-27b-it"):
     _bump_llm_calls(agent="Article agent")
     ok, result = _call_agent_subprocess(cmd, timeout=300)
     _bump_tokens("Article agent", result.get("token_usage"))
+    _bump_map_fit("Article agent", result)
     return ok, result
 
 
@@ -632,6 +706,56 @@ async def fetch_articles(article_links, label="", concurrency=ARTICLE_FETCH_CONC
 # Helper: extract links from a page using saved link-extraction code
 # ═══════════════════════════════════════════════════════════════
 
+def _pagination_url_regex(pattern):
+    """Compile a regex matching the derived pagination URLs (…/page/{page}/…)."""
+    if not pattern or "{page}" not in pattern:
+        return None
+    try:
+        esc = _re.escape(pattern).replace(_re.escape("{page}"), r"\d+")
+        return _re.compile("^" + esc + "$")
+    except Exception:
+        return None
+
+
+def _filter_article_links(links, listing_url, pattern=None):
+    """Drop pagination / category / navigation links the LLM may have grabbed
+    by mistake, keeping only plausible article links.
+
+    Safety net behind the Links Agent's own validation, and also applied to the
+    reused link code on pages 2..N. Returns (kept_links, dropped_count).
+    """
+    pag_re = _pagination_url_regex(pattern)
+    listing = (listing_url or "").rstrip("/")
+    cat_root = None
+    if "/category/" in (listing_url or ""):
+        cat_root = listing_url.split("/category/")[0] + "/category/"
+
+    kept, dropped = [], 0
+    for l in links:
+        if not isinstance(l, dict):
+            dropped += 1
+            continue
+        url = (l.get("url") or "").strip()
+        title = (l.get("title") or "").strip()
+        if not url or title == "" or title.isdigit():
+            dropped += 1                      # empty / pagination-number label
+            continue
+        if url.rstrip("/") == listing:
+            dropped += 1                      # link back to the listing itself
+            continue
+        if pag_re and pag_re.match(url):
+            dropped += 1                      # matches the derived pagination URL
+            continue
+        if _re.search(r"/page/\d+/?$", url):
+            dropped += 1                      # generic .../page/N/ pagination
+            continue
+        if cat_root and url.startswith(cat_root):
+            dropped += 1                      # another /category/ archive page
+            continue
+        kept.append(l)
+    return kept, dropped
+
+
 def run_link_extraction_code(code, html):
     """Execute the link-extraction code on *html* and return article_links list."""
     ok, result = execute_extraction_code(code, html)
@@ -874,6 +998,22 @@ def write_results_md(stats, path="results.md"):
             per_1k = cost / n_extracted * 1000
             lines.append(f"- **Estimated cost per 1,000 articles:** ${per_1k:.4f}")
 
+    # ── Structural-map depth budgeting (prompt size & any depth shrink) ──
+    if _MAP_FITS:
+        reduced = [f for f in _MAP_FITS if isinstance(f.get("depth"), int)
+                   and f["depth"] < _FULL_MAP_DEPTH]
+        lines.append(
+            f"- **Structural-map depth:** {len(_MAP_FITS)} agent call(s), "
+            f"{len(reduced)} shrunk below full depth {_FULL_MAP_DEPTH} to fit the "
+            f"input-token budget"
+        )
+        for f in _MAP_FITS:
+            tok = f.get("input_tokens")
+            tok_str = f"~{tok:,} input tokens" if isinstance(tok, int) else "input tokens n/a"
+            note = "" if (isinstance(f.get("depth"), int)
+                          and f["depth"] >= _FULL_MAP_DEPTH) else "  ⚠ reduced"
+            lines.append(f"  - {f['agent']}: depth {f.get('depth')} ({tok_str}){note}")
+
     lines.append(f"- **Total time:** {mins}m {secs}s")
 
     # ── Fetch method breakdown (fast requests vs. browser fallback) ──
@@ -926,6 +1066,7 @@ async def main():
     _reset_llm_calls()
     _reset_fetch_via()
     _reset_tokens()
+    _reset_map_fits()
     run_start = time.time()
     input_urls = []          # every URL the user supplied (for results.md)
     pagination_type = "single page"
@@ -986,6 +1127,7 @@ async def main():
     # Phase 1: Pagination setup (user-driven, no structural map)
     # ══════════════════════════════════════════════════════════
     page_urls = []  # URLs for pages 2, 3, 4, ...  (numbered pagination only)
+    pattern = None            # derived pagination URL pattern (…/page/{page}/…)
     scroll_mode = None        # None | "scroll" | "load_more"
     scroll_selector = None    # optional CSS selector for the 'load more' button
     scroll_rounds = 20        # max scroll/click iterations
@@ -1121,6 +1263,9 @@ async def main():
         return
 
     page1_links = link_result.get("data", {}).get("article_links", [])
+    page1_links, _dropped = _filter_article_links(page1_links, listing_url, pattern)
+    if _dropped:
+        print(f"  🧹 Dropped {_dropped} non-article (pagination/category) link(s)")
     link_code_file = link_result.get("code_file", "")
     print(f"✓ Extracted {len(page1_links)} article links from page 1")
 
@@ -1159,6 +1304,7 @@ async def main():
             )
             if full_html:
                 expanded = run_link_extraction_code(link_extraction_code, full_html)
+                expanded, _ = _filter_article_links(expanded, listing_url, pattern)
                 print(f"  ✓ {len(expanded)} links after {pagination_type} "
                       f"(was {len(page1_links)} on initial load)")
                 merged = {l["url"]: l for l in page1_links}
@@ -1236,6 +1382,9 @@ async def main():
                 # Extract links using saved code
                 new_links_raw = run_link_extraction_code(
                     link_extraction_code, page_html,
+                )
+                new_links_raw, _ = _filter_article_links(
+                    new_links_raw, listing_url, pattern,
                 )
                 print(f"  Found {len(new_links_raw)} links on this page")
 

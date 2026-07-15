@@ -29,6 +29,7 @@ from utils import (
     list_available_models,
     fetch_page_structure as _utils_fetch_page_structure,
     _is_challenge_page, get_last_fetch_error,
+    count_tokens, input_token_budget, DEFAULT_INPUT_TOKEN_BUDGET,
 )
 
 random_num = random.randint(10000, 99999)
@@ -38,6 +39,7 @@ TARGET_TAGS = ['div', 'section', 'article', 'main', 'header', 'footer', 'nav',
                'ul', 'ol', 'li', 'a', 'h1', 'h2', 'h3', 'h4', 'p', 'span',
                'table', 'tr', 'td', 'th', 'figure', 'figcaption', 'time', 'img']
 MAX_DEPTH = 10
+MIN_MAP_DEPTH = 3      # floor when shrinking a too-large map to fit the token budget
 MAX_RETRIES = 3
 
 ALLOWED_IMPORTS = {
@@ -55,10 +57,67 @@ def _ensure_dirs():
         os.makedirs(d, exist_ok=True)
 
 
+# ── Article-link validation ──────────────────────────────────
+# Detect when generated code returned pagination / category / navigation links
+# (e.g. titles like "2"/"75", /page/N/ URLs, or /category/ archives) instead of
+# real article links, so main_cli can retry with corrective feedback.
+_PAGINATION_URL_RE = re.compile(r'/page/\d+/?$', re.IGNORECASE)
+
+# A listing page normally holds many article cards. Fewer than this after
+# filtering almost always means the code matched only a featured/hero item or
+# a single sidebar widget, so it's worth one corrective retry.
+_MIN_EXPECTED_LINKS = 3
+
+
+def _is_nav_link(url: str, title: str, listing_url: str) -> bool:
+    """True if a link looks like navigation/pagination rather than an article."""
+    t = (title or '').strip()
+    if not t or t.isdigit():
+        return True  # pagination page numbers / empty labels
+    u = (url or '').strip()
+    if not u:
+        return True
+    if u.rstrip('/') == (listing_url or '').rstrip('/'):
+        return True  # link back to the listing page itself
+    if _PAGINATION_URL_RE.search(u):
+        return True  # .../page/2/
+    # When the listing is itself a category/tag/author archive, links to other
+    # archives are navigation, not articles.
+    for marker in ('/category/', '/tag/', '/author/'):
+        if marker in (listing_url or '') and marker in u:
+            return True
+    return False
+
+
+def _validate_article_links(links, listing_url: str):
+    """Return (good_links, reason_if_all_bad).
+
+    Filters out nav/pagination/category links. If every extracted link is
+    navigation (or the list is empty), returns ([], reason) so the caller can
+    retry with feedback.
+    """
+    if not links:
+        return [], "extract_data returned no links at all"
+    good = [l for l in links
+            if isinstance(l, dict)
+            and not _is_nav_link(l.get('url'), l.get('title'), listing_url)]
+    if not good:
+        return [], ("every extracted link is a pagination or category/navigation "
+                    "link (e.g. numeric titles like '2'/'75', /page/N/ URLs, or "
+                    "/category/ archive pages) — none point to an actual article")
+    return good, ""
+
+
 # --- Structural Map Generation ---
-def create_structural_map(soup: BeautifulSoup, depth: int = 0) -> List[Dict]:
-    """Recursively generates a simplified, nested structural map of the HTML."""
-    if depth >= MAX_DEPTH:
+def create_structural_map(soup: BeautifulSoup, depth: int = 0, max_depth: int = None) -> List[Dict]:
+    """Recursively generates a simplified, nested structural map of the HTML.
+
+    *max_depth* defaults to MAX_DEPTH; callers pass a smaller value to shrink an
+    over-large map so the prompt fits the input-token budget.
+    """
+    if max_depth is None:
+        max_depth = MAX_DEPTH
+    if depth >= max_depth:
         return []
 
     structure = []
@@ -81,7 +140,7 @@ def create_structural_map(soup: BeautifulSoup, depth: int = 0) -> List[Dict]:
             node = {
                 'tag': child.name.lower(),
                 'attributes': attributes,
-                'children': create_structural_map(child, depth + 1)
+                'children': create_structural_map(child, depth + 1, max_depth)
             }
 
             if not node['children'] and child.text and len(child.text.strip()) > 5:
@@ -156,11 +215,10 @@ class GemmaAgent:
         self.conversation_history = []
         self.model_name = model_name
 
-    def generate_extraction_code(self, structural_map: str, user_requirements: str = "", page_url: str = "", error_context: Optional[str] = None) -> str:
-        """Generate Python extraction code using Gemma's prompt format with few-shot learning."""
-
+    def _build_prompt(self, structural_map: str, page_url: str = "", error_context: Optional[str] = None) -> str:
+        """Assemble the Gemma prompt (shared by code generation and token counting)."""
         if not error_context:
-            prompt = f"""<start_of_turn>user
+            return f"""<start_of_turn>user
 You are a Python web-scraping expert. You will receive an HTML structural map (JSON) and a target URL. Your job is to write a single Python function called `extract_data(html_content)` that extracts all article links from the page.
 
 Rules you MUST follow:
@@ -170,8 +228,9 @@ Rules you MUST follow:
 - Use urljoin(base_url, href) to resolve relative URLs. Derive base_url from the target URL.
 - Deduplicate by URL.
 - Only use selectors (tags, classes, ids) that appear in the structural map. Do NOT invent selectors.
-- Exclude: nav/header/footer links, javascript: hrefs, anchor-only (#) links, social media domains.
-- If no links exist, return {{"article_links": []}}
+- Article links point to individual posts/articles (usually a story/slug URL), NOT to other listing pages.
+- Exclude ALL of these (they are navigation, not articles): nav/header/footer links; pagination links (links whose visible text is just a page number like "2"/"75", or whose URL ends in /page/N/); category/tag/author archive links (e.g. URLs containing /category/, /tag/, /author/); the listing page's own URL; javascript: hrefs; anchor-only (#) links; social media domains.
+- If no article links exist, return {{"article_links": []}}
 - Do NOT include import statements. Only output the function body.
 - Available in scope: BeautifulSoup, re, json, urljoin, urlparse.
 
@@ -202,8 +261,7 @@ Write only the Python function. No explanation, no imports.
 <end_of_turn>
 <start_of_turn>model
 """
-        else:
-            prompt = f"""<start_of_turn>user
+        return f"""<start_of_turn>user
 You are a Python web-scraping expert. Your previous code failed. Fix it.
 
 Here is a working example for reference:
@@ -236,6 +294,9 @@ Fix the code. Same rules:
 <start_of_turn>model
 """
 
+    def generate_extraction_code(self, structural_map: str, user_requirements: str = "", page_url: str = "", error_context: Optional[str] = None) -> str:
+        """Generate Python extraction code using Gemma's prompt format with few-shot learning."""
+        prompt = self._build_prompt(structural_map, page_url, error_context)
         try:
             response = _generate_with_retry(self.model, prompt)
             code = response.text
@@ -448,6 +509,43 @@ def display_sample_output(data: Dict, stats: Dict):
 
 
 # --- Main Agent Logic ---
+def _fit_map_to_budget(agent, html_content, structural_map, page_url, budget):
+    """Return (structural_map, structural_map_json, depth_used, tokens).
+
+    Serializes the map with ensure_ascii=False so non-ASCII scripts (e.g. Arabic)
+    stay single characters instead of 6-char \\uXXXX escapes that would ~6x the
+    token count. If the full-depth prompt still exceeds *budget* tokens, rebuilds
+    the map at progressively shallower depths (MAX_DEPTH-1 down to MIN_MAP_DEPTH)
+    until it fits, so large pages don't blow the model's context window or the
+    per-minute input-token quota.
+    """
+    smj = json.dumps(structural_map, ensure_ascii=False)
+    toks = count_tokens(agent.model, agent._build_prompt(smj, page_url=page_url))
+    print(f"  📏 Input prompt: ~{toks} tokens at full depth {MAX_DEPTH} (budget {budget}).", flush=True)
+    if toks <= budget:
+        return structural_map, smj, MAX_DEPTH, toks
+
+    print(f"  ⚠  Over budget by ~{toks - budget} tokens — shrinking map depth to fit...", flush=True)
+    soup = BeautifulSoup(html_content, 'lxml')
+    body = soup.body if soup.body else soup
+    last = None
+    for d in range(MAX_DEPTH - 1, MIN_MAP_DEPTH - 1, -1):
+        m = create_structural_map(body, max_depth=d)
+        mj = json.dumps(m, ensure_ascii=False)
+        t = count_tokens(agent.model, agent._build_prompt(mj, page_url=page_url))
+        fits = t <= budget
+        print(f"     depth {d}: ~{t} tokens  {'✓ fits' if fits else '✗ still over'}", flush=True)
+        if fits:
+            return m, mj, d, t
+        last = (m, mj, d, t)
+
+    # Nothing fit even at the floor depth — send the smallest map anyway; the
+    # model may still accept it, otherwise it fails loudly instead of truncating.
+    m, mj, d, t = last
+    print(f"  ⚠  Still ~{t} tokens at floor depth {d} (budget {budget}); sending anyway.", flush=True)
+    return m, mj, d, t
+
+
 async def main():
     _ensure_dirs()
     print("=" * 60)
@@ -522,7 +620,12 @@ async def main():
 
     print("✓ Page structure fetched successfully!")
 
-    structural_map_json = json.dumps(structural_map, indent=2)
+    budget = input_token_budget(selected_model)
+    structural_map, structural_map_json, depth_used, ntok = _fit_map_to_budget(
+        agent, html_content, structural_map, url, budget)
+    if depth_used < MAX_DEPTH:
+        print(f"⚠  Large page (~{ntok} prompt tokens, budget {budget}): reduced "
+              f"structural-map depth to {depth_used} to fit the input-token quota.")
 
     print("\n⏳ Generating extraction code with Gemma...")
 
@@ -598,7 +701,8 @@ async def main():
 
 
 # --- CLI (non-interactive) mode for orchestration ---
-async def main_cli(url: str, api_key: str, model: str = 'gemma-3-27b-it', max_retries: int = 0):
+async def main_cli(url: str, api_key: str, model: str = 'gemma-3-27b-it', max_retries: int = 0,
+                   max_input_tokens: int = DEFAULT_INPUT_TOKEN_BUDGET):
     """Non-interactive entry point. Returns paths via JSON line on stdout."""
     _ensure_dirs()
     agent = GemmaAgent(api_key, model)
@@ -620,6 +724,15 @@ async def main_cli(url: str, api_key: str, model: str = 'gemma-3-27b-it', max_re
 
     rand_id = random_num
 
+    # Keep the prompt within the model's context window and the per-minute
+    # input-token quota; shrink the map depth if the page is huge.
+    budget = input_token_budget(model, max_input_tokens)
+    structural_map, structural_map_json, depth_used, ntok = _fit_map_to_budget(
+        agent, html_content, structural_map, url, budget)
+    if depth_used < MAX_DEPTH:
+        print(f"  ⚠  Large page (~{ntok} prompt tokens, budget {budget}): reduced "
+              f"structural-map depth to {depth_used} to fit the input-token quota.", flush=True)
+
     html_filename = f"html_files/gemma_html_content_{rand_id}.html"
     with open(html_filename, "w", encoding="utf-8") as f:
         f.write(html_content)
@@ -627,8 +740,6 @@ async def main_cli(url: str, api_key: str, model: str = 'gemma-3-27b-it', max_re
     structural_map_filename = f"structural_maps/gemma_structural_map_{rand_id}.json"
     with open(structural_map_filename, "w", encoding="utf-8") as f:
         json.dump(structural_map, f, indent=2, ensure_ascii=False)
-
-    structural_map_json = json.dumps(structural_map, indent=2)
 
     retry_count = 0
     error_context = None
@@ -645,6 +756,43 @@ async def main_cli(url: str, api_key: str, model: str = 'gemma-3-27b-it', max_re
         success, result = execute_extraction_code(extraction_code, html_content)
 
         if success:
+            links = result.get("article_links", []) if isinstance(result, dict) else []
+            good_links, reason = _validate_article_links(links, url)
+
+            # Two retry-worthy problems with valid-but-wrong output:
+            #  (a) every link is nav/pagination/category (good_links empty)
+            #  (b) far too few links — usually only the featured/hero article,
+            #      not the main repeating grid.
+            too_few = bool(good_links) and len(good_links) < _MIN_EXPECTED_LINKS
+            if (not good_links or too_few) and retry_count < max_retries:
+                if not good_links:
+                    print(f"  ⚠  Link extraction looks wrong: {reason} — retrying...", flush=True)
+                    error_context = (
+                        "Your extract_data() returned the WRONG links: " + reason + ". "
+                        "Those come from the site's pagination controls and category menu, "
+                        "NOT the article list. Look again at the structural map, find the "
+                        "REPEATING ARTICLE-CARD container (each card links to one article/post), "
+                        "and select the post-title anchor inside it. Do NOT select: pagination "
+                        "number links, /page/N/ URLs, links to /category/ or /tag/ archive pages, "
+                        "or the listing page's own URL."
+                    )
+                else:
+                    print(f"  ⚠  Only {len(good_links)} link(s) extracted — likely just the "
+                          f"featured item; retrying for the full grid...", flush=True)
+                    error_context = (
+                        f"Your extract_data() returned only {len(good_links)} article link(s). "
+                        "That is almost certainly just the featured/hero article or a single "
+                        "sidebar widget — NOT the full list. A listing page has MANY articles in "
+                        "one REPEATING grid/list (usually 10-20 per page). Find that repeating "
+                        "article-card container in the structural map and select the title anchor "
+                        "in EVERY card so you return all of them. Avoid selectors that match only "
+                        "one element (e.g. a hero block, 'most read', or 'featured' widget)."
+                    )
+                retry_count += 1
+                continue
+
+            # Emit the cleaned link set (nav/pagination links stripped out).
+            result = {"article_links": good_links}
             output_filename = f"Gemma_extracted_links_{rand_id}.json"
             with open(output_filename, 'w', encoding='utf-8') as f:
                 json.dump(result, f, indent=2, ensure_ascii=False)
@@ -654,6 +802,8 @@ async def main_cli(url: str, api_key: str, model: str = 'gemma-3-27b-it', max_re
                 "code_file": gen_code_filename,
                 "output_file": output_filename,
                 "data": result,
+                "map_depth": depth_used,
+                "input_tokens": ntok,
                 "token_usage": get_token_usage()
             }), flush=True)
             return
@@ -675,10 +825,12 @@ if __name__ == "__main__":
     parser.add_argument("--url", type=str, help="URL to extract links from (CLI mode)")
     parser.add_argument("--api-key", type=str, help="Gemini API key (CLI mode)")
     parser.add_argument("--model", type=str, default="gemma-3-27b-it", help="Model name")
-    parser.add_argument("--max-retries", type=int, default=0, help="Max retries in CLI mode (default: 0)")
+    parser.add_argument("--max-retries", type=int, default=2, help="Max retries in CLI mode (default: 2, allows link-quality retries)")
+    parser.add_argument("--max-input-tokens", type=int, default=DEFAULT_INPUT_TOKEN_BUDGET,
+                        help=f"Per-request input-token budget (default {DEFAULT_INPUT_TOKEN_BUDGET}, sized for the free-tier per-minute cap; raise for paid tiers/larger models)")
     args = parser.parse_args()
 
     if args.url and args.api_key:
-        asyncio.run(main_cli(args.url, args.api_key, args.model, args.max_retries))
+        asyncio.run(main_cli(args.url, args.api_key, args.model, args.max_retries, args.max_input_tokens))
     else:
         asyncio.run(main())
