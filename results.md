@@ -565,3 +565,142 @@ Auto-generated stats, one section per orchestrator run.
 - **Errors (1):**
   - Agent failed on new cluster representative: All 1 attempt(s) failed. Last error: LLM ERROR: Error generating code: 429 You exceeded your current quota, please check your plan and billing details. For 
 
+
+## Run 2026-07-18 00:39:39
+
+- **Run directory:** `orch_runs/run_20260718_003144`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** infinite scroll
+- **Input URLs:**
+  - https://eg.afedne.com/global-blogs/1/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1_%D9%85%D8%B5%D8%B1
+- **Requirements:** 'title, date, author, article body text'
+- **Pages requested:** 1
+- **Pages processed:** 1
+- **Articles extracted:** 107
+- **Articles failed:** 0
+- **Clusters (unique structures):** 2
+- **LLM calls:** 3
+  - Article agent: 2
+  - Links agent: 1
+- **LLM calls per article:** 0.03
+- **Code reuse rate:** 105/107 articles reused cluster code (98%)
+- **Tokens:** 51,819 total (46,600 prompt + 948 output)
+  - Links agent: 38,679 tokens
+  - Article agent: 13,140 tokens
+- **Estimated cost:** $0.0038 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.0353
+- **Structural-map depth:** 3 agent call(s), 1 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 3 (~37,726 input tokens)  ⚠ reduced
+  - Article agent: depth 10 (~4,059 input tokens)
+  - Article agent: depth 10 (~4,812 input tokens)
+- **Total time:** 8m 9s
+- **Fetch method:** 89 via requests (83%), 18 via browser (17%)
+- **Missing/N/A values (of 107 extracted):**
+  - `title`: 17/107 N/A (16%)
+  - `date`: 107/107 N/A (100%)
+  - `author`: 107/107 N/A (100%)
+  - `article body text`: 17/107 N/A (16%)
+- **Errors:** none
+
+
+## Run 2026-07-18 21:18:39
+
+- **Run directory:** `orch_runs/run_20260718_210902`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** single page / infinite scroll (auto)
+- **Input URLs:**
+  - https://lakome2.com/category/art/
+- **Requirements:** 'title, date, author, article body text'
+- **Pages requested:** 1
+- **Pages processed:** 0
+- **Articles extracted:** 0
+- **Articles failed:** 0
+- **Clusters (unique structures):** 0
+- **LLM calls:** 2
+  - Links agent: 1
+  - Pagination detection: 1
+- **Tokens:** 1,183 total (930 prompt + 0 output)
+  - Pagination detection: 1,183 tokens
+- **Estimated cost:** $0.0001 (at $0.075/$0.3 per 1M input/output tokens)
+- **Total time:** 9m 57s
+- **Errors (1):**
+  - Links extraction failed: Subprocess timed out (300s)
+
+
+## Run 2026-07-18 22:38:15
+
+- **Run directory:** `orch_runs/run_20260718_223156`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** load more button
+- **Input URLs:**
+  - https://lakome2.com/category/art/
+- **Requirements:** 'title, date, author, article body text'
+- **Pages requested:** 1
+- **Pages processed:** 0
+- **Articles extracted:** 0
+- **Articles failed:** 0
+- **Clusters (unique structures):** 0
+- **LLM calls:** 1
+  - Links agent: 1
+- **Total time:** 6m 29s
+- **Errors (1):**
+  - Links extraction failed: Subprocess timed out (300s)
+
+
+## Run 2026-07-18 22:51:12
+
+- **Run directory:** `orch_runs/run_20260718_224432`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** numbered pagination
+- **Input URLs:**
+  - https://www.youm7.com/Section/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B9%D8%A7%D8%AC%D9%84%D8%A9/65/1
+  - https://www.youm7.com/Section/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B9%D8%A7%D8%AC%D9%84%D8%A9/65/2
+- **Requirements:** 'title, date, author, article body text'
+- **Pages requested:** 4
+- **Pages processed:** 0
+- **Articles extracted:** 0
+- **Articles failed:** 0
+- **Clusters (unique structures):** 0
+- **LLM calls:** 1
+  - Links agent: 1
+- **Total time:** 11m 10s
+- **Errors (1):**
+  - Links extraction failed: No ORCH_RESULT in output. stderr: C:\Users\amlesmail\OneDrive - Microsoft\Documents\GitHub\AI-Agent-for-Web-Scraping\Links_Agent_gemma_cloudflare.py:23: FutureWarning:   All s
+
+
+## Run 2026-07-18 23:05:09
+
+- **Run directory:** `orch_runs/run_20260718_225155`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** numbered pagination
+- **Input URLs:**
+  - https://www.youm7.com/Section/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B9%D8%A7%D8%AC%D9%84%D8%A9/65/1
+  - https://www.youm7.com/Section/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B9%D8%A7%D8%AC%D9%84%D8%A9/65/2
+- **Requirements:** 'title, date, author, article body text'
+- **Pages requested:** 8
+- **Pages processed:** 8
+- **Articles extracted:** 317
+- **Articles failed:** 0
+- **Clusters (unique structures):** 1
+- **LLM calls:** 2
+  - Article agent: 1
+  - Links agent: 1
+- **LLM calls per article:** 0.01
+- **Code reuse rate:** 316/317 articles reused cluster code (100%)
+- **Tokens:** 29,321 total (23,984 prompt + 890 output)
+  - Article agent: 15,074 tokens
+  - Links agent: 14,247 tokens
+- **Estimated cost:** $0.0021 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.0065
+- **Structural-map depth:** 2 agent call(s), 2 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 8 (~10,075 input tokens)  ⚠ reduced
+  - Article agent: depth 9 (~13,907 input tokens)  ⚠ reduced
+- **Total time:** 13m 47s
+- **Fetch method:** 317 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 317 extracted):**
+  - `title`: 0/317 N/A (0%)
+  - `date`: 0/317 N/A (0%)
+  - `author`: 5/317 N/A (2%)
+  - `article body text`: 316/317 N/A (100%)
+- **Errors:** none
+

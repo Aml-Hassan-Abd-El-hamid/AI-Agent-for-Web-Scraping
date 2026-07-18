@@ -330,9 +330,29 @@ textarea { min-height: 120px; }
 
   <!-- ═══════════════════════════ PANE 1: LOAD DATA ═══════════════════════════ -->
   <div class="pane active" id="pane-load">
+
     <div class="card">
-      <div class="card-title">Load Scraped Output</div>
-      <p class="tip" style="margin-bottom:1rem">Paste the contents of <code>extracted_data_all.json</code> from any orchestrator run. Repeat for each domain.</p>
+      <div class="card-title">Load From Disk</div>
+      <p class="tip" style="margin-bottom:1rem">Pick a run or snapshot on disk — no copy-paste. Loading a <strong>snapshot</strong> also enables the in-app article viewer + prefill on the Ground Truth tab.</p>
+      <div class="btn-group" style="margin-top:0">
+        <button class="btn btn-accent" onclick="refreshDiskList()">↻ Scan disk</button>
+      </div>
+      <div class="row" style="margin-top:1rem">
+        <div>
+          <label>Snapshots (recommended)</label>
+          <div id="snapshotList" style="color:var(--muted);font-size:.82rem;font-family:var(--mono)">Click “Scan disk”.</div>
+        </div>
+        <div>
+          <label>Runs (predictions only)</label>
+          <div id="runList" style="color:var(--muted);font-size:.82rem;font-family:var(--mono)">Click “Scan disk”.</div>
+        </div>
+      </div>
+      <div class="status-log" id="diskLog" style="margin-top:1rem">Idle.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Load Scraped Output (manual paste)</div>
+      <p class="tip" style="margin-bottom:1rem">Fallback: paste the contents of <code>extracted_data_all.json</code> from any orchestrator run. Repeat for each domain.</p>
 
       <div class="row" style="margin-bottom:1rem">
         <div>
@@ -365,6 +385,27 @@ textarea { min-height: 120px; }
 
   <!-- ═══════════════════════════ PANE 2: GROUND TRUTH ═══════════════════════════ -->
   <div class="pane" id="pane-gt">
+
+    <div class="card" id="labelHelperCard" style="display:none">
+      <div class="card-title">Labeling Helper (from snapshot)</div>
+      <p class="tip" style="margin-bottom:1rem">Pick an article, read it in the viewer, click <strong>Prefill from prediction</strong>, correct any wrong fields, then Save. Labeled articles are marked ✓ and autosaved to <code>gold/</code>.</p>
+      <div class="row" style="margin-bottom:1rem">
+        <div>
+          <label>Snapshot article <span id="labelProgress" style="color:var(--accent)"></span></label>
+          <select id="snapArticleSelect" onchange="loadSnapArticle()"></select>
+        </div>
+        <div style="display:flex;align-items:flex-end;gap:.5rem">
+          <button class="btn btn-secondary" onclick="stepSnapArticle(-1)" style="flex:1">‹ Prev</button>
+          <button class="btn btn-secondary" onclick="stepSnapArticle(1)" style="flex:1">Next ›</button>
+        </div>
+      </div>
+      <div class="btn-group" style="margin-top:0">
+        <button class="btn btn-accent" onclick="prefillFromPrediction()">⤵ Prefill from prediction</button>
+        <a id="openArticleLink" class="btn btn-secondary" href="#" target="_blank" rel="noopener" style="text-decoration:none">↗ Open original</a>
+      </div>
+      <iframe id="articleFrame" sandbox="" style="width:100%;height:420px;margin-top:1rem;border:1px solid var(--border);border-radius:6px;background:#fff"></iframe>
+    </div>
+
     <div class="card">
       <div class="card-title">Add Ground-Truth Article</div>
       <p class="tip" style="margin-bottom:1rem">
@@ -548,7 +589,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const domain = this.value;
     const info = loadedDomains[domain];
     if (info?.sample_fields?.length) seedFields(info.sample_fields);
+    refreshSnapArticles();
   });
+  hydrateGold();
 });
 
 async function autoFillFields() {
@@ -595,6 +638,7 @@ async function saveGroundTruth() {
     gtArticles[domain].push({url, title, fields});
     log.textContent = `✓ Saved! Total for "${domain}": ${data.total_gt} article(s)`;
     refreshGtList();
+    if (window.refreshSnapArticles) refreshSnapArticles();
     clearGtForm(false);
   } else {
     log.textContent = `❌ ${data.error}`;
@@ -860,6 +904,156 @@ function escHtml(str) {
   return String(str||'')
     .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
     .replace(/"/g,'&quot;');
+}
+
+// ═══════════════════════════════════════════════════════════════
+// Load-from-disk + snapshot labeling helper
+// ═══════════════════════════════════════════════════════════════
+let snapState = { domain: null, dir: null, articles: [], idx: 0 };
+
+async function refreshDiskList() {
+  const log = document.getElementById('diskLog');
+  log.textContent = '⏳ Scanning disk...';
+  let data;
+  try {
+    const res = await fetch('/api/list_runs');
+    data = await res.json();
+  } catch (e) { log.textContent = '❌ ' + e; return; }
+
+  const snapEl = document.getElementById('snapshotList');
+  const runEl  = document.getElementById('runList');
+
+  snapEl.innerHTML = (data.snapshots || []).length
+    ? data.snapshots.map(s => `
+        <div style="margin-bottom:.5rem;padding:.5rem;border:1px solid var(--border);border-radius:6px">
+          <div style="color:var(--text)">${escHtml(s.website || s.name)} <span style="color:var(--muted)">· ${s.articles} art.</span></div>
+          <div style="color:var(--muted);font-size:.72rem">${escHtml(s.name)}</div>
+          <button class="btn btn-primary" style="margin-top:.4rem;font-size:.72rem;padding:.3rem .8rem"
+                  onclick="loadSnapshotFromDisk('${s.name.replace(/'/g,"\\'")}', '${(s.website||'').replace(/'/g,"\\'")}')">Load snapshot</button>
+        </div>`).join('')
+    : '<span style="color:var(--muted)">No snapshots found.</span>';
+
+  runEl.innerHTML = (data.runs || []).length
+    ? data.runs.map(r => `
+        <div style="margin-bottom:.5rem;padding:.5rem;border:1px solid var(--border);border-radius:6px">
+          <div style="color:var(--text)">${escHtml(r.website || r.name)} <span style="color:var(--muted)">· ${r.articles} art.</span></div>
+          ${r.website ? `<div style="color:var(--muted);font-size:.72rem">${escHtml(r.name)}</div>` : ''}
+          <button class="btn btn-secondary" style="margin-top:.4rem;font-size:.72rem;padding:.3rem .8rem"
+                  onclick="loadRunFromDisk('${r.name.replace(/'/g,"\\'")}', '${(r.website||'').replace(/'/g,"\\'")}')">Load run</button>
+        </div>`).join('')
+    : '<span style="color:var(--muted)">No runs found.</span>';
+
+  log.textContent = `✓ Found ${(data.snapshots||[]).length} snapshot(s), ${(data.runs||[]).length} run(s).`;
+}
+
+async function loadSnapshotFromDisk(name, website) {
+  const log = document.getElementById('diskLog');
+  const domain = (prompt('Domain name for this snapshot:', website || name) || '').trim();
+  if (!domain) return;
+  log.textContent = '⏳ Loading snapshot...';
+  const res = await fetch('/api/load_snapshot', {
+    method: 'POST', headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({snapshot_name: name, domain})
+  });
+  const data = await res.json();
+  if (!data.ok) { log.textContent = '❌ ' + data.error; return; }
+  loadedDomains[domain] = {count: data.predicted, sample_fields: data.sample_fields};
+  refreshLoadedDisplay(); updateDomainCount();
+  log.textContent = `✓ Snapshot "${domain}": ${data.count} article HTML files, ${data.predicted} with predictions.\n  Go to the Ground Truth tab to label with the viewer.`;
+}
+
+async function loadRunFromDisk(name, website) {
+  const log = document.getElementById('diskLog');
+  const domain = (prompt('Domain name for this run:', website || name) || '').trim();
+  if (!domain) return;
+  log.textContent = '⏳ Loading run...';
+  const res = await fetch('/api/load_run', {
+    method: 'POST', headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({run_name: name, domain})
+  });
+  const data = await res.json();
+  if (!data.ok) { log.textContent = '❌ ' + data.error; return; }
+  loadedDomains[domain] = {count: data.count, sample_fields: data.sample_fields};
+  refreshLoadedDisplay(); updateDomainCount();
+  log.textContent = `✓ Run loaded as "${domain}": ${data.count} articles.`;
+}
+
+// Reload the snapshot article list for the currently-selected GT domain.
+async function refreshSnapArticles() {
+  const domain = document.getElementById('gtDomain').value;
+  const card = document.getElementById('labelHelperCard');
+  if (!domain) { card.style.display = 'none'; return; }
+
+  const res = await fetch('/api/snapshot_articles', {
+    method: 'POST', headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({domain})
+  });
+  const data = await res.json();
+  if (!data.ok) { card.style.display = 'none'; return; }
+
+  card.style.display = 'block';
+  snapState = { domain, dir: data.dir, articles: data.articles, idx: 0 };
+
+  const sel = document.getElementById('snapArticleSelect');
+  sel.innerHTML = data.articles.map((a, i) =>
+    `<option value="${i}">${a.labeled ? '✓ ' : '○ '}#${a.id} — ${escHtml((a.title||a.url||'article').slice(0,70))}</option>`
+  ).join('');
+
+  const done = data.articles.filter(a => a.labeled).length;
+  document.getElementById('labelProgress').textContent = `(${done}/${data.articles.length} labeled)`;
+  loadSnapArticle();
+}
+window.refreshSnapArticles = refreshSnapArticles;
+
+function loadSnapArticle() {
+  const sel = document.getElementById('snapArticleSelect');
+  const i = parseInt(sel.value || '0', 10);
+  snapState.idx = i;
+  const a = snapState.articles[i];
+  if (!a) return;
+
+  document.getElementById('articleFrame').src = `/snapshot_html/${snapState.dir}/${a.file}`;
+  const link = document.getElementById('openArticleLink');
+  link.href = a.url || '#';
+
+  // Seed the GT form (field names from prediction) + reference info.
+  document.getElementById('gtUrl').value = a.url || '';
+  document.getElementById('gtTitle').value = a.title || '';
+  const predFields = Object.keys(a.pred || {});
+  if (predFields.length) seedFields(predFields);
+}
+
+function stepSnapArticle(delta) {
+  const sel = document.getElementById('snapArticleSelect');
+  let i = parseInt(sel.value || '0', 10) + delta;
+  i = Math.max(0, Math.min(snapState.articles.length - 1, i));
+  sel.value = i;
+  loadSnapArticle();
+}
+
+function prefillFromPrediction() {
+  const a = snapState.articles[snapState.idx];
+  if (!a || !a.pred) return;
+  seedFields(Object.keys(a.pred));
+  const rows = document.querySelectorAll('#fieldInputs .field-input-row');
+  rows.forEach(row => {
+    const name = row.querySelector('.field-label-input').value.trim();
+    if (name in a.pred) row.querySelector('textarea').value = a.pred[name] ?? '';
+  });
+  document.getElementById('gtLog').textContent = '⤵ Prefilled from prediction — correct any wrong fields, then Save.';
+}
+
+// Pull persisted gold from disk into the UI on page load.
+async function hydrateGold() {
+  try {
+    const res = await fetch('/api/get_ground_truth');
+    const data = await res.json();
+    if (data.ok) {
+      gtArticles = data.ground_truth || {};
+      refreshGtList();
+    }
+  } catch (e) { /* non-fatal */ }
+  refreshDiskList();
 }
 
 async function exportResults() {

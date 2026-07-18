@@ -226,8 +226,10 @@ Tested on those domains:
 - https://www.independentarabia.com/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7
   - ✅ **Articles extracted:** 136
   - **Articles failed:** 0
-
-
+- https://eg.afedne.com/global-blogs/1/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1_%D9%85%D8%B5%D8%B1
+  ✅ Successfully extracted: 107 articles
+  ❌ Failed: 0 articles
+- 
 To be tested on:
 
 - Load more button pag:
@@ -240,7 +242,7 @@ To be tested on:
   -
 - Infinite scroll:
   - 
-  - https://eg.afedne.com/global-blogs/1/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1_%D9%85%D8%B5%D8%B1
+  - 
   - 
 
 - Numbered:

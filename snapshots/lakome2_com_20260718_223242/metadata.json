@@ -1,0 +1,21 @@
+{
+  "website": "lakome2.com",
+  "snapshot_date": "2026-07-18T22:38:15",
+  "pagination_type": "load more button",
+  "listing_url": "https://lakome2.com/category/art/",
+  "input_urls": [
+    "https://lakome2.com/category/art/"
+  ],
+  "pagination_pattern": null,
+  "requirements": "'title, date, author, article body text'",
+  "run_dir": "orch_runs/run_20260718_223156",
+  "link_extraction_code_file": null,
+  "listing_pages": [],
+  "articles": [],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 0,
+    "articles": 0,
+    "article_fetch_failures": 0
+  }
+}
