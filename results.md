@@ -704,3 +704,136 @@ Auto-generated stats, one section per orchestrator run.
   - `article body text`: 316/317 N/A (100%)
 - **Errors:** none
 
+
+## Run 2026-07-20 13:29:30
+
+- **Run directory:** `orch_runs/run_20260720_132407`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** numbered pagination
+- **Input URLs:**
+  - https://pchrgaza.org/ar/category/genocide-on-gaza-ar/testimonies-from-the-war-ar/
+  - https://pchrgaza.org/ar/category/genocide-on-gaza-ar/testimonies-from-the-war-ar/page/2/
+- **Requirements:** 'title, date, author, article body text'
+- **Pages requested:** 19
+- **Pages processed:** 0
+- **Articles extracted:** 0
+- **Articles failed:** 0
+- **Clusters (unique structures):** 0
+- **LLM calls:** 1
+  - Links agent: 1
+- **Total time:** 5m 45s
+- **Errors (1):**
+  - Links extraction failed: All 3 attempt(s) failed. Last error: SANDBOX ERROR: Execution timed out after 8 seconds
+
+
+## Run 2026-07-20 13:56:36
+
+- **Run directory:** `orch_runs/run_20260720_134136`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** numbered pagination
+- **Input URLs:**
+  - https://pchrgaza.org/ar/category/genocide-on-gaza-ar/testimonies-from-the-war-ar/
+  - https://pchrgaza.org/ar/category/genocide-on-gaza-ar/testimonies-from-the-war-ar/page/2/
+- **Requirements:** 'title, date, author, article body text'
+- **Pages requested:** 19
+- **Pages processed:** 19
+- **Articles extracted:** 233
+- **Articles failed:** 0
+- **Clusters (unique structures):** 1
+- **LLM calls:** 2
+  - Article agent: 1
+  - Links agent: 1
+- **LLM calls per article:** 0.01
+- **Code reuse rate:** 232/233 articles reused cluster code (100%)
+- **Tokens:** 27,965 total (23,891 prompt + 714 output)
+  - Links agent: 17,056 tokens
+  - Article agent: 10,909 tokens
+- **Estimated cost:** $0.0020 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.0086
+- **Structural-map depth:** 2 agent call(s), 1 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 8 (~14,717 input tokens)  ⚠ reduced
+  - Article agent: depth 10 (~9,172 input tokens)
+- **Total time:** 15m 8s
+- **Fetch method:** 233 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 233 extracted):**
+  - `title`: 0/233 N/A (0%)
+  - `date`: 0/233 N/A (0%)
+  - `author`: 233/233 N/A (100%)
+  - `article body text`: 215/233 N/A (92%)
+- **Errors:** none
+
+
+## Run 2026-07-20 14:28:15
+
+- **Run directory:** `orch_runs/run_20260720_141158`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** numbered pagination
+- **Input URLs:**
+  - https://www.almasryalyoum.com/news/index?typeid=1&sectionid=10
+  - https://www.almasryalyoum.com/news/index?typeid=1&sectionid=10&page=2
+- **Requirements:** 'title, date, author, article body text'
+- **Pages requested:** 20
+- **Pages processed:** 20
+- **Articles extracted:** 200
+- **Articles failed:** 0
+- **Clusters (unique structures):** 2
+- **LLM calls:** 3
+  - Article agent: 2
+  - Links agent: 1
+- **LLM calls per article:** 0.01
+- **Code reuse rate:** 198/200 articles reused cluster code (99%)
+- **Tokens:** 37,058 total (32,201 prompt + 1,106 output)
+  - Article agent: 23,929 tokens
+  - Links agent: 13,129 tokens
+- **Estimated cost:** $0.0027 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.0137
+- **Structural-map depth:** 3 agent call(s), 0 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 10 (~11,029 input tokens)
+  - Article agent: depth 10 (~13,718 input tokens)
+  - Article agent: depth 10 (~7,451 input tokens)
+- **Total time:** 17m 14s
+- **Fetch method:** 200 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 200 extracted):**
+  - `title`: 187/200 N/A (94%)
+  - `date`: 11/200 N/A (6%)
+  - `author`: 11/200 N/A (6%)
+  - `article body text`: 12/200 N/A (6%)
+  - `article_body_text`: 199/200 N/A (100%)
+- **Errors:** none
+
+
+## Run 2026-07-20 19:19:13
+
+- **Run directory:** `orch_runs/run_20260720_191456`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** load more button
+- **Input URLs:**
+  - https://alsifr.org/kam-kaif
+- **Requirements:** 'title, date, author, article body text'
+- **Pages requested:** 1
+- **Pages processed:** 1
+- **Articles extracted:** 12
+- **Articles failed:** 0
+- **Clusters (unique structures):** 1
+- **LLM calls:** 2
+  - Article agent: 1
+  - Links agent: 1
+- **LLM calls per article:** 0.17
+- **Code reuse rate:** 11/12 articles reused cluster code (92%)
+- **Tokens:** 20,029 total (16,059 prompt + 757 output)
+  - Links agent: 11,684 tokens
+  - Article agent: 8,345 tokens
+- **Estimated cost:** $0.0014 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.1193
+- **Structural-map depth:** 2 agent call(s), 0 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 10 (~8,848 input tokens)
+  - Article agent: depth 10 (~7,209 input tokens)
+- **Total time:** 4m 29s
+- **Fetch method:** 12 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 12 extracted):**
+  - `title`: 0/12 N/A (0%)
+  - `date`: 0/12 N/A (0%)
+  - `author`: 0/12 N/A (0%)
+  - `article body text`: 0/12 N/A (0%)
+- **Errors:** none
+

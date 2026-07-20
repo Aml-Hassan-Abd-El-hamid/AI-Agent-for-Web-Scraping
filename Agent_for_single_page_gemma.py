@@ -17,6 +17,7 @@ from utils import (
     list_available_models,
     fetch_page_structure as _utils_fetch_page_structure,
     count_tokens, input_token_budget, DEFAULT_INPUT_TOKEN_BUDGET,
+    execute_generated_code_sandboxed,
 )
 
 random_num = random.randint(10000, 99999)
@@ -28,6 +29,11 @@ TARGET_TAGS = ['div', 'section', 'article', 'main', 'header', 'footer', 'nav',
 MAX_DEPTH = 10
 MIN_MAP_DEPTH = 3      # floor when shrinking a too-large map to fit the token budget
 MAX_RETRIES = 3
+SANDBOX_TIMEOUT_SECONDS = 30
+SANDBOX_MAX_STDOUT = 1_000_000
+SANDBOX_MAX_STRING_LENGTH = 500_000
+SANDBOX_MAX_LIST_ITEMS = 5_000
+SANDBOX_MAX_DICT_KEYS = 200
 
 # Output folders
 CODE_DIR = "Agent_for_single_page_gemma_code"
@@ -286,139 +292,57 @@ Fix the code. Same rules:
 
 
 # --- Safe Code Execution ---
-def validate_code_safety(code: str) -> Tuple[bool, str]:
-    """Basic safety validation for generated code."""
-    code_no_comments = re.sub(r'#.*$', '', code, flags=re.MULTILINE)
-    dangerous_patterns = [
-        r'import\s+os',
-        r'import\s+sys',
-        r'import\s+subprocess',
-        r'import\s+requests',
-        r'import\s+socket',
-        r'import\s+pickle',
-        r'__import__',
-        r'eval\s*\(',
-        r'exec\s*\(',
-        r'(?<!re\.)compile\s*\(',
-        r'open\s*\(',
-        r'file\s*\(',
-    ]
-    
-    for pattern in dangerous_patterns:
-        if re.search(pattern, code_no_comments, re.IGNORECASE):
-            return False, f"Dangerous pattern detected: {pattern}"
-    
-    return True, "Code appears safe"
+def _validate_json_value(value, depth: int = 0) -> Tuple[bool, str]:
+    if depth > 10:
+        return False, "JSON output is nested too deeply"
+    if value is None or isinstance(value, (bool, int, float)):
+        return True, "ok"
+    if isinstance(value, str):
+        if len(value) > SANDBOX_MAX_STRING_LENGTH:
+            return False, "String output exceeds maximum length"
+        return True, "ok"
+    if isinstance(value, list):
+        if len(value) > SANDBOX_MAX_LIST_ITEMS:
+            return False, "List output exceeds maximum length"
+        for item in value:
+            ok, reason = _validate_json_value(item, depth + 1)
+            if not ok:
+                return ok, reason
+        return True, "ok"
+    if isinstance(value, dict):
+        if len(value) > SANDBOX_MAX_DICT_KEYS:
+            return False, "Object output has too many keys"
+        for key, item in value.items():
+            if not isinstance(key, str) or not key or len(key) > 100 or key.startswith('__'):
+                return False, "Object output contains an invalid key"
+            ok, reason = _validate_json_value(item, depth + 1)
+            if not ok:
+                return ok, reason
+        return True, "ok"
+    return False, f"Output contains non-JSON value: {type(value).__name__}"
+
+
+def _validate_extraction_output(result) -> Tuple[bool, str, Dict]:
+    """Validate the generated extractor's result against the single-page contract."""
+    if isinstance(result, list) and len(result) == 1 and isinstance(result[0], dict):
+        result = result[0]
+    if not isinstance(result, dict):
+        return False, "Output must be a JSON object", {}
+    ok, reason = _validate_json_value(result)
+    if not ok:
+        return False, reason, {}
+    return True, "Output schema is valid", result
 
 
 def execute_extraction_code(code: str, html_content: str) -> Tuple[bool, any]:
-    """Execute the generated extraction code in a restricted environment."""
-
-    # If the code is just comments (LLM call failed), don't bother exec-ing
-    if all(line.strip() == '' or line.strip().startswith('#') for line in code.splitlines()):
-        return False, f"LLM ERROR: {code.replace('# ', '').strip()}"
-    
-    # Validate safety first
-    is_safe, safety_msg = validate_code_safety(code)
-    if not is_safe:
-        return False, f"SAFETY ERROR: {safety_msg}"
-
-    # Wrap urljoin/urlparse to handle non-string args
-    def safe_urljoin(base, url, *args, **kwargs):
-        if isinstance(base, list):
-            base = base[0] if base else ''
-        if isinstance(url, list):
-            url = url[0] if url else ''
-        return urljoin(str(base), str(url), *args, **kwargs)
-
-    def safe_urlparse(url, *args, **kwargs):
-        if isinstance(url, list):
-            url = url[0] if url else ''
-        return urlparse(str(url), *args, **kwargs)
-
-    # Create restricted namespace with proper imports
-    restricted_globals = {
-        '__builtins__': {
-            'print': print,
-            'len': len,
-            'str': str,
-            'int': int,
-            'float': float,
-            'bool': bool,
-            'list': list,
-            'dict': dict,
-            'set': set,
-            'tuple': tuple,
-            'range': range,
-            'enumerate': enumerate,
-            'zip': zip,
-            'filter': filter,
-            'map': map,
-            'sorted': sorted,
-            'any': any,
-            'all': all,
-            'max': max,
-            'min': min,
-            'sum': sum,
-            'None': None,
-            'True': True,
-            'False': False,
-            'isinstance': isinstance,
-            'hasattr': hasattr,
-            'getattr': getattr,
-        },
-        'BeautifulSoup': BeautifulSoup,
-        're': re,
-        'json': json,
-        'urljoin': safe_urljoin,
-        'urlparse': safe_urlparse,
-        'bs4': type('Module', (), {'BeautifulSoup': BeautifulSoup})(),
-    }
-    
-    def safe_import(name, *args, **kwargs):
-        allowed = {
-            'bs4': type('Module', (), {'BeautifulSoup': BeautifulSoup})(),
-            're': re,
-            'json': json,
-            'urllib.parse': type('Module', (), {'urljoin': safe_urljoin, 'urlparse': safe_urlparse})(),
-        }
-        if name in allowed:
-            return allowed[name]
-        raise ImportError(f"Import of '{name}' is not allowed")
-    
-    restricted_globals['__builtins__']['__import__'] = safe_import
-    
-    try:
-        # Snapshot keys before exec so we only pick up LLM-defined functions
-        pre_exec_keys = set(restricted_globals.keys())
-
-        exec(code, restricted_globals)
-        
-        # Auto-detect the user-defined function (Gemma may name it anything)
-        user_func = None
-        for name in restricted_globals:
-            if name in pre_exec_keys or name.startswith('__'):
-                continue
-            obj = restricted_globals[name]
-            if callable(obj):
-                user_func = obj
-                break
-
-        if user_func is None:
-            return False, "ERROR: Generated code does not contain any callable function"
-        
-        result = user_func(html_content)
-
-        # Normalize list-of-dicts → single dict
-        if isinstance(result, list) and len(result) == 1 and isinstance(result[0], dict):
-            result = result[0]
-        
-        return True, result
-        
-    except Exception as e:
-        import traceback
-        error_detail = traceback.format_exc()
-        return False, f"EXECUTION ERROR: {str(e)}\n\n{error_detail}"
+    """Execute generated code in a subprocess with validation and time limits."""
+    return execute_generated_code_sandboxed(
+        code,
+        html_content,
+        _validate_extraction_output,
+        timeout_seconds=SANDBOX_TIMEOUT_SECONDS,
+        max_stdout=SANDBOX_MAX_STDOUT,
+    )
 
 # --- Output Analysis ---
 def analyze_output(data: Dict) -> Dict:

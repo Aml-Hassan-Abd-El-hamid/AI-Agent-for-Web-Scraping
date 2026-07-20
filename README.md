@@ -180,7 +180,7 @@ Tested on those domains:
   - https://www.youm7.com/Section/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B9%D8%A7%D8%AC%D9%84%D8%A9/65/1
 - ✅ pchrgaza -success but needs more work-
   - https://pchrgaza.org/ar/category/genocide-on-gaza-ar/testimonies-from-the-war-ar/
-- ✅ gazastory — pagination pattern derived successfully (JS-driven site)
+- ✅ gazastory [the whole website doesn't ]open — pagination pattern derived successfully (JS-driven site)
   - https://www.gazastory.com/testimonies/region/regionAll
 - ✅ almasryalyoum — pagination pattern derived successfully (query-param pagination)
   - https://www.almasryalyoum.com/news/index?typeid=1&sectionid=10
@@ -237,7 +237,7 @@ To be tested on:
   - ❌ https://www.alarabiya.net/views issue with finding the "المزيد" button, it exists 4 times :)
   - https://www.majalla.com/sections/%D8%B3%D9%8A%D8%A7%D8%B3%D8%A9
   - https://lakome2.com/category/art/
-  - 
+  - https://alsifr.org/kam-kaif
   - 
   -
 - Infinite scroll:

@@ -9,6 +9,11 @@ helpers. Each agent supplies its own `create_structural_map` to
 structural maps differently.
 """
 import json
+import ast
+import os
+import re
+import subprocess
+import sys
 import time
 import traceback
 from typing import Callable, Dict, List, Optional, Tuple
@@ -162,6 +167,202 @@ def is_na_value(v) -> bool:
     if isinstance(v, (list, dict, tuple)):
         return len(v) == 0
     return False
+
+
+# ─────────────────────────────────────────────────────────────
+# Generated-code sandboxing
+# ─────────────────────────────────────────────────────────────
+DEFAULT_SANDBOX_TIMEOUT_SECONDS = 30
+DEFAULT_SANDBOX_MAX_STDOUT = 1_000_000
+
+
+def validate_generated_code_safety(code: str) -> Tuple[bool, str]:
+    """Cheap text-level guardrail before AST validation and subprocess execution."""
+    code_no_comments = re.sub(r'#.*$', '', code, flags=re.MULTILINE)
+    dangerous_patterns = [
+        r'import\s+os',
+        r'import\s+sys',
+        r'import\s+subprocess',
+        r'import\s+requests',
+        r'import\s+socket',
+        r'import\s+pickle',
+        r'__import__',
+        r'eval\s*\(',
+        r'exec\s*\(',
+        r'(?<!re\.)compile\s*\(',
+        r'open\s*\(',
+        r'file\s*\(',
+    ]
+
+    for pattern in dangerous_patterns:
+        if re.search(pattern, code_no_comments, re.IGNORECASE):
+            return False, f"Dangerous pattern detected: {pattern}"
+
+    return True, "Code appears safe"
+
+
+_FORBIDDEN_AST_NODES = (
+    ast.Import, ast.ImportFrom, ast.ClassDef, ast.Lambda, ast.Global,
+    ast.Nonlocal, ast.With, ast.AsyncWith, ast.AsyncFunctionDef, ast.Await,
+    ast.Yield, ast.YieldFrom, ast.Try, ast.Raise, ast.Delete, ast.While,
+)
+
+_FORBIDDEN_NAMES = {
+    '__builtins__', '__import__', 'eval', 'exec', 'compile', 'open', 'input',
+    'globals', 'locals', 'vars', 'dir', 'type', 'super', 'object', 'memoryview',
+    'getattr', 'setattr', 'delattr', 'hasattr', 'breakpoint', 'help',
+}
+
+
+def validate_generated_code_ast(code: str) -> Tuple[bool, str]:
+    """Allow only a small, extraction-oriented subset of Python syntax."""
+    try:
+        tree = ast.parse(code)
+    except SyntaxError as e:
+        return False, f"Syntax error: {e}"
+
+    function_defs = [node for node in tree.body if isinstance(node, ast.FunctionDef)]
+    if len(function_defs) != 1 or function_defs[0].name != 'extract_data':
+        return False, "Generated code must define exactly one function named extract_data"
+    for node in tree.body:
+        if not isinstance(node, ast.FunctionDef):
+            return False, "Only the extract_data function may appear at module scope"
+
+    for node in ast.walk(tree):
+        if isinstance(node, _FORBIDDEN_AST_NODES):
+            return False, f"Disallowed syntax: {type(node).__name__}"
+        if isinstance(node, ast.Name) and node.id in _FORBIDDEN_NAMES:
+            return False, f"Disallowed name: {node.id}"
+        if isinstance(node, ast.Attribute) and node.attr.startswith('__'):
+            return False, f"Disallowed private/introspection attribute: {node.attr}"
+        if isinstance(node, ast.Call):
+            func = node.func
+            if isinstance(func, ast.Name) and func.id in _FORBIDDEN_NAMES:
+                return False, f"Disallowed call: {func.id}"
+            if isinstance(func, ast.Attribute) and func.attr.startswith('__'):
+                return False, f"Disallowed call attribute: {func.attr}"
+
+    return True, "AST appears safe"
+
+
+_SANDBOX_WORKER_CODE = r'''
+import json
+import re
+import sys
+import traceback
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin, urlparse
+
+
+def safe_urljoin(base, url, *args, **kwargs):
+    if isinstance(base, list):
+        base = base[0] if base else ''
+    if isinstance(url, list):
+        url = url[0] if url else ''
+    return urljoin(str(base), str(url), *args, **kwargs)
+
+
+def safe_urlparse(url, *args, **kwargs):
+    if isinstance(url, list):
+        url = url[0] if url else ''
+    return urlparse(str(url), *args, **kwargs)
+
+
+def main():
+    payload = json.loads(sys.stdin.read())
+    restricted_globals = {
+        '__builtins__': {
+            'print': lambda *args, **kwargs: None,
+            'len': len, 'str': str, 'int': int, 'float': float,
+            'bool': bool, 'list': list, 'dict': dict, 'set': set, 'tuple': tuple,
+            'range': range, 'enumerate': enumerate, 'zip': zip, 'filter': filter,
+            'map': map, 'sorted': sorted, 'any': any, 'all': all, 'max': max,
+            'min': min, 'sum': sum, 'None': None, 'True': True, 'False': False,
+            'isinstance': isinstance,
+        },
+        'BeautifulSoup': BeautifulSoup,
+        're': re,
+        'json': json,
+        'urljoin': safe_urljoin,
+        'urlparse': safe_urlparse,
+    }
+
+    exec(payload['code'], restricted_globals)
+    user_func = restricted_globals.get('extract_data')
+    if not callable(user_func):
+        raise RuntimeError('Generated code does not define callable extract_data')
+    result = user_func(payload['html_content'])
+    print(json.dumps({'ok': True, 'result': result}, ensure_ascii=False))
+
+
+try:
+    main()
+except Exception as e:
+    print(json.dumps({'ok': False, 'error': str(e), 'traceback': traceback.format_exc()}, ensure_ascii=False))
+'''
+
+
+def _sandbox_env() -> Dict[str, str]:
+    env = {'PYTHONIOENCODING': 'utf-8', 'PYTHONUTF8': '1'}
+    for key in ('SystemRoot', 'TEMP', 'TMP'):
+        if key in os.environ:
+            env[key] = os.environ[key]
+    return env
+
+
+def execute_generated_code_sandboxed(
+    code: str,
+    html_content: str,
+    output_validator: Callable,
+    timeout_seconds: int = DEFAULT_SANDBOX_TIMEOUT_SECONDS,
+    max_stdout: int = DEFAULT_SANDBOX_MAX_STDOUT,
+) -> Tuple[bool, object]:
+    """Validate and execute generated extract_data code in a stripped subprocess."""
+    if all(line.strip() == '' or line.strip().startswith('#') for line in code.splitlines()):
+        return False, f"LLM ERROR: {code.replace('# ', '').strip()}"
+
+    is_safe, safety_msg = validate_generated_code_safety(code)
+    if not is_safe:
+        return False, f"SAFETY ERROR: {safety_msg}"
+
+    ast_safe, ast_msg = validate_generated_code_ast(code)
+    if not ast_safe:
+        return False, f"AST SAFETY ERROR: {ast_msg}"
+
+    try:
+        payload = json.dumps({'code': code, 'html_content': html_content}, ensure_ascii=False)
+        completed = subprocess.run(
+            [sys.executable, '-I', '-c', _SANDBOX_WORKER_CODE],
+            input=payload,
+            text=True,
+            encoding='utf-8',
+            errors='replace',
+            capture_output=True,
+            timeout=timeout_seconds,
+            env=_sandbox_env(),
+        )
+        stdout = completed.stdout.strip()
+        if len(stdout) > max_stdout:
+            return False, "SANDBOX ERROR: Output exceeded maximum size"
+        if completed.returncode != 0:
+            return False, f"SANDBOX ERROR: Worker exited with {completed.returncode}: {completed.stderr.strip()}"
+        if not stdout:
+            return False, "SANDBOX ERROR: Worker produced no output"
+        envelope = json.loads(stdout.splitlines()[-1])
+        if not envelope.get('ok'):
+            return False, f"EXECUTION ERROR: {envelope.get('error', 'unknown error')}\n\n{envelope.get('traceback', '')}"
+
+        schema_ok, schema_msg, clean_result = output_validator(envelope.get('result'))
+        if not schema_ok:
+            return False, f"OUTPUT SCHEMA ERROR: {schema_msg}"
+        return True, clean_result
+    except subprocess.TimeoutExpired:
+        return False, f"SANDBOX ERROR: Execution timed out after {timeout_seconds} seconds"
+    except json.JSONDecodeError as e:
+        return False, f"SANDBOX ERROR: Invalid JSON from worker: {e}"
+    except Exception as e:
+        error_detail = traceback.format_exc()
+        return False, f"EXECUTION ERROR: {str(e)}\n\n{error_detail}"
 
 
 def _generate_with_retry(model, prompt, max_attempts: int = 4):

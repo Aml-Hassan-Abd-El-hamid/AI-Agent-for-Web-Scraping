@@ -30,6 +30,7 @@ from utils import (
     fetch_page_structure as _utils_fetch_page_structure,
     _is_challenge_page, get_last_fetch_error,
     count_tokens, input_token_budget, DEFAULT_INPUT_TOKEN_BUDGET,
+    execute_generated_code_sandboxed,
 )
 
 random_num = random.randint(10000, 99999)
@@ -42,6 +43,11 @@ TARGET_TAGS = ['div', 'section', 'article', 'main', 'header', 'footer', 'nav',
 MAX_DEPTH =  10 #stats  
 MIN_MAP_DEPTH = 3      # floor when shrinking a too-large map to fit the token budget
 MAX_RETRIES = 3
+SANDBOX_TIMEOUT_SECONDS = 30
+SANDBOX_MAX_STDOUT = 1_000_000
+SANDBOX_MAX_LINKS = 500
+SANDBOX_MAX_TITLE_LENGTH = 500
+SANDBOX_MAX_URL_LENGTH = 2048
 
 ALLOWED_IMPORTS = {
     'BeautifulSoup': BeautifulSoup,
@@ -207,6 +213,59 @@ _FEW_SHOT_CODE = '''def extract_data(html_content):
     return {"article_links": article_links}'''
 
 
+# ═══════════════════════════════════════════════════════════
+# SECOND FEW-SHOT EXAMPLE — image-card layout.
+# Here the <a> wraps only a thumbnail (no text), and the title lives in a
+# SIBLING element (<p>/<h2>) inside the same card. This teaches Gemma to take
+# the title from the card, not from the anchor's own text — the common failure
+# mode on image-grid listings.
+# ═══════════════════════════════════════════════════════════
+_FEW_SHOT_MAP_2 = '''[
+  {"tag": "ul", "attributes": {"class": "post-list"}, "children": [
+    {"tag": "li", "attributes": {"class": "item"}, "children": [
+      {"tag": "a", "attributes": {"href": "/story/council-deadline"}, "children": [
+        {"tag": "div", "attributes": {"class": "thumb"}, "children": [
+          {"tag": "img", "attributes": {}}
+        ]}
+      ]},
+      {"tag": "div", "attributes": {"class": "text"}, "children": [
+        {"tag": "span", "attributes": {"class": "date"}, "text_snippet": "July 17, 2026"},
+        {"tag": "p", "attributes": {"class": "the-title"}, "text_snippet": "Council sets final deadline for studios"}
+      ]}
+    ]}
+  ]}
+]'''
+
+_FEW_SHOT_CODE_2 = '''def extract_data(html_content):
+    soup = BeautifulSoup(html_content, 'html.parser')
+    base_url = '/'.join('https://example.com/blog'.split('/')[:3])
+
+    seen = set()
+    article_links = []
+
+    # Each card is an <li>. The <a> wraps only the thumbnail, so its own text is
+    # empty — the title is a SIBLING element in the same card, not the anchor text.
+    for card in soup.select('ul.post-list li.item'):
+        a_tag = card.find('a', href=True)
+        if not a_tag:
+            continue
+        href = a_tag['href']
+        if href.startswith('javascript:') or href == '#':
+            continue
+        # Title from a heading/paragraph in the card; fall back to the anchor text.
+        title_el = card.select_one('p.the-title, h2, h3, .title')
+        title = title_el.get_text(strip=True) if title_el else a_tag.get_text(strip=True)
+        if not title:
+            continue
+        url = urljoin(base_url, href)
+        if url in seen:
+            continue
+        seen.add(url)
+        article_links.append({"url": url, "title": title})
+
+    return {"article_links": article_links}'''
+
+
 class GemmaAgent:
     """LLM agent using Gemma's prompt format with few-shot examples."""
 
@@ -231,6 +290,7 @@ Rules you MUST follow:
 - Only use selectors (tags, classes, ids) that appear in the structural map. Do NOT invent selectors.
 - Article links point to individual posts/articles (usually a story/slug URL), NOT to other listing pages.
 - Exclude ALL of these (they are navigation, not articles): nav/header/footer links; pagination links (links whose visible text is just a page number like "2"/"75", or whose URL ends in /page/N/); category/tag/author archive links (e.g. URLs containing /category/, /tag/, /author/); the listing page's own URL; javascript: hrefs; anchor-only (#) links; social media domains.
+- TITLE location: the title is usually the link's own text. BUT if the link wraps only a thumbnail/image and has no text, take the title from a sibling heading or paragraph in the SAME card (e.g. h2/h3/p). Never skip a card just because its <a> has no text — look for the title elsewhere in the card first.
 - If no article links exist, return {{"article_links": []}}
 - Do NOT include import statements. Only output the function body.
 - Available in scope: BeautifulSoup, re, json, urljoin, urlparse.
@@ -249,6 +309,17 @@ STRUCTURAL MAP:
 <end_of_turn>
 <start_of_turn>model
 {_FEW_SHOT_CODE}
+<end_of_turn>
+<start_of_turn>user
+Here is a second example — an image-card layout where the link wraps only a thumbnail and the title is a sibling element (not the anchor's text):
+
+TARGET URL: https://example.com/blog
+
+STRUCTURAL MAP:
+{_FEW_SHOT_MAP_2}
+<end_of_turn>
+<start_of_turn>model
+{_FEW_SHOT_CODE_2}
 <end_of_turn>
 <start_of_turn>user
 Good. Now do the same for this real page.
@@ -289,6 +360,7 @@ Fix the code. Same rules:
 - Return dict with key "article_links" as list of {{"url": ..., "title": ...}}
 - Use urljoin(base_url, href) for relative URLs.  base_url = '/'.join('{page_url}'.split('/')[:3])
 - Only use selectors from the structural map.
+- TITLE location: if a card's <a> wraps only a thumbnail/image and has no text, take the title from a sibling heading/paragraph in the same card (h2/h3/p). Do not skip cards whose <a> has empty text.
 - Available: BeautifulSoup, re, json, urljoin, urlparse
 - Output ONLY the corrected function. No explanation.
 <end_of_turn>
@@ -343,110 +415,55 @@ Fix the code. Same rules:
 
 
 # --- Safe Code Execution ---
-def validate_code_safety(code: str) -> Tuple[bool, str]:
-    """Basic safety validation for generated code."""
-    code_no_comments = re.sub(r'#.*$', '', code, flags=re.MULTILINE)
-    dangerous_patterns = [
-        r'import\s+os',
-        r'import\s+sys',
-        r'import\s+subprocess',
-        r'import\s+requests',
-        r'import\s+socket',
-        r'import\s+pickle',
-        r'__import__',
-        r'eval\s*\(',
-        r'exec\s*\(',
-        r'(?<!re\.)compile\s*\(',
-        r'open\s*\(',
-        r'file\s*\(',
-    ]
+def _validate_links_output(result) -> Tuple[bool, str, Dict]:
+    """Validate the generated extractor's result against the links contract."""
+    if isinstance(result, list) and len(result) == 1 and isinstance(result[0], dict):
+        result = result[0]
+    if not isinstance(result, dict):
+        return False, "Output must be a JSON object", {}
+    if set(result.keys()) != {'article_links'}:
+        return False, "Output must contain exactly one key: article_links", {}
+    links = result.get('article_links')
+    if not isinstance(links, list):
+        return False, "article_links must be a list", {}
+    if len(links) > SANDBOX_MAX_LINKS:
+        return False, f"article_links exceeds maximum of {SANDBOX_MAX_LINKS}", {}
 
-    for pattern in dangerous_patterns:
-        if re.search(pattern, code_no_comments, re.IGNORECASE):
-            return False, f"Dangerous pattern detected: {pattern}"
+    cleaned = []
+    seen = set()
+    for idx, item in enumerate(links):
+        if not isinstance(item, dict) or set(item.keys()) != {'url', 'title'}:
+            return False, f"article_links[{idx}] must contain exactly url and title", {}
+        url = item.get('url')
+        title = item.get('title')
+        if not isinstance(url, str) or not isinstance(title, str):
+            return False, f"article_links[{idx}] url and title must be strings", {}
+        url = url.strip()
+        title = title.strip()
+        if not url or len(url) > SANDBOX_MAX_URL_LENGTH:
+            return False, f"article_links[{idx}] has an empty or overlong URL", {}
+        if len(title) > SANDBOX_MAX_TITLE_LENGTH:
+            return False, f"article_links[{idx}] has an overlong title", {}
+        parsed = urlparse(url)
+        if parsed.scheme not in {'http', 'https'} or not parsed.netloc:
+            return False, f"article_links[{idx}] URL must be absolute http(s)", {}
+        if url in seen:
+            continue
+        seen.add(url)
+        cleaned.append({'url': url, 'title': title})
 
-    return True, "Code appears safe"
+    return True, "Output schema is valid", {'article_links': cleaned}
 
 
 def execute_extraction_code(code: str, html_content: str) -> Tuple[bool, any]:
-    """Execute the generated extraction code in a restricted environment."""
-
-    if all(line.strip() == '' or line.strip().startswith('#') for line in code.splitlines()):
-        return False, f"LLM ERROR: {code.replace('# ', '').strip()}"
-
-    is_safe, safety_msg = validate_code_safety(code)
-    if not is_safe:
-        return False, f"SAFETY ERROR: {safety_msg}"
-
-    def safe_urljoin(base, url, *args, **kwargs):
-        if isinstance(base, list):
-            base = base[0] if base else ''
-        if isinstance(url, list):
-            url = url[0] if url else ''
-        return urljoin(str(base), str(url), *args, **kwargs)
-
-    def safe_urlparse(url, *args, **kwargs):
-        if isinstance(url, list):
-            url = url[0] if url else ''
-        return urlparse(str(url), *args, **kwargs)
-
-    restricted_globals = {
-        '__builtins__': {
-            'print': print, 'len': len, 'str': str, 'int': int, 'float': float,
-            'bool': bool, 'list': list, 'dict': dict, 'set': set, 'tuple': tuple,
-            'range': range, 'enumerate': enumerate, 'zip': zip, 'filter': filter,
-            'map': map, 'sorted': sorted, 'any': any, 'all': all, 'max': max,
-            'min': min, 'sum': sum, 'None': None, 'True': True, 'False': False,
-            'isinstance': isinstance, 'hasattr': hasattr, 'getattr': getattr,
-        },
-        'BeautifulSoup': BeautifulSoup,
-        're': re,
-        'json': json,
-        'urljoin': safe_urljoin,
-        'urlparse': safe_urlparse,
-        'bs4': type('Module', (), {'BeautifulSoup': BeautifulSoup})(),
-    }
-
-    def safe_import(name, *args, **kwargs):
-        allowed = {
-            'bs4': type('Module', (), {'BeautifulSoup': BeautifulSoup})(),
-            're': re,
-            'json': json,
-            'urllib.parse': type('Module', (), {'urljoin': safe_urljoin, 'urlparse': safe_urlparse})(),
-        }
-        if name in allowed:
-            return allowed[name]
-        raise ImportError(f"Import of '{name}' is not allowed")
-
-    restricted_globals['__builtins__']['__import__'] = safe_import
-
-    try:
-        pre_exec_keys = set(restricted_globals.keys())
-
-        exec(code, restricted_globals)
-
-        user_func = None
-        for name in restricted_globals:
-            if name in pre_exec_keys or name.startswith('__'):
-                continue
-            obj = restricted_globals[name]
-            if callable(obj):
-                user_func = obj
-                break
-
-        if user_func is None:
-            return False, "ERROR: Generated code does not contain any callable function"
-
-        result = user_func(html_content)
-
-        if isinstance(result, list) and len(result) == 1 and isinstance(result[0], dict):
-            result = result[0]
-
-        return True, result
-
-    except Exception as e:
-        error_detail = traceback.format_exc()
-        return False, f"EXECUTION ERROR: {str(e)}\n\n{error_detail}"
+    """Execute generated code in a subprocess with validation and time limits."""
+    return execute_generated_code_sandboxed(
+        code,
+        html_content,
+        _validate_links_output,
+        timeout_seconds=SANDBOX_TIMEOUT_SECONDS,
+        max_stdout=SANDBOX_MAX_STDOUT,
+    )
 
 
 # --- Output Analysis ---

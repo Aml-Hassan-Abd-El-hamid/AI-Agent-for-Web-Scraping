@@ -24,3 +24,7 @@ swde_data/
 swde_download/
 swde_prepared/
 swde_pred/
+
+*.pyc
+
+
