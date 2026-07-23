@@ -24,7 +24,17 @@ swde_data/
 swde_download/
 swde_prepared/
 swde_pred/
-
+*.log
 *.pyc
+
+
+# Derived label tables — regenerate with `python aggregate.py`.
+# These are rebuilt from the per-labeller JSONL files under labels/, so labellers
+# must NOT commit their local copies (that is what used to cause merge conflicts).
+manual_labeling_table.md
+failure_analysis_table.md
+na_field_analysis_table.md
+labels/*_checked_links.md
+labels/run_logs/
 
 

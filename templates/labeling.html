@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snapshot Labeling App</title>
+  <style>
+    :root {
+      --bg: #f5f1e8;
+      --panel: #fffaf0;
+      --ink: #20231f;
+      --muted: #6e7469;
+      --line: #d8cfbf;
+      --accent: #0f766e;
+      --accent-dark: #115e59;
+      --warn: #b45309;
+      --bad: #b91c1c;
+      --code: #1f2937;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Georgia, 'Times New Roman', serif; background: var(--bg); color: var(--ink); }
+    header { padding: 22px 34px; border-bottom: 1px solid var(--line); background: #e9dfcf; display: flex; align-items: baseline; gap: 16px; }
+    header h1 { margin: 0; font-size: 26px; letter-spacing: .01em; }
+    header a { color: var(--accent-dark); text-decoration: none; font-weight: 700; }
+    main { width: min(1280px, calc(100vw - 40px)); margin: 24px auto 60px; }
+    .narrow { width: min(860px, 100%); margin: 0 auto; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .label-grid { display: grid; grid-template-columns: minmax(340px, .8fr) minmax(0, 1.5fr); gap: 18px; align-items: start; }
+    .label-grid > section:first-child { order: 2; position: sticky; top: 16px; align-self: start; }
+    .label-grid > section:nth-child(2) { order: 1; }
+    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 18px; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+    .stacked-card { margin-top: 18px; }
+    .card h2, .card h3 { margin: 0 0 12px; }
+    .muted { color: var(--muted); }
+    .small { font-size: 13px; }
+    .btn { display: inline-block; border: 0; background: var(--accent); color: white; padding: 9px 13px; border-radius: 6px; cursor: pointer; text-decoration: none; font-family: Arial, sans-serif; font-size: 14px; }
+    .btn:hover { background: var(--accent-dark); }
+    .btn.secondary { background: #d6c8b6; color: var(--ink); }
+    .btn.warn { background: var(--warn); }
+    input, select, textarea { width: 100%; border: 1px solid var(--line); border-radius: 6px; padding: 9px; background: white; color: var(--ink); font: 14px Arial, sans-serif; }
+    textarea { min-height: 86px; resize: vertical; }
+    label { display: block; font: 700 13px Arial, sans-serif; margin: 12px 0 5px; color: #3d433b; }
+    table { width: 100%; border-collapse: collapse; background: var(--panel); }
+    th, td { border-bottom: 1px solid var(--line); padding: 9px; text-align: left; vertical-align: top; }
+    th { font: 700 12px Arial, sans-serif; text-transform: uppercase; color: var(--muted); }
+    td code { overflow-wrap: anywhere; }
+    code, pre { font-family: Consolas, 'Courier New', monospace; }
+    pre.run-log { background: var(--code); color: #e5e7eb; border-radius: 8px; padding: 14px; min-height: 240px; max-height: 420px; overflow: auto; white-space: pre-wrap; font-size: 13px; }
+    .pill { display: inline-block; border-radius: 999px; padding: 3px 8px; background: #e7dccb; color: #363b34; font: 700 12px Arial, sans-serif; }
+    .pill.done { background: #ccfbf1; color: #115e59; }
+    .pill.bad { background: #fee2e2; color: var(--bad); }
+    .article-title { max-width: 520px; line-height: 1.35; }
+    iframe { width: 100%; height: calc(100vh - 170px); min-height: 640px; border: 1px solid var(--line); border-radius: 8px; background: white; }
+    .pred { background: #f7efe0; border: 1px solid var(--line); border-radius: 6px; padding: 10px; margin: 8px 0; }
+    .pred strong { display: block; font: 700 12px Arial, sans-serif; color: var(--muted); text-transform: uppercase; margin-bottom: 4px; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 14px; }
+    .notice { border-left: 4px solid var(--accent); padding: 10px 12px; background: #ecfdf5; margin-bottom: 16px; }
+    .compare-box { border: 1px solid var(--line); border-radius: 8px; padding: 10px; margin-top: 8px; background: #fffdf7; }
+    .score-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+    .diff { font: 13px/1.7 Consolas, 'Courier New', monospace; white-space: pre-wrap; word-break: break-word; }
+    .diff .same { color: #4b5563; }
+    .diff .insert { background: #dcfce7; color: #166534; border-radius: 3px; padding: 1px 2px; }
+    .diff .delete { background: #fee2e2; color: #991b1b; border-radius: 3px; padding: 1px 2px; text-decoration: line-through; }
+    .diff .replace { background: #fef3c7; color: #92400e; border-radius: 3px; padding: 1px 2px; }
+    .hint { font: 13px Arial, sans-serif; color: var(--muted); margin-top: 4px; }
+    .hidden { display: none !important; }
+    .progress { height: 10px; background: #e7dccb; border-radius: 999px; overflow: hidden; margin: 8px 0 4px; }
+    .progress > span { display: block; height: 100%; background: var(--accent); transition: width .2s; }
+    kbd { font: 11px Consolas, monospace; background: #eee7d8; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 1px 5px; }
+    .toast { position: fixed; bottom: 22px; right: 22px; background: var(--accent-dark); color: #fff; padding: 12px 18px; border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,.22); font: 700 14px Arial, sans-serif; z-index: 1000; opacity: 0; transform: translateY(8px); transition: opacity .18s, transform .18s; pointer-events: none; }
+    .toast.show { opacity: 1; transform: translateY(0); }
+    @media (max-width: 900px) { .grid, .label-grid, .row { grid-template-columns: 1fr; } iframe { height: 520px; } }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Snapshot Labeling App</h1>
+  <a href="{{ url_for('index') }}">Home</a>
+</header>
+<main>
+{% if page == 'index' %}
+  <div class="narrow">
+      <section class="card">
+        <h2>Run snapshot orchestrator</h2>
+        <p class="muted">Start <code>orch_pag_snapshot.py</code> from a regular form. The app feeds these values to the existing orchestrator and creates the same run and snapshot folders.</p>
+        <form method="post" action="{{ url_for('start_run') }}" id="run-form">
+        <label>Gemini API key</label>
+        <input name="api_key" id="api-key" type="password" autocomplete="off" required>
+        <label>Model choice</label>
+        <select name="model_choice" id="model-choice">
+          <option value="">Default: gemma-3-27b-it</option>
+          <option value="gemma-3-27b-it">gemma-3-27b-it</option>
+          <option value="gemma-3-12b-it">gemma-3-12b-it</option>
+          <option value="gemini-2.5-flash">gemini-2.5-flash</option>
+          <option value="gemini-2.5-pro">gemini-2.5-pro</option>
+          <option value="gemini-2.0-flash">gemini-2.0-flash</option>
+        </select>
+        <div class="actions">
+          <span class="hint" id="model-status">Models load automatically after the Gemini API key is entered.</span>
+        </div>
+        <label>Listing page URL</label>
+        <input name="listing_url" required placeholder="https://example.com/news">
+        <div class="row">
+          <div>
+            <label>Website name</label>
+            <input name="website" placeholder="optional, defaults to domain">
+          </div>
+          <div>
+            <label>Pagination type</label>
+            <select name="pagination_type" id="pagination-type">
+              <option value="2">No pagination</option>
+              <option value="1">Numbered pagination</option>
+              <option value="3">Infinite scroll</option>
+              <option value="4">Load more button</option>
+            </select>
+          </div>
+        </div>
+        <label>Fields to extract</label>
+        <input name="requirements" value="title, date, author, article body text">
+        <div class="row">
+          <div data-pagination-field="numbered">
+            <label>Page 2 URL for numbered pagination</label>
+            <input name="page2_url" placeholder="https://example.com/news/page/2">
+            <div class="hint">Page 1 is assumed to be the listing page URL above.</div>
+          </div>
+          <div data-pagination-field="numbered">
+            <label>Corrected URL pattern, if needed</label>
+            <input name="pagination_pattern" placeholder="optional; use {page} placeholder">
+          </div>
+          <div data-pagination-field="numbered">
+            <label>Total pages</label>
+            <input name="total_pages" placeholder="for numbered pagination">
+          </div>
+          <div data-pagination-field="scroll load-more">
+            <label>Scroll/click rounds</label>
+            <input name="scroll_rounds" placeholder="default 20">
+          </div>
+          <div data-pagination-field="load-more">
+            <label>Load-more selector</label>
+            <input name="load_more_selector" placeholder="optional; auto-detect if blank">
+          </div>
+        </div>
+        <p class="hint">For model selection, leave the dropdown on the default model or choose from the loaded model list.</p>
+          <button class="btn" type="submit" id="start-run-button">Start run</button>
+        </form>
+        {% if jobs %}
+        <h3 style="margin-top:22px">Active jobs</h3>
+        <table>
+          <tr><th>Job</th><th>Started</th><th>Status</th></tr>
+          {% for job in jobs %}
+          <tr>
+            <td><a href="{{ url_for('job_page', job_id=job.id) }}">{{ job.id }}</a></td>
+            <td>{{ job.started_at }}</td>
+            <td>{% if job.returncode is none %}<span class="pill">running</span>{% else %}<span class="pill done">exit {{ job.returncode }}</span>{% endif %}</td>
+          </tr>
+          {% endfor %}
+        </table>
+        {% endif %}
+      </section>
+      <section class="card stacked-card">
+        <h2>Labeling outputs</h2>
+        <p>Each labeller only ever writes their own append-only files, so pushing to a shared repo will not cause merge conflicts:</p>
+        <ul>
+          <li><code>labels/&lt;snapshot&gt;/articles/&lt;labeler&gt;.jsonl</code>: one line per article check</li>
+          <li><code>labels/&lt;snapshot&gt;/failures/&lt;labeler&gt;.jsonl</code>: failed-link reviews</li>
+          <li><code>labels/&lt;snapshot&gt;/dropped/&lt;labeler&gt;.jsonl</code>: dropped-link reviews</li>
+          <li><code>labels/&lt;snapshot&gt;/na/&lt;labeler&gt;.jsonl</code>: N/A field reviews</li>
+        </ul>
+        <p class="hint">The maintainer rebuilds the summary tables (<code>manual_labeling_table.md</code>, <code>detailed_evaluation_table.md</code>, etc.) by running <code>python aggregate.py</code>.</p>
+      </section>
+  </div>
+
+  <section class="card">
+    <h2>Snapshots</h2>
+    <table>
+      <tr><th>Snapshot</th><th>Website</th><th>Pagination</th><th>Articles</th><th>Checked</th><th>Run</th><th></th></tr>
+      {% for snap in snapshots %}
+      <tr>
+        <td><code>{{ snap.name }}</code><br><span class="small muted">{{ snap.date }}</span></td>
+        <td>{{ snap.website }}</td>
+        <td>{{ snap.pagination_type }}</td>
+        <td>{{ snap.articles }}</td>
+        <td>{% if snap.checked %}<span class="pill done">{{ snap.checked }}</span>{% else %}<span class="pill">0</span>{% endif %}</td>
+        <td><code>{{ snap.run_dir }}</code></td>
+        <td><a class="btn secondary" href="{{ url_for('snapshot_page', snapshot_name=snap.name) }}">Open</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </section>
+  <script>
+    const runForm = document.getElementById('run-form');
+    const apiKeyInput = document.getElementById('api-key');
+    const modelChoice = document.getElementById('model-choice');
+    const modelStatus = document.getElementById('model-status');
+    const paginationType = document.getElementById('pagination-type');
+    const paginationFields = document.querySelectorAll('[data-pagination-field]');
+    const fieldGroupsByType = {
+      '1': ['numbered'],
+      '2': [],
+      '3': ['scroll'],
+      '4': ['scroll', 'load-more']
+    };
+    function updatePaginationFields() {
+      const activeGroups = fieldGroupsByType[paginationType.value] || [];
+      paginationFields.forEach(field => {
+        const groups = field.dataset.paginationField.split(' ');
+        field.classList.toggle('hidden', !groups.some(group => activeGroups.includes(group)));
+      });
+    }
+    paginationType.addEventListener('change', updatePaginationFields);
+    updatePaginationFields();
+
+    runForm.addEventListener('keydown', event => {
+      if (event.key === 'Enter' && event.target.tagName !== 'TEXTAREA') {
+        event.preventDefault();
+      }
+    });
+    runForm.addEventListener('submit', event => {
+      if (event.submitter && event.submitter.id !== 'start-run-button') {
+        event.preventDefault();
+      }
+    });
+
+    function addModelGroup(label, models) {
+      if (!models.length) return;
+      const group = document.createElement('optgroup');
+      group.label = label;
+      models.forEach(model => {
+        const option = document.createElement('option');
+        option.value = model;
+        option.textContent = model + (model.toLowerCase().includes('gemma') ? ' ★' : '');
+        group.appendChild(option);
+      });
+      modelChoice.appendChild(group);
+    }
+    async function loadAvailableModels() {
+      const apiKey = apiKeyInput.value.trim();
+      if (!apiKey) {
+        modelStatus.textContent = 'Models load automatically after the Gemini API key is entered.';
+        return;
+      }
+      modelStatus.textContent = 'Checking available models...';
+      try {
+        const response = await fetch('{{ url_for('available_models') }}', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({api_key: apiKey})
+        });
+        const data = await response.json();
+        if (!response.ok || !data.ok) throw new Error(data.error || 'Could not load models.');
+        modelChoice.innerHTML = '<option value="">Default: gemma-3-27b-it</option>';
+        addModelGroup('Gemma models', data.gemma_models || []);
+        addModelGroup('Other models', data.other_models || []);
+        const count = (data.gemma_models || []).length + (data.other_models || []).length;
+        modelStatus.textContent = count ? `Loaded ${count} available models.` : 'No available generateContent models found.';
+      } catch (error) {
+        modelStatus.textContent = error.message || 'Could not load models.';
+      }
+    }
+    let modelLoadTimer = null;
+    let lastModelApiKey = '';
+    function scheduleModelLoad() {
+      window.clearTimeout(modelLoadTimer);
+      modelLoadTimer = window.setTimeout(() => {
+        const apiKey = apiKeyInput.value.trim();
+        if (!apiKey || apiKey === lastModelApiKey) return;
+        lastModelApiKey = apiKey;
+        loadAvailableModels();
+      }, 700);
+    }
+    apiKeyInput.addEventListener('input', scheduleModelLoad);
+    apiKeyInput.addEventListener('change', scheduleModelLoad);
+  </script>
+{% elif page == 'job' %}
+  <section class="card">
+    <h2>Run progress <code>{{ job_id }}</code></h2>
+    <p class="muted">The orchestrator is running with the form values you submitted. When it finishes, refresh Home to see the new snapshot.</p>
+    <pre id="run-log" class="run-log">Loading...</pre>
+    <div class="actions">
+      <button class="btn warn" id="cancel-job" type="button">Cancel running job</button>
+      <a class="btn secondary" href="{{ url_for('index') }}">Back</a>
+      <span class="hint" id="job-status"></span>
+    </div>
+  </section>
+  <script>
+    const runLog = document.getElementById('run-log');
+    const cancelJobButton = document.getElementById('cancel-job');
+    const jobStatus = document.getElementById('job-status');
+    let refreshTimer = null;
+    function stopPolling() {
+      if (refreshTimer !== null) {
+        window.clearInterval(refreshTimer);
+        refreshTimer = null;
+      }
+    }
+    async function refresh() {
+      const res = await fetch('{{ url_for('job_status', job_id=job_id) }}');
+      const data = await res.json();
+      if (data.ok) {
+        runLog.textContent = data.output || '';
+        runLog.scrollTop = runLog.scrollHeight;
+        if (data.returncode !== null) {
+          cancelJobButton.classList.add('hidden');
+          jobStatus.textContent = `Finished with exit code ${data.returncode}.`;
+          stopPolling();
+        }
+      }
+    }
+    async function cancelJob() {
+      cancelJobButton.disabled = true;
+      jobStatus.textContent = 'Cancel requested...';
+      const res = await fetch('{{ url_for('cancel_job', job_id=job_id) }}', { method: 'POST' });
+      const data = await res.json();
+      if (!data.ok) {
+        jobStatus.textContent = data.error || 'Could not cancel job.';
+        cancelJobButton.disabled = false;
+        return;
+      }
+      await refresh();
+    }
+    cancelJobButton.addEventListener('click', cancelJob);
+    refresh();
+    refreshTimer = window.setInterval(refresh, 1500);
+  </script>
+{% elif page == 'snapshot' %}
+  <section class="card">
+    <h2>{{ meta.website }} <span class="pill">{{ summary.count }} checked</span></h2>
+    <p class="muted"><code>{{ snapshot_name }}</code> | {{ meta.pagination_type }} | {{ meta.snapshot_date }} | run <code>{{ meta.run_dir }}</code></p>
+    {% set total = meta.articles|length %}
+    <div class="progress"><span style="width: {{ (100 * summary.count / total)|round(1) if total else 0 }}%"></span></div>
+    <p class="small muted">{{ summary.count }} of {{ total }} articles labeled{% if total %} ({{ (100 * summary.count / total)|round(0, 'floor')|int }}%){% endif %}</p>
+    <div class="actions">
+      <a class="btn secondary" href="{{ url_for('review_failures', snapshot_name=snapshot_name) }}">Review failed links ({{ failed_links|length }})</a>
+      <a class="btn secondary" href="{{ url_for('review_dropped', snapshot_name=snapshot_name) }}">Review dropped links ({{ dropped_links|length }})</a>
+      <a class="btn secondary" href="{{ url_for('review_na', snapshot_name=snapshot_name) }}">Review N/A fields</a>
+    </div>
+    {% if na_stats %}
+    <h3 style="margin-top:18px">N/A ratios</h3>
+    <table>
+      <tr><th>Field</th><th>N/A</th><th>Total</th><th>Ratio</th><th></th></tr>
+      {% for row in na_stats %}
+      <tr>
+        <td><code>{{ row.field }}</code></td>
+        <td>{{ row.na }}</td>
+        <td>{{ row.total }}</td>
+        <td>{{ row.pct }}%</td>
+        <td>{% if row.na %}<a class="btn secondary" href="{{ url_for('review_na', snapshot_name=snapshot_name, field=row.field) }}">Sample N/A</a>{% endif %}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% endif %}
+    <form class="row" method="get">
+      <div>
+        <label>Random sample size</label>
+        <input type="text" name="n" value="{{ sample_size }}">
+      </div>
+      <div>
+        <label>Random seed</label>
+        <input type="text" name="seed" value="{{ seed }}" placeholder="optional">
+      </div>
+      <div class="actions">
+        <label style="margin:0"><input style="width:auto" type="checkbox" name="include_checked" value="1" {% if include_checked %}checked{% endif %}> include already checked</label>
+        <button class="btn" type="submit">Draw sample</button>
+      </div>
+    </form>
+  </section>
+  <section class="card">
+    <h2>Sampled articles</h2>
+    <table>
+      <tr><th>ID</th><th>Page</th><th>Title / URL</th><th>Status</th><th></th></tr>
+      {% for article in articles %}
+      {% set checked = labels.get(article.id|string) %}
+      <tr>
+        <td>{{ article.id }}</td>
+        <td>{{ article.page_num }}</td>
+        <td class="article-title" dir="auto">{{ article.title }}<br><a class="small" href="{{ article.url }}" target="_blank">{{ article.url }}</a></td>
+        <td>{% if checked %}<span class="pill done">{{ checked.decision }}</span>{% else %}<span class="pill">unchecked</span>{% endif %}</td>
+        <td><a class="btn secondary" href="{{ url_for('label_article', snapshot_name=snapshot_name, article_id=article.id) }}">Label</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </section>
+{% elif page == 'failures' %}
+  <section class="card">
+    <h2>Failed links for {{ meta.website }}</h2>
+    <p class="muted"><code>{{ snapshot_name }}</code> | {{ failures|length }} failed link(s). Use this to mark videos, non-article pages, blocked pages, fetch errors, or extraction bugs.</p>
+    <div class="actions"><a class="btn secondary" href="{{ url_for('snapshot_page', snapshot_name=snapshot_name) }}">Back to snapshot</a></div>
+  </section>
+  {% for failure in failures %}
+  {% set key = loop.index0|string %}
+  {% set saved = notes.get(key) or notes.get(failure.url|replace('/', '_')) %}
+  <section class="card">
+    <h3>Failed link {{ loop.index }}</h3>
+    <p><a href="{{ failure.url }}" target="_blank">{{ failure.url }}</a></p>
+    <p class="article-title">{{ failure.title }}</p>
+    <div class="pred"><strong>Failure reason</strong>{{ failure.reason }}</div>
+    {% if saved %}<p><span class="pill done">Reviewed: {{ saved.category }}</span></p>{% endif %}
+    <form method="post">
+      <input type="hidden" name="key" value="{{ key }}">
+      <input type="hidden" name="url" value="{{ failure.url }}">
+      <input type="hidden" name="title" value="{{ failure.title }}">
+      <input type="hidden" name="reason" value="{{ failure.reason }}">
+      <div class="row">
+        <div><label>Labeler</label><input name="labeler" value="{{ saved.labeler if saved else '' }}"></div>
+        <div><label>Category</label><select name="category">
+          {% for option in ['needs_review', 'video_article', 'not_article', 'duplicate', 'blocked_or_empty', 'fetch_error', 'extraction_error', 'encoding_error', 'other'] %}
+          <option value="{{ option }}" {% if saved and saved.category == option %}selected{% endif %}>{{ option }}</option>
+          {% endfor %}
+        </select></div>
+        <div><label>Should count as article?</label><select name="should_count_as_article">
+          {% for option in ['unknown', 'yes', 'no'] %}<option value="{{ option }}" {% if saved and saved.should_count_as_article == option %}selected{% endif %}>{{ option }}</option>{% endfor %}
+        </select></div>
+      </div>
+      <label>Notes</label>
+      <textarea name="notes" placeholder="Example: this is a video page, so failure should not count against article extraction quality">{{ saved.notes if saved else '' }}</textarea>
+      <div class="actions"><button class="btn" type="submit">Save failure note</button></div>
+    </form>
+  </section>
+  {% else %}
+  <section class="card"><p>No failed links found for this snapshot's linked run.</p></section>
+  {% endfor %}
+{% elif page == 'dropped' %}
+  <section class="card">
+    <h2>Dropped links for {{ meta.website }}</h2>
+    <p class="muted"><code>{{ snapshot_name }}</code> | {{ dropped|length }} link(s) removed by the non-article filter. These were treated as pagination / category / navigation links and never scraped. Use this to catch cases where the filter wrongly dropped a real article.</p>
+    <div class="actions"><a class="btn secondary" href="{{ url_for('snapshot_page', snapshot_name=snapshot_name) }}">Back to snapshot</a></div>
+  </section>
+  {% for link in dropped %}
+  {% set key = loop.index0|string %}
+  {% set saved = notes.get(key) or notes.get(link.url|replace('/', '_')) %}
+  <section class="card">
+    <h3>Dropped link {{ loop.index }}{% if link.page_num %} <span class="pill">page {{ link.page_num }}</span>{% endif %}</h3>
+    <p><a href="{{ link.url }}" target="_blank">{{ link.url }}</a></p>
+    <p class="article-title">{{ link.title }}</p>
+    <div class="pred"><strong>Drop reason</strong>{{ link.reason }}</div>
+    {% if saved %}<p><span class="pill done">Reviewed: {{ saved.verdict }}</span></p>{% endif %}
+    <form method="post">
+      <input type="hidden" name="key" value="{{ key }}">
+      <input type="hidden" name="url" value="{{ link.url }}">
+      <input type="hidden" name="title" value="{{ link.title }}">
+      <input type="hidden" name="reason" value="{{ link.reason }}">
+      <div class="row">
+        <div><label>Labeler</label><input name="labeler" value="{{ saved.labeler if saved else '' }}"></div>
+        <div><label>Was dropping correct?</label><select name="verdict">
+          {% for option in ['needs_review', 'correctly_dropped', 'wrongly_dropped_real_article', 'unsure'] %}
+          <option value="{{ option }}" {% if saved and saved.verdict == option %}selected{% endif %}>{{ option }}</option>
+          {% endfor %}
+        </select></div>
+      </div>
+      <label>Notes</label>
+      <textarea name="notes" placeholder="Example: this is actually a real article the filter mistook for a category page">{{ saved.notes if saved else '' }}</textarea>
+      <div class="actions"><button class="btn" type="submit">Save dropped-link note</button></div>
+    </form>
+  </section>
+  {% else %}
+  <section class="card"><p>No dropped links recorded for this snapshot's linked run.</p></section>
+  {% endfor %}
+{% elif page == 'na' %}
+  <section class="card">
+    <h2>N/A field review for {{ meta.website }}</h2>
+    <p class="muted"><code>{{ snapshot_name }}</code>. Use this to decide whether N/A means extraction failure or the website simply does not provide that field.</p>
+    <div class="actions"><a class="btn secondary" href="{{ url_for('snapshot_page', snapshot_name=snapshot_name) }}">Back to snapshot</a></div>
+    <table>
+      <tr><th>Field</th><th>N/A</th><th>Total</th><th>Ratio</th><th></th></tr>
+      {% for row in na_stats %}
+      <tr>
+        <td><code>{{ row.field }}</code></td><td>{{ row.na }}</td><td>{{ row.total }}</td><td>{{ row.pct }}%</td>
+        <td>{% if row.na %}<a class="btn secondary" href="{{ url_for('review_na', snapshot_name=snapshot_name, field=row.field, n=sample_size, seed=seed) }}">Review samples</a>{% endif %}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <form class="row" method="get">
+      <div><label>Field</label><input name="field" value="{{ selected_field }}" placeholder="copy field name from table"></div>
+      <div><label>Random sample size</label><input name="n" value="{{ sample_size }}"></div>
+      <div><label>Random seed</label><input name="seed" value="{{ seed }}"></div>
+      <div class="actions"><button class="btn" type="submit">Draw N/A sample</button></div>
+    </form>
+  </section>
+  {% if selected_field %}
+  <section class="card">
+    <h2>N/A samples for <code>{{ selected_field }}</code></h2>
+    {% for article in samples %}
+    {% set key = selected_field ~ '_' ~ article.url %}
+    {% set saved = notes.get(key) %}
+    <div class="article-block" style="padding:12px">
+      <p><a href="{{ article.url }}" target="_blank">{{ article.url }}</a></p>
+      <p class="article-title">{{ article.title }}</p>
+      {% if saved %}<p><span class="pill done">Reviewed: {{ saved.explanation }}</span></p>{% endif %}
+      <form method="post">
+        <input type="hidden" name="key" value="{{ key }}">
+        <input type="hidden" name="field" value="{{ selected_field }}">
+        <input type="hidden" name="url" value="{{ article.url }}">
+        <input type="hidden" name="title" value="{{ article.title }}">
+        <div class="row">
+          <div><label>Labeler</label><input name="labeler" value="{{ saved.labeler if saved else '' }}"></div>
+          <div><label>Why is it N/A?</label><select name="explanation">
+            {% for option in ['needs_review', 'field_not_on_website', 'extraction_missed_visible_field', 'not_article', 'field_not_requested_clearly', 'template_edge_case', 'other'] %}
+            <option value="{{ option }}" {% if saved and saved.explanation == option %}selected{% endif %}>{{ option }}</option>
+            {% endfor %}
+          </select></div>
+          <div><label>Expected N/A?</label><select name="expected">
+            {% for option in ['unknown', 'yes_expected', 'no_error'] %}<option value="{{ option }}" {% if saved and saved.expected == option %}selected{% endif %}>{{ option }}</option>{% endfor %}
+          </select></div>
+        </div>
+        <label>Notes</label>
+        <textarea name="notes" placeholder="Example: author is not displayed on this site, so author=N/A is expected">{{ saved.notes if saved else '' }}</textarea>
+        <div class="actions"><button class="btn" type="submit">Save N/A note</button></div>
+      </form>
+    </div>
+    {% else %}
+    <p>No samples found for this field.</p>
+    {% endfor %}
+  </section>
+  {% endif %}
+{% elif page == 'article' %}
+  <div class="notice">
+    <strong>Article {{ article.id }}</strong> from <code>{{ snapshot_name }}</code>. Check the saved HTML, compare it with the system prediction, then save your judgement.
+  </div>
+  <div class="label-grid">
+    <section>
+      <iframe src="{{ url_for('snapshot_html', snapshot_name=snapshot_name, filename=article.file) }}" sandbox="allow-same-origin" referrerpolicy="no-referrer"></iframe>
+    </section>
+    <section class="card">
+      <h2>Manual check</h2>
+      <p class="small"><a href="{{ article.url }}" target="_blank">{{ article.url }}</a></p>
+      <form method="post">
+        <label>Labeler name</label>
+        <input name="labeler" value="{{ existing.labeler or '' }}" placeholder="e.g. Amal">
+
+        <label>Overall decision</label>
+        <select name="decision">
+          {% for option in ['accepted', 'partial', 'rejected', 'not_article', 'needs_review'] %}
+          <option value="{{ option }}" {% if existing.decision == option %}selected{% endif %}>{{ option }}</option>
+          {% endfor %}
+        </select>
+
+        <h3 style="margin-top:18px">Prediction</h3>
+        {% for key, value in pred_data.items() %}
+          <div class="pred" dir="auto"><strong>{{ key }}</strong>{{ value }}</div>
+        {% else %}
+          <p class="muted">No linked prediction found in the run output.</p>
+        {% endfor %}
+
+        <h3 style="margin-top:18px">Paste-to-compare</h3>
+        <p class="hint">The labeller can copy only the field they want to check from the rendered article. The app compares it with the system output and highlights the difference.</p>
+        {% for field, label, predicted, existing_value in [
+          ('title', 'Title from page', pred_values.title, existing.gold_title or ''),
+          ('date', 'Date from page', pred_values.date, existing.gold_date or ''),
+          ('author', 'Author from page', pred_values.author, existing.gold_author or ''),
+          ('body', 'Body snippet/full body from page', pred_values.body, existing.gold_body or '')
+        ] %}
+        <div class="compare-box" data-field="{{ field }}">
+          <label>{{ label }}</label>
+          {% if field == 'body' %}
+          <textarea name="gold_{{ field }}" class="manual-text" dir="auto" data-predicted="{{ predicted|e }}" style="min-height:130px">{{ existing_value }}</textarea>
+          {% else %}
+          <textarea name="gold_{{ field }}" class="manual-text" dir="auto" data-predicted="{{ predicted|e }}">{{ existing_value }}</textarea>
+          {% endif %}
+          <div class="actions">
+            <button class="btn secondary compare-btn" type="button">Compare {{ field }}</button>
+          </div>
+          <div class="score-row"></div>
+          <div class="diff" dir="auto"></div>
+        </div>
+        {% endfor %}
+
+        <div class="row">
+          <div>
+            <label>Title status</label>
+            <select name="title_status">
+              {% for option in ['not_checked', 'correct', 'minor_issue', 'wrong', 'missing'] %}<option value="{{ option }}" {% if existing.title_status == option %}selected{% endif %}>{{ option }}</option>{% endfor %}
+            </select>
+          </div>
+          <div>
+            <label>Date status</label>
+            <select name="date_status">
+              {% for option in ['not_checked', 'correct', 'minor_issue', 'wrong', 'missing', 'not_applicable'] %}<option value="{{ option }}" {% if existing.date_status == option %}selected{% endif %}>{{ option }}</option>{% endfor %}
+            </select>
+          </div>
+          <div>
+            <label>Author status</label>
+            <select name="author_status">
+              {% for option in ['not_checked', 'correct', 'minor_issue', 'wrong', 'missing', 'not_applicable'] %}<option value="{{ option }}" {% if existing.author_status == option %}selected{% endif %}>{{ option }}</option>{% endfor %}
+            </select>
+          </div>
+          <div>
+            <label>Body status</label>
+            <select name="body_status">
+              {% for option in ['not_checked', 'correct', 'minor_issue', 'wrong', 'missing', 'boilerplate_only'] %}<option value="{{ option }}" {% if existing.body_status == option %}selected{% endif %}>{{ option }}</option>{% endfor %}
+            </select>
+          </div>
+        </div>
+
+        <label>Body completeness</label>
+        <select name="body_completeness">
+          {% for option in ['not_checked', 'complete', 'mostly_complete', 'partial', 'empty', 'not_article'] %}
+          <option value="{{ option }}" {% if existing.body_completeness == option %}selected{% endif %}>{{ option }}</option>
+          {% endfor %}
+        </select>
+
+        <label>Notes for paper/error analysis</label>
+        <textarea name="notes" placeholder="e.g. body missed after first paragraph, page is video, author not visible, boilerplate included">{{ existing.notes or '' }}</textarea>
+
+        <div class="actions">
+          <button class="btn" type="submit" name="save_next" value="1">Save and next unchecked</button>
+          <button class="btn secondary" type="submit">Save</button>
+          <a class="btn secondary" href="{{ url_for('snapshot_page', snapshot_name=snapshot_name) }}">Back to sample</a>
+          <span class="hint">Tip: press <kbd>Ctrl</kbd>+<kbd>Enter</kbd> to save and jump to the next unchecked article.</span>
+        </div>
+      </form>
+    </section>
+  </div>
+  <script>
+    function escapeHtml(text) {
+      return String(text || '').replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
+    }
+    function renderDiff(segments) {
+      return segments.map(seg => {
+        if (seg.type === 'equal') return `<span class="same">${escapeHtml(seg.manual)}</span>`;
+        if (seg.type === 'insert') return `<span class="insert">+${escapeHtml(seg.manual)}</span>`;
+        if (seg.type === 'delete') return `<span class="delete">-${escapeHtml(seg.predicted)}</span>`;
+        return `<span class="replace">${escapeHtml(seg.predicted)} -> ${escapeHtml(seg.manual)}</span>`;
+      }).join('');
+    }
+    async function compareBox(box) {
+      const input = box.querySelector('.manual-text');
+      const response = await fetch('{{ url_for('compare_text') }}', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ predicted: input.dataset.predicted || '', manual: input.value || '' })
+      });
+      const data = await response.json();
+      if (!data.ok) return;
+      const scores = data.scores;
+      box.querySelector('.score-row').innerHTML = `
+        <span class="pill ${scores.exact === 1 ? 'done' : ''}">exact ${Math.round(scores.exact * 100)}%</span>
+        <span class="pill">F1 ${Math.round(scores.f1 * 100)}%</span>
+        <span class="pill">precision ${Math.round(scores.precision * 100)}%</span>
+        <span class="pill">recall ${Math.round(scores.recall * 100)}%</span>`;
+      box.querySelector('.diff').innerHTML = renderDiff(data.diff || []);
+    }
+    document.querySelectorAll('.compare-box').forEach(box => {
+      box.querySelector('.compare-btn').addEventListener('click', () => compareBox(box));
+      const input = box.querySelector('.manual-text');
+      if (input.value.trim()) compareBox(box);
+      let debounce = null;
+      input.addEventListener('input', () => {
+        window.clearTimeout(debounce);
+        debounce = window.setTimeout(() => compareBox(box), 500);
+      });
+      input.addEventListener('blur', () => compareBox(box));
+    });
+  </script>
+{% endif %}
+</main>
+<div id="toast" class="toast"></div>
+<script>
+  // Cross-page helpers: remember labeller name, save toast, unsaved-changes
+  // guard, and a keyboard shortcut for "save and next".
+  (function () {
+    const KEY = 'labeler_name';
+    document.querySelectorAll('input[name="labeler"]').forEach(input => {
+      if (!input.value) {
+        const saved = localStorage.getItem(KEY);
+        if (saved) input.value = saved;
+      }
+      input.addEventListener('change', () => {
+        if (input.value.trim()) localStorage.setItem(KEY, input.value.trim());
+      });
+    });
+
+    const toast = document.getElementById('toast');
+    let toastTimer = null;
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('show');
+      window.clearTimeout(toastTimer);
+      toastTimer = window.setTimeout(() => toast.classList.remove('show'), 2200);
+    }
+    if (new URLSearchParams(location.search).get('saved')) {
+      showToast('Saved \u2713');
+    }
+
+    // Warn before leaving with unsaved edits in a labeling form.
+    let dirty = false;
+    document.querySelectorAll('form').forEach(form => {
+      if ((form.method || '').toLowerCase() !== 'post' || form.id === 'run-form') return;
+      form.addEventListener('input', () => { dirty = true; });
+      form.addEventListener('submit', () => { dirty = false; });
+    });
+    window.addEventListener('beforeunload', event => {
+      if (dirty) { event.preventDefault(); event.returnValue = ''; }
+    });
+
+    const saveNext = document.querySelector('button[name="save_next"]');
+    if (saveNext) {
+      document.addEventListener('keydown', event => {
+        if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') {
+          event.preventDefault();
+          saveNext.click();
+        }
+      });
+    }
+  })();
+</script>
+</body>
+</html>

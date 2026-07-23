@@ -13,6 +13,7 @@ import asyncio
 import json
 import re
 import os
+import ast
 import random
 import time
 import traceback
@@ -62,6 +63,29 @@ def _ensure_dirs():
     """Make sure output folders exist before we try to write into them."""
     for d in ("html_files", "structural_maps", "code"):
         os.makedirs(d, exist_ok=True)
+
+
+def _isolate_extract_data(code: str) -> str:
+    """Return only the source of the ``extract_data`` function.
+
+    Gemma frequently prepends an ``import`` line, defines a helper function, or
+    appends a trailing "example usage" call at module scope. All of those are
+    rejected by the AST safety check ("Only the extract_data function may appear
+    at module scope"), wasting a retry. Isolating the function makes the very
+    first attempt pass. Falls back to the original code if it can't be parsed or
+    the function isn't found.
+    """
+    try:
+        tree = ast.parse(code)
+    except SyntaxError:
+        return code
+    for node in tree.body:
+        if isinstance(node, ast.FunctionDef) and node.name == "extract_data":
+            segment = ast.get_source_segment(code, node)
+            if segment:
+                return segment
+            break
+    return code
 
 
 # ── Article-link validation ──────────────────────────────────
@@ -389,6 +413,13 @@ Fix the code. Same rules:
             code = re.sub(r'<end_of_turn>\s*$', '', code)
             code = re.sub(r'^```\w*\s*$', '', code, flags=re.MULTILINE)
             code = code.strip()
+
+            # Keep only the extract_data function. Gemma often adds an import,
+            # a helper def, or a trailing "example usage" call at module scope,
+            # all of which the AST safety check rejects ("Only the extract_data
+            # function may appear at module scope") and burn a retry. Isolating
+            # the function here makes the code pass on the first try.
+            code = _isolate_extract_data(code)
 
             code_filename = f"code/gemma_generated_code_{random_num}.py"
             with open(code_filename, 'w', encoding='utf-8') as f:

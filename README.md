@@ -40,7 +40,7 @@ Ties both agents together to scrape **many articles from a single listing page**
 5. **Apply code to the rest** — reuses the working code across all articles in the cluster.
 6. **Save results** — `extracted_data_all.json` + `failed_links.json` in a timestamped run directory.
 
-#### `orch_pag_numbered_only.py` — Page-by-Page Pagination Orchestrator
+#### `orch_interactive_pagination.py` — Page-by-Page Pagination Orchestrator
 Extends the batch orchestrator to handle **multi-page listing sites** with numbered pagination. Processes articles **page by page** with incremental saves after every page.
 
 ##### How pagination works:
@@ -86,7 +86,7 @@ For infinite scroll and load-more, the Links Agent generates the link-extraction
 
 ```mermaid
 flowchart TD
-    User([🧑 User]) -->|API key, model,\npage 1 URL, page 2 URL,\npage count| Orch["🎯 orch_pag_numbered_only.py"]
+    User([🧑 User]) -->|API key, model,\npage 1 URL, page 2 URL,\npage count| Orch["🎯 orch_interactive_pagination.py"]
 
     subgraph Phase1["Phase 1 — Pagination Setup"]
         Orch -->|string diff| Diff["🔍 derive_pagination_pattern()"]
@@ -173,7 +173,7 @@ The orchestrator uses **exact structural signature hashing**:
 - [ ] Create Streamlit interface
 
 ## Current Status
-The page-by-page orchestrator (`orch_pag_numbered_only.py`) can scrape multi-page listing sites end-to-end — derive pagination URLs from two examples, extract links page by page, cluster by template, generate code once per cluster, reuse it across all pages, and save incrementally after every page.
+The page-by-page orchestrator (`orch_interactive_pagination.py`) can scrape multi-page listing sites end-to-end — derive pagination URLs from two examples, extract links page by page, cluster by template, generate code once per cluster, reuse it across all pages, and save incrementally after every page.
 
 Tested on those domains:
 - ✅ youm7 -success from start to end-:

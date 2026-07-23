@@ -1,6 +1,6 @@
 """Combined orchestrator + snapshot + evaluation-table writer.
 
-This is `orch_pag_numbered_only.py` **plus** the HTML snapshotting from
+This is `orch_interactive_pagination.py` **plus** the HTML snapshotting from
 `snapshot_collector.py`, in a single pass. Run it once and you get:
 
 1. The full extraction pipeline output (clustering, per-cluster code generation,
@@ -16,7 +16,7 @@ This is `orch_pag_numbered_only.py` **plus** the HTML snapshotting from
    two columns (**Manually checked articles**, **Notes**) are left blank for you
    to fill in by hand after review.
 
-All heavy logic is reused from `orch_pag_numbered_only.py` and `snapshot_collector.py`;
+All heavy logic is reused from `orch_interactive_pagination.py` and `snapshot_collector.py`;
 only the top-level flow is assembled here, so the original orchestrator is
 unchanged.
 
@@ -24,7 +24,7 @@ Usage::
 
     python orch_pag_snapshot.py
 
-Answer the prompts exactly as you would for `orch_pag_numbered_only.py`.
+Answer the prompts exactly as you would for `orch_interactive_pagination.py`.
 """
 
 import asyncio
@@ -35,7 +35,7 @@ from datetime import datetime
 
 # Reuse the orchestrator as a namespace so its live counters and every helper
 # (fetching, clustering, extraction, pagination, results.md) are shared.
-import orch_pag_numbered_only as orch
+import orch_interactive_pagination as orch
 from snapshot_collector import _save_html, _save_articles, _domain_slug
 from Agent_for_single_page_gemma import fetch_page_structure
 from utils import list_available_models
@@ -175,6 +175,9 @@ async def main():
             model = sorted_models[int(choice) - 1]
             if model.startswith("models/"):
                 model = model[7:]
+            print(f"✓ Selected: {model}")
+        elif choice:
+            model = choice[7:] if choice.startswith("models/") else choice
             print(f"✓ Selected: {model}")
         else:
             model = "gemma-3-27b-it"

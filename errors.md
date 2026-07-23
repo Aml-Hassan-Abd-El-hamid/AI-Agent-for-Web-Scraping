@@ -1,4 +1,4 @@
- python orch_pag_numbered_only.py
+ python orch_interactive_pagination.py
 - first page https://www.btselem.org/ota/100/all
 - second page https://www.btselem.org/ota/100/all?page=1
 

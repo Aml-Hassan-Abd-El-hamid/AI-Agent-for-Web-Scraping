@@ -1,13 +1,17 @@
-"""Page-by-page pagination orchestrator (numbered pagination only).
+"""Page-by-page pagination orchestrator (interactive, multi-mode).
 
 Processes articles page-by-page instead of collecting all links upfront.
 Page 1 establishes clusters and generates extraction code via LLM.
 Subsequent pages reuse all generated code — new LLM calls only happen
 for genuinely novel article structures.
 
-Pagination is user-driven: the user provides page 1 URL, page 2 URL,
-and the number of pages to scrape. The URL pattern is derived by
-diffing the two URLs (string diff first, LLM fallback if needed).
+Pagination is user-driven: the user is asked how the listing is paginated
+and picks one of four modes —
+  1. Numbered pagination — provide page 1 and page 2 URLs; the URL pattern
+     is derived by diffing them (string diff first, LLM fallback if needed).
+  2. No pagination — a single page only.
+  3. Infinite scroll — content loads as the page is scrolled.
+  4. Load more button — content loads when a button is clicked.
 
 LLM call budget:
   0-1  — pagination pattern (only if string diff fails)
@@ -152,8 +156,21 @@ def _bump_map_fit(agent, result):
 # Utilities carried over from orch.py
 # ═══════════════════════════════════════════════════════════════
 
-def _struct_signature(smap, depth=0, max_depth=3):
-    """Build a hashable string representing the skeleton of a structural map."""
+# How deep the cluster signature inspects the structural map. Going a few levels
+# deep lets genuinely different content templates (e.g. paragraph-based vs
+# list-based article bodies) form separate clusters instead of colliding.
+_SIG_MAX_DEPTH = 5
+
+
+def _struct_signature(smap, depth=0, max_depth=_SIG_MAX_DEPTH):
+    """Build a hashable string representing the skeleton of a structural map.
+
+    Repeated sibling patterns are collapsed (count-insensitive) so pages that
+    differ only in how many times a child repeats — e.g. 5 vs 20 paragraphs, or
+    a different number of list items — stay in the same cluster, while a
+    different *kind* of child (a <p> body vs a <ul>/<li> body) still separates
+    them.
+    """
     if depth >= max_depth or not isinstance(smap, list):
         return ""
     parts = []
@@ -162,7 +179,9 @@ def _struct_signature(smap, depth=0, max_depth=3):
         cls = node.get("attributes", {}).get("class", "")
         children_sig = _struct_signature(node.get("children", []), depth + 1, max_depth)
         parts.append(f"{tag}.{cls}({children_sig})")
-    return "|".join(parts)
+    # Collapse duplicate sibling patterns so the signature ignores repeat counts.
+    unique = list(dict.fromkeys(parts))
+    return "|".join(unique)
 
 
 def _sig_hash(smap):
@@ -278,7 +297,10 @@ def call_links_agent_cli(url, api_key, model="gemma-3-27b-it"):
     ]
     print(f"  🔧 Calling: python {LINKS_AGENT_SCRIPT} --url {url[:80]}...")
     _bump_llm_calls(agent="Links agent")
-    ok, result = _call_agent_subprocess(cmd, timeout=300)
+    # The Links agent can make up to 3 generation attempts (initial + 2 retries),
+    # each a slow free-tier Gemma call with rate-limit backoff, so give it more
+    # headroom than the article agent to avoid killing it mid-retry.
+    ok, result = _call_agent_subprocess(cmd, timeout=600)
     _bump_tokens("Links agent", result.get("token_usage"))
     _bump_map_fit("Links agent", result)
     return ok, result
@@ -467,7 +489,8 @@ def _atomic_json_write(path, data):
         raise
 
 
-def save_incremental(run_dir, all_extracted, all_failures, progress_info):
+def save_incremental(run_dir, all_extracted, all_failures, progress_info,
+                     all_dropped=None):
     """Persist current state so nothing is lost on crash."""
     _atomic_json_write(
         os.path.join(run_dir, "extracted_data_all.json"), all_extracted,
@@ -475,6 +498,10 @@ def save_incremental(run_dir, all_extracted, all_failures, progress_info):
     _atomic_json_write(
         os.path.join(run_dir, "failed_links.json"), all_failures,
     )
+    if all_dropped is not None:
+        _atomic_json_write(
+            os.path.join(run_dir, "dropped_links.json"), all_dropped,
+        )
     _atomic_json_write(
         os.path.join(run_dir, "progress.json"), progress_info,
     )
@@ -722,7 +749,9 @@ def _filter_article_links(links, listing_url, pattern=None):
     by mistake, keeping only plausible article links.
 
     Safety net behind the Links Agent's own validation, and also applied to the
-    reused link code on pages 2..N. Returns (kept_links, dropped_count).
+    reused link code on pages 2..N. Returns (kept_links, dropped_links), where
+    each dropped entry is the original link dict augmented with a ``reason`` so
+    a human can later audit whether the filter made a mistake.
     """
     pag_re = _pagination_url_regex(pattern)
     listing = (listing_url or "").rstrip("/")
@@ -730,27 +759,32 @@ def _filter_article_links(links, listing_url, pattern=None):
     if "/category/" in (listing_url or ""):
         cat_root = listing_url.split("/category/")[0] + "/category/"
 
-    kept, dropped = [], 0
+    def _drop(link, reason):
+        url = (link.get("url") or "").strip() if isinstance(link, dict) else ""
+        title = (link.get("title") or "").strip() if isinstance(link, dict) else ""
+        dropped.append({"url": url, "title": title, "reason": reason})
+
+    kept, dropped = [], []
     for l in links:
         if not isinstance(l, dict):
-            dropped += 1
+            _drop(l, "malformed link object")
             continue
         url = (l.get("url") or "").strip()
         title = (l.get("title") or "").strip()
         if not url or title == "" or title.isdigit():
-            dropped += 1                      # empty / pagination-number label
+            _drop(l, "empty or pagination-number title")
             continue
         if url.rstrip("/") == listing:
-            dropped += 1                      # link back to the listing itself
+            _drop(l, "link back to the listing page")
             continue
         if pag_re and pag_re.match(url):
-            dropped += 1                      # matches the derived pagination URL
+            _drop(l, "matches the derived pagination URL pattern")
             continue
         if _re.search(r"/page/\d+/?$", url):
-            dropped += 1                      # generic .../page/N/ pagination
+            _drop(l, "generic /page/N/ pagination link")
             continue
         if cat_root and url.startswith(cat_root):
-            dropped += 1                      # another /category/ archive page
+            _drop(l, "category/archive page")
             continue
         kept.append(l)
     return kept, dropped
@@ -762,6 +796,23 @@ def run_link_extraction_code(code, html):
     if ok and isinstance(result, dict):
         return result.get("article_links", [])
     return []
+
+
+def _clean_url_input(raw):
+    """Sanitize a URL a user pasted into a prompt.
+
+    Strips surrounding whitespace, a leading markdown bullet ("- ", "* ", "• "),
+    and wrapping quotes or angle brackets, so a copy-pasted list item like
+    "- https://site.com/x" becomes "https://site.com/x".
+    """
+    if not raw:
+        return ""
+    url = raw.strip()
+    # Drop a leading markdown/list bullet (possibly repeated).
+    url = _re.sub(r"^\s*(?:[-*•]\s+)+", "", url)
+    # Drop wrapping quotes or angle brackets.
+    url = url.strip().strip('\'"<>').strip()
+    return url
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -952,6 +1003,21 @@ def write_results_md(stats, path="results.md"):
     lines.append(f"- **Articles extracted:** {stats.get('articles_extracted', 0)}")
     lines.append(f"- **Articles failed:** {stats.get('articles_failed', 0)}")
     lines.append(f"- **Clusters (unique structures):** {stats.get('clusters', 0)}")
+
+    # ── Links dropped by the non-article filter (audit trail) ──
+    links_dropped = stats.get("links_dropped") or []
+    lines.append(f"- **Links dropped (non-article filter):** {len(links_dropped)}")
+    if links_dropped:
+        by_reason = defaultdict(int)
+        for d in links_dropped:
+            by_reason[str((d or {}).get("reason", "unknown"))] += 1
+        for reason, cnt in sorted(by_reason.items(), key=lambda kv: (-kv[1], kv[0])):
+            lines.append(f"  - {reason}: {cnt}")
+        lines.append(
+            f"  - Full list saved to "
+            f"`{stats.get('run_dir', 'N/A')}/dropped_links.json`"
+        )
+
     lines.append(f"- **LLM calls:** {stats.get('llm_calls', 0)}")
 
     # ── Which agent made each LLM call ──
@@ -1063,6 +1129,7 @@ async def main():
     print("🎯 ORCHESTRATOR")
     print("=" * 60)
     # defense, just in case we started calling main twice in the same process
+    #ToDo: remove them cause when will that ever happen? the program is meant to be an application
     _reset_llm_calls()
     _reset_fetch_via()
     _reset_tokens()
@@ -1112,7 +1179,7 @@ async def main():
     print(f"\n📂 Run directory: {run_dir}")
 
     # ── Listing-page flow ────────────────────────────────────
-    listing_url = input("\n🌐 Enter the listing page URL: ").strip()
+    listing_url = _clean_url_input(input("\n🌐 Enter the listing page URL: "))
     if not listing_url:
         print("❌ URL is required!")
         return
@@ -1120,7 +1187,7 @@ async def main():
 
     requirements = input(
         "\n📝 What data to extract from each article?\n"
-        "   (e.g., 'title, date, author, article body text')\n   → "
+        "   (default: 'title, date, author, article body text')\n   → "
     ).strip() or "title, date, author, article body text"
 
     # ══════════════════════════════════════════════════════════
@@ -1166,9 +1233,9 @@ async def main():
         pagination_type = "numbered pagination"
         print(f"\n   Page 1 URL [Enter to use the listing URL above]:")
         print(f"   ({listing_url})")
-        url1 = input("   → ").strip() or listing_url
+        url1 = _clean_url_input(input("   → ")) or listing_url
 
-        url2 = input("\n   Page 2 URL: ").strip()
+        url2 = _clean_url_input(input("\n   Page 2 URL: "))
         if not url2:
             print("   ❌ Page 2 URL is required for pagination!")
         else:
@@ -1263,14 +1330,22 @@ async def main():
         return
 
     page1_links = link_result.get("data", {}).get("article_links", [])
-    page1_links, _dropped = _filter_article_links(page1_links, listing_url, pattern)
-    if _dropped:
-        print(f"  🧹 Dropped {_dropped} non-article (pagination/category) link(s)")
+    all_dropped = []  # links the article-link filter removed, kept for auditing
+    page1_links, dropped1 = _filter_article_links(page1_links, listing_url, pattern)
+    for d in dropped1:
+        d["page_num"] = 1
+    all_dropped.extend(dropped1)
+    if dropped1:
+        print(f"  🧹 Dropped {len(dropped1)} non-article (pagination/category) link(s)")
     link_code_file = link_result.get("code_file", "")
     print(f"✓ Extracted {len(page1_links)} article links from page 1")
 
     if not page1_links:
         print("❌ No article links found on page 1!")
+        if all_dropped:
+            _atomic_json_write(
+                os.path.join(run_dir, "dropped_links.json"), all_dropped,
+            )
         write_results_md({
             "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "run_dir": run_dir, "model": model,
@@ -1278,6 +1353,7 @@ async def main():
             "requirements": requirements,
             "pages_requested": len(page_urls) + 1, "pages_processed": 0,
             "articles_extracted": 0, "articles_failed": 0, "clusters": 0,
+            "links_dropped": all_dropped,
             "llm_calls": _LLM_CALLS,
             "llm_calls_by_agent": dict(_LLM_CALLS_BY_AGENT),
             "tokens_by_agent": dict(_TOKENS_BY_AGENT),
@@ -1304,7 +1380,10 @@ async def main():
             )
             if full_html:
                 expanded = run_link_extraction_code(link_extraction_code, full_html)
-                expanded, _ = _filter_article_links(expanded, listing_url, pattern)
+                expanded, dropped_dyn = _filter_article_links(expanded, listing_url, pattern)
+                for d in dropped_dyn:
+                    d["page_num"] = 1
+                all_dropped.extend(dropped_dyn)
                 print(f"  ✓ {len(expanded)} links after {pagination_type} "
                       f"(was {len(page1_links)} on initial load)")
                 merged = {l["url"]: l for l in page1_links}
@@ -1347,7 +1426,7 @@ async def main():
             sig: {"code_file": v["code_file"]} for sig, v in cluster_registry.items()
         },
     }
-    save_incremental(run_dir, all_extracted, all_failures, progress)
+    save_incremental(run_dir, all_extracted, all_failures, progress, all_dropped)
     _atomic_json_write(os.path.join(run_dir, "extracted_links.json"), {
         "article_links": page1_links,
     })
@@ -1383,9 +1462,15 @@ async def main():
                 new_links_raw = run_link_extraction_code(
                     link_extraction_code, page_html,
                 )
-                new_links_raw, _ = _filter_article_links(
+                new_links_raw, dropped_n = _filter_article_links(
                     new_links_raw, listing_url, pattern,
                 )
+                for d in dropped_n:
+                    d["page_num"] = page_num
+                all_dropped.extend(dropped_n)
+                if dropped_n:
+                    print(f"  🧹 Dropped {len(dropped_n)} non-article "
+                          f"(pagination/category) link(s)")
                 print(f"  Found {len(new_links_raw)} links on this page")
 
                 # Deduplicate
@@ -1399,7 +1484,7 @@ async def main():
 
                 if not new_links:
                     progress["current_page"] = page_num
-                    save_incremental(run_dir, all_extracted, all_failures, progress)
+                    save_incremental(run_dir, all_extracted, all_failures, progress, all_dropped)
                     continue
 
                 # Fetch article HTML + structural maps
@@ -1423,7 +1508,7 @@ async def main():
                     sig: {"code_file": v["code_file"]}
                     for sig, v in cluster_registry.items()
                 }
-                save_incremental(run_dir, all_extracted, all_failures, progress)
+                save_incremental(run_dir, all_extracted, all_failures, progress, all_dropped)
                 print(f"  💾 Saved (total: {len(all_extracted)} extracted, "
                       f"{len(all_failures)} failed)")
 
@@ -1443,7 +1528,7 @@ async def main():
         "status": "finished",
         "extracted_count": len(all_extracted),
         "failed_count": len(all_failures),
-    })
+    }, all_dropped)
 
     _print_summary(run_dir, all_extracted, all_failures)
 
@@ -1461,6 +1546,7 @@ async def main():
         "articles_extracted": len(all_extracted),
         "articles_failed": len(all_failures),
         "clusters": len(cluster_registry),
+        "links_dropped": all_dropped,
         "llm_calls": _LLM_CALLS,
         "llm_calls_by_agent": dict(_LLM_CALLS_BY_AGENT),
         "elapsed_seconds": time.time() - run_start,
@@ -1480,6 +1566,7 @@ def _print_summary(run_dir, all_extracted, all_failures):
     print(f"\n💾 Results in: {run_dir}/")
     print(f"   extracted_data_all.json  — all extracted data")
     print(f"   failed_links.json        — failures with reasons")
+    print(f"   dropped_links.json       — links filtered out as non-article")
     print(f"   progress.json            — run metadata")
     print(f"\n🏁 Orchestrator finished!")
 

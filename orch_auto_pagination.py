@@ -1,6 +1,6 @@
 """Auto-pagination orchestrator — the LLM detects the pagination type itself.
 
-Same end-to-end pipeline as ``orch_pag_numbered_only.py`` (extract links →
+Same end-to-end pipeline as ``orch_interactive_pagination.py`` (extract links →
 cluster articles by structure → generate extraction code once per cluster →
 reuse it across pages → save incrementally), but the user no longer chooses how
 the listing is paginated.
@@ -40,7 +40,7 @@ from bs4 import BeautifulSoup
 # stats reporting) from the numbered-pagination orchestrator. Importing the
 # module (not just names) keeps its LLM-call / token / fetch counters consistent
 # because every helper mutates that module's globals.
-import orch_pag_numbered_only as O
+import orch_interactive_pagination as O
 from utils import list_available_models, token_usage_from_response
 
 

@@ -1,6 +1,6 @@
 """Snapshot collector — freeze a website's HTML into a reproducible corpus.
 
-This is a sibling of `orch_pag_numbered_only.py`: it walks a listing site with
+This is a sibling of `orch_interactive_pagination.py`: it walks a listing site with
 the *same* pagination / link-extraction / fetch logic, but instead of running
 the article extraction pipeline it **saves the raw HTML to disk** so the site can
 be re-scraped and re-scored offline later. This is the frozen "gold corpus" the
@@ -51,7 +51,7 @@ from urllib.parse import urlparse
 
 # Reuse the orchestrator's machinery as a namespace so its live counters
 # (_LLM_CALLS, _FETCH_VIA, ...) can be read after the run.
-import orch_pag_numbered_only as orch
+import orch_interactive_pagination as orch
 from Agent_for_single_page_gemma import fetch_page_structure
 from utils import list_available_models
 

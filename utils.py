@@ -254,6 +254,11 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
 
 
+for stream in (sys.stdin, sys.stdout, sys.stderr):
+    if hasattr(stream, 'reconfigure'):
+        stream.reconfigure(encoding='utf-8', errors='replace')
+
+
 def safe_urljoin(base, url, *args, **kwargs):
     if isinstance(base, list):
         base = base[0] if base else ''

@@ -88,7 +88,7 @@ _FEW_SHOT_CODE = '''def extract_data(html_content):
     # Body text
     body_div = soup.select_one('div.post-body')
     if body_div:
-        paragraphs = body_div.find_all('p')
+        paragraphs = body_div.find_all(['p', 'li'])
         data['body_text'] = '\\n'.join(p.get_text(strip=True) for p in paragraphs if p.get_text(strip=True))
     else:
         data['body_text'] = 'N/A'
@@ -165,6 +165,7 @@ Rules you MUST follow:
 - Return a dict with keys matching the requested fields.
 - Use urljoin(base_url, href) to resolve relative URLs when extracting links. Derive base_url from the target URL.
 - Only use selectors (tags, classes, ids) that appear in the structural map. Do NOT invent selectors.
+- For long/body text, select the CONTAINER by its class or id, then collect text from ALL of its block children with a class-agnostic call like container.find_all(['p', 'li', 'h2', 'h3', 'blockquote']). Do NOT filter those children by their own class (e.g. avoid find_all('p', class_='wp-block-paragraph')) — other pages built from the same template often use plain <p>/<li> or a different class, so a class-specific selector returns nothing for them.
 - Return 'N/A' ONLY if no matching tag exists in the structural map AND all fallbacks fail.
 - Do NOT include import statements. Only output the function body.
 - Available in scope: BeautifulSoup, re, json, urljoin, urlparse.
@@ -230,6 +231,7 @@ Fix the code. Same rules:
 - Return a dict with keys matching the requested fields.
 - Use urljoin(base_url, href) for relative URLs.  base_url = '/'.join('{page_url}'.split('/')[:3])
 - Only use selectors from the structural map.
+- For body text, gather ALL block children of the container with find_all(['p', 'li', 'h2', 'h3', 'blockquote']) WITHOUT filtering by their class.
 - Available: BeautifulSoup, re, json, urljoin, urlparse
 - Output ONLY the corrected function. No explanation.
 <end_of_turn>
@@ -334,15 +336,34 @@ def _validate_extraction_output(result) -> Tuple[bool, str, Dict]:
     return True, "Output schema is valid", result
 
 
+def _space_around_tags(html_content: str) -> str:
+    """Insert a space around every tag boundary so text separated by any tag
+    (a, span, strong, bdi, time, ...) does not get glued into one word when
+    extracted. Runs of whitespace are collapsed again by _normalize_whitespace,
+    so this only ever adds missing word separators, it never changes real words."""
+    return re.sub(r"(<[^>]+>)", r" \1 ", html_content)
+
+
+def _normalize_whitespace(text: str) -> str:
+    """Collapse runs of spaces/tabs (keeping line breaks) and trim each line."""
+    text = re.sub(r"[^\S\n]+", " ", text)
+    text = re.sub(r" *\n *", "\n", text)
+    return text.strip()
+
+
 def execute_extraction_code(code: str, html_content: str) -> Tuple[bool, any]:
     """Execute generated code in a subprocess with validation and time limits."""
-    return execute_generated_code_sandboxed(
+    html_content = _space_around_tags(html_content)
+    ok, result = execute_generated_code_sandboxed(
         code,
         html_content,
         _validate_extraction_output,
         timeout_seconds=SANDBOX_TIMEOUT_SECONDS,
         max_stdout=SANDBOX_MAX_STDOUT,
     )
+    if ok and isinstance(result, dict):
+        result = {k: (_normalize_whitespace(v) if isinstance(v, str) else v) for k, v in result.items()}
+    return ok, result
 
 # --- Output Analysis ---
 def analyze_output(data: Dict) -> Dict:
