@@ -41,8 +41,22 @@ random_num = random.randint(10000, 99999)
 TARGET_TAGS = ['div', 'section', 'article', 'main', 'header', 'footer', 'nav',
                'ul', 'ol', 'li', 'a', 'h1', 'h2', 'h3', 'h4', 'p', 'span',
                'table', 'tr', 'td', 'th', 'figure', 'figcaption', 'time', 'img']
-MAX_DEPTH =  10 #stats  
+MAX_DEPTH =  10 #stats  — map depth for the whole-page fallback (used only when
+                # no repeating article grid can be isolated). Normally the map is
+                # built from a focused grid container (see _focus_map_root) at
+                # FOCUSED_MAP_DEPTH, which keeps deeply-nested listings within the
+                # input-token budget.
+FOCUSED_MAP_DEPTH = 12  # relative map depth when mapping an isolated grid
+                        # container — we already start deep in the DOM, so fewer
+                        # extra levels are needed to reach the card's link/title.
 MIN_MAP_DEPTH = 3      # floor when shrinking a too-large map to fit the token budget
+# Cap on how many structurally-identical sibling nodes (same tag + class) are
+# emitted at one level. A listing grid can hold 70+ identical article cards;
+# showing the LLM a handful is enough to infer the repeating selector, and
+# collapsing the rest keeps a deep map within the input-token budget. The
+# generated code still runs against the FULL HTML, so collapsed cards are not
+# lost from extraction — only trimmed from the LLM's view of the structure.
+MAX_SIBLINGS_PER_GROUP = 4
 MAX_RETRIES = 3
 SANDBOX_TIMEOUT_SECONDS = 30
 SANDBOX_MAX_STDOUT = 1_000_000
@@ -152,9 +166,29 @@ def create_structural_map(soup: BeautifulSoup, depth: int = 0, max_depth: int = 
         return []
 
     structure = []
+    sibling_counts = {}
 
     for child in soup.children:
         if child.name and child.name.lower() in TARGET_TAGS:
+            # Collapse long runs of structurally-identical siblings (same tag +
+            # class) beyond MAX_SIBLINGS_PER_GROUP so a big repeating grid (e.g.
+            # 70+ article cards) doesn't blow the token budget. The LLM only
+            # needs a few examples to infer the repeating selector; extraction
+            # still runs on the full HTML.
+            #
+            # Only class-identified, id-less repeats are collapsed. Elements
+            # carrying an id (e.g. <div id="main-wrap">, ad slots) are unique
+            # landmarks and must never be dropped — collapsing them would delete
+            # whole content subtrees when they happen to be late siblings of
+            # other class-less divs.
+            cls_sig = " ".join(child.get('class')[:4]) if child.get('class') else ""
+            child_id = child.get('id') or ""
+            if cls_sig and not child_id:
+                group_key = (child.name.lower(), cls_sig)
+                sibling_counts[group_key] = sibling_counts.get(group_key, 0) + 1
+                if sibling_counts[group_key] > MAX_SIBLINGS_PER_GROUP:
+                    continue
+
             attributes = {}
             if child.get('class'):
                 attributes['class'] = " ".join(child.get('class')[:4])
@@ -191,6 +225,78 @@ async def fetch_page_structure(url: str) -> Tuple[Optional[str], Optional[List[D
     and get_last_fetch_error() holds the aggregated cause.
     """
     return await _utils_fetch_page_structure(url, create_structural_map)
+
+
+def _focus_map_root(body, page_url):
+    """Isolate the container holding the page's repeating article-card grid.
+
+    A listing page is mostly chrome (header, mega-menu, ads, footer). Mapping the
+    whole page can push the article grid past the model's input-token budget —
+    especially on deeply-nested sites. This finds the tight wrapper around the
+    repeating cards so the structural map covers just the article region.
+
+    Heuristic: among block elements that contain a link, count (tag, class)
+    signatures; the article cards are the most-repeated signature. Page-wide
+    layout classes (e.g. Foundation's "cell") also repeat, so among the top
+    signatures we pick the one whose elements share the DEEPEST common ancestor
+    — that ancestor is the tight grid wrapper, whereas a layout class's common
+    ancestor is a broad top-level container.
+
+    Returns (element_to_map, focused_bool). Falls back to *body* (focused=False)
+    when no clear repeating grid is found, so behaviour is never worse than
+    mapping the whole page.
+    """
+    def _depth(el):
+        d = 0
+        for _ in el.parents:
+            d += 1
+        return d
+
+    sig_counts = {}
+    sig_elems = {}
+    for el in body.find_all(['div', 'li', 'article', 'section']):
+        classes = el.get('class')
+        if not classes:
+            continue
+        if not el.find('a', href=True):
+            continue
+        key = (el.name, " ".join(classes[:4]))
+        sig_counts[key] = sig_counts.get(key, 0) + 1
+        sig_elems.setdefault(key, []).append(el)
+
+    if not sig_counts:
+        return body, False
+    max_count = max(sig_counts.values())
+    if max_count < 5:                       # no genuine repeating grid
+        return body, False
+
+    def _common_ancestor(elems):
+        id_to_el = {}
+        anc_sets = []
+        for el in elems:
+            s = set()
+            for anc in el.parents:
+                if getattr(anc, 'name', None):
+                    s.add(id(anc))
+                    id_to_el[id(anc)] = anc
+            anc_sets.append(s)
+        common = set.intersection(*anc_sets) if anc_sets else set()
+        if not common:
+            return None
+        return max((id_to_el[i] for i in common), key=_depth)
+
+    candidates = [k for k, c in sig_counts.items() if c >= max(5, 0.8 * max_count)]
+    best_root = None
+    for key in candidates:
+        anc = _common_ancestor(sig_elems[key])
+        if anc is None:
+            continue
+        if best_root is None or _depth(anc) > _depth(best_root):
+            best_root = anc
+
+    if best_root is None or best_root is body or _depth(best_root) <= 1:
+        return body, False
+    return best_root, True
 
 
 # ═══════════════════════════════════════════════════════════
@@ -558,28 +664,37 @@ def display_sample_output(data: Dict, stats: Dict):
 
 
 # --- Main Agent Logic ---
-def _fit_map_to_budget(agent, html_content, structural_map, page_url, budget):
+def _fit_map_to_budget(agent, html_content, structural_map, page_url, budget,
+                       map_root=None, base_depth=None):
     """Return (structural_map, structural_map_json, depth_used, tokens).
 
     Serializes the map with ensure_ascii=False so non-ASCII scripts (e.g. Arabic)
     stay single characters instead of 6-char \\uXXXX escapes that would ~6x the
     token count. If the full-depth prompt still exceeds *budget* tokens, rebuilds
-    the map at progressively shallower depths (MAX_DEPTH-1 down to MIN_MAP_DEPTH)
+    the map at progressively shallower depths (base_depth-1 down to MIN_MAP_DEPTH)
     until it fits, so large pages don't blow the model's context window or the
     per-minute input-token quota.
+
+    *map_root* is the BeautifulSoup element the map is built from (a focused grid
+    container, or the page body for the fallback). *base_depth* is the starting
+    map depth (FOCUSED_MAP_DEPTH for a focused container, MAX_DEPTH for the body
+    fallback). When *map_root* is None the body of *html_content* is used.
     """
+    if base_depth is None:
+        base_depth = MAX_DEPTH
     smj = json.dumps(structural_map, ensure_ascii=False)
     toks = count_tokens(agent.model, agent._build_prompt(smj, page_url=page_url))
-    print(f"  📏 Input prompt: ~{toks} tokens at full depth {MAX_DEPTH} (budget {budget}).", flush=True)
+    print(f"  📏 Input prompt: ~{toks} tokens at depth {base_depth} (budget {budget}).", flush=True)
     if toks <= budget:
-        return structural_map, smj, MAX_DEPTH, toks
+        return structural_map, smj, base_depth, toks
 
     print(f"  ⚠  Over budget by ~{toks - budget} tokens — shrinking map depth to fit...", flush=True)
-    soup = BeautifulSoup(html_content, 'lxml')
-    body = soup.body if soup.body else soup
+    if map_root is None:
+        soup = BeautifulSoup(html_content, 'lxml')
+        map_root = soup.body if soup.body else soup
     last = None
-    for d in range(MAX_DEPTH - 1, MIN_MAP_DEPTH - 1, -1):
-        m = create_structural_map(body, max_depth=d)
+    for d in range(base_depth - 1, MIN_MAP_DEPTH - 1, -1):
+        m = create_structural_map(map_root, max_depth=d)
         mj = json.dumps(m, ensure_ascii=False)
         t = count_tokens(agent.model, agent._build_prompt(mj, page_url=page_url))
         fits = t <= budget
@@ -644,13 +759,24 @@ async def main():
     agent = GemmaAgent(api_key, selected_model)
 
     print(f"\n⏳ Fetching page structure from {url}...")
-    html_content, structural_map = await fetch_page_structure(url)
+    html_content, _ = await fetch_page_structure(url)
 
     if html_content is None:
         print("❌ Failed to fetch page structure!")
         if get_last_fetch_error():
             print(get_last_fetch_error())
         return
+
+    # Focus the map on the repeating article-grid region (falls back to body).
+    soup = BeautifulSoup(html_content, "lxml")
+    body = soup.body if soup.body else soup
+    map_root, focused = _focus_map_root(body, url)
+    base_depth = FOCUSED_MAP_DEPTH if focused else MAX_DEPTH
+    structural_map = create_structural_map(map_root, max_depth=base_depth)
+    if focused:
+        cls = " ".join((map_root.get('class') or [])[:2])
+        print(f"  🎯 Focused map on <{map_root.name}"
+              + (f" class='{cls}'" if cls else "") + "> (article-grid region).")
 
     if not structural_map:
         print("⚠  Structural map is empty — will pass raw HTML to LLM directly.")
@@ -671,8 +797,9 @@ async def main():
 
     budget = input_token_budget(selected_model)
     structural_map, structural_map_json, depth_used, ntok = _fit_map_to_budget(
-        agent, html_content, structural_map, url, budget)
-    if depth_used < MAX_DEPTH:
+        agent, html_content, structural_map, url, budget,
+        map_root=map_root, base_depth=base_depth)
+    if depth_used < base_depth:
         print(f"⚠  Large page (~{ntok} prompt tokens, budget {budget}): reduced "
               f"structural-map depth to {depth_used} to fit the input-token quota.")
 
@@ -751,14 +878,28 @@ async def main():
 
 # --- CLI (non-interactive) mode for orchestration ---
 async def main_cli(url: str, api_key: str, model: str = 'gemma-3-27b-it', max_retries: int = 0,
-                   max_input_tokens: int = DEFAULT_INPUT_TOKEN_BUDGET):
-    """Non-interactive entry point. Returns paths via JSON line on stdout."""
+                   max_input_tokens: int = DEFAULT_INPUT_TOKEN_BUDGET,
+                   html_file: str = None):
+    """Non-interactive entry point. Returns paths via JSON line on stdout.
+
+    If *html_file* is given, the listing HTML is read from that file and the
+    structural map is built from it, instead of fetching *url* live. This lets
+    the orchestrator hand over the fully-scrolled DOM for infinite-scroll /
+    load-more listings, where a live fetch would only see the pre-scroll
+    skeleton (often a single card) and generate a selector that matches nothing.
+    """
     _ensure_dirs()
     agent = GemmaAgent(api_key, model)
 
     reset_token_usage()
-    print(f"⏳ Fetching page structure from {url}...", flush=True)
-    html_content, structural_map = await fetch_page_structure(url)
+
+    if html_file and os.path.exists(html_file):
+        print(f"⏳ Using pre-fetched HTML from {html_file} (fully-loaded DOM)...", flush=True)
+        with open(html_file, "r", encoding="utf-8") as f:
+            html_content = f.read()
+    else:
+        print(f"⏳ Fetching page structure from {url}...", flush=True)
+        html_content, _ = await fetch_page_structure(url)
 
     if html_content is None:
         detail = get_last_fetch_error() or "no further detail captured"
@@ -767,6 +908,21 @@ async def main_cli(url: str, api_key: str, model: str = 'gemma-3-27b-it', max_re
             "error": f"Failed to fetch page structure for {url}\n\n{detail}"
         }), flush=True)
         return
+
+    # Isolate the article-grid region so a listing's chrome (header/menu/ads/
+    # footer) doesn't push the cards past the token budget, then build the map
+    # from that focused container. Falls back to the whole body when no clear
+    # repeating grid is found.
+    soup = BeautifulSoup(html_content, "lxml")
+    body = soup.body if soup.body else soup
+    map_root, focused = _focus_map_root(body, url)
+    base_depth = FOCUSED_MAP_DEPTH if focused else MAX_DEPTH
+    structural_map = create_structural_map(map_root, max_depth=base_depth)
+    if focused:
+        cls = " ".join((map_root.get('class') or [])[:2])
+        print(f"  🎯 Focused map on <{map_root.name}"
+              + (f" class='{cls}'" if cls else "")
+              + "> — the article-grid region, excluding page chrome.", flush=True)
 
     if not structural_map:
         print("  ⚠  Structural map is empty — proceeding with empty map (LLM will use raw HTML).", flush=True)
@@ -777,8 +933,9 @@ async def main_cli(url: str, api_key: str, model: str = 'gemma-3-27b-it', max_re
     # input-token quota; shrink the map depth if the page is huge.
     budget = input_token_budget(model, max_input_tokens)
     structural_map, structural_map_json, depth_used, ntok = _fit_map_to_budget(
-        agent, html_content, structural_map, url, budget)
-    if depth_used < MAX_DEPTH:
+        agent, html_content, structural_map, url, budget,
+        map_root=map_root, base_depth=base_depth)
+    if depth_used < base_depth:
         print(f"  ⚠  Large page (~{ntok} prompt tokens, budget {budget}): reduced "
               f"structural-map depth to {depth_used} to fit the input-token quota.", flush=True)
 
@@ -877,9 +1034,13 @@ if __name__ == "__main__":
     parser.add_argument("--max-retries", type=int, default=2, help="Max retries in CLI mode (default: 2, allows link-quality retries)")
     parser.add_argument("--max-input-tokens", type=int, default=DEFAULT_INPUT_TOKEN_BUDGET,
                         help=f"Per-request input-token budget (default {DEFAULT_INPUT_TOKEN_BUDGET}, sized for the free-tier per-minute cap; raise for paid tiers/larger models)")
+    parser.add_argument("--html-file", type=str, default=None,
+                        help="Path to a pre-fetched HTML file to analyze instead of fetching --url live "
+                             "(used for infinite-scroll / load-more listings so the agent sees the full DOM)")
     args = parser.parse_args()
 
     if args.url and args.api_key:
-        asyncio.run(main_cli(args.url, args.api_key, args.model, args.max_retries, args.max_input_tokens))
+        asyncio.run(main_cli(args.url, args.api_key, args.model, args.max_retries,
+                             args.max_input_tokens, args.html_file))
     else:
         asyncio.run(main())

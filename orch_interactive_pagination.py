@@ -58,6 +58,12 @@ from utils import (
 LINKS_AGENT_SCRIPT = "Links_Agent_gemma_cloudflare.py" #"Links_Agent_gemma.py"
 AGENT_SCRIPT = "Agent_for_single_page_gemma.py"
 
+# Input-token budget for the Links agent's single per-run code-generation call.
+# Kept just under the gemma free-tier per-minute input cap (16,000 tokens for
+# gemma-4-31b) so a large listing map doesn't trigger 429 quota errors. Raise
+# this only on a paid tier / higher-quota key.
+LINKS_INPUT_TOKEN_BUDGET = 15000
+
 # Price per 1M tokens (USD) used only to show an *indicative* cost in results.md.
 # Adjust to your provider's real rate. Defaults are a Gemini-class estimate;
 # Gemma on Google AI Studio is currently free, so treat this as a paper figure.
@@ -287,14 +293,22 @@ def _call_agent_subprocess(cmd, timeout=300):
         "error": f"No ORCH_RESULT in output. stderr: {full_stderr}  stdout(tail): {full_stdout[-3000:]}",
     }
 
-def call_links_agent_cli(url, api_key, model="gemma-3-27b-it"):
-    """Call Links_Agent_gemma_cloudflare.py via subprocess in CLI mode."""
+def call_links_agent_cli(url, api_key, model="gemma-3-27b-it", html_file=None):
+    """Call Links_Agent_gemma_cloudflare.py via subprocess in CLI mode.
+
+    When *html_file* is given, the agent analyzes that pre-fetched HTML instead
+    of fetching *url* live — used for infinite-scroll / load-more listings so it
+    sees the fully-loaded grid rather than the pre-scroll skeleton.
+    """
     cmd = [
         sys.executable, LINKS_AGENT_SCRIPT,
         "--url", url,
         "--api-key", api_key,
         "--model", model,
+        "--max-input-tokens", str(LINKS_INPUT_TOKEN_BUDGET),
     ]
+    if html_file:
+        cmd += ["--html-file", html_file]
     print(f"  🔧 Calling: python {LINKS_AGENT_SCRIPT} --url {url[:80]}...")
     _bump_llm_calls(agent="Links agent")
     # The Links agent can make up to 3 generation attempts (initial + 2 retries),
@@ -1306,10 +1320,35 @@ async def main():
         print("   ✓ Single page — no pagination.")
 
     # ══════════════════════════════════════════════════════════
+    # Phase 1.5: For dynamic listings, load the fully-scrolled DOM first
+    # ══════════════════════════════════════════════════════════
+    # Infinite-scroll / load-more pages render only a skeleton (often a single
+    # featured card) on the initial load; the article grid appears after
+    # scrolling. Collect the fully-loaded HTML up front and hand it to the Links
+    # agent so it generates its selector from the complete grid instead of a
+    # one-card page (which produced 0 links before this change).
+    scrolled_html_file = None
+    if scroll_mode:
+        full_html = await collect_listing_html(
+            listing_url, mode=scroll_mode,
+            max_rounds=scroll_rounds, load_more_selector=scroll_selector,
+        )
+        if full_html:
+            scrolled_html_file = os.path.join(run_dir, "listing_full.html")
+            with open(scrolled_html_file, "w", encoding="utf-8") as f:
+                f.write(full_html)
+            print(f"  ✓ Saved fully-loaded listing HTML ({len(full_html)} bytes) "
+                  f"→ {scrolled_html_file}")
+        else:
+            print("  ⚠️  Dynamic collection failed — the Links agent will fetch "
+                  "the page live instead.")
+
+    # ══════════════════════════════════════════════════════════
     # Phase 2: Page 1 — extract links (LLM call #1)
     # ══════════════════════════════════════════════════════════
     print(f"\n⏳ Extracting article links from page 1: {listing_url}...")
-    link_success, link_result = call_links_agent_cli(listing_url, api_key, model)
+    link_success, link_result = call_links_agent_cli(
+        listing_url, api_key, model, html_file=scrolled_html_file)
 
     if not link_success:
         error_msg = link_result.get("error", "Unknown error")
@@ -1368,8 +1407,11 @@ async def main():
         with open(link_code_file, "r", encoding="utf-8") as f:
             link_extraction_code = f.read()
 
-    # ── Dynamic pagination: expand page 1 with all scrolled/loaded links ──
-    if scroll_mode:
+    # ── Dynamic pagination fallback: only if the up-front scroll failed ──
+    # When Phase 1.5 succeeded, page1_links already come from the fully-loaded
+    # DOM, so no second scroll is needed. This block only runs when the up-front
+    # collection failed and the Links agent had to fetch the page live.
+    if scroll_mode and scrolled_html_file is None:
         if not link_extraction_code:
             print("\n⚠️  No link-extraction code available — "
                   "cannot expand dynamic content. Using initial links only.")
