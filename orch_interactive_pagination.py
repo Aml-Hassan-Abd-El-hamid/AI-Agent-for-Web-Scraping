@@ -491,15 +491,48 @@ Respond with ONLY the JSON object.
 # ═══════════════════════════════════════════════════════════════
 
 def _atomic_json_write(path, data):
-    """Write JSON to *path* via a temp file to avoid corruption on crash."""
+    """Write JSON to *path* via a temp file to avoid corruption on crash.
+
+    On OneDrive/Windows the destination file can be transiently locked by the
+    sync client or antivirus, making the atomic ``os.replace`` fail with
+    PermissionError (WinError 5). We retry the rename a few times with a short
+    backoff, and if it still won't budge we fall back to writing in place so the
+    run's data is never lost (losing only the atomicity guarantee for that one
+    write).
+    """
     dir_name = os.path.dirname(path) or "."
     fd, tmp = tempfile.mkstemp(dir=dir_name, suffix=".tmp")
     try:
         with os.fdopen(fd, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
-        os.replace(tmp, path)          # atomic on same filesystem
+        last_err = None
+        for attempt in range(5):
+            try:
+                os.replace(tmp, path)   # atomic on same filesystem
+                return
+            except PermissionError as e:  # transient OneDrive/AV lock
+                last_err = e
+                time.sleep(0.4 * (attempt + 1))
+        # Rename kept failing — write directly in place as a last resort.
+        try:
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=2, ensure_ascii=False)
+            print(f"  ⚠️  Atomic rename blocked (likely OneDrive/AV lock); "
+                  f"wrote {os.path.basename(path)} in place instead.")
+        finally:
+            if os.path.exists(tmp):
+                try:
+                    os.unlink(tmp)
+                except OSError:
+                    pass
+        if not os.path.exists(path):
+            raise last_err
     except Exception:
-        os.unlink(tmp)
+        if os.path.exists(tmp):
+            try:
+                os.unlink(tmp)
+            except OSError:
+                pass
         raise
 
 

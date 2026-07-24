@@ -370,13 +370,36 @@ def execute_generated_code_sandboxed(
         return False, f"EXECUTION ERROR: {str(e)}\n\n{error_detail}"
 
 
+def _retry_delay_seconds(err) -> Optional[float]:
+    """Extract the server-requested wait (seconds) from a 429/quota error.
+
+    Google's free-tier rate-limit responses carry the exact cool-down, e.g.
+    ``retry_delay { seconds: 34 }`` and ``Please retry in 34.8s``. Honouring it
+    is the only reliable way past a per-minute input-token quota — a short
+    exponential backoff (1-4s) just burns attempts before the window resets.
+    """
+    text = str(err)
+    m = re.search(r'retry_delay\s*\{\s*seconds:\s*(\d+)', text)
+    if m:
+        return float(m.group(1))
+    m = re.search(r'retry(?:\s+in|_after)?[:\s]+([\d.]+)\s*s', text, re.IGNORECASE)
+    if m:
+        try:
+            return float(m.group(1))
+        except ValueError:
+            return None
+    return None
+
+
 def _generate_with_retry(model, prompt, max_attempts: int = 4):
     """Call model.generate_content, retrying transient server errors with backoff.
 
     Transient failures (e.g. 500 Internal error, 503 overloaded, rate limits)
-    are retried with exponential backoff. Non-transient errors are raised
-    immediately so the caller can surface the real problem. Token usage from the
-    successful response is recorded in the per-process accumulator.
+    are retried. For quota/rate-limit (429) errors the server tells us exactly
+    how long to wait (retry_delay), so we honour that instead of a too-short
+    exponential backoff. Non-transient errors are raised immediately so the
+    caller can surface the real problem. Token usage from the successful
+    response is recorded in the per-process accumulator.
     """
     last_err = None
     for attempt in range(max_attempts):
@@ -389,8 +412,14 @@ def _generate_with_retry(model, prompt, max_attempts: int = 4):
             if not _is_transient_llm_error(e) or attempt == max_attempts - 1:
                 raise
             wait = 2 ** attempt  # 1s, 2s, 4s, ...
-            print(f"  ⏳ Transient LLM error ({str(e)[:120]}). "
-                  f"Retry {attempt + 1}/{max_attempts - 1} in {wait}s...")
+            server_delay = _retry_delay_seconds(e)
+            if server_delay is not None:
+                # Wait out the server-requested cool-down (+1s buffer), capped so
+                # we never exceed the caller's subprocess timeout.
+                wait = min(max(wait, server_delay + 1.0), 90.0)
+            reason = "rate limit" if server_delay is not None else "transient error"
+            print(f"  ⏳ {reason} ({str(e)[:100]}). "
+                  f"Retry {attempt + 1}/{max_attempts - 1} in {wait:.0f}s...")
             time.sleep(wait)
     raise last_err
 

@@ -1158,3 +1158,155 @@ Auto-generated stats, one section per orchestrator run.
 - **Errors (1):**
   - No article links found on page 1
 
+
+## Run 2026-07-24 00:48:34
+
+- **Run directory:** `orch_runs/run_20260724_004324`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** infinite scroll
+- **Input URLs:**
+  - https://aawsat.com/%D8%A7%D9%84%D8%B1%D8%A3%D9%8A
+- **Requirements:** 'title, date, author, article body text'
+- **Pages requested:** 1
+- **Pages processed:** 0
+- **Articles extracted:** 0
+- **Articles failed:** 0
+- **Clusters (unique structures):** 0
+- **Links dropped (non-article filter):** 0
+- **LLM calls:** 1
+  - Links agent: 1
+- **Tokens:** 30,579 total (21,267 prompt + 1,375 output)
+  - Links agent: 30,579 tokens
+- **Estimated cost:** $0.0020 (at $0.075/$0.3 per 1M input/output tokens)
+- **Structural-map depth:** 1 agent call(s), 0 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 10 (~7,603 input tokens)
+- **Total time:** 5m 22s
+- **Errors (1):**
+  - No article links found on page 1
+
+
+## Run 2026-07-24 01:31:35
+
+- **Run directory:** `orch_runs/run_20260724_012900`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** infinite scroll
+- **Input URLs:**
+  - https://aawsat.com/%D8%A7%D9%84%D8%B1%D8%A3%D9%8A
+- **Requirements:** 'title, date, author, article body text'
+- **Pages requested:** 1
+- **Pages processed:** 0
+- **Articles extracted:** 0
+- **Articles failed:** 0
+- **Clusters (unique structures):** 0
+- **Links dropped (non-article filter):** 0
+- **LLM calls:** 1
+  - Links agent: 1
+- **Total time:** 2m 40s
+- **Errors (1):**
+  - Links extraction failed: All 3 attempt(s) failed. Last error: LLM ERROR: Error generating code: 429 You exceeded your current quota, please check your plan and billing details. For more information on
+
+
+## Run 2026-07-24 01:57:16
+
+- **Run directory:** `orch_runs/run_20260724_015110`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** infinite scroll
+- **Input URLs:**
+  - https://aawsat.com/%D8%A7%D9%84%D8%B1%D8%A3%D9%8A
+- **Requirements:** 'title, date, author, article body text'
+- **Pages requested:** 1
+- **Pages processed:** 1
+- **Articles extracted:** 83
+- **Articles failed:** 0
+- **Clusters (unique structures):** 1
+- **Links dropped (non-article filter):** 0
+- **LLM calls:** 2
+  - Article agent: 1
+  - Links agent: 1
+- **LLM calls per article:** 0.02
+- **Code reuse rate:** 82/83 articles reused cluster code (99%)
+- **Tokens:** 27,986 total (19,736 prompt + 893 output)
+  - Links agent: 16,750 tokens
+  - Article agent: 11,236 tokens
+- **Estimated cost:** $0.0017 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.0211
+- **Structural-map depth:** 2 agent call(s), 0 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 11 (~13,798 input tokens)
+  - Article agent: depth 10 (~5,936 input tokens)
+- **Total time:** 6m 14s
+- **Fetch method:** 83 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 83 extracted):**
+  - `title`: 0/83 N/A (0%)
+  - `date`: 83/83 N/A (100%)
+  - `author`: 83/83 N/A (100%)
+  - `article body text`: 0/83 N/A (0%)
+- **Errors:** none
+
+
+## Run 2026-07-24 04:59:24
+
+- **Run directory:** `orch_runs/run_20260724_045636`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** infinite scroll
+- **Input URLs:**
+  - https://www.independentarabia.com/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 1
+- **Pages processed:** 1
+- **Articles extracted:** 0
+- **Articles failed:** 4
+- **Clusters (unique structures):** 0
+- **Links dropped (non-article filter):** 0
+- **LLM calls:** 2
+  - Article agent: 1
+  - Links agent: 1
+- **Tokens:** 15,300 total (13,295 prompt + 482 output)
+  - Links agent: 15,300 tokens
+- **Estimated cost:** $0.0011 (at $0.075/$0.3 per 1M input/output tokens)
+- **Structural-map depth:** 1 agent call(s), 1 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 6 (~13,294 input tokens)  ⚠ reduced
+- **Total time:** 2m 48s
+- **Fetch method:** 4 via requests (100%), 0 via browser (0%)
+- **Errors (4):**
+  - Agent failed on new cluster representative: All 1 attempt(s) failed. Last error: LLM ERROR: Error generating code: 429 You exceeded your current quota, please check your plan and billing details. For 
+  - Agent failed on new cluster representative: All 1 attempt(s) failed. Last error: LLM ERROR: Error generating code: 429 You exceeded your current quota, please check your plan and billing details. For 
+  - Agent failed on new cluster representative: All 1 attempt(s) failed. Last error: LLM ERROR: Error generating code: 429 You exceeded your current quota, please check your plan and billing details. For 
+  - Agent failed on new cluster representative: All 1 attempt(s) failed. Last error: LLM ERROR: Error generating code: 429 You exceeded your current quota, please check your plan and billing details. For 
+
+
+## Run 2026-07-24 05:03:36
+
+- **Run directory:** `orch_runs/run_20260724_045823`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** load more button
+- **Input URLs:**
+  - https://www.arageek.com/tech
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 1
+- **Pages processed:** 1
+- **Articles extracted:** 68
+- **Articles failed:** 0
+- **Clusters (unique structures):** 1
+- **Links dropped (non-article filter):** 0
+- **LLM calls:** 2
+  - Article agent: 1
+  - Links agent: 1
+- **LLM calls per article:** 0.03
+- **Code reuse rate:** 67/68 articles reused cluster code (99%)
+- **Tokens:** 33,175 total (28,456 prompt + 886 output)
+  - Links agent: 16,817 tokens
+  - Article agent: 16,358 tokens
+- **Estimated cost:** $0.0024 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.0353
+- **Structural-map depth:** 2 agent call(s), 1 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 6 (~14,243 input tokens)  ⚠ reduced
+  - Article agent: depth 16 (~14,211 input tokens)
+- **Total time:** 5m 13s
+- **Fetch method:** 68 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 68 extracted):**
+  - `title`: 0/68 N/A (0%)
+  - `date`: 0/68 N/A (0%)
+  - `author`: 0/68 N/A (0%)
+  - `article body text`: 0/68 N/A (0%)
+- **Errors:** none
+

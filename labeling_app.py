@@ -307,13 +307,61 @@ def _article_by_id(meta: dict[str, Any], article_id: int) -> dict[str, Any] | No
     return None
 
 
+def _article_features(meta: dict[str, Any], articles: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    """Body length + N/A presence per article, joined from the run predictions."""
+    predictions = _load_predictions(meta)
+    features: dict[str, dict[str, Any]] = {}
+    for article in articles:
+        pred = predictions.get(str(article.get("url", "")).strip(), {})
+        data = pred.get("data", {}) if isinstance(pred, dict) else {}
+        body = _pick_pred_field(data, ("article body text", "article_body_text", "body", "content", "text")) if isinstance(data, dict) else ""
+        has_na = any(_is_na_value(v) for v in data.values()) if isinstance(data, dict) else False
+        features[str(article.get("id"))] = {"length": len(body), "has_na": has_na}
+    return features
+
+
 def _sample_articles(meta: dict[str, Any], labels: dict[str, Any], sample_size: int, seed: str, include_checked: bool) -> list[dict[str, Any]]:
+    """Stratified sample so the draw covers short/medium/long articles and both
+    N/A and non-N/A cases, instead of a plain random draw that can miss them."""
     articles = list(meta.get("articles", []) or [])
     if not include_checked:
         articles = [a for a in articles if str(a.get("id")) not in labels]
+    sample_size = max(0, sample_size)
     rng = random.Random(seed or datetime.now().isoformat())
-    rng.shuffle(articles)
-    return articles[: max(0, sample_size)]
+    if sample_size == 0 or not articles:
+        return []
+    if sample_size >= len(articles):
+        rng.shuffle(articles)
+        return articles
+
+    features = _article_features(meta, articles)
+    lengths = sorted(features[str(a.get("id"))]["length"] for a in articles)
+    # Length terciles among the candidates (short / medium / long).
+    t1 = lengths[len(lengths) // 3]
+    t2 = lengths[2 * len(lengths) // 3]
+
+    def length_bucket(value: int) -> int:
+        return 0 if value <= t1 else (1 if value <= t2 else 2)
+
+    strata: dict[tuple[int, bool], list[dict[str, Any]]] = {}
+    for article in articles:
+        feat = features[str(article.get("id"))]
+        strata.setdefault((length_bucket(feat["length"]), feat["has_na"]), []).append(article)
+    for bucket in strata.values():
+        rng.shuffle(bucket)
+
+    # Round-robin across strata so every group contributes before any group is
+    # drawn from twice; minority groups (long / N/A) stay represented.
+    keys = list(strata.keys())
+    rng.shuffle(keys)
+    chosen: list[dict[str, Any]] = []
+    while len(chosen) < sample_size and any(strata[key] for key in keys):
+        for key in keys:
+            if strata[key]:
+                chosen.append(strata[key].pop())
+                if len(chosen) >= sample_size:
+                    break
+    return chosen
 
 
 def _md_cell(value: Any) -> str:

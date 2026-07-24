@@ -26,7 +26,12 @@ random_num = random.randint(10000, 99999)
 TARGET_TAGS = ['div', 'section', 'article', 'main', 'header', 'footer', 'nav',
                'ul', 'ol', 'li', 'a', 'h1', 'h2', 'h3', 'h4', 'p', 'span',
                'table', 'tr', 'td', 'th', 'figure', 'figcaption', 'time', 'img']
-MAX_DEPTH = 10
+MAX_DEPTH = 16   # modern article pages nest the byline/date deep behind CSS-in-JS
+                 # wrapper divs (e.g. arageek's author link sits at DOM depth ~17),
+                 # so a shallow map hid them and the agent returned author/date =
+                 # N/A. A shallow page's map is unchanged by a higher cap (recursion
+                 # stops at leaves), and _fit_map_to_budget shrinks any page whose
+                 # deeper map would exceed the input-token budget.
 MIN_MAP_DEPTH = 3      # floor when shrinking a too-large map to fit the token budget
 MAX_RETRIES = 3
 SANDBOX_TIMEOUT_SECONDS = 30
