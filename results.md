@@ -1310,3 +1310,1389 @@ Auto-generated stats, one section per orchestrator run.
   - `article body text`: 0/68 N/A (0%)
 - **Errors:** none
 
+
+## Run 2026-07-24 05:18:38
+
+- **Run directory:** `orch_runs/run_20260724_051233`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** infinite scroll
+- **Input URLs:**
+  - https://www.independentarabia.com/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 1
+- **Pages processed:** 1
+- **Articles extracted:** 37
+- **Articles failed:** 0
+- **Clusters (unique structures):** 1
+- **Links dropped (non-article filter):** 0
+- **LLM calls:** 2
+  - Article agent: 1
+  - Links agent: 1
+- **LLM calls per article:** 0.05
+- **Code reuse rate:** 36/37 articles reused cluster code (97%)
+- **Tokens:** 32,060 total (27,773 prompt + 794 output)
+  - Article agent: 16,434 tokens
+  - Links agent: 15,626 tokens
+- **Estimated cost:** $0.0023 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.0627
+- **Structural-map depth:** 2 agent call(s), 1 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 6 (~13,284 input tokens)  ⚠ reduced
+  - Article agent: depth 14 (~14,487 input tokens)
+- **Total time:** 6m 4s
+- **Fetch method:** 37 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 37 extracted):**
+  - `title`: 0/37 N/A (0%)
+  - `date`: 0/37 N/A (0%)
+  - `author`: 0/37 N/A (0%)
+  - `article body text`: 0/37 N/A (0%)
+- **Errors:** none
+
+
+## Run 2026-07-28 13:49:38
+
+- **Run directory:** `orch_runs/run_20260728_134505`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** infinite scroll
+- **Input URLs:**
+  - https://www.independentarabia.com/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 1
+- **Pages processed:** 1
+- **Articles extracted:** 4
+- **Articles failed:** 0
+- **Clusters (unique structures):** 2
+- **Links dropped (non-article filter):** 0
+- **LLM calls:** 3
+  - Article agent: 2
+  - Links agent: 1
+- **LLM calls per article:** 0.75
+- **Code reuse rate:** 2/4 articles reused cluster code (50%)
+- **Tokens:** 47,462 total (42,498 prompt + 1,126 output)
+  - Article agent: 31,388 tokens
+  - Links agent: 16,074 tokens
+- **Estimated cost:** $0.0035 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.8813
+- **Structural-map depth:** 3 agent call(s), 1 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 6 (~13,457 input tokens)  ⚠ reduced
+  - Article agent: depth 14 (~14,565 input tokens)
+  - Article agent: depth 14 (~14,473 input tokens)
+- **Total time:** 4m 33s
+- **Fetch method:** 4 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 4 extracted):**
+  - `title`: 0/4 N/A (0%)
+  - `date`: 0/4 N/A (0%)
+  - `author`: 0/4 N/A (0%)
+  - `article body text`: 0/4 N/A (0%)
+- **Errors:** none
+
+
+## Run 2026-07-28 14:16:56
+
+- **Run directory:** `orch_runs/run_20260728_141124`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** infinite scroll
+- **Scroll rounds requested:** 4
+- **Input URLs:**
+  - https://www.independentarabia.com/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 1
+- **Pages processed:** 1
+- **Articles extracted:** 34
+- **Articles failed:** 0
+- **Clusters (unique structures):** 2
+- **Links dropped (non-article filter):** 0
+- **LLM calls:** 3
+  - Article agent: 2
+  - Links agent: 1
+- **LLM calls per article:** 0.09
+- **Code reuse rate:** 32/34 articles reused cluster code (94%)
+- **Tokens:** 48,257 total (43,325 prompt + 1,128 output)
+  - Article agent: 31,611 tokens
+  - Links agent: 16,646 tokens
+- **Estimated cost:** $0.0036 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.1055
+- **Structural-map depth:** 3 agent call(s), 1 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 6 (~14,192 input tokens)  ⚠ reduced
+  - Article agent: depth 14 (~14,565 input tokens)
+  - Article agent: depth 14 (~14,565 input tokens)
+- **Total time:** 5m 32s
+- **Fetch method:** 34 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 34 extracted):**
+  - `title`: 0/34 N/A (0%)
+  - `date`: 0/34 N/A (0%)
+  - `author`: 0/34 N/A (0%)
+  - `article_body_text`: 2/34 N/A (6%)
+  - `body_text`: 32/34 N/A (94%)
+- **Errors:** none
+
+
+## Run 2026-07-28 16:14:49
+
+- **Run directory:** `orch_runs/run_20260728_161411`
+- **Model:** gemma-3-27b-it
+- **Pagination type:** infinite scroll
+- **Scroll rounds requested:** 4
+- **Input URLs:**
+  - https://www.independentarabia.com/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 1
+- **Pages processed:** 0
+- **Articles extracted:** 0
+- **Articles failed:** 0
+- **Clusters (unique structures):** 0
+- **Links dropped (non-article filter):** 0
+- **LLM calls:** 1
+  - Links agent: 1
+- **Total time:** 0m 39s
+- **Errors (1):**
+  - Links extraction failed: All 3 attempt(s) failed. Last error: LLM ERROR: Error generating code: 404 models/gemma-3-27b-it is not found for API version v1beta, or is not supported for generateContent. 
+
+
+## Run 2026-07-28 16:23:56
+
+- **Run directory:** `orch_runs/run_20260728_161728`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** infinite scroll
+- **Scroll rounds requested:** 4
+- **Input URLs:**
+  - https://www.independentarabia.com/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 1
+- **Pages processed:** 1
+- **Articles extracted:** 34
+- **Articles failed:** 0
+- **Clusters (unique structures):** 2
+- **Links dropped (non-article filter):** 0
+- **Link recovery guard:** triggered on 1 page(s)
+  - page 1: 4 generated accepted -> 34 after recovery (+30)
+- **LLM calls:** 3
+  - Article agent: 2
+  - Links agent: 1
+- **LLM calls per article:** 0.09
+- **Code reuse rate:** 32/34 articles reused cluster code (94%)
+- **Tokens:** 50,823 total (43,494 prompt + 1,099 output)
+  - Article agent: 32,794 tokens
+  - Links agent: 18,029 tokens
+- **Estimated cost:** $0.0036 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.1056
+- **Structural-map depth:** 3 agent call(s), 1 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 6 (~14,183 input tokens)  ⚠ reduced
+  - Article agent: depth 14 (~14,740 input tokens)
+  - Article agent: depth 14 (~14,568 input tokens)
+- **Total time:** 6m 28s
+- **Fetch method:** 34 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 34 extracted):**
+  - `title`: 0/34 N/A (0%)
+  - `date`: 0/34 N/A (0%)
+  - `author`: 0/34 N/A (0%)
+  - `article_body_text`: 2/34 N/A (6%)
+  - `article body text`: 32/34 N/A (94%)
+- **Errors:** none
+
+
+## Run 2026-07-28 19:44:11
+
+- **Run directory:** `orch_runs/run_20260728_193947`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** infinite scroll
+- **Scroll rounds requested:** 4
+- **Input URLs:**
+  - https://www.independentarabia.com/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 1
+- **Pages processed:** 1
+- **Articles extracted:** 34
+- **Articles failed:** 0
+- **Clusters (unique structures):** 2
+- **Links dropped (non-article filter):** 0
+- **Link recovery guard:** triggered on 1 page(s)
+  - page 1: 4 generated accepted -> 34 after recovery (+30)
+- **LLM calls:** 3
+  - Article agent: 2
+  - Links agent: 1
+- **LLM calls per article:** 0.09
+- **Code reuse rate:** 32/34 articles reused cluster code (94%)
+- **Tokens:** 48,426 total (43,494 prompt + 1,088 output)
+  - Article agent: 31,440 tokens
+  - Links agent: 16,986 tokens
+- **Estimated cost:** $0.0036 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.1055
+- **Structural-map depth:** 3 agent call(s), 1 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 6 (~14,183 input tokens)  ⚠ reduced
+  - Article agent: depth 14 (~14,740 input tokens)
+  - Article agent: depth 14 (~14,568 input tokens)
+- **Total time:** 4m 24s
+- **Fetch method:** 34 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 34 extracted):**
+  - `title`: 0/34 N/A (0%)
+  - `date`: 0/34 N/A (0%)
+  - `author`: 0/34 N/A (0%)
+  - `article body text`: 0/34 N/A (0%)
+- **Errors:** none
+
+
+## Run 2026-07-28 19:52:42
+
+- **Run directory:** `orch_runs/run_20260728_194601`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** infinite scroll
+- **Scroll rounds requested:** 1
+- **Input URLs:**
+  - https://www.independentarabia.com/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 1
+- **Pages processed:** 1
+- **Articles extracted:** 25
+- **Articles failed:** 0
+- **Clusters (unique structures):** 2
+- **Links dropped (non-article filter):** 0
+- **Link recovery guard:** triggered on 1 page(s)
+  - page 1: 4 generated accepted -> 25 after recovery (+21)
+- **LLM calls:** 3
+  - Article agent: 2
+  - Links agent: 1
+- **LLM calls per article:** 0.12
+- **Code reuse rate:** 23/25 articles reused cluster code (92%)
+- **Tokens:** 49,865 total (43,069 prompt + 1,051 output)
+  - Article agent: 31,862 tokens
+  - Links agent: 18,003 tokens
+- **Estimated cost:** $0.0035 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.1418
+- **Structural-map depth:** 3 agent call(s), 1 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 6 (~13,758 input tokens)  ⚠ reduced
+  - Article agent: depth 14 (~14,740 input tokens)
+  - Article agent: depth 14 (~14,568 input tokens)
+- **Total time:** 6m 41s
+- **Fetch method:** 25 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 25 extracted):**
+  - `title`: 0/25 N/A (0%)
+  - `date`: 0/25 N/A (0%)
+  - `author`: 0/25 N/A (0%)
+  - `article body text`: 0/25 N/A (0%)
+- **Errors:** none
+
+
+## Run 2026-07-28 20:11:37
+
+- **Run directory:** `orch_runs/run_20260728_195312`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** infinite scroll
+- **Scroll rounds requested:** 100
+- **Input URLs:**
+  - https://aawsat.com/%D8%A7%D9%84%D8%B1%D8%A3%D9%8A
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 1
+- **Pages processed:** 1
+- **Articles extracted:** 500
+- **Articles failed:** 0
+- **Clusters (unique structures):** 1
+- **Links dropped (non-article filter):** 0
+- **LLM calls:** 2
+  - Article agent: 1
+  - Links agent: 1
+- **LLM calls per article:** 0.00
+- **Code reuse rate:** 499/500 articles reused cluster code (100%)
+- **Tokens:** 48,638 total (39,511 prompt + 1,131 output)
+  - Links agent: 32,158 tokens
+  - Article agent: 16,480 tokens
+- **Estimated cost:** $0.0033 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.0066
+- **Structural-map depth:** 2 agent call(s), 0 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 11 (~13,567 input tokens)
+  - Article agent: depth 13 (~13,262 input tokens)
+- **Total time:** 18m 26s
+- **Fetch method:** 500 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 500 extracted):**
+  - `title`: 500/500 N/A (100%)
+  - `date`: 500/500 N/A (100%)
+  - `author`: 500/500 N/A (100%)
+  - `article_body_text`: 499/500 N/A (100%)
+- **Errors:** none
+
+
+## Run 2026-07-29 00:14:27
+
+- **Run directory:** `orch_runs/run_20260729_000940`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** infinite scroll
+- **Scroll rounds requested:** 3
+- **Input URLs:**
+  - https://aawsat.com/%D8%A7%D9%84%D8%B1%D8%A3%D9%8A
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 1
+- **Pages processed:** 1
+- **Articles extracted:** 0
+- **Articles failed:** 61
+- **Clusters (unique structures):** 0
+- **Links dropped (non-article filter):** 0
+- **Article extractor validation:** 1 warning(s)
+  - cluster 81726d321529 representative attempt 1: skip - `title` is N/A; `date` is N/A; `author` is N/A
+- **LLM calls:** 2
+  - Article agent: 1
+  - Links agent: 1
+- **Tokens:** 34,489 total (26,824 prompt + 1,018 output)
+  - Links agent: 17,504 tokens
+  - Article agent: 16,985 tokens
+- **Estimated cost:** $0.0023 (at $0.075/$0.3 per 1M input/output tokens)
+- **Structural-map depth:** 2 agent call(s), 0 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 11 (~13,569 input tokens)
+  - Article agent: depth 13 (~13,253 input tokens)
+- **Total time:** 4m 46s
+- **Fetch method:** 61 via requests (100%), 0 via browser (0%)
+- **Errors (61):**
+  - Agent failed on new cluster representative: Article extractor rejected by validation
+  - Agent failed on new cluster representative: Article extractor rejected by validation
+  - Agent failed on new cluster representative: Article extractor rejected by validation
+  - Agent failed on new cluster representative: Article extractor rejected by validation
+  - Agent failed on new cluster representative: Article extractor rejected by validation
+  - Agent failed on new cluster representative: Article extractor rejected by validation
+  - Agent failed on new cluster representative: Article extractor rejected by validation
+  - Agent failed on new cluster representative: Article extractor rejected by validation
+  - Agent failed on new cluster representative: Article extractor rejected by validation
+  - Agent failed on new cluster representative: Article extractor rejected by validation
+  - ...and 51 more
+
+
+## Run 2026-07-29 00:25:09
+
+- **Run directory:** `orch_runs/run_20260729_001903`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** infinite scroll
+- **Scroll rounds requested:** 1
+- **Input URLs:**
+  - https://aawsat.com/%D8%A7%D9%84%D8%B1%D8%A3%D9%8A
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 1
+- **Pages processed:** 0
+- **Articles extracted:** 0
+- **Articles failed:** 0
+- **Clusters (unique structures):** 0
+- **Links dropped (non-article filter):** 0
+- **LLM calls:** 1
+  - Links agent: 1
+- **Tokens:** 49,039 total (36,911 prompt + 1,473 output)
+  - Links agent: 49,039 tokens
+- **Estimated cost:** $0.0032 (at $0.075/$0.3 per 1M input/output tokens)
+- **Structural-map depth:** 1 agent call(s), 1 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 9 (~12,830 input tokens)  ⚠ reduced
+- **Total time:** 6m 7s
+- **Errors (1):**
+  - No article links found on page 1
+
+
+## Run 2026-07-29 00:58:03
+
+- **Run directory:** `orch_runs/run_20260729_004338`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** infinite scroll
+- **Scroll rounds requested:** 1
+- **Input URLs:**
+  - https://aawsat.com/%D8%A7%D9%84%D8%B1%D8%A3%D9%8A
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 1
+- **Pages processed:** 1
+- **Articles extracted:** 12
+- **Articles failed:** 37
+- **Clusters (unique structures):** 1
+- **Links dropped (non-article filter):** 0
+- **Link recovery guard:** triggered on 1 page(s)
+  - page 1: 0 generated accepted -> 49 after recovery (+49)
+- **Article extractor validation:** 3 warning(s)
+  - cluster 81726d321529 representative attempt 1: retry - `title` is N/A; `author` is N/A; `article_body_text` is N/A
+  - cluster 81726d321529 representative attempt 2: skip - `title` is N/A; `author` is N/A; `article body text` is N/A
+  - cluster 341cd4b49fe8 representative attempt 1: accept - `author` is N/A
+- **LLM calls:** 4
+  - Article agent: 3
+  - Links agent: 1
+- **LLM calls per article:** 0.33
+- **Code reuse rate:** 9/12 articles reused cluster code (75%)
+- **Tokens:** 95,038 total (76,147 prompt + 2,383 output)
+  - Article agent: 48,299 tokens
+  - Links agent: 46,739 tokens
+- **Estimated cost:** $0.0064 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.5355
+- **Structural-map depth:** 4 agent call(s), 1 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 9 (~12,835 input tokens)  ⚠ reduced
+  - Article agent: depth 13 (~13,260 input tokens)
+  - Article agent: depth 13 (~13,496 input tokens)
+  - Article agent: depth 13 (~12,559 input tokens)
+- **Total time:** 14m 25s
+- **Fetch method:** 49 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 12 extracted):**
+  - `title`: 0/12 N/A (0%)
+  - `date`: 0/12 N/A (0%)
+  - `author`: 12/12 N/A (100%)
+  - `article body text`: 0/12 N/A (0%)
+- **Errors (37):**
+  - Agent failed on new cluster representative: Article extractor rejected by validation
+  - Agent failed on new cluster representative: Article extractor rejected by validation
+  - Agent failed on new cluster representative: Article extractor rejected by validation
+  - Agent failed on new cluster representative: Article extractor rejected by validation
+  - Agent failed on new cluster representative: Article extractor rejected by validation
+  - Agent failed on new cluster representative: Article extractor rejected by validation
+  - Agent failed on new cluster representative: Article extractor rejected by validation
+  - Agent failed on new cluster representative: Article extractor rejected by validation
+  - Agent failed on new cluster representative: Article extractor rejected by validation
+  - Agent failed on new cluster representative: Article extractor rejected by validation
+  - ...and 27 more
+
+
+## Run 2026-07-29 01:15:16
+
+- **Run directory:** `orch_runs/run_20260729_010906`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** infinite scroll
+- **Scroll rounds requested:** 1
+- **Input URLs:**
+  - https://aawsat.com/%D8%A7%D9%84%D8%B1%D8%A3%D9%8A
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 1
+- **Pages processed:** 0
+- **Articles extracted:** 0
+- **Articles failed:** 0
+- **Clusters (unique structures):** 0
+- **Links dropped (non-article filter):** 0
+- **LLM calls:** 1
+  - Links agent: 1
+- **Total time:** 6m 9s
+- **Errors (1):**
+  - Links extraction failed: All 3 attempt(s) failed. Last error: AST SAFETY ERROR: Disallowed syntax: ImportFrom
+
+
+## Run 2026-07-29 01:27:34
+
+- **Run directory:** `orch_runs/run_20260729_012203`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** infinite scroll
+- **Scroll rounds requested:** 2
+- **Input URLs:**
+  - https://aawsat.com/%D8%A7%D9%84%D8%B1%D8%A3%D9%8A
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 1
+- **Pages processed:** 0
+- **Articles extracted:** 0
+- **Articles failed:** 0
+- **Clusters (unique structures):** 0
+- **Links dropped (non-article filter):** 0
+- **LLM calls:** 1
+  - Links agent: 1
+- **Total time:** 5m 31s
+- **Errors (1):**
+  - Links extraction failed: All 3 attempt(s) failed. Last error: AST SAFETY ERROR: Disallowed syntax: Lambda
+
+
+## Run 2026-07-29 02:29:19
+
+- **Run directory:** `orch_runs/run_20260729_021324`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** infinite scroll
+- **Scroll rounds requested:** 2
+- **Input URLs:**
+  - https://aawsat.com/%D8%A7%D9%84%D8%B1%D8%A3%D9%8A
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 1
+- **Pages processed:** 1
+- **Articles extracted:** 63
+- **Articles failed:** 0
+- **Clusters (unique structures):** 3
+- **Links dropped (non-article filter):** 0
+- **Article extractor validation:** 3 warning(s)
+  - cluster 81726d321529 representative attempt 1: retry - `title` is N/A; listing title exists but extractor returned N/A: دورة الطبيعة
+  - cluster 7007be81aa53 representative attempt 1: retry - `article body text` is N/A
+  - cluster 341cd4b49fe8 representative attempt 1: retry - `body_text` is N/A
+- **LLM calls:** 7
+  - Article agent: 6
+  - Links agent: 1
+- **LLM calls per article:** 0.11
+- **Code reuse rate:** 57/63 articles reused cluster code (90%)
+- **Tokens:** 119,047 total (92,747 prompt + 2,475 output)
+  - Article agent: 103,027 tokens
+  - Links agent: 16,020 tokens
+- **Estimated cost:** $0.0077 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.1222
+- **Structural-map depth:** 7 agent call(s), 1 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 9 (~12,824 input tokens)  ⚠ reduced
+  - Article agent: depth 13 (~12,849 input tokens)
+  - Article agent: depth 13 (~13,437 input tokens)
+  - Article agent: depth 11 (~12,296 input tokens)
+  - Article agent: depth 11 (~12,552 input tokens)
+  - Article agent: depth 14 (~14,278 input tokens)
+  - Article agent: depth 14 (~14,504 input tokens)
+- **Total time:** 15m 55s
+- **Fetch method:** 62 via requests (98%), 1 via browser (2%)
+- **Missing/N/A values (of 63 extracted):**
+  - `title`: 0/63 N/A (0%)
+  - `date`: 0/63 N/A (0%)
+  - `author`: 0/63 N/A (0%)
+  - `article body text`: 0/63 N/A (0%)
+- **Errors:** none
+
+
+## Run 2026-07-29 19:03:23
+
+- **Run directory:** `orch_runs/run_20260729_184616`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** infinite scroll
+- **Scroll rounds requested:** 2
+- **Input URLs:**
+  - https://aawsat.com/%D8%A7%D9%84%D8%B1%D8%A3%D9%8A
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 1
+- **Pages processed:** 1
+- **Articles extracted:** 63
+- **Articles failed:** 0
+- **Clusters (unique structures):** 4
+- **Links dropped (non-article filter):** 0
+- **Article extractor validation:** 3 warning(s)
+  - cluster 81726d321529 representative attempt 1: retry - `title` is N/A; listing title exists but extractor returned N/A: دورة الطبيعة
+  - cluster 7007be81aa53 representative attempt 1: retry - `article body text` is N/A
+  - cluster a04dad562962 representative attempt 1: retry - `body_text` is N/A
+- **LLM calls:** 8
+  - Article agent: 7
+  - Links agent: 1
+- **LLM calls per article:** 0.13
+- **Code reuse rate:** 56/63 articles reused cluster code (89%)
+- **Tokens:** 135,441 total (107,810 prompt + 2,948 output)
+  - Article agent: 119,166 tokens
+  - Links agent: 16,275 tokens
+- **Estimated cost:** $0.0090 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.1424
+- **Structural-map depth:** 8 agent call(s), 1 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 9 (~12,844 input tokens)  ⚠ reduced
+  - Article agent: depth 13 (~12,858 input tokens)
+  - Article agent: depth 13 (~13,448 input tokens)
+  - Article agent: depth 11 (~12,292 input tokens)
+  - Article agent: depth 11 (~12,537 input tokens)
+  - Article agent: depth 12 (~14,726 input tokens)
+  - Article agent: depth 12 (~14,987 input tokens)
+  - Article agent: depth 14 (~14,110 input tokens)
+- **Total time:** 17m 7s
+- **Fetch method:** 62 via requests (98%), 1 via browser (2%)
+- **Missing/N/A values (of 63 extracted):**
+  - `title`: 0/63 N/A (0%)
+  - `date`: 0/63 N/A (0%)
+  - `author`: 1/63 N/A (2%)
+  - `article body text`: 1/63 N/A (2%)
+- **Errors:** none
+
+
+## Run 2026-07-30 23:50:17
+
+- **Run directory:** `orch_runs/run_20260730_234932`
+- **Model:** gemma-3-27b-it
+- **Pagination type:** numbered pagination
+- **Input URLs:**
+  - https://www.youm7.com/Section/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B9%D8%A7%D8%AC%D9%84%D8%A9/65/1
+  - https://www.youm7.com/Section/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B9%D8%A7%D8%AC%D9%84%D8%A9/65/2
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 3
+- **Pages processed:** 0
+- **Articles extracted:** 0
+- **Articles failed:** 0
+- **Clusters (unique structures):** 0
+- **Links dropped (non-article filter):** 0
+- **Link coverage audit:** 1 page(s), 0 raw links, 0 accepted article links, 0 new unique links
+  - ⚠ 1 page(s) flagged for review:
+    - page 1: zero_accepted_links, zero_raw_links (0 accepted, 0 new)
+  - Full audit saved to `orch_runs/run_20260730_234932/link_coverage.json`
+- **LLM calls:** 1
+  - Links agent: 1
+- **Total time:** 0m 45s
+- **Errors (1):**
+  - Links extraction failed: All 3 attempt(s) failed. Last error: LLM ERROR: Error generating code: 404 models/gemma-3-27b-it is not found for API version v1beta, or is not supported for generateContent. 
+
+
+## Run 2026-07-30 23:51:28
+
+- **Run directory:** `orch_runs/run_20260730_235017`
+- **Model:** gemma-3-27b-it
+- **Pagination type:** numbered pagination
+- **Input URLs:**
+  - https://pchrgaza.org/ar/category/genocide-on-gaza-ar/testimonies-from-the-war-ar/
+  - https://pchrgaza.org/ar/category/genocide-on-gaza-ar/testimonies-from-the-war-ar/page/2/
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 3
+- **Pages processed:** 0
+- **Articles extracted:** 0
+- **Articles failed:** 0
+- **Clusters (unique structures):** 0
+- **Links dropped (non-article filter):** 0
+- **Link coverage audit:** 1 page(s), 0 raw links, 0 accepted article links, 0 new unique links
+  - ⚠ 1 page(s) flagged for review:
+    - page 1: zero_accepted_links, zero_raw_links (0 accepted, 0 new)
+  - Full audit saved to `orch_runs/run_20260730_235017/link_coverage.json`
+- **LLM calls:** 1
+  - Links agent: 1
+- **Total time:** 1m 10s
+- **Errors (1):**
+  - Links extraction failed: All 3 attempt(s) failed. Last error: LLM ERROR: Error generating code: 404 models/gemma-3-27b-it is not found for API version v1beta, or is not supported for generateContent. 
+
+
+## Run 2026-07-31 00:11:57
+
+- **Run directory:** `orch_runs/run_20260731_000306`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** numbered pagination
+- **Input URLs:**
+  - https://www.youm7.com/Section/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B9%D8%A7%D8%AC%D9%84%D8%A9/65/1
+  - https://www.youm7.com/Section/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B9%D8%A7%D8%AC%D9%84%D8%A9/65/2
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 3
+- **Pages processed:** 3
+- **Articles extracted:** 146
+- **Articles failed:** 0
+- **Clusters (unique structures):** 4
+- **Links dropped (non-article filter):** 0
+- **Link coverage audit:** 3 page(s), 120 raw links, 174 accepted article links, 146 new unique links
+  - Full audit saved to `orch_runs/run_20260731_000306/link_coverage.json`
+- **Link recovery guard:** triggered on 1 page(s)
+  - page 3: 40 generated accepted -> 94 after recovery (+54)
+- **Link preflight:** passed - 10/10 article-like, 0/10 singleton structures
+- **Article extractor validation:** 4 warning(s)
+  - cluster 89a058fc046a representative attempt 1: accept - `author` is N/A
+  - cluster ae0dd5dc208d representative attempt 1: accept - `author` is N/A
+  - cluster f88af79e900c representative attempt 1: accept - `author` is N/A
+  - cluster a54dca892f4c representative attempt 1: accept - `author` is N/A
+- **LLM calls:** 5
+  - Article agent: 4
+  - Links agent: 1
+- **LLM calls per article:** 0.03
+- **Code reuse rate:** 142/146 articles reused cluster code (97%)
+- **Tokens:** 61,624 total (51,368 prompt + 1,724 output)
+  - Article agent: 57,323 tokens
+  - Links agent: 4,301 tokens
+- **Estimated cost:** $0.0044 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.0299
+- **Structural-map depth:** 5 agent call(s), 2 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 12 (~3,370 input tokens)
+  - Article agent: depth 16 (~9,849 input tokens)
+  - Article agent: depth 6 (~12,304 input tokens)  ⚠ reduced
+  - Article agent: depth 8 (~11,308 input tokens)  ⚠ reduced
+  - Article agent: depth 10 (~14,532 input tokens)
+- **Total time:** 8m 51s
+- **Fetch method:** 146 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 146 extracted):**
+  - `title`: 0/146 N/A (0%)
+  - `date`: 5/146 N/A (3%)
+  - `author`: 15/146 N/A (10%)
+  - `article body text`: 0/146 N/A (0%)
+- **Errors:** none
+
+
+## Run 2026-07-31 00:19:12
+
+- **Run directory:** `orch_runs/run_20260731_001158`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** numbered pagination
+- **Input URLs:**
+  - https://pchrgaza.org/ar/category/genocide-on-gaza-ar/testimonies-from-the-war-ar/
+  - https://pchrgaza.org/ar/category/genocide-on-gaza-ar/testimonies-from-the-war-ar/page/2/
+- **Requirements:** title, date, article body text
+- **Pages requested:** 3
+- **Pages processed:** 0
+- **Articles extracted:** 0
+- **Articles failed:** 0
+- **Clusters (unique structures):** 0
+- **Links dropped (non-article filter):** 0
+- **Link coverage audit:** 1 page(s), 0 raw links, 0 accepted article links, 0 new unique links
+  - ⚠ 1 page(s) flagged for review:
+    - page 1: zero_accepted_links, zero_raw_links (0 accepted, 0 new)
+  - Full audit saved to `orch_runs/run_20260731_001158/link_coverage.json`
+- **LLM calls:** 1
+  - Links agent: 1
+- **Tokens:** 23,476 total (10,018 prompt + 1,480 output)
+  - Links agent: 23,476 tokens
+- **Estimated cost:** $0.0012 (at $0.075/$0.3 per 1M input/output tokens)
+- **Structural-map depth:** 1 agent call(s), 0 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 12 (~3,869 input tokens)
+- **Total time:** 7m 14s
+- **Errors (1):**
+  - No article links found on page 1
+
+
+## Run 2026-07-31 00:23:56
+
+- **Run directory:** `orch_runs/run_20260731_001912`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** numbered pagination
+- **Input URLs:**
+  - https://www.almasryalyoum.com/news/index?typeid=1&sectionid=10
+  - https://www.almasryalyoum.com/news/index?typeid=1&sectionid=10&page=2
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 3
+- **Pages processed:** 3
+- **Articles extracted:** 30
+- **Articles failed:** 0
+- **Clusters (unique structures):** 2
+- **Links dropped (non-article filter):** 0
+- **Link coverage audit:** 3 page(s), 30 raw links, 30 accepted article links, 30 new unique links
+  - Full audit saved to `orch_runs/run_20260731_001912/link_coverage.json`
+- **Link preflight:** passed - 10/10 article-like, 0/10 singleton structures
+- **Article extractor validation:** 2 warning(s)
+  - cluster 41ffd7e75508 representative attempt 1: accept - `date` is N/A; `author` is N/A; `article body text` is N/A
+  - cluster 41ffd7e75508 sample attempt 1: accept - `date` is N/A; `author` is N/A; `article body text` is N/A
+- **LLM calls:** 3
+  - Article agent: 2
+  - Links agent: 1
+- **LLM calls per article:** 0.10
+- **Code reuse rate:** 28/30 articles reused cluster code (93%)
+- **Tokens:** 26,128 total (19,921 prompt + 1,001 output)
+  - Article agent: 20,683 tokens
+  - Links agent: 5,445 tokens
+- **Estimated cost:** $0.0018 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.0598
+- **Structural-map depth:** 3 agent call(s), 0 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 12 (~3,695 input tokens)
+  - Article agent: depth 16 (~9,894 input tokens)
+  - Article agent: depth 16 (~6,329 input tokens)
+- **Total time:** 4m 44s
+- **Fetch method:** 30 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 30 extracted):**
+  - `title`: 0/30 N/A (0%)
+  - `date`: 9/30 N/A (30%)
+  - `author`: 9/30 N/A (30%)
+  - `article body text`: 9/30 N/A (30%)
+- **Errors:** none
+
+
+## Run 2026-07-31 00:28:04
+
+- **Run directory:** `orch_runs/run_20260731_002357`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** numbered pagination
+- **Input URLs:**
+  - https://euromedmonitor.org/ar/category/26/%D8%A7%D9%84%D9%86%D8%B2%D8%A7%D8%B9%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D8%AD%D8%A9
+  - https://euromedmonitor.org/ar/category/26/%D8%A7%D9%84%D9%86%D8%B2%D8%A7%D8%B9%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D8%AD%D8%A9?page=2
+- **Requirements:** title, date, article body text
+- **Pages requested:** 3
+- **Pages processed:** 3
+- **Articles extracted:** 27
+- **Articles failed:** 0
+- **Clusters (unique structures):** 1
+- **Links dropped (non-article filter):** 0
+- **Link coverage audit:** 3 page(s), 27 raw links, 27 accepted article links, 27 new unique links
+  - Full audit saved to `orch_runs/run_20260731_002357/link_coverage.json`
+- **Link preflight:** passed - 0/9 article-like, 0/9 singleton structures
+- **LLM calls:** 2
+  - Article agent: 1
+  - Links agent: 1
+- **LLM calls per article:** 0.07
+- **Code reuse rate:** 26/27 articles reused cluster code (96%)
+- **Tokens:** 24,797 total (17,971 prompt + 1,083 output)
+  - Article agent: 14,400 tokens
+  - Links agent: 10,397 tokens
+- **Estimated cost:** $0.0017 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.0620
+- **Structural-map depth:** 2 agent call(s), 0 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 12 (~2,549 input tokens)
+  - Article agent: depth 15 (~13,597 input tokens)
+- **Total time:** 4m 7s
+- **Fetch method:** 27 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 27 extracted):**
+  - `title`: 0/27 N/A (0%)
+  - `date`: 0/27 N/A (0%)
+  - `article body text`: 0/27 N/A (0%)
+- **Errors:** none
+
+
+## Run 2026-07-31 00:34:08
+
+- **Run directory:** `orch_runs/run_20260731_002805`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** infinite scroll
+- **Scroll rounds requested:** 2
+- **Input URLs:**
+  - https://aawsat.com/%D8%A7%D9%84%D8%B1%D8%A3%D9%8A
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 1
+- **Pages processed:** 1
+- **Articles extracted:** 48
+- **Articles failed:** 0
+- **Clusters (unique structures):** 2
+- **Links dropped (non-article filter):** 0
+- **Link coverage audit:** 1 page(s), 48 raw links, 48 accepted article links, 48 new unique links
+  - Full audit saved to `orch_runs/run_20260731_002805/link_coverage.json`
+- **Link preflight:** passed - 10/10 article-like, 0/10 singleton structures
+- **Article extractor validation:** 3 warning(s)
+  - cluster 81726d321529 representative attempt 1: accept - `title` is N/A; listing title exists but extractor returned N/A: الخوف من الجواب
+  - cluster 81726d321529 sample attempt 1: accept - `title` is N/A; listing title exists but extractor returned N/A: خيوط الحرب الخفية في السودان
+  - cluster 99b6ba5fabde representative attempt 1: accept - `title` is N/A; listing title exists but extractor returned N/A: بلقيس وأروى وسيادة المرأة
+- **LLM calls:** 3
+  - Article agent: 2
+  - Links agent: 1
+- **LLM calls per article:** 0.06
+- **Code reuse rate:** 46/48 articles reused cluster code (96%)
+- **Tokens:** 48,167 total (38,286 prompt + 1,064 output)
+  - Article agent: 34,276 tokens
+  - Links agent: 13,891 tokens
+- **Estimated cost:** $0.0032 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.0665
+- **Structural-map depth:** 3 agent call(s), 0 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 11 (~11,083 input tokens)
+  - Article agent: depth 13 (~12,872 input tokens)
+  - Article agent: depth 13 (~14,328 input tokens)
+- **Total time:** 6m 3s
+- **Fetch method:** 47 via requests (98%), 1 via browser (2%)
+- **Missing/N/A values (of 48 extracted):**
+  - `title`: 48/48 N/A (100%)
+  - `date`: 0/48 N/A (0%)
+  - `author`: 0/48 N/A (0%)
+  - `article body text`: 0/48 N/A (0%)
+- **Errors:** none
+
+
+## Run 2026-07-31 00:40:19
+
+- **Run directory:** `orch_runs/run_20260731_003409`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** infinite scroll
+- **Scroll rounds requested:** 2
+- **Input URLs:**
+  - https://www.independentarabia.com/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 1
+- **Pages processed:** 1
+- **Articles extracted:** 62
+- **Articles failed:** 0
+- **Clusters (unique structures):** 2
+- **Links dropped (non-article filter):** 0
+- **Link coverage audit:** 1 page(s), 4 raw links, 62 accepted article links, 62 new unique links
+  - Full audit saved to `orch_runs/run_20260731_003409/link_coverage.json`
+- **Link recovery guard:** triggered on 1 page(s)
+  - page 1: 4 generated accepted -> 62 after recovery (+58)
+- **Link preflight:** passed - 10/10 article-like, 0/10 singleton structures
+- **LLM calls:** 3
+  - Article agent: 2
+  - Links agent: 1
+- **LLM calls per article:** 0.05
+- **Code reuse rate:** 60/62 articles reused cluster code (97%)
+- **Tokens:** 51,867 total (41,413 prompt + 1,330 output)
+  - Article agent: 35,870 tokens
+  - Links agent: 15,997 tokens
+- **Estimated cost:** $0.0035 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.0565
+- **Structural-map depth:** 3 agent call(s), 1 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 6 (~13,872 input tokens)  ⚠ reduced
+  - Article agent: depth 16 (~13,990 input tokens)
+  - Article agent: depth 16 (~13,548 input tokens)
+- **Total time:** 6m 11s
+- **Fetch method:** 62 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 62 extracted):**
+  - `title`: 0/62 N/A (0%)
+  - `date`: 0/62 N/A (0%)
+  - `author`: 0/62 N/A (0%)
+  - `article body text`: 0/62 N/A (0%)
+- **Errors:** none
+
+
+## Run 2026-07-31 00:47:11
+
+- **Run directory:** `orch_runs/run_20260731_004020`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** load more button
+- **Load-more clicks requested:** 2
+- **Load-more selector:** auto-detect
+- **Input URLs:**
+  - https://www.arageek.com/tech
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 1
+- **Pages processed:** 1
+- **Articles extracted:** 80
+- **Articles failed:** 0
+- **Clusters (unique structures):** 3
+- **Links dropped (non-article filter):** 0
+- **Link coverage audit:** 1 page(s), 80 raw links, 80 accepted article links, 80 new unique links
+  - Full audit saved to `orch_runs/run_20260731_004020/link_coverage.json`
+- **Link preflight:** passed - 10/10 article-like, 1/10 singleton structures
+- **Article extractor validation:** 2 warning(s)
+  - cluster 4ed95a6f062f representative attempt 1: accept - `date` is N/A; `author` is N/A
+  - cluster a6723d8a48b7 representative attempt 1: accept - `author` is N/A
+- **LLM calls:** 4
+  - Article agent: 3
+  - Links agent: 1
+- **LLM calls per article:** 0.05
+- **Code reuse rate:** 77/80 articles reused cluster code (96%)
+- **Tokens:** 51,778 total (40,031 prompt + 1,467 output)
+  - Article agent: 33,091 tokens
+  - Links agent: 18,687 tokens
+- **Estimated cost:** $0.0034 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.0430
+- **Structural-map depth:** 4 agent call(s), 1 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 6 (~14,291 input tokens)  ⚠ reduced
+  - Article agent: depth 16 (~10,433 input tokens)
+  - Article agent: depth 16 (~2,786 input tokens)
+  - Article agent: depth 16 (~12,517 input tokens)
+- **Total time:** 6m 51s
+- **Fetch method:** 80 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 80 extracted):**
+  - `title`: 0/80 N/A (0%)
+  - `date`: 8/80 N/A (10%)
+  - `author`: 24/80 N/A (30%)
+  - `article body text`: 0/80 N/A (0%)
+- **Errors:** none
+
+
+## Run 2026-07-31 00:49:27
+
+- **Run directory:** `orch_runs/run_20260731_004711`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** load more button
+- **Load-more clicks requested:** 2
+- **Load-more selector:** auto-detect
+- **Input URLs:**
+  - https://www.majalla.com/sections/%D8%B3%D9%8A%D8%A7%D8%B3%D8%A9
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 1
+- **Pages processed:** 1
+- **Articles extracted:** 33
+- **Articles failed:** 0
+- **Clusters (unique structures):** 1
+- **Links dropped (non-article filter):** 0
+- **Link coverage audit:** 1 page(s), 33 raw links, 33 accepted article links, 33 new unique links
+  - Full audit saved to `orch_runs/run_20260731_004711/link_coverage.json`
+- **Link preflight:** passed - 0/10 article-like, 0/10 singleton structures
+- **LLM calls:** 2
+  - Article agent: 1
+  - Links agent: 1
+- **LLM calls per article:** 0.06
+- **Code reuse rate:** 32/33 articles reused cluster code (97%)
+- **Tokens:** 25,985 total (22,675 prompt + 742 output)
+  - Links agent: 15,430 tokens
+  - Article agent: 10,555 tokens
+- **Estimated cost:** $0.0019 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.0583
+- **Structural-map depth:** 2 agent call(s), 0 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 11 (~13,675 input tokens)
+  - Article agent: depth 16 (~8,998 input tokens)
+- **Total time:** 2m 16s
+- **Fetch method:** 33 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 33 extracted):**
+  - `title`: 0/33 N/A (0%)
+  - `date`: 0/33 N/A (0%)
+  - `author`: 0/33 N/A (0%)
+  - `article body text`: 0/33 N/A (0%)
+- **Errors:** none
+
+
+## Run 2026-07-31 01:10:58
+
+- **Run directory:** `orch_runs/run_20260731_004927`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** numbered pagination
+- **Input URLs:**
+  - https://www.theguardian.com/world/gaza
+  - https://www.theguardian.com/world/gaza?page=2
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 3
+- **Pages processed:** 3
+- **Articles extracted:** 60
+- **Articles failed:** 0
+- **Clusters (unique structures):** 17
+- **Links dropped (non-article filter):** 0
+- **Link coverage audit:** 3 page(s), 24 raw links, 60 accepted article links, 60 new unique links
+  - ⚠ 1 page(s) flagged for review:
+    - page 2: zero_raw_links (20 accepted, 20 new)
+  - Full audit saved to `orch_runs/run_20260731_004927/link_coverage.json`
+- **Link recovery guard:** triggered on 2 page(s)
+  - page 2: 0 generated accepted -> 20 after recovery (+20)
+  - page 3: 4 generated accepted -> 20 after recovery (+16)
+- **Link preflight:** passed - 10/10 article-like, 4/10 singleton structures
+- **Article extractor validation:** 16 warning(s)
+  - cluster b042292a5c27 representative attempt 1: accept - `date` is N/A; `author` is N/A
+  - cluster 5a6a1650ac31 representative attempt 1: accept - `date` is N/A
+  - cluster ee1c6d710597 representative attempt 1: accept - `date` is N/A; `author` is N/A; `article body text` is N/A
+  - cluster ee1c6d710597 sample attempt 1: accept - `date` is N/A; `author` is N/A; `article body text` is N/A
+  - cluster 884e227259d3 representative attempt 1: accept - `date` is N/A; `author` is N/A
+  - cluster d79b3e86475d representative attempt 1: accept - `date` is N/A; `author` is N/A
+  - cluster f3146a3da920 representative attempt 1: accept - `date` is N/A; `author` is N/A
+  - cluster b64603ef2895 representative attempt 1: accept - `date` is N/A
+  - cluster 5b76c43c1536 representative attempt 1: accept - `date` is N/A
+  - cluster ba9ec57003b0 representative attempt 1: accept - `date` is N/A; `author` is N/A
+  - ...and 6 more
+- **LLM calls:** 18
+  - Article agent: 17
+  - Links agent: 1
+- **LLM calls per article:** 0.30
+- **Code reuse rate:** 43/60 articles reused cluster code (72%)
+- **Tokens:** 188,000 total (149,601 prompt + 5,772 output)
+  - Article agent: 171,624 tokens
+  - Links agent: 16,376 tokens
+- **Estimated cost:** $0.0130 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.2159
+- **Structural-map depth:** 18 agent call(s), 1 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 9 (~14,243 input tokens)  ⚠ reduced
+  - Article agent: depth 16 (~9,034 input tokens)
+  - Article agent: depth 16 (~8,833 input tokens)
+  - Article agent: depth 16 (~5,105 input tokens)
+  - Article agent: depth 16 (~7,449 input tokens)
+  - Article agent: depth 16 (~6,207 input tokens)
+  - Article agent: depth 16 (~7,919 input tokens)
+  - Article agent: depth 16 (~7,241 input tokens)
+  - Article agent: depth 16 (~6,993 input tokens)
+  - Article agent: depth 16 (~9,397 input tokens)
+  - Article agent: depth 16 (~8,265 input tokens)
+  - Article agent: depth 14 (~14,001 input tokens)
+  - Article agent: depth 16 (~9,324 input tokens)
+  - Article agent: depth 16 (~6,314 input tokens)
+  - Article agent: depth 16 (~7,780 input tokens)
+  - Article agent: depth 16 (~8,280 input tokens)
+  - Article agent: depth 16 (~7,753 input tokens)
+  - Article agent: depth 16 (~5,445 input tokens)
+- **Total time:** 21m 30s
+- **Fetch method:** 60 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 60 extracted):**
+  - `title`: 0/60 N/A (0%)
+  - `date`: 58/60 N/A (97%)
+  - `author`: 46/60 N/A (77%)
+  - `article body text`: 4/60 N/A (7%)
+- **Errors:** none
+
+
+## Run 2026-07-31 01:28:41
+
+- **Run directory:** `orch_runs/run_20260731_011058`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** numbered pagination
+- **Input URLs:**
+  - https://www.btselem.org/ota/100/all
+  - https://www.btselem.org/ota/100/all?page=1
+- **Requirements:** title, date, article body text
+- **Pages requested:** 3
+- **Pages processed:** 3
+- **Articles extracted:** 36
+- **Articles failed:** 0
+- **Clusters (unique structures):** 6
+- **Links dropped (non-article filter):** 0
+- **Link coverage audit:** 3 page(s), 36 raw links, 36 accepted article links, 36 new unique links
+  - Full audit saved to `orch_runs/run_20260731_011058/link_coverage.json`
+- **Link preflight:** passed - 0/10 article-like, 4/10 singleton structures
+- **Article extractor validation:** 1 warning(s)
+  - cluster ea43c63c7e65 representative attempt 1: accept - `title` is N/A; `date` is N/A; `article body text` is N/A
+- **LLM calls:** 7
+  - Article agent: 6
+  - Links agent: 1
+- **LLM calls per article:** 0.19
+- **Code reuse rate:** 30/36 articles reused cluster code (83%)
+- **Tokens:** 77,141 total (66,499 prompt + 2,045 output)
+  - Article agent: 69,697 tokens
+  - Links agent: 7,444 tokens
+- **Estimated cost:** $0.0056 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.1556
+- **Structural-map depth:** 7 agent call(s), 0 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 12 (~4,917 input tokens)
+  - Article agent: depth 16 (~12,108 input tokens)
+  - Article agent: depth 15 (~14,767 input tokens)
+  - Article agent: depth 16 (~1,115 input tokens)
+  - Article agent: depth 16 (~10,538 input tokens)
+  - Article agent: depth 16 (~11,658 input tokens)
+  - Article agent: depth 16 (~11,389 input tokens)
+- **Total time:** 17m 43s
+- **Fetch method:** 1 via requests (3%), 35 via browser (97%)
+- **Missing/N/A values (of 36 extracted):**
+  - `title`: 1/36 N/A (3%)
+  - `date`: 1/36 N/A (3%)
+  - `article body text`: 3/36 N/A (8%)
+- **Errors:** none
+
+
+## Run 2026-07-31 01:33:05
+
+- **Run directory:** `orch_runs/run_20260731_012841`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** infinite scroll
+- **Scroll rounds requested:** 2
+- **Input URLs:**
+  - https://arabic.cnn.com/tag/gaza_strip
+- **Requirements:** title, date, article body text
+- **Pages requested:** 1
+- **Pages processed:** 1
+- **Articles extracted:** 35
+- **Articles failed:** 0
+- **Clusters (unique structures):** 3
+- **Links dropped (non-article filter):** 0
+- **Link coverage audit:** 1 page(s), 0 raw links, 35 accepted article links, 35 new unique links
+  - ⚠ 1 page(s) flagged for review:
+    - page 1: zero_raw_links (35 accepted, 35 new)
+  - Full audit saved to `orch_runs/run_20260731_012841/link_coverage.json`
+- **Link recovery guard:** triggered on 1 page(s)
+  - page 1: 0 generated accepted -> 35 after recovery (+35)
+- **Link preflight:** passed - 10/10 article-like, 1/10 singleton structures
+- **LLM calls:** 4
+  - Article agent: 3
+  - Links agent: 1
+- **LLM calls per article:** 0.11
+- **Code reuse rate:** 32/35 articles reused cluster code (91%)
+- **Tokens:** 44,204 total (37,023 prompt + 1,965 output)
+  - Links agent: 23,048 tokens
+  - Article agent: 21,156 tokens
+- **Estimated cost:** $0.0034 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.0962
+- **Structural-map depth:** 4 agent call(s), 0 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 12 (~6,758 input tokens)
+  - Article agent: depth 16 (~7,265 input tokens)
+  - Article agent: depth 16 (~4,668 input tokens)
+  - Article agent: depth 16 (~6,440 input tokens)
+- **Total time:** 4m 24s
+- **Fetch method:** 35 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 35 extracted):**
+  - `title`: 0/35 N/A (0%)
+  - `date`: 0/35 N/A (0%)
+  - `article body text`: 0/35 N/A (0%)
+- **Errors:** none
+
+
+## Run 2026-07-31 01:37:26
+
+- **Run directory:** `orch_runs/run_20260731_013306`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** infinite scroll
+- **Scroll rounds requested:** 2
+- **Input URLs:**
+  - https://www.aljadeedmagazine.com/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 1
+- **Pages processed:** 1
+- **Articles extracted:** 64
+- **Articles failed:** 0
+- **Clusters (unique structures):** 1
+- **Links dropped (non-article filter):** 0
+- **Link coverage audit:** 1 page(s), 64 raw links, 64 accepted article links, 64 new unique links
+  - Full audit saved to `orch_runs/run_20260731_013306/link_coverage.json`
+- **Link preflight:** passed - 10/10 article-like, 0/10 singleton structures
+- **Article extractor validation:** 2 warning(s)
+  - cluster 77647a512b9c representative attempt 1: accept - `author` is N/A
+  - cluster 77647a512b9c sample attempt 1: accept - `author` is N/A; `article body text` is N/A
+- **LLM calls:** 2
+  - Article agent: 1
+  - Links agent: 1
+- **LLM calls per article:** 0.03
+- **Code reuse rate:** 63/64 articles reused cluster code (98%)
+- **Tokens:** 26,451 total (19,599 prompt + 1,014 output)
+  - Links agent: 14,642 tokens
+  - Article agent: 11,809 tokens
+- **Estimated cost:** $0.0018 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.0277
+- **Structural-map depth:** 2 agent call(s), 1 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 4 (~12,129 input tokens)  ⚠ reduced
+  - Article agent: depth 16 (~7,468 input tokens)
+- **Total time:** 4m 20s
+- **Fetch method:** 64 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 64 extracted):**
+  - `title`: 28/64 N/A (44%)
+  - `date`: 28/64 N/A (44%)
+  - `author`: 64/64 N/A (100%)
+  - `article body text`: 43/64 N/A (67%)
+- **Errors:** none
+
+
+## Run 2026-07-31 01:39:10
+
+- **Run directory:** `orch_runs/run_20260731_013726`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** load more button
+- **Load-more clicks requested:** 2
+- **Load-more selector:** auto-detect
+- **Input URLs:**
+  - https://alsifr.org/kam-kaif
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 1
+- **Pages processed:** 1
+- **Articles extracted:** 36
+- **Articles failed:** 0
+- **Clusters (unique structures):** 1
+- **Links dropped (non-article filter):** 0
+- **Link coverage audit:** 1 page(s), 36 raw links, 36 accepted article links, 36 new unique links
+  - Full audit saved to `orch_runs/run_20260731_013726/link_coverage.json`
+- **Link preflight:** passed - 10/10 article-like, 0/10 singleton structures
+- **LLM calls:** 2
+  - Article agent: 1
+  - Links agent: 1
+- **LLM calls per article:** 0.06
+- **Code reuse rate:** 35/36 articles reused cluster code (97%)
+- **Tokens:** 18,609 total (16,307 prompt + 691 output)
+  - Article agent: 10,530 tokens
+  - Links agent: 8,079 tokens
+- **Estimated cost:** $0.0014 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.0397
+- **Structural-map depth:** 2 agent call(s), 0 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 12 (~6,552 input tokens)
+  - Article agent: depth 16 (~9,753 input tokens)
+- **Total time:** 1m 43s
+- **Fetch method:** 36 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 36 extracted):**
+  - `title`: 0/36 N/A (0%)
+  - `date`: 0/36 N/A (0%)
+  - `author`: 0/36 N/A (0%)
+  - `article body text`: 0/36 N/A (0%)
+- **Errors:** none
+
+
+## Run 2026-07-31 01:41:46
+
+- **Run directory:** `orch_runs/run_20260731_013910`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** numbered pagination
+- **Input URLs:**
+  - https://www.ida2at.com/category/art-literature/
+  - https://www.ida2at.com/category/art-literature/page/2/
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 3
+- **Pages processed:** 3
+- **Articles extracted:** 24
+- **Articles failed:** 0
+- **Clusters (unique structures):** 1
+- **Links dropped (non-article filter):** 0
+- **Link coverage audit:** 3 page(s), 24 raw links, 24 accepted article links, 24 new unique links
+  - Full audit saved to `orch_runs/run_20260731_013910/link_coverage.json`
+- **Link preflight:** passed - 10/10 article-like, 0/10 singleton structures
+- **LLM calls:** 2
+  - Article agent: 1
+  - Links agent: 1
+- **LLM calls per article:** 0.08
+- **Code reuse rate:** 23/24 articles reused cluster code (96%)
+- **Tokens:** 19,682 total (16,247 prompt + 872 output)
+  - Links agent: 12,650 tokens
+  - Article agent: 7,032 tokens
+- **Estimated cost:** $0.0015 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.0617
+- **Structural-map depth:** 2 agent call(s), 0 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 12 (~10,236 input tokens)
+  - Article agent: depth 16 (~6,009 input tokens)
+- **Total time:** 2m 36s
+- **Fetch method:** 24 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 24 extracted):**
+  - `title`: 0/24 N/A (0%)
+  - `date`: 0/24 N/A (0%)
+  - `author`: 0/24 N/A (0%)
+  - `article body text`: 0/24 N/A (0%)
+- **Errors:** none
+
+
+## Run 2026-07-31 01:44:41
+
+- **Run directory:** `orch_runs/run_20260731_014147`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** load more button
+- **Load-more clicks requested:** 2
+- **Load-more selector:** auto-detect
+- **Input URLs:**
+  - https://lakome2.com/category/art/
+- **Requirements:** title, date, article body text
+- **Pages requested:** 1
+- **Pages processed:** 1
+- **Articles extracted:** 54
+- **Articles failed:** 0
+- **Clusters (unique structures):** 1
+- **Links dropped (non-article filter):** 0
+- **Link coverage audit:** 1 page(s), 54 raw links, 54 accepted article links, 54 new unique links
+  - Full audit saved to `orch_runs/run_20260731_014147/link_coverage.json`
+- **Link preflight:** passed - 10/10 article-like, 0/10 singleton structures
+- **Article extractor validation:** 2 warning(s)
+  - cluster 83f4cf73149a representative attempt 1: accept - `date` is N/A; `article body text` is N/A
+  - cluster 83f4cf73149a sample attempt 1: accept - `date` is N/A; `article body text` is N/A
+- **LLM calls:** 2
+  - Article agent: 1
+  - Links agent: 1
+- **LLM calls per article:** 0.04
+- **Code reuse rate:** 53/54 articles reused cluster code (98%)
+- **Tokens:** 26,816 total (23,102 prompt + 755 output)
+  - Links agent: 16,358 tokens
+  - Article agent: 10,458 tokens
+- **Estimated cost:** $0.0020 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.0363
+- **Structural-map depth:** 2 agent call(s), 1 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 9 (~14,091 input tokens)  ⚠ reduced
+  - Article agent: depth 16 (~9,009 input tokens)
+- **Total time:** 2m 54s
+- **Fetch method:** 54 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 54 extracted):**
+  - `title`: 0/54 N/A (0%)
+  - `date`: 54/54 N/A (100%)
+  - `article body text`: 50/54 N/A (93%)
+- **Errors:** none
+
+
+## Run 2026-07-31 01:47:58
+
+- **Run directory:** `orch_runs/run_20260731_014441`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** numbered pagination
+- **Input URLs:**
+  - https://mana.net/category/articles/
+  - https://mana.net/category/articles/page/2/
+- **Requirements:** title, date, article body text
+- **Pages requested:** 3
+- **Pages processed:** 3
+- **Articles extracted:** 34
+- **Articles failed:** 0
+- **Clusters (unique structures):** 2
+- **Links dropped (non-article filter):** 0
+- **Link coverage audit:** 3 page(s), 42 raw links, 42 accepted article links, 34 new unique links
+  - Full audit saved to `orch_runs/run_20260731_014441/link_coverage.json`
+- **Link preflight:** passed - 10/10 article-like, 0/10 singleton structures
+- **LLM calls:** 3
+  - Article agent: 2
+  - Links agent: 1
+- **LLM calls per article:** 0.09
+- **Code reuse rate:** 32/34 articles reused cluster code (94%)
+- **Tokens:** 41,468 total (38,413 prompt + 959 output)
+  - Article agent: 28,538 tokens
+  - Links agent: 12,930 tokens
+- **Estimated cost:** $0.0032 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.0932
+- **Structural-map depth:** 3 agent call(s), 0 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 12 (~11,481 input tokens)
+  - Article agent: depth 12 (~13,524 input tokens)
+  - Article agent: depth 12 (~13,405 input tokens)
+- **Total time:** 3m 17s
+- **Fetch method:** 34 via requests (100%), 0 via browser (0%)
+- **Missing/N/A values (of 34 extracted):**
+  - `title`: 0/34 N/A (0%)
+  - `date`: 0/34 N/A (0%)
+  - `article body text`: 0/34 N/A (0%)
+- **Errors:** none
+
+
+## Run 2026-07-31 01:59:59
+
+- **Run directory:** `orch_runs/run_20260731_014759`
+- **Model:** gemma-4-31b-it
+- **Pagination type:** numbered pagination
+- **Input URLs:**
+  - https://acpss.ahram.org.eg/OuterWriter/28/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA/0.aspx
+  - https://acpss.ahram.org.eg/OuterWriter/28/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA/30.aspx
+- **Requirements:** title, date, author, article body text
+- **Pages requested:** 3
+- **Pages processed:** 3
+- **Articles extracted:** 70
+- **Articles failed:** 0
+- **Clusters (unique structures):** 1
+- **Links dropped (non-article filter):** 0
+- **Link coverage audit:** 3 page(s), 90 raw links, 90 accepted article links, 70 new unique links
+  - Full audit saved to `orch_runs/run_20260731_014759/link_coverage.json`
+- **Link preflight:** passed - 0/10 article-like, 0/10 singleton structures
+- **Article extractor validation:** 2 warning(s)
+  - cluster 662db8628ddb representative attempt 1: accept - `title` is N/A; `date` is N/A; `author` is N/A
+  - cluster 662db8628ddb sample attempt 1: accept - `title` is N/A; `date` is N/A; `author` is N/A
+- **LLM calls:** 2
+  - Article agent: 1
+  - Links agent: 1
+- **LLM calls per article:** 0.03
+- **Code reuse rate:** 69/70 articles reused cluster code (99%)
+- **Tokens:** 8,787 total (4,774 prompt + 614 output)
+  - Links agent: 4,559 tokens
+  - Article agent: 4,228 tokens
+- **Estimated cost:** $0.0005 (at $0.075/$0.3 per 1M input/output tokens)
+- **Estimated cost per 1,000 articles:** $0.0077
+- **Structural-map depth:** 2 agent call(s), 0 shrunk below full depth 10 to fit the input-token budget
+  - Links agent: depth 12 (~2,868 input tokens)
+  - Article agent: depth 16 (~1,904 input tokens)
+- **Total time:** 12m 0s
+- **Fetch method:** 0 via requests (0%), 70 via browser (100%)
+- **Missing/N/A values (of 70 extracted):**
+  - `title`: 70/70 N/A (100%)
+  - `date`: 70/70 N/A (100%)
+  - `author`: 70/70 N/A (100%)
+  - `article body text`: 70/70 N/A (100%)
+- **Errors:** none
+

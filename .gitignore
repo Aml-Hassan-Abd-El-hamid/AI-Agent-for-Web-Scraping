@@ -26,6 +26,7 @@ swde_prepared/
 swde_pred/
 *.log
 *.pyc
+.env
 
 
 # Derived label tables — regenerate with `python aggregate.py`.
