@@ -85,6 +85,54 @@ def input_token_budget(model_name: str, max_input_tokens: int = DEFAULT_INPUT_TO
         return max_input_tokens
     return min(max_input_tokens, max(1000, ctx - OUTPUT_TOKEN_RESERVE))
 
+
+def fit_structural_map_to_budget(
+    model,
+    structural_map,
+    base_depth: int,
+    min_depth: int,
+    budget: int,
+    build_prompt: Callable[[str], str],
+    rebuild_map: Callable[[int], object],
+):
+    """Shrink a structural map by depth until its generated prompt fits."""
+    structural_map_json = json.dumps(structural_map, ensure_ascii=False)
+    tokens = count_tokens(model, build_prompt(structural_map_json))
+    print(
+        f"  📏 Input prompt: ~{tokens} tokens at depth {base_depth} "
+        f"(budget {budget}).",
+        flush=True,
+    )
+    if tokens <= budget:
+        return structural_map, structural_map_json, base_depth, tokens
+
+    print(
+        f"  ⚠  Over budget by ~{tokens - budget} tokens — shrinking map depth to fit...",
+        flush=True,
+    )
+    smallest = (structural_map, structural_map_json, base_depth, tokens)
+    for depth in range(base_depth - 1, min_depth - 1, -1):
+        candidate_map = rebuild_map(depth)
+        candidate_json = json.dumps(candidate_map, ensure_ascii=False)
+        candidate_tokens = count_tokens(model, build_prompt(candidate_json))
+        fits = candidate_tokens <= budget
+        print(
+            f"     depth {depth}: ~{candidate_tokens} tokens  "
+            f"{'✓ fits' if fits else '✗ still over'}",
+            flush=True,
+        )
+        if fits:
+            return candidate_map, candidate_json, depth, candidate_tokens
+        smallest = (candidate_map, candidate_json, depth, candidate_tokens)
+
+    _, _, floor_depth, floor_tokens = smallest
+    print(
+        f"  ⚠  Still ~{floor_tokens} tokens at floor depth {floor_depth} "
+        f"(budget {budget}); sending anyway.",
+        flush=True,
+    )
+    return smallest
+
 # Transient server-side errors worth retrying (Gemini 500/503, rate limits, etc.)
 _TRANSIENT_LLM_MARKERS = (
     "500", "503", "internal error", "internal server", "overloaded",
@@ -167,6 +215,74 @@ def is_na_value(v) -> bool:
     if isinstance(v, (list, dict, tuple)):
         return len(v) == 0
     return False
+
+
+def analyze_output(data: Dict) -> Dict:
+    """Generate display statistics for one extracted-data mapping."""
+    stats = {
+        "total_fields": len(data),
+        "fields": list(data.keys()),
+        "field_details": {},
+    }
+    for key, value in data.items():
+        if isinstance(value, str):
+            stats["field_details"][key] = {
+                "type": "string",
+                "length": len(value),
+                "preview": value[:100] + "..." if len(value) > 100 else value,
+                "is_empty": len(value.strip()) == 0,
+                "starts_with_error": value.startswith(
+                    ("N/A", "ERROR", "Error", "Extraction Error")
+                ),
+            }
+        elif isinstance(value, (list, tuple)):
+            stats["field_details"][key] = {
+                "type": "list",
+                "count": len(value),
+                "preview": str(value[:3]) + "..." if len(value) > 3 else str(value),
+            }
+        elif isinstance(value, dict):
+            stats["field_details"][key] = {
+                "type": "dict",
+                "keys": list(value.keys()),
+                "preview": str(value)[:100] + "...",
+            }
+        else:
+            stats["field_details"][key] = {
+                "type": type(value).__name__,
+                "value": str(value),
+            }
+    return stats
+
+
+def display_sample_output(data: Dict, stats: Dict):
+    """Display extracted-data statistics to an interactive user."""
+    print("\n" + "=" * 60)
+    print("📊 EXTRACTION RESULTS")
+    print("=" * 60)
+    print(f"\n✓ Total fields extracted: {stats['total_fields']}")
+    print(f"✓ Fields: {', '.join(stats['fields'])}")
+    print("\n" + "-" * 60)
+    print("SAMPLE OUTPUT:")
+    print("-" * 60)
+    for field, details in stats["field_details"].items():
+        print(f"\n[{field}]")
+        print(f"  Type: {details['type']}")
+        if details["type"] == "string":
+            status = (
+                "❌ EMPTY" if details["is_empty"]
+                else "⚠️  ERROR" if details["starts_with_error"]
+                else "✓"
+            )
+            print(f"  Status: {status}")
+            print(f"  Length: {details['length']} characters")
+            print(f"  Preview: {details['preview']}")
+        elif details["type"] == "list":
+            print(f"  Count: {details['count']} items")
+            print(f"  Preview: {details['preview']}")
+        else:
+            print(f"  Preview: {details.get('preview', details.get('value', 'N/A'))}")
+    print("\n" + "=" * 60)
 
 
 # ─────────────────────────────────────────────────────────────
@@ -353,7 +469,7 @@ def execute_generated_code_sandboxed(
             return False, f"SANDBOX ERROR: Worker exited with {completed.returncode}: {completed.stderr.strip()}"
         if not stdout:
             return False, "SANDBOX ERROR: Worker produced no output"
-        envelope = json.loads(stdout.splitlines()[-1])
+        envelope = json.loads(stdout)
         if not envelope.get('ok'):
             return False, f"EXECUTION ERROR: {envelope.get('error', 'unknown error')}\n\n{envelope.get('traceback', '')}"
 
@@ -364,7 +480,8 @@ def execute_generated_code_sandboxed(
     except subprocess.TimeoutExpired:
         return False, f"SANDBOX ERROR: Execution timed out after {timeout_seconds} seconds"
     except json.JSONDecodeError as e:
-        return False, f"SANDBOX ERROR: Invalid JSON from worker: {e}"
+        preview = stdout[:200].encode('unicode_escape').decode('ascii')
+        return False, f"SANDBOX ERROR: Invalid JSON from worker: {e}; output={preview!r}"
     except Exception as e:
         error_detail = traceback.format_exc()
         return False, f"EXECUTION ERROR: {str(e)}\n\n{error_detail}"
@@ -447,11 +564,18 @@ CONTENT_READY_SELECTORS = [
 STRONG_CHALLENGE_MARKERS = [
     'cf-browser-verification',
     'cf_chl_opt',
-    'Just a moment',
-    'Checking your browser',
-    'Performing security verification',
-    'Verifying you are human',
-    'Enable JavaScript and cookies to continue',
+    'just a moment',
+    'checking your browser',
+    'performing security verification',
+    'verifying you are human',
+    'enable javascript and cookies to continue',
+    'datadome',
+    'captcha-delivery.com',
+    'access denied',
+    'access has been denied',
+    'تم رفض الوصول',
+    'الوصول مرفوض',
+    'غير مصرح لك بالوصول',
 ]
 
 # Weak markers: Cloudflare injects these (e.g. /cdn-cgi/challenge-platform/...
@@ -476,6 +600,7 @@ def _has_real_content(html: str) -> bool:
     return content_signals >= 3
 
 
+
 def _is_challenge_page(html: str) -> bool:
     """Return True if the HTML looks like a Cloudflare/bot challenge, not real content.
 
@@ -484,9 +609,10 @@ def _is_challenge_page(html: str) -> bool:
     this avoids the false positive where a fully-loaded page is mistaken for a
     challenge just because it carries an injected challenge-platform script.
     """
-    if any(m in html for m in STRONG_CHALLENGE_MARKERS):
+    lowered = (html or '').lower()
+    if any(m in lowered for m in STRONG_CHALLENGE_MARKERS):
         return True
-    if any(m in html for m in WEAK_CHALLENGE_MARKERS):
+    if any(m in lowered for m in WEAK_CHALLENGE_MARKERS):
         return not _has_real_content(html)
     return False
 
@@ -505,7 +631,11 @@ async def _wait_for_content(page, timeout_ms: int = 15000) -> bool:
 
 async def _launch_and_fetch(p, url: str, headless: bool):
     """Launch browser, navigate, handle challenges.
-    Returns (html_or_None, status, error_or_None)."""
+    Returns (html_or_None, status, error_or_None, content_ready).
+
+    *content_ready* is True when a known article/listing selector rendered,
+    False when the content-ready wait timed out (a likely partial render),
+    and None when no wait ran (e.g. the browser errored before load)."""
     mode = "headless" if headless else "headed"
     browser = None
     try:
@@ -535,6 +665,7 @@ async def _launch_and_fetch(p, url: str, headless: bool):
 
         max_checks = 12 if headless else 18
         content_waited = False
+        content_ready = None
         for attempt in range(max_checks):
             try:
                 html_snapshot = await page.content()
@@ -551,7 +682,7 @@ async def _launch_and_fetch(p, url: str, headless: bool):
                 print(f"  ✓ Page loaded [{mode}] (after {(attempt + 1) * 5}s)")
                 if not content_waited:
                     content_waited = True
-                    await _wait_for_content(page, timeout_ms=15000)
+                    content_ready = await _wait_for_content(page, timeout_ms=15000)
                 break
 
             if 'Verification successful' in html_snapshot:
@@ -578,12 +709,12 @@ async def _launch_and_fetch(p, url: str, headless: bool):
 
         html_content = await page.content()
         status = "challenge" if _is_challenge_page(html_content) else "ok"
-        return html_content, status, None
+        return html_content, status, None, content_ready
 
     except Exception as e:
         err = f"[{mode}] {type(e).__name__}: {e}\n{traceback.format_exc()}"
         print(f"  ❌ Failed [{mode}]: {e}")
-        return None, "error", err
+        return None, "error", err, None
     finally:
         if browser is not None:
             try:
@@ -647,8 +778,10 @@ async def fetch_page_structure(
     errors = []
 
     # Attempt 1: Playwright headless
+    content_ready = None
     async with async_playwright() as p:
-        html_content, status, err = await _launch_and_fetch(p, url, headless=True)
+        html_content, status, err, content_ready = await _launch_and_fetch(
+            p, url, headless=True)
     if err:
         errors.append("── Headless browser attempt ──\n" + err)
 
@@ -657,7 +790,8 @@ async def fetch_page_structure(
         why = "blocked by Cloudflare" if status == "challenge" else "crashed"
         print(f"  ⚠  Headless browser {why} — trying headed browser...")
         async with async_playwright() as p:
-            html_content, status, err = await _launch_and_fetch(p, url, headless=False)
+            html_content, status, err, content_ready = await _launch_and_fetch(
+                p, url, headless=False)
         if err:
             errors.append("── Headed browser attempt ──\n" + err)
 
@@ -670,9 +804,27 @@ async def fetch_page_structure(
         elif req_err:
             errors.append("── requests attempt ──\n" + req_err)
 
+    # Attempt 3b: the browser rendered "ok" but the content-ready wait timed out
+    # — the render is suspect (it may have JS-injected chrome that crowds out the
+    # real article grid). The server-rendered HTML is the source of truth here, so
+    # prefer a plain HTTP fetch whenever it returns a valid, reasonably-sized page.
+    elif status == "ok" and content_ready is False:
+        print("  ⚠  Browser DOM looks under-rendered (content selector never "
+              "appeared) — cross-checking with plain HTTP (requests)...")
+        req_html, req_err = _fetch_with_requests(url)
+        if req_html and len(req_html) >= 0.3 * len(html_content):
+            print(f"  ✓ Using server-rendered HTTP DOM ({len(req_html)} bytes) "
+                  f"instead of the suspect browser render ({len(html_content)} bytes).")
+            html_content = req_html
+        elif req_err:
+            errors.append("── requests cross-check ──\n" + req_err)
+
+    if status != "ok":
+        html_content = None
+
     if html_content is None:
         _LAST_FETCH_ERROR = "\n\n".join(errors) if errors else \
-            "No HTML returned and no underlying error was captured."
+            "All fetch strategies returned an error or challenge page."
         print("  ❌ Could not fetch page via headless, headed, or HTTP requests.")
         print(_LAST_FETCH_ERROR)
         return None, None

@@ -28,6 +28,9 @@ swde_pred/
 *.pyc
 .env
 
+/*snapshots*
+
+
 
 # Derived label tables — regenerate with `python aggregate.py`.
 # These are rebuilt from the per-labeller JSONL files under labels/, so labellers

@@ -143,6 +143,7 @@ async def main():
     orch._reset_fetch_via()
     orch._reset_tokens()
     orch._reset_map_fits()
+    orch._reset_article_validation_events()
 
     run_start = time.time()
     input_urls = []
@@ -278,10 +279,9 @@ async def main():
                 total_str = input("\n   📄 How many pages to scrape (including page 1)? → ").strip()
                 if total_str.isdigit() and int(total_str) >= 2:
                     total_pages = int(total_str)
-                    start_num = p2_num if p2_num is not None else 2
                     page_urls = [
                         pattern.format(page=n)
-                        for n in range(start_num, start_num + total_pages - 1)
+                        for n in orch._pagination_values(p1_num, p2_num, total_pages)
                     ]
                     print(f"   ✓ Will scrape {total_pages} pages ({len(page_urls)} after page 1)")
                     print(f"     First: {page_urls[0]}")
@@ -318,6 +318,9 @@ async def main():
             "website": website,
             "snapshot_date": datetime.now().isoformat(timespec="seconds"),
             "pagination_type": pagination_type,
+            "scroll_mode": scroll_mode,
+            "scroll_rounds_requested": scroll_rounds if scroll_mode else None,
+            "load_more_selector": scroll_selector,
             "listing_url": listing_url,
             "input_urls": input_urls,
             "pagination_pattern": pattern,
@@ -336,33 +339,83 @@ async def main():
             },
         })
 
+    # ── Phase 1.5: collect dynamic listing HTML before generating selectors ──
+    scrolled_html_file = None
+    full_html = None
+    link_recovery = []
+    if scroll_mode:
+        full_html = await orch.collect_listing_html(
+            listing_url, mode=scroll_mode,
+            max_rounds=scroll_rounds, load_more_selector=scroll_selector,
+        )
+        if full_html:
+            scrolled_html_file = os.path.join(run_dir, "listing_full.html")
+            with open(scrolled_html_file, "w", encoding="utf-8") as f:
+                f.write(full_html)
+            print(f"  ✓ Saved fully-loaded listing HTML ({len(full_html)} bytes) "
+                  f"→ {scrolled_html_file}")
+        else:
+            print("  ⚠️  Dynamic collection failed — the Links agent will fetch "
+                  "the page live instead.")
+
     # ── Phase 2: Page 1 — link discovery (LLM call #1) ──
     print(f"\n⏳ Extracting article links from page 1: {listing_url}...")
-    link_success, link_result = orch.call_links_agent_cli(listing_url, api_key, model)
+    link_success, link_result = orch.call_links_agent_cli(
+        listing_url, api_key, model, html_file=scrolled_html_file)
 
     if not link_success:
         error_msg = link_result.get("error", "Unknown error")
-        print(f"\n❌ Links extraction failed:\n{error_msg}")
-        orch.write_results_md({
-            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "run_dir": run_dir, "model": model,
-            "pagination_type": pagination_type, "input_urls": input_urls,
-            "requirements": requirements,
-            "pages_requested": len(page_urls) + 1, "pages_processed": 0,
-            "articles_extracted": 0, "articles_failed": 0, "clusters": 0,
-            "llm_calls": orch._LLM_CALLS,
-            "llm_calls_by_agent": dict(orch._LLM_CALLS_BY_AGENT),
-            "tokens_by_agent": dict(orch._TOKENS_BY_AGENT),
-            "elapsed_seconds": time.time() - run_start,
-            "errors": [f"Links extraction failed: {error_msg}"],
-        })
-        _write_metadata()
-        return
-
-    page1_links = link_result.get("data", {}).get("article_links", [])
-    page1_links, dropped = orch._filter_article_links(page1_links, listing_url, pattern)
+        page1_links_raw = []
+        page1_links, recovery = orch.recover_under_extracted_links(
+            page1_links_raw, [], full_html, listing_url, pattern,
+        )
+        dropped = []
+        if recovery:
+            recovery["page_num"] = 1
+            recovery["agent_error"] = error_msg
+            link_recovery.append(recovery)
+            print(
+                f"  ⚠ Links Agent failed, but recovery guard added "
+                f"{recovery['recovered_links_added']} article link(s) "
+                f"from the saved listing HTML"
+            )
+            link_result = {}
+        else:
+            print(f"\n❌ Links extraction failed:\n{error_msg}")
+            orch.write_results_md({
+                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "run_dir": run_dir, "model": model,
+                "pagination_type": pagination_type, "input_urls": input_urls,
+                "scroll_mode": scroll_mode,
+                "scroll_rounds_requested": scroll_rounds if scroll_mode else None,
+                "load_more_selector": scroll_selector,
+                "requirements": requirements,
+                "pages_requested": len(page_urls) + 1, "pages_processed": 0,
+                "articles_extracted": 0, "articles_failed": 0, "clusters": 0,
+                "link_recovery": link_recovery,
+                "llm_calls": orch._LLM_CALLS,
+                "llm_calls_by_agent": dict(orch._LLM_CALLS_BY_AGENT),
+                "tokens_by_agent": dict(orch._TOKENS_BY_AGENT),
+                "elapsed_seconds": time.time() - run_start,
+                "errors": [f"Links extraction failed: {error_msg}"],
+            })
+            _write_metadata()
+            return
+    else:
+        page1_links_raw = link_result.get("data", {}).get("article_links", [])
+        page1_links, dropped = orch._filter_article_links(page1_links_raw, listing_url, pattern)
+        page1_links, recovery = orch.recover_under_extracted_links(
+            page1_links_raw, page1_links, full_html, listing_url, pattern,
+        )
+        if recovery:
+            recovery["page_num"] = 1
+            link_recovery.append(recovery)
+            print(
+                f"  ⚠ Link recovery guard added {recovery['recovered_links_added']} "
+                f"article link(s) from the saved listing HTML"
+            )
     if dropped:
-        print(f"  🧹 Dropped {dropped} non-article (pagination/category) link(s)")
+        print(f"  🧹 Dropped {len(dropped)} non-article (pagination/category) link(s)")
     link_code_file = link_result.get("code_file", "")
     print(f"✓ Extracted {len(page1_links)} article links from page 1")
 
@@ -388,36 +441,64 @@ async def main():
         listing_pages_meta.append({"page_num": 1, "url": listing_url, "file": fname,
                                    "bytes": nbytes, "sha1": sha1})
 
+    if not page1_links and listing_html:
+        page1_links, recovery = orch.recover_under_extracted_links(
+            page1_links_raw, page1_links, listing_html, listing_url, pattern,
+        )
+        if recovery:
+            recovery["page_num"] = 1
+            link_recovery.append(recovery)
+            print(
+                f"  ⚠ Link recall validation recovered "
+                f"{recovery['recovered_links_added']} article link(s) from the DOM"
+            )
+
     if not page1_links:
         print("❌ No article links found on page 1!")
         orch.write_results_md({
             "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "run_dir": run_dir, "model": model,
             "pagination_type": pagination_type, "input_urls": input_urls,
+            "scroll_mode": scroll_mode,
+            "scroll_rounds_requested": scroll_rounds if scroll_mode else None,
+            "load_more_selector": scroll_selector,
             "requirements": requirements,
             "pages_requested": len(page_urls) + 1, "pages_processed": 0,
             "articles_extracted": 0, "articles_failed": 0, "clusters": 0,
             "llm_calls": orch._LLM_CALLS,
             "llm_calls_by_agent": dict(orch._LLM_CALLS_BY_AGENT),
             "tokens_by_agent": dict(orch._TOKENS_BY_AGENT),
+            "link_recovery": link_recovery,
             "elapsed_seconds": time.time() - run_start,
             "errors": ["No article links found on page 1"],
         })
         _write_metadata()
         return
 
-    # Dynamic pagination: expand page 1 and snapshot the expanded HTML.
+    # Dynamic pagination: snapshot the expanded HTML and re-run saved code.
     if scroll_mode and link_extraction_code:
-        full_html = await orch.collect_listing_html(
-            listing_url, mode=scroll_mode,
-            max_rounds=scroll_rounds, load_more_selector=scroll_selector)
+        if not full_html:
+            full_html = await orch.collect_listing_html(
+                listing_url, mode=scroll_mode,
+                max_rounds=scroll_rounds, load_more_selector=scroll_selector,
+            )
         if full_html:
             fname = "listing_page_001_expanded.html"
             nbytes, sha1 = _save_html(os.path.join(snapshot_dir, fname), full_html)
             listing_pages_meta.append({"page_num": 1, "url": listing_url, "file": fname,
                                        "bytes": nbytes, "sha1": sha1, "expanded": True})
-            expanded = orch.run_link_extraction_code(link_extraction_code, full_html)
-            expanded, _ = orch._filter_article_links(expanded, listing_url, pattern)
+            expanded_raw = orch.run_link_extraction_code(link_extraction_code, full_html)
+            expanded, _ = orch._filter_article_links(expanded_raw, listing_url, pattern)
+            expanded, recovery = orch.recover_under_extracted_links(
+                expanded_raw, expanded, full_html, listing_url, pattern,
+            )
+            if recovery and not any(r.get("page_num") == 1 for r in link_recovery):
+                recovery["page_num"] = 1
+                link_recovery.append(recovery)
+                print(
+                    f"  ⚠ Link recovery guard added "
+                    f"{recovery['recovered_links_added']} article link(s)"
+                )
             print(f"  ✓ {len(expanded)} links after {pagination_type} "
                   f"(was {len(page1_links)} on initial load)")
             merged = {l["url"]: l for l in page1_links}
@@ -444,6 +525,32 @@ async def main():
     _write_metadata()
 
     if arts:
+        initial_clusters = orch.cluster_by_structure(arts)
+        cluster_ratio = len(initial_clusters) / len(arts)
+        print(
+            f"\n🚦 EARLY STRUCTURE CHECK: {len(initial_clusters)} cluster(s) / "
+            f"{len(arts)} candidate page(s) ({cluster_ratio:.0%})"
+        )
+        if cluster_ratio >= orch.LINK_PREFLIGHT_SINGLETON_RATIO:
+            print("   ⚠ High structural fragmentation; checking article evidence.")
+
+        sample_urls = {
+            link["url"] for link in orch._select_preflight_links(page1_links)
+        }
+        preflight = orch._assess_link_preflight([
+            article for article in arts if article["url"] in sample_urls
+        ])
+        orch._atomic_json_write(
+            os.path.join(run_dir, "link_preflight.json"), preflight,
+        )
+        if preflight["status"] == "rejected":
+            print(
+                "❌ Stopped before article-agent generation: "
+                f"{preflight['article_like_pages']}/"
+                f"{preflight['sampled_pages']} sampled pages looked like articles."
+            )
+            raise SystemExit(2)
+
         print("\n⏳ Clustering page 1 articles and extracting data...")
         ext, fl, cluster_registry = orch.process_page_articles(
             arts, cluster_registry, api_key, model, requirements)
@@ -454,6 +561,11 @@ async def main():
     progress = {
         "current_page": 1, "total_pages": max_pages,
         "extracted_count": len(all_extracted), "failed_count": len(all_failures),
+        "pagination_type": pagination_type,
+        "scroll_mode": scroll_mode,
+        "scroll_rounds_requested": scroll_rounds if scroll_mode else None,
+        "load_more_selector": scroll_selector,
+        "link_recovery": link_recovery,
         "cluster_registry": {sig: {"code_file": v["code_file"]}
                              for sig, v in cluster_registry.items()},
     }
@@ -490,14 +602,39 @@ async def main():
 
             new_links_raw = orch.run_link_extraction_code(link_extraction_code, page_html)
             new_links_raw, _ = orch._filter_article_links(new_links_raw, listing_url, pattern)
+            new_links_raw, recovery = orch.recover_under_extracted_links(
+                orch.run_link_extraction_code(link_extraction_code, page_html),
+                new_links_raw, page_html, listing_url, pattern,
+            )
+            if recovery:
+                recovery["page_num"] = page_num
+                link_recovery.append(recovery)
+                print(
+                    f"  ⚠ Link recovery guard added "
+                    f"{recovery['recovered_links_added']} article link(s)"
+                )
             print(f"  Found {len(new_links_raw)} links on this page")
 
             new_links = []
+            duplicate_count = 0
             for lnk in new_links_raw:
                 if lnk["url"] not in seen_urls:
                     seen_urls.add(lnk["url"])
                     new_links.append(lnk)
+                else:
+                    duplicate_count += 1
             print(f"  {len(new_links)} new (after dedup)")
+
+            duplicate_ratio = duplicate_count / len(new_links_raw) if new_links_raw else 0.0
+            if duplicate_ratio >= 0.8:
+                print(
+                    f"  ⚠ Stopping pagination: {duplicate_ratio:.0%} of this "
+                    "page's links were already seen"
+                )
+                progress["current_page"] = page_num
+                orch.save_incremental(run_dir, all_extracted, all_failures, progress)
+                _write_metadata()
+                break
 
             if not new_links:
                 progress["current_page"] = page_num
@@ -523,6 +660,7 @@ async def main():
             progress["current_page"] = page_num
             progress["extracted_count"] = len(all_extracted)
             progress["failed_count"] = len(all_failures)
+            progress["link_recovery"] = link_recovery
             progress["cluster_registry"] = {sig: {"code_file": v["code_file"]}
                                             for sig, v in cluster_registry.items()}
             orch.save_incremental(run_dir, all_extracted, all_failures, progress)
@@ -540,6 +678,12 @@ async def main():
         "status": "finished",
         "extracted_count": len(all_extracted),
         "failed_count": len(all_failures),
+        "pagination_type": pagination_type,
+        "scroll_mode": scroll_mode,
+        "scroll_rounds_requested": scroll_rounds if scroll_mode else None,
+        "load_more_selector": scroll_selector,
+        "link_recovery": link_recovery,
+        "article_validation": list(orch._ARTICLE_VALIDATION_EVENTS),
     })
     _write_metadata()
 
@@ -552,6 +696,9 @@ async def main():
         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "run_dir": run_dir, "model": model,
         "pagination_type": pagination_type, "input_urls": input_urls,
+        "scroll_mode": scroll_mode,
+        "scroll_rounds_requested": scroll_rounds if scroll_mode else None,
+        "load_more_selector": scroll_selector,
         "requirements": requirements,
         "pages_requested": pages_processed, "pages_processed": pages_processed,
         "articles_extracted": len(all_extracted), "articles_failed": len(all_failures),
@@ -561,6 +708,8 @@ async def main():
         "elapsed_seconds": time.time() - run_start,
         "fetch_via": dict(orch._FETCH_VIA),
         "tokens_by_agent": dict(orch._TOKENS_BY_AGENT),
+        "link_recovery": link_recovery,
+        "article_validation": list(orch._ARTICLE_VALIDATION_EVENTS),
         "extracted_data": all_extracted,
         "errors": [f.get("reason", "") for f in all_failures],
     })

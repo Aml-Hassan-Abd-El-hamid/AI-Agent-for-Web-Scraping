@@ -32,6 +32,8 @@ from utils import (
     _is_challenge_page, get_last_fetch_error,
     count_tokens, input_token_budget, DEFAULT_INPUT_TOKEN_BUDGET,
     execute_generated_code_sandboxed,
+    analyze_output, display_sample_output,
+    fit_structural_map_to_budget,
 )
 
 random_num = random.randint(10000, 99999)
@@ -255,6 +257,15 @@ def _focus_map_root(body, page_url):
     sig_counts = {}
     sig_elems = {}
     for el in body.find_all(['div', 'li', 'article', 'section']):
+        ancestors = [el, *el.parents]
+        if any(
+            getattr(node, 'name', None) in {'nav', 'header', 'footer'}
+            or (node.get('role') if hasattr(node, 'get') else None) in {
+                'menu', 'menubar', 'navigation',
+            }
+            for node in ancestors
+        ):
+            continue
         classes = el.get('class')
         if not classes:
             continue
@@ -603,111 +614,29 @@ def execute_extraction_code(code: str, html_content: str) -> Tuple[bool, any]:
     )
 
 
-# --- Output Analysis ---
-def analyze_output(data: Dict) -> Dict:
-    """Generate statistics about the extracted data."""
-    stats = {'total_fields': len(data), 'fields': list(data.keys()), 'field_details': {}}
-
-    for key, value in data.items():
-        if isinstance(value, str):
-            stats['field_details'][key] = {
-                'type': 'string',
-                'length': len(value),
-                'preview': value[:100] + '...' if len(value) > 100 else value,
-                'is_empty': len(value.strip()) == 0,
-                'starts_with_error': value.startswith(('N/A', 'ERROR', 'Error', 'Extraction Error'))
-            }
-        elif isinstance(value, (list, tuple)):
-            stats['field_details'][key] = {
-                'type': 'list',
-                'count': len(value),
-                'preview': str(value[:3]) + '...' if len(value) > 3 else str(value)
-            }
-        elif isinstance(value, dict):
-            stats['field_details'][key] = {
-                'type': 'dict',
-                'keys': list(value.keys()),
-                'preview': str(value)[:100] + '...'
-            }
-        else:
-            stats['field_details'][key] = {'type': type(value).__name__, 'value': str(value)}
-
-    return stats
-
-
-def display_sample_output(data: Dict, stats: Dict):
-    """Display sample output and statistics to the user."""
-    print("\n" + "=" * 60)
-    print("📊 EXTRACTION RESULTS")
-    print("=" * 60)
-    print(f"\n✓ Total fields extracted: {stats['total_fields']}")
-    print(f"✓ Fields: {', '.join(stats['fields'])}")
-    print("\n" + "-" * 60)
-    print("SAMPLE OUTPUT:")
-    print("-" * 60)
-
-    for field, details in stats['field_details'].items():
-        print(f"\n[{field}]")
-        print(f"  Type: {details['type']}")
-        if details['type'] == 'string':
-            status = "❌ EMPTY" if details['is_empty'] else ("⚠️  ERROR" if details['starts_with_error'] else "✓")
-            print(f"  Status: {status}")
-            print(f"  Length: {details['length']} characters")
-            print(f"  Preview: {details['preview']}")
-        elif details['type'] == 'list':
-            print(f"  Count: {details['count']} items")
-            print(f"  Preview: {details['preview']}")
-        else:
-            print(f"  Preview: {details.get('preview', details.get('value', 'N/A'))}")
-
-    print("\n" + "=" * 60)
-
-
 # --- Main Agent Logic ---
 def _fit_map_to_budget(agent, html_content, structural_map, page_url, budget,
                        map_root=None, base_depth=None):
-    """Return (structural_map, structural_map_json, depth_used, tokens).
-
-    Serializes the map with ensure_ascii=False so non-ASCII scripts (e.g. Arabic)
-    stay single characters instead of 6-char \\uXXXX escapes that would ~6x the
-    token count. If the full-depth prompt still exceeds *budget* tokens, rebuilds
-    the map at progressively shallower depths (base_depth-1 down to MIN_MAP_DEPTH)
-    until it fits, so large pages don't blow the model's context window or the
-    per-minute input-token quota.
-
-    *map_root* is the BeautifulSoup element the map is built from (a focused grid
-    container, or the page body for the fallback). *base_depth* is the starting
-    map depth (FOCUSED_MAP_DEPTH for a focused container, MAX_DEPTH for the body
-    fallback). When *map_root* is None the body of *html_content* is used.
-    """
+    """Fit the listing map while retaining its optional focused DOM root."""
     if base_depth is None:
         base_depth = MAX_DEPTH
-    smj = json.dumps(structural_map, ensure_ascii=False)
-    toks = count_tokens(agent.model, agent._build_prompt(smj, page_url=page_url))
-    print(f"  📏 Input prompt: ~{toks} tokens at depth {base_depth} (budget {budget}).", flush=True)
-    if toks <= budget:
-        return structural_map, smj, base_depth, toks
 
-    print(f"  ⚠  Over budget by ~{toks - budget} tokens — shrinking map depth to fit...", flush=True)
-    if map_root is None:
-        soup = BeautifulSoup(html_content, 'lxml')
-        map_root = soup.body if soup.body else soup
-    last = None
-    for d in range(base_depth - 1, MIN_MAP_DEPTH - 1, -1):
-        m = create_structural_map(map_root, max_depth=d)
-        mj = json.dumps(m, ensure_ascii=False)
-        t = count_tokens(agent.model, agent._build_prompt(mj, page_url=page_url))
-        fits = t <= budget
-        print(f"     depth {d}: ~{t} tokens  {'✓ fits' if fits else '✗ still over'}", flush=True)
-        if fits:
-            return m, mj, d, t
-        last = (m, mj, d, t)
+    def rebuild_map(depth):
+        nonlocal map_root
+        if map_root is None:
+            soup = BeautifulSoup(html_content, 'lxml')
+            map_root = soup.body if soup.body else soup
+        return create_structural_map(map_root, max_depth=depth)
 
-    # Nothing fit even at the floor depth — send the smallest map anyway; the
-    # model may still accept it, otherwise it fails loudly instead of truncating.
-    m, mj, d, t = last
-    print(f"  ⚠  Still ~{t} tokens at floor depth {d} (budget {budget}); sending anyway.", flush=True)
-    return m, mj, d, t
+    return fit_structural_map_to_budget(
+        agent.model,
+        structural_map,
+        base_depth,
+        MIN_MAP_DEPTH,
+        budget,
+        lambda map_json: agent._build_prompt(map_json, page_url=page_url),
+        rebuild_map,
+    )
 
 
 async def main():
@@ -906,6 +835,13 @@ async def main_cli(url: str, api_key: str, model: str = 'gemma-3-27b-it', max_re
         print("ORCH_RESULT:" + json.dumps({
             "status": "error",
             "error": f"Failed to fetch page structure for {url}\n\n{detail}"
+        }), flush=True)
+        return
+
+    if _is_challenge_page(html_content):
+        print("ORCH_RESULT:" + json.dumps({
+            "status": "error",
+            "error": f"CAPTCHA/access-denial page detected for {url}; code generation skipped"
         }), flush=True)
         return
 

@@ -21,6 +21,7 @@ the api key is stored in the .env file under the name: GOOGLE_API_KEY
 """
 import asyncio
 import builtins
+import importlib
 import os
 import re
 from contextlib import contextmanager
@@ -65,8 +66,265 @@ class DomainConfig:
     second_link: Optional[str]  # None for "infinite_scroll" or "load_more" pagination
     count: int             # number of pages/clicks/scrolls
     required_fields: str
-
+"""
+    DomainConfig(
+            domain = "nytimes",
+            pagination_type = "load_more",
+            first_link = "https://www.nytimes.com/reviews/movies",
+            second_link = None,
+            count = 2,
+            required_fields = DEFAULT_REQUIREMENTS 
+        ),
+"""
 domains = [
+    DomainConfig(
+        domain = "rogerebert",
+        pagination_type = "infinite_scroll",
+        first_link = "https://www.rogerebert.com/reviews",
+        second_link = None,
+        count = 2,
+        required_fields = "title, article body text" 
+    ),
+    DomainConfig(
+            domain = "eminenceorganics",
+            pagination_type = "numbered",
+            first_link = "https://eminenceorganics.com/us/blog/celebrity-skincare",
+            second_link = "https://eminenceorganics.com/us/blog/celebrity-skincare?csortb1=blogUpdateDate&csortd1=2&start=12&sz=12",
+            count = 3,
+            required_fields = DEFAULT_REQUIREMENTS 
+        ),
+    DomainConfig(
+            domain = "techcrunch",
+            pagination_type = "load_more",
+            first_link = "https://techcrunch.com/category/artificial-intelligence/",
+            second_link = None,
+            count = 2,
+            required_fields = DEFAULT_REQUIREMENTS 
+        ),
+    DomainConfig(
+            domain = "abduzeedo",
+            pagination_type = "infinite_scroll",
+            first_link = "https://abduzeedo.com/",
+            second_link = None,
+            count = 2,
+            required_fields = DEFAULT_REQUIREMENTS 
+        ),
+    DomainConfig(
+            domain = "thepennyhoarder",
+            pagination_type = "load_more",
+            first_link = "https://www.thepennyhoarder.com/retirement/",
+            second_link = None,
+            count = 2,
+            required_fields = DEFAULT_REQUIREMENTS 
+        ),
+    DomainConfig(
+            domain = "ramseysolutions",
+            pagination_type = "numbered",
+            first_link = "https://www.ramseysolutions.com/articles",
+            second_link = "https://www.ramseysolutions.com/articles?page=2#feed-content",
+            count = 3,
+            required_fields = DEFAULT_REQUIREMENTS 
+        ),
+    DomainConfig(
+            domain = "mawdoo3",
+            pagination_type = "numbered",
+            first_link = "https://mawdoo3.com/%D8%AA%D8%B5%D9%86%D9%8A%D9%81:%D8%A7%D9%84%D8%A2%D8%AF%D8%A7%D8%A8",
+            second_link = "https://mawdoo3.com/%D8%AA%D8%B5%D9%86%D9%8A%D9%81:%D8%A7%D9%84%D8%A2%D8%AF%D8%A7%D8%A8?page=2",
+            count = 3,
+            required_fields = DEFAULT_REQUIREMENTS 
+        ),
+    DomainConfig(
+            domain = "khotwacenter",
+            pagination_type = "numbered",
+            first_link = "https://www.khotwacenter.com/category/%D8%A7%D9%84%D8%AF%D8%B1%D8%A7%D8%B3%D8%A7%D8%AA-%D9%88%D8%A7%D9%84%D8%A3%D8%A8%D8%AD%D8%A7%D8%AB/%D8%A8%D8%AD%D9%88%D8%AB-%D9%88%D8%AF%D8%B1%D8%A7%D8%B3%D8%A7%D8%AA/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA-%D8%AB%D9%82%D8%A7%D9%81%D9%8A%D8%A9/",
+            second_link = "https://www.khotwacenter.com/category/%D8%A7%D9%84%D8%AF%D8%B1%D8%A7%D8%B3%D8%A7%D8%AA-%D9%88%D8%A7%D9%84%D8%A3%D8%A8%D8%AD%D8%A7%D8%AB/%D8%A8%D8%AD%D9%88%D8%AB-%D9%88%D8%AF%D8%B1%D8%A7%D8%B3%D8%A7%D8%AA/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA-%D8%AB%D9%82%D8%A7%D9%81%D9%8A%D8%A9/page/2/",
+            count = 3,
+            required_fields = DEFAULT_REQUIREMENTS 
+        ),
+    DomainConfig(
+        domain = "aajeg",
+        pagination_type = "load_more",
+        first_link = "https://www.aajeg.com/news/palestine",
+        second_link = None,
+        count = 2,
+        required_fields = "title, date, article body text"
+    ),
+    DomainConfig(
+            domain = "akhbaralaan",
+            pagination_type = "infinite_scroll",
+            first_link = "https://akhbaralaan.net/author/wassim",
+            second_link = None,
+            count = 2,
+            required_fields = "title, date, article body text"
+    ),
+    DomainConfig(
+            domain = "arabic.rt",
+            pagination_type = "load_more",
+            first_link = "https://arabic.rt.com/russia/",
+            second_link = None,
+            count = 2,
+            required_fields = "title, date, article body text"
+    ),
+    DomainConfig(
+            domain = "arabic.euronews.com",
+            pagination_type = "load_more",
+            first_link = "https://arabic.euronews.com/culture",
+            second_link = None,
+            count = 2,
+            required_fields = DEFAULT_REQUIREMENTS
+    ),
+    DomainConfig(
+            domain = "news.un.org",
+            pagination_type = "numbered",
+            first_link = "https://news.un.org/ar/news/topic/health",
+            second_link = "https://news.un.org/ar/news/topic/health?page=1",
+            count = 3,
+            required_fields = "title, date, article body text"
+    ),
+    DomainConfig(
+            domain = "alqaheranews",
+            pagination_type = "load_more",
+            first_link = "https://alqaheranews.net/category/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1",
+            second_link = None,
+            count = 2,
+            required_fields = "title, date, article body text"
+    ),
+    DomainConfig(
+            domain = "masrawy",
+            pagination_type = "load_more",
+            first_link = "https://www.masrawy.com/today#Nav-Today",
+            second_link = None,
+            count = 2,
+            required_fields = DEFAULT_REQUIREMENTS
+    ),
+    DomainConfig(
+            domain = "akhbaar24",
+            pagination_type = "load_more",
+            first_link = "https://www.akhbaar24.com/%D8%AF%D9%88%D9%84%D9%8A%D8%A7%D8%AA",
+            second_link = None,
+            count = 2,
+            required_fields = "title, date, article body text"
+    ),
+    DomainConfig(
+            domain = "reuters",
+            pagination_type = "load_more",
+            first_link = "https://www.reuters.com/ar/business/energy/",
+            second_link = None,
+            count = 2,
+            required_fields = "title, date, article body text"
+    ),
+    DomainConfig(
+            domain = "bar-alkhaleej",
+            pagination_type = "numbered",
+            first_link = "https://akhbar-alkhaleej.com/news/section/BUSI",
+            second_link = "https://akhbar-alkhaleej.com/news/section/BUSI/25",
+            count = 3,
+            required_fields = "title, date, article body text"
+    ),                                     
+    DomainConfig(
+        domain = "libraryofshortstories",
+        pagination_type = "infinite_scroll",
+        first_link ="https://www.libraryofshortstories.com/stories",
+        second_link = None,
+        count = 2,
+        required_fields = "title, author, article body text"
+    ),
+    DomainConfig(
+        domain="litreactor",
+        pagination_type="numbered",
+        first_link="https://litreactor.com/columns/",
+        second_link="https://litreactor.com/columns/page/2",
+        count=3,
+        required_fields="title, author, article body text"
+    ),
+    DomainConfig(
+        domain="lithub",
+        pagination_type="numbered",
+        first_link="https://lithub.com/category/fictionandpoetry/short-story/",
+        second_link="https://lithub.com/category/fictionandpoetry/short-story/page/2/",
+        count=3,
+        required_fields="title, author, article body text"
+    ),
+    DomainConfig(
+        domain="nationalcentreforwriting",
+        pagination_type="numbered",
+        first_link="https://nationalcentreforwriting.org.uk/writing-hub/",
+        second_link="https://nationalcentreforwriting.org.uk/writing-hub?sf_paged=2",
+        count=3,
+        required_fields="title, article body text"
+    ),
+    DomainConfig(
+        domain = "alarabiya",
+        pagination_type = "load_more",
+        first_link = "https://www.alarabiya.net/views",
+        second_link = None,
+        count = 2,
+        required_fields = DEFAULT_REQUIREMENTS
+    ),
+    DomainConfig(
+        domain = "bbc",
+        pagination_type = "numbered",
+        first_link = "https://www.bbc.com/arabic/topics/cqywj97d487t",
+        second_link = "https://www.bbc.com/arabic/topics/cqywj97d487t?page=2",
+        count = 3,
+        required_fields = "title, date, article body text"
+    ),
+    DomainConfig(
+        domain = "asharq",
+        pagination_type = "load_more",
+        first_link = "https://asharq.com/politics/",
+        second_link = None,
+        count = 2,
+        required_fields = "title, date, article body text"
+    ),
+    DomainConfig(
+        domain="nashiri",
+        pagination_type="numbered",
+        first_link="https://www.nashiri.net/index.php/articles/literature-and-art",
+        second_link="https://www.nashiri.net/index.php/articles/literature-and-art?start=7",
+        count=3,
+        required_fields=DEFAULT_REQUIREMENTS
+    ),
+    DomainConfig(
+        domain = "almayadeen",
+        pagination_type = "load_more",
+        first_link = "https://www.almayadeen.net/news/politics",
+        second_link = None,
+        count = 2,
+        required_fields = DEFAULT_REQUIREMENTS
+    ),
+    DomainConfig(
+        domain = "alquds",
+        pagination_type = "infinite_scroll",
+        first_link = "https://alquds.com/ar/categories/arab-and-world",
+        second_link = None,
+        count = 2,
+        required_fields = "title, date, article body text"
+    ),
+    DomainConfig(
+        domain = "qudsn",
+        pagination_type = "numbered",
+        first_link = "https://qudsn.co/post/category/6024/%D9%85%D8%AA%D8%A7%D8%A8%D8%B9%D8%A7%D8%AA-%D9%82%D8%AF%D8%B3",
+        second_link = "https://qudsn.co/post/category/6024/%D9%85%D8%AA%D8%A7%D8%A8%D8%B9%D8%A7%D8%AA-%D9%82%D8%AF%D8%B3?page=2",
+        count = 3,
+        required_fields = "title, date, article body text"
+    ),
+    DomainConfig(
+        domain = "market.isagha",
+        pagination_type = "numbered",
+        first_link = "https://market.isagha.com/articles",
+        second_link = "https://market.isagha.com/articles?page=2",
+        count = 3,
+        required_fields = "title, date, article body text"
+    ),
+    DomainConfig(
+            domain = "edahabapp",
+            pagination_type = "numbered",
+            first_link = "https://edahabapp.com/articles",
+            second_link = "https://edahabapp.com/articles?page=2",
+            count = 3,
+            required_fields = DEFAULT_REQUIREMENTS
+        ),
     DomainConfig(
         domain="youm7",
         pagination_type="numbered",
@@ -262,10 +520,46 @@ class OrchestratorInput:
         return str(self.config.count)
 
 
+class SnapshotOrchestratorInput(OrchestratorInput):
+    """Answer the additional website-name prompt in orch_pag_snapshot.py."""
+
+    def _answer(self, prompt: str) -> str:
+        if self.step == 0:
+            return self.api_key
+        if self.step == 1:
+            return DEFAULT_MODEL_CHOICE
+        if self.step == 2:
+            return self.config.first_link
+        if self.step == 3:
+            return self.config.domain
+        if self.step == 4:
+            return self.config.required_fields
+        if self.step == 5:
+            return pagination_choice(self.config)
+
+        if self.config.pagination_type == "numbered":
+            if "How many pages" in prompt:
+                return str(self.config.count)
+            if self.step == 6:
+                return ""  # page 1: use listing URL
+            if self.step == 7:
+                return self.config.second_link or ""
+            return ""  # accept the derived pagination pattern
+        if self.config.pagination_type == "load_more":
+            if self.step == 6:
+                return ""  # auto-detect the load-more button
+            return str(self.config.count)
+        if self.config.pagination_type == "infinite_scroll":
+            return str(self.config.count)
+
+        return ""
+
+
 @contextmanager
-def patched_input(config: DomainConfig, api_key: str):
+def patched_input(config: DomainConfig, api_key: str,
+                  input_class: type[OrchestratorInput] = OrchestratorInput):
     original_input = builtins.input
-    builtins.input = OrchestratorInput(config, api_key)
+    builtins.input = input_class(config, api_key)
     try:
         yield
     finally:
@@ -301,9 +595,19 @@ def choose_domains() -> list[DomainConfig]:
     for index, config in enumerate(domains):
         print(f"  {index}: {config.domain}")
 
-    choice = input("\nEnter count or slice (example: 5 or 5:10, blank for all): ").strip()
+    choice = input(
+        "\nEnter count, slice, or priority indices "
+        "(examples: 5, 5:10, or 7,2,9; blank for all): "
+    ).strip()
     if not choice:
         return domains
+
+    if "," in choice:
+        indices = [int(value.strip()) for value in choice.split(",") if value.strip()]
+        invalid = [index for index in indices if not 0 <= index < len(domains)]
+        if invalid:
+            raise ValueError(f"Domain indices out of range: {invalid}")
+        return [domains[index] for index in indices]
 
     if ":" in choice:
         start_text, end_text = choice.split(":", 1)
@@ -448,15 +752,17 @@ def build_row(config: DomainConfig, section: str, error: Optional[BaseException]
     ]
 
 
-def run_domain(config: DomainConfig, api_key: str) -> list[str]:
-    import orch_interactive_pagination as orchestrator
+def run_domain(config: DomainConfig, api_key: str,
+               orchestrator_module: str = "orch_interactive_pagination",
+               input_class: type[OrchestratorInput] = OrchestratorInput) -> list[str]:
+    orchestrator = importlib.import_module(orchestrator_module)
 
     print(f"\nRunning {config.domain}...")
     before_results = read_results()
     error = None
 
     try:
-        with patched_input(config, api_key):
+        with patched_input(config, api_key, input_class):
             asyncio.run(orchestrator.main())
     except SystemExit as exc:
         if exc.code not in (None, 0):
@@ -468,7 +774,8 @@ def run_domain(config: DomainConfig, api_key: str) -> list[str]:
     return build_row(config, section, error)
 
 
-def main() -> None:
+def main(orchestrator_module: str = "orch_interactive_pagination",
+         input_class: type[OrchestratorInput] = OrchestratorInput) -> None:
     api_key = load_api_key()
     selected_domains = choose_domains()
     if not selected_domains:
@@ -477,7 +784,7 @@ def main() -> None:
 
     start_report(selected_domains)
     for config in selected_domains:
-        row = run_domain(config, api_key)
+        row = run_domain(config, api_key, orchestrator_module, input_class)
         append_report_row(row)
         print(f"Saved report row for {config.domain}.")
 

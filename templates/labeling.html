@@ -58,6 +58,8 @@
     .notice { border-left: 4px solid var(--accent); padding: 10px 12px; background: #ecfdf5; margin-bottom: 16px; }
     .compare-box { border: 1px solid var(--line); border-radius: 8px; padding: 10px; margin-top: 8px; background: #fffdf7; }
     .score-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+    .inline-form { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 12px; }
+    .inline-form input { flex: 1 1 180px; }
     .diff { font: 13px/1.7 Consolas, 'Courier New', monospace; white-space: pre-wrap; word-break: break-word; }
     .diff .same { color: #4b5563; }
     .diff .insert { background: #dcfce7; color: #166534; border-radius: 3px; padding: 1px 2px; }
@@ -70,6 +72,12 @@
     kbd { font: 11px Consolas, monospace; background: #eee7d8; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 1px 5px; }
     .toast { position: fixed; bottom: 22px; right: 22px; background: var(--accent-dark); color: #fff; padding: 12px 18px; border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,.22); font: 700 14px Arial, sans-serif; z-index: 1000; opacity: 0; transform: translateY(8px); transition: opacity .18s, transform .18s; pointer-events: none; }
     .toast.show { opacity: 1; transform: translateY(0); }
+    .checklist { margin: 10px 0 0; padding-left: 20px; font: 14px/1.6 Arial, sans-serif; }
+    .link-list { margin-top: 12px; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+    .link-row { display: grid; grid-template-columns: 70px minmax(180px, .75fr) minmax(240px, 1.25fr); gap: 10px; padding: 9px 10px; border-top: 1px solid var(--line); font: 13px/1.35 Arial, sans-serif; }
+    .link-row:first-child { border-top: 0; }
+    .link-row.header { background: #f0e6d6; color: var(--muted); font-weight: 700; text-transform: uppercase; font-size: 12px; }
+    .link-row a { overflow-wrap: anywhere; }
     @media (max-width: 900px) { .grid, .label-grid, .row { grid-template-columns: 1fr; } iframe { height: 520px; } }
   </style>
 </head>
@@ -275,8 +283,12 @@
 {% elif page == 'job' %}
   <section class="card">
     <h2>Run progress <code>{{ job_id }}</code></h2>
-    <p class="muted">The orchestrator is running with the form values you submitted. When it finishes, refresh Home to see the new snapshot.</p>
+    <p class="muted">The orchestrator is running with the form values you submitted. If it asks about article extractor validation, use the answer box below to send <code>a</code>, <code>r</code>, or <code>s</code>.</p>
     <pre id="run-log" class="run-log">Loading...</pre>
+    <form class="inline-form" id="job-input-form">
+      <input id="job-input" name="answer" placeholder="Answer a prompt, e.g. a, r, or s">
+      <button class="btn secondary" type="submit">Send answer</button>
+    </form>
     <div class="actions">
       <button class="btn warn" id="cancel-job" type="button">Cancel running job</button>
       <a class="btn secondary" href="{{ url_for('index') }}">Back</a>
@@ -287,6 +299,8 @@
     const runLog = document.getElementById('run-log');
     const cancelJobButton = document.getElementById('cancel-job');
     const jobStatus = document.getElementById('job-status');
+    const jobInputForm = document.getElementById('job-input-form');
+    const jobInput = document.getElementById('job-input');
     let refreshTimer = null;
     function stopPolling() {
       if (refreshTimer !== null) {
@@ -319,7 +333,27 @@
       }
       await refresh();
     }
+    async function sendJobInput(event) {
+      event.preventDefault();
+      const answer = jobInput.value;
+      const body = new URLSearchParams();
+      body.set('answer', answer);
+      const res = await fetch('{{ url_for('job_input', job_id=job_id) }}', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body
+      });
+      const data = await res.json();
+      if (!data.ok) {
+        jobStatus.textContent = data.error || 'Could not send answer.';
+        return;
+      }
+      jobInput.value = '';
+      jobStatus.textContent = 'Answer sent.';
+      await refresh();
+    }
     cancelJobButton.addEventListener('click', cancelJob);
+    jobInputForm.addEventListener('submit', sendJobInput);
     refresh();
     refreshTimer = window.setInterval(refresh, 1500);
   </script>
@@ -333,8 +367,29 @@
     <div class="actions">
       <a class="btn secondary" href="{{ url_for('review_failures', snapshot_name=snapshot_name) }}">Review failed links ({{ failed_links|length }})</a>
       <a class="btn secondary" href="{{ url_for('review_dropped', snapshot_name=snapshot_name) }}">Review dropped links ({{ dropped_links|length }})</a>
+      <a class="btn secondary" href="{{ url_for('review_coverage', snapshot_name=snapshot_name) }}">Review link coverage ({{ coverage_flags }}/{{ link_coverage|length }} flagged)</a>
       <a class="btn secondary" href="{{ url_for('review_na', snapshot_name=snapshot_name) }}">Review N/A fields</a>
     </div>
+    {% if article_validation %}
+    <h3 style="margin-top:18px">Article extractor warnings</h3>
+    <div class="notice"><strong>Generated code was flagged before reuse.</strong> Review these entries to see whether the user accepted, retried, or skipped a suspicious Article Agent extractor.</div>
+    <table>
+      <tr><th>Cluster</th><th>Stage</th><th>Decision</th><th>Issues</th><th>Code</th></tr>
+      {% for event in article_validation %}
+      <tr>
+        <td><code>{{ event.cluster }}</code><br><span class="small muted">attempt {{ event.attempt }}</span></td>
+        <td>{{ event.stage }}</td>
+        <td><span class="pill {% if event.decision == 'skip' %}bad{% elif event.decision in ['retry', 'accept'] %}done{% endif %}">{{ event.decision }}</span></td>
+        <td>
+          {% for issue in event.issues or [] %}<div>{{ issue }}</div>{% endfor %}
+          {% for warning in event.schema_warnings or [] %}<div class="muted">schema: {{ warning }}</div>{% endfor %}
+          {% if event.url %}<a class="small" href="{{ event.url }}" target="_blank">{{ event.title or event.url }}</a>{% endif %}
+        </td>
+        <td><code>{{ event.code_file }}</code></td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% endif %}
     {% if na_stats %}
     <h3 style="margin-top:18px">N/A ratios</h3>
     <table>
@@ -455,6 +510,93 @@
   </section>
   {% else %}
   <section class="card"><p>No dropped links recorded for this snapshot's linked run.</p></section>
+  {% endfor %}
+{% elif page == 'coverage' %}
+  <section class="card">
+    <h2>Link coverage for {{ meta.website }}</h2>
+    <p class="muted"><code>{{ snapshot_name }}</code> | {{ coverage|length }} listing page(s). Use this to check whether pagination/link extraction likely missed articles.</p>
+    {% set pagination_type = (meta.pagination_type or '')|lower %}
+    {% if 'infinite' in pagination_type %}
+      {% if meta.scroll_rounds_requested %}
+      <div class="notice"><strong>Dynamic loading:</strong> this snapshot used infinite scroll with {{ meta.scroll_rounds_requested }} requested scroll round(s). Count links against the saved listing HTML after that many scroll rounds.</div>
+      {% else %}
+      <div class="notice"><strong>Dynamic loading:</strong> this is an infinite-scroll snapshot, but the requested scroll count was not recorded. Treat the link count as needing manual review and use <code>unsure</code> or <code>missing_links</code> if you cannot verify it from the saved HTML.</div>
+      {% endif %}
+    {% elif 'load more' in pagination_type %}
+      {% if meta.scroll_rounds_requested %}
+      <div class="notice"><strong>Dynamic loading:</strong> this snapshot used {{ meta.scroll_rounds_requested }} requested load-more click(s){% if meta.load_more_selector %} with selector <code>{{ meta.load_more_selector }}</code>{% else %} with auto-detect{% endif %}. Count links against the saved listing HTML after those clicks.</div>
+      {% else %}
+      <div class="notice"><strong>Dynamic loading:</strong> this is a load-more snapshot, but the requested click count was not recorded. Treat the link count as needing manual review.</div>
+      {% endif %}
+    {% endif %}
+    <ol class="checklist">
+      <li>Open the saved listing HTML.</li>
+      <li>For infinite scroll or load-more pages, use the dynamic loading count shown above before deciding whether links are missing.</li>
+      <li>Compare the visible article cards with the extracted article links listed below.</li>
+      <li>Save <code>complete</code> if the list looks right, or <code>missing_links</code> if visible article cards are absent.</li>
+    </ol>
+    <div class="actions"><a class="btn secondary" href="{{ url_for('snapshot_page', snapshot_name=snapshot_name) }}">Back to snapshot</a></div>
+  </section>
+  {% for row in coverage %}
+  {% set key = 'page_' ~ row.page_num %}
+  {% set saved = notes.get(key) %}
+  <section class="card">
+    <h3>Page {{ row.page_num }} {% if row.flags %}<span class="pill bad">flagged</span>{% else %}<span class="pill done">ok</span>{% endif %}</h3>
+    <p><a href="{{ row.page_url }}" target="_blank">{{ row.page_url }}</a></p>
+    <table>
+      <tr><th>Raw</th><th>Accepted</th><th>New unique</th><th>Duplicates</th><th>Dropped</th><th>HTML bytes</th></tr>
+      <tr>
+        <td>{{ row.raw_links if row.raw_links is not none else 'n/a' }}</td>
+        <td>{{ row.accepted_links if row.accepted_links is not none else 'n/a' }}</td>
+        <td>{{ row.new_unique_links if row.new_unique_links is not none else 'n/a' }}</td>
+        <td>{{ row.duplicates if row.duplicates is not none else 'n/a' }}</td>
+        <td>{{ row.dropped_links if row.dropped_links is not none else 'n/a' }}</td>
+        <td>{{ row.html_bytes if row.html_bytes is not none else 'n/a' }}</td>
+      </tr>
+    </table>
+    {% if row.flags %}<div class="pred"><strong>Flags</strong>{{ row.flags|join(', ') }}</div>{% endif %}
+    {% if row.fetch_error %}<div class="pred"><strong>Fetch error</strong>{{ row.fetch_error }}</div>{% endif %}
+    <div class="actions">
+      {% if row.link_audit_file %}<a class="btn secondary" target="_blank" href="{{ url_for('run_audit_file', snapshot_name=snapshot_name, filename=row.link_audit_file) }}">Open link audit JSON</a>{% endif %}
+      {% if row.listing_html_file %}<a class="btn secondary" target="_blank" href="{{ url_for('run_audit_file', snapshot_name=snapshot_name, filename=row.listing_html_file) }}">Open saved listing HTML</a>{% endif %}
+      {% if row.snapshot_listing_file %}<a class="btn secondary" target="_blank" href="{{ url_for('snapshot_html', snapshot_name=snapshot_name, filename=row.snapshot_listing_file) }}">Open saved listing HTML</a>{% endif %}
+    </div>
+    <h4>Article links on this listing page ({{ row.article_links|length }})</h4>
+    {% if row.article_links %}
+    <div class="link-list">
+      <div class="link-row header"><div>ID</div><div>Title</div><div>URL</div></div>
+      {% for link in row.article_links %}
+      <div class="link-row">
+        <div>{{ link.id or loop.index }}</div>
+        <div dir="auto">{{ link.title or 'untitled' }}</div>
+        <div><a href="{{ link.url }}" target="_blank">{{ link.url }}</a></div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="muted">No article links were saved for this listing page.</p>
+    {% endif %}
+    {% if saved %}<p><span class="pill done">Reviewed: {{ saved.verdict }}</span></p>{% endif %}
+    <form method="post">
+      <input type="hidden" name="key" value="{{ key }}">
+      <input type="hidden" name="page_num" value="{{ row.page_num }}">
+      <input type="hidden" name="page_url" value="{{ row.page_url }}">
+      <input type="hidden" name="flags" value="{{ row.flags|join(', ') }}">
+      <div class="row">
+        <div><label>Labeler</label><input name="labeler" value="{{ saved.labeler if saved else '' }}"></div>
+        <div><label>Coverage verdict</label><select name="verdict">
+          {% for option in ['needs_review', 'complete', 'missing_links', 'not_news_page', 'duplicate_page', 'unsure'] %}
+          <option value="{{ option }}" {% if saved and saved.verdict == option %}selected{% endif %}>{{ option }}</option>
+          {% endfor %}
+        </select></div>
+      </div>
+      <label>Notes</label>
+      <textarea name="notes" placeholder="Example: page has many visible cards missing from accepted links, or this page only repeats previous articles">{{ saved.notes if saved else '' }}</textarea>
+      <div class="actions"><button class="btn" type="submit">Save coverage note</button></div>
+    </form>
+  </section>
+  {% else %}
+  <section class="card"><p>No link coverage audit found for this snapshot's linked run.</p></section>
   {% endfor %}
 {% elif page == 'na' %}
   <section class="card">

@@ -59,16 +59,26 @@ LINKS_AGENT_SCRIPT = "Links_Agent_gemma_cloudflare.py" #"Links_Agent_gemma.py"
 AGENT_SCRIPT = "Agent_for_single_page_gemma.py"
 
 # Input-token budget for the Links agent's single per-run code-generation call.
-# Kept just under the gemma free-tier per-minute input cap (16,000 tokens for
-# gemma-4-31b) so a large listing map doesn't trigger 429 quota errors. Raise
-# this only on a paid tier / higher-quota key.
+# Kept just under the gemma free-tier per-minute input cap (16,000 tokens for (gemma-4-31b) so a large listing map doesn't trigger 429 quota errors. Raise this only on a paid tier / higher-quota key.
 LINKS_INPUT_TOKEN_BUDGET = 15000
 
-# Price per 1M tokens (USD) used only to show an *indicative* cost in results.md.
-# Adjust to your provider's real rate. Defaults are a Gemini-class estimate;
-# Gemma on Google AI Studio is currently free, so treat this as a paper figure.
+# Gemma 4 is currently free within this call allowance. The orchestrator tracks
+# calls per run, not account-wide quota consumption.
+GEMMA_FREE_TIER_CALL_LIMIT = 1000
+GEMMA_FREE_TIER_MODEL_PREFIXES = ("gemma-4",)
+
+# Fallback price per 1M tokens (USD) for models outside the Gemma 4 allowance.
 LLM_PRICE_PER_1M_INPUT = 0.075
 LLM_PRICE_PER_1M_OUTPUT = 0.30
+
+
+def _uses_gemma_free_tier(model, llm_calls):
+    """Return whether this run fits the configured Gemma 4 free allowance."""
+    normalized_model = str(model or "").removeprefix("models/").lower()
+    return (
+        normalized_model.startswith(GEMMA_FREE_TIER_MODEL_PREFIXES)
+        and 0 <= int(llm_calls or 0) <= GEMMA_FREE_TIER_CALL_LIMIT
+    )
 
 # Running count of LLM generation calls made during a run (links agent,
 # per-cluster article agent, and pagination-pattern LLM fallback). Used for
@@ -138,10 +148,24 @@ _FULL_MAP_DEPTH = 10
 # reset at the start of each main() run.
 _MAP_FITS = []
 
+# Per-run audit trail for generated Article Agent code. This catches the case
+# where one bad extractor would otherwise be reused across a whole cluster.
+_ARTICLE_VALIDATION_EVENTS = []
+
 
 def _reset_map_fits():
     global _MAP_FITS
     _MAP_FITS = []
+
+
+def _reset_article_validation_events():
+    global _ARTICLE_VALIDATION_EVENTS
+    _ARTICLE_VALIDATION_EVENTS = []
+
+
+def _record_article_validation_event(event):
+    if isinstance(event, dict):
+        _ARTICLE_VALIDATION_EVENTS.append(event)
 
 
 def _bump_map_fit(agent, result):
@@ -320,8 +344,15 @@ def call_links_agent_cli(url, api_key, model="gemma-3-27b-it", html_file=None):
     return ok, result
 
 
-def call_agent_cli(url, api_key, requirements, model="gemma-3-27b-it"):
-    """Call Agent_for_single_page_gemma.py via subprocess in CLI mode."""
+def call_agent_cli(url, api_key, requirements, model="gemma-3-27b-it", html_content=None):
+    """Call Agent_for_single_page_gemma.py via subprocess in CLI mode.
+
+    When *html_content* is provided, it is written to a temp file and passed to
+    the agent so its structural map is built from the exact HTML the extraction
+    code will run against. This avoids the map/extraction DOM mismatch where a
+    JS-rendered map exposes dynamic classes (e.g. ``active``) that the static
+    fetched HTML does not have, making the LLM pick selectors that match nothing.
+    """
     cmd = [
         sys.executable, AGENT_SCRIPT,
         "--url", url,
@@ -329,12 +360,318 @@ def call_agent_cli(url, api_key, requirements, model="gemma-3-27b-it"):
         "--requirements", requirements,
         "--model", model,
     ]
+    html_tmp = None
+    if html_content:
+        fd, html_tmp = tempfile.mkstemp(suffix=".html", prefix="agent_html_")
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            f.write(html_content)
+        cmd += ["--html-file", html_tmp]
     print(f"  🔧 Calling: python {AGENT_SCRIPT} --url {url[:80]}...")
     _bump_llm_calls(agent="Article agent")
-    ok, result = _call_agent_subprocess(cmd, timeout=300)
+    try:
+        ok, result = _call_agent_subprocess(cmd, timeout=300)
+    finally:
+        if html_tmp:
+            try:
+                os.remove(html_tmp)
+            except OSError:
+                pass
     _bump_tokens("Article agent", result.get("token_usage"))
     _bump_map_fit("Article agent", result)
     return ok, result
+
+
+def _requested_field_names(requirements):
+    """Best-effort parse of user-requested output fields."""
+    text = str(requirements or "")
+    text = _re.sub(r"^[\s'\"]*(extract|scrape|get|collect)\s+", "", text, flags=_re.I)
+    text = text.strip(" .'\"")
+    if not text:
+        return []
+    parts = _re.split(r",|;|\band\b|\n", text, flags=_re.I)
+    fields = []
+    for part in parts:
+        field = part.strip(" -:'\"\t\r\n")
+        field = _re.sub(r"^(the|a|an)\s+", "", field, flags=_re.I)
+        if field:
+            fields.append(field)
+    return fields
+
+
+def _canonical_field_name(name):
+    norm = _re.sub(r"[^a-z0-9]+", " ", str(name or "").lower()).strip()
+    tokens = set(norm.split())
+    if "title" in tokens or "headline" in tokens:
+        return "title"
+    if "author" in tokens or "writer" in tokens or "byline" in tokens:
+        return "author"
+    if "date" in tokens or "time" in tokens or "published" in tokens:
+        return "date"
+    if "body" in tokens or "content" in tokens or "text" in tokens or "article" in tokens:
+        return "article body text"
+    return norm
+
+
+def _field_value_by_canonical(data, canonical):
+    if not isinstance(data, dict):
+        return None, None
+    for key, value in data.items():
+        if _canonical_field_name(key) == canonical:
+            return key, value
+    return None, None
+
+
+def _canonicalize_output_keys(data, requirements):
+    """Rename returned keys to the exact requested field names when they match
+    by canonical name (e.g. `article_body_text` -> `article body text`).
+
+    Keeps the extractor's original key for anything the user did not request,
+    and prefers a non-N/A value when two keys collapse to the same field.
+    """
+    if not isinstance(data, dict):
+        return data
+    canon_to_requested = {}
+    for field in _requested_field_names(requirements):
+        canon = _canonical_field_name(field)
+        canon_to_requested.setdefault(canon, field)
+    renamed = {}
+    for key, value in data.items():
+        target = canon_to_requested.get(_canonical_field_name(key), key)
+        if target in renamed:
+            if is_na_value(renamed[target]) and not is_na_value(value):
+                renamed[target] = value
+        else:
+            renamed[target] = value
+    return renamed
+
+
+def _iter_json_ld_objects(value):
+    if isinstance(value, dict):
+        yield value
+        for nested in value.values():
+            yield from _iter_json_ld_objects(nested)
+    elif isinstance(value, list):
+        for nested in value:
+            yield from _iter_json_ld_objects(nested)
+
+
+def _json_ld_author(value):
+    if isinstance(value, str):
+        return value.strip()
+    if isinstance(value, dict):
+        return str(value.get("name") or "").strip()
+    if isinstance(value, list):
+        names = [_json_ld_author(item) for item in value]
+        return ", ".join(name for name in names if name)
+    return ""
+
+
+def _standard_article_metadata(html_content):
+    """Extract domain-independent article fields from standard metadata."""
+    soup = BeautifulSoup(html_content or "", "html.parser")
+    article_objects = []
+    for script in soup.find_all("script", attrs={"type": "application/ld+json"}):
+        try:
+            payload = json.loads(script.string or script.get_text(" ", strip=True))
+        except (TypeError, ValueError, json.JSONDecodeError):
+            continue
+        for obj in _iter_json_ld_objects(payload):
+            raw_types = obj.get("@type", [])
+            types = raw_types if isinstance(raw_types, list) else [raw_types]
+            if any("article" in str(item).lower() or str(item).lower() == "blogposting"
+                   for item in types):
+                article_objects.append(obj)
+
+    def meta_content(*selectors):
+        for selector in selectors:
+            element = soup.select_one(selector)
+            if element:
+                value = element.get("content") or element.get("datetime")
+                if not value:
+                    value = element.get_text(" ", strip=True)
+                if value and str(value).strip():
+                    return str(value).strip()
+        return ""
+
+    metadata = {
+        "title": meta_content(
+            'meta[property="og:title"]', 'meta[name="twitter:title"]',
+            'meta[itemprop="headline"]',
+        ),
+        "date": meta_content(
+            'meta[property="article:published_time"]',
+            'meta[itemprop="datePublished"]', 'meta[name="date"]',
+            'time[itemprop="datePublished"]', 'time[datetime]',
+        ),
+        "author": meta_content(
+            'meta[name="author"]', 'meta[property="article:author"]',
+            'meta[itemprop="author"]',
+        ),
+        "article body text": "",
+    }
+    for obj in article_objects:
+        metadata["title"] = metadata["title"] or str(
+            obj.get("headline") or obj.get("name") or ""
+        ).strip()
+        metadata["date"] = metadata["date"] or str(
+            obj.get("datePublished") or obj.get("dateCreated") or ""
+        ).strip()
+        metadata["author"] = metadata["author"] or _json_ld_author(obj.get("author"))
+        metadata["article body text"] = metadata["article body text"] or str(
+            obj.get("articleBody") or ""
+        ).strip()
+    return metadata
+
+
+def _apply_metadata_fallbacks(data, html_content, requirements):
+    recovered = dict(data) if isinstance(data, dict) else {}
+    metadata = None
+    for requested in _requested_field_names(requirements):
+        canonical = _canonical_field_name(requested)
+        if canonical not in {"title", "date", "author", "article body text"}:
+            continue
+        actual_key, value = _field_value_by_canonical(recovered, canonical)
+        if actual_key is not None and not is_na_value(value):
+            continue
+        if metadata is None:
+            metadata = _standard_article_metadata(html_content)
+        fallback = metadata.get(canonical)
+        if fallback and not is_na_value(fallback):
+            recovered[actual_key or requested] = fallback
+    return _canonicalize_output_keys(recovered, requirements)
+
+
+def _extract_article_fields(code, html_content, requirements):
+    """Run generated extractor code, then canonicalize its output keys to the
+    requested field names so naming drift never looks like missing data."""
+    ok, result = execute_extraction_code(code, html_content)
+    if ok and isinstance(result, dict):
+        result = _canonicalize_output_keys(result, requirements)
+        result = _apply_metadata_fallbacks(result, html_content, requirements)
+    return ok, result
+
+
+def _short_value(value, limit=120):
+    if value is None:
+        return "N/A"
+    text = str(value).replace("\n", " ").strip()
+    if len(text) > limit:
+        return text[:limit] + "..."
+    return text
+
+
+def _validate_article_extraction(data, article, requirements):
+    """Return validation details for one generated extractor output."""
+    requested = _requested_field_names(requirements)
+    requested_canon = []
+    for field in requested:
+        canon = _canonical_field_name(field)
+        if canon and canon not in requested_canon:
+            requested_canon.append(canon)
+
+    issues = []
+    missing = []
+    wrong_key = []
+    present = []
+    for field in requested:
+        canon = _canonical_field_name(field)
+        actual_key, value = _field_value_by_canonical(data, canon)
+        if actual_key is None:
+            issues.append(f"missing requested field `{field}`")
+            missing.append(field)
+            continue
+        if actual_key != field:
+            wrong_key.append(f"`{field}` returned as `{actual_key}`")
+        if is_na_value(value):
+            issues.append(f"`{actual_key}` is N/A")
+            missing.append(field)
+        else:
+            present.append(field)
+
+    critical = bool(missing)
+
+    title_hint = str((article or {}).get("title") or "").strip()
+    if title_hint and not is_na_value(title_hint) and "title" in requested_canon:
+        _key, value = _field_value_by_canonical(data, "title")
+        if is_na_value(value):
+            issues.append(f"listing title exists but extractor returned N/A: {_short_value(title_hint)}")
+            critical = True
+
+    return {
+        # Key-name drift alone (schema_warnings) is not a failure: the value is
+        # matched by canonical name and the keys are canonicalized before saving.
+        "ok": not issues,
+        "critical": critical,
+        "issues": issues,
+        "schema_warnings": wrong_key,
+        "missing_fields": missing,
+        "present_fields": present,
+    }
+
+
+def _validation_feedback(requirements, code_file, data, validation, attempt_label):
+    pieces = [
+        str(requirements or ""),
+        "",
+        "ARTICLE EXTRACTOR RETRY CONTEXT:",
+        f"The previous generated code ({code_file or 'unknown code file'}) failed validation on {attempt_label}.",
+        "The user requested these fields and does not want N/A for fields that are visible in the page.",
+    ]
+    problems = validation.get("issues") or []
+    schema = validation.get("schema_warnings") or []
+    if problems:
+        pieces.append("Validation issues: " + "; ".join(problems))
+    if schema:
+        pieces.append("Schema warnings: " + "; ".join(schema))
+    pieces.append("Previous output: " + json.dumps(data or {}, ensure_ascii=False)[:1200])
+    pieces.append("Regenerate the extractor. Do not hard-code N/A unless the field is truly absent. Use only selectors present in the structural map, and return keys that match the requested field names exactly.")
+    return "\n".join(pieces)
+
+
+MAX_ARTICLE_EXTRACTOR_ATTEMPTS = 3
+
+
+def _automatic_validation_decision(validation, attempts):
+    """Return retry/skip for critical failures, or None for manual warnings."""
+    if not validation.get("critical"):
+        return None
+    if attempts < MAX_ARTICLE_EXTRACTOR_ATTEMPTS:
+        return "retry"
+    return "skip"
+
+
+def _prompt_article_validation_decision(sig, article, validation, code_file, sample=False):
+    label = "sample article" if sample else "representative article"
+    print(f"\n  ⚠ Article extractor validation warning for cluster {sig} ({label})")
+    print(f"     URL: {article.get('url', 'N/A')}")
+    print(f"     Title hint: {_short_value(article.get('title'))}")
+    if code_file:
+        print(f"     Code: {code_file}")
+    for issue in validation.get("issues") or []:
+        print(f"     - {issue}")
+    for warning in validation.get("schema_warnings") or []:
+        print(f"     - schema: {warning}")
+
+    allow_piped_prompt = os.environ.get("ORCH_ALLOW_STDIN_PROMPTS") == "1"
+    if not sys.stdin or (not sys.stdin.isatty() and not allow_piped_prompt):
+        decision = "skip" if validation.get("critical") else "accept"
+        print(f"     Non-interactive run: defaulting to {decision}.")
+        return decision
+
+    print("     Choose: [a] accept anyway, [r] retry/regenerate, [s] skip this cluster")
+    choice = input("     → ").strip().lower()
+    if choice in {"r", "retry"}:
+        return "retry"
+    if choice in {"s", "skip"}:
+        return "skip"
+    return "accept"
+
+
+def _load_generated_code(code_file):
+    if code_file and os.path.exists(code_file):
+        with open(code_file, "r", encoding="utf-8") as f:
+            return f.read()
+    return ""
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -413,6 +750,21 @@ def derive_pagination_pattern(url1, url2):
             return pattern, None, int(val2)
 
     return None, None, None
+
+
+def _pagination_values(page1_num, page2_num, total_pages):
+    """Return numeric values for pages 2..N, preserving an observed offset."""
+    if total_pages < 2:
+        return []
+    if page2_num is None:
+        return list(range(2, total_pages + 1))
+    if page1_num is not None:
+        step = page2_num - page1_num
+    else:
+        step = page2_num if page2_num > 2 else 1
+    if step <= 0:
+        step = 1
+    return [page2_num + step * index for index in range(total_pages - 1)]
 
 
 def derive_pagination_pattern_llm(url1, url2, api_key, model="gemma-3-27b-it"):
@@ -537,7 +889,7 @@ def _atomic_json_write(path, data):
 
 
 def save_incremental(run_dir, all_extracted, all_failures, progress_info,
-                     all_dropped=None):
+                     all_dropped=None, link_coverage=None):
     """Persist current state so nothing is lost on crash."""
     _atomic_json_write(
         os.path.join(run_dir, "extracted_data_all.json"), all_extracted,
@@ -549,9 +901,111 @@ def save_incremental(run_dir, all_extracted, all_failures, progress_info,
         _atomic_json_write(
             os.path.join(run_dir, "dropped_links.json"), all_dropped,
         )
+    if link_coverage is not None:
+        _atomic_json_write(
+            os.path.join(run_dir, "link_coverage.json"), link_coverage,
+        )
     _atomic_json_write(
         os.path.join(run_dir, "progress.json"), progress_info,
     )
+
+
+def _save_listing_audit(run_dir, page_num, page_url, page_html,
+                        raw_links, accepted_links, dropped_links):
+    """Persist evidence for manual link-coverage audit.
+
+    Each listing page gets a small JSON file with raw/accepted/dropped links,
+    and, when available, the listing HTML used for extraction.
+    """
+    audit_dir = os.path.join(run_dir, "listing_audit")
+    os.makedirs(audit_dir, exist_ok=True)
+    stem = f"page_{int(page_num):04d}"
+    html_rel = None
+    if page_html:
+        html_path = os.path.join(audit_dir, f"{stem}.html")
+        with open(html_path, "w", encoding="utf-8") as f:
+            f.write(page_html)
+        html_rel = os.path.relpath(html_path, run_dir).replace(os.sep, "/")
+
+    links_rel = f"listing_audit/{stem}_links.json"
+    _atomic_json_write(os.path.join(run_dir, links_rel), {
+        "page_num": page_num,
+        "page_url": page_url,
+        "raw_links": raw_links or [],
+        "accepted_links": accepted_links or [],
+        "dropped_links": dropped_links or [],
+        "listing_html_file": html_rel,
+    })
+    return {"listing_html_file": html_rel, "link_audit_file": links_rel}
+
+
+def _make_link_coverage_record(page_num, page_url, raw_links, accepted_links,
+                               dropped_links, duplicate_count=0,
+                               new_count=None, page_html=None,
+                               fetch_error=None, evidence=None):
+    """Small audit row for validating listing-page link recall.
+
+    This cannot prove every article link exists, but it catches likely misses:
+    empty pages, heavy filtering, duplicate-only pages, small HTML responses,
+    and sudden link-count drops compared with neighbouring pages.
+    """
+    raw_count = len(raw_links or [])
+    accepted_count = len(accepted_links or [])
+    dropped_count = len(dropped_links or [])
+    html_bytes = len(page_html or "") if page_html is not None else None
+    if new_count is None:
+        new_count = accepted_count
+    record = {
+        "page_num": page_num,
+        "page_url": page_url,
+        "raw_links": raw_count,
+        "accepted_links": accepted_count,
+        "new_unique_links": new_count,
+        "duplicates": duplicate_count,
+        "dropped_links": dropped_count,
+        "html_bytes": html_bytes,
+        "flags": [],
+    }
+    duplicate_ratio = duplicate_count / accepted_count if accepted_count else 0.0
+    record["duplicate_ratio"] = round(duplicate_ratio, 4)
+    if fetch_error:
+        record["fetch_error"] = str(fetch_error)
+        record["flags"].append("listing_fetch_failed")
+    if evidence:
+        record.update({k: v for k, v in evidence.items() if v})
+    if raw_count == 0:
+        record["flags"].append("zero_raw_links")
+    if accepted_count == 0:
+        record["flags"].append("zero_accepted_links")
+    if raw_count and dropped_count / raw_count >= 0.5:
+        record["flags"].append("many_links_filtered")
+    if accepted_count and new_count == 0:
+        record["flags"].append("all_links_duplicate")
+    if duplicate_ratio >= 0.5:
+        record["flags"].append("high_page_overlap")
+    if duplicate_ratio >= 0.8:
+        record["flags"].append("severe_page_overlap")
+    if html_bytes is not None and html_bytes < 2000:
+        record["flags"].append("small_listing_html")
+    return record
+
+
+def _refresh_link_coverage_flags(link_coverage):
+    """Add cross-page anomaly flags such as sudden drops vs neighbouring pages."""
+    counts = [r.get("accepted_links", 0) for r in link_coverage if not r.get("fetch_error")]
+    nonzero = sorted(c for c in counts if c > 0)
+    median = nonzero[len(nonzero) // 2] if nonzero else 0
+    prev_count = None
+    for rec in link_coverage:
+        flags = set(rec.get("flags") or [])
+        count = rec.get("accepted_links", 0) or 0
+        if median and count > 0 and count < median * 0.4:
+            flags.add("low_vs_run_median")
+        if prev_count and count < prev_count * 0.4:
+            flags.add("sudden_drop_from_previous_page")
+        rec["flags"] = sorted(flags)
+        prev_count = count
+    return link_coverage
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -575,8 +1029,20 @@ def process_page_articles(articles_with_maps, cluster_registry,
         if sig in cluster_registry:
             code = cluster_registry[sig]["code"]
             for m in members:
-                ok, result = execute_extraction_code(code, m["html_content"])
+                ok, result = _extract_article_fields(code, m["html_content"], requirements)
                 if ok and isinstance(result, dict):
+                    validation = _validate_article_extraction(result, m, requirements)
+                    if validation.get("critical"):
+                        reason = "Critical field validation failed: " + "; ".join(
+                            validation.get("issues") or ["unknown validation failure"]
+                        )
+                        failures.append({
+                            "url": m["url"], "title": m["title"],
+                            "reason": reason,
+                        })
+                        print(f"    ❌ {m['title'][:50]} (reused extractor rejected)")
+                        print(f"       Error: {reason}")
+                        continue
                     extracted.append({
                         "url": m["url"], "title": m["title"], "data": result,
                     })
@@ -595,9 +1061,82 @@ def process_page_articles(articles_with_maps, cluster_registry,
             print(f"\n  🆕 New cluster {sig} ({len(members)} article(s))")
             print(f"     Representative: {rep['title'][:60]}")
 
-            success, agent_result = call_agent_cli(
-                rep["url"], api_key, requirements, model,
-            )
+            active_requirements = requirements
+            success = False
+            agent_result = {}
+            rep_data = {}
+            code_file = ""
+            code_text = ""
+            validation = {}
+            attempts = 0
+
+            while attempts < MAX_ARTICLE_EXTRACTOR_ATTEMPTS:
+                attempts += 1
+                success, agent_result = call_agent_cli(
+                    rep["url"], api_key, active_requirements, model,
+                    html_content=rep.get("html_content"),
+                )
+
+                if not success:
+                    break
+
+                code_file = agent_result.get("code_file", "")
+                code_text = _load_generated_code(code_file)
+                rep_data = _canonicalize_output_keys(agent_result.get("data", {}), requirements)
+
+                if code_text:
+                    ok, rerun_result = _extract_article_fields(code_text, rep["html_content"], requirements)
+                    if ok and isinstance(rerun_result, dict):
+                        rep_data = rerun_result
+                    else:
+                        rep_data = {}
+                        validation = {
+                            "ok": False,
+                            "critical": True,
+                            "issues": [f"generated code failed on representative HTML: {rerun_result}"],
+                            "schema_warnings": [],
+                            "missing_fields": _requested_field_names(requirements),
+                            "present_fields": [],
+                        }
+
+                if not validation:
+                    validation = _validate_article_extraction(rep_data, rep, requirements)
+
+                if validation.get("ok"):
+                    break
+
+                decision = _automatic_validation_decision(validation, attempts)
+                if decision:
+                    print(
+                        f"     Critical validation failure: automatically {decision}ing "
+                        f"(attempt {attempts}/{MAX_ARTICLE_EXTRACTOR_ATTEMPTS})."
+                    )
+                else:
+                    decision = _prompt_article_validation_decision(
+                        sig, rep, validation, code_file, sample=False,
+                    )
+                _record_article_validation_event({
+                    "cluster": sig,
+                    "stage": "representative",
+                    "attempt": attempts,
+                    "url": rep.get("url"),
+                    "title": rep.get("title"),
+                    "code_file": code_file,
+                    "decision": decision,
+                    "issues": validation.get("issues") or [],
+                    "schema_warnings": validation.get("schema_warnings") or [],
+                })
+                if decision == "retry" and attempts < MAX_ARTICLE_EXTRACTOR_ATTEMPTS:
+                    active_requirements = _validation_feedback(
+                        requirements, code_file, rep_data, validation, "the representative article",
+                    )
+                    validation = {}
+                    continue
+                if decision == "accept":
+                    break
+                success = False
+                agent_result = {"error": "Article extractor rejected by validation"}
+                break
 
             if not success:
                 err = agent_result.get("error", "Unknown agent error")
@@ -609,24 +1148,90 @@ def process_page_articles(articles_with_maps, cluster_registry,
                     })
                 continue
 
-            rep_data = agent_result.get("data", {})
-            code_file = agent_result.get("code_file", "")
             print(f"     ✓ Agent succeeded! Code: {code_file}")
 
             extracted.append({
                 "url": rep["url"], "title": rep["title"], "data": rep_data,
             })
 
-            code_text = ""
-            if code_file and os.path.exists(code_file):
-                with open(code_file, "r", encoding="utf-8") as f:
-                    code_text = f.read()
             cluster_registry[sig] = {"code_file": code_file, "code": code_text}
 
             if rest and code_text:
+                for sample in rest[:4]:
+                    ok, sample_result = _extract_article_fields(code_text, sample["html_content"], requirements)
+                    if not ok or not isinstance(sample_result, dict):
+                        sample_warning = {
+                            "ok": False,
+                            "critical": True,
+                            "issues": [f"generated code failed on sample article: {sample_result}"],
+                            "schema_warnings": [],
+                        }
+                    else:
+                        sample_warning = _validate_article_extraction(sample_result, sample, requirements)
+                    if sample_warning and not sample_warning.get("ok") and sample_warning.get("critical"):
+                        decision = _automatic_validation_decision(sample_warning, attempts)
+                        if not decision:
+                            decision = _prompt_article_validation_decision(
+                                sig, sample, sample_warning, code_file, sample=True,
+                            )
+                        _record_article_validation_event({
+                            "cluster": sig,
+                            "stage": "sample",
+                            "attempt": attempts,
+                            "url": sample.get("url"),
+                            "title": sample.get("title"),
+                            "code_file": code_file,
+                            "decision": decision,
+                            "issues": sample_warning.get("issues") or [],
+                            "schema_warnings": sample_warning.get("schema_warnings") or [],
+                        })
+                        if decision == "retry":
+                            retry_requirements = _validation_feedback(
+                                requirements,
+                                code_file,
+                                sample_result if isinstance(sample_result, dict) else {},
+                                sample_warning,
+                                "a same-cluster sample article",
+                            )
+                            success, retry_result = call_agent_cli(
+                                rep["url"], api_key, retry_requirements, model,
+                                html_content=rep.get("html_content"),
+                            )
+                            if success:
+                                code_file = retry_result.get("code_file", "")
+                                code_text = _load_generated_code(code_file)
+                                ok, rerun_result = _extract_article_fields(code_text, rep["html_content"], requirements)
+                                if ok and isinstance(rerun_result, dict):
+                                    rep_data = rerun_result
+                                    extracted[-1]["data"] = rep_data
+                                    cluster_registry[sig] = {"code_file": code_file, "code": code_text}
+                                    print(f"     ✓ Retry succeeded! Code: {code_file}")
+                                    break
+                            decision = "skip"
+                        if decision == "skip":
+                            failures.append({
+                                "url": sample["url"], "title": sample["title"],
+                                "reason": "Article extractor rejected by sample validation",
+                            })
+                            rest = [m for m in rest if m is not sample]
+                        break
+
+            if rest and code_text:
                 for m in rest:
-                    ok, result = execute_extraction_code(code_text, m["html_content"])
+                    ok, result = _extract_article_fields(code_text, m["html_content"], requirements)
                     if ok and isinstance(result, dict):
+                        validation = _validate_article_extraction(result, m, requirements)
+                        if validation.get("critical"):
+                            reason = "Critical field validation failed: " + "; ".join(
+                                validation.get("issues") or ["unknown validation failure"]
+                            )
+                            failures.append({
+                                "url": m["url"], "title": m["title"],
+                                "reason": reason,
+                            })
+                            print(f"    ❌ {m['title'][:50]} (extractor rejected)")
+                            print(f"       Error: {reason}")
+                            continue
                         extracted.append({
                             "url": m["url"], "title": m["title"], "data": result,
                         })
@@ -656,6 +1261,13 @@ def process_page_articles(articles_with_maps, cluster_registry,
 # How many articles to fetch at the same time. Kept low (2) to stay polite and
 # avoid tripping rate-limiting / Cloudflare on the target site.
 ARTICLE_FETCH_CONCURRENCY = 2
+
+# Validate a representative sample before fetching and clustering an entire
+# listing. Structure diversity alone never trips the breaker: it must coincide
+# with weak article-page evidence across the sample.
+LINK_PREFLIGHT_SAMPLE_SIZE = 10
+LINK_PREFLIGHT_SINGLETON_RATIO = 0.80
+LINK_PREFLIGHT_MIN_ARTICLE_RATIO = 0.50
 
 # Minimum HTML size for a plain-requests result to be trusted. Smaller responses
 # are usually JS shells or block pages, so we fall back to the browser.
@@ -776,6 +1388,71 @@ async def fetch_articles(article_links, label="", concurrency=ARTICLE_FETCH_CONC
     return articles_with_maps, fetch_failures
 
 
+def _looks_like_article_html(html):
+    """Return whether HTML has generic metadata or content evidence of an article."""
+    soup = BeautifulSoup(html or "", "lxml")
+    json_ld = " ".join(
+        script.get_text(" ", strip=True)
+        for script in soup.find_all("script", attrs={"type": "application/ld+json"})
+    )
+    og_type = soup.find("meta", attrs={"property": "og:type"})
+    explicit_article = (
+        bool(_re.search(r'"@type"\s*:\s*"[^"\n]*article', json_ld, _re.I))
+        or bool(og_type and "article" in (og_type.get("content") or "").lower())
+        or bool(soup.find(attrs={"itemtype": _re.compile(r"article", _re.I)}))
+    )
+    if explicit_article:
+        return True
+
+    published = soup.find("meta", attrs={
+        "property": _re.compile(r"article:(published|modified)_time", _re.I),
+    }) or soup.find("meta", attrs={
+        "name": _re.compile(r"(date|publish|publication)", _re.I),
+    })
+    root = soup.find("article") or soup.find("main")
+    prose_length = sum(
+        len(node.get_text(" ", strip=True)) for node in root.find_all("p")
+    ) if root else 0
+    return bool(published and soup.find("h1") and prose_length >= 600)
+
+
+def _select_preflight_links(article_links, sample_size=LINK_PREFLIGHT_SAMPLE_SIZE):
+    """Select an evenly distributed, order-preserving candidate sample."""
+    total = len(article_links)
+    if total <= sample_size:
+        return list(article_links)
+    indices = {
+        round(position * (total - 1) / (sample_size - 1))
+        for position in range(sample_size)
+    }
+    return [article_links[index] for index in sorted(indices)]
+
+
+def _assess_link_preflight(articles):
+    """Assess sampled page semantics and structural fragmentation."""
+    signatures = [
+        _sig_hash(article.get("structural_map", [])) for article in articles
+    ]
+    counts = {signature: signatures.count(signature) for signature in signatures}
+    sampled = len(articles)
+    singleton_pages = sum(counts[signature] == 1 for signature in signatures)
+    article_like = sum(
+        _looks_like_article_html(article.get("html_content", ""))
+        for article in articles
+    )
+    should_stop = (
+        sampled >= 8
+        and singleton_pages / sampled >= LINK_PREFLIGHT_SINGLETON_RATIO
+        and article_like / sampled < LINK_PREFLIGHT_MIN_ARTICLE_RATIO
+    )
+    return {
+        "sampled_pages": sampled,
+        "article_like_pages": article_like,
+        "singleton_pages": singleton_pages,
+        "status": "rejected" if should_stop else "passed",
+    }
+
+
 # ═══════════════════════════════════════════════════════════════
 # Helper: extract links from a page using saved link-extraction code
 # ═══════════════════════════════════════════════════════════════
@@ -830,11 +1507,203 @@ def _filter_article_links(links, listing_url, pattern=None):
         if _re.search(r"/page/\d+/?$", url):
             _drop(l, "generic /page/N/ pagination link")
             continue
+        try:
+            path = urlparse(url).path.lower()
+        except Exception:
+            path = ""
+        if _re.search(r"/(taxonomy/term|writer|author|home/page)(/|$)", path):
+            _drop(l, "author/profile/archive link")
+            continue
         if cat_root and url.startswith(cat_root):
             _drop(l, "category/archive page")
             continue
         kept.append(l)
     return kept, dropped
+
+
+def _looks_like_article_url(url, listing_url):
+    """Return whether a URL can represent a same-site article document."""
+    try:
+        parsed = urlparse(url)
+        listing = urlparse(listing_url or "")
+    except Exception:
+        return False
+    if not parsed.scheme.startswith("http") or not parsed.netloc:
+        return False
+    if listing.netloc and parsed.netloc != listing.netloc:
+        return False
+    path = parsed.path.rstrip("/")
+    if not path or path == (listing.path or "").rstrip("/"):
+        return False
+    if _re.search(
+        r"\.(jpg|jpeg|png|gif|webp|svg|pdf|mp4|mp3|css|js|xml|json)$",
+        path.lower(),
+    ):
+        return False
+    return True
+
+
+def _article_anchor_evidence(a_tag, title):
+    """Score article intent using semantic and local card evidence."""
+    ancestors = list(a_tag.parents)[:4]
+    if any(
+        getattr(node, "name", None) in {"nav", "header", "footer"}
+        or (node.get("role") if hasattr(node, "get") else None)
+        in {"menu", "menubar", "navigation"}
+        for node in ancestors
+    ):
+        return -100
+
+    score = 0
+    visible_title = a_tag.get_text(" ", strip=True)
+    accessible_title = (
+        (a_tag.get("aria-label") or "").strip()
+        or (a_tag.get("title") or "").strip()
+    )
+    if len(title) >= 8 and not title.isdigit():
+        score += 1
+    if accessible_title:
+        score += 2
+    if any(getattr(node, "name", None) == "article" for node in ancestors):
+        score += 3
+
+    local_nodes = [a_tag, *ancestors[:3]]
+    semantic_text = " ".join(
+        " ".join(
+            [
+                getattr(node, "name", "") or "",
+                " ".join(node.get("class") or []),
+                node.get("id") or "",
+                node.get("role") or "",
+                node.get("data-link-name") or "",
+            ]
+        ).lower()
+        for node in local_nodes
+        if hasattr(node, "get")
+    )
+    if _re.search(r"\b(article|story|post|card|teaser)\b", semantic_text):
+        score += 2
+    if _re.search(r"\b(nav|menu|pagination|pager|breadcrumb|section heading)\b", semantic_text):
+        score -= 3
+    if _re.search(r"\b(author|writer|byline|profile|print|edition|subscribe)\b", semantic_text):
+        score -= 3
+
+    local_root = ancestors[0] if ancestors else a_tag
+    heading = (
+        local_root
+        if getattr(local_root, "name", None) in {"h1", "h2", "h3", "h4"}
+        else local_root.find(["h1", "h2", "h3", "h4"])
+    )
+    if heading and heading.get_text(" ", strip=True) == title:
+        score += 2
+    if local_root.find("time"):
+        score += 1
+    if local_root.find("img") or local_root.find("picture"):
+        score += 1
+    if not visible_title and not accessible_title:
+        score -= 2
+    return score
+
+
+def _fallback_article_links_from_html(html, listing_url):
+    """Extract likely article links from article/card containers.
+
+    This does not replace the generated Links Agent code. It is a recovery guard
+    for cases where the generated code picks a navigation/category anchor from
+    each card while a later anchor in the same card is the real article URL.
+    """
+    if not html:
+        return []
+    soup = BeautifulSoup(html, "html.parser")
+    base = "/".join((listing_url or "").split("/")[:3])
+    class_fragments = ("article", "story", "post", "card", "item", "teaser")
+    containers = soup.find_all(
+        lambda tag: tag.name == "article" or any(
+            fragment in " ".join(tag.get("class") or []).lower()
+            for fragment in class_fragments
+        )
+    )
+    seen = set()
+    links = []
+
+    def add_anchor(a_tag, container=None, require_text=False):
+        href = a_tag.get("href", "").strip()
+        if not href or href.startswith(("#", "javascript:", "mailto:", "tel:")):
+            return False
+        parsed_url = urlparse(urljoin(base, href))
+        url = parsed_url._replace(fragment="").geturl()
+        if url in seen or not _looks_like_article_url(url, listing_url):
+            return False
+        title = (
+            a_tag.get_text(" ", strip=True)
+            or (a_tag.get("aria-label") or "").strip()
+            or (a_tag.get("title") or "").strip()
+        )
+        if not title and container is not None:
+            title_el = container.select_one(
+                "[class*='title'], h1, h2, h3, h4, [class*='headline']"
+            )
+            title = title_el.get_text(" ", strip=True) if title_el else ""
+        if require_text and not title:
+            return False
+        if _article_anchor_evidence(a_tag, title) < 3:
+            return False
+        seen.add(url)
+        links.append({"url": url, "title": title or url})
+        return True
+
+    for container in containers:
+        for a_tag in container.find_all("a", href=True):
+            if add_anchor(a_tag, container=container):
+                break
+    if len(links) < 8:
+        for a_tag in soup.find_all("a", href=True):
+            add_anchor(a_tag, require_text=True)
+    return links
+
+
+MIN_LINK_RECALL_RATIO = 0.70
+MIN_LINK_RECALL_BASELINE = 3
+
+
+def recover_under_extracted_links(raw_links, accepted_links, html, listing_url, pattern=None):
+    """Augment suspiciously small generated-link output from saved HTML.
+
+    The deterministic DOM pass acts as a conservative recall baseline. When it
+    finds at least three plausible article links and generated recall is below
+    70%, merge the missed links and record the measured ratio for auditing.
+    """
+    fallback_raw = _fallback_article_links_from_html(html, listing_url)
+    fallback_accepted, fallback_dropped = _filter_article_links(
+        fallback_raw, listing_url, pattern,
+    )
+    before = len(accepted_links or [])
+    fallback_count = len(fallback_accepted)
+    recall_ratio = before / fallback_count if fallback_count else 1.0
+    if (fallback_count < MIN_LINK_RECALL_BASELINE
+            or recall_ratio >= MIN_LINK_RECALL_RATIO):
+        return accepted_links, None
+
+    merged = {l.get("url"): l for l in accepted_links or [] if l.get("url")}
+    added = 0
+    for link in fallback_accepted:
+        url = link.get("url")
+        if url and url not in merged:
+            merged[url] = link
+            added += 1
+    recovered = list(merged.values())
+    return recovered, {
+        "generated_raw_links": len(raw_links or []),
+        "generated_accepted_links": before,
+        "fallback_raw_links": len(fallback_raw),
+        "fallback_accepted_links": fallback_count,
+        "fallback_dropped_links": len(fallback_dropped),
+        "minimum_recall_ratio": MIN_LINK_RECALL_RATIO,
+        "generated_recall_vs_dom": round(recall_ratio, 4),
+        "validation": "low_dom_link_recall",
+        "recovered_links_added": added,
+        "accepted_links_after_recovery": len(recovered),
+    }
 
 
 def run_link_extraction_code(code, html):
@@ -971,6 +1840,9 @@ async def collect_listing_html(url, mode="scroll", max_rounds=20,
                 prev_height = height
 
             html_content = await page.content()
+            if _cf_is_challenge_page(html_content):
+                print("  ❌ Dynamic listing returned a CAPTCHA/access-denial page")
+                return None
             print(f"  ✓ Collected HTML ({len(html_content)} bytes)")
             return html_content
         except Exception as e:
@@ -1038,6 +1910,16 @@ def write_results_md(stats, path="results.md"):
     lines.append(f"- **Run directory:** `{stats.get('run_dir', 'N/A')}`")
     lines.append(f"- **Model:** {stats.get('model', 'N/A')}")
     lines.append(f"- **Pagination type:** {stats.get('pagination_type', 'N/A')}")
+    scroll_mode = stats.get("scroll_mode")
+    scroll_rounds = stats.get("scroll_rounds_requested")
+    load_more_selector = stats.get("load_more_selector")
+    if scroll_mode == "scroll" and scroll_rounds is not None:
+        lines.append(f"- **Scroll rounds requested:** {scroll_rounds}")
+    elif scroll_mode == "load_more" and scroll_rounds is not None:
+        lines.append(f"- **Load-more clicks requested:** {scroll_rounds}")
+        lines.append(
+            f"- **Load-more selector:** {load_more_selector or 'auto-detect'}"
+        )
 
     if input_urls:
         lines.append("- **Input URLs:**")
@@ -1065,6 +1947,74 @@ def write_results_md(stats, path="results.md"):
             f"`{stats.get('run_dir', 'N/A')}/dropped_links.json`"
         )
 
+    # ── Listing-page link coverage audit ──
+    link_coverage = stats.get("link_coverage") or []
+    if link_coverage:
+        flagged = [r for r in link_coverage if r.get("flags")]
+        total_raw = sum(r.get("raw_links", 0) or 0 for r in link_coverage)
+        total_accepted = sum(r.get("accepted_links", 0) or 0 for r in link_coverage)
+        total_new = sum(r.get("new_unique_links", 0) or 0 for r in link_coverage)
+        lines.append(
+            f"- **Link coverage audit:** {len(link_coverage)} page(s), "
+            f"{total_raw} raw links, {total_accepted} accepted article links, "
+            f"{total_new} new unique links"
+        )
+        if flagged:
+            lines.append(f"  - ⚠ {len(flagged)} page(s) flagged for review:")
+            for rec in flagged[:10]:
+                flags = ", ".join(rec.get("flags") or [])
+                lines.append(
+                    f"    - page {rec.get('page_num')}: {flags} "
+                    f"({rec.get('accepted_links', 0)} accepted, "
+                    f"{rec.get('new_unique_links', 0)} new)"
+                )
+            if len(flagged) > 10:
+                lines.append(f"    - ...and {len(flagged) - 10} more")
+        lines.append(
+            f"  - Full audit saved to "
+            f"`{stats.get('run_dir', 'N/A')}/link_coverage.json`"
+        )
+
+    link_recovery = stats.get("link_recovery") or []
+    if link_recovery:
+        lines.append(f"- **Link recovery guard:** triggered on {len(link_recovery)} page(s)")
+        for rec in link_recovery[:10]:
+            lines.append(
+                f"  - page {rec.get('page_num', '?')}: "
+                f"{rec.get('generated_accepted_links', 0)} generated accepted -> "
+                f"{rec.get('accepted_links_after_recovery', 0)} after recovery "
+                f"(+{rec.get('recovered_links_added', 0)})"
+            )
+        if len(link_recovery) > 10:
+            lines.append(f"  - ...and {len(link_recovery) - 10} more")
+
+    link_preflight = stats.get("link_preflight") or {}
+    if link_preflight:
+        lines.append(
+            f"- **Link preflight:** {link_preflight.get('status', 'unknown')} - "
+            f"{link_preflight.get('article_like_pages', 0)}/"
+            f"{link_preflight.get('sampled_pages', 0)} article-like, "
+            f"{link_preflight.get('singleton_pages', 0)}/"
+            f"{link_preflight.get('sampled_pages', 0)} singleton structures"
+        )
+
+    article_validation = stats.get("article_validation") or []
+    if article_validation:
+        lines.append(
+            f"- **Article extractor validation:** {len(article_validation)} warning(s)"
+        )
+        for event in article_validation[:10]:
+            issues = "; ".join((event.get("issues") or [])[:3])
+            schema = "; ".join((event.get("schema_warnings") or [])[:2])
+            detail = issues or schema or "validation warning"
+            lines.append(
+                f"  - cluster {event.get('cluster', '?')} {event.get('stage', '?')} "
+                f"attempt {event.get('attempt', '?')}: {event.get('decision', 'recorded')} - "
+                f"{detail[:180]}"
+            )
+        if len(article_validation) > 10:
+            lines.append(f"  - ...and {len(article_validation) - 10} more")
+
     lines.append(f"- **LLM calls:** {stats.get('llm_calls', 0)}")
 
     # ── Which agent made each LLM call ──
@@ -1089,6 +2039,8 @@ def write_results_md(stats, path="results.md"):
 
     # ── Token usage & estimated cost ──
     tokens_by_agent = stats.get("tokens_by_agent") or {}
+    tot_prompt = 0
+    tot_out = 0
     if tokens_by_agent:
         tot_prompt = sum(v.get("prompt", 0) for v in tokens_by_agent.values())
         tot_out = sum(v.get("candidates", 0) for v in tokens_by_agent.values())
@@ -1100,6 +2052,17 @@ def write_results_md(stats, path="results.md"):
         for agent, v in sorted(tokens_by_agent.items(),
                                key=lambda kv: -kv[1].get("total", 0)):
             lines.append(f"  - {agent}: {v.get('total', 0):,} tokens")
+
+    llm_calls = stats.get("llm_calls", 0) or 0
+    cost = None
+    if _uses_gemma_free_tier(stats.get("model"), llm_calls):
+        cost = 0.0
+        lines.append(
+            f"- **Estimated cost:** $0.0000 "
+            f"(Gemma 4 free tier; {llm_calls:,}/"
+            f"{GEMMA_FREE_TIER_CALL_LIMIT:,} calls recorded in this run)"
+        )
+    elif tokens_by_agent:
         cost = (tot_prompt / 1_000_000 * LLM_PRICE_PER_1M_INPUT
                 + tot_out / 1_000_000 * LLM_PRICE_PER_1M_OUTPUT)
         lines.append(
@@ -1107,9 +2070,9 @@ def write_results_md(stats, path="results.md"):
             f"(at ${LLM_PRICE_PER_1M_INPUT}/${LLM_PRICE_PER_1M_OUTPUT} "
             f"per 1M input/output tokens)"
         )
-        if n_extracted:
-            per_1k = cost / n_extracted * 1000
-            lines.append(f"- **Estimated cost per 1,000 articles:** ${per_1k:.4f}")
+    if cost is not None and n_extracted:
+        per_1k = cost / n_extracted * 1000
+        lines.append(f"- **Estimated cost per 1,000 articles:** ${per_1k:.4f}")
 
     # ── Structural-map depth budgeting (prompt size & any depth shrink) ──
     if _MAP_FITS:
@@ -1181,6 +2144,7 @@ async def main():
     _reset_fetch_via()
     _reset_tokens()
     _reset_map_fits()
+    _reset_article_validation_events()
     run_start = time.time()
     input_urls = []          # every URL the user supplied (for results.md)
     pagination_type = "single page"
@@ -1318,10 +2282,9 @@ async def main():
                 total_str = input("\n   📄 How many pages to scrape (including page 1)? → ").strip()
                 if total_str.isdigit() and int(total_str) >= 2:
                     total_pages = int(total_str)
-                    start_num = p2_num if p2_num is not None else 2
                     page_urls = [
                         pattern.format(page=n)
-                        for n in range(start_num, start_num + total_pages - 1)
+                        for n in _pagination_values(p1_num, p2_num, total_pages)
                     ]
                     print(f"   ✓ Will scrape {total_pages} pages ({len(page_urls)} after page 1)")
                     print(f"     First: {page_urls[0]}")
@@ -1361,6 +2324,7 @@ async def main():
     # agent so it generates its selector from the complete grid instead of a
     # one-card page (which produced 0 links before this change).
     scrolled_html_file = None
+    full_html = None
     if scroll_mode:
         full_html = await collect_listing_html(
             listing_url, mode=scroll_mode,
@@ -1383,27 +2347,77 @@ async def main():
     link_success, link_result = call_links_agent_cli(
         listing_url, api_key, model, html_file=scrolled_html_file)
 
+    all_dropped = []  # links the article-link filter removed, kept for auditing
+    link_coverage = []  # per-listing-page link recall sanity checks
+    link_recovery = []  # fallback repairs when generated selectors undercount
+
     if not link_success:
         error_msg = link_result.get("error", "Unknown error")
-        print(f"\n❌ Links extraction failed:\n{error_msg}")
-        write_results_md({
-            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            "run_dir": run_dir, "model": model,
-            "pagination_type": pagination_type, "input_urls": input_urls,
-            "requirements": requirements,
-            "pages_requested": len(page_urls) + 1, "pages_processed": 0,
-            "articles_extracted": 0, "articles_failed": 0, "clusters": 0,
-            "llm_calls": _LLM_CALLS,
-            "llm_calls_by_agent": dict(_LLM_CALLS_BY_AGENT),
-            "tokens_by_agent": dict(_TOKENS_BY_AGENT),
-            "elapsed_seconds": time.time() - run_start,
-            "errors": [f"Links extraction failed: {error_msg}"],
-        })
-        return
+        page1_links_raw = []
+        page1_links, recovery = recover_under_extracted_links(
+            page1_links_raw, [], full_html, listing_url, pattern,
+        )
+        if recovery:
+            recovery["page_num"] = 1
+            recovery["agent_error"] = error_msg
+            link_recovery.append(recovery)
+            print(
+                f"  ⚠ Links Agent failed, but recovery guard added "
+                f"{recovery['recovered_links_added']} article link(s) "
+                f"from the saved listing HTML"
+            )
+            link_result = {}
+            dropped1 = []
+        else:
+            page1_audit_html = full_html or await asyncio.to_thread(_quick_requests_fetch, listing_url)
+            page1_evidence = _save_listing_audit(
+                run_dir, 1, listing_url, page1_audit_html,
+                page1_links_raw, [], [],
+            )
+            link_coverage.append(_make_link_coverage_record(
+                1, listing_url, page1_links_raw, [], [],
+                page_html=page1_audit_html,
+                evidence=page1_evidence,
+            ))
+            _refresh_link_coverage_flags(link_coverage)
+            _atomic_json_write(os.path.join(run_dir, "link_coverage.json"), link_coverage)
+            if link_recovery:
+                _atomic_json_write(os.path.join(run_dir, "link_recovery.json"), link_recovery)
+            print(f"\n❌ Links extraction failed:\n{error_msg}")
+            write_results_md({
+                "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "run_dir": run_dir, "model": model,
+                "pagination_type": pagination_type, "input_urls": input_urls,
+                "scroll_mode": scroll_mode,
+                "scroll_rounds_requested": scroll_rounds if scroll_mode else None,
+                "load_more_selector": scroll_selector,
+                "requirements": requirements,
+                "pages_requested": len(page_urls) + 1, "pages_processed": 0,
+                "articles_extracted": 0, "articles_failed": 0, "clusters": 0,
+                "link_coverage": link_coverage,
+                "link_recovery": link_recovery,
+                "llm_calls": _LLM_CALLS,
+                "llm_calls_by_agent": dict(_LLM_CALLS_BY_AGENT),
+                "tokens_by_agent": dict(_TOKENS_BY_AGENT),
+                "elapsed_seconds": time.time() - run_start,
+                "errors": [f"Links extraction failed: {error_msg}"],
+            })
+            return
 
-    page1_links = link_result.get("data", {}).get("article_links", [])
-    all_dropped = []  # links the article-link filter removed, kept for auditing
-    page1_links, dropped1 = _filter_article_links(page1_links, listing_url, pattern)
+    if link_success:
+        page1_links_raw = link_result.get("data", {}).get("article_links", [])
+        page1_links, dropped1 = _filter_article_links(page1_links_raw, listing_url, pattern)
+        page1_links, recovery = recover_under_extracted_links(
+            page1_links_raw, page1_links, full_html, listing_url, pattern,
+        )
+        if recovery:
+            recovery["page_num"] = 1
+            link_recovery.append(recovery)
+            print(
+                f"  ⚠ Link recovery guard added {recovery['recovered_links_added']} "
+                f"article link(s) from the saved listing HTML"
+            )
+    page1_dropped = list(dropped1)
     for d in dropped1:
         d["page_num"] = 1
     all_dropped.extend(dropped1)
@@ -1413,19 +2427,55 @@ async def main():
     print(f"✓ Extracted {len(page1_links)} article links from page 1")
 
     if not page1_links:
+        recovery_html = full_html
+        if not recovery_html:
+            try:
+                recovery_html, _ = await fetch_page_structure(listing_url)
+            except Exception:
+                recovery_html = None
+        page1_links, recovery = recover_under_extracted_links(
+            page1_links_raw, page1_links, recovery_html, listing_url, pattern,
+        )
+        if recovery:
+            recovery["page_num"] = 1
+            link_recovery.append(recovery)
+            full_html = recovery_html
+            print(
+                f"  ⚠ Link recall validation recovered "
+                f"{recovery['recovered_links_added']} article link(s) from the DOM"
+            )
+
+    if not page1_links:
         print("❌ No article links found on page 1!")
+        page1_audit_html = full_html or await asyncio.to_thread(_quick_requests_fetch, listing_url)
+        page1_evidence = _save_listing_audit(
+            run_dir, 1, listing_url, page1_audit_html,
+            page1_links_raw, page1_links, page1_dropped,
+        )
+        link_coverage.append(_make_link_coverage_record(
+            1, listing_url, page1_links_raw, page1_links, page1_dropped,
+            page_html=page1_audit_html,
+            evidence=page1_evidence,
+        ))
+        _refresh_link_coverage_flags(link_coverage)
         if all_dropped:
             _atomic_json_write(
                 os.path.join(run_dir, "dropped_links.json"), all_dropped,
             )
+        _atomic_json_write(os.path.join(run_dir, "link_coverage.json"), link_coverage)
         write_results_md({
             "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
             "run_dir": run_dir, "model": model,
             "pagination_type": pagination_type, "input_urls": input_urls,
+            "scroll_mode": scroll_mode,
+            "scroll_rounds_requested": scroll_rounds if scroll_mode else None,
+            "load_more_selector": scroll_selector,
             "requirements": requirements,
             "pages_requested": len(page_urls) + 1, "pages_processed": 0,
             "articles_extracted": 0, "articles_failed": 0, "clusters": 0,
             "links_dropped": all_dropped,
+            "link_coverage": link_coverage,
+            "link_recovery": link_recovery,
             "llm_calls": _LLM_CALLS,
             "llm_calls_by_agent": dict(_LLM_CALLS_BY_AGENT),
             "tokens_by_agent": dict(_TOKENS_BY_AGENT),
@@ -1455,10 +2505,22 @@ async def main():
             )
             if full_html:
                 expanded = run_link_extraction_code(link_extraction_code, full_html)
+                page1_links_raw = expanded
                 expanded, dropped_dyn = _filter_article_links(expanded, listing_url, pattern)
+                expanded, recovery = recover_under_extracted_links(
+                    page1_links_raw, expanded, full_html, listing_url, pattern,
+                )
+                if recovery:
+                    recovery["page_num"] = 1
+                    link_recovery.append(recovery)
+                    print(
+                        f"  ⚠ Link recovery guard added "
+                        f"{recovery['recovered_links_added']} article link(s)"
+                    )
                 for d in dropped_dyn:
                     d["page_num"] = 1
                 all_dropped.extend(dropped_dyn)
+                page1_dropped.extend(dropped_dyn)
                 print(f"  ✓ {len(expanded)} links after {pagination_type} "
                       f"(was {len(page1_links)} on initial load)")
                 merged = {l["url"]: l for l in page1_links}
@@ -1466,6 +2528,20 @@ async def main():
                     merged.setdefault(l["url"], l)
                 page1_links = list(merged.values())
                 print(f"  ✓ {len(page1_links)} unique links total")
+
+    page1_audit_html = full_html or await asyncio.to_thread(_quick_requests_fetch, listing_url)
+    page1_evidence = _save_listing_audit(
+        run_dir, 1, listing_url, page1_audit_html,
+        page1_links_raw, page1_links, page1_dropped,
+    )
+    link_coverage.append(_make_link_coverage_record(
+        1, listing_url, page1_links_raw, page1_links, page1_dropped,
+        duplicate_count=max(len(page1_links) - len({l.get("url") for l in page1_links}), 0),
+        new_count=len(page1_links),
+        page_html=page1_audit_html,
+        evidence=page1_evidence,
+    ))
+    _refresh_link_coverage_flags(link_coverage)
 
     # ══════════════════════════════════════════════════════════
     # Phase 2 cont.: Process page 1 articles (LLM calls #2..N)
@@ -1475,9 +2551,59 @@ async def main():
     cluster_registry = {}  # sig_hash -> {code_file, code}
     seen_urls = set()
 
-    print(f"\n⏳ Fetching structural maps for page 1 ({len(page1_links)} articles)...")
-    arts, fails = await fetch_articles(page1_links, label=" [page 1]")
-    all_failures.extend(fails)
+    preflight_links = _select_preflight_links(page1_links)
+    print(f"\n⏳ Preflight-checking {len(preflight_links)} of "
+          f"{len(page1_links)} candidate article links...")
+    preflight_arts, preflight_fails = await fetch_articles(
+        preflight_links, label=" [preflight]",
+    )
+    link_preflight = _assess_link_preflight(preflight_arts)
+    link_preflight["fetch_failures"] = preflight_fails
+    _atomic_json_write(os.path.join(run_dir, "link_preflight.json"), link_preflight)
+    print(
+        f"  Article evidence: {link_preflight['article_like_pages']}/"
+        f"{link_preflight['sampled_pages']}; singleton structures: "
+        f"{link_preflight['singleton_pages']}/"
+        f"{link_preflight['sampled_pages']}"
+    )
+
+    if link_preflight["status"] == "rejected":
+        error_msg = (
+            "Link preflight rejected the candidate set: "
+            f"{link_preflight['article_like_pages']}/"
+            f"{link_preflight['sampled_pages']} sampled pages had article evidence "
+            f"and {link_preflight['singleton_pages']}/"
+            f"{link_preflight['sampled_pages']} had singleton DOM structures. "
+            "The link extractor likely selected navigation or section pages."
+        )
+        print(f"\n❌ {error_msg}")
+        write_results_md({
+            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "run_dir": run_dir, "model": model, "input_urls": input_urls,
+            "pagination_type": pagination_type, "scroll_mode": scroll_mode,
+            "scroll_rounds_requested": scroll_rounds if scroll_mode else None,
+            "load_more_selector": scroll_selector, "requirements": requirements,
+            "pages_requested": len(page_urls) + 1, "pages_processed": 0,
+            "articles_extracted": 0, "articles_failed": 0, "clusters": 0,
+            "links_dropped": all_dropped, "link_coverage": link_coverage,
+            "link_recovery": link_recovery, "link_preflight": link_preflight,
+            "llm_calls": _LLM_CALLS, "errors": [error_msg],
+            "llm_calls_by_agent": dict(_LLM_CALLS_BY_AGENT),
+            "tokens_by_agent": dict(_TOKENS_BY_AGENT),
+            "elapsed_seconds": time.time() - run_start,
+        })
+        raise SystemExit(2)
+
+    sampled_urls = {link["url"] for link in preflight_links}
+    remaining_links = [
+        link for link in page1_links if link["url"] not in sampled_urls
+    ]
+    remaining_arts, remaining_fails = await fetch_articles(
+        remaining_links, label=" [page 1]",
+    )
+    arts = preflight_arts + remaining_arts
+    all_failures.extend(preflight_fails)
+    all_failures.extend(remaining_fails)
 
     for a in page1_links:
         seen_urls.add(a["url"])
@@ -1497,11 +2623,17 @@ async def main():
         "total_pages": max_pages,
         "extracted_count": len(all_extracted),
         "failed_count": len(all_failures),
+        "pagination_type": pagination_type,
+        "scroll_mode": scroll_mode,
+        "scroll_rounds_requested": scroll_rounds if scroll_mode else None,
+        "load_more_selector": scroll_selector,
+        "link_recovery": link_recovery,
+        "link_preflight": link_preflight,
         "cluster_registry": {
             sig: {"code_file": v["code_file"]} for sig, v in cluster_registry.items()
         },
     }
-    save_incremental(run_dir, all_extracted, all_failures, progress, all_dropped)
+    save_incremental(run_dir, all_extracted, all_failures, progress, all_dropped, link_coverage)
     _atomic_json_write(os.path.join(run_dir, "extracted_links.json"), {
         "article_links": page1_links,
     })
@@ -1527,39 +2659,98 @@ async def main():
                 except Exception as e:
                     tb = traceback.format_exc()
                     print(f"  ❌ Failed to fetch page: {e}\n{tb}")
+                    page_evidence = _save_listing_audit(
+                        run_dir, page_num, page_url, None, [], [], [],
+                    )
+                    link_coverage.append(_make_link_coverage_record(
+                        page_num, page_url, [], [], [], fetch_error=f"{e}\n{tb}",
+                        evidence=page_evidence,
+                    ))
+                    _refresh_link_coverage_flags(link_coverage)
+                    progress["current_page"] = page_num
+                    save_incremental(run_dir, all_extracted, all_failures, progress, all_dropped, link_coverage)
                     continue
 
                 if not page_html:
                     print("  ❌ Empty response for listing page")
+                    page_evidence = _save_listing_audit(
+                        run_dir, page_num, page_url, "", [], [], [],
+                    )
+                    link_coverage.append(_make_link_coverage_record(
+                        page_num, page_url, [], [], [], page_html="",
+                        fetch_error="Empty response for listing page",
+                        evidence=page_evidence,
+                    ))
+                    _refresh_link_coverage_flags(link_coverage)
+                    progress["current_page"] = page_num
+                    save_incremental(run_dir, all_extracted, all_failures, progress, all_dropped, link_coverage)
                     continue
 
                 # Extract links using saved code
-                new_links_raw = run_link_extraction_code(
+                raw_links = run_link_extraction_code(
                     link_extraction_code, page_html,
                 )
-                new_links_raw, dropped_n = _filter_article_links(
-                    new_links_raw, listing_url, pattern,
+                accepted_links, dropped_n = _filter_article_links(
+                    raw_links, listing_url, pattern,
                 )
+                accepted_links, recovery = recover_under_extracted_links(
+                    raw_links, accepted_links, page_html, listing_url, pattern,
+                )
+                if recovery:
+                    recovery["page_num"] = page_num
+                    link_recovery.append(recovery)
+                    print(
+                        f"  ⚠ Link recovery guard added "
+                        f"{recovery['recovered_links_added']} article link(s)"
+                    )
                 for d in dropped_n:
                     d["page_num"] = page_num
                 all_dropped.extend(dropped_n)
                 if dropped_n:
                     print(f"  🧹 Dropped {len(dropped_n)} non-article "
                           f"(pagination/category) link(s)")
-                print(f"  Found {len(new_links_raw)} links on this page")
+                print(f"  Found {len(accepted_links)} links on this page")
 
                 # Deduplicate
                 new_links = []
-                for lnk in new_links_raw:
+                duplicate_count = 0
+                for lnk in accepted_links:
                     if lnk["url"] not in seen_urls:
                         seen_urls.add(lnk["url"])
                         new_links.append(lnk)
+                    else:
+                        duplicate_count += 1
 
                 print(f"  {len(new_links)} new (after dedup)")
 
+                page_evidence = _save_listing_audit(
+                    run_dir, page_num, page_url, page_html,
+                    raw_links, accepted_links, dropped_n,
+                )
+                link_coverage.append(_make_link_coverage_record(
+                    page_num, page_url, raw_links, accepted_links, dropped_n,
+                    duplicate_count=duplicate_count,
+                    new_count=len(new_links),
+                    page_html=page_html,
+                    evidence=page_evidence,
+                ))
+                _refresh_link_coverage_flags(link_coverage)
+
+                if "severe_page_overlap" in link_coverage[-1]["flags"]:
+                    print(
+                        f"  ⚠ Stopping pagination: {link_coverage[-1]['duplicate_ratio']:.0%} "
+                        "of this page's links were already seen"
+                    )
+                    progress["current_page"] = page_num
+                    save_incremental(
+                        run_dir, all_extracted, all_failures, progress,
+                        all_dropped, link_coverage,
+                    )
+                    break
+
                 if not new_links:
                     progress["current_page"] = page_num
-                    save_incremental(run_dir, all_extracted, all_failures, progress, all_dropped)
+                    save_incremental(run_dir, all_extracted, all_failures, progress, all_dropped, link_coverage)
                     continue
 
                 # Fetch article HTML + structural maps
@@ -1579,11 +2770,12 @@ async def main():
                 progress["current_page"] = page_num
                 progress["extracted_count"] = len(all_extracted)
                 progress["failed_count"] = len(all_failures)
+                progress["link_recovery"] = link_recovery
                 progress["cluster_registry"] = {
                     sig: {"code_file": v["code_file"]}
                     for sig, v in cluster_registry.items()
                 }
-                save_incremental(run_dir, all_extracted, all_failures, progress, all_dropped)
+                save_incremental(run_dir, all_extracted, all_failures, progress, all_dropped, link_coverage)
                 print(f"  💾 Saved (total: {len(all_extracted)} extracted, "
                       f"{len(all_failures)} failed)")
 
@@ -1603,7 +2795,14 @@ async def main():
         "status": "finished",
         "extracted_count": len(all_extracted),
         "failed_count": len(all_failures),
-    }, all_dropped)
+        "pagination_type": pagination_type,
+        "scroll_mode": scroll_mode,
+        "scroll_rounds_requested": scroll_rounds if scroll_mode else None,
+        "load_more_selector": scroll_selector,
+        "link_recovery": link_recovery,
+        "link_preflight": link_preflight,
+        "article_validation": list(_ARTICLE_VALIDATION_EVENTS),
+    }, all_dropped, link_coverage)
 
     _print_summary(run_dir, all_extracted, all_failures)
 
@@ -1614,6 +2813,9 @@ async def main():
         "run_dir": run_dir,
         "model": model,
         "pagination_type": pagination_type,
+        "scroll_mode": scroll_mode,
+        "scroll_rounds_requested": scroll_rounds if scroll_mode else None,
+        "load_more_selector": scroll_selector,
         "input_urls": input_urls,
         "requirements": requirements,
         "pages_requested": pages_processed,
@@ -1622,6 +2824,10 @@ async def main():
         "articles_failed": len(all_failures),
         "clusters": len(cluster_registry),
         "links_dropped": all_dropped,
+        "link_coverage": link_coverage,
+        "link_recovery": link_recovery,
+        "link_preflight": link_preflight,
+        "article_validation": list(_ARTICLE_VALIDATION_EVENTS),
         "llm_calls": _LLM_CALLS,
         "llm_calls_by_agent": dict(_LLM_CALLS_BY_AGENT),
         "elapsed_seconds": time.time() - run_start,
@@ -1642,6 +2848,7 @@ def _print_summary(run_dir, all_extracted, all_failures):
     print(f"   extracted_data_all.json  — all extracted data")
     print(f"   failed_links.json        — failures with reasons")
     print(f"   dropped_links.json       — links filtered out as non-article")
+    print(f"   link_coverage.json       — page-level link recall sanity checks")
     print(f"   progress.json            — run metadata")
     print(f"\n🏁 Orchestrator finished!")
 

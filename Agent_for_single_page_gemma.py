@@ -18,6 +18,8 @@ from utils import (
     fetch_page_structure as _utils_fetch_page_structure,
     count_tokens, input_token_budget, DEFAULT_INPUT_TOKEN_BUDGET,
     execute_generated_code_sandboxed,
+    analyze_output, display_sample_output,
+    fit_structural_map_to_budget,
 )
 
 random_num = random.randint(10000, 99999)
@@ -101,30 +103,129 @@ _FEW_SHOT_CODE = '''def extract_data(html_content):
     return data'''
 
 # --- Structural Map Generation ---
+# Byline/date live deep inside aside wrappers on modern news pages, so when a
+# large page's map is shrunk to fit the token budget those nodes get cut and the
+# agent returns author/date = N/A. These signals let us *pin* such nodes: even
+# past the depth cutoff we keep the few elements that look like an author or a
+# date, so the agent can always see a selector for them.
+_SEMANTIC_SIGNALS = (
+    'author', 'byline', 'writer', 'contributor',
+    'date', 'published', 'pubdate', 'timestamp', 'time-details',
+)
+_SEMANTIC_ITEMPROPS = ('author', 'datepublished', 'datemodified', 'datecreated')
+_MAX_PINNED_NODES = 12   # cap pinned nodes so the map stays small
+_MAX_PINNED_SCAN = 2000  # cap subtree scan so huge pages stay fast
+_METADATA_KEYS = {
+    'article:published_time', 'article:modified_time', 'author',
+    'date', 'datepublished', 'datemodified', 'og:title',
+}
+
+
+def _structural_attributes(el) -> Dict:
+    attributes = {}
+    if el.get('class'):
+        attributes['class'] = " ".join(el.get('class')[:2])
+    if el.get('id'):
+        attributes['id'] = el.get('id')
+    for name in ('datetime', 'itemprop', 'property', 'name'):
+        if el.get(name):
+            attributes[name] = el.get(name)
+    if el.name in {'meta', 'time'} and el.get('content'):
+        attributes['content'] = str(el.get('content'))[:200]
+    return attributes
+
+
+def _collect_document_metadata(soup) -> List[Dict]:
+    metadata = []
+    for element in soup.select('meta[property], meta[name], meta[itemprop], time[datetime]'):
+        key = str(
+            element.get('property') or element.get('name') or element.get('itemprop') or ''
+        ).lower()
+        if element.name != 'time' and key not in _METADATA_KEYS:
+            continue
+        metadata.append(_make_pinned_node(element))
+        if len(metadata) >= _MAX_PINNED_NODES:
+            break
+    return metadata
+
+
+def _is_semantic_node(el) -> bool:
+    """True if *el* looks like an author or date field worth pinning."""
+    name = getattr(el, 'name', None)
+    if not name:
+        return False
+    name = name.lower()
+    if name == 'time':
+        return True
+    if el.get('datetime'):
+        return True
+    itemprop = (el.get('itemprop') or '').lower()
+    if itemprop in _SEMANTIC_ITEMPROPS:
+        return True
+    rel = el.get('rel')
+    if rel and any(r.lower() == 'author' for r in rel):
+        return True
+    ident = (" ".join(el.get('class') or []) + " " + (el.get('id') or "")).lower()
+    return any(sig in ident for sig in _SEMANTIC_SIGNALS)
+
+
+def _make_pinned_node(el) -> Dict:
+    """Build a compact map node for a pinned author/date element."""
+    node = {'tag': el.name.lower(), 'attributes': _structural_attributes(el)}
+    text_content = el.get_text(strip=True)
+    if text_content:
+        node['text_snippet'] = (
+            text_content[:50].replace('\n', ' ') + ('...' if len(text_content) > 50 else '')
+        )
+    return node
+
+
+def _collect_pinned_nodes(element) -> List[Dict]:
+    """Scan below a truncated element for author/date nodes and pin them.
+
+    Returns compact nodes (deduped by tag+class+id) so a depth-shrunk map still
+    exposes byline/date selectors that would otherwise be cut off.
+    """
+    pinned: List[Dict] = []
+    seen_keys = set()
+    scanned = 0
+    for desc in element.descendants:
+        scanned += 1
+        if scanned > _MAX_PINNED_SCAN or len(pinned) >= _MAX_PINNED_NODES:
+            break
+        name = getattr(desc, 'name', None)
+        if not name or name.lower() not in TARGET_TAGS:
+            continue
+        if not _is_semantic_node(desc):
+            continue
+        key = (name.lower(), " ".join(desc.get('class') or []), desc.get('id') or "")
+        if key in seen_keys:
+            continue
+        seen_keys.add(key)
+        pinned.append(_make_pinned_node(desc))
+    return pinned
+
+
 def create_structural_map(soup: BeautifulSoup, depth: int = 0, max_depth: int = None) -> List[Dict]:
     """Recursively generates a simplified, nested structural map of the HTML.
 
     *max_depth* defaults to MAX_DEPTH; callers pass a smaller value to shrink an
-    over-large map so the prompt fits the input-token budget.
+    over-large map so the prompt fits the input-token budget. At the depth
+    cutoff, author/date nodes deeper in the subtree are still *pinned* so a
+    shrunk map keeps byline/date selectors visible to the agent.
     """
     if max_depth is None:
         max_depth = MAX_DEPTH
     if depth >= max_depth:
-        return []
+        return _collect_pinned_nodes(soup)
 
-    structure = []
+    structure = _collect_document_metadata(soup) if depth == 0 else []
     
     for child in soup.children:
         if child.name and child.name.lower() in TARGET_TAGS:
-            attributes = {}
-            if child.get('class'):
-                attributes['class'] = " ".join(child.get('class')[:2]) 
-            if child.get('id'):
-                attributes['id'] = child.get('id')
-
             node = {
                 'tag': child.name.lower(),
-                'attributes': attributes,
+                'attributes': _structural_attributes(child),
                 'children': create_structural_map(child, depth + 1, max_depth)
             }
             
@@ -370,112 +471,27 @@ def execute_extraction_code(code: str, html_content: str) -> Tuple[bool, any]:
         result = {k: (_normalize_whitespace(v) if isinstance(v, str) else v) for k, v in result.items()}
     return ok, result
 
-# --- Output Analysis ---
-def analyze_output(data: Dict) -> Dict:
-    """Generate statistics about the extracted data."""
-    stats = {
-        'total_fields': len(data),
-        'fields': list(data.keys()),
-        'field_details': {}
-    }
-    
-    for key, value in data.items():
-        if isinstance(value, str):
-            stats['field_details'][key] = {
-                'type': 'string',
-                'length': len(value),
-                'preview': value[:100] + '...' if len(value) > 100 else value,
-                'is_empty': len(value.strip()) == 0,
-                'starts_with_error': value.startswith(('N/A', 'ERROR', 'Error', 'Extraction Error'))
-            }
-        elif isinstance(value, (list, tuple)):
-            stats['field_details'][key] = {
-                'type': 'list',
-                'count': len(value),
-                'preview': str(value[:3]) + '...' if len(value) > 3 else str(value)
-            }
-        elif isinstance(value, dict):
-            stats['field_details'][key] = {
-                'type': 'dict',
-                'keys': list(value.keys()),
-                'preview': str(value)[:100] + '...'
-            }
-        else:
-            stats['field_details'][key] = {
-                'type': type(value).__name__,
-                'value': str(value)
-            }
-    
-    return stats
-
-
-def display_sample_output(data: Dict, stats: Dict):
-    """Display sample output and statistics to the user."""
-    print("\n" + "="*60)
-    print("📊 EXTRACTION RESULTS")
-    print("="*60)
-    
-    print(f"\n✓ Total fields extracted: {stats['total_fields']}")
-    print(f"✓ Fields: {', '.join(stats['fields'])}")
-    
-    print("\n" + "-"*60)
-    print("SAMPLE OUTPUT:")
-    print("-"*60)
-    
-    for field, details in stats['field_details'].items():
-        print(f"\n[{field}]")
-        print(f"  Type: {details['type']}")
-        
-        if details['type'] == 'string':
-            status = "❌ EMPTY" if details['is_empty'] else ("⚠️  ERROR" if details['starts_with_error'] else "✓")
-            print(f"  Status: {status}")
-            print(f"  Length: {details['length']} characters")
-            print(f"  Preview: {details['preview']}")
-        elif details['type'] == 'list':
-            print(f"  Count: {details['count']} items")
-            print(f"  Preview: {details['preview']}")
-        else:
-            print(f"  Preview: {details.get('preview', details.get('value', 'N/A'))}")
-    
-    print("\n" + "="*60)
-
-
 # --- Main Agent Logic ---
 def _fit_map_to_budget(agent, html_content, structural_map, page_url, requirements, budget):
-    """Return (structural_map, structural_map_json, depth_used, tokens).
+    """Fit the article map while retaining article-specific prompt arguments."""
+    body = None
 
-    Serializes the map with ensure_ascii=False so non-ASCII scripts (e.g. Arabic)
-    stay single characters instead of 6-char \\uXXXX escapes that would ~6x the
-    token count. If the full-depth prompt still exceeds *budget* tokens, rebuilds
-    the map at progressively shallower depths (MAX_DEPTH-1 down to MIN_MAP_DEPTH)
-    until it fits, so large pages don't blow the model's context window or the
-    per-minute input-token quota.
-    """
-    smj = json.dumps(structural_map, ensure_ascii=False)
-    toks = count_tokens(agent.model, agent._build_prompt(smj, requirements, page_url))
-    print(f"  📏 Input prompt: ~{toks} tokens at full depth {MAX_DEPTH} (budget {budget}).", flush=True)
-    if toks <= budget:
-        return structural_map, smj, MAX_DEPTH, toks
+    def rebuild_map(depth):
+        nonlocal body
+        if body is None:
+            soup = BeautifulSoup(html_content, 'lxml')
+            body = soup.body if soup.body else soup
+        return create_structural_map(body, max_depth=depth)
 
-    print(f"  ⚠  Over budget by ~{toks - budget} tokens — shrinking map depth to fit...", flush=True)
-    soup = BeautifulSoup(html_content, 'lxml')
-    body = soup.body if soup.body else soup
-    last = None
-    for d in range(MAX_DEPTH - 1, MIN_MAP_DEPTH - 1, -1):
-        m = create_structural_map(body, max_depth=d)
-        mj = json.dumps(m, ensure_ascii=False)
-        t = count_tokens(agent.model, agent._build_prompt(mj, requirements, page_url))
-        fits = t <= budget
-        print(f"     depth {d}: ~{t} tokens  {'✓ fits' if fits else '✗ still over'}", flush=True)
-        if fits:
-            return m, mj, d, t
-        last = (m, mj, d, t)
-
-    # Nothing fit even at the floor depth — send the smallest map anyway; the
-    # model may still accept it, otherwise it fails loudly instead of truncating.
-    m, mj, d, t = last
-    print(f"  ⚠  Still ~{t} tokens at floor depth {d} (budget {budget}); sending anyway.", flush=True)
-    return m, mj, d, t
+    return fit_structural_map_to_budget(
+        agent.model,
+        structural_map,
+        MAX_DEPTH,
+        MIN_MAP_DEPTH,
+        budget,
+        lambda map_json: agent._build_prompt(map_json, requirements, page_url),
+        rebuild_map,
+    )
 
 
 async def main():
@@ -657,20 +673,51 @@ async def main():
 
 
 # --- CLI (non-interactive) mode for orchestration ---
+def build_structure_from_html(html_content: str) -> Tuple[Optional[str], Optional[List[Dict]]]:
+    """Build a structural map from already-fetched HTML (no network/browser).
+
+    Mirrors utils.fetch_page_structure's mapping step so the map matches the
+    exact HTML the extraction code will later run against. This avoids a subtle
+    failure mode where the map is built from a JS-rendered DOM (with dynamic
+    classes like ``active`` that JavaScript adds at runtime) while extraction
+    runs on static HTML that lacks those classes — making the LLM pick selectors
+    that match nothing.
+    """
+    if not html_content:
+        return None, None
+    soup = BeautifulSoup(html_content, 'lxml')
+    structural_map = create_structural_map(soup.body if soup.body else soup)
+    return html_content, structural_map
+
+
 async def main_cli(url: str, api_key: str, requirements: str, model: str = 'gemma-3-27b-it', max_retries: int = 0,
-                   max_input_tokens: int = DEFAULT_INPUT_TOKEN_BUDGET):
+                   max_input_tokens: int = DEFAULT_INPUT_TOKEN_BUDGET, html_file: Optional[str] = None):
     """Non-interactive entry point. Returns paths via JSON line on stdout.
 
     Prints a JSON object on success:
       {"status": "ok", "code_file": "...", "output_file": "...", "data": {...}}
     Or on failure:
       {"status": "error", "error": "..."}
+
+    When *html_file* is given, the structural map is built from that exact HTML
+    instead of re-fetching the page, so the map and the extraction target are
+    the same DOM.
     """
     agent = GemmaAgent(api_key, model)
 
     reset_token_usage()
-    print(f"⏳ Fetching page structure from {url}...", flush=True)
-    html_content, structural_map = await fetch_page_structure(url)
+    if html_file:
+        print(f"⏳ Building page structure from provided HTML: {html_file}...", flush=True)
+        try:
+            with open(html_file, "r", encoding="utf-8") as f:
+                provided_html = f.read()
+        except OSError as exc:
+            print(json.dumps({"status": "error", "error": f"Failed to read HTML file: {exc}"}))
+            return
+        html_content, structural_map = build_structure_from_html(provided_html)
+    else:
+        print(f"⏳ Fetching page structure from {url}...", flush=True)
+        html_content, structural_map = await fetch_page_structure(url)
 
     if not html_content or not structural_map:
         print(json.dumps({"status": "error", "error": "Failed to fetch page structure"}))
@@ -748,11 +795,13 @@ if __name__ == "__main__":
     parser.add_argument("--max-retries", type=int, default=0, help="Max retries in CLI mode (default: 0 = single attempt)")
     parser.add_argument("--max-input-tokens", type=int, default=DEFAULT_INPUT_TOKEN_BUDGET,
                         help=f"Per-request input-token budget (default {DEFAULT_INPUT_TOKEN_BUDGET}, sized for the free-tier per-minute cap; raise for paid tiers/larger models)")
+    parser.add_argument("--html-file", type=str, default=None,
+                        help="Build the structural map from this local HTML file instead of re-fetching the URL (keeps the map and extraction target identical)")
     args = parser.parse_args()
 
     if args.url and args.api_key and args.requirements:
         # Non-interactive CLI mode
-        asyncio.run(main_cli(args.url, args.api_key, args.requirements, args.model, args.max_retries, args.max_input_tokens))
+        asyncio.run(main_cli(args.url, args.api_key, args.requirements, args.model, args.max_retries, args.max_input_tokens, args.html_file))
     else:
         # Interactive mode (original behavior)
         asyncio.run(main())

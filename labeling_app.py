@@ -27,6 +27,7 @@ import sys
 import threading
 import unicodedata
 import uuid
+from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 from typing import Any
@@ -238,6 +239,129 @@ def _load_run_list(meta: dict[str, Any], filename: str) -> list[dict[str, Any]]:
         return []
     data = _read_json(run_path / filename, [])
     return data if isinstance(data, list) else []
+
+
+def _load_run_dict(meta: dict[str, Any], filename: str) -> dict[str, Any]:
+    run_path = _linked_run_path(meta)
+    if not run_path:
+        return {}
+    data = _read_json(run_path / filename, {})
+    return data if isinstance(data, dict) else {}
+
+
+def _article_validation_events(meta: dict[str, Any]) -> list[dict[str, Any]]:
+    progress = _load_run_dict(meta, "progress.json")
+    events = progress.get("article_validation", []) if progress else []
+    return events if isinstance(events, list) else []
+
+
+def _metadata_article_links_by_page(meta: dict[str, Any]) -> dict[int, list[dict[str, Any]]]:
+    links_by_page: dict[int, list[dict[str, Any]]] = defaultdict(list)
+    seen_by_page: dict[int, set[str]] = defaultdict(set)
+    for article in meta.get("articles", []) or []:
+        try:
+            page_num = int(article.get("page_num") or 1)
+        except (TypeError, ValueError):
+            page_num = 1
+        url = str(article.get("url", "")).strip()
+        if not url or url in seen_by_page[page_num]:
+            continue
+        seen_by_page[page_num].add(url)
+        links_by_page[page_num].append({
+            "id": article.get("id", ""),
+            "url": url,
+            "title": article.get("title", ""),
+        })
+    return links_by_page
+
+
+def _audit_article_links(meta: dict[str, Any], row: dict[str, Any]) -> list[dict[str, Any]]:
+    audit_file = row.get("link_audit_file")
+    path = _safe_run_audit_file(meta, str(audit_file)) if audit_file else None
+    if not path:
+        return []
+    data = _read_json(path, {})
+    links = data.get("accepted_links", []) if isinstance(data, dict) else []
+    return links if isinstance(links, list) else []
+
+
+def _needs_dynamic_count_flag(meta: dict[str, Any]) -> bool:
+    pagination_type = str(meta.get("pagination_type", "")).lower()
+    is_dynamic = "infinite" in pagination_type or "load more" in pagination_type
+    return is_dynamic and not meta.get("scroll_rounds_requested")
+
+
+def _coverage_rows(meta: dict[str, Any]) -> list[dict[str, Any]]:
+    metadata_links = _metadata_article_links_by_page(meta)
+    dynamic_count_missing = _needs_dynamic_count_flag(meta)
+    coverage = _load_run_list(meta, "link_coverage.json")
+    if coverage:
+        rows = []
+        for row in coverage:
+            row = dict(row)
+            try:
+                page_num = int(row.get("page_num") or 1)
+            except (TypeError, ValueError):
+                page_num = 1
+            row["article_links"] = _audit_article_links(meta, row) or metadata_links.get(page_num, [])
+            if dynamic_count_missing:
+                flags = set(row.get("flags") or [])
+                flags.add("scroll_count_missing")
+                row["flags"] = sorted(flags)
+            rows.append(row)
+        return rows
+
+    listing_by_page: dict[int, dict[str, Any]] = {}
+    for listing in meta.get("listing_pages", []) or []:
+        try:
+            page_num = int(listing.get("page_num") or 1)
+        except (TypeError, ValueError):
+            page_num = 1
+        current = listing_by_page.get(page_num)
+        if not current or listing.get("expanded"):
+            listing_by_page[page_num] = listing
+
+    page_nums = sorted(set(metadata_links) | set(listing_by_page))
+    if not page_nums and meta.get("listing_url"):
+        page_nums = [1]
+
+    rows = []
+    for page_num in page_nums:
+        listing = listing_by_page.get(page_num, {})
+        article_links = metadata_links.get(page_num, [])
+        accepted = len(article_links)
+        flags = ["metadata_only"]
+        if dynamic_count_missing:
+            flags.append("scroll_count_missing")
+        rows.append({
+            "page_num": page_num,
+            "page_url": listing.get("url") or meta.get("listing_url", ""),
+            "raw_links": None,
+            "accepted_links": accepted,
+            "new_unique_links": accepted,
+            "duplicates": None,
+            "dropped_links": None,
+            "html_bytes": listing.get("bytes"),
+            "flags": flags,
+            "snapshot_listing_file": listing.get("file"),
+            "article_links": article_links,
+        })
+    return rows
+
+
+def _safe_run_audit_file(meta: dict[str, Any], filename: str) -> Path | None:
+    run_path = _linked_run_path(meta)
+    if not run_path:
+        return None
+    filename = (filename or "").replace("\\", "/")
+    if not filename.startswith("listing_audit/"):
+        return None
+    path = (run_path / filename).resolve()
+    try:
+        path.relative_to(run_path.resolve())
+    except ValueError:
+        return None
+    return path if path.exists() and path.is_file() else None
 
 
 def _is_na_value(value: Any) -> bool:
@@ -625,6 +749,7 @@ def _start_orchestrator_job(answers: list[str]) -> str:
     env = os.environ.copy()
     env["PYTHONUTF8"] = "1"
     env["PYTHONIOENCODING"] = "utf-8"
+    env["ORCH_ALLOW_STDIN_PROMPTS"] = "1"
     process = subprocess.Popen(
         [sys.executable, "-u", "orch_pag_snapshot.py"],
         cwd=str(WORKSPACE),
@@ -646,7 +771,7 @@ def _start_orchestrator_job(answers: list[str]) -> str:
     }
     if process.stdin is not None:
         process.stdin.write("\n".join(answers) + "\n")
-        process.stdin.close()
+        process.stdin.flush()
     thread = threading.Thread(target=_read_process_output, args=(job_id, process, log_path), daemon=True)
     thread.start()
     return job_id
@@ -771,6 +896,7 @@ def snapshot_page(snapshot_name: str):
     include_checked = request.args.get("include_checked") == "1"
     articles = _sample_articles(meta, labels, sample_size, seed, include_checked)
     summary = _label_summary(labels)
+    link_coverage = _coverage_rows(meta)
     return render_template(
         "labeling.html",
         page="snapshot",
@@ -780,6 +906,9 @@ def snapshot_page(snapshot_name: str):
         labels=labels,
         failed_links=_load_run_list(meta, "failed_links.json"),
         dropped_links=_load_run_list(meta, "dropped_links.json"),
+        article_validation=_article_validation_events(meta),
+        link_coverage=link_coverage,
+        coverage_flags=sum(1 for row in link_coverage if row.get("flags")),
         na_stats=_na_field_stats(_load_run_list(meta, "extracted_data_all.json")),
         summary=summary,
         sample_size=sample_size,
@@ -839,6 +968,44 @@ def review_dropped(snapshot_name: str):
         _record_note(snapshot_name, "dropped", labeler, note)
         return redirect(url_for("review_dropped", snapshot_name=snapshot_name, saved=1))
     return render_template("labeling.html", page="dropped", snapshot_name=snapshot_name, meta=meta, dropped=dropped, notes=notes)
+
+
+@app.route("/snapshots/<snapshot_name>/coverage", methods=["GET", "POST"])
+def review_coverage(snapshot_name: str):
+    meta = _load_snapshot_meta(snapshot_name)
+    if not meta:
+        abort(404)
+    coverage = _coverage_rows(meta)
+    notes = _load_keyed_notes(snapshot_name, "coverage")
+    if request.method == "POST":
+        key = request.form.get("key", "")
+        labeler = request.form.get("labeler", "").strip() or "anonymous"
+        note = {
+            "timestamp": datetime.now().isoformat(timespec="seconds"),
+            "labeler": labeler,
+            "website": meta.get("website", ""),
+            "page_num": request.form.get("page_num", ""),
+            "page_url": request.form.get("page_url", ""),
+            "flags": request.form.get("flags", ""),
+            "verdict": request.form.get("verdict", "needs_review"),
+            "notes": request.form.get("notes", "").strip(),
+        }
+        note["key"] = key or f"page_{note['page_num']}"
+        _record_note(snapshot_name, "coverage", labeler, note)
+        return redirect(url_for("review_coverage", snapshot_name=snapshot_name, saved=1))
+    return render_template("labeling.html", page="coverage", snapshot_name=snapshot_name, meta=meta, coverage=coverage, notes=notes)
+
+
+@app.route("/snapshots/<snapshot_name>/audit-file/<path:filename>")
+def run_audit_file(snapshot_name: str, filename: str):
+    meta = _load_snapshot_meta(snapshot_name)
+    if not meta:
+        abort(404)
+    path = _safe_run_audit_file(meta, filename)
+    if not path:
+        abort(404)
+    mimetype = "text/html" if path.suffix.lower() == ".html" else "application/json"
+    return app.response_class(path.read_text(encoding="utf-8", errors="replace"), mimetype=mimetype)
 
 
 @app.route("/snapshots/<snapshot_name>/na", methods=["GET", "POST"])
