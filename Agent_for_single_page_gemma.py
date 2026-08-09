@@ -2,6 +2,7 @@ import asyncio
 import json
 import os
 import re
+import time
 import random
 from typing import Dict, List, Optional, Tuple
 from playwright.async_api import async_playwright
@@ -9,14 +10,37 @@ from bs4 import BeautifulSoup
 import google.generativeai as genai
 from urllib.parse import urljoin, urlparse
 
+# Cloudflare-resistant page fetch lives in the shared core (utils), so this
+# agent no longer depends on the Links agent.
+from utils import (
+    _generate_with_retry, get_token_usage, reset_token_usage,
+    list_available_models,
+    fetch_page_structure as _utils_fetch_page_structure,
+    count_tokens, input_token_budget, DEFAULT_INPUT_TOKEN_BUDGET,
+    execute_generated_code_sandboxed,
+    analyze_output, display_sample_output,
+    fit_structural_map_to_budget,
+)
+
 random_num = random.randint(10000, 99999)
 
 # --- Configuration ---
 TARGET_TAGS = ['div', 'section', 'article', 'main', 'header', 'footer', 'nav',
                'ul', 'ol', 'li', 'a', 'h1', 'h2', 'h3', 'h4', 'p', 'span',
                'table', 'tr', 'td', 'th', 'figure', 'figcaption', 'time', 'img']
-MAX_DEPTH = 10
+MAX_DEPTH = 16   # modern article pages nest the byline/date deep behind CSS-in-JS
+                 # wrapper divs (e.g. arageek's author link sits at DOM depth ~17),
+                 # so a shallow map hid them and the agent returned author/date =
+                 # N/A. A shallow page's map is unchanged by a higher cap (recursion
+                 # stops at leaves), and _fit_map_to_budget shrinks any page whose
+                 # deeper map would exceed the input-token budget.
+MIN_MAP_DEPTH = 3      # floor when shrinking a too-large map to fit the token budget
 MAX_RETRIES = 3
+SANDBOX_TIMEOUT_SECONDS = 30
+SANDBOX_MAX_STDOUT = 1_000_000
+SANDBOX_MAX_STRING_LENGTH = 500_000
+SANDBOX_MAX_LIST_ITEMS = 5_000
+SANDBOX_MAX_DICT_KEYS = 200
 
 # Output folders
 CODE_DIR = "Agent_for_single_page_gemma_code"
@@ -71,7 +95,7 @@ _FEW_SHOT_CODE = '''def extract_data(html_content):
     # Body text
     body_div = soup.select_one('div.post-body')
     if body_div:
-        paragraphs = body_div.find_all('p')
+        paragraphs = body_div.find_all(['p', 'li'])
         data['body_text'] = '\\n'.join(p.get_text(strip=True) for p in paragraphs if p.get_text(strip=True))
     else:
         data['body_text'] = 'N/A'
@@ -79,25 +103,130 @@ _FEW_SHOT_CODE = '''def extract_data(html_content):
     return data'''
 
 # --- Structural Map Generation ---
-def create_structural_map(soup: BeautifulSoup, depth: int = 0) -> List[Dict]:
-    """Recursively generates a simplified, nested structural map of the HTML."""
-    if depth >= MAX_DEPTH:
-        return []
+# Byline/date live deep inside aside wrappers on modern news pages, so when a
+# large page's map is shrunk to fit the token budget those nodes get cut and the
+# agent returns author/date = N/A. These signals let us *pin* such nodes: even
+# past the depth cutoff we keep the few elements that look like an author or a
+# date, so the agent can always see a selector for them.
+_SEMANTIC_SIGNALS = (
+    'author', 'byline', 'writer', 'contributor',
+    'date', 'published', 'pubdate', 'timestamp', 'time-details',
+)
+_SEMANTIC_ITEMPROPS = ('author', 'datepublished', 'datemodified', 'datecreated')
+_MAX_PINNED_NODES = 12   # cap pinned nodes so the map stays small
+_MAX_PINNED_SCAN = 2000  # cap subtree scan so huge pages stay fast
+_METADATA_KEYS = {
+    'article:published_time', 'article:modified_time', 'author',
+    'date', 'datepublished', 'datemodified', 'og:title',
+}
 
-    structure = []
+
+def _structural_attributes(el) -> Dict:
+    attributes = {}
+    if el.get('class'):
+        attributes['class'] = " ".join(el.get('class')[:2])
+    if el.get('id'):
+        attributes['id'] = el.get('id')
+    for name in ('datetime', 'itemprop', 'property', 'name'):
+        if el.get(name):
+            attributes[name] = el.get(name)
+    if el.name in {'meta', 'time'} and el.get('content'):
+        attributes['content'] = str(el.get('content'))[:200]
+    return attributes
+
+
+def _collect_document_metadata(soup) -> List[Dict]:
+    metadata = []
+    for element in soup.select('meta[property], meta[name], meta[itemprop], time[datetime]'):
+        key = str(
+            element.get('property') or element.get('name') or element.get('itemprop') or ''
+        ).lower()
+        if element.name != 'time' and key not in _METADATA_KEYS:
+            continue
+        metadata.append(_make_pinned_node(element))
+        if len(metadata) >= _MAX_PINNED_NODES:
+            break
+    return metadata
+
+
+def _is_semantic_node(el) -> bool:
+    """True if *el* looks like an author or date field worth pinning."""
+    name = getattr(el, 'name', None)
+    if not name:
+        return False
+    name = name.lower()
+    if name == 'time':
+        return True
+    if el.get('datetime'):
+        return True
+    itemprop = (el.get('itemprop') or '').lower()
+    if itemprop in _SEMANTIC_ITEMPROPS:
+        return True
+    rel = el.get('rel')
+    if rel and any(r.lower() == 'author' for r in rel):
+        return True
+    ident = (" ".join(el.get('class') or []) + " " + (el.get('id') or "")).lower()
+    return any(sig in ident for sig in _SEMANTIC_SIGNALS)
+
+
+def _make_pinned_node(el) -> Dict:
+    """Build a compact map node for a pinned author/date element."""
+    node = {'tag': el.name.lower(), 'attributes': _structural_attributes(el)}
+    text_content = el.get_text(strip=True)
+    if text_content:
+        node['text_snippet'] = (
+            text_content[:50].replace('\n', ' ') + ('...' if len(text_content) > 50 else '')
+        )
+    return node
+
+
+def _collect_pinned_nodes(element) -> List[Dict]:
+    """Scan below a truncated element for author/date nodes and pin them.
+
+    Returns compact nodes (deduped by tag+class+id) so a depth-shrunk map still
+    exposes byline/date selectors that would otherwise be cut off.
+    """
+    pinned: List[Dict] = []
+    seen_keys = set()
+    scanned = 0
+    for desc in element.descendants:
+        scanned += 1
+        if scanned > _MAX_PINNED_SCAN or len(pinned) >= _MAX_PINNED_NODES:
+            break
+        name = getattr(desc, 'name', None)
+        if not name or name.lower() not in TARGET_TAGS:
+            continue
+        if not _is_semantic_node(desc):
+            continue
+        key = (name.lower(), " ".join(desc.get('class') or []), desc.get('id') or "")
+        if key in seen_keys:
+            continue
+        seen_keys.add(key)
+        pinned.append(_make_pinned_node(desc))
+    return pinned
+
+
+def create_structural_map(soup: BeautifulSoup, depth: int = 0, max_depth: int = None) -> List[Dict]:
+    """Recursively generates a simplified, nested structural map of the HTML.
+
+    *max_depth* defaults to MAX_DEPTH; callers pass a smaller value to shrink an
+    over-large map so the prompt fits the input-token budget. At the depth
+    cutoff, author/date nodes deeper in the subtree are still *pinned* so a
+    shrunk map keeps byline/date selectors visible to the agent.
+    """
+    if max_depth is None:
+        max_depth = MAX_DEPTH
+    if depth >= max_depth:
+        return _collect_pinned_nodes(soup)
+
+    structure = _collect_document_metadata(soup) if depth == 0 else []
     
     for child in soup.children:
         if child.name and child.name.lower() in TARGET_TAGS:
-            attributes = {}
-            if child.get('class'):
-                attributes['class'] = " ".join(child.get('class')[:2]) 
-            if child.get('id'):
-                attributes['id'] = child.get('id')
-
             node = {
                 'tag': child.name.lower(),
-                'attributes': attributes,
-                'children': create_structural_map(child, depth + 1)
+                'attributes': _structural_attributes(child),
+                'children': create_structural_map(child, depth + 1, max_depth)
             }
             
             if not node['children'] and child.text and len(child.text.strip()) > 5:
@@ -110,40 +239,16 @@ def create_structural_map(soup: BeautifulSoup, depth: int = 0) -> List[Dict]:
 
 
 async def fetch_page_structure(url: str) -> Tuple[Optional[str], Optional[List[Dict]]]:
-    """Fetch HTML and generate structural map."""
-    async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
-        page = await browser.new_page()
-        
-        await page.goto(url, wait_until="domcontentloaded", timeout=60000)
-        # Give JS a moment to render after DOM loads
-        await page.wait_for_timeout(2000)
-        html_content = await page.content()
+    """Fetch an article page (Cloudflare-resistant) and build its structural map.
 
-        await browser.close()
-        
-        soup = BeautifulSoup(html_content, 'lxml')
-        structural_map = create_structural_map(soup.body if soup.body else soup)
-        
-        return html_content, structural_map
+    Thin wrapper over utils.fetch_page_structure that passes this module's
+    content-tuned create_structural_map, so the single-page extraction prompt
+    is unchanged.
+    """
+    return await _utils_fetch_page_structure(url, create_structural_map)
 
 
 # --- LLM Integration ---
-async def list_available_models(api_key: str) -> List[str]:
-    """List all available Gemini models."""
-    try:
-        genai.configure(api_key=api_key)
-        models = genai.list_models()
-        available = []
-        for model in models:
-            if 'generateContent' in model.supported_generation_methods:
-                available.append(model.name)
-        return available
-    except Exception as e:
-        print(f"⚠️  Could not list models: {e}")
-        return []
-
-
 class GemmaAgent:
     """LLM agent using Gemma's prompt format with few-shot examples."""
 
@@ -153,12 +258,11 @@ class GemmaAgent:
         self.conversation_history = []
         self.model_name = model_name
     
-    def generate_extraction_code(self, structural_map: str, user_requirements: str = "", page_url: str = "", error_context: Optional[str] = None) -> str:
-        """Generate Python extraction code using Gemma's prompt format with few-shot learning."""
-
+    def _build_prompt(self, structural_map: str, user_requirements: str = "", page_url: str = "", error_context: Optional[str] = None) -> str:
+        """Assemble the Gemma prompt (shared by code generation and token counting)."""
         if not error_context:
             # ── Few-shot turn 1: teach the pattern ──────────────
-            prompt = f"""<start_of_turn>user
+            return f"""<start_of_turn>user
 You are a Python web-scraping expert. You will receive an HTML structural map (JSON), a target URL, and user requirements describing what data to extract. Your job is to write a single Python function called `extract_data(html_content)` that extracts the requested data from the page.
 
 Rules you MUST follow:
@@ -167,6 +271,7 @@ Rules you MUST follow:
 - Return a dict with keys matching the requested fields.
 - Use urljoin(base_url, href) to resolve relative URLs when extracting links. Derive base_url from the target URL.
 - Only use selectors (tags, classes, ids) that appear in the structural map. Do NOT invent selectors.
+- For long/body text, select the CONTAINER by its class or id, then collect text from ALL of its block children with a class-agnostic call like container.find_all(['p', 'li', 'h2', 'h3', 'blockquote']). Do NOT filter those children by their own class (e.g. avoid find_all('p', class_='wp-block-paragraph')) — other pages built from the same template often use plain <p>/<li> or a different class, so a class-specific selector returns nothing for them.
 - Return 'N/A' ONLY if no matching tag exists in the structural map AND all fallbacks fail.
 - Do NOT include import statements. Only output the function body.
 - Available in scope: BeautifulSoup, re, json, urljoin, urlparse.
@@ -203,7 +308,7 @@ Write only the Python function. No explanation, no imports.
 """
         else:
             # ── Retry turn: include the error ──────────────────
-            prompt = f"""<start_of_turn>user
+            return f"""<start_of_turn>user
 You are a Python web-scraping expert. Your previous code failed. Fix it.
 
 Here is a working example for reference:
@@ -232,14 +337,18 @@ Fix the code. Same rules:
 - Return a dict with keys matching the requested fields.
 - Use urljoin(base_url, href) for relative URLs.  base_url = '/'.join('{page_url}'.split('/')[:3])
 - Only use selectors from the structural map.
+- For body text, gather ALL block children of the container with find_all(['p', 'li', 'h2', 'h3', 'blockquote']) WITHOUT filtering by their class.
 - Available: BeautifulSoup, re, json, urljoin, urlparse
 - Output ONLY the corrected function. No explanation.
 <end_of_turn>
 <start_of_turn>model
 """
 
+    def generate_extraction_code(self, structural_map: str, user_requirements: str = "", page_url: str = "", error_context: Optional[str] = None) -> str:
+        """Generate Python extraction code using Gemma's prompt format with few-shot learning."""
+        prompt = self._build_prompt(structural_map, user_requirements, page_url, error_context)
         try:
-            response = self.model.generate_content(prompt)
+            response = _generate_with_retry(self.model, prompt)
             code = response.text
 
             # ── Extract just the Python function from Gemma's verbose output ──
@@ -291,211 +400,100 @@ Fix the code. Same rules:
 
 
 # --- Safe Code Execution ---
-def validate_code_safety(code: str) -> Tuple[bool, str]:
-    """Basic safety validation for generated code."""
-    code_no_comments = re.sub(r'#.*$', '', code, flags=re.MULTILINE)
-    dangerous_patterns = [
-        r'import\s+os',
-        r'import\s+sys',
-        r'import\s+subprocess',
-        r'import\s+requests',
-        r'import\s+socket',
-        r'import\s+pickle',
-        r'__import__',
-        r'eval\s*\(',
-        r'exec\s*\(',
-        r'(?<!re\.)compile\s*\(',
-        r'open\s*\(',
-        r'file\s*\(',
-    ]
-    
-    for pattern in dangerous_patterns:
-        if re.search(pattern, code_no_comments, re.IGNORECASE):
-            return False, f"Dangerous pattern detected: {pattern}"
-    
-    return True, "Code appears safe"
+def _validate_json_value(value, depth: int = 0) -> Tuple[bool, str]:
+    if depth > 10:
+        return False, "JSON output is nested too deeply"
+    if value is None or isinstance(value, (bool, int, float)):
+        return True, "ok"
+    if isinstance(value, str):
+        if len(value) > SANDBOX_MAX_STRING_LENGTH:
+            return False, "String output exceeds maximum length"
+        return True, "ok"
+    if isinstance(value, list):
+        if len(value) > SANDBOX_MAX_LIST_ITEMS:
+            return False, "List output exceeds maximum length"
+        for item in value:
+            ok, reason = _validate_json_value(item, depth + 1)
+            if not ok:
+                return ok, reason
+        return True, "ok"
+    if isinstance(value, dict):
+        if len(value) > SANDBOX_MAX_DICT_KEYS:
+            return False, "Object output has too many keys"
+        for key, item in value.items():
+            if not isinstance(key, str) or not key or len(key) > 100 or key.startswith('__'):
+                return False, "Object output contains an invalid key"
+            ok, reason = _validate_json_value(item, depth + 1)
+            if not ok:
+                return ok, reason
+        return True, "ok"
+    return False, f"Output contains non-JSON value: {type(value).__name__}"
+
+
+def _validate_extraction_output(result) -> Tuple[bool, str, Dict]:
+    """Validate the generated extractor's result against the single-page contract."""
+    if isinstance(result, list) and len(result) == 1 and isinstance(result[0], dict):
+        result = result[0]
+    if not isinstance(result, dict):
+        return False, "Output must be a JSON object", {}
+    ok, reason = _validate_json_value(result)
+    if not ok:
+        return False, reason, {}
+    return True, "Output schema is valid", result
+
+
+def _space_around_tags(html_content: str) -> str:
+    """Insert a space around every tag boundary so text separated by any tag
+    (a, span, strong, bdi, time, ...) does not get glued into one word when
+    extracted. Runs of whitespace are collapsed again by _normalize_whitespace,
+    so this only ever adds missing word separators, it never changes real words."""
+    return re.sub(r"(<[^>]+>)", r" \1 ", html_content)
+
+
+def _normalize_whitespace(text: str) -> str:
+    """Collapse runs of spaces/tabs (keeping line breaks) and trim each line."""
+    text = re.sub(r"[^\S\n]+", " ", text)
+    text = re.sub(r" *\n *", "\n", text)
+    return text.strip()
 
 
 def execute_extraction_code(code: str, html_content: str) -> Tuple[bool, any]:
-    """Execute the generated extraction code in a restricted environment."""
-
-    # If the code is just comments (LLM call failed), don't bother exec-ing
-    if all(line.strip() == '' or line.strip().startswith('#') for line in code.splitlines()):
-        return False, f"LLM ERROR: {code.replace('# ', '').strip()}"
-    
-    # Validate safety first
-    is_safe, safety_msg = validate_code_safety(code)
-    if not is_safe:
-        return False, f"SAFETY ERROR: {safety_msg}"
-
-    # Wrap urljoin/urlparse to handle non-string args
-    def safe_urljoin(base, url, *args, **kwargs):
-        if isinstance(base, list):
-            base = base[0] if base else ''
-        if isinstance(url, list):
-            url = url[0] if url else ''
-        return urljoin(str(base), str(url), *args, **kwargs)
-
-    def safe_urlparse(url, *args, **kwargs):
-        if isinstance(url, list):
-            url = url[0] if url else ''
-        return urlparse(str(url), *args, **kwargs)
-
-    # Create restricted namespace with proper imports
-    restricted_globals = {
-        '__builtins__': {
-            'print': print,
-            'len': len,
-            'str': str,
-            'int': int,
-            'float': float,
-            'bool': bool,
-            'list': list,
-            'dict': dict,
-            'set': set,
-            'tuple': tuple,
-            'range': range,
-            'enumerate': enumerate,
-            'zip': zip,
-            'filter': filter,
-            'map': map,
-            'sorted': sorted,
-            'any': any,
-            'all': all,
-            'max': max,
-            'min': min,
-            'sum': sum,
-            'None': None,
-            'True': True,
-            'False': False,
-            'isinstance': isinstance,
-            'hasattr': hasattr,
-            'getattr': getattr,
-        },
-        'BeautifulSoup': BeautifulSoup,
-        're': re,
-        'json': json,
-        'urljoin': safe_urljoin,
-        'urlparse': safe_urlparse,
-        'bs4': type('Module', (), {'BeautifulSoup': BeautifulSoup})(),
-    }
-    
-    def safe_import(name, *args, **kwargs):
-        allowed = {
-            'bs4': type('Module', (), {'BeautifulSoup': BeautifulSoup})(),
-            're': re,
-            'json': json,
-            'urllib.parse': type('Module', (), {'urljoin': safe_urljoin, 'urlparse': safe_urlparse})(),
-        }
-        if name in allowed:
-            return allowed[name]
-        raise ImportError(f"Import of '{name}' is not allowed")
-    
-    restricted_globals['__builtins__']['__import__'] = safe_import
-    
-    try:
-        # Snapshot keys before exec so we only pick up LLM-defined functions
-        pre_exec_keys = set(restricted_globals.keys())
-
-        exec(code, restricted_globals)
-        
-        # Auto-detect the user-defined function (Gemma may name it anything)
-        user_func = None
-        for name in restricted_globals:
-            if name in pre_exec_keys or name.startswith('__'):
-                continue
-            obj = restricted_globals[name]
-            if callable(obj):
-                user_func = obj
-                break
-
-        if user_func is None:
-            return False, "ERROR: Generated code does not contain any callable function"
-        
-        result = user_func(html_content)
-
-        # Normalize list-of-dicts → single dict
-        if isinstance(result, list) and len(result) == 1 and isinstance(result[0], dict):
-            result = result[0]
-        
-        return True, result
-        
-    except Exception as e:
-        import traceback
-        error_detail = traceback.format_exc()
-        return False, f"EXECUTION ERROR: {str(e)}\n\n{error_detail}"
-
-# --- Output Analysis ---
-def analyze_output(data: Dict) -> Dict:
-    """Generate statistics about the extracted data."""
-    stats = {
-        'total_fields': len(data),
-        'fields': list(data.keys()),
-        'field_details': {}
-    }
-    
-    for key, value in data.items():
-        if isinstance(value, str):
-            stats['field_details'][key] = {
-                'type': 'string',
-                'length': len(value),
-                'preview': value[:100] + '...' if len(value) > 100 else value,
-                'is_empty': len(value.strip()) == 0,
-                'starts_with_error': value.startswith(('N/A', 'ERROR', 'Error', 'Extraction Error'))
-            }
-        elif isinstance(value, (list, tuple)):
-            stats['field_details'][key] = {
-                'type': 'list',
-                'count': len(value),
-                'preview': str(value[:3]) + '...' if len(value) > 3 else str(value)
-            }
-        elif isinstance(value, dict):
-            stats['field_details'][key] = {
-                'type': 'dict',
-                'keys': list(value.keys()),
-                'preview': str(value)[:100] + '...'
-            }
-        else:
-            stats['field_details'][key] = {
-                'type': type(value).__name__,
-                'value': str(value)
-            }
-    
-    return stats
-
-
-def display_sample_output(data: Dict, stats: Dict):
-    """Display sample output and statistics to the user."""
-    print("\n" + "="*60)
-    print("📊 EXTRACTION RESULTS")
-    print("="*60)
-    
-    print(f"\n✓ Total fields extracted: {stats['total_fields']}")
-    print(f"✓ Fields: {', '.join(stats['fields'])}")
-    
-    print("\n" + "-"*60)
-    print("SAMPLE OUTPUT:")
-    print("-"*60)
-    
-    for field, details in stats['field_details'].items():
-        print(f"\n[{field}]")
-        print(f"  Type: {details['type']}")
-        
-        if details['type'] == 'string':
-            status = "❌ EMPTY" if details['is_empty'] else ("⚠️  ERROR" if details['starts_with_error'] else "✓")
-            print(f"  Status: {status}")
-            print(f"  Length: {details['length']} characters")
-            print(f"  Preview: {details['preview']}")
-        elif details['type'] == 'list':
-            print(f"  Count: {details['count']} items")
-            print(f"  Preview: {details['preview']}")
-        else:
-            print(f"  Preview: {details.get('preview', details.get('value', 'N/A'))}")
-    
-    print("\n" + "="*60)
-
+    """Execute generated code in a subprocess with validation and time limits."""
+    html_content = _space_around_tags(html_content)
+    ok, result = execute_generated_code_sandboxed(
+        code,
+        html_content,
+        _validate_extraction_output,
+        timeout_seconds=SANDBOX_TIMEOUT_SECONDS,
+        max_stdout=SANDBOX_MAX_STDOUT,
+    )
+    if ok and isinstance(result, dict):
+        result = {k: (_normalize_whitespace(v) if isinstance(v, str) else v) for k, v in result.items()}
+    return ok, result
 
 # --- Main Agent Logic ---
+def _fit_map_to_budget(agent, html_content, structural_map, page_url, requirements, budget):
+    """Fit the article map while retaining article-specific prompt arguments."""
+    body = None
+
+    def rebuild_map(depth):
+        nonlocal body
+        if body is None:
+            soup = BeautifulSoup(html_content, 'lxml')
+            body = soup.body if soup.body else soup
+        return create_structural_map(body, max_depth=depth)
+
+    return fit_structural_map_to_budget(
+        agent.model,
+        structural_map,
+        MAX_DEPTH,
+        MIN_MAP_DEPTH,
+        budget,
+        lambda map_json: agent._build_prompt(map_json, requirements, page_url),
+        rebuild_map,
+    )
+
+
 async def main():
     print("="*60)
     print("🤖 AI WEB SCRAPING AGENT (Gemma Edition)")
@@ -579,7 +577,12 @@ async def main():
 
     print("✓ Page structure fetched successfully!")
     
-    structural_map_json = json.dumps(structural_map, indent=2)
+    budget = input_token_budget(selected_model)
+    structural_map, structural_map_json, depth_used, ntok = _fit_map_to_budget(
+        agent, html_content, structural_map, url, requirements, budget)
+    if depth_used < MAX_DEPTH:
+        print(f"⚠  Large page (~{ntok} prompt tokens, budget {budget}): reduced "
+              f"structural-map depth to {depth_used} to fit the input-token quota.")
     
     # Step 2: Generate extraction code
     print("\n⏳ Generating extraction code with Gemma...")
@@ -670,18 +673,51 @@ async def main():
 
 
 # --- CLI (non-interactive) mode for orchestration ---
-async def main_cli(url: str, api_key: str, requirements: str, model: str = 'gemma-3-27b-it', max_retries: int = 0):
+def build_structure_from_html(html_content: str) -> Tuple[Optional[str], Optional[List[Dict]]]:
+    """Build a structural map from already-fetched HTML (no network/browser).
+
+    Mirrors utils.fetch_page_structure's mapping step so the map matches the
+    exact HTML the extraction code will later run against. This avoids a subtle
+    failure mode where the map is built from a JS-rendered DOM (with dynamic
+    classes like ``active`` that JavaScript adds at runtime) while extraction
+    runs on static HTML that lacks those classes — making the LLM pick selectors
+    that match nothing.
+    """
+    if not html_content:
+        return None, None
+    soup = BeautifulSoup(html_content, 'lxml')
+    structural_map = create_structural_map(soup.body if soup.body else soup)
+    return html_content, structural_map
+
+
+async def main_cli(url: str, api_key: str, requirements: str, model: str = 'gemma-3-27b-it', max_retries: int = 0,
+                   max_input_tokens: int = DEFAULT_INPUT_TOKEN_BUDGET, html_file: Optional[str] = None):
     """Non-interactive entry point. Returns paths via JSON line on stdout.
 
     Prints a JSON object on success:
       {"status": "ok", "code_file": "...", "output_file": "...", "data": {...}}
     Or on failure:
       {"status": "error", "error": "..."}
+
+    When *html_file* is given, the structural map is built from that exact HTML
+    instead of re-fetching the page, so the map and the extraction target are
+    the same DOM.
     """
     agent = GemmaAgent(api_key, model)
 
-    print(f"⏳ Fetching page structure from {url}...", flush=True)
-    html_content, structural_map = await fetch_page_structure(url)
+    reset_token_usage()
+    if html_file:
+        print(f"⏳ Building page structure from provided HTML: {html_file}...", flush=True)
+        try:
+            with open(html_file, "r", encoding="utf-8") as f:
+                provided_html = f.read()
+        except OSError as exc:
+            print(json.dumps({"status": "error", "error": f"Failed to read HTML file: {exc}"}))
+            return
+        html_content, structural_map = build_structure_from_html(provided_html)
+    else:
+        print(f"⏳ Fetching page structure from {url}...", flush=True)
+        html_content, structural_map = await fetch_page_structure(url)
 
     if not html_content or not structural_map:
         print(json.dumps({"status": "error", "error": "Failed to fetch page structure"}))
@@ -697,7 +733,12 @@ async def main_cli(url: str, api_key: str, requirements: str, model: str = 'gemm
     with open(structural_map_filename, "w", encoding="utf-8") as f:
         json.dump(structural_map, f, indent=2, ensure_ascii=False)
 
-    structural_map_json = json.dumps(structural_map, indent=2)
+    budget = input_token_budget(model, max_input_tokens)
+    structural_map, structural_map_json, depth_used, ntok = _fit_map_to_budget(
+        agent, html_content, structural_map, url, requirements, budget)
+    if depth_used < MAX_DEPTH:
+        print(f"  ⚠  Large page (~{ntok} prompt tokens, budget {budget}): reduced "
+              f"structural-map depth to {depth_used} to fit the input-token quota.", flush=True)
 
     retry_count = 0
     error_context = None
@@ -726,7 +767,10 @@ async def main_cli(url: str, api_key: str, requirements: str, model: str = 'gemm
                 "status": "ok",
                 "code_file": gen_code_filename,
                 "output_file": output_filename,
-                "data": result
+                "data": result,
+                "map_depth": depth_used,
+                "input_tokens": ntok,
+                "token_usage": get_token_usage()
             }), flush=True)
             return
         else:
@@ -749,11 +793,15 @@ if __name__ == "__main__":
     parser.add_argument("--requirements", type=str, help="Extraction requirements (CLI mode)")
     parser.add_argument("--model", type=str, default="gemma-3-27b-it", help="Model name")
     parser.add_argument("--max-retries", type=int, default=0, help="Max retries in CLI mode (default: 0 = single attempt)")
+    parser.add_argument("--max-input-tokens", type=int, default=DEFAULT_INPUT_TOKEN_BUDGET,
+                        help=f"Per-request input-token budget (default {DEFAULT_INPUT_TOKEN_BUDGET}, sized for the free-tier per-minute cap; raise for paid tiers/larger models)")
+    parser.add_argument("--html-file", type=str, default=None,
+                        help="Build the structural map from this local HTML file instead of re-fetching the URL (keeps the map and extraction target identical)")
     args = parser.parse_args()
 
     if args.url and args.api_key and args.requirements:
         # Non-interactive CLI mode
-        asyncio.run(main_cli(args.url, args.api_key, args.requirements, args.model, args.max_retries))
+        asyncio.run(main_cli(args.url, args.api_key, args.requirements, args.model, args.max_retries, args.max_input_tokens, args.html_file))
     else:
         # Interactive mode (original behavior)
         asyncio.run(main())

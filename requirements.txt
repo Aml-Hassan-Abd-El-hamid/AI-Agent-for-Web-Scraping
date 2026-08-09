@@ -1,0 +1,18 @@
+# Core dependencies for AI-Agent-for-Web-Scraping project
+
+# Google Gemini API (LLM for code generation and pattern matching)
+google-generativeai>=0.3.0
+
+# Web automation and HTML parsing
+playwright>=1.40.0
+beautifulsoup4>=4.12.0
+
+# HTTP requests (for cloudflare version and general HTTP)
+requests>=2.31.0
+lxml
+# Web framework (for evaluation app and dashboard)
+flask>=3.0.0
+
+# Optional: If running browser-dependent tests or CI/CD
+# playwright with browser binaries (install after: playwright install)
+# Note: Users may need to run: python -m playwright install
