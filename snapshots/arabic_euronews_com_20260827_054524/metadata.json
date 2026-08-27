@@ -1,0 +1,1994 @@
+{
+  "website": "arabic.euronews.com",
+  "snapshot_date": "2026-08-27T07:32:32",
+  "pagination_type": "load more button",
+  "scroll_mode": "load_more",
+  "scroll_rounds_requested": 2,
+  "load_more_selector": null,
+  "listing_url": "https://arabic.euronews.com/culture",
+  "input_urls": [
+    "https://arabic.euronews.com/culture"
+  ],
+  "pagination_pattern": null,
+  "requirements": "title, date, author, article body text",
+  "run_dir": "orch_runs/run_20260827_054524",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://arabic.euronews.com/culture",
+      "file": "listing_page_001.html",
+      "bytes": 1017400,
+      "sha1": "382aa8e11130fc58087502620e3c93249c63dc0a"
+    },
+    {
+      "page_num": 1,
+      "url": "https://arabic.euronews.com/culture",
+      "file": "listing_page_001_expanded.html",
+      "bytes": 1013350,
+      "sha1": "2aa81831fd18a92cb778f46f511cf751a32c2a9f",
+      "expanded": true
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://arabic.euronews.com/travel/2026/08/27/thailand-japan-or-australia-the-travel-destinations-dividing-gen-z-and-millennials",
+      "title": "تايلاند أم اليابان أم أستراليا: وجهات سفر تقسم جيل زد وجيل الألفية",
+      "page_num": 1,
+      "bytes": 699548,
+      "sha1": "74c7d7eac0c87b9b952010e25cd26438f8da1c6d"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://arabic.euronews.com/2026/08/26/iraq-coalition-withdrawal-germany-armed-factions-weapons",
+      "title": "العراق: انسحاب قوات التحالف الدولي يسير بوتيرة متسارعة",
+      "page_num": 1,
+      "bytes": 397819,
+      "sha1": "60780ea7bdf940484341ab68a45ed029be44d7db"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://arabic.euronews.com/my-europe/2026/08/26/rubio-opens-a-new-front-against-far-left-terrorism-washington-rallies-67-nations-and-hi",
+      "title": "روبيو يفتح جبهة جديدة ضد \"إرهاب اليسار المتطرف\".. واشنطن تحشد 67 دولة وتلوّح بتصنيفات جديدة",
+      "page_num": 1,
+      "bytes": 485601,
+      "sha1": "fc3662a10e68574fdb4e89a298d13217b01767a2"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://arabic.euronews.com/business/2026/08/26/nvidia-surpasses-q2-forecasts-with-962bn-in-revenue-as-ai-reaches-an-inflection-point",
+      "title": "إنفيديا تتجاوز توقعات الربع الثاني: إيرادات 96 مليار دولار ونقطة تحول للذكاء الاصطناعي",
+      "page_num": 1,
+      "bytes": 640325,
+      "sha1": "6b89e559c997789f862c281036a34c9436b2ea5e"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/26/tim-curry-legendary-star-of-the-rocky-horror-picture-show-and-it-dies-aged-80",
+      "title": "رحيل تيم كاري نجم \"روكي هورور بيكشر شو\" و\"إت\" عن عمر 80 عاما",
+      "page_num": 1,
+      "bytes": 480571,
+      "sha1": "2fb93e3fe5924b6e1af08168b7d58388980825e5"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/26/better-late-than-never-paris-gets-its-first-boutique-entirely-dedicated-to-butter",
+      "title": "باريس تفتتح أول متجر مخصص بالكامل للزبدة",
+      "page_num": 1,
+      "bytes": 475631,
+      "sha1": "975b41af5f57b5e04408c9335df68e8e919b9c8c"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/26/why-are-dolly-parton-fans-criticising-donald-trump",
+      "title": "لماذا يهاجم محبو دولي بارتون دونالد ترامب؟",
+      "page_num": 1,
+      "bytes": 452802,
+      "sha1": "f5313d07dc65ab12c26829b941ec72cbf98564fc"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/26/in-pictures-the-world-pays-tribute-to-country-music-queen-dolly-parton",
+      "title": "بالصور: العالم يكرم ملكة موسيقى الكانتري دوللي بارتون",
+      "page_num": 1,
+      "bytes": 382454,
+      "sha1": "5020512d4818c6465f527641dc8c09dd0d949931"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/26/unique-and-irreplaceable-dolly-parton-tributes-from-public-figures-and-celebrities",
+      "title": "\"فريدة ولا تعوض\": شخصيات عامة ومشاهير يحيون ذكرى دوللي بارتون",
+      "page_num": 1,
+      "bytes": 606137,
+      "sha1": "b8f89f9a48af6dd089f8e11d4944f2e3315ae9a4"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/25/country-music-icon-dolly-parton-dies-aged-80-family-announces",
+      "title": "وفاة أسطورة موسيقى \"الكانتري\" دوللي بارتون عن 80 عاما: العائلة تعلن",
+      "page_num": 1,
+      "bytes": 404665,
+      "sha1": "d44cdbb6105dd2ccefd8a3863007ca60c61ec2b7"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/25/blacksmiths-recreate-viking-age-anchor-using-ancient-techniques-in-denmark",
+      "title": "حرفيون يعيدون صنع مرساة من عصر الفايكنغ بتقنيات قديمة في الدنمارك",
+      "page_num": 1,
+      "bytes": 385358,
+      "sha1": "e624df2e25a2ad4082582ab351a6359fb51ffb6b"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/25/meet-the-new-james-bond-villain-saoirse-ronan-is-dead-serious-about-wanting-to-play-a-007",
+      "title": "سيرشا رونان جادة جدا في لعب شريرة جيمس بوند الجديدة",
+      "page_num": 1,
+      "bytes": 416310,
+      "sha1": "7b0b656d11eb9081752a00764c81569d773b622a"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/25/australia-bans-ai-generated-music-from-its-official-charts",
+      "title": "أستراليا تحظر الموسيقى المنتجة بالذكاء الاصطناعي من قوائمها الرسمية",
+      "page_num": 1,
+      "bytes": 427835,
+      "sha1": "afbca74f2c26eea1b4a220ffc06293821e69290a"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/25/has-there-been-pressure-on-russian-stadiums-to-cancel-the-planned-kanye-west-concerts",
+      "title": "هل تعرض ملعب روسي لضغوط لإلغاء حفلات كانييه ويست المقررة؟",
+      "page_num": 1,
+      "bytes": 403044,
+      "sha1": "f646b73a208be224f8397c2063e7112cb2571625"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://arabic.euronews.com/video/2026/07/28/south-lebanon-hkili-ya-jnoub-exhibition-beirut-memory-archive",
+      "title": "\"احكيلي يا جنوب\".. معرضٌ يروي حكايات الجنوب اللبناني بأصوات أهله وصورهم وذكرياتهم",
+      "page_num": 1,
+      "bytes": 445326,
+      "sha1": "79f77d182163e8ada7e101ae9d4babca8e4b9830"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://arabic.euronews.com/video/2026/07/24/uzbekistans-islamic-civilisation-centre-fosters-global-dialogue",
+      "title": "داخل مركز الحضارة الإسلامية الرائد في أوزبكستانبالمشاركة معIslamic Civilization Center in Uzbekistan",
+      "page_num": 1,
+      "bytes": 397007,
+      "sha1": "fcc52d7a7c3a323315f46f9bcdfd18bf24b365b1"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://arabic.euronews.com/video/2026/07/13/qatar-mexico-year-of-culture-builds-lasting-ties-beyond-the-world-cup",
+      "title": "قطر والمكسيك يلتقيان ثقافيا بعد كأس العالمبالمشاركة معMedia City",
+      "page_num": 1,
+      "bytes": 502610,
+      "sha1": "3434345da3a5c531174981f897c7a7a023a62d9b"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/25/are-we-getting-more-oasis-shows-in-2027-and-will-any-be-in-mainland-europe",
+      "title": "حفلات جديدة لفرقة أواسيس في ٢٠٢٧ وهل تشمل أوروبا القارية؟جمهور فرقة \"أوايسيس\" يزداد نفاد صبره يوما بعد يوم، في انتظار إعلان مواعيد جديدة للحفلات المقبلة وتوضيح خطط العودة إلى خشبة المسرح.25/08/2026",
+      "page_num": 1,
+      "bytes": 454161,
+      "sha1": "bbad00ce29d33815bf42cbd2c65afda7014903da"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/25/infamous-maradona-hand-of-god-ball-sells-for-29m-well-below-estimate",
+      "title": "كرة يد الله سيئة السمعة لمارادونا تباع مقابل 2 مليون و900 ألف يورو أقل من التقديراتكرة \"أديداس أزتيكا\" التي استُخدمت في هدفي مارادونا أمام إنجلترا في كأس العالم 1986، بيعت بأقل بكثير من تقدير ما قبل البيع المبلغ 8.6 مليون يورو.25/08/2026",
+      "page_num": 1,
+      "bytes": 399592,
+      "sha1": "40d9d5777bb3aa3c0538252de1919d3b0cf1a1a6"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/25/death-of-a-titan-of-french-radio-and-tv-emmanuel-macron-pays-tribute-to-philippe-bouvard",
+      "title": "رحيل عملاق الإذاعة والتلفزيون الفرنسي: إيمانويل ماكرون ينعى فيليب بوفارتوفي رجل الثقافة الفرنسي المحبوب فيليب بوفار عن 95 عاما بعد مسيرة زاخرة امتدت ستة عقود سجل خلالها رقما قياسيا عالميا، وقد أشاد الرئيس إيمانويل ماكرون به واصفا إياه بأنه \"روح حرة\".25/08/2026",
+      "page_num": 1,
+      "bytes": 394050,
+      "sha1": "647c34717c137f145c5340ee11248817673b4310"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/24/the-cat-in-the-hat-is-terrorising-tiktok-but-how-did-this-horror-trend-get-so-out-of-hand",
+      "title": "القط صاحب القبعة يرعب تيك توك: كيف خرج هذا الترند المرعب عن السيطرة؟خوف جديد ظهر، وهذه المرة يرتدي قبعة طويلة. وأصدرت الشرطة بيانا بعد أن أعرب بعض مستخدمي \"تيك توك\" عن قلقهم من شخصية \"القط ذو القبعة\" بحجم حقيقي تتجول في شوارع المملكة المتحدة وإيرلندا.24/08/2026",
+      "page_num": 1,
+      "bytes": 414828,
+      "sha1": "f4245d83dc77dececfeda6e057a02b17a3a5a9af"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/24/has-meghan-markle-already-been-dropped-from-starring-in-the-gentlemen-show-following-her-r",
+      "title": "هل جرى استبعاد ميغان ماركل من بطولة مسلسل \"ذا جنتلمن\" بعد عودتها إلى إنجلترا؟ترددت أنباء عن احتمال عودة ميغان ماركل إلى التمثيل بعد عودتها إلى المملكة المتحدة، غير أن دورا مفترضا في مسلسل \"The Gentlemen\" للمخرج \"Guy Ritchie\" تم سحبه \"بعد غضب شديد في المملكة المتحدة\"...24/08/2026",
+      "page_num": 1,
+      "bytes": 400402,
+      "sha1": "59b628a7ea187fdd674ee9acb07cbb0739bb3e68"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/24/dolly-parton-shares-health-update-and-considers-avatar-performances-in-future",
+      "title": "دولي بارتون تكشف تطورات حالتها الصحية وتدرس عروض \"أفاتار\" مستقبلاأسطورة الموسيقى البالغة من العمر 80 عاما كشفت عن مستجدات حالتها الصحية بعد اضطرارها لإلغاء إقامتها الفنية في فيغاس، وقالت إنها تفكر في تقديم عروض \"أفاتار\" مستقبلا.24/08/2026",
+      "page_num": 1,
+      "bytes": 660946,
+      "sha1": "b3967377eed19a8107962c3e9da78b57d89b597d"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/24/erling-haalands-new-haircut-goes-viral-and-sends-both-fans-and-celebrities-into-a-frenzy",
+      "title": "قصة شعر إيرلينغ هالاند الجديدة تنتشر كالنار وتثير جنون الجماهير والمشاهيرالنجم الكبير لمانشستر سيتي إيرلينغ هالاند ظهر بإطلالة جديدة مع انطلاق الدوري الإنجليزي الممتاز، فانقسمت آراء الجماهير. وقال زلاتان إبراهيموفيتش مازحا لهالاند: \"ماذا فعلت؟ هل خسرت رهانًا أم ماذا؟ احظرني وامسح رقمي\".24/08/2026",
+      "page_num": 1,
+      "bytes": 483680,
+      "sha1": "9fa7e3d2ce803bc5a35580c570c776f773ae9fa4"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/24/celebrities-call-for-the-protection-of-child-actors-following-the-death-of-hayden-panettie",
+      "title": "مشاهير يطالبون بحماية الممثلين الأطفال بعد وفاة هايدن بانيتييرلا تزال **هوليوود** تنعى وفاة الممثلة \"هاي دن بانيتيير\"، في حدث أعاد النقاش حول طريقة تعامل صناعة السينما مع النجوم الأطفال: \"ليس من المصادفة أن تعيش كثيرات من النجمات الطفلات، خصوصا من تعرضن لتسليع جنسي مبكر، حياة حزينة ونهايات مبكرة\".24/08/2026",
+      "page_num": 1,
+      "bytes": 492754,
+      "sha1": "cd5f38eb483d3252c4fe3c3d3c32ec073f0b05bf"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/24/dog-stars-and-dark-matter-the-best-things-to-do-hear-see-or-watch-in-europe-this-week",
+      "title": "\"دوغ ستارز\" و\"دارك ماتر\": أفضل ما يمكن فعله وسماعه ومشاهدته في أوروبا هذا الأسبوعمن لوحات الباستيل للفنانة النرويجية أستا نورريغارد إلى فيلم الحركة ما بعد الكارثة \"The Dog Stars\" لريدلي سكوت، هذه أبرز محطات الأجندة الثقافية هذا الأسبوع.24/08/2026",
+      "page_num": 1,
+      "bytes": 675009,
+      "sha1": "0de341c4d1bafd31a2931a73438e4ff93a1bf282"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/23/trump-sends-indiana-stone-to-italy-to-carve-the-columns-of-the-white-house-ballroom",
+      "title": "ترامب يرسل حجرا من إنديانا إلى إيطاليا لنحت أعمدة قاعة الرقص في البيت الأبيضمن سينحت أعمدة واجهة قاعة الرقص الجديدة في البيت الأبيض؟ الحجر الكلسي من إنديانا، لكنه سيُشغَّل في إيطاليا، ويرجّح أن يتولاه حرفيو الرخام في كارارا وتوسكانا لأسباب تاريخية.23/08/2026",
+      "page_num": 1,
+      "bytes": 493539,
+      "sha1": "f9b1bf75aef91a0045406ae86adace61c033def7"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/23/photo-gallery-the-best-of-the-festas-da-senhora-da-agonia",
+      "title": "ألبوم صور: أبرز لحظات مهرجان سيدة أغونياالذهب والجمال: في كل عام تصبح احتفالات \"Senhora da Agonia\" في مدينة فيانا دو كاستيلو أكثر من مجرد شعيرة دينية؛ فهي رمز حي للبلاد واحتفال بجمال وقوة المرأة المينيوية.23/08/2026",
+      "page_num": 1,
+      "bytes": 429098,
+      "sha1": "8c0446483b7984aa65c6c3f1da6bbc4145e6b6d8"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/22/what-is-aura-farming-the-strange-viral-battles-that-have-jumped-from-tiktok-to-the-streets",
+      "title": "ما معنى \"فارمير أورا\"؟ معارك غريبة انتقلت من \"تيك توك\" إلى الشوارعتحوّل معارك \"farmear aura\" الميمات والوضعيات والحركات المنتشرة على \"TikTok\" إلى منافسة يختبر فيها الشباب الكاريزما والأسلوب والثقة بالنفس.22/08/2026",
+      "page_num": 1,
+      "bytes": 491641,
+      "sha1": "784e42a9ae013117defc9b8c2ae4435d9de98e28"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/21/pompeii-life-continued-after-vesuvius-the-new-discovery-leads-to-the-renaissance",
+      "title": "بومبي: حياة بعد ثوران فيزوف واكتشاف جديد يكشف حضور عصر النهضةاكتشافات جديدة تعود إلى القرنين الخامس عشر والسادس عشر تعيد إحياء لغز بومبي؛ فالمدينة لم تُنسَ بعد ثوران البركان، بل ظلت حية في ذاكرة المنطقة.21/08/2026",
+      "page_num": 1,
+      "bytes": 489776,
+      "sha1": "e1bcb6b65da6920ee7bea0f1b25e3d4da6df8156"
+    },
+    {
+      "id": 31,
+      "file": "article_0031.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/21/euronews-cultures-film-of-the-week-fjord-a-worthy-2026-palme-dor-winner",
+      "title": "فيلم الأسبوع في يورونيوز كالشر: فيورد - هل يستحق السعفة الذهبية 2026؟تصطدم عائلة رومانية متديّنة بقيم النرويج الليبرالية عندما يُشتبه في إساءة الزوجين لأطفالهما. فيلم نال هذا العام جائزة \"السعفة الذهبية\" سيقسّم الآراء، وهذا هو المقصود.21/08/2026",
+      "page_num": 1,
+      "bytes": 515999,
+      "sha1": "2fe5ea87a864d761dabc4d98c677e7ca719c4bf5"
+    },
+    {
+      "id": 32,
+      "file": "article_0032.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/21/why-is-the-gwangju-biennale-refusing-to-call-taiwans-pavilion-the-taiwan-pavilion",
+      "title": "لماذا ترفض بينالي غوانغجو تسمية جناح تايوان \"جناح تايوان\"؟تتهم حكومة تايوان والفنانون المشاركون بينالي غوانغجو بممارسة الرقابة بعد أن أعادت تسمية معرضها باسم \"جناح المتحف الوطني للفنون الجميلة في تايوان\".21/08/2026",
+      "page_num": 1,
+      "bytes": 616331,
+      "sha1": "9ab792ead4c8c94da56ff86cf0619fe0d478edbb"
+    },
+    {
+      "id": 33,
+      "file": "article_0033.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/21/worlds-oldest-person-celebrates-117th-birthday-in-the-uk-what-is-the-secret-to-her-longevi",
+      "title": "أكبر معمرة في العالم تحتفل بعيد ميلادها 117 في بريطانيا: ما سر طول عمرها؟تعيش إيثيل كاترهام في مقاطعة سري البريطانية، ولدت عام 1909 وتبلغ من العمر 117 عاما وتحتفل اليوم بعيد ميلادها، وتحمل منذ العام الماضي لقب \"أكبر معمرة في العالم\" وهي من أقدم من تعافوا من كوفيد-19.21/08/2026",
+      "page_num": 1,
+      "bytes": 390377,
+      "sha1": "dde078ed149dd3e0e3c0ed4907e1f4e722d58c77"
+    },
+    {
+      "id": 34,
+      "file": "article_0034.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/21/diamonds-or-duds-are-these-the-most-overrated-albums-of-all-time",
+      "title": "تحفٌ فنية أم أوهام مقدّسة؟\" يورونيوز تُفكّك 12 ألبوماً كلاسيكياً لا يجرؤ أحد على المساس بهاحان الوقت لكسر بعض المحرمات الثقافية؛ قسم \"Euronews Culture\" يتخلى عن الحذر ويعيد تقييم الألبومات التي تُرفع كثيرا، وربما بلا استحقاق، إلى مرتبة \"التحفة الفنية\".21/08/2026",
+      "page_num": 1,
+      "bytes": 635981,
+      "sha1": "67bcb4cbd96ac25311fa85438eb0cd1a8c2a3fe9"
+    },
+    {
+      "id": 35,
+      "file": "article_0035.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/20/carthage-festival-60-did-tunisias-cultural-event-the-countrys-crises",
+      "title": "مهرجان قرطاج في عامه الستين.. هل صمد الموعد الثقافي الأبرز أمام أزمات تونس والمنطقة؟على الرغم من صعوبة الظرف الاقتصادي، لم يتخلَّ الجمهور التونسي عن موعده مع المهرجانات الصيفية، غير أن الملاحظة الميدانية تشير إلى أن مهرجان قرطاج شهد إقبالًا أقل نسبيًا مقارنة بالسنة الفارطة.20/08/2026",
+      "page_num": 1,
+      "bytes": 618528,
+      "sha1": "38d7536de7cc0b0dd669acde940eac9ec61b9515"
+    },
+    {
+      "id": 36,
+      "file": "article_0036.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/20/uk-cinemas-consider-banning-meta-pervert-glasses-due-to-piracy-and-privacy-concerns",
+      "title": "دور السينما في بريطانيا تدرس حظر نظارات ميتا بسبب مخاوف القرصنة والخصوصيةتدرس جمعية دور السينما في المملكة المتحدة فرض قيود على نظارات \"ميتا\"، التي توفر ميزات لذوي الإعاقة لكنها تتيح أيضا تسجيل الفيديو سرا.20/08/2026",
+      "page_num": 1,
+      "bytes": 493143,
+      "sha1": "cc0dc96fe275865b9568c1726704fe3dd0c1e0dc"
+    },
+    {
+      "id": 37,
+      "file": "article_0037.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/20/raiders-of-the-cookie-jar-harrison-ford-and-cookie-monster-break-the-internet",
+      "title": "غزاة علبة البسكويت: هاريسون فورد و\"كوكي مونستر\" يشعلان الإنترنت\"لقد جعل هذا شهري مميزا\". مقطع فيديو شاركه \"كوكي مونستر\" من برنامج \"شارع سمسم\" انتشر بشكل واسع، محققا ملايين المشاهدات وتعليقات مفعمة بالثناء.20/08/2026",
+      "page_num": 1,
+      "bytes": 648756,
+      "sha1": "f36be023dd2bfbc773c56025ef4e75503e72a823"
+    },
+    {
+      "id": 38,
+      "file": "article_0038.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/20/quevedo-temporarily-overtakes-rosalia-in-monthly-spotify-listens",
+      "title": "كيفيدو يتفوق على روساليا ويصبح الفنان الإسباني الأكثر استماعا على سبوتيفاييتصدر الفنان هذا الصيف ترتيب المنصة السويدية، التي تقدّر شهريا عدد الاستماعات لكل فنان، متقدما على زميلته الكتالونية وعلى \"Rels B\".20/08/2026",
+      "page_num": 1,
+      "bytes": 499536,
+      "sha1": "9b677d21040d83fdfc940c310e80e754b1af14d3"
+    },
+    {
+      "id": 39,
+      "file": "article_0039.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/20/an-alarming-study-reveals-that-almost-40-per-cent-of-music-released-globally-in-july-2026",
+      "title": "دراسة مقلقة: نحو 40% من الموسيقى الصادرة عالميا في يوليو 2026 استخدمت الذكاء الاصطناعيلا يزال استخدام **الذكاء الاصطناعي** في صناعة الموسيقى موضوعا مثيرا للانقسام، والأرقام الأخيرة تؤكد أن موجة الأعمال المولدة بهذه التقنية لا تتباطأ، والأسوأ أن بعض الفنانين باتوا يعلنون انفتاحهم على استعمالها.20/08/2026",
+      "page_num": 1,
+      "bytes": 508710,
+      "sha1": "2ea3699b2ba30294600b1a5ae2fb3aae5ead1bad"
+    },
+    {
+      "id": 40,
+      "file": "article_0040.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/19/why-is-this-christian-metal-band-suing-netflix-over-kpop-demon-hunters",
+      "title": "لماذا تقاضي فرقة ميتال مسيحية نتفليكس بسبب \"KPop Demon Hunters\"؟تركز الشكوى على جولة حفلات مباشرة أُعلن عنها حديثا لفرقة \"KPop Demon Hunters\"، والتي تؤكد فرقة الميتال أنها تؤدي إلى \"تداخل شبه كامل\" وستسبب ارتباكا.19/08/2026",
+      "page_num": 1,
+      "bytes": 474732,
+      "sha1": "4d805a5b81383461a5521bf8abef83d99c49a4cd"
+    },
+    {
+      "id": 41,
+      "file": "article_0041.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/19/celine-dion-reveals-she-relied-on-valium-during-17-years-of-undiagnosed-illness",
+      "title": "سيلين ديون تكشف اعتمادها على فاليوم طوال ١٧ عاما من مرض غير مشخصأمضت المغنية سنوات وهي تخفي أعراضها قبل أن تتلقى في عام 2022 تشخيصا بإصابتها بما يُعرف بمتلازمة الشخص المتصلب.19/08/2026",
+      "page_num": 1,
+      "bytes": 552527,
+      "sha1": "eaa79e2bb1535eeff5f508abe3d4941edbca2df4"
+    },
+    {
+      "id": 42,
+      "file": "article_0042.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/19/has-disney-found-a-million-alpacas-for-johnny-depps-return-to-the-pirates-of-the-caribbean",
+      "title": "هل توفر ديزني 1.000.000 ألباكا لعودة جوني ديب إلى قراصنة الكاريبي؟أفادت تقارير بأن **جوني ديب** يجري مفاوضات للعودة بدور **الكابتن جاك سبارو** في الجزء السادس من \"قراصنة الكاريبي\"، رغم طرده سابقا وتصريحه بأنه لن يعود حتى مقابل 300 مليون دولار و1.000.000 ألباكا.19/08/2026",
+      "page_num": 1,
+      "bytes": 716817,
+      "sha1": "0bc2dca31b3fef965fc1d68ac89cf0017960c65d"
+    },
+    {
+      "id": 43,
+      "file": "article_0043.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/19/disney-fights-back-abc-sues-trump-administration-over-threatened-broadcast-licences",
+      "title": "ديزني ترد:\"إيه بي سي\" تقاضي إدارة ترامب بسبب تهديد تراخيص البثهذه الدعوى القضائية تصعّد المواجهة المتفاقمة منذ أن أغضب جيمي كيميل دونالد ترامب بنكات لاذعة عن ميلانيا ترامب.19/08/2026",
+      "page_num": 1,
+      "bytes": 547000,
+      "sha1": "b236737eba7968f7999c1f41528738d61498cba8"
+    },
+    {
+      "id": 44,
+      "file": "article_0044.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/19/many-revelations-charles-spencer-to-tell-the-truth-about-his-sister-princess-diana-in-new",
+      "title": "كتاب جديد لتشارلز سبنسر يكشف حقائق عن شقيقته الأميرة دياناكتب إيرل سبنسر كتابا عن شقيقته الأميرة ديانا، ويتعهد فيه أن \"يقول الحقيقة\" عنها، في مذكرات يقول الناشرون إنها تتضمن \"الكثير من الأسرار\" عن حياتها.19/08/2026",
+      "page_num": 1,
+      "bytes": 478716,
+      "sha1": "195cb848575222a52802a7678328bb13acfe76c0"
+    },
+    {
+      "id": 45,
+      "file": "article_0045.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/19/beninese-french-singer-angelique-kidjo-makes-history-as-the-first-black-african-to-receive",
+      "title": "المغنية البنينية الفرنسية أنجيليك كيدجو أول أفريقية سوداء تنال نجمة في ممشى المشاهير بهوليوودقال رئيس بنين روموالد وادغني: \"بصيرورتها أول فنانة إفريقية تنال هذا التكريم العالمي، فقد نقشت الأيقونة البنينية اسمها في التاريخ وسمت بإيقاعات وإبداع وكرامة أمتنا إلى أعلى المستويات\".19/08/2026",
+      "page_num": 1,
+      "bytes": 450118,
+      "sha1": "c227626c385a202423d3f1b1a7fbba8aedacc61c"
+    },
+    {
+      "id": 46,
+      "file": "article_0046.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/19/one-of-the-most-naturally-innovative-drummers-zz-top-drummer-frank-beard-dies-aged-77",
+      "title": "وفاة فرانك بيرد عازف الدرامز في فرقة زي زي توب عن عمر 77 عاماكان بيرد عازف الطبول في فرقة الروك طوال 56 عاما، محافظا على الإيقاع في أبرز أغنيات الفرقة مثل \"Sharp Dressed Man\" و\"Gimme All Your Lovin\".19/08/2026",
+      "page_num": 1,
+      "bytes": 445691,
+      "sha1": "2a9809c9d8980886a4be6bd3f67bf835b48077b7"
+    },
+    {
+      "id": 47,
+      "file": "article_0047.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/19/thinking-outside-the-box-about-wellbeing-inside-the-uks-medicine-festival",
+      "title": "رفاه جديد خارج الصندوق: من قلب مهرجان ميديسين في المملكة المتحدةسافر أكثر من 10.000 شخص إلى مهرجان \"Medicine Festival\" للمشاركة في طقوس روحية عريقة، والرقص، وممارسة اليوغا، واستكشاف أساليب مختلفة لصحة الجسد والعقل، كثيرون منهم قدموا من أنحاء أوروبا.19/08/2026",
+      "page_num": 1,
+      "bytes": 566463,
+      "sha1": "9005fd991b638812ad1c967210b163fe1414cfbd"
+    },
+    {
+      "id": 48,
+      "file": "article_0048.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/19/the-great-grandfather-from-cordoba-of-the-spice-girls-leader-was-executed-after-the-civil",
+      "title": "أُعدم بعد الحرب الأهلية الإسبانية.. من هو جدّ غيري هاليويل الأكبر؟أُعدم إميليانو إيدالغو، العمدة الجمهوري السابق لبلدة دوس تورّيس، في 27 ديسمبر 1940 بعد إدانته من مجلس حرب فرانكوي. يكشف ملفه العسكري المؤلف من 116 صفحة عن التهم التي انتهت بإعدامه رميا بالرصاص.19/08/2026",
+      "page_num": 1,
+      "bytes": 447435,
+      "sha1": "bd43adf757926c00a9a699b1be1bd12bad6dae2d"
+    },
+    {
+      "id": 49,
+      "file": "article_0049.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/18/pyllida-law-celebrated-actress-and-mother-of-emma-thompson-dies-aged-94",
+      "title": "وفاة الممثلة البريطانية فيليدا لو والدة إيما تومسون عن عمر 94 عاماشاركت فيليدا لو بالتمثيل إلى جانب ابنتيها \"إيما\" و\"صوفي\" في العديد من الأعمال السينمائية، خلال مسيرة فنية امتدت على مدى ثمانية عقود.18/08/2026",
+      "page_num": 1,
+      "bytes": 540976,
+      "sha1": "d28e6c8a847579f749683d5c41f81576742a6344"
+    },
+    {
+      "id": 50,
+      "file": "article_0050.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/18/picasso-print-stolen-in-broad-daylight-from-milwaukee-gallery-found-eight-years-later",
+      "title": "استعادة مطبوعة لبيكاسو بعد 8 أعوام على سرقتها من معرض في ميلووكياكتشف مالك عقار محلي العمل الفني المسروق أثناء إفراغ شقة خالية، وسلّمه إلى الشرطة بعد أن تعرّف عليه تاجر تحف.18/08/2026",
+      "page_num": 1,
+      "bytes": 447432,
+      "sha1": "8ee353813041c11973941aed8d86aa712eaa9101"
+    },
+    {
+      "id": 51,
+      "file": "article_0051.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/18/the-latest-discovered-works-of-lorca-a-love-letter-interrupted-by-the-civil-war-and-an-unp",
+      "title": "بعد 90 عاماً على إعدامه.. قصيدة مجهولة ورسالة حب ضاعت وأعمال سينمائية تحيي أسطورة لوركا الخالدةلا يزال المتخصصون يعثرون على أعمال لوركا الشاعر والكاتب المسرحي الأندلسي، الذي قتله أعضاء \"Bando Nacional\" فجرا قبل 90 عاما بسبب مواقفه السياسية وميوله الجنسية. وتزامنا مع ذلك، يُرتقب عرض فيلميْن وثائقييْن  بين عامي 2026 و2027 يجسّدان شخصية ومسيرة الكاتب.18/08/2026",
+      "page_num": 1,
+      "bytes": 404788,
+      "sha1": "d4156dd625db2f213ef6f2d06548438f8f47b983"
+    },
+    {
+      "id": 52,
+      "file": "article_0052.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/18/laura-cardoso-a-legend-of-brazilian-soap-operas-has-died-the-actress-was-98-years-old",
+      "title": "وفاة الممثلة البرازيلية لورا كاردوسو أسطورة المسلسلات عن عمر 98 عاماأكّدت العائلة خبر الوفاة عبر الحساب الرسمي للممثلة على \"إنستغرام\". وعلى شاشة التلفزيون برزت في مسلسلات مثل \"Chocolate com Pimenta\" و\"Caminho das Índias\" و\"Gabriela\".18/08/2026",
+      "page_num": 1,
+      "bytes": 474588,
+      "sha1": "322155cbfc10755117aa4827da606fb5a32f045b"
+    },
+    {
+      "id": 53,
+      "file": "article_0053.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/18/niu-lai-how-is-a-disaster-level-chinese-animated-film-rivalling-the-odyssey-at-the-box-off",
+      "title": "\"نيو لاي\" فيلم رسوم متحركة صيني كارثي ينافس \"الأوديسة\" في شباك التذاكر؟فيلم رسوم متحركة منخفض الكلفة وبمظهر رديء تحوّل إلى أنجح مفاجآت شباك التذاكر في الصين هذا الصيف. كيف حوّل \"Niu Lai\" السخرية على الإنترنت إلى أرباح ضخمة وظاهرة فيروسية؟18/08/2026",
+      "page_num": 1,
+      "bytes": 548043,
+      "sha1": "c5bb9f39202159002bdc97b91fc211e8819e69b4"
+    },
+    {
+      "id": 54,
+      "file": "article_0054.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/18/wladimir-klitschko-says-he-is-in-profound-shock-following-the-death-of-his-ex-partner-hayd",
+      "title": "فلاديمير كليتشكو: صدمة عميقة بعد وفاة شريكته السابقة هايدن بانيتيرفي منشور مؤثر على \"إنستغرام\"، استرجع كليتشكو لحظاتهما معا وكتب: \"لن يمحو شيء الأوقات التي تقاسمناها ولا المكانة التي كانت لها في حياتنا\".18/08/2026",
+      "page_num": 1,
+      "bytes": 475050,
+      "sha1": "57d8e6aafbfbf60de458bbcb90db484aed555ff1"
+    },
+    {
+      "id": 55,
+      "file": "article_0055.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/18/shakira-and-a-son-of-warren-buffet-announce-the-reconstruction-of-several-educational-cent",
+      "title": "شاكيرا ونجل وارن بافيت يعلنان إعادة بناء مراكز تعليمية في تشوكوالمغنية الكولومبية لن تتبرع مباشرة بمبلغ مليون دولار المعلن، بل سيتم توجيهه عبر مجموعتين تشارك فيهما، هما \"Global Citizen\" ومنظِّمة الحفلات \"Live Nation\".18/08/2026",
+      "page_num": 1,
+      "bytes": 473281,
+      "sha1": "924500467004fc303e29d0e4fd989fcaa722c24a"
+    },
+    {
+      "id": 56,
+      "file": "article_0056.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/18/kanye-ye-west-to-perform-in-russia-a-first-since-the-invasion-of-ukraine-in-2022",
+      "title": "كانييه \"يي\" ويست يحيي حفلا في روسيا: أول ظهور منذ غزو أوكرانيا 2022إذا أُقيمت الحفلتان المقررتان في العاشر و11 من تشرين الأول/أكتوبر، سيصبح **مغني الراب الأمريكي المثير للجدل** أول نجم موسيقي غربي كبير يحيي حفلا في روسيا منذ غزوها الشامل لأوكرانيا عام 2022.18/08/2026",
+      "page_num": 1,
+      "bytes": 466353,
+      "sha1": "e5be3f2efd17735fe68fc891dceacab272448ee4"
+    },
+    {
+      "id": 57,
+      "file": "article_0057.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/18/brazilian-restaurant-adapts-menus-to-climate-challenges",
+      "title": "مطعم برازيلي يعدل قوائم الطعام لمواجهة تحديات المناخيُعد أحد أوائل مطاعم أميركا اللاتينية الحاصلة على ثلاث نجوم \"ميشلان\"، ويتكيف مع مواسم المكونات في أطباقه، ليتعامل بمرونة وابتكار مع تحديات المناخ الحالية التي جعلت الطقس أكثر تقلبا.18/08/2026",
+      "page_num": 1,
+      "bytes": 556166,
+      "sha1": "b72a61c81b902157f039044484a98893f4e55ce6"
+    },
+    {
+      "id": 58,
+      "file": "article_0058.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/17/watch-viral-footage-of-actors-from-beatles-biopics-recreating-the-iconic-abbey-road-album",
+      "title": "شاهد لقطات منتشرة لممثلي أفلام بيتلز يجسدون غلاف \"آبي رود\" الأيقونيانتشر عبر الإنترنت مقطع من سلسلة الأفلام الأربعة \"The Beatles - A Four-Film Cinematic Event\"، يتضمن مشهدا يعيد غلاف ألبوم \"Abbey Road\" الشهير، مع إصدار متزامن للأفلام في نيسان 2028.17/08/2026",
+      "page_num": 1,
+      "bytes": 547475,
+      "sha1": "089993d27013d32afdd6abe3ceb8de40827328cc"
+    },
+    {
+      "id": 59,
+      "file": "article_0059.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/17/lolling-tongues-and-resting-snarl-faces-the-worlds-ugliest-dog-contest-in-pictures",
+      "title": "مسابقة أقبح كلب في العالم بالصور: ألسنة متدلية ووجوه عابسةفي النسخة الخمسين من المسابقة الأميركية في الولايات المتحدة، فاز كلب \"بَغ\" يبلغ من العمر ستة أعوام ويحمل اسم \"جيني لو\" بأعلى جائزة.17/08/2026",
+      "page_num": 1,
+      "bytes": 401646,
+      "sha1": "47c2a863f659680df97f6110bf21a695dc6ebeb3"
+    },
+    {
+      "id": 60,
+      "file": "article_0060.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/17/horsing-around-how-trumps-ai-george-washington-image-has-symbolically-backfired",
+      "title": "صورة ترامب مع جورج واشنطن بالذكاء الاصطناعي ترتد على ترامب رمزياأحدث صورة مولدة بالذكاء الاصطناعي لـ\"دونالد ترامب\" تُظهره يمتطي حصانا إلى جانب \"جورج واشنطن\"، لكنها ارتدت عليه بعدما أشار كثيرون إلى دلالات اختياره حصانا أسود في المناخ السياسي الحالي.17/08/2026",
+      "page_num": 1,
+      "bytes": 521503,
+      "sha1": "d1c686ec075d0ec68235e5347b653f6a83c42ea3"
+    },
+    {
+      "id": 61,
+      "file": "article_0061.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/17/a-better-tomorrow-uk-schoolchildren-get-the-chance-to-rewrite-the-ending-of-the-bayeux-tap",
+      "title": "\"غد أفضل\": تلاميذ مدارس في المملكة المتحدة يعيدون كتابة نهاية نسيج بايوبعد نحو 1.000 عام على نسجه، عاد \"نسيج بايو\" إلى إنجلترا، فيما يُطلب من تلاميذ المدارس في المملكة المتحدة تخيّل المشهد الأخير المفقود منه.17/08/2026",
+      "page_num": 1,
+      "bytes": 523151,
+      "sha1": "104ed0c458043872a720b1bea6666d08451693e4"
+    },
+    {
+      "id": 62,
+      "file": "article_0062.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/17/spider-man-brand-new-day-becomes-eighth-film-in-history-to-cross-2-billion-at-the-box-offi",
+      "title": "\"سبايدر مان: يوم جديد\" يصبح ثامن فيلم في التاريخ يتجاوز 2 مليار دولار في شباك التذاكرحقّق فيلم \"Spider-Man: Brand New Day\" من إنتاج \"مارفل\" إنجازا تاريخيا، إذ أصبح واحدا من ثمانية أفلام فقط تجاوزت إيراداته 2 مليار دولار، ويتجه لإنهاء عام 2026 بين أنجح الأفلام في شباك التذاكر عبر التاريخ.17/08/2026",
+      "page_num": 1,
+      "bytes": 481995,
+      "sha1": "236568cbb48261540085a12218c8d42437daa21c"
+    },
+    {
+      "id": 63,
+      "file": "article_0063.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/17/such-devastating-news-stars-pay-tribute-to-heroes-and-scream-star-hayden-panettiere-who-ha",
+      "title": "خبر صادم للغاية: نجوم ينعون نجمة \"هيروز\" و\"سكريم\" هيدن بانتير توفيت عن 36 عاماكانت بانيتير معروفة بدور المشجعة كلير بينيت في مسلسل \"هيروز\" والمغنية الريفية جوليت بارنز في \"ناشفيل\". نجوم السينما والتلفزيون ومعجبو هايدن بانيتير ينعون الممثلة التي توفيت عن عمر 36 عاما، بينما لا يزال سبب وفاتها غير معروف.17/08/2026",
+      "page_num": 1,
+      "bytes": 532226,
+      "sha1": "839d6b7b4ba8e6842dddc06e095dae1b56b912b0"
+    },
+    {
+      "id": 64,
+      "file": "article_0064.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/17/insidious-weezer-and-incredible-photography-the-best-things-to-do-hear-see-or-watch-in-eur",
+      "title": "من معارض التصوير إلى أفلام الرعب.. أبرز الفعاليات والإصدارات الثقافية هذا الأسبوعفيلم جديد من سلسلة \"Insidious\" ينقل الكيانات الشيطانية إلى العالم الواقعي، فيما تعود فرقة الروك \"Weezer\" لتصاحب آخر أيام صيفنا الكسولة هذا الأسبوع.17/08/2026",
+      "page_num": 1,
+      "bytes": 608184,
+      "sha1": "3b8c04616109107d8458d8d0ff1c5eab634a277a"
+    },
+    {
+      "id": 65,
+      "file": "article_0065.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/16/thieves-bypass-security-to-steal-four-renaissance-artworks-from-a-museum-in-sicily",
+      "title": "لصوص يخترقون الأمن ويسرقون 4 أعمال من عصر النهضة من متحف في صقليةسرق اللصوص ثلاثة من بين خمسة ألواح باقية من اللوحة متعددة الأجزاء \"سان غريغوريو\" المؤرخة بعام 1473، إضافة إلى لوحة مزدوجة الوجه تجسد السيدة العذراء والمسيح الميت في \"بيتّا\".16/08/2026",
+      "page_num": 1,
+      "bytes": 483104,
+      "sha1": "290048268c2c507002927846072d615c38e8c80d"
+    },
+    {
+      "id": 66,
+      "file": "article_0066.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/16/vogue-publishes-exclusive-photos-of-ronaldo-and-georginas-wedding",
+      "title": "فوج تنشر صورا حصرية لزفاف رونالدو وجورجيناأخيرا ظهرت الصور والتفاصيل التي انتظرها الجميع؛ فقد نشرت مجلة \"Vogue\" السبت على موقعها أول صور معروفة لأكثر حفلات الزفاف تداولا، وأقيمت المراسم في بيت الزوجين في كاشكايس.16/08/2026",
+      "page_num": 1,
+      "bytes": 487478,
+      "sha1": "c42e5eff6c561ec9c3e5223ee7deac2e8124a9f0"
+    },
+    {
+      "id": 67,
+      "file": "article_0067.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/16/pranger-linden-tree-of-grossporthen-900-year-old-tree-with-a-creepy-history",
+      "title": "شجرة الزيزفون في غروسبرتن.. 900 عام من التاريخ وذاكرة العقابيصل عمرها إلى نحو 900 عام، ويقارب قطرها عشرة أمتار، فيما لا يزال طوق حديدي قديم يحيط بجذعها. وتُعد هذه شجرة في غروسبرتن بولاية ساكسونيا-أنهالت الألمانية معلماً طبيعياً وتاريخياً فريداً.16/08/2026",
+      "page_num": 1,
+      "bytes": 463843,
+      "sha1": "a99bdd5f30aaf7d52d4d304ad1ac01cb252dbed0"
+    },
+    {
+      "id": 68,
+      "file": "article_0068.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/15/from-gaza-condoms-to-your-mum-outgoing-white-house-press-secretary-karoline-leavitts-most",
+      "title": "من \"واقيات غزة\" إلى مهاجمة الصحفيين وملفات إبستين.. أبرز محطات كارولاين ليفيت في البيت الأبيضأعلنت كارولين ليفيت هذا الأسبوع تنحيها عن منصبها كسكرتيرة الصحافة في البيت الأبيض. من سجالاتها مع الإعلام إلى اللحظات الفيروسية المثيرة للجدل، هذه مراجعة لأكثر مواقفها انقساماً على المنصة.15/08/2026",
+      "page_num": 1,
+      "bytes": 620889,
+      "sha1": "5e2db32980e733ec07ee45c555764d24b2a35c01"
+    },
+    {
+      "id": 69,
+      "file": "article_0069.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/14/brussels-central-square-transformed-into-giant-japan-inspired-flower-carpet",
+      "title": "ساحة بروكسل المركزية تتحول بسجاد زهري عملاق مستوحى من الياباناستلهاما من لوحة هوكوساي \"The Great Wave off Kanagawa\"، تضم السجادة أكثر من 700.000 زهرة ويبلغ طولها نحو 70 مترا، وعرضها 24 مترا.14/08/2026",
+      "page_num": 1,
+      "bytes": 464094,
+      "sha1": "a602d1cffa126e2f882564b469fc9e23460d0317"
+    },
+    {
+      "id": 70,
+      "file": "article_0070.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/14/beyond-the-headlines-daniel-malikyar-on-capturing-the-unseen-beauty-of-afghanistan",
+      "title": "ما بعد العناوين: دانيال ماليكيار يوثق الجمال الخفي لأفغانستانيستخدم المصوّر دانيال ماليكيار مشروعه الفوتوغرافي الذي يحمل عنوان \"أفغانستان\" لمواجهة الصورة النمطية للبلاد في عناوين الحرب والنزاع وسيطرة حركة طالبان.14/08/2026",
+      "page_num": 1,
+      "bytes": 473174,
+      "sha1": "57ddbd7d0d5a9c54664cde9aa971a5eb43eb3dfb"
+    },
+    {
+      "id": 71,
+      "file": "article_0071.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/14/lobster-dresses-and-unmade-beds-the-best-exhibitions-to-see-in-europe",
+      "title": "فساتين الكركند والأسرة غير المرتبة: أفضل المعارض في أوروبامن المعارض الاستعادية الآسرة إلى العروض التي تغيّر زاوية النظر، دلّلنا عام 2026 بمجموعة مذهلة من المعارض. إليكم خلاصة **أفضل المعارض** المستمرة في مختلف أنحاء أوروبا.14/08/2026",
+      "page_num": 1,
+      "bytes": 564811,
+      "sha1": "47a3af30e57114c8537fd5f08b3526c5b75f41a3"
+    },
+    {
+      "id": 72,
+      "file": "article_0072.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/14/album-of-the-year-phoebe-bridgers-lost-weekend-euronews-cultures-review-and-verdict",
+      "title": "ألبوم العام؟ فيبي بريدجرز - لوست ويكند: مراجعة وحكم يورونيوز كالتشربعد انتظار دام ستة أعوام منذ صدور ألبوم \"Punisher\" الذي حظي بإشادة واسعة، تعود المغنية الأميركية فيبي بريدجرز بثالث ألبوم منفرد، يُعد بالفعل من أبرز المرشحين للقب ألبوم العام.14/08/2026",
+      "page_num": 1,
+      "bytes": 645538,
+      "sha1": "fdb85ad0ddc256b7d536c072d60f6010b622df06"
+    },
+    {
+      "id": 73,
+      "file": "article_0073.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/14/pop-tarts-tupac-and-marriage-marco-rubio-opens-up-in-rare-podcast-appearance",
+      "title": "بوب تارتس وتوباك والزواج: ماركو روبيو يكشف جوانب شخصية في بودكاست نادربمرافقة زوجته جانيت، تحدّث وزير الخارجية الأمريكي عن الحياة الأسرية والموسيقى والزواج وعاداته الغذائية في مقابلة مطوّلة ضمن بودكاست.14/08/2026",
+      "page_num": 1,
+      "bytes": 554370,
+      "sha1": "e26251149c912c397679981b9bad4ceae2591765"
+    },
+    {
+      "id": 74,
+      "file": "article_0074.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/14/from-witnesses-to-the-marriage-regime-new-details-revealed-about-cristiano-and-georginas-w",
+      "title": "من الشهود إلى فصل الممتلكات: كشف تفاصيل جديدة عن زواج كريستيانو وجورجيناتكشف الوثائق التي حصل عليها \"جورنال دي نوتيسياس\" أن أحد أشهر الأزواج في العالم اختار نظام فصل الممتلكات، وأن الحفل حضره، إضافة إلى أطفاله الخمسة، أربعة شهود.14/08/2026",
+      "page_num": 1,
+      "bytes": 402907,
+      "sha1": "a8c1bd07e4f44ffcb154ded3aec8918962dc2d7a"
+    },
+    {
+      "id": 75,
+      "file": "article_0075.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/14/total-eclipse-of-the-heart-data-reveals-most-popular-songs-played-during-this-weeks-solar",
+      "title": "أغنية \"توتال إكليبس أوف ذا هارت\": بيانات تكشف أكثر الأغاني استماعا خلال كسوف هذا الأسبوعبينما رفع ملايين الناس أنظارهم إلى السماء لمتابعة كسوف الشمس يوم الأربعاء، تكشف بيانات جديدة أنهم استمعوا أيضا إلى بوني تايلر وملحمتها الغنائية من الثمانينيات \"Total Eclipse Of The Heart\" التي يفتقدها كثيرون.14/08/2026",
+      "page_num": 1,
+      "bytes": 649902,
+      "sha1": "05c839b9c26ca51ed97cfba95d3b339fa25b20e3"
+    },
+    {
+      "id": 76,
+      "file": "article_0076.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/14/childs-play-french-artist-saypes-giant-ephemeral-frescoes-take-over-swiss-alpine-resort",
+      "title": "فنان فرنسي يستلهم عالم الأطفال في جداريات عملاقة على قمم الألب السويسريةتُعرض أحدث اللوحات التجريبية الزائلة للفنان الفرنسي \"سايب\" حاليا على المنحدرات العليا لمنتجع فيلار-سور-أولون السويسري، لكنها بدأت تتلاشى شيئا فشيئا.14/08/2026",
+      "page_num": 1,
+      "bytes": 546819,
+      "sha1": "b1b549eab0b0112add8a4479ec4649b7b251f646"
+    },
+    {
+      "id": 77,
+      "file": "article_0077.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/13/victor-coyote-dies-a-musician-comic-artist-and-filmmaker-impossible-to-classify-in-a-singl",
+      "title": "وفاة فيكتور كايوتي: مسيرة كرسها للابتكار الثقافي المتعدد الأشكالفيكتور كايوتي، الاسم الفني لفيكتور ماريا أباريسيو أبوندانسيا، توفي الخميس في غاليثيا بحادث دراجة هوائية عن عمر 67 عاما، بعد مسيرة امتدت لأكثر من 40 عاما بين الموسيقى والقصص المصورة والسينما والفيديو كليب.13/08/2026",
+      "page_num": 1,
+      "bytes": 478908,
+      "sha1": "20bd14e2d767ad8d0efcce4755989d4b79f61ead"
+    },
+    {
+      "id": 78,
+      "file": "article_0078.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/13/euronews-cultures-film-of-the-week-the-end-of-oak-street-putting-the-jurassic-world-franch",
+      "title": "فيلم الأسبوع في يورونيوز كالتشر: \"نهاية شارع أوك\" يتفوق على سلسلة \"جوراسيك وورلد\"حدث كوني غامض يقتلع شارع \"أوك\" من ضاحية ثمانينيات القرن الماضي وينقله إلى عصور ما قبل التاريخ؛ إنّه مفاجأة الموسم السينمائي الكبرى هذا الصيف.13/08/2026",
+      "page_num": 1,
+      "bytes": 437396,
+      "sha1": "4af37eaf2718a207fcbd952fca42eff1a04e996b"
+    },
+    {
+      "id": 79,
+      "file": "article_0079.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/13/and-the-winner-is-burgas-to-host-the-2027-eurovision-song-contest",
+      "title": "بورغاس تستضيف مسابقة الأغنية الأوروبية يوروفيجن 2027فازت مدينة بورغاس، رابع أكبر مدن بلغاريا، بحق استضافة مسابقة \"يوروفيجن\" لعام 2027، بعد إشادة بتميز المنتجع المطل على البحر الأسود، بينما تستعد البلاد لتنظيم أكبر مسابقة غنائية مباشرة في العالم للمرة الأولى.13/08/2026",
+      "page_num": 1,
+      "bytes": 537352,
+      "sha1": "b58b5485353b3d79ac2f4ea3667f25dad12614eb"
+    },
+    {
+      "id": 80,
+      "file": "article_0080.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/13/solar-eclipse-2026-in-pictures-the-best-shots-from-around-europe",
+      "title": "كسوف عام 2026 بالصور: إليكم أجمل اللقطات من مختلف أنحاء أوروباشهد ملايين الأشخاص أمس مساء في أنحاء أوروبا أعظم كسوف منذ عقود، حين اختفت الشمس خلف القمر. هنا مجموعة من أفضل اللقطات لهذا الحدث السماوي.13/08/2026",
+      "page_num": 1,
+      "bytes": 469021,
+      "sha1": "04acc2018cab69b7932e419231a929186d01fbdf"
+    },
+    {
+      "id": 81,
+      "file": "article_0081.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/13/the-best-night-of-my-life-travis-kelce-shares-first-thoughts-on-intimate-wedding-to-taylor",
+      "title": "ترافيس كيلسي: زفافي إلى تايلور سويفت أفضل ليلة في حياتيكشف لاعب كرة القدم الأميركية ترافيس كيلسي عن مشاعره تجاه **الزواج** من تايلور سويفت، في أول تصريح له عن زواجه السري من نجمة البوب.13/08/2026",
+      "page_num": 1,
+      "bytes": 547418,
+      "sha1": "68f5ab50932a10376df26eb661b8a7743c2382b3"
+    },
+    {
+      "id": 82,
+      "file": "article_0082.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/12/queens-brian-may-outraged-by-ai-version-of-album-cover-and-tells-uk-pm-andy-burnham-you-mu",
+      "title": "براين ماي من كوين غاضب من غلاف ألبوم بالذكاء الاصطناعي ويخاطب آندي برنهام: \"يجب أن توقفه الآن\"قال براين ماي عند نشره نسخة رديئة بشكل مثير للسخرية لما تراه تقنية \"AI\" لشكل أحد ألبومات فرقة \"Queen\": \"ربما حان الوقت لندرك أننا فعلا لا نحتاج إلى الذكاء الاصطناعي\". ودعا رئيس الوزراء البريطاني آندي برنهام لحظر \"AI\" \"قبل فوات الأوان\".12/08/2026",
+      "page_num": 1,
+      "bytes": 482171,
+      "sha1": "0a99b5ac61592b3073b2a4f6a5a5d1f2d93b004b"
+    },
+    {
+      "id": 83,
+      "file": "article_0083.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/12/the-most-expensive-engagement-ring-ever-everything-we-know-about-ronaldos-jaw-dropping-dia",
+      "title": "أغلى خاتم خطوبة في التاريخ؟ كل ما نعرفه عن ماسة رونالدو المذهلةأُعلن زواج **كريستيانو رونالدو** من شريكته منذ سنوات **جورجينا رودريغيز** رسميا، لكن اللغز الحقيقي ما زال يحيط بما يزيّن إصبعها.12/08/2026",
+      "page_num": 1,
+      "bytes": 536137,
+      "sha1": "772f1148b7eb385bf675482f01b02191bdd0f657"
+    },
+    {
+      "id": 84,
+      "file": "article_0084.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/12/fragrant-fortunes-dohas-teeb-al-hazm-plans-london-debut-as-gulf-perfumes-gain-wider-appeal",
+      "title": "ثروات عطرية: طيب الحزم في الدوحة يخطط لأول ظهور في لندن وسط صعود العطور الخليجيةمن \"العود\" و\"البخور\" إلى دور العطور المتخصصة، يعكس معرض عطور \"طيب الحزم\" شغف الخليج الدائم بـ**العطور** بينما يستعد المنظمون لنقل التجربة إلى أوروبا.12/08/2026",
+      "page_num": 1,
+      "bytes": 485387,
+      "sha1": "1c0bc4f389087732c7f3ea7df8a7ecf0be82633a"
+    },
+    {
+      "id": 85,
+      "file": "article_0085.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/12/jack-lowden-for-james-bond-did-british-tv-presenter-and-author-richard-osman-leak-the-iden",
+      "title": "جاك لودن لجيمس بوند: هل كشف ريتشارد عثمان هوية العميل 007 الجديد؟قال الكاتب والإعلامي البريطاني ريتشارد أوسمان في حلقته الصوتية إن لديه \"معلومات داخلية\" ترجح أن ممثلا إسكتلنديا قد يكون العميل السري التالي \"جيمس بوند\".12/08/2026",
+      "page_num": 1,
+      "bytes": 423575,
+      "sha1": "2924de0b4da3ba886adc4bd7016bf463301ed302"
+    },
+    {
+      "id": 86,
+      "file": "article_0086.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/12/spotify-to-label-ai-generated-artist-personas-with-new-ai-persona-badges",
+      "title": "لتمييزهم عن البشر.. سبوتيفاي تفرض شارة \"شخصية ذكاء اصطناعي\" على الفنانين الافتراضيينتأتي خطوة \"سبوتيفاي\" في وقت تغمر فيه موسيقى مولدة بالذكاء الاصطناعي منصات البث، إذ كشفت \"ديزر\" مؤخرا أن هذه المقاطع مثّلت أكثر من نصف الرفع اليومي الجديد في يونيو.12/08/2026",
+      "page_num": 1,
+      "bytes": 493875,
+      "sha1": "014c4be9ecac17dde1346ff92f9de5416b63ca14"
+    },
+    {
+      "id": 87,
+      "file": "article_0087.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/12/you-want-it-darker-the-ideal-total-solar-eclipse-playlist-is-here",
+      "title": "من \"بيل ويذرز\" إلى \"بينك فلويد\".. قائمة موسيقية لمواكبة كسوف الشمس في أوروباتشهد أوروبا القارية الليلة أول كسوف شمسي كامل لها منذ عقدين. فريق الثقافة في \"يورونيوز\" يختار عشر أغانٍ لا بد من الاستماع إليها عندما يحل الظلام.12/08/2026",
+      "page_num": 1,
+      "bytes": 431712,
+      "sha1": "a3bf03c9e9654404023dd4d74327ae38caaebecd"
+    },
+    {
+      "id": 88,
+      "file": "article_0088.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/12/how-christopher-columbus-saved-his-life-in-jamaica-using-an-eclipse-the-astronomical-trick",
+      "title": "كيف استخدم كريستوفر كولومبوس خدعة فلكية لإنقاذ نفسه وطاقمه من الموت جوعاً؟الملاح، العالق في جزيرة جامايكا مع طاقمه وعلى شفا الجوع، استعان بجداول فلكية وتنبأ بدقة بكسوف للقمر استخدمه كورقة تفاوض مع السكان الأصليين من التاينوس.12/08/2026",
+      "page_num": 1,
+      "bytes": 491445,
+      "sha1": "1119542c146935d4a282f26a6da04f6286797971"
+    },
+    {
+      "id": 89,
+      "file": "article_0089.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/12/cristiano-ronaldo-said-yess-in-secret-in-an-intimate-ceremony-in-cascais",
+      "title": "كريستيانو رونالدو يتزوج سرا في مراسم حميمة في كاشكايشتزوج كريستيانو رونالدو وجورجينا رودريغيز يوم الثلاثاء في حفل زفاف بسيط أقيم في مدينة كاشكايش البرتغالية.12/08/2026",
+      "page_num": 1,
+      "bytes": 417163,
+      "sha1": "8ab536553be060ec6670f4fd4e228282a2b102b3"
+    },
+    {
+      "id": 90,
+      "file": "article_0090.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/12/remains-of-the-two-wehrmacht-soldiers-from-the-danube-one-was-with-the-waffen-ss",
+      "title": "انحسار نهر الدانوب يكشف رفات جنديين ألمانيين بعد أكثر من 80 عاماًتم انتشال دراجة نارية تابعة للفيرماخت بحالة ممتازة من نهر الدانوب، وتحتها رفات جنديين ألمانيين مع لوحات التعريف، أحدهما يرجح أنه من \"فافن إس إس\". يجري الآن فحص العظام: كم كان عمرهما؟ وهل اصطدموا بلغم؟12/08/2026",
+      "page_num": 1,
+      "bytes": 525493,
+      "sha1": "57b89d9650a8ee96546a91cec7b5fc2b53f8d6eb"
+    },
+    {
+      "id": 91,
+      "file": "article_0091.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/11/spectacular-photos-wehrmacht-motorcycle-from-the-danube-almost-like-new",
+      "title": "صور مدهشة: انتشال دراجة نارية للجيش النازي من الدانوب تبدو شبه جديدةاكتشاف حطام دراجة نارية وبقايا جنديين ألمانيين في نهر \"الدانوب\" بمدينة \"بودابست\" يثير اهتماما عالميا، إذ كشف انخفاض منسوب المياه دراجة من الحرب العالمية الثانية، وبعد تنظيفها ظهرت في حالة حفظ مذهلة.11/08/2026",
+      "page_num": 1,
+      "bytes": 487980,
+      "sha1": "ba4eb2206a0290035e2ee422f9cf8bf96df88d98"
+    },
+    {
+      "id": 92,
+      "file": "article_0092.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/11/brad-pitt-supports-specific-uses-of-ai-in-hollywood-it-will-help-these-mid-budget-films-ge",
+      "title": "براد بيت يؤيد استخدام الذكاء الاصطناعي في هوليوود لإنجاز أفلام بميزانيات متوسطةكشف براد بيت أن تقنيات الذكاء الاصطناعي قد تسهم في خفض كلفة المؤثرات البصرية المكلفة، ما يتيح انطلاق أعمال سينمائية ذات ميزانيات محدودة.11/08/2026",
+      "page_num": 1,
+      "bytes": 412445,
+      "sha1": "69191c99ffe921433b24a40aeaffc49d8d878619"
+    },
+    {
+      "id": 93,
+      "file": "article_0093.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/11/three-banksy-artworks-cost-uk-taxpayers-nearly-150000-to-remove",
+      "title": "تكلفة إزالتها 150 ألف إسترليني.. أعمال \"بانكسي\" ترهق دافعي الضرائب في بريطانياأعادت هذه التكاليف إحياء الجدل حول ما إذا كان يجب اعتبار أعمال \"بانكسي\" تخريبا أم فنا عاما قيّما، وحول ضرورة مساهمة دافعي الضرائب في تمويلها.11/08/2026",
+      "page_num": 1,
+      "bytes": 488689,
+      "sha1": "6acfdfb296e574c1bc0c7591552238c2224e1a40"
+    },
+    {
+      "id": 94,
+      "file": "article_0094.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/11/why-is-the-internet-accusing-anne-hathaway-of-wearing-a-fake-pregnancy-belly",
+      "title": "عن التنمر الرقمي وتحديات الأمومة.. الممثلة آن هاثاواي تُفحم منتقدي إطلالة حملهازعم مستخدمون على مواقع التواصل أن آن هاثاواي تصنّعت الحمل من خلال وضع بطن مزيّف لدى إطلالتها على السجادة الحمراء بمناسبة العرض الأول لفيلمها \"The End Of Oak Street\"، ما دفع الممثلة للرد مؤكدة أن بعض المهووسين بالإنترنت بحاجة فعلا إلى هواية.11/08/2026",
+      "page_num": 1,
+      "bytes": 532506,
+      "sha1": "34c176092537076962b6a206569152f7e0386d0c"
+    },
+    {
+      "id": 95,
+      "file": "article_0095.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/11/10-books-9-films-and-8-songs-about-eclipses",
+      "title": "مع ترقّب إسبانيا الكسوف الكلي.. ما هي أبرز الكتب والأفلام والأغنيات التي استلهمت الظاهرة؟مع اقتراب الكسوف الكلي للشمس في 12 من أغسطس، يجدر التذكير بأن هذا الحدث حاضر منذ قرون في الثقافة، ليس كعرض فلكي فقط بل كأداة سردية. إليكم مختارات ثقافية مستوحاة منه.11/08/2026",
+      "page_num": 1,
+      "bytes": 602488,
+      "sha1": "bde184cd75c44bcc2ef2b1e2f4ef17fb263043e3"
+    },
+    {
+      "id": 96,
+      "file": "article_0096.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/10/inside-the-italian-prison-where-inmates-find-freedom-through-theatre",
+      "title": "فنّ يكسر الأسوار.. سجن إيطالي يمنح نزلاءه شعورا بالحرية عبر المسرحفي سجن فولتيرا في إيطاليا، يعمل السجناء جنبا إلى جنب مع محترفي المسرح ضمن مشروع \"كومبانيا ديلا فورتيتسا\" المستمر منذ سنوات.10/08/2026",
+      "page_num": 1,
+      "bytes": 524676,
+      "sha1": "103db29d4d999adf1009589cf2e93f2e3b5eee6d"
+    },
+    {
+      "id": 97,
+      "file": "article_0097.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/10/the-jason-arday-controversy-explaining-the-university-of-cambridge-scandal-shaking-british",
+      "title": "قضية جايسون أرداي: فضيحة جامعة كامبريدج تهز الأوساط الأكاديمية البريطانيةخلاف بارز حول الانتحال العلمي فجّر إحدى أكبر فضائح الأكاديميا في تاريخ المملكة المتحدة، ويتمحور حول الأستاذ جايسون أرادي، الوجه الجديد لحرب ثقافية حول \"اليقظة\" و\"التنوّع والإنصاف والشمول\"، وتصدر مذكراته المثيرة للجدل قريبا.10/08/2026",
+      "page_num": 1,
+      "bytes": 567444,
+      "sha1": "40933d7e0e99d6c028462d58c19309c70173f498"
+    },
+    {
+      "id": 98,
+      "file": "article_0098.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/10/there-was-a-wedding-at-the-funchal-cathedral-but-it-was-not-cristiano-and-georginas",
+      "title": "زفاف في كاتدرائية فونشال ليس زفاف كريستيانو وجورجيناكلما واصلت الصحف الشعبية البريطانية تغذية الرواية حول زواج كريستيانو رونالدو وجورجينا رودريغيز، ازداد شغف المعجبين بحضور حفل الزفاف المزعوم.10/08/2026",
+      "page_num": 1,
+      "bytes": 580210,
+      "sha1": "2ad4c88df36b1fa05d3f5b1426a92eff85a5af44"
+    },
+    {
+      "id": 99,
+      "file": "article_0099.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/10/the-prado-museum-reimagines-its-masterpieces-under-the-light-of-the-solar-eclipse",
+      "title": "متحف برادو يعيد تصور روائعه تحت ضوء كسوف الشمسيقدّم متحف برادو عملًا سمعيّا بصريّا بعنوان \"El Prado a la luz del eclipse\"، يمزج بين **الذكاء الاصطناعي** والإبداع الرقمي للكشف عن تأثير **الظاهرة الفلكية** في رؤية لوحاته الأيقونية.10/08/2026",
+      "page_num": 1,
+      "bytes": 544451,
+      "sha1": "9ee5d3b08756dbd946d875bd02d166954c04bc5b"
+    },
+    {
+      "id": 100,
+      "file": "article_0100.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/10/harry-potter-fans-force-cable-diversion-of-multimillion-pound-pipeline-project-to-protect",
+      "title": "محبو هاري بوتر يفرضون تغيير مسار كابل بملايين الجنيهات لحماية \"قبر\" دوبيكُشف أن عشاق سلسلة \"هاري بوتر\" نجحوا في تغيير مسار مشروع لربط الكهرباء بين المملكة المتحدة وأيرلندا بقيمة ملايين الجنيهات، بعدما نبّهوا إلى أنه يهدد نصب تذكاري لـ\"دوبي\" الخادم المنزلي.10/08/2026",
+      "page_num": 1,
+      "bytes": 391782,
+      "sha1": "8b730012142d64758c64bb55cb15387103eb5f2a"
+    },
+    {
+      "id": 101,
+      "file": "article_0101.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/09/roman-shipwreck-with-hundreds-of-amphorae-discovered-off-the-coast-of-sicily",
+      "title": "اكتشاف حطام سفينة رومانية ومئات الجرار الفخارية قبالة سواحل صقليةاكتُشف حطام سفينة تعود إلى العصر الروماني قبالة سواحل مازارا دل فاللو، كما عُثر في قاع البحر على مئات الجرار الفخارية، فيما وصف وزير الثقافة الإيطالي أليساندرو جولي الاكتشاف بأنه \"استثنائي\".09/08/2026",
+      "page_num": 1,
+      "bytes": 477132,
+      "sha1": "b1ea34d56ba73c57d182f20e47614dc2443cf0c6"
+    },
+    {
+      "id": 102,
+      "file": "article_0102.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/08/nearly-34000-fans-watched-kanye-wests-concert-at-the-algarve-stadium",
+      "title": "نحو 34 ألف شخص يحضرون حفل كانييه ويست في ملعب ألغارفبعد إلغاء حفلاته في دول عدة، بينها المملكة المتحدة وفرنسا وبولندا، أحيا مغني الراب الأميركي كانييه ويست، الجمعة، حفلًا في ملعب ألغارف بالبرتغال، بحضور نحو 34 ألف شخص.08/08/2026",
+      "page_num": 1,
+      "bytes": 474476,
+      "sha1": "375913944b0c0c138638cfcffeb4d7d0117a00f0"
+    },
+    {
+      "id": 103,
+      "file": "article_0103.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/07/paris-nearly-100000-signatures-against-the-new-pavilion-of-the-national-assembly",
+      "title": "باريس.. نحو 100 ألف توقيع ضد الجناح الجديد للجمعية الوطنيةيثير مشروع إنشاء جناح استقبال جديد لمقر الجمعية الوطنية الفرنسية معارضة واسعة، إذ تقترب عريضة أُطلقت قبل أكثر من عام احتجاجًا على المشروع من جمع 100 ألف توقيع، وذلك بعد موافقة مجلس باريس على تعديل قواعد التخطيط العمراني في محيط قصر بوربون.07/08/2026",
+      "page_num": 1,
+      "bytes": 540180,
+      "sha1": "6d46a3e986cdc16d23f028d5c665c23826089726"
+    },
+    {
+      "id": 104,
+      "file": "article_0104.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/07/william-orbit-the-grammy-winning-british-producer-known-for-his-work-with-madonna-and-blur",
+      "title": "وفاة وليام أوربت منتج مادونا وبلر الحاصل على غرامي عن عمر 69 عامااشتهر المنتج البريطاني بأعماله على ألبوم مادونا \"Ray Of Light\" وألبوم بلر \"13\"، إضافة إلى عدة أغنيات ناجحة بينها أغنية آل سينتس الشهيرة \"Pure Shores\".07/08/2026",
+      "page_num": 1,
+      "bytes": 459613,
+      "sha1": "2ea0aeac56988ed8536c28b46f381aa885ba1f9b"
+    },
+    {
+      "id": 105,
+      "file": "article_0105.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/07/disney-needs-to-sue-white-house-criticised-over-spider-man-ice-campaign-post",
+      "title": "ديزني مطالبة برفع دعوى: هجوم على البيت الأبيض بسبب حملة \"سبايدر مان\" لهيئة \"آيس\"\"عملاء ICE الودودون في حيك\". انتقد معجبو \"مارفل\" البيت الأبيض لاستخدامه \"سبايدر مان\" في أحدث حملة للترويج لوكالة \"إنفاذ قوانين الهجرة والجمارك\" (ICE).07/08/2026",
+      "page_num": 1,
+      "bytes": 517919,
+      "sha1": "d3276fbfb4770d99e97fb5150a789e89339d6264"
+    },
+    {
+      "id": 106,
+      "file": "article_0106.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/07/euronews-cultures-film-of-the-week-her-private-hell-nicolas-winding-refns-horny-bore",
+      "title": "فيلم الأسبوع في يورونيوز كالتشر: هير برايفت هيل ملل مثير لنيكولاس ويندينغ ريفنبعد عشر سنوات على آخر فيلم طويل له \"The Neon Demon\"، يقدّم مخرج \"Drive\" و\"Only God Forgives\" أكثر أفلامه فراغا ورتابة حتى الآن.07/08/2026",
+      "page_num": 1,
+      "bytes": 419552,
+      "sha1": "b52f300802fdcfb9dc8228716f25049148c7dc8d"
+    },
+    {
+      "id": 107,
+      "file": "article_0107.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/07/israeli-embassy-kanye-wests-concert-will-be-an-embarrassment-for-portugal",
+      "title": "عار على البرتغال: سفير إسرائيل يطلب إلغاء حفل كانييه ويست في ألجارفياتهمت سفارة إسرائيل في البرتغال كانييه ويست بنشر خطاب كراهية، وطالبت بإلغاء حفله المقرر هذا الجمعة في البرتغال، رفضا لمعاداة السامية وتمجيد النازية.07/08/2026",
+      "page_num": 1,
+      "bytes": 566709,
+      "sha1": "1e1de7043287900d0bf2d2a44e847be8295c8b02"
+    },
+    {
+      "id": 108,
+      "file": "article_0108.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/07/tiktok-star-sydney-towle-who-shared-her-health-journey-online-has-died-at-26-after-battlin",
+      "title": "نجمة تيك توك سيدني تول تتوفى عن عمر 26 عاما بعد صراع مع سرطان نادرأعلنت عائلة سيدني تاول وفاة المؤثرة البالغة من العمر 26 عاما بعد دخولها إلى دار للرعاية التلطيفية، إثر صراع استمر ثلاث سنوات مع سرطان نادر في القنوات الصفراوية.07/08/2026",
+      "page_num": 1,
+      "bytes": 475232,
+      "sha1": "08856282d15e2705ab3ac304eae037952dc6799f"
+    },
+    {
+      "id": 109,
+      "file": "article_0109.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/07/michael-2-sequel-to-michael-jackson-biopic-teased-as-production-set-to-begin-soon",
+      "title": "\"مايكل 2\": جزء ثان لفيلم سيرة مايكل جاكسون يبدأ تصويره قريبافيلم السيرة الذاتية الضخم عن مايكل جاكسون هذا العام، الذي حقق في شباك التذاكر مليار دولار، سيحصل رسميا على جزء ثان، مع بدء التصوير في وقت لاحق من عام 2026 أو مطلع 2027.07/08/2026",
+      "page_num": 1,
+      "bytes": 397681,
+      "sha1": "f59c3e005ae9f30e06baba3dda6035f7288c6734"
+    },
+    {
+      "id": 110,
+      "file": "article_0110.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/07/more-than-160-styles-and-a-tasting-that-involves-all-the-senses-the-old-and-new-world-of-b",
+      "title": "في اليوم الدولي للبيرة.. أكثر من 160 نمطاً وتقاليد عريقة وتجارب تذوّق متنوّعةفي اليوم الدولي للبيرة، هذا المشروب العريق يثبت نفسه كعالم معقد ومتنوّع يضم أكثر من 160 نوعا وغنى حسيا يتجاوز مجرد الاستهلاك العابر.07/08/2026",
+      "page_num": 1,
+      "bytes": 692546,
+      "sha1": "7e3f8080dffae63396a2f75fef3cf7b6751ca0b0"
+    },
+    {
+      "id": 111,
+      "file": "article_0111.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/06/from-the-crucifixion-to-pop-art-this-is-how-humanity-has-painted-solar-eclipses",
+      "title": "من صلب المسيح إلى البوب آرت: كيف تصور البشرية كسوف الشمسمن \"قرص نبرا\" إلى فن البوب لدى روي ليختنستاين، مرورا بروبنز وريبيرا والأميركي هاورد راسل باتلر، صُوِّر كسوف الشمس في لوحات على مدى قرون، بين رمزية دينية وفضول علمي وافتتان جمالي.06/08/2026",
+      "page_num": 1,
+      "bytes": 509264,
+      "sha1": "138407bac88c01536d7621dec4bbb1c30cc7657b"
+    },
+    {
+      "id": 112,
+      "file": "article_0112.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/06/why-do-so-many-hit-songs-sound-alike-meet-the-gen-alpha-melody",
+      "title": "\"لحن جيل ألفا\": دراسة موسيقية تكشف سرّ سرقة الأغاني العالمية لنغمة موحدة عمرها قرونما الذي يجمع تييستو وتروي سيفان وفرقة ذا ستروكس؟ عالم موسيقى دنماركي يعتقد أنّه يملك الإجابة على هذا السؤال.06/08/2026",
+      "page_num": 1,
+      "bytes": 484928,
+      "sha1": "9ebd28f7c5c11b7db13d271a9717947169fa1243"
+    },
+    {
+      "id": 113,
+      "file": "article_0113.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/06/forgiving-or-forgetting-why-the-met-galas-choice-to-honour-john-galliano-is-so-controversi",
+      "title": "غفران أم نسيان؟ تكريم جون غاليانو في ميت غالا يثير الجدلأثارت مراجعة شاملة لمسيرة المصمم صاحب الرؤية جدلا واسعا حول الغفران والنسيان وأعلى تكريم في عالم الأزياء.06/08/2026",
+      "page_num": 1,
+      "bytes": 423869,
+      "sha1": "481bcd82f0c02b8398abda08ecbdd6038328aaaf"
+    },
+    {
+      "id": 114,
+      "file": "article_0114.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/06/farewell-to-francesco-guccini-the-singer-songwriter-passed-away-at-the-age-of-86",
+      "title": "رحيل فرانشيسكو غوتشيني: وفاة المغني وكاتب الأغاني عن 86 عاماتوفي عن عمر 86 عاما \"فرانشيسكو غوتشيني\", أحد أبرز رموز الأغنية المؤلَّفة والثقافة الإيطالية، في بلدة \"بافانا\". وستقام جنازة خاصة يتبعها في سبتمبر حفل تأبيني عام.06/08/2026",
+      "page_num": 1,
+      "bytes": 478950,
+      "sha1": "f427fda890980b02c2ec4a02993fd749953f8822"
+    },
+    {
+      "id": 115,
+      "file": "article_0115.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/06/disney-and-tiktok-have-reached-a-content-sharing-agreement-allowing-short-form-videos-to-b",
+      "title": "ديزني و\"تيك توك\" تتفقان على مشاركة محتوى فيديوهات قصيرة على \"ديزني بلس\"ستتيح هذه الصفقة لمبدعي محتوى \"تيك توك\" الوصول رسميا إلى مواد \"ديزني\"، وتهدف إلى تعزيز البرامج القصيرة على خدمة \"ديزني+\".06/08/2026",
+      "page_num": 1,
+      "bytes": 481205,
+      "sha1": "8c3d95df947eb571a461501f05eb5f3c72723cbc"
+    },
+    {
+      "id": 116,
+      "file": "article_0116.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/06/starlite-the-disney-of-music-turns-marbella-into-one-of-europes-top-experiential-destinati",
+      "title": "ستارلايت: \"ديزني\" الموسيقى يحول ماربيا إلى وجهة تجارب رائدة في أوروبالم يعد آلاف المسافرين يتجهون إلى كوستا ديل سول من أجل الشمس والبحر فقط، بل للعيش تجربة تمزج بين الحفلات الموسيقية وفنون الطبخ والطبيعة والحياة الليلية في صيغة فريدة قابلة للتصدير إلى دول أخرى.06/08/2026",
+      "page_num": 1,
+      "bytes": 576149,
+      "sha1": "1c3401279e18468a8ea20904ff7acfdd75e09803"
+    },
+    {
+      "id": 117,
+      "file": "article_0117.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/06/new-melania-trump-series-coming-to-amazon-prime-after-significant-losses-for-controversial",
+      "title": "سلسلة جديدة عن ميلانيا ترامب على \"امازون برايم\" بعد خسائر فيلم \"ميلانيا\"سلسلة وثائقية جديدة عن ميلانيا ترامب ستعرض في الخريف المقبل، بعدما مُني فيلم \"ميلانيا\" المثير للجدل بفشل نقدي وتجاري في دور العرض.06/08/2026",
+      "page_num": 1,
+      "bytes": 549020,
+      "sha1": "51227623e6ead80100130879349fcbabfe78ac09"
+    },
+    {
+      "id": 118,
+      "file": "article_0118.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/05/copenhagens-noma-restaurant-to-reopen-under-new-leadership-after-abuse-allegations",
+      "title": "مطعم نوما في كوبنهاغن يعيد فتح أبوابه بقيادة جديدة بعد اتهامات سوء معاملةيعيد مطعم \"نَوما\" الشهير في الدنمارك فتح أبوابه اليوم، لكن مؤسسه لن يكون على رأس إدارته، كما أنه لن يحتفظ بنجومه الثلاث في دليل \"ميشلان\".05/08/2026",
+      "page_num": 1,
+      "bytes": 600041,
+      "sha1": "b3cd86bc594a1a9b5e807987cc5946a6201cc015"
+    },
+    {
+      "id": 119,
+      "file": "article_0119.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/05/project-panama-how-anthropic-secretly-destroyed-millions-of-books-to-train-its-ai",
+      "title": "مشروع بنما: أنثروبيك تدمر سرا ملايين الكتب لتدريب ذكائها الاصطناعيتكشف **وثائق قضائية** كُشف عنها حديثا كيف قامت شركة \"Anthropic\" سرا بشراء كتب وإتلافها ثم مسحها رقميا لتدريب روبوت الدردشة بالذكاء الاصطناعي \"Claude\".05/08/2026",
+      "page_num": 1,
+      "bytes": 503907,
+      "sha1": "87b492a9f82d2acfa021d5776101b80ab7ffe6b7"
+    },
+    {
+      "id": 120,
+      "file": "article_0120.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/05/the-longest-musical-composition-in-the-world-changes-chords-for-the-first-time-in-two-year",
+      "title": "أطول مؤلف موسيقي في العالم يبدّل تآلفه لأول مرة منذ 2 عامالمقطوعة البطيئة جدا تُعزف منذ نحو 25 عاما، واليوم تُضاف نغمة جديدة إلى مشروع \"جون كيج أورغن\" المستمر في مدينة هالبرشتات الألمانية.05/08/2026",
+      "page_num": 1,
+      "bytes": 454340,
+      "sha1": "69783cf72ce175ee44c5f46fa811555a80cbe5fe"
+    },
+    {
+      "id": 121,
+      "file": "article_0121.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/05/peter-gill-acclaimed-playwright-and-director-behind-the-york-realist-dies-aged-86",
+      "title": "وفاة الكاتب المسرحي والمخرج بيتر غيل صاحب \"ذا يورك رياليست\" عن عمر 86 عامامن مسرح \"رويال كورت\" إلى \"المسرح الوطني\"، أخرج غيل نحو 100 عرضا مسرحيا وكتب بعضا من أكثر المسرحيات الحديثة رواجا في بريطانيا.05/08/2026",
+      "page_num": 1,
+      "bytes": 478005,
+      "sha1": "bf28b37c9e055bd4124b70cd163aa7c1a3efbcb3"
+    },
+    {
+      "id": 122,
+      "file": "article_0122.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/05/stolen-intellectual-property-german-court-rules-ai-music-generator-suno-broke-copyright-ru",
+      "title": "\"ملكية فكرية مسروقة\": محكمة ألمانية تقر بأن مولد موسيقى \"سونو\" ينتهك حقوق النشرهذا الحكم القانوني يبعث برسالة دولية قوية مفادها أن للإبداع قيمة، وأن حقوق المبدعين يجب احترامها في عصر الذكاء الاصطناعي.05/08/2026",
+      "page_num": 1,
+      "bytes": 463645,
+      "sha1": "27dfb79f5d89c0476630eda048e6cb7f3ea97cf8"
+    },
+    {
+      "id": 123,
+      "file": "article_0123.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/05/spider-man-brand-new-day-becomes-the-second-fastest-film-in-history-to-cross-the-1-billion",
+      "title": "فيلم \"سبايدر مان: براند نيو داي\" يصبح ثاني أسرع فيلم يحقق 1 مليار دولارفيلم سبايدرمان الجديد، وهو رابع مغامرة فردية لتوم هولاند، تفوق على \"Avengers: Endgame\" في إيرادات عطلة نهاية الأسبوع الأولى، وأصبح ثاني أسرع فيلم في التاريخ يتجاوز حاجز مليار دولار واحد.05/08/2026",
+      "page_num": 1,
+      "bytes": 481295,
+      "sha1": "8af886c28a50433da18c77c373ad5fe1a9baa3c6"
+    },
+    {
+      "id": 124,
+      "file": "article_0124.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/05/star-wars-a-new-hope-dubbed-into-welsh-for-the-first-time-to-mark-the-sci-fi-classics-50th",
+      "title": "دبلجة \"حرب النجوم: أمل جديد\" إلى الويلزية لأول مرة بمناسبة الذكرى الـ٥٠\"منذ زمن بعيد في مجرة بعيدة جدًا...\" أم ينبغي أن تكون: \"Amser maith yn ôl, mewn galaeth bell bell i ffwrdd...\"؟ تم دبلجة فيلم \"حرب النجوم: أمل جديد\" إلى الويلزية لأول مرة احتفالًا بالذكرى الـ50 للفيلم العام المقبل.05/08/2026",
+      "page_num": 1,
+      "bytes": 400175,
+      "sha1": "2eb1276a795720dc84b5a84a81a13f8b98a52f57"
+    },
+    {
+      "id": 125,
+      "file": "article_0125.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/05/pepe-habichuela-flamenco-guitar-legend-dies-at-81-years-old",
+      "title": "وفاة بيبي هابيتشويلا إحدى أهم أساطير الفلامنكووُلد في غرناطة عام 1944 باسم خوسيه أنتونيو كارمونا كارمونا، وكان ينتمي إلى السلالة التاريخية لعائلة \"هابيتشويلا\"، إحدى أهم عائلات الفلامنكو.05/08/2026",
+      "page_num": 1,
+      "bytes": 542752,
+      "sha1": "96a69dedd7e00be2b19c191ac0991131fb99c0ae"
+    },
+    {
+      "id": 126,
+      "file": "article_0126.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/04/you-can-smell-the-wires-why-fenix-flexins-rubberz-is-facing-ai-accusations",
+      "title": "\"تشم رائحة الأسلاك\": لماذا يواجه \"رابرز\" لفينكس فليكسن اتهامات بالذكاء الاصطناعيهل يستطيع الجمهور والفنانون تمييز الموسيقى المنتجة بالذكاء الاصطناعي؟ إذا أخذنا أغنية \"Rubberz\" لمغني الراب \"Fenix Flexin\" مثالا، فالإجابة نعم وبكل وضوح.04/08/2026",
+      "page_num": 1,
+      "bytes": 683172,
+      "sha1": "3ead3e23d7449402870d825a7f5d267507a438db"
+    },
+    {
+      "id": 127,
+      "file": "article_0127.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/04/they-recover-a-stolen-altarpiece-from-a-navarrese-monastery-founded-by-warriors",
+      "title": "استعادة مذبح مسروق في دير نافاري أسسه محاربونأتاح **تعاون** بين الشرطة و\"موسوس دي إسكوادرا\" تعقّب مسار لوحة مذبح تجسّد العذراء الطاهرة تعود إلى دير \"سانتا كلارا دي فيتيرو\" بعد تبادلها مرارا في أسواق شعبية ومحال وعبر أفراد.04/08/2026",
+      "page_num": 1,
+      "bytes": 437754,
+      "sha1": "ba9be7c3e1ba8c1f6f667045b9b383e210251e8a"
+    },
+    {
+      "id": 128,
+      "file": "article_0128.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/04/everything-points-to-a-yes-ronaldo-and-georgina-could-get-married-this-weekend",
+      "title": "كل المؤشرات إلى نعم: زواج رونالدو وجورجينا قد يتم نهاية هذا الأسبوعهل يكون هذه المرة؟ بعد أن تبيّن عدم صحة شائعات الأسبوع الماضي، تشير المعطيات إلى أن زفاف رونالدو وجورجينا قد يُقام السبت في ماديرا، إذ حجز الثنائي طابقين في فندق فاخر.04/08/2026",
+      "page_num": 1,
+      "bytes": 513163,
+      "sha1": "b6429e8a2740b9a9dfdb57907ca6e7ec6f22220d"
+    },
+    {
+      "id": 129,
+      "file": "article_0129.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/04/identity-of-new-007-good-bet-that-next-actor-to-play-james-bond-will-be-announced-this-yea",
+      "title": "هوية العميل 007 الجديد: منتجة ترجح إعلان الممثل هذا العاممن سيخلف دانيال كريغ في تجسيد العميل 007؟ الإجابة لن تتأخر، إذ من المقرر الكشف عن هوية جيمس بوند الجديد خلال هذا العام، بحسب المنتجة إيمي باسكال.04/08/2026",
+      "page_num": 1,
+      "bytes": 708335,
+      "sha1": "295ddcfe1a8ce33210ecf7acd67a22ecc9e55126"
+    },
+    {
+      "id": 130,
+      "file": "article_0130.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/04/gravity-defying-dogs-and-brooding-bovines-meet-the-winners-of-the-international-pet-photog",
+      "title": "كلاب تتحدى الجاذبية وأبقار متجهمة: تعرّف إلى الفائزين بجوائز التصوير الفوتوغرافي للحيوانات الأليفةوسط منافسة حادة بين عدد كبير من المشاركين، حصدت المصورة الأسترالية \"كالي سودن\" الجائزة الكبرى في جوائز التصوير الفوتوغرافي للحيوانات الأليفة الدولية لعام 2026.04/08/2026",
+      "page_num": 1,
+      "bytes": 463615,
+      "sha1": "b9cbc034010ca3dc30691b58b75375a3b33e4643"
+    },
+    {
+      "id": 131,
+      "file": "article_0131.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/04/ferran-about-his-mega-cap-honestly-i-dont-know-about-politics",
+      "title": "فيران عن قبعته \"ميغا\": \"بصراحة لا أعرف في السياسة\"مهاجم نادي \"برشلونة\"، الذي قد يغيّر قميصه في الموسم المقبل، قلّل في حديثه إلى \"سي إن إن\" من أهمية ظهوره في جولة احتفال المنتخب في سيبيليس مرتديًا قبعة تحاكي الشعار الترامبي الأشهر.04/08/2026",
+      "page_num": 1,
+      "bytes": 552289,
+      "sha1": "6fb09e2d29a360469fcc4c6c30ec1e80f0068e45"
+    },
+    {
+      "id": 132,
+      "file": "article_0132.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/04/spider-man-no-way-home-actress-mary-egida-rivera-dies-aged-82",
+      "title": "وفاة الممثلة ماري إيجيدا ريفيرا عن عمر 82 عاما بطلة \"سبايدر مان: نو واي هوم\"المعروفة لدى كثيرين بدور جدة صديق بيتر باركر المقرّب نيد في فيلم الأبطال الخارقين الشهير عام 2021 \"Spider-Man: No Way Home\"، جسّدت ماري إغيدا ريفيرا \"المجتمع الفيليبيني برقي وفخر كبيرين\".04/08/2026",
+      "page_num": 1,
+      "bytes": 432775,
+      "sha1": "dc7da0ccd10c6baf10ee19348c1b441253840dcd"
+    },
+    {
+      "id": 133,
+      "file": "article_0133.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/04/spider-man-brand-new-day-officially-has-the-biggest-box-office-opening-weekend-in-history",
+      "title": "\"سبايدر مان براند نيو داي\" يحطم رسميا رقم افتتاح شباك التذاكر التاريخيحقق فيلم \"Spider-Man\" الجديد إيرادات قياسية بلغت 360 مليون دولار، في أكبر افتتاح بتاريخ شباك التذاكر، بينما يعد \"Spider-Man: Brand New Day\" و\"Avengers: Endgame\" الفيلمين الوحيدين اللذين تجاوزت إيراداتهما 300 مليون دولار في عطلة أسبوع واحدة.04/08/2026",
+      "page_num": 1,
+      "bytes": 399340,
+      "sha1": "256eadbd22f321f0bab3f435a8a968af0f38fdec"
+    },
+    {
+      "id": 134,
+      "file": "article_0134.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/03/the-countdown-to-barbieland-will-we-ever-get-a-barbie-sequel",
+      "title": "العد التنازلي نحو \"باربي لاند\": هل نشاهد جزءا جديدا من \"باربي\"؟تتعاظم الضغوط للتوصل إلى اتفاق قبل نهاية العام، لكن حتى الآن ما تزال المفاوضات متوقفة، ما يثير القلق بشأن مستقبل المسار التفاوضي.03/08/2026",
+      "page_num": 1,
+      "bytes": 391448,
+      "sha1": "f1aba2943a18bab0d041d1d2d2a0c8736fdefbe6"
+    },
+    {
+      "id": 135,
+      "file": "article_0135.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/03/you-literally-cant-ai-startup-orchid-sparks-backlash-over-its-second-brain-assistant",
+      "title": "منصة ذكاء اصطناعي \"أوركيد\" تثير غضبا بسبب مساعدها \"الدماغ الثاني\"شركة ناشئة في مجال الذكاء الاصطناعي تعرضت لكثير من السخرية تؤكد أن روبوت الدردشة الخاص بها قادر على تولي كل شيء من تنظيم المواعيد إلى تذكّر اللحظات المهمة.03/08/2026",
+      "page_num": 1,
+      "bytes": 553888,
+      "sha1": "321883590db193208db9e05323dfc026c4d6c894"
+    },
+    {
+      "id": 136,
+      "file": "article_0136.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/03/donald-trump-angers-music-fans-after-sharing-ai-generated-image-of-himself-as-elvis-presle",
+      "title": "دونالد ترامب يثير غضب عشاق الموسيقى بعد نشر صورة له بتقنية الذكاء الاصطناعي كإلفيس برسلي\"أنت شيطان متنكر\"... أثار دونالد ترامب غضب محبي الموسيقى بعد نشر سلسلة جديدة من صور مولدة بالذكاء الاصطناعي، بينها صورة يظهر فيها كـ\"ملك الروك آند رول\".03/08/2026",
+      "page_num": 1,
+      "bytes": 536193,
+      "sha1": "057b54a05f3edc726c7396fc85a3d274e83f7406"
+    },
+    {
+      "id": 137,
+      "file": "article_0137.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/03/spider-man-brand-new-day-scores-second-biggest-ever-global-opening-weekend-nears-1bn-world",
+      "title": "\"سبايدر مان: براند نيو داي\" يحقق ثاني أكبر افتتاح عالمي ويقترب من 1 مليار دولارأصبح فيلم \"Spider-Man: Brand New Day\" ظاهرة في شباك التذاكر خلال عطلة نهاية أسبوعه الأولى، ويقترب من تجاوز عتبة مليار دولار في اليومين المقبلين، ليصبح مرشحا لأعلى إيرادات عام 2026، متخطيا فيلم \"The Odyssey\" في أربعة أيام فقط.03/08/2026",
+      "page_num": 1,
+      "bytes": 578407,
+      "sha1": "b78a67379e8d4c4e34bd5435243d9eac21f8b60c"
+    },
+    {
+      "id": 138,
+      "file": "article_0138.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/03/ariana-grande-to-take-a-step-back-from-visibility-due-to-endless-public-scrutiny",
+      "title": "أريانا غراندي تبتعد عن الأضواء بسبب التدقيق الجماهيري المستمرأعلنت أريانا غراندي أنها ستبتعد عن الظهور العلني بعد انتهاء جولتها الحالية، بسبب ما وصفته بـ\"التدقيق العام المستمر بلا نهاية\"، في ظل تعليقات متجددة حول مظهرها الجسدي بعد صدور ألبومها الجديد.03/08/2026",
+      "page_num": 1,
+      "bytes": 547845,
+      "sha1": "98cedee161030d5a107ea14bfe55310005b37014"
+    },
+    {
+      "id": 139,
+      "file": "article_0139.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/03/what-are-giant-lobsters-doing-in-pompeii-ancient-ruins-meet-pop-art-in-philip-colberts-big",
+      "title": "جراد بحر عملاق في بومبيي: الآثار القديمة تلتقي بفن البوب في أكبر تركيب لكولبرتوصلت إلى بومبيي 30 منحوتة كركند عملاقة، حيث يكشف الفنان البوب البريطاني فيليب كولبرت عن أكبر عمل تركيبي له، ممزجا الأسطورة بالثقافة المعاصرة ليحوّل أحد أشهر المواقع الأثرية إلى حوار بين الماضي والحاضر.03/08/2026",
+      "page_num": 1,
+      "bytes": 468588,
+      "sha1": "16f6fbf5b3bf589af563b2f159b9cef56b21a868"
+    },
+    {
+      "id": 140,
+      "file": "article_0140.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/02/rumours-ignite-social-media-about-the-alleged-marriage-of-cristiano-ronaldo-and-giorgina-r",
+      "title": "شائعات تشعل مواقع التواصل عن زواج مزعوم لكريستيانو رونالدو وجورجينا رودريغيزلو أن كريستيانو رونالدو وخورخينا رودريغيز تزوجا في عطلة نهاية الأسبوع هذه، كما أعلنت صحف الفضائح الكثيرة، لكان ذلك السر الإعلامي الأكثر تكتمًا في التاريخ.02/08/2026",
+      "page_num": 1,
+      "bytes": 527367,
+      "sha1": "724382467838b31a0672bc4e6f5aa9bef6cb43c9"
+    },
+    {
+      "id": 141,
+      "file": "article_0141.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/02/pentagon-ufo-files-what-role-germany-plays-in-them",
+      "title": "ملفات الأجسام الطائرة المجهولة في البنتاغون: أي دور لألمانيا؟تواكب صحيفة \"نيويورك تايمز\" منذ سنوات نشر ملفات الأجسام الطائرة المجهولة في الولايات المتحدة. الوثائق الجديدة لا تقتصر على رصد هذه الأجسام، بل تعود إلى الحرب العالمية الثانية وتذكر ألمانيا مرارا.02/08/2026",
+      "page_num": 1,
+      "bytes": 501200,
+      "sha1": "9f4db6e29ed838087a2b97b44901b53732c6c424"
+    },
+    {
+      "id": 142,
+      "file": "article_0142.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/02/grand-designs-tashkents-modernist-architecture-joins-unesco-world-heritage-list",
+      "title": "تصاميم تاشكنت الحداثية تنضم إلى قائمة التراث العالمي لليونسكوتشمل القائمة عشرة مبانٍ ومجمعات شُيّدت بين ستينيات القرن الماضي وبدايات تسعينياته، مبرزةً كيف تم تكييف التصميم الحداثي مع تقاليد آسيا الوسطى ومناخها وحياتها الحضرية.02/08/2026",
+      "page_num": 1,
+      "bytes": 510816,
+      "sha1": "61282db5bd0c291953315c241ca6b88c13e3b5db"
+    },
+    {
+      "id": 143,
+      "file": "article_0143.html",
+      "url": "https://arabic.euronews.com/culture/2026/08/01/find-in-a-german-cave-40000-year-old-bird-figures-made-of-mammoth-ivory-discovered",
+      "title": "اكتشاف تماثيل لطيور منحوتة من عاج الماموث يعود عمرها إلى 40 ألف عام في كهف بألمانيااكتشف علماء آثار في كهف \"هوله فلس\" بألمانيا تمثالين لطيور منحوتين من عاج الماموث، في اكتشاف يقدّم دليلاً جديدًا على امتلاك البشر، قبل نحو 40 ألف عام، حسًا فنيًا متطورًا.01/08/2026",
+      "page_num": 1,
+      "bytes": 487069,
+      "sha1": "dc9ac4a49630741dbc828df043ceffe062182d37"
+    },
+    {
+      "id": 144,
+      "file": "article_0144.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/31/barack-obama-pays-tribute-to-irish-musician-glen-hansard-in-his-summer-2026-playlist",
+      "title": "باراك أوباما يكرم الموسيقي الإيرلندي غلين هانسارد في قائمة صيف 2026 الموسيقيةيواصل باراك أوباما تقليده السنوي بمشاركة اختياراته من الموسيقى والأدب لصيف هذا العام، ووجّه تحية للموسيقي الأيرلندي الحائز جائزة أوسكار غلين هانسارد الذي توفي هذا الأسبوع في حادث دراجة نارية عن عمر 56 عاما.31/07/2026",
+      "page_num": 1,
+      "bytes": 584505,
+      "sha1": "27a326b2d0a3d4253f400aa090e34cd91af2b29c"
+    },
+    {
+      "id": 145,
+      "file": "article_0145.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/31/netflix-sued-for-105m-over-stolen-nicolas-cage-world-war-ii-thriller-fortitude",
+      "title": "نتفليكس تواجه دعوى بقيمة 105 مليون دولار بسبب فيلم نيكولاس كيدج \"فورتيتود\" المسروقتنص الدعوى على أن نسخة مشفرة من الفيلم كانت على واحد من عدة أقراص صلبة سُرقت من مكاتب \"نتفليكس\" في لوس أنجلِس الشهر الماضي، وأن السرقة أضرت ببيع الفيلم.31/07/2026",
+      "page_num": 1,
+      "bytes": 398815,
+      "sha1": "89ed8786273bd2e789440ff5c4698a15004902e9"
+    },
+    {
+      "id": 146,
+      "file": "article_0146.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/31/solitude-standing-stonehenge-opens-lottery-for-unique-solo-experience-at-english-heritage",
+      "title": "ستونهنج: قرعة لتجربة فردية استثنائية في موقع التراث الإنجليزيأطلقت مؤسسة \"إنجلش هيريتدج\" مسابقة فريدة تتيح للراغبين تحقيق حلم قضاء لحظات من الهدوء والسكينة منفردين داخل الدائرة الأيقونية في \"ستونهنج\"، أحد أبرز المعالم في بريطانيا.31/07/2026",
+      "page_num": 1,
+      "bytes": 392650,
+      "sha1": "0bf8fd25da7af5337e8c8e1c86ad0ee4fdb14ec4"
+    },
+    {
+      "id": 147,
+      "file": "article_0147.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/31/wild-style-warrior-meet-the-artist-on-a-mission-to-remove-romes-graffiti",
+      "title": "محارب الأسلوب المتوحش: تعرف إلى الفنان الساعي لإزالة \"غرافيتي\" روماضاق فاليريو توفيري، مرمم معماري يبلغ من العمر 28 عاما في روما، ذرعا بالعلامات والكتابات الجدارية العشوائية، فقرر التحرك بنفسه؛ مسلحا بجهاز قذف الرمل وبجمهور متزايد على مواقع التواصل، يعيد ترميم جدران العاصمة الإيطالية التاريخية سطحا بعد آخر.31/07/2026",
+      "page_num": 1,
+      "bytes": 543078,
+      "sha1": "d0b5339fc8660a0e11aedfbfed2a8b1892a9e732"
+    },
+    {
+      "id": 148,
+      "file": "article_0148.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/30/italy-the-recipe-for-an-ancient-elixir-that-could-be-the-ancestor-of-coca-cola-was-found-i",
+      "title": "إيطاليا: العثور في دير على وصفة إكسير قديم يقال إنه أصل مشروب \"كوكا كولا\"في أرشيف صيدلية سان ماركو القديمة في فلورنسا عُثر على وصفة \"Elixir vinoso ricostituente\" تضم المكونات نفسها لـ\"French Wine Cola\"، التحضير الدوائي الذي انطلقت منه \"Coca Cola\" الحالية.30/07/2026",
+      "page_num": 1,
+      "bytes": 492994,
+      "sha1": "a5909d9e97811199939eb31d30df52d0720d822e"
+    },
+    {
+      "id": 149,
+      "file": "article_0149.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/30/ceramics-in-italy-glass-in-czechia-take-the-train-to-these-traditional-craft-centres-in-eu",
+      "title": "الخزف في إيطاليا والزجاج في تشيكيا: سفر بالقطار إلى مراكز الحرف التقليدية في أوروبامن تشكيل الطين إلى صناعة الزجاج، تعرّف على هذه **المهارات العريقة** واكتشف كيف تصل بالقطار إلى الأماكن التي لا تزال تُمارس فيها.30/07/2026",
+      "page_num": 1,
+      "bytes": 503455,
+      "sha1": "79a994d74fbcf9b225b97bd4553e34c1314a637d"
+    },
+    {
+      "id": 150,
+      "file": "article_0150.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/30/mercury-prize-2026-paul-mccartney-becomes-first-time-nominee-in-thrilling-shortlist",
+      "title": "جائزة ميركوري 2026: بول مكارتني ينال ترشيحه الأول في قائمة مثيرةتُمنَح جائزة أُطلقت عام 1992 لأفضل ألبوم لفنان بريطاني أو إيرلندي سنويا، وفي ترشيحات 2026 تتنافس \"RAYE\" و\"Nia Archives\" و\"Florence + The Machine\"، مع أول ترشيح لـ\"Paul McCartney\" عن عمر 84 عاما.30/07/2026",
+      "page_num": 1,
+      "bytes": 402278,
+      "sha1": "24eb77312ebfcd388c4bff005101c5fe3825324c"
+    },
+    {
+      "id": 151,
+      "file": "article_0151.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/30/george-and-amal-clooney-were-forced-to-evacuate-their-home-in-brignoles-france-due-to-wild",
+      "title": "جورج وأمل كلوني يخليان منزلهما في برينيو الفرنسية بسبب حرائق الغاباتمع استمرار **حرائق الغابات** في التهام أجزاء من جنوب أوروبا، يؤكد الزوجان الشهيرين أنهما \"لا يعلمان\" إن كان منزلهما في فرنسا سيصمد.30/07/2026",
+      "page_num": 1,
+      "bytes": 569766,
+      "sha1": "adbb3839117619a085b4f975a6373ac84bc73882"
+    },
+    {
+      "id": 152,
+      "file": "article_0152.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/30/crude-language-of-maga-author-joyce-carol-oates-defends-the-odyssey-after-translators-scat",
+      "title": "جويس كارول أوتس تدافع عن \"الأوديسة\" وتنتقد \"لغة ماغا\" بعد مراجعة مترجمة حادةيتواصل الجدل الثقافي حول فيلم \"The Odyssey\" للمخرج كريستوفر نولان، إذ تدافع الكاتبة المرشحة لجائزة \"بوليتزر\" جويس كارول أوتس عنه بعد مراجعة لاذعة للمترجمة إميلي ويلسون، التي رأت أن الفيلم \"لا يقول شيئا مقنعا\".30/07/2026",
+      "page_num": 1,
+      "bytes": 423070,
+      "sha1": "0f3448bc12c545e977aeab8aee238f6222cae0d2"
+    },
+    {
+      "id": 153,
+      "file": "article_0153.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/30/k-pop-giants-bts-boycott-the-2027-grammys-after-the-introduction-of-a-controversial-new-as",
+      "title": "فرقة بي تي إس تقاطع جوائز غرامي 2027 بعد طرح جائزة جديدة مثيرة للجدل للبوب الآسيويفرقة \"بي تي إس\"، أنجح فريق موسيقي في تاريخ كوريا الجنوبية، لن تشارك في جوائز \"غرامي\" المقبلة، بعدما ارتبط قرارها بفئة جديدة انتقدها المعجبون بوصفها تستبعد الأعمال غير الإنجليزية من الفئات الرئيسية.30/07/2026",
+      "page_num": 1,
+      "bytes": 497801,
+      "sha1": "4ee308215ab1e200f69a8185d4ef84afa980c137"
+    },
+    {
+      "id": 154,
+      "file": "article_0154.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/30/amy-winehouses-father-has-been-ordered-to-pay-nearly-1-million-to-her-friends",
+      "title": "إلزام والد إيمي واينهاوس بدفع نحو مليون جنيه إسترليني لصديقاتهاقال القاضي إن ميتش واينهاوس \"تعمد وبوعي\" توجيه اتهامات لا أساس لها ضد اثنين من أصدقاء آمي واينهاوس.30/07/2026",
+      "page_num": 1,
+      "bytes": 522498,
+      "sha1": "53a80d4ac638da0c3c870525f2a187058a183b68"
+    },
+    {
+      "id": 155,
+      "file": "article_0155.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/30/euronews-cultures-film-of-the-week-spider-man-brand-new-day-spidey-to-the-mcus-rescue",
+      "title": "فيلم الأسبوع \"يورونيوز كالتشر\": \"سبايدر مان براند نيو داي\" ينقذ عالم مارفل؟على مدى خمسة أعوام صعبة، تراجعت أكبر سلسلة أفلام في العالم؛ فقد قدّمت \"MCU\" أعمالا أقل نجاحا بعد \"Endgame\"، وتعوّل الآن على بطلها \"سبايدر-مان\" لإنقاذ الموقف.30/07/2026",
+      "page_num": 1,
+      "bytes": 435543,
+      "sha1": "52e8f29f86a38857543a3b54fa876ab08b79c8d6"
+    },
+    {
+      "id": 156,
+      "file": "article_0156.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/29/the-oldest-library-on-the-iberian-peninsula-has-been-discovered-in-puente-genil",
+      "title": "اكتشاف أقدم مكتبة في شبه الجزيرة الإيبيرية في بونتي خينيلقد تكون الغرفة العاشرة بموقع فوينتي ألامو الأثري الروماني قد أُعيد تأهيلها في القرن الرابع الميلادي لاستخدامها مكتبة، في المكان الذي كان يُعد سابقا معبدا مكرسا للإله ميثرا.29/07/2026",
+      "page_num": 1,
+      "bytes": 435172,
+      "sha1": "fad673cf061651348292a89f6e7da789cf81808a"
+    },
+    {
+      "id": 157,
+      "file": "article_0157.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/29/italy-stop-to-botticelle-bill-proposed-against-tourist-carriages-in-rome-and-other-art-cit",
+      "title": "إيطاليا: مشروع قانون لحظر العربات السياحية التي تجرها الخيول في روما ومدن أخرىقدمت بعد ظهر الأربعاء في مجلس النواب الإيطالي مقترح قانون، إذا أقر، فسيحظر عربات \"بوتيتشيلي\" التقليدية التي تجرها الحيوانات والمنتشرة خصوصا في المدن السياحية الكبرى مثل روما.29/07/2026",
+      "page_num": 1,
+      "bytes": 548759,
+      "sha1": "20288a7975a02dfad72b0d511cbc8b9bd3a16c8e"
+    },
+    {
+      "id": 158,
+      "file": "article_0158.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/29/oscar-winning-irish-musician-and-actor-glen-hansard-dies-aged-56-following-motorcycle-cras",
+      "title": "وفاة الموسيقي والممثل الأيرلندي الحائز أوسكار جلين هانزارد عن 56 عاما بعد حادث دراجة ناريةيُستذكر هذا المغني والممثل بحبّ كقائد لفرقة \"The Frames\"، وبألبوماته المنفردة، وبأدواره في فيلمي \"The Commitments\" و\"Once\".29/07/2026",
+      "page_num": 1,
+      "bytes": 472177,
+      "sha1": "f071099304bebe3ba66fa0632e5c78c0b2587a8b"
+    },
+    {
+      "id": 159,
+      "file": "article_0159.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/29/spain-earns-the-second-star-on-its-badge-this-is-the-coin-that-crowns-spain-as-the-2026-wo",
+      "title": "إسبانيا تخلد النجمة الثانية على عملة جديدة لبطولة كأس العالم 2026تستعد دار الطباعة الوطنية للنقود والطوابع لإصدار قطعة نقدية فضية بقيمة خمسة يورو، تكريما للقب العالمي المحقق في 19 يوليو في نيوجيرسي، ضمن البرنامج الرسمي لمونديال 2026.29/07/2026",
+      "page_num": 1,
+      "bytes": 473516,
+      "sha1": "6b3941ca53ac2c1ebfea2896d451577830029244"
+    },
+    {
+      "id": 160,
+      "file": "article_0160.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/29/dj-kavinsky-known-for-his-track-nightcall-found-dead-at-his-paris-home",
+      "title": "العثور على الدي جي كافينسكي صاحب أغنية \"نايتكول\" ميتا في منزله بباريسيُعد كافينسكي من أبرز وجوه حركة موسيقى الهاوس ضمن موجة \"الفرنش تاتش\"، وهو صاحب أغنية \"Nightcall\" الشهيرة بفيلم \"Drive\"، التي أدّاها في حفل ختام أولمبياد باريس 2024 إلى جانب أنجيل وفرقة \"Phoenix\".29/07/2026",
+      "page_num": 1,
+      "bytes": 474847,
+      "sha1": "f7d94fab7e1953aee6aceb191ade7bfece7447be"
+    },
+    {
+      "id": 161,
+      "file": "article_0161.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/28/tom-cruise-and-katie-holmess-daughter-suri-drops-her-estranged-fathers-last-name",
+      "title": "سوري ابنة توم كروز وكاتي هولمز تتخلى عن لقب والدها المنفصل عنهاسوري، ابنة النجمين توم كروز وكاتي هولمز، أصبحت أحدث أبناء المشاهير الذين يتخلون عن اسم عائلتهم الشهير، إذ تشير تقارير إلى أنها غيّرت رسميا لقبها من كروز إلى نوال، وهو الاسم الأوسط لهولمز.28/07/2026",
+      "page_num": 1,
+      "bytes": 546941,
+      "sha1": "0b1a10a0b56a4a8d60cce6d752b2d5d1aa1d5d92"
+    },
+    {
+      "id": 162,
+      "file": "article_0162.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/28/white-houses-rick-and-morty-ai-parody-featuring-donald-trump-sparks-huge-backlash",
+      "title": "فيديو ساخر بالذكاء الاصطناعي من البيت الأبيض عن ريك ومورتي وترامب يثير غضبا واسعا\"الناس لم يعودوا قادرين على تحمل تكلفة الوقود والبقالة والإيجار والرعاية الصحية\"، كتبت النائبة السابقة وحليفة ترامب السابقة مارجوري تايلور غرين ردا على فيديو ساخر لـ\"ريك ومورتي\" نشره البيت الأبيض.28/07/2026",
+      "page_num": 1,
+      "bytes": 469716,
+      "sha1": "e975117ab1b4d770b27f018f546608c80837bc3a"
+    },
+    {
+      "id": 163,
+      "file": "article_0163.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/28/christopher-nolans-the-odyssey-boosts-sales-of-homers-book-and-increases-interest-in-learn",
+      "title": "\"الأوديسة\" لكريستوفر نولان تنعش كتب هوميروس وتشعل الاهتمام بتعلم اليونانيةإطلاق فيلم نولان \"The Odyssey\" أثار موجة اهتمام كبيرة، إذ يسارع كثيرون لقراءة ملحمة هوميروس وتعلم اللغة اليونانية، فيما ينتقد بعض المحافظين هذه المعالجة السينمائية.28/07/2026",
+      "page_num": 1,
+      "bytes": 498800,
+      "sha1": "3215956dd3d4bf0ab83d07bf7dae6a3f1172f37d"
+    },
+    {
+      "id": 164,
+      "file": "article_0164.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/27/bill-oddie-famed-british-comedian-with-the-goodies-and-wildlife-broadcaster-dies-aged-85",
+      "title": "وفاة الكوميدي البريطاني بيل أودي مذيع برامج الحياة البرية عن عمر 85 عامالمع نجم أودي في سبعينيات القرن الماضي كأحد أعضاء الثلاثي الكوميدي البريطاني \"ذي غوديز\"، ولا يزال يُذكر بمحبة لتقديمه عددا من البرامج التلفزيونية عن الحياة البرية.27/07/2026",
+      "page_num": 1,
+      "bytes": 478152,
+      "sha1": "3f4bf33a614c042b5df5e4e8f01bed7980bac5b2"
+    },
+    {
+      "id": 165,
+      "file": "article_0165.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/27/donald-trump-angers-katy-perry-and-inexplicably-calls-lebron-james-a-racist",
+      "title": "ترامب يغضب كاتي بيري ويتهم ليبرون جيمس بلا تفسير بأنه \"عنصري\"دونالد ترامب في مواجهة المشاهير؛ إذ أثار فريقه غضب المغنية كاتي بيري لاستخدام أغنيتها \"Firework\" في فيديو لغارات عسكرية، بينما وصف ترامب نجم دوري السلة الأمريكي ليبرون جيمس بأنه \"عنصري\".27/07/2026",
+      "page_num": 1,
+      "bytes": 495696,
+      "sha1": "30252a825d259062e0d7878bd281bb819024037c"
+    },
+    {
+      "id": 166,
+      "file": "article_0166.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/27/guillermo-del-toro-absolutely-no-goddamn-ai-in-pans-labyrinth-restoration",
+      "title": "غيليرمو ديل تورو: لا ذكاء اصطناعي إطلاقا في ترميم \"متاهة بان\"\"ما ندافع عنه هو جمال الفن وقوته الخلاصية\"، قال المخرج الشهير، الذي أُعيد ترميم فيلمه \"Pan's Labyrinth\" من دون استخدام الذكاء الاصطناعي، على أن يُعرض مجددا في دور السينما في أكتوبر.27/07/2026",
+      "page_num": 1,
+      "bytes": 479054,
+      "sha1": "fc2701bfa26cf8bb2d393db73362d2b8279474e3"
+    },
+    {
+      "id": 167,
+      "file": "article_0167.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/27/meet-the-new-black-panther-british-actor-david-jonsson-cast-as-tchallas-son-in-black-panth",
+      "title": "التعريف بالبلاك بانثر الجديد: الممثل البريطاني ديفيد جونسون يجسد ابن تي تشالا في بلاك بانثر 3كُشف عن الممثل البريطاني ديفيد جونسن بوصفه \"بلاك بانثر\" الجديد في إعلان مفاجئ خلال \"كوميك كون\" هذا الأسبوع. جونسن، الذي يبلغ من العمر 32 عاما، لمع في مسلسل \"إندستري\" ثم في فيلمي \"راي لين\" و\"إيليان: رومولوس\".27/07/2026",
+      "page_num": 1,
+      "bytes": 565404,
+      "sha1": "0d98ee5a64593420737e4d59666276e5f980d776"
+    },
+    {
+      "id": 168,
+      "file": "article_0168.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/27/spider-man-ariana-grande-and-andy-warhol-the-best-things-to-do-hear-see-or-watch-in-europe",
+      "title": "سبايدر مان وأريانا غراندي وآندي وارهول: أفضل الفعاليات في أوروبا هذا الأسبوعمن فرسان الظلام المقنعين إلى حاسة \"سبايدي\" السينمائية، نحن على موعد هذا الأسبوع مع جرعة مكثفة من أفلام الأبطال الخارقين الجديدة. إليكم ما ينتظركم...27/07/2026",
+      "page_num": 1,
+      "bytes": 527034,
+      "sha1": "1fd6fc223f6bb562d53c6c1326fba77a853335b7"
+    },
+    {
+      "id": 169,
+      "file": "article_0169.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/25/i-do-not-want-to-replace-models-with-ai-fashion-designer-steven-passaro-plans-industry-rev",
+      "title": "ستيفن باسارو يسعى إلى تجديد عالم الموضة.. ويرفض استبدال العارضات بالذكاء الاصطناعييواصل مصمم الأزياء الفاخرة ستيفن باسارو ترسيخ حضوره في عالم الموضة بفضل تصاميمه المبتكرة والجريئة. وفي مقابلة حصرية مع \"يورونيوز كالتشر\"، يستعرض رؤيته للفن، ويتحدث عن أحدث توجهات صناعة الأزياء، وموقفه من استخدام الذكاء الاصطناعي في هذا القطاع.25/07/2026",
+      "page_num": 1,
+      "bytes": 498569,
+      "sha1": "bf1be4e0c16367a24da19d7ba88960f9ba9cca3a"
+    },
+    {
+      "id": 170,
+      "file": "article_0170.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/25/odysseys-bones-and-hens-what-are-the-best-movies-of-2026-so-far",
+      "title": "\"أوديسة\" و\"العظام\" و\"الدجاجة\": ما أفضل أفلام ٢٠٢٦ حتى الآن؟كم واحدا منها شاهدت حتى الآن؟ وهل توافق على تصنيفنا لأفضل الأعمال في النصف الأول من عام 2026؟25/07/2026",
+      "page_num": 1,
+      "bytes": 590136,
+      "sha1": "74c925612fab275e2bace0edaf48f08de29757ea"
+    },
+    {
+      "id": 171,
+      "file": "article_0171.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/24/boycotts-and-apologies-the-controversy-with-rosalia-and-patti-smith-after-the-world-cup-fi",
+      "title": "مقاطعات وانتقادات واعتذارات: جدل في الأرجنتين حول روساليا وباتي سميث بعد نهائي المونديالرسائل الدعم لإسبانيا التي نشرتها \"روزاليا\" و\"باتي سميث\" أثارت غضبا واسعا في الأرجنتين بعد نهائي كأس العالم، مع انتقادات على شبكات التواصل وحملات مقاطعة وإلغاء حفل تكريمي.24/07/2026",
+      "page_num": 1,
+      "bytes": 495190,
+      "sha1": "4d1658acc57d13e4294fb5474eb81f96638faa7f"
+    },
+    {
+      "id": 172,
+      "file": "article_0172.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/24/the-church-that-shakes-the-history-of-spain-did-moors-and-christians-ever-live-together-in",
+      "title": "كنيسة تعيد كتابة تاريخ إسبانيا: هل تعايش المسلمون والمسيحيون بسلام؟يكشف موقع \"سيرو دي لا بيرخين\" الأثري في كالثبارا بجنوب شرق إسبانيا أن جماعة مسيحية واصلت شعائرها حتى القرن التاسع، ما يشير إلى تعايش أوثق بين المسيحيين والمسلمين مما كان يُعتقد.24/07/2026",
+      "page_num": 1,
+      "bytes": 496629,
+      "sha1": "a6522c92697ddfcd8653ed72215fa5eb47a0b2d7"
+    },
+    {
+      "id": 173,
+      "file": "article_0173.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/24/pompeii-unveils-reconstructed-frescoed-banquet-hall-ceiling-as-restoration-continues",
+      "title": "بومبي تكشف سقف قاعة ولائم مزخرف معاد بناؤه: أعمال الترميم مستمرةحدد علماء الآثار أن المحور الرئيس للعمل يجسد ديونيسوس وأريادني، وأن اتحادهما يعد من أشهر الأساطير اليونانية.24/07/2026",
+      "page_num": 1,
+      "bytes": 471223,
+      "sha1": "0b243bec032f6c735eb25c032f71baf17c62041c"
+    },
+    {
+      "id": 174,
+      "file": "article_0174.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/24/raging-gods-and-treacherous-odysseys-how-much-do-you-know-about-greek-mythology",
+      "title": "آلهة غاضبة ورحلات خادعة: اختبر معرفتك بالأساطير اليونانيةبينما يواصل فيلم كريستوفر نولان المقتبس من ملحمة هوميروس \"الأوديسة\" هيمنته الأسطورية على شباك التذاكر، تختبر \"يورونيوز كالتشر\" معرفتكم بأساطير اليونان.24/07/2026",
+      "page_num": 1,
+      "bytes": 547296,
+      "sha1": "bfe50f332ec49f939ad1289e161242083aecfa6d"
+    },
+    {
+      "id": 175,
+      "file": "article_0175.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/24/charli-xcx-music-film-fashion-euronews-cultures-review-and-verdict",
+      "title": "تشارلي إكس سي إكس \"ميوزيك فاشن فيلم\": مراجعة وتقييم \"يورونيوز كالتشر\"لم يكن من السهل أن تقدّم متابعة للنجاح العالمي الساحق الذي صنع حقبة في 2024. فقد أصدرت شارلي إكس سي إكس 11 أغنية قصيرة تعتمد على الغيتار؛ عمل مناهض لـ\"Brat\" يعد بالكثير لكنه بالكاد يُحدث أثرا.24/07/2026",
+      "page_num": 1,
+      "bytes": 531044,
+      "sha1": "a1e385c52ee86cf3284097323552c038a6ba072e"
+    },
+    {
+      "id": 176,
+      "file": "article_0176.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/24/divorces-in-spain-decrease-by-27-in-2025-and-shared-custody-is-a-growing-trend",
+      "title": "انخفاض الطلاق في إسبانيا بنسبة ٢٫٧ في المئة عام ٢٠٢٥ وصعود الحضانة المشتركةسجّلت إسبانيا 83.683 حالة انفصال زواج في 2025، بانخفاض نسبته 2,7% عن العام السابق، بينما أصبحت حضانة الأطفال المشتركة تتجاوز الحضانة المنفردة للأم.24/07/2026",
+      "page_num": 1,
+      "bytes": 558602,
+      "sha1": "9da63c56919565b496ce127400e88fae46e892d9"
+    },
+    {
+      "id": 177,
+      "file": "article_0177.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/23/if-the-bullfighter-does-not-die-let-the-bullfights-be-done-morrissey-resumes-his-war-again",
+      "title": "موريسي يطالب سانتشيث بإنهاء مصارعة الثيران مع عودته إلى إسبانياوجّه المغني البريطاني والناشط المخضرم في حقوق الحيوانات رسالة إلى بيدرو سانتشيث يطالبه فيها بوقف مصارعة الثيران وسباقات الثيران في الشوارع.23/07/2026",
+      "page_num": 1,
+      "bytes": 559002,
+      "sha1": "940b3c2f761a472657efac2b25a2e2be584c03b0"
+    },
+    {
+      "id": 178,
+      "file": "article_0178.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/23/how-bakus-old-city-is-preserving-history-while-embracing-the-future",
+      "title": "كيف تحتضن المدينة القديمة في باكو المستقبلبالمشاركة معAzpromoاكتشف كيف تمزج \"إتشريشهير\" بين الحفاظ على التراث، والإدارة الحضرية المستدامة، وحياة المجتمع من أجل حماية إحدى أقدم المدن التاريخية في المنطقة.23/07/2026",
+      "page_num": 1,
+      "bytes": 402046,
+      "sha1": "b11abf1f1414bc875e78abde59274d558682057c"
+    },
+    {
+      "id": 179,
+      "file": "article_0179.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/23/venice-2026-focuses-on-great-directors-herzog-kore-eda-mcdonagh-and-the-return-of-moretti",
+      "title": "مهرجان فينيسيا السينمائي يراهن على كبار المخرجين: هيرتسوغ وكورييدا وماكدونا وعودة موريتّيمهرجان البندقية السينمائي يكشف عن برنامج دورته الـ83، مع خمسة أفلام إيطالية في المسابقة، وعودة ناني موريتي، وكبار المخرجين العالميين وكوكبة من النجوم على السجادة الحمراء23/07/2026",
+      "page_num": 1,
+      "bytes": 582536,
+      "sha1": "d13dc64a934e444bb382e9c51187774329dde74b"
+    },
+    {
+      "id": 180,
+      "file": "article_0180.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/23/turki-al-sheikh-rescues-nader-nour-from-oblivion-with-a-song-on-amr-diabs-album",
+      "title": "تركي آل الشيخ ينتشل نادر نور من \"النسيان\" بأغنية في ألبوم عمرو دياب.. وقيمة نظارة الهضبة تثير الجدليأتي ألبوم \"حبيتك\" في وقت يرسّخ فيه الفنان البالغ 64 عامًا حضوره الصيفي، وسط إقبال جماهيري على حفلاته، رغم الجدل حول ارتفاع أسعار تذاكرها التي تجاوزت في بعض المقاعد المتقدمة 300 ألف جنيه مصري (نحو 5,700 دولار أمريكي).23/07/2026",
+      "page_num": 1,
+      "bytes": 465853,
+      "sha1": "7f5ca26db8e9d41224a1d88f321d88bbefc95353"
+    },
+    {
+      "id": 181,
+      "file": "article_0181.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/23/unesco-adds-ancient-lebanese-tyre-world-heritage-danger-list-after-months-bombardment",
+      "title": "بعد أشهر من القصف الإسرائيلي.. اليونسكو تدرج صور اللبنانية القديمة على قائمة التراث العالمي المهدد بالخطرتأثرت صور خلال الأشهر الماضية بالمواجهات التي اندلعت بين إسرائيل وحزب الله، حيث فرّ عشرات الآلاف من سكانها بعد إصدار الجيش الإسرائيلي أوامر إخلاء شملت عددًا من أحيائها، بما في ذلك مناطق قريبة من مواقع أثرية، قبل أن يعود معظم السكان لاحقًا إلى المدينة.23/07/2026",
+      "page_num": 1,
+      "bytes": 543460,
+      "sha1": "829b1c1b1f268b22bb13dc36b5fce590ab25d0bf"
+    },
+    {
+      "id": 182,
+      "file": "article_0182.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/23/armour-of-god-ultimatum-jackie-chan-begins-filming-in-kazakhstan",
+      "title": "فيلم \"درع الله: الإنذار النهائي\": جاكي شان يبدأ التصوير في كازاخستانبدأ تصوير الجزء الرابع من سلسلة أفلام الأكشن والمغامرة الكوميدية في منطقتي ألماتي ومانغيستاو، وأوضح أحد منتجي الفيلم إيغور تساي لـ\"يورونيوز\" أسباب اختيار هذا البلد في آسيا الوسطى للتصوير.23/07/2026",
+      "page_num": 1,
+      "bytes": 484971,
+      "sha1": "4bf06e0e53094c9a1d2fdf6588d4ab933a4708f6"
+    },
+    {
+      "id": 183,
+      "file": "article_0183.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/23/rip-la-la-hand-saga-ryan-gosling-detail-fixed-in-10-year-anniversary-la-la-land-poster",
+      "title": "نهاية حكاية \"لا لا هاند\": تصحيح حركة يد ريان غوسلينغ في ملصق \"لا لا لاند\"يد مسطحة خارجة، ويد نابضة بالحياة داخلة. بمناسبة الذكرى العاشرة للفيلم، صدر ملصق جديد لـ\"لا لا لاند\" يصحح تفصيلا صغيرا كان يحرم رايان غوسلينغ من النوم...23/07/2026",
+      "page_num": 1,
+      "bytes": 470609,
+      "sha1": "9db039850124054cec6a3b38e82a3df1e9abb504"
+    },
+    {
+      "id": 184,
+      "file": "article_0184.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/22/the-apollo-gallery-at-the-louvre-reopens-its-doors-after-the-scandal-of-the-theft-of-the-c",
+      "title": "إعادة فتح قاعة أبولون في متحف اللوفر بعد فضيحة سرقة مجوهرات التاجالمكان الذي شهد عملية سطو لافتة في أكتوبر 2025 يستعيد اليوم وظيفته الأصلية كـ\"غاليري\" فخمة تعود إلى القرن السابع عشر.22/07/2026",
+      "page_num": 1,
+      "bytes": 437546,
+      "sha1": "e10672ed789f05c4b91bdd8248a12e21a69322a6"
+    },
+    {
+      "id": 185,
+      "file": "article_0185.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/22/elon-musks-anti-odyssey-campaign-backfires-after-he-threatens-to-create-an-ai-version-of-n",
+      "title": "حملة إيلون ماسك المعادية لأوديسة ترتد عليه بعد تهديد بصنع نسخة \"إيه آي\" من ملحمة نولانتصاعدت حملة إيلون ماسك ضد \"The Odyssey\"، إذ تعهّد مالك \"X\" بأن ينتج روبوته للذكاء الاصطناعي \"Grok\" \"فيلما كاملا عن The Odyssey دقيقا تاريخيا ومخلصا لفن هوميروس\"، على أن يُنجز \"قبل نهاية هذا العام\".22/07/2026",
+      "page_num": 1,
+      "bytes": 564510,
+      "sha1": "b974f55a97f58b32746d55ade772ede130cf9d0f"
+    },
+    {
+      "id": 186,
+      "file": "article_0186.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/22/tributes-paid-to-godzilla-vs-kong-actress-kaylee-hottle-who-was-killed-in-a-car-crash-aged",
+      "title": "تكريم الممثلة \"كيلي هوتل\" من فيلم \"غودزيلا ضد كونغ\" بعد مقتلها بحادث سير عن عمر 18 عاماتوفيت الممثلة الصماء كايلي هوتل في حادث سير يوم الثلاثاء، عن عمر 18 عاما. أعلن والدها الخبر الحزين، فسارع عدد من المشاهير إلى نعي النجمة الشابة.22/07/2026",
+      "page_num": 1,
+      "bytes": 578148,
+      "sha1": "747f4cd997f64f9149c6288e12f0b50b00de6a1b"
+    },
+    {
+      "id": 187,
+      "file": "article_0187.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/22/the-singer-luis-represas-has-died",
+      "title": "وفاة المغني لويس ريبرساشتوفي الفنان البرتغالي عن عمر يناهز 69 عاما، وذلك بعد معاناة طويلة مع المرض.22/07/2026",
+      "page_num": 1,
+      "bytes": 449405,
+      "sha1": "b71af9a2dc0e728f262332bb2dda74d444652873"
+    },
+    {
+      "id": 188,
+      "file": "article_0188.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/22/despite-crises-and-fears-why-are-80-of-people-in-switzerland-so-optimistic",
+      "title": "رغم الأزمات والمخاوف: لماذا ٨٠٪ من السويسريين متفائلوناستطلاع جديد يكشف أن معظم سكان سويسرا ينظرون إلى المستقبل بتفاؤل لافت رغم الأزمات الدولية، وأن السويسريين الناطقين بالألمانية وكبار السن هم الأكثر رضا.22/07/2026",
+      "page_num": 1,
+      "bytes": 542515,
+      "sha1": "e3e8c7d24d7c7c5c6efeffc2c505337de715db5a"
+    },
+    {
+      "id": 189,
+      "file": "article_0189.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/21/russia-at-the-venice-biennale-brussels-cuts-2-million-euros-in-european-funds-appeal-ready",
+      "title": "قضية روسيا الاتحاد الأوروبي يلغي تمويل بينالي البندقيةمواجهة جديدة بين الاتحاد الأوروبي وبينالي البندقية: وقف التمويل الأوروبي، دعوى قضائية من المؤسسة وانتقادات من الحكومة الإيطالية21/07/2026",
+      "page_num": 1,
+      "bytes": 566394,
+      "sha1": "09db4be30e0f425dc27a76b9ad793db8ce690bc9"
+    },
+    {
+      "id": 190,
+      "file": "article_0190.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/21/d-day-is-approaching-for-the-unesco-listing-of-the-landing-beaches",
+      "title": "اقتراب إدراج شواطئ إنزال نورماندي في فرنسا على قائمة التراث العالميدخلت محاولة إدراج شواطئ إنزال \"دي-داي\" على قائمة **التراث العالمي** لليونسكو مرحلة حاسمة، مع قرار مرتقب بين 24 و27 يوليو، وهو تصنيف قد يعزز السياحة ويحمي هذا **الإرث المهدد**.21/07/2026",
+      "page_num": 1,
+      "bytes": 466803,
+      "sha1": "e4ce79b089bbb04eb3a6d08a6fdd354f304ecdd6"
+    },
+    {
+      "id": 191,
+      "file": "article_0191.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/21/luke-skywalkers-lightsaber-from-the-empire-strikes-back-breaks-star-wars-auction-record",
+      "title": "سيف لوك سكايووكر الضوئي يحطم رقما قياسيا في مزاد حرب النجومالسيف الضوئي الذي استخدمه الممثل مارك هاميل في فيلم \"The Empire Strikes Back\" عام 1980 حطم رقما قياسيا في مزاد لبيع مقتنيات سينمائية، إذ بيع مقابل 3.750.000 دولار.21/07/2026",
+      "page_num": 1,
+      "bytes": 549149,
+      "sha1": "4e9ab81e2b8f26fb4130f97e68ef04a41f821baf"
+    },
+    {
+      "id": 192,
+      "file": "article_0192.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/21/kick-argentina-out-of-the-world-cup-petition-nearly-breaks-guinness-world-record",
+      "title": "عريضة \"أرجنتينا برا\" في المونديال تقترب من رقم غينيس القياسيأكدت الفيفا فتح تحقيق مع الأرجنتين بسبب مشاهد \"مقززة\" عقب نهائي كأس العالم، فيما تجاوزت عريضة تطالب باستبعاد المنتخب من المونديال 23 مليون توقيع.21/07/2026",
+      "page_num": 1,
+      "bytes": 529687,
+      "sha1": "c9407040c45e4a5d11533842cefafef5dd575b8f"
+    },
+    {
+      "id": 193,
+      "file": "article_0193.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/20/from-following-to-the-odyssey-all-christopher-nolan-movies-ranked-from-weakest-to-stronges",
+      "title": "من \"فولوينغ\" إلى \"الأوديسة\": ترتيب كل أفلام كريستوفر نولانعودة كريستوفر نولان المرتقبة أسعدت عشاق السينما، بعدما حصد فيلمه \"The Odyssey\" إشادة نقدية ونجاحا في شباك التذاكر. قسم الثقافة في يورونيوز يقدم الترتيب النهائي لجميع أفلام المخرج الـ 13.20/07/2026",
+      "page_num": 1,
+      "bytes": 679537,
+      "sha1": "c90c77ba273b2f2abd662a1d02860874269fab9e"
+    },
+    {
+      "id": 194,
+      "file": "article_0194.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/20/the-odyssey-makes-history-at-global-box-office-for-christopher-nolan",
+      "title": "\"الأوديسة\" تحقق إنجازا تاريخيا في شباك التذاكر العالمي لكريستوفر نولاناقتحم فيلم كريستوفر نولان المقتبس من \"The Odyssey\" شباك التذاكر العالمي، محققا 264 مليون دولار في عطلة افتتاحه، في أكبر انطلاقة دولية للمخرج.20/07/2026",
+      "page_num": 1,
+      "bytes": 478888,
+      "sha1": "bd45f587a7bed42a7ccc626b4a041152b12cb36d"
+    },
+    {
+      "id": 195,
+      "file": "article_0195.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/20/aristides-de-sousa-mendes-the-man-who-did-not-fear-consequences-to-save-thousands-from-the",
+      "title": "أريستيدس دي سوزا مينديس: رجل لم يخف العواقب وأنقذ آلافا من النازيةيوم الأحد 19 تموز/يوليو أحييت في البرتغال الذكرى 141 لميلاد الدبلوماسي أرستيدس دي سوزا منديش، الذي يُقدَّر أنه أنقذ أكثر من 30.000 شخص من الاضطهاد النازي خلال الحرب العالمية الثانية، ويوجد متحف مخصص لحياته وإرثه.20/07/2026",
+      "page_num": 1,
+      "bytes": 602561,
+      "sha1": "b8f81698fa094324b90e25d7c93bcbfecbcb725c"
+    },
+    {
+      "id": 196,
+      "file": "article_0196.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/20/donald-trump-photobombing-la-roja-goes-viral-following-spains-world-cup-victory",
+      "title": "بعد الفوز بالمونديال.. صورة ترامب مع منتخب إسبانيا تُثير ضجة واسعةتصدّر دونالد ترامب منصات التواصل عقب نهائي كأس العالم، بعدما بدا رافضًا مغادرة منصة التتويج عقب تسليمه منتخب إسبانيا الكأس، رغم أنه كان قد رشّح الأرجنتين للفوز، ما أعاد الجدل بشأن ما يُعرف بـ\"لعنة ترامب\".20/07/2026",
+      "page_num": 1,
+      "bytes": 491270,
+      "sha1": "9564010357afc90f479858767d032ede228ecac7"
+    },
+    {
+      "id": 197,
+      "file": "article_0197.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/20/charli-xcx-lucian-freud-and-vijays-final-film-what-to-see-do-or-hear-this-week-in-europe",
+      "title": "أفضل ما يمكن القيام به أو سماعه أو مشاهدته في أوروبا هذا الأسبوعتطرح شارلي إكس سي إكس ألبومها الجديد المنتظر بشدة، بينما تحرك معارض عن لوسيان فرويد و\"إم. سي. إشر\" الخيال. إليكم أبرز الفعاليات هذا الأسبوع.20/07/2026",
+      "page_num": 1,
+      "bytes": 716078,
+      "sha1": "7e7d637ecbbb28e21ae9dd1ef437011cc4a2aabb"
+    },
+    {
+      "id": 198,
+      "file": "article_0198.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/20/the-antikythera-mechanism-the-greek-computer-that-predicted-eclipses-2000-years-ago",
+      "title": "آلية أنتيكيثيرا: الحاسوب اليوناني القديم المتنبئ بالكسوفأدى غرق سفينة قبالة جزيرة أنتيكيثيرا اليونانية عام 1901 إلى اكتشاف ترس برونزي يعود لأكثر من 2.000 عام، كان يحسب دورات القمر والشمس والكسوف، ويُعتبر اليوم أول حاسوب تناظري في التاريخ.20/07/2026",
+      "page_num": 1,
+      "bytes": 483734,
+      "sha1": "d1def186c69e3557525ffe2a2082dfafa6c03644"
+    },
+    {
+      "id": 199,
+      "file": "article_0199.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/18/who-made-the-fifa-world-cup-trophy-the-story-of-milan-sculptor-silvio-gazzaniga",
+      "title": "من صمم كأس العالم الشهيرة لـفيفا؟هكذا صمم النحات الإيطالي سيلفيو غاتسانيغا الشكل الأيقوني لكأس العالم لكرة القدم، ولماذا لا يسمح للأبطال بالاحتفاظ بها أبدا.18/07/2026",
+      "page_num": 1,
+      "bytes": 609609,
+      "sha1": "afbb2b3938fa9b3548a64be6bbf4f95792b51d35"
+    },
+    {
+      "id": 200,
+      "file": "article_0200.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/18/shipwreck-in-lake-constance-this-surprised-the-underwater-archaeologists",
+      "title": "ما الذي فاجأ علماء الآثار تحت الماء في حطام سفينة ببحيرة \"كونستانس\"يتحدث البروفيسور الدكتور توبياس بفليدرر من الجمعية البافارية لآثار ما تحت الماء مع \"يورونيوز\" عن اكتشاف أجزاء خشبية من حطام سفينة في بحيرة كونستانس، ويوضح ما يجعل هذا الاكتشاف مميزا.18/07/2026",
+      "page_num": 1,
+      "bytes": 447924,
+      "sha1": "ae69d00c2b650b5f8b72c79f6d46f42bd63547f0"
+    },
+    {
+      "id": 201,
+      "file": "article_0201.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/17/oscar-winning-actress-brenda-fricker-best-known-for-my-left-foot-and-home-alone-2-has-died",
+      "title": "وفاة الممثلة الإيرلندية بريندا فريكر عن عمر 81 عاماكانت بريندا فريكر أول امرأة إيرلندية تفوز بجائزة أوسكار عام 1990 عن دورها في فيلم \"My Left Foot\"، وتترك لعشاق السينما والتلفزيون إرثا لافتا، منها دورها البارز في \"Home Alone 2: Lost In New York\".17/07/2026",
+      "page_num": 1,
+      "bytes": 550611,
+      "sha1": "2963a54510c52c3a7fd6d1a35b09c8fd2c0bf016"
+    },
+    {
+      "id": 202,
+      "file": "article_0202.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/17/vikings-trump-cards-and-baby-fans-the-10-biggest-viral-moments-of-the-world-cup-2026",
+      "title": "ما أبرز 10 لحظات انتشرت من كأس العالم 2026؟من هيمنة إيرلينغ هالاند على منصات التواصل إلى بطاقة ترامب المثيرة للجدل وشهرة شقيق لامين يامال الصغير \"كاين\" على الإنترنت، تجمع \"يورونيوز كالتشر\" أبرز عشرة لحظات لانتشار واسع في كأس العالم 2026.17/07/2026",
+      "page_num": 1,
+      "bytes": 609384,
+      "sha1": "840820ea3d258e85c4adcbc1aec003aba29527fb"
+    },
+    {
+      "id": 203,
+      "file": "article_0203.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/17/the-cures-robert-smith-criticises-the-world-cup-halftime-show",
+      "title": "روبرت سميث من ذا كيور يهاجم عرض بين شوطي نهائي كأس العالمليس الجميع متحمسين لفقرة الاستراحة في نهائي كأس العالم المقبل، إذ نشر روبرت سميث من فرقة \"ذا كيور\" تعليقا صريحا لكنه شعري بعض الشيء عن عرض الفيفا على طريقة \"سوبر بول\" يوم الأحد.17/07/2026",
+      "page_num": 1,
+      "bytes": 473101,
+      "sha1": "743f3390fa302c9e1af1deb618151b05bc70a25e"
+    },
+    {
+      "id": 204,
+      "file": "article_0204.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/17/sour-grapes-michelins-first-winery-ratings-provoke-immediate-backlash",
+      "title": "انتقادات فورية لتصنيفات ميشلان الأولى لمزارع النبيذبعد أيام قليلة من إصدار \"ميشلان\" دليلها الأول لمزارع الكروم، طلب أحد عقارات بورغوني شطب اسمه من هذا الدليل.17/07/2026",
+      "page_num": 1,
+      "bytes": 543151,
+      "sha1": "9c8ea397b76a4271c2cd839ce3d2bf6cd3b0b993"
+    },
+    {
+      "id": 205,
+      "file": "article_0205.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/17/at-9-years-old-boy-enters-guinness-as-worlds-youngest-museum-curator",
+      "title": "في التاسعة من عمره.. طفل أمريكي يدخل موسوعة \"غينيس\" كأصغر مدير متحف في العالميضم المتحف مجموعة متنوعة من المعروضات، بينها حفريات ومعادن وقطع أثرية وعينات من التاريخ الطبيعي، إضافة إلى عروض تعليمية تهدف إلى تعريف الزوار بتاريخ الطبيعة.17/07/2026",
+      "page_num": 1,
+      "bytes": 524863,
+      "sha1": "34a9ded6cd0c6719fbe6ab6d913809425f09ef49"
+    },
+    {
+      "id": 206,
+      "file": "article_0206.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/16/frowning-stone-mick-jagger-goes-viral-with-reaction-to-england-loss-in-world-cup-semi-fina",
+      "title": "ميك جاغر يثير ضجة برد فعله على خسارة إنجلترا في كأس العالمحضر المغني الرئيسي لفرقة \"رولينغ ستونز\" مباراة إنجلترا والأرجنتين أمس، والتقطته الكاميرات وهو يهز رأسه بخيبة أمل، ليتحوّل المشهد سريعا إلى \"ميم\" انتشر بين رواد الإنترنت.16/07/2026",
+      "page_num": 1,
+      "bytes": 536014,
+      "sha1": "626e888cf64611aa9103766dd9ba714631024694"
+    },
+    {
+      "id": 207,
+      "file": "article_0207.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/16/euronews-cultures-film-of-the-week-the-odyssey-an-epic-but-flawed-trip-to-hades-and-back",
+      "title": "فيلم الأسبوع: \"الأوديسة\" - ملحمة طموحة لكنها معيبةيعود كريستوفر نولان بعد فيلمه \"أوبنهايمر\" الفائز بجائزة أوسكار بمشروعه الأضخم حتى الآن: اقتباس ملحمة هوميروس للشاشة، لكن رغم الإبهار يبقى شيء مفقودا.16/07/2026",
+      "page_num": 1,
+      "bytes": 563059,
+      "sha1": "60bbf5996c9b8c6494e0498046f6e2fb5ab0eecd"
+    },
+    {
+      "id": 208,
+      "file": "article_0208.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/16/new-david-bowie-album-set-to-feature-early-recordings-and-previously-unheard-songs",
+      "title": "ألبوم جديد لديفيد بوي يضم ١٠ أغنيات غير منشورة من قبلسيضم الألبوم الجديد عشر أغنيات غير منشورة، ووصفته شركة موسيقى \"بوي\" بأنه \"أكثر مجموعة مكتملة من المقاطع التي سجلها ديفيد بوي في بداياته\".16/07/2026",
+      "page_num": 1,
+      "bytes": 438516,
+      "sha1": "996bb924e17f33dcf304c37d7c84d596f38a28d1"
+    },
+    {
+      "id": 209,
+      "file": "article_0209.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/16/george-lucas-says-ai-is-the-future-of-filmmaking-theres-nothing-you-can-do-about-it",
+      "title": "مبتكر حرب النجوم جورج لوكاس: الذكاء الاصطناعي مستقبل صناعة الأفلامهناك من انجرف إلى الجانب المظلم... ففي مقابلة حديثة، قال مبتكر \"ستار وورز\" جورج لوكاس إن رفض استخدام **الذكاء الاصطناعي** في صناعة الأفلام يشبه تفضيل العربات التي تجرها الخيول على السيارات.16/07/2026",
+      "page_num": 1,
+      "bytes": 489438,
+      "sha1": "e9931ca402a36b47109bb8602ea6687f40d752d5"
+    },
+    {
+      "id": 210,
+      "file": "article_0210.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/16/jurassic-park-and-the-piano-actor-sam-neill-died-from-pneumonia-according-to-his-agent",
+      "title": "الكشف عن سبب وفاة الممثل سام نيل نجم \"حديقة الديناصورات\"قال وكيل نيل القديم إن عائلة الممثل وافقت على كشف المعلومات بسبب \"عدم الدقة والأكاذيب الصريحة\" في الإعلام. توفي بالالتهاب الرئوي وسيُكرَّم في مزرعته بنيوزيلندا خلال مراسم عائلية خاصة.16/07/2026",
+      "page_num": 1,
+      "bytes": 483611,
+      "sha1": "b15ea2be94385445fe9e7488c818de2af1487a10"
+    },
+    {
+      "id": 211,
+      "file": "article_0211.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/16/a-study-on-botticellis-paintings-reveals-that-the-muse-who-inspired-venus-died-of-cancer",
+      "title": "كيف ماتت فينوس بوتيتشيلي: بحث جديد يكشف السببافترضت دراسة جديدة نُشرت في مجلة \"Endocrinology, Diabetes & Metabolism\" تشخيصا يفسر وفاة سيمونيتا فيسبوتشي، الوجه الأشهر في لوحات بوتيتشيلي، باستخدام تقنيات التعرف على الوجه.16/07/2026",
+      "page_num": 1,
+      "bytes": 471119,
+      "sha1": "f195d7f75adfd714a16c3d876d6ff5fa63825682"
+    },
+    {
+      "id": 212,
+      "file": "article_0212.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/15/former-president-joe-biden-to-publish-memoir-after-november-us-midterm-elections",
+      "title": "بايدن يصدر مذكرات \"وعديني يا أمريكا\" بعد انتخابات منتصفية الكونغرسالمذكرات ستصدر بعد أسبوعين من الانتخابات النصفية الأميركية، في توقيت قد يثير جدلا بين الديمقراطيين المنقسمين حول إرث بايدن وقراره خوض ولاية رئاسية ثانية.15/07/2026",
+      "page_num": 1,
+      "bytes": 657202,
+      "sha1": "06eb979f2ac406915165ea758c7005d0eb8e68b3"
+    },
+    {
+      "id": 213,
+      "file": "article_0213.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/15/once-we-were-like-you-ancient-roman-faces-brought-back-to-life-in-budapest-exhibition",
+      "title": "كيف كان شكل الرومان حقا؟ متحف مجري يقدم الإجابةاعتمادا على علم الآثار والأنثروبولوجيا وتحليل الحمض النووي، أعاد الخبراء تشكيل وجوه من العصر الروماني وقرنوها بسير تخيّلية مستوحاة من الشواهد التاريخية.15/07/2026",
+      "page_num": 1,
+      "bytes": 474788,
+      "sha1": "f27739c80299f66cd37d85c38efa310e51f65fb1"
+    },
+    {
+      "id": 214,
+      "file": "article_0214.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/15/exorcist-star-ellen-burstyn-to-receive-venice-golden-lion-for-lifetime-achievement",
+      "title": "مهرجان فينيسيا السينمائي يكرم نجمة فيلم طارد الأرواح إلين بورستينقال المدير الفني للمهرجان ألبرتو بارييرا: \"إلين برستين ممثلة نادرة العمق والصدق، وحضورها راسخ في السينما الأميركية منذ أكثر من خمسين عاما\".15/07/2026",
+      "page_num": 1,
+      "bytes": 548344,
+      "sha1": "b0b3c6456c072b732985165ca416c88e10c4c35a"
+    },
+    {
+      "id": 215,
+      "file": "article_0215.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/15/an-ai-generated-simplified-version-of-the-odyssey-has-been-announced-ahead-of-the-release",
+      "title": "\"طفيلي الذكاء الاصطناعي\": هل تدفع لمشاهدة \"الأوديسة\" بالذكاء الاصطناعي؟قبل أيام من طرح ملحمة كريستوفر نولان المليئة بالنجوم \"The Odyssey\" في دور السينما حول العالم، أعلنت شركة ناشئة أنها ابتكرت نسخة بالذكاء الاصطناعي من ملحمة هوميروس، لكن أحدا لم يُبدِ أي حماسة.15/07/2026",
+      "page_num": 1,
+      "bytes": 555727,
+      "sha1": "ab4f99f0a1ec8acdfa23168f1e20cc947d98fdce"
+    },
+    {
+      "id": 216,
+      "file": "article_0216.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/15/fifa-adds-tom-cruise-jennifer-hudson-and-robbie-williams-to-world-cup-closing-ceremony",
+      "title": "فيفا تراهن على نجوم الصف الأول في أول عرض بين الشوطين للمونديالأعلنت فيفا عن أسماء إضافية ضمن قائمة النجوم المشاركين في حفل اختتام كأس العالم، في تشكيلة ضخمة تضاهي عروض \"سوبر بول\" من حيث البذخ والاستعراض.15/07/2026",
+      "page_num": 1,
+      "bytes": 478657,
+      "sha1": "8328bb54af770340009ab20ced5b5535a0e64f6e"
+    },
+    {
+      "id": 217,
+      "file": "article_0217.html",
+      "url": "https://arabic.euronews.com/culture/2026/07/14/a-3000-year-old-egyptian-tomb-featuring-vivid-paintings-of-the-afterlife-has-been-uncovere",
+      "title": "علماء آثار هولنديون يكتشفون مقبرة مصرية عمرها ٣٠٠٠ عاميعود هذا القبر إلى العصر الرعامسي في مصر، زمن الفراعنة الأقوياء مثل رمسيس الثاني، ويضم مناظر لطقوس دينية ورحلة الروح إلى العالم الآخر.14/07/2026",
+      "page_num": 1,
+      "bytes": 546791,
+      "sha1": "006ec3385f7aaa527db097144dbbc104a8b2333b"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 2,
+    "articles": 217,
+    "article_fetch_failures": 0
+  }
+}

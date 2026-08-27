@@ -1,0 +1,761 @@
+{
+  "website": "arageek",
+  "snapshot_date": "2026-08-27T12:33:52",
+  "pagination_type": "load more button",
+  "scroll_mode": "load_more",
+  "scroll_rounds_requested": 2,
+  "load_more_selector": null,
+  "listing_url": "https://www.arageek.com/tech",
+  "input_urls": [
+    "https://www.arageek.com/tech"
+  ],
+  "pagination_pattern": null,
+  "requirements": "title, date, author, article body text",
+  "run_dir": "orch_runs/run_20260827_122203",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://www.arageek.com/tech",
+      "file": "listing_page_001.html",
+      "bytes": 742025,
+      "sha1": "b198dfc13b372b206f9eead4ddeb1c415b0f4d91"
+    },
+    {
+      "page_num": 1,
+      "url": "https://www.arageek.com/tech",
+      "file": "listing_page_001_expanded.html",
+      "bytes": 822297,
+      "sha1": "4c37efd22dbcd9ac51a92e42a4088c5a68a13114",
+      "expanded": true
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://www.arageek.com/tech/%d9%85%d8%ae%d8%aa%d8%a8%d8%b1-z-ai-%d9%8a%d9%82%d9%81-%d9%88%d8%b1%d8%a7%d8%a1-%d9%86%d9%85%d9%88%d8%b0%d8%ac-%d8%a7%d9%84%d8%b0%d9%83%d8%a7%d8%a1-%d8%a7%d9%84%d8%a7%d8%b5%d8%b7%d9%86%d8%a7%d8%b9",
+      "title": "مختبر Z.ai يقف وراء نموذج الذكاء الاصطناعي الغامض Ox Alpha",
+      "page_num": 1,
+      "bytes": 303464,
+      "sha1": "aee6d12a42535bed74cfd893df753538368b4d18"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://www.arageek.com/tech/%d8%a8%d9%8a%d9%84-%d8%ba%d9%8a%d8%aa%d8%b3-%d9%8a%d8%b7%d8%a7%d9%84%d8%a8-%d8%a8%d8%b6%d8%b1%d9%8a%d8%a8%d8%a9-%d8%b9%d9%84%d9%89-%d8%a7%d9%84%d8%b1%d9%88%d8%a8%d9%88%d8%aa%d8%a7%d8%aa-%d9%88%d9%88",
+      "title": "بيل غيتس يطالب بضريبة على الروبوتات ووظائف محجوزة للبشر",
+      "page_num": 1,
+      "bytes": 288739,
+      "sha1": "b51c36e25e9fac08322a82a678aa5f74c18dd638"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://www.arageek.com/tech/%d9%82%d8%b1%d8%a7%d8%b5%d9%86%d8%a9-%d8%b5%d9%8a%d9%86%d9%8a%d9%88%d9%86-%d9%8a%d8%ae%d8%aa%d8%b1%d9%82%d9%88%d9%86-%d9%86%d8%a7%d8%b3%d8%a7-%d9%88%d9%88%d8%b2%d8%a7%d8%b1%d8%a9-%d8%a7%d9%84%d8%b9",
+      "title": "قراصنة صينيون يخترقون ناسا ووزارة العدل والاحتياطي الفيدرالي",
+      "page_num": 1,
+      "bytes": 306490,
+      "sha1": "39d9ed7e0af0612506997534fd01500eaa29beba"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://www.arageek.com/tech/openai-%d8%aa%d9%83%d8%b4%d9%81-%d8%b4%d8%b1%d9%8a%d8%ad%d8%a9-jalapeno-%d9%84%d8%aa%d9%82%d8%af%d9%8a%d9%85-%d8%a5%d8%ac%d8%a7%d8%a8%d8%a7%d8%aa-%d8%a3%d8%b3%d8%b1%d8%b9-%d9%85%d9%86-nvidia",
+      "title": "OpenAI تكشف شريحة Jalapeno لتقديم إجابات أسرع من Nvidia",
+      "page_num": 1,
+      "bytes": 305001,
+      "sha1": "6af453ff532bfb24f3c8305d29c8a67f72ff53bf"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://www.arageek.com/tech/%d8%ab%d8%ba%d8%b1%d8%a9-%d8%aa%d8%b3%d9%85%d8%ad-%d9%84%d8%a2%d9%8a%d9%81%d9%88%d9%86-%d9%85%d8%b3%d8%b1%d9%88%d9%82-%d8%a8%d8%a7%d9%84%d8%a7%d8%aa%d8%b5%d8%a7%d9%84-%d8%a8%d8%b5%d8%a7%d8%ad%d8%a8",
+      "title": "ثغرة تسمح لآيفون مسروق بالاتصال بصاحبه والتظاهر بأنه من دعم آبل",
+      "page_num": 1,
+      "bytes": 308911,
+      "sha1": "3e54f63bbbbb8a9597c44dfb8518f0291a923518"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://www.arageek.com/tech/%d9%85%d9%88%d9%86%d8%b4%d9%88%d8%aa-%d8%aa%d8%aa%d9%81%d8%a7%d9%88%d8%b6-%d9%85%d8%b9-%d9%85%d8%a7%d9%8a%d9%83%d8%b1%d9%88%d8%b3%d9%88%d9%81%d8%aa-%d9%88%d8%a3%d9%85%d8%a7%d8%b2%d9%88%d9%86-%d9%88",
+      "title": "مونشوت تتفاوض مع مايكروسوفت وأمازون وغوغل حول إيرادات كيمي K3",
+      "page_num": 1,
+      "bytes": 308609,
+      "sha1": "d713fbb8fe1aa160da9ca0a6d5b7c4f77cd5d41d"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://www.arageek.com/tech/%d9%85%d9%86%d8%b5%d8%a9-x-%d8%aa%d8%b3%d8%aa%d8%b9%d8%af-%d9%84%d8%a5%d8%b7%d9%84%d8%a7%d9%82-%d8%b2%d8%b1-%d9%84%d8%aa%d8%af%d8%a7%d9%88%d9%84-%d8%a7%d9%84%d8%b9%d9%85%d9%84%d8%a7%d8%aa-%d8%a7%d9%84",
+      "title": "منصة X تستعد لإطلاق زر لتداول العملات المشفرة مباشرة",
+      "page_num": 1,
+      "bytes": 311134,
+      "sha1": "ab36372bd0f8dfd8d5a23d14e1d123405f19f8a0"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://www.arageek.com/tech/%d9%88%d9%83%d9%8a%d9%84-perplexity-%d8%a7%d9%84%d9%85%d8%ad%d9%84%d9%8a-%d9%8a%d8%b9%d9%85%d9%84-%d8%af%d9%88%d9%86-%d8%aa%d9%83%d9%84%d9%81%d8%a9-%d9%84%d9%84%d9%80tokens-%d8%b9%d9%84%d9%89-%d8%a3",
+      "title": "وكيل Perplexity المحلي يعمل دون تكلفة للـTokens على أجهزة NVIDIA",
+      "page_num": 1,
+      "bytes": 305105,
+      "sha1": "73a8eafbc7cff0079929f610093c478e283e6f8a"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://www.arageek.com/tech/%d8%b7%d8%b1%d9%82-%d8%a5%d8%b9%d8%a7%d8%af%d8%a9-%d8%a7%d8%b3%d8%aa%d8%ae%d8%af%d8%a7%d9%85-%d8%a7%d9%84%d8%a3%d8%ac%d9%87%d8%b2%d8%a9-%d8%a7%d9%84%d9%82%d8%af%d9%8a%d9%85%d8%a9",
+      "title": "لن تُلقي بها في القمامة.. طرق مبتكرة لإعادة استخدام الهواتف والحواسيب القديمة",
+      "page_num": 1,
+      "bytes": 374217,
+      "sha1": "b01c58da10f9be0437d9d37014babe94cd6d38de"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://www.arageek.com/tech/comeup-stars-2025-%d8%aa%d8%ae%d8%aa%d8%a7%d8%b1-20-%d8%b4%d8%b1%d9%83%d8%a9-%d9%86%d8%a7%d8%b4%d8%a6%d8%a9-%d9%84%d9%84%d8%aa%d9%88%d8%b3%d8%b9-%d8%b9%d8%a7%d9%84%d9%85%d9%8a%d8%a7%d9%8b",
+      "title": "COMEUP Stars 2025 تختار 20 شركة ناشئة للتوسع عالمياً",
+      "page_num": 1,
+      "bytes": 314920,
+      "sha1": "5ee3d12c7f28d901e0263f6031e9da110c6c81a2"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://www.arageek.com/tech/mippia-%d8%ad%d8%a7%d8%b1%d8%b3-%d8%ad%d9%82%d9%88%d9%82-%d8%a7%d9%84%d9%85%d9%88%d8%b3%d9%8a%d9%82%d9%89-%d9%81%d9%8a-%d8%b9%d8%b5%d8%b1-%d8%a7%d9%84%d8%b0%d9%83%d8%a7%d8%a1-%d8%a7%d9%84%d8%a7%d8%b5",
+      "title": "MIPPIA: حارس حقوق الموسيقى في عصر الذكاء الاصطناعي",
+      "page_num": 1,
+      "bytes": 316987,
+      "sha1": "73124f5c0cf85d900003b5e0585892b719e15109"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://www.arageek.com/tech/uniqconn-%d9%87%d9%84-%d8%aa%d9%82%d8%aa%d8%b1%d8%a8-%d9%86%d9%87%d8%a7%d9%8a%d8%a9-%d8%a7%d9%84%d9%83%d8%a7%d8%a8%d9%84%d8%a7%d8%aa-%d9%81%d9%8a-%d8%a3%d8%ac%d9%87%d8%b2%d8%aa%d9%86%d8%a7%d8%9f",
+      "title": "Uniqconn: هل تقترب نهاية الكابلات في أجهزتنا؟",
+      "page_num": 1,
+      "bytes": 271186,
+      "sha1": "3a57e5c52c9ecfe802cf5cfdc15629cc687ecdce"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://www.arageek.com/tech/comeup-2025-%d9%8a%d8%b9%d9%8a%d8%af-%d8%a8%d8%b1%d9%85%d8%ac%d8%a9-%d9%85%d8%b3%d8%aa%d9%82%d8%a8%d9%84-%d8%a7%d9%84%d8%a7%d8%a8%d8%aa%d9%83%d8%a7%d8%b1-%d8%a7%d9%84%d8%b9%d8%a7%d9%84%d9%85%d9%8a",
+      "title": "COMEUP 2025 يعيد برمجة مستقبل الابتكار العالمي",
+      "page_num": 1,
+      "bytes": 321391,
+      "sha1": "bb867211589f2f3f0ae4417747a15e8b9811603a"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://www.arageek.com/tech/openai-%d8%aa%d8%b3%d8%aa%d8%ad%d9%88%d8%b0-%d8%b9%d9%84%d9%89-sky-%d9%88%d8%a7%d8%ac%d9%87%d8%a9-%d8%b0%d9%83%d8%a7%d8%a1-%d8%a7%d8%b5%d8%b7%d9%86%d8%a7%d8%b9%d9%8a-%d8%aa%d8%aa",
+      "title": "OpenAI تستحوذ على “Sky”… واجهة ذكاء اصطناعي تتكامل مع نظام macOS",
+      "page_num": 1,
+      "bytes": 312523,
+      "sha1": "643697322c1387297c4e3b4d7d3e1a0fcb058ce3"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://www.arageek.com/tech/%d9%85%d8%a7%d9%8a%d9%83%d8%b1%d9%88%d8%b3%d9%88%d9%81%d8%aa-%d8%aa%d8%b7%d9%84%d9%82-copilot-fall-release-%d8%a7%d9%84%d8%b0%d9%83%d8%a7%d8%a1-%d8%a7%d9%84%d8%a7%d8%b5%d8%b7%d9%86",
+      "title": "مايكروسوفت تطلق “Copilot Fall Release”: الذكاء الاصطناعي الذي يعيدك إلى حياتك",
+      "page_num": 1,
+      "bytes": 320544,
+      "sha1": "935203ce1a2f3571d3b938516443dffb9ade2902"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://www.arageek.com/tech/%d8%a3%d9%85%d8%a7%d8%b2%d9%88%d9%86-%d8%aa%d9%83%d8%b4%d9%81-%d8%b9%d9%86-%d9%86%d8%b8%d8%a7%d8%b1%d8%a7%d8%aa-%d8%a3%d9%85%d9%8a%d9%84%d9%8a%d8%a7-%d8%b0%d9%83%d8%a7%d8%a1-%d8%a7%d8%b5%d8%b7",
+      "title": "أمازون تكشف عن نظارات “أميليا”.. ذكاء اصطناعي يرافق السائقين في آخر أمتار التوصيل",
+      "page_num": 1,
+      "bytes": 307557,
+      "sha1": "0b5dec447d96fed83eb2598033f5c90a3bc24d70"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://www.arageek.com/tech/%d9%88%d8%a7%d8%aa%d8%b3%d8%a7%d8%a8-%d9%84%d9%85-%d9%8a%d8%b9%d8%af-%d8%a2%d9%85%d9%86%d9%8b%d8%a7-%d9%83%d9%85%d8%a7-%d8%aa%d8%b8%d9%86-gemini-%d9%8a%d8%b1%d9%89-%d9%88%d9%8a%d8%b3%d8%ac%d9%91",
+      "title": "واتساب لم يعد آمنًا كما تظن.. Gemini يرى ويسجّل أكثر مما يُفترض أن يفعل — وجوجل تردّ: “لا نتنصّت”",
+      "page_num": 1,
+      "bytes": 313706,
+      "sha1": "9512609e04be2ba92e06007f0c49fa062a470b84"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://www.arageek.com/tech/gemini-%d8%a7%d9%84%d8%a3%d8%b3%d9%88%d8%a3-%d9%88perplexity-%d8%a7%d9%84%d8%a3%d9%81%d8%b6%d9%84-%d9%86%d8%b3%d8%a8%d9%8a%d9%8b%d8%a7-%d8%a3%d9%86%d8%b8%d9%85%d8%a9-%d8%a7%d9%84%d8%b0%d9%83%d8%a7",
+      "title": "Gemini الأسوأ وPerplexity الأفضل نسبيًا.. أنظمة الذكاء الاصطناعي تُسيء عرض الأخبار بغضّ النظر عن اللغة أو البلد",
+      "page_num": 1,
+      "bytes": 313755,
+      "sha1": "66a8b1ef8f157d3f8338ed03e19a6d744c62305a"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://www.arageek.com/tech/%d9%86%d9%85%d9%88%d8%b0%d8%ac-deepseek-%d8%a7%d9%84%d8%ac%d8%af%d9%8a%d8%af-%d9%8a%d9%82%d9%84%d9%91%d9%84-%d8%a7%d9%84%d8%aa%d9%83%d9%84%d9%81%d8%a9-20-%d9%85%d8%b1%d8%a9-%d8%a8%d8%aa%d8%ad",
+      "title": "نموذج DeepSeek الجديد يقلّل التكلفة 20 مرة… بتحويل النص إلى صورة!",
+      "page_num": 1,
+      "bytes": 311819,
+      "sha1": "74174208743a7fb10ee4a0648ebd788198d2687c"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://www.arageek.com/tech/%d8%a3%d9%83%d8%ab%d8%b1-%d9%85%d9%86-800-%d8%b4%d8%ae%d8%b5%d9%8a%d8%a9-%d8%b9%d8%a7%d9%84%d9%85%d9%8a%d8%a9-%d8%aa%d8%b7%d8%a7%d9%84%d8%a8-%d8%a8%d9%88%d9%82%d9%81-%d8%aa%d8%b7%d9%88%d9%8a%d8%b1",
+      "title": "أكثر من 800 شخصية عالمية تطالب بوقف تطوير “الذكاء الفائق” قبل فوات الأوان",
+      "page_num": 1,
+      "bytes": 308393,
+      "sha1": "ecb3f8ed7efb4991413e51eab3a38f22234bb7b6"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://www.arageek.com/tech/%d9%86%d8%aa%d9%81%d9%84%d9%8a%d9%83%d8%b3-%d8%aa%d9%8f%d8%b9%d9%84%d9%86%d9%87%d8%a7-%d9%86%d8%ad%d9%86-%d9%85%d8%b9-%d8%a7%d9%84%d8%b0%d9%83%d8%a7%d8%a1-%d8%a7%d9%84%d8%a7%d8%b5%d8%b7",
+      "title": "نتفليكس تُعلنها: “نحن مع الذكاء الاصطناعي”… لكن دون أن ننسى القصة الإنسانية",
+      "page_num": 1,
+      "bytes": 309213,
+      "sha1": "4892e540fdd1f85e0e971a8c6b0a783ade0f606e"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://www.arageek.com/tech/%d8%b3%d8%a7%d9%85%d8%b3%d9%88%d9%86%d8%ac-%d8%aa%d8%af%d8%ae%d9%84-%d8%b9%d8%b5%d8%b1-%d8%a7%d9%84%d8%b4%d8%a7%d8%b4%d8%a7%d8%aa-%d8%a7%d9%84%d9%85%d8%aa%d8%ad%d8%af%d9%91%d8%ab%d8%a9-%d8%aa%d8%b7",
+      "title": "سامسونج تدخل عصر الشاشات المتحدّثة: تطبيق Perplexity AI يصل إلى تلفزيونات 2025",
+      "page_num": 1,
+      "bytes": 307006,
+      "sha1": "9d0ab59cd68a1cfb78ff521c2aecf74243921520"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://www.arageek.com/tech/%d9%85%d8%b4%d8%b1%d9%88%d8%b9-%d9%85%d9%8a%d8%b1%d9%83%d9%88%d8%b1%d9%8a-%d8%ae%d8%b7%d8%a9-%d8%b3%d8%a7%d9%85-%d8%a3%d9%84%d8%aa%d9%85%d8%a7%d9%86-%d9%84%d8%aa%d8%ad%d9%88%d9%8a",
+      "title": "مشروع “ميركوري”: خطة سام ألتمان لتحويل ذكاء البنوك إلى ذكاء اصطناعي",
+      "page_num": 1,
+      "bytes": 304446,
+      "sha1": "8b730de78cf3bbcd43789bb1b2e50da9fa0f81e6"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://www.arageek.com/tech/%d9%84%d8%a7-%d8%aa%d9%85%d9%84%d9%83-%d8%a7%d9%84%d8%ad%d8%b8%d8%9f-chatgpt-%d9%82%d8%af-%d9%8a%d8%ac%d9%84%d8%a8%d9%87-%d8%a5%d9%84%d9%8a%d9%83-%d8%b3%d9%8a%d8%af%d8%a9-%d8%a3%d9%85%d8%b1",
+      "title": "لا تملك الحظ؟ ChatGPT قد يجلبه إليك — سيدة أمريكية تفوز بـ100 ألف دولار بفضل أرقامه الذكية",
+      "page_num": 1,
+      "bytes": 304689,
+      "sha1": "19412866c7c2122d8f82567403a58a81ff10daf8"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://www.arageek.com/tech/%d9%81%d9%8a-%d8%b3%d8%a7%d8%a8%d9%82%d8%a9-%d8%aa%d9%84%d9%81%d8%b2%d9%8a%d9%88%d9%86%d9%8a%d8%a9-%d9%85%d8%b0%d9%8a%d8%b9%d8%a9-%d8%a7%d9%81%d8%aa%d8%b1%d8%a7%d8%b6%d9%8a%d8%a9-%d8%a8%d8%a7%d9%84",
+      "title": "في سابقة تلفزيونية: مذيعة افتراضية بالكامل تقدم نشرة Channel 4 البريطانية",
+      "page_num": 1,
+      "bytes": 273859,
+      "sha1": "d7080131c0f6d2c2beccdf3afc8fe7d717c293c0"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://www.arageek.com/tech/%d8%a5%d9%8a%d9%84%d9%88%d9%86-%d9%85%d8%a7%d8%b3%d9%83-%d9%8a%d8%b3%d8%ae%d8%b1-%d9%85%d9%86-%d8%a3%d9%85%d8%a7%d8%b2%d9%88%d9%86-%d8%a8%d8%b9%d8%af-%d8%aa%d8%b9%d8%b7%d9%84-%d8%ae%d9%88%d8%a7%d8%af",
+      "title": "إيلون ماسك يسخر من أمازون بعد تعطل خوادمها: “75% من كودها مكتوب بالذكاء الاصطناعي!”",
+      "page_num": 1,
+      "bytes": 320107,
+      "sha1": "bfdca8a2706e73c3ff2c33216e1a2814ff0b0c44"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://www.arageek.com/tech/%d8%a5%d9%8a%d9%84%d9%88%d9%86-%d9%85%d8%a7%d8%b3%d9%83-%d9%8a%d8%aa%d8%ad%d8%af%d9%89-%d8%b9%d8%a8%d9%82%d8%b1%d9%8a-%d8%a7%d9%84%d8%b0%d9%83%d8%a7%d8%a1-%d8%a7%d9%84%d8%a7%d8%b5%d8%b7%d9%86%d8%a7",
+      "title": "إيلون ماسك يتحدى عبقري الذكاء الاصطناعي أندريه كارباثي في “مباراة ترميز” بين الإنسان وذكاء Grok 5 — والجواب: لا شكرًا!",
+      "page_num": 1,
+      "bytes": 323793,
+      "sha1": "bb9f11898ee27bc505b8f4def62d3c5546d22300"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://www.arageek.com/tech/%d8%aa%d8%b1%d8%a7%d9%85%d8%a8-%d9%8a%d8%ab%d9%8a%d8%b1-%d8%a7%d9%84%d8%ac%d8%af%d9%84-%d9%85%d8%ac%d8%af%d8%af%d9%8b%d8%a7-%d8%a3%d8%b9%d8%a7%d8%af-%d9%86%d8%b4%d8%b1-%d9%85%d9%82%d8%b7%d8%b9",
+      "title": "ترامب يثير الجدل مجددًا… أعاد نشر مقطع مزيف يصوّره “ملكًا” يهاجم معارضيه",
+      "page_num": 1,
+      "bytes": 269763,
+      "sha1": "53fc5307d04e9cef64745961d7994f1cdf3b3b92"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://www.arageek.com/tech/%d8%a7%d9%84%d9%88%d9%84%d8%a7%d9%8a%d8%a7%d8%aa-%d8%a7%d9%84%d9%85%d8%aa%d8%ad%d8%af%d8%a9-%d8%aa%d8%b5%d9%86%d8%b9-%d8%a3%d9%88%d9%84-%d8%b4%d8%b1%d9%8a%d8%ad%d8%a9-blackwell-%d8%b9%d9%84%d9%89",
+      "title": "الولايات المتحدة تصنع أول شريحة Blackwell على أراضيها — إنفيديا تشكر ترامب وتعلن “العصر الصناعي الجديد”",
+      "page_num": 1,
+      "bytes": 314151,
+      "sha1": "ea3e1221486128ac89f3d14b2d81493c3e194054"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://www.arageek.com/tech/x-app-link-system-change-1",
+      "title": "منصة X تعتمد استراتيجية جديدة للتحكم في الروابط لإبقائك داخل التطبيق",
+      "page_num": 1,
+      "bytes": 291750,
+      "sha1": "40cae668371d7a7c7c91b4102c1ad05d563b9ae4"
+    },
+    {
+      "id": 31,
+      "file": "article_0031.html",
+      "url": "https://www.arageek.com/tech/arageek-media-partner-fix2025-korea",
+      "title": "أراجيك شريك إعلامي في معرض Future Innovation Tech Expo 2025 (FIX2025) بكوريا الجنوبية",
+      "page_num": 1,
+      "bytes": 317618,
+      "sha1": "dc0704cdfc1547b02e8a253608ea4dc275122b13"
+    },
+    {
+      "id": 32,
+      "file": "article_0032.html",
+      "url": "https://www.arageek.com/tech/oneplus-15-battery-7300mah-official",
+      "title": "ون بلس تؤكد بطارية ضخمة بقدرة 7300 ملّي أمبير لهاتف OnePlus 15 مع شحن فائق السرعة",
+      "page_num": 1,
+      "bytes": 276534,
+      "sha1": "66d0a45046e12b80f95e7ef49079f07dc0036a2b"
+    },
+    {
+      "id": 33,
+      "file": "article_0033.html",
+      "url": "https://www.arageek.com/tech/smart-toilet-camera-health-monitoring-koehler-ai-privacy",
+      "title": "كاميرا ذكية في مرحاضك: كيف تخطط كوهلر لإحداث ثورة في مراقبة الصحة المنزلية",
+      "page_num": 1,
+      "bytes": 298992,
+      "sha1": "ee8bc500bd5591a6230c73955e8561cb5df4506e"
+    },
+    {
+      "id": 34,
+      "file": "article_0034.html",
+      "url": "https://www.arageek.com/tech/%d8%a7%d9%84%d8%aa%d9%85%d8%a7%d9%86-%d9%8a%d9%84%d8%b9%d8%a8-%d8%a8%d8%a7%d9%84%d9%86%d8%a7%d8%b1-%d9%88%d9%8a%d9%81%d8%aa%d8%ad-%d8%a7%d8%ae%d8%b7%d8%b1-%d8%ac%d8%a8%d9%87%d8%a9-%d8%a8%d9%8a%d9%86",
+      "title": "ألتمان يلعب بالنار: Sora 2 يفتح أخطر جبهة بين التقنية والسينما",
+      "page_num": 1,
+      "bytes": 312194,
+      "sha1": "d750772530842f45782c619064981df91745a351"
+    },
+    {
+      "id": 35,
+      "file": "article_0035.html",
+      "url": "https://www.arageek.com/tech/%d9%84%d9%85%d8%a7%d8%b0%d8%a7-%d8%b5%d9%86%d8%b9%d9%86%d8%a7-mando-ai%d8%9f-%d9%85%d9%86-%d9%81%d9%88%d8%b6%d9%89-%d8%a7%d9%84%d8%a3%d8%af%d9%88%d8%a7%d8%aa-%d8%a5%d9%84%d9%89-%d9%85%d9%86%d8%b5",
+      "title": "لماذا صنعنا Mando AI؟ من فوضى الأدوات إلى منصة واحدة متكاملة",
+      "page_num": 1,
+      "bytes": 325736,
+      "sha1": "fd0f4ad0884f08ff5f49bff62589cebbd1201d6d"
+    },
+    {
+      "id": 36,
+      "file": "article_0036.html",
+      "url": "https://www.arageek.com/tech/%d8%b0%d9%83%d8%a7%d8%a1-%d8%a7%d8%b5%d8%b7%d9%86%d8%a7%d8%b9%d9%8a-%d8%af%d8%a7%d8%ae%d9%84-%d8%a7%d9%84%d8%af%d8%b1%d8%af%d8%b4%d8%a9-%d9%88%d8%a7%d8%aa%d8%b3%d8%a7%d8%a8-%d9%8a%d8%ba%d9%8a%d9%91",
+      "title": "ذكاء اصطناعي داخل الدردشة: واتساب يغيّر نبرة كلامك بنقرة واحدة",
+      "page_num": 1,
+      "bytes": 310695,
+      "sha1": "96f2079b3d15e23e0e137b03ccce2e3b4a59c8cc"
+    },
+    {
+      "id": 37,
+      "file": "article_0037.html",
+      "url": "https://www.arageek.com/tech/%d9%81%d9%8a%d8%b1%d9%88%d8%b3%d8%a7%d8%aa-%d8%aa%d9%81%d9%83%d8%b1-%d9%88%d8%aa%d8%aa%d8%b7%d9%88%d8%b1-%d8%a7%d9%84%d8%b0%d9%83%d8%a7%d8%a1-%d8%a7%d9%84%d8%a7%d8%b5%d8%b7%d9%86%d8%a7%d8%b9",
+      "title": "فيروسات تفكر وتتطور… الذكاء الاصطناعي يبتزك بذكاء ويفتح أبواب الجحيم السيبراني",
+      "page_num": 1,
+      "bytes": 313114,
+      "sha1": "185eebb7c0c833d668a16c895a37c20ff45d4ce8"
+    },
+    {
+      "id": 38,
+      "file": "article_0038.html",
+      "url": "https://www.arageek.com/tech/%d8%a7%d8%ad%d8%b0%d8%b1-%d9%81%d9%8a-%d9%85%d8%ad%d8%a7%d8%af%d8%ab%d8%a7%d8%aa%d9%83-%d8%a7%d9%84%d9%82%d8%a7%d8%af%d9%85%d8%a9-%d9%85%d8%b9-chatgpt-open-ai-%d8%aa%d9%81%d8%ad%d8%b5-%d9%85%d8%ad",
+      "title": "احذر في محادثاتك القادمة مع ChatGPT: Open AI تفحص محادثاتك وقد تُسلمك للشرطة",
+      "page_num": 1,
+      "bytes": 319259,
+      "sha1": "4838d3422db2600199f2c811219ac7da9a1d8793"
+    },
+    {
+      "id": 39,
+      "file": "article_0039.html",
+      "url": "https://www.arageek.com/tech/%d8%b1%d9%88%d8%a8%d9%88%d8%aa-%d9%81%d8%a7%d8%a6%d9%82-%d8%a7%d9%84%d8%b3%d8%b1%d8%b9%d8%a9-%d9%8a%d8%b0%d9%87%d9%84-%d8%a7%d9%84%d8%b9%d8%a7%d9%84%d9%85-%d8%a5%d9%86%d8%b3%d8%a7%d9%86-%d8%a2%d9%84",
+      "title": "روبوت فائق السرعة يذهل العالم: إنسان آلي يركض بسرعة خاطفة ويحمل الأوزان الثقيلة… هل يهدد وظائف البشر؟",
+      "page_num": 1,
+      "bytes": 304883,
+      "sha1": "4df41510b8ba2061b27bf723bc02aad0ec610e68"
+    },
+    {
+      "id": 40,
+      "file": "article_0040.html",
+      "url": "https://www.arageek.com/tech/%d9%88%d8%af%d8%a7%d8%b9%d9%8b%d8%a7-%d9%84%d9%84%d9%86%d8%b4%d8%b1-%d8%a7%d9%84%d9%85%d8%ac%d9%87%d9%88%d9%84-%d8%ac%d9%88%d8%ac%d9%84-%d8%aa%d9%81%d8%b1%d8%b6-%d8%a7%d9%84%d8%aa%d8%ad%d9%82%d9%82",
+      "title": "وداعًا للنشر المجهول: جوجل تفرض التحقق على كل مطور خارج متجرها",
+      "page_num": 1,
+      "bytes": 306710,
+      "sha1": "49f15ea965fc812ba4d186ddc0d5448f485cc03e"
+    },
+    {
+      "id": 41,
+      "file": "article_0041.html",
+      "url": "https://www.arageek.com/tech/%d8%a8%d8%b1%d9%85%d8%ac%d9%8a%d8%a7%d8%aa-%d8%ae%d8%a8%d9%8a%d8%ab%d8%a9-%d8%aa%d8%ae%d8%aa%d8%b1%d9%82-%d8%a3%d9%86%d8%af%d8%b1%d9%88%d9%8a%d8%af-%d9%a1%d9%a9-%d9%85%d9%84%d9%8a%d9%88%d9%86-%d8%aa",
+      "title": "برمجيات خبيثة تخترق أندرويد: ١٩ مليون تنزيل يثير قلق المستخدمين… كيف تحمي نفسك؟",
+      "page_num": 1,
+      "bytes": 311121,
+      "sha1": "1b9749d7c3c38f81ed89a1733757176067faab6e"
+    },
+    {
+      "id": 42,
+      "file": "article_0042.html",
+      "url": "https://www.arageek.com/tech/%d8%ac%d8%b1%d9%88%d9%83-%d9%8a%d9%8f%d8%ae%d8%a8%d8%b1%d9%83-%d9%83%d9%8a%d9%81-%d8%aa%d8%ba%d8%aa%d8%a7%d9%84-%d8%a5%d9%8a%d9%84%d9%88%d9%86-%d9%85%d8%a7%d8%b3%d9%83-%d9%88%d9%88%d9%84-%d8%b3",
+      "title": "جروك يُخبرك كيف تغتال إيلون ماسك… وول ستريت بحالة صدمة!!",
+      "page_num": 1,
+      "bytes": 320688,
+      "sha1": "bec0bf5d874311d4eba67a5553cf69d1622d47ce"
+    },
+    {
+      "id": 43,
+      "file": "article_0043.html",
+      "url": "https://www.arageek.com/tech/%d8%a2%d9%8a%d9%81%d9%88%d9%86-%d9%82%d8%a7%d8%a8%d9%84-%d9%84%d9%84%d8%b7%d9%8a-%d9%82%d8%a7%d8%af%d9%85-%d9%88touch-id-%d9%8a%d8%b9%d9%88%d8%af-%d9%84%d9%8a%d8%ad%d8%ac%d8%b2-%d9%85%d9%83",
+      "title": "آيفون قابل للطي قادم… وTouch ID يعود ليحجز مكانه في التصميم الجديد",
+      "page_num": 1,
+      "bytes": 320531,
+      "sha1": "7ede3f8c5624c3d5b08e5dbc7083ba6f5a9708ca"
+    },
+    {
+      "id": 44,
+      "file": "article_0044.html",
+      "url": "https://www.arageek.com/tech/%d8%ae%d8%b7%d9%88%d8%a7%d8%aa-%d8%b3%d8%a7%d9%85%d8%b3%d9%88%d9%86%d8%ac-%d8%a7%d9%84%d8%ac%d8%af%d9%8a%d8%af%d8%a9-%d9%85%d8%b9-%d8%ac%d8%a7%d9%84%d8%a7%d9%83%d8%b3%d9%8a-s26-%d8%a3%d9%84%d8%aa",
+      "title": "خطوات سامسونج الجديدة مع جالاكسي S26 ألترا تدفع المزيد للتفكير بجدية في اقتناء آيفون",
+      "page_num": 1,
+      "bytes": 311695,
+      "sha1": "1906f18bcffb2041b3e281637d466cdcdb7e3f21"
+    },
+    {
+      "id": 45,
+      "file": "article_0045.html",
+      "url": "https://www.arageek.com/tech/%d8%ad%d8%a7%d8%b3%d9%88%d8%a8-%d8%a8%d8%ad%d8%ac%d9%85-%d8%b1%d8%a7%d8%ad%d8%a9-%d8%a7%d9%84%d9%8a%d8%af-%d9%88%d8%a5%d9%86%d9%81%d9%8a%d8%af%d9%8a%d8%a7-%d8%aa%d8%b2%d8%b1%d8%b9-%d9%81",
+      "title": "حاسوب بحجم راحة اليد… وإنفيديا تزرع فيه قوة 2070 تيرافلوبس من الذكاء الاصطناعي",
+      "page_num": 1,
+      "bytes": 312090,
+      "sha1": "30a9b113c5e674bec2abd24192e8dd8a39738bfe"
+    },
+    {
+      "id": 46,
+      "file": "article_0046.html",
+      "url": "https://www.arageek.com/tech/%d8%a3%d9%88%d9%84-%d8%ad%d8%a7%d8%b3%d9%88%d8%a8-%d9%81%d9%8a-%d8%a7%d9%84%d8%b9%d8%a7%d9%84%d9%85-%d9%85%d8%b2%d9%88%d8%af-%d8%a8%d8%a3%d9%82%d9%88%d9%89-%d9%85%d8%b9%d8%a7%d9%84%d8%ac-%d8%b1%d8%b3",
+      "title": "أول حاسوب في العالم مزود بأقوى معالج رسومي من AMD متوفر الآن بسعر مفاجئ مع بطاقة Radeon AI Pro R9700",
+      "page_num": 1,
+      "bytes": 312322,
+      "sha1": "3da05f83a797b679e611908c87a65e757ae00dad"
+    },
+    {
+      "id": 47,
+      "file": "article_0047.html",
+      "url": "https://www.arageek.com/tv/%d9%85%d8%ad%d9%85%d8%af-%d8%a8%d8%af%d9%88%d9%8a-%d9%85%d9%86-falak-startups-%d9%8a%d8%aa%d8%ad%d8%af%d8%ab-%d8%a7%d9%84%d9%89-%d8%a3%d8%b1%d8%a7%d8%ac%d9%8a%d9%83-%d8%ae%d9%84%d8%a7%d9%84-%d9%81?vol=1",
+      "title": "محمد بدوي من Falak Startups يتحدث الى أراجيك خلال فعاليات Ai Everything Egypt",
+      "page_num": 1,
+      "bytes": 125107,
+      "sha1": "1ab0178f94be49fbad7c92d2deaafefb24bec512"
+    },
+    {
+      "id": 48,
+      "file": "article_0048.html",
+      "url": "https://www.arageek.com/tv/%d8%a7%d8%ad%d9%85%d8%af-%d9%83%d8%a7%d9%85%d9%84-%d9%88-%d8%af%d8%a7%d9%86%d8%a7-%d8%b1%d8%a7%d8%a6%d9%81-%d9%85%d9%86-ziwo-%d9%8a%d8%aa%d8%ad%d8%af%d8%ab%d8%a7%d9%86-%d8%a7%d9%84%d9%89-%d8%a3%d8%b1?vol=1",
+      "title": "احمد كامل و دانا رائف من ZIWO يتحدثان الى أراجيك خلال فعاليات Ai Everything Egypt",
+      "page_num": 1,
+      "bytes": 125231,
+      "sha1": "3ca27aa1344de1cae62b4cd6235cc216141b5649"
+    },
+    {
+      "id": 49,
+      "file": "article_0049.html",
+      "url": "https://www.arageek.com/tv/%d9%86%d8%a7%d9%86%d8%b3%d9%8a-%d9%85%d8%af%d8%a8%d9%88%d9%84%d9%8a-%d9%85%d9%86-nanovate-%d8%aa%d8%aa%d8%ad%d8%af%d8%ab-%d8%a7%d9%84%d9%89-%d8%a3%d8%b1%d8%a7%d8%ac%d9%8a%d9%83-%d8%ae%d9%84%d8%a7?vol=1",
+      "title": "نانسي مدبولي من NANOVATE تتحدث الى أراجيك خلال فعاليات Ai Everything",
+      "page_num": 1,
+      "bytes": 124833,
+      "sha1": "36598170f683f77bddc6707400519ef98c2b2459"
+    },
+    {
+      "id": 50,
+      "file": "article_0050.html",
+      "url": "https://www.arageek.com/tv/%d8%b9%d9%85%d8%b1%d9%88-%d8%a7%d9%84%d9%84%d8%a8%d9%88%d8%af%d9%8a-%d9%85%d9%86-falak-startups-%d9%8a%d8%aa%d8%ad%d8%af%d8%ab-%d8%a7%d9%84%d9%89-%d8%a3%d8%b1%d8%a7%d8%ac%d9%8a%d9%83-%d8%ae%d9%84?vol=1",
+      "title": "عمرو اللبودي من Falak Startups يتحدث الى أراجيك خلال فعاليات Ai Everything Egypt",
+      "page_num": 1,
+      "bytes": 126083,
+      "sha1": "c345230d5cf3460c42ec96db1c0a085f6f37ccca"
+    },
+    {
+      "id": 51,
+      "file": "article_0051.html",
+      "url": "https://www.arageek.com/tv/%d8%a7%d8%b3%d8%aa%d8%b9%d8%b1%d8%a7%d8%b6-%d9%84%d8%a3%d9%81%d8%b6%d9%84-%d8%b9%d9%86%d8%a7%d8%b5%d8%b1-%d8%a7%d9%84%d8%a8%d9%88%d8%af%d9%83%d8%a7%d8%b3%d8%aa-%d9%85%d9%86-rode?vol=1",
+      "title": "استعراض لأفضل عناصر البودكاست من RØDE",
+      "page_num": 1,
+      "bytes": 123660,
+      "sha1": "d35cfbc7bfa468b8722e0112a34dacde099601be"
+    },
+    {
+      "id": 52,
+      "file": "article_0052.html",
+      "url": "https://www.arageek.com/tv/%d9%81%d8%aa%d8%ad-%d8%b5%d9%86%d8%af%d9%88%d9%82-redmagic-11air%d8%8c-%d8%b9%d9%85%d9%84%d8%a7%d9%82-%d8%a7%d9%84%d8%a7%d9%84%d8%b9%d8%a7%d8%a8-%d8%a7%d9%84%d8%ac%d8%af%d9%8a%d8%af-%d9%85%d9%86?vol=1",
+      "title": "فتح صندوق REDMAGIC 11Air، عملاق الالعاب الجديد من ريد ماجيك",
+      "page_num": 1,
+      "bytes": 124606,
+      "sha1": "1fa946b82d25f3518a55b008a1dd67080c53469c"
+    },
+    {
+      "id": 53,
+      "file": "article_0053.html",
+      "url": "https://www.arageek.com/tv/%d9%85%d8%b1%d8%a7%d8%ac%d8%b9%d8%a9-asus-vivobook-14-copilotpc?vol=1",
+      "title": "مراجعة Asus Vivobook 14 Copilot+PC",
+      "page_num": 1,
+      "bytes": 121172,
+      "sha1": "8a7c5a7a2e59281b39e5a2544553d68c4587d6e5"
+    },
+    {
+      "id": 54,
+      "file": "article_0054.html",
+      "url": "https://www.arageek.com/tv/acer-ces2026-recap?vol=1",
+      "title": "أبرز ماتم تقديمه من ابتكارات من Acer خلال فعاليات CES 2026",
+      "page_num": 1,
+      "bytes": 120642,
+      "sha1": "605a80fd08b5c719df14ebeab0385fe2af481e23"
+    },
+    {
+      "id": 55,
+      "file": "article_0055.html",
+      "url": "https://www.arageek.com/tech/%d9%87%d9%88%d8%a7%d8%aa%d9%81-%d9%87%d9%88%d8%a7%d9%88%d9%8a-%d8%a7%d9%84%d8%b0%d9%83%d9%8a%d8%a9-%d8%b4%d8%b9%d8%a8%d9%8a%d8%a9-%d9%85%d8%aa%d8%b2%d8%a7%d9%8a%d8%af%d8%a9-%d8%b1%d8%ba%d9%85-%d8%a7",
+      "title": "أفضل هواتف هواوي HUAWEI.. شعبية متزايدة رغم العقوبات الأمريكية 💪💪",
+      "page_num": 1,
+      "bytes": 1049217,
+      "sha1": "3214c3a4bdfaf2f2fa615b16153ad322bf7ac6f1"
+    },
+    {
+      "id": 56,
+      "file": "article_0056.html",
+      "url": "https://www.arageek.com/tech/astra-gaming-tablet-%d8%ac%d9%87%d8%a7%d8%b2-%d8%a7%d9%84%d8%a3%d9%84%d8%b9%d8%a7%d8%a8-%d8%a7%d9%84%d9%84%d9%88%d8%ad%d9%8a-%d8%a7%d9%84%d8%a3%d9%82%d9%88%d9%89-%d8%b9%d9%84%d9%89-%d8%a7%d9%84%d8%a5",
+      "title": "Astra Gaming Tablet: جهاز الألعاب اللوحي الأقوى على الإطلاق حتى الآن من REDMAGIC!",
+      "page_num": 1,
+      "bytes": 339157,
+      "sha1": "68f944273a1087c78a2923fec8b0274ebbc6f829"
+    },
+    {
+      "id": 57,
+      "file": "article_0057.html",
+      "url": "https://www.arageek.com/tech/hmd-fuse-%d8%a3%d9%88%d9%84-%d9%87%d8%a7%d8%aa%d9%81-%d9%84%d9%84%d8%a3%d8%b7%d9%81%d8%a7%d9%84-%d9%8a%d9%85%d9%86%d8%b9-%d8%a7%d9%84%d8%a5%d8%a8%d8%a7%d8%ad%d9%8a%d8%a9-%d9%88%d9%8a%d8%ad%d9%85",
+      "title": "HMD Fuse: أول هاتف للأطفال يمنع الإباحية ويحميهم رقميًا",
+      "page_num": 1,
+      "bytes": 316970,
+      "sha1": "52d53420e10ccff1f635350898f0a477a13c28ff"
+    },
+    {
+      "id": 58,
+      "file": "article_0058.html",
+      "url": "https://www.arageek.com/tech/%d8%a3%d9%81%d8%b6%d9%84-%d8%aa%d8%b7%d8%a8%d9%8a%d9%82%d8%a7%d8%aa-%d8%a3%d9%86%d8%af%d8%b1%d9%88%d9%8a%d8%af",
+      "title": "القائمة الكاملة لأفضل 100 تطبيق أندرويد على الإطلاق",
+      "page_num": 1,
+      "bytes": 2463003,
+      "sha1": "e116b6ac82400d4aceeff8638304493b4ce26293"
+    },
+    {
+      "id": 59,
+      "file": "article_0059.html",
+      "url": "https://www.arageek.com/tech/%d9%85%d8%b1%d8%a7%d8%ac%d8%b9%d8%a9-%d8%ac%d9%87%d8%a7%d8%b2-asus-rog-strix-scar-18-2025-2",
+      "title": "مراجعة جهاز ASUS ROG Strix Scar 18 (2025)",
+      "page_num": 1,
+      "bytes": 336978,
+      "sha1": "65c431aa0a3178fbc0aed26203cbc683e9662987"
+    },
+    {
+      "id": 60,
+      "file": "article_0060.html",
+      "url": "https://www.arageek.com/tech/%d8%a3%d9%81%d8%b6%d9%84-%d9%87%d9%88%d8%a7%d8%aa%d9%81-%d8%a3%d9%88%d8%a8%d9%88-%d9%84%d9%84%d8%a8%d8%a7%d8%ad%d8%ab%d9%8a%d9%86-%d8%b9%d9%86-%d8%aa%d8%ac%d8%b1%d8%a8%d8%a9-%d8%a7%d8%b3%d8%aa%d8%ae",
+      "title": "أفضل هواتف أوبو Oppo.. أدوات ذكية تواكب إيقاع حياتك السريع",
+      "page_num": 1,
+      "bytes": 920909,
+      "sha1": "d8e107125891a5754e7d95b2d07fa0503a4b9978"
+    },
+    {
+      "id": 61,
+      "file": "article_0061.html",
+      "url": "https://www.arageek.com/tech/%d9%87%d8%a7%d8%aa%d9%81-%d8%a3%d9%84%d8%b9%d8%a7%d8%a8-%d9%82%d9%88%d9%8a-%d9%85%d8%b3%d8%a7%d8%ad%d8%a9-%d8%aa%d8%ae%d8%b2%d9%8a%d9%86-%d9%88%d8%b3%d8%b1%d8%b9%d8%a9-%d9%88%d8%af%d8%b9%d9%85",
+      "title": "هاتف ألعاب قوي.. مساحة تخزين وسرعة ودعم شبكة 5G",
+      "page_num": 1,
+      "bytes": 891833,
+      "sha1": "71b7ebe830ea15ecdffedebfc142811762f208c8"
+    },
+    {
+      "id": 62,
+      "file": "article_0062.html",
+      "url": "https://www.arageek.com/tech/android-15-features",
+      "title": "مراجعة نظام أندرويد 15: أبرز المزايا الجديدة!",
+      "page_num": 1,
+      "bytes": 319664,
+      "sha1": "05537789dd9641182385988ad2e344c48dedf477"
+    },
+    {
+      "id": 63,
+      "file": "article_0063.html",
+      "url": "https://www.arageek.com/tech/qualcomm-snapdragon-8-elite",
+      "title": "أحدث معالجات شركة كوالكوم للهواتف الرائدة، بتسمية جديدة كليًا!",
+      "page_num": 1,
+      "bytes": 294081,
+      "sha1": "68a815b4d2e4e691f9524a6ef49df214d36aebe3"
+    },
+    {
+      "id": 64,
+      "file": "article_0064.html",
+      "url": "https://www.arageek.com/tech/android-15-pixel-release",
+      "title": "إطلاق نظام تشغيل أندرويد 15 رسميًا على أجهزة جوجل بكسل!",
+      "page_num": 1,
+      "bytes": 303226,
+      "sha1": "ab53feaeae078a7a52fb5929d35f0c196d01ceb6"
+    },
+    {
+      "id": 65,
+      "file": "article_0065.html",
+      "url": "https://www.arageek.com/bio/charles-babbage",
+      "title": "تشارلز بابيج charles babbage",
+      "page_num": 1,
+      "bytes": 388248,
+      "sha1": "30eae1bbcc2b349ea48eaa64784a707d7dad034b"
+    },
+    {
+      "id": 66,
+      "file": "article_0066.html",
+      "url": "https://www.arageek.com/bio/alexander-graham-bell",
+      "title": "ألكسندر غراهام بيل Alexander Graham Bell",
+      "page_num": 1,
+      "bytes": 364253,
+      "sha1": "22560aaa79682f012d837f13b1ed81674983aac2"
+    },
+    {
+      "id": 67,
+      "file": "article_0067.html",
+      "url": "https://www.arageek.com/bio/larry-page",
+      "title": "لاري بيج Larry Page",
+      "page_num": 1,
+      "bytes": 391265,
+      "sha1": "114948a3f4b876db02a993f3abb3bee1e0f99683"
+    },
+    {
+      "id": 68,
+      "file": "article_0068.html",
+      "url": "https://www.arageek.com/bio/guglielmo-marconi",
+      "title": "غولييلمو ماركوني Guglielmo Marconi",
+      "page_num": 1,
+      "bytes": 354420,
+      "sha1": "740c358612dcd0f0884ea7a1fe17e95a66b7d955"
+    },
+    {
+      "id": 69,
+      "file": "article_0069.html",
+      "url": "https://www.arageek.com/bio/ernst-ruska",
+      "title": "إرنست روسكا Ernst Ruska",
+      "page_num": 1,
+      "bytes": 384890,
+      "sha1": "50b0e4caea97a87d2eff0d268646c0a288fb71a3"
+    },
+    {
+      "id": 70,
+      "file": "article_0070.html",
+      "url": "https://www.arageek.com/bio/markus-persson",
+      "title": "Markus Persson ماركوس بيرسون",
+      "page_num": 1,
+      "bytes": 328907,
+      "sha1": "2b699e1a6eac1298b545545a50c9be3b4ee53199"
+    },
+    {
+      "id": 71,
+      "file": "article_0071.html",
+      "url": "https://www.arageek.com/bio/james-watt",
+      "title": "جيمس واط James Watt",
+      "page_num": 1,
+      "bytes": 625407,
+      "sha1": "6425f311b1ac2961a9dfbac8446a5538f4c097ef"
+    },
+    {
+      "id": 72,
+      "file": "article_0072.html",
+      "url": "https://www.arageek.com/bio/elon-musk",
+      "title": "إيلون ماسك Elon Musk",
+      "page_num": 1,
+      "bytes": 402244,
+      "sha1": "23efd5c9007be972e7f652255ceb5c6c214b71d9"
+    },
+    {
+      "id": 73,
+      "file": "article_0073.html",
+      "url": "https://www.arageek.com/bio/hedy-lamarr",
+      "title": "هيدي لامار Hedy Lamarr",
+      "page_num": 1,
+      "bytes": 375029,
+      "sha1": "e3b69b8b6fe31f70100970de85322b6ae42a341d"
+    },
+    {
+      "id": 74,
+      "file": "article_0074.html",
+      "url": "https://www.arageek.com/bio/joy-mangano",
+      "title": "جوي مانغانو Joy Mangano",
+      "page_num": 1,
+      "bytes": 373095,
+      "sha1": "b0ce5d33789f35eeca36f09f42b0230696c4b2f6"
+    },
+    {
+      "id": 75,
+      "file": "article_0075.html",
+      "url": "https://www.arageek.com/bio/roy-plunkett",
+      "title": "روي بلانكيت Roy Plunkett",
+      "page_num": 1,
+      "bytes": 372634,
+      "sha1": "3b655d9b305732333cbee16f1a6983b0931fc178"
+    },
+    {
+      "id": 76,
+      "file": "article_0076.html",
+      "url": "https://www.arageek.com/bio/samuel-morse",
+      "title": "صمويل مورس Samuel Morse",
+      "page_num": 1,
+      "bytes": 369955,
+      "sha1": "1931ea3068187fdcd4f6f6eb33fb65538aafe257"
+    },
+    {
+      "id": 77,
+      "file": "article_0077.html",
+      "url": "https://www.arageek.com/bio/ronald-wayne",
+      "title": "رونالد واين Ronald Wayne",
+      "page_num": 1,
+      "bytes": 605445,
+      "sha1": "c664cea2a6b017b74b6db073966e54bc6347f10f"
+    },
+    {
+      "id": 78,
+      "file": "article_0078.html",
+      "url": "https://www.arageek.com/bio/benjamin-franklin",
+      "title": "بنجامين فرانكلين Benjamin Franklin",
+      "page_num": 1,
+      "bytes": 397807,
+      "sha1": "683ef92ec49c2243fe76b1dc1f98b21a697b4f0c"
+    },
+    {
+      "id": 79,
+      "file": "article_0079.html",
+      "url": "https://www.arageek.com/bio/charles-townes",
+      "title": "تشارلز تاونز Charles Townes",
+      "page_num": 1,
+      "bytes": 380621,
+      "sha1": "f144680efbd45b23d6ad75a8879f59d5de1153bb"
+    },
+    {
+      "id": 80,
+      "file": "article_0080.html",
+      "url": "https://www.arageek.com/bio/ladislao-biro",
+      "title": "لاديسلاو بيرو László Bíró",
+      "page_num": 1,
+      "bytes": 530061,
+      "sha1": "1ba74c2fd16d3b6567068ef438f724cf04c9d8bd"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 2,
+    "articles": 80,
+    "article_fetch_failures": 0
+  }
+}

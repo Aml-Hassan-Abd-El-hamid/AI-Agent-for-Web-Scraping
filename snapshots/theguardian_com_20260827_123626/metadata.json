@@ -1,0 +1,588 @@
+{
+  "website": "theguardian",
+  "snapshot_date": "2026-08-27T13:02:36",
+  "pagination_type": "numbered pagination",
+  "scroll_mode": null,
+  "scroll_rounds_requested": null,
+  "load_more_selector": null,
+  "listing_url": "https://www.theguardian.com/world/gaza",
+  "input_urls": [
+    "https://www.theguardian.com/world/gaza",
+    "https://www.theguardian.com/world/gaza?page=2"
+  ],
+  "pagination_pattern": "https://www.theguardian.com/world/gaza?page={page}",
+  "requirements": "title, date, author, article body text",
+  "run_dir": "orch_runs/run_20260827_123626",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://www.theguardian.com/world/gaza",
+      "file": "listing_page_001.html",
+      "bytes": 427446,
+      "sha1": "678ac52b43d45b4ccb076c20490da7a6a48334c4"
+    },
+    {
+      "page_num": 2,
+      "url": "https://www.theguardian.com/world/gaza?page=2",
+      "file": "listing_page_002.html",
+      "bytes": 435201,
+      "sha1": "d39f65f815cee0323ffd2cb04d4c81391f36868a"
+    },
+    {
+      "page_num": 3,
+      "url": "https://www.theguardian.com/world/gaza?page=3",
+      "file": "listing_page_003.html",
+      "bytes": 412162,
+      "sha1": "77ce5d57fa5d6091e0eaf804938d3ac6a0ed5e60"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://www.theguardian.com/world/2026/aug/26/gaza-farmers-struggle-scraps-of-land-constant-threat",
+      "title": "On scraps of land and under constant threat, Gaza farmers struggle to survive",
+      "page_num": 1,
+      "bytes": 358653,
+      "sha1": "5d84fedc771f5422daaae733b8df72c7a8fb46ed"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://www.theguardian.com/artanddesign/2026/aug/25/ear-witness-turner-winner-lawrence-abu-hamdan-earshot-sound-evidence-exposees-of-human-rights-abuses",
+      "title": "The ear witness: Turner-winner Lawrence Abu Hamdan and his ‘sound evidence’ exposés of human rights abuses",
+      "page_num": 1,
+      "bytes": 339326,
+      "sha1": "5f73e17151773ce80816f98ceff07d74ef8bc318"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://www.theguardian.com/film/2026/aug/24/gaza-documentary-produced-by-the-guardian-to-receive-world-premiere-at-venice-film-festival",
+      "title": "Guardian-produced Gaza documentary from Oscar-winning Israeli directors of No Other Land to screen at Venice film festival",
+      "page_num": 1,
+      "bytes": 303428,
+      "sha1": "9261b49b4e05327e86be3e675f18966760129960"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://www.theguardian.com/politics/2026/aug/23/andy-burnham-pressure-labour-conference-recognise-israel-actions-gaza-genocide",
+      "title": "Burnham to face pressure at Labour conference to recognise Israel’s actions in Gaza as genocide",
+      "page_num": 1,
+      "bytes": 439638,
+      "sha1": "07ae4367bb1665df4a904dee78f1a7c75998f3d5"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://www.theguardian.com/world/2026/aug/22/uk-france-diplomats-israel-palestine",
+      "title": "Former British and French diplomats urge action over Israel’s ‘erasure’ of Palestine",
+      "page_num": 1,
+      "bytes": 331583,
+      "sha1": "7cb588ee7e3ae2f598afd19a43996fbf2e7c34c9"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://www.theguardian.com/world/2026/aug/21/uk-australia-canada-criticise-israel-gaza-aid-convoy-killings-decision",
+      "title": "‘Shameful’: UK, Australia and Canada criticise Israel over Gaza aid convoy killings decision",
+      "page_num": 1,
+      "bytes": 321137,
+      "sha1": "410d55a6a03f3367532aa9341dde389048266c20"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://www.theguardian.com/australia-news/2026/aug/21/australian-aid-worker-zomi-frankcom-idf-cleared-what-happened-ntwnfb",
+      "title": "Zomi Frankcom was killed by IDF drones. Australia says Israel’s response ‘falls far short’. How did it happen and what’s next?",
+      "page_num": 1,
+      "bytes": 493639,
+      "sha1": "337c725ea0f35804db6c6db898402ee4216249f3"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://www.theguardian.com/world/2026/aug/19/israel-admits-it-soldiers-fired-at-car-in-which-hind-rajab-was-killed",
+      "title": "Israel admits its soldiers fired at car in which Hind Rajab was killed",
+      "page_num": 1,
+      "bytes": 440324,
+      "sha1": "4f7df5402a254cbf3208baaa11a2ae5295ee66d2"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://www.theguardian.com/australia-news/2026/aug/20/australia-idf-reaction-gaza-strike-zomi-frankcom-penny-wong-statement-ntwnfb",
+      "title": "Australia ‘outraged’ as Israel rejects Zomi Frankcom criminal investigation while ambassador decries ‘haters’",
+      "page_num": 1,
+      "bytes": 497857,
+      "sha1": "2c84c304d8073a40e4160b531fda01501b32a2c2"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://www.theguardian.com/film/video/2026/aug/19/gaza-trauma-surgeon-stateside-with-kai-and-carter-podcast",
+      "title": "Stateside with Kai and CarterSeeing Gaza through the eyes of a trauma surgeon – Stateside with Kai and Carter",
+      "page_num": 1,
+      "bytes": 304782,
+      "sha1": "2182a12cabad2a498208b274ca5f336f8870377e"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://www.theguardian.com/us-news/2026/aug/18/us-icc-sanctions",
+      "title": "US sanctions international criminal court president and prosecutor",
+      "page_num": 1,
+      "bytes": 329337,
+      "sha1": "7051d5d84223d7c9fe3e3406bb07dc09a7c8e1b6"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://www.theguardian.com/culture/2026/aug/18/sydney-waverley-library-removes-book-how-to-sell-a-genocide-from-shelves-ntwnfb",
+      "title": "Bondi library removes book How to Sell a Genocide from shelves after complaint",
+      "page_num": 1,
+      "bytes": 357273,
+      "sha1": "5c436c2bbe6489778a4ab601b6f626caec5b1290"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://www.theguardian.com/world/2026/aug/17/netanyahu-party-campaign-billboard-mamdani-iran-hezbollah",
+      "title": "Netanyahu party campaign billboard likens Mamdani to leaders of Iran and Hezbollah",
+      "page_num": 1,
+      "bytes": 414873,
+      "sha1": "6abc9e82770c4d8c942ad4b7e4bd260293136afc"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://www.theguardian.com/world/live/2026/aug/17/trump-kushner-netanyahu-hamas-gaza-israel-blair-us-iran-hormuz-oil-latest-news-updates",
+      "title": "Middle East crisis liveTrump threatens to bomb Oman if it ‘gets in the way’ of Iran deal as Kushner meets Netanyahu – as it happened",
+      "page_num": 1,
+      "bytes": 532854,
+      "sha1": "8ccb80591f56014d746aef1b1797c8668edaace6"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://www.theguardian.com/world/video/2026/aug/17/can-trumps-peace-plan-for-gaza-be-saved-the-latest",
+      "title": "Today in Focus: The LatestCan Trump’s peace plan for Gaza be saved? – The Latest",
+      "page_num": 1,
+      "bytes": 305067,
+      "sha1": "142c9b075c52f1a3f80ad028a4f2d0e9d3514578"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://www.theguardian.com/world/2026/aug/17/netanyahu-kushner-talks-gaza-israel-us-board-of-peace",
+      "title": "Netanyahu and Kushner talks make no breakthrough on stalled Gaza deal",
+      "page_num": 1,
+      "bytes": 357511,
+      "sha1": "af363ef209b4a87ac50a1920cf7bd91bfaa3ae78"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://www.theguardian.com/news/audio/2026/aug/17/can-trumps-peace-plan-for-gaza-be-saved-the-latest",
+      "title": "Today in FocusCan Trump’s peace plan for Gaza be saved? – The Latest",
+      "page_num": 1,
+      "bytes": 331986,
+      "sha1": "737b6227b1befd73350f292492dc1c9582818e71"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://www.theguardian.com/us-news/2026/aug/16/jared-kushner-hamas-gaza-meeting",
+      "title": "Jared Kushner meets with Hamas ahead of talks with Netanyahu on Gaza",
+      "page_num": 1,
+      "bytes": 377748,
+      "sha1": "cfe621e4fad529495c3cbb76adc9a4b59b89823e"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://www.theguardian.com/commentisfree/2026/aug/13/ukraine-cathedrals-gaza-archives-iran-erase-history-war",
+      "title": "double quotation markUkrainian cathedrals, Gaza’s archives, Iranian squares – modern war is systematically erasing human history",
+      "page_num": 1,
+      "bytes": 336875,
+      "sha1": "5227d7fb44b42f1f4f23cd037cb0a173503c63b5"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://www.theguardian.com/world/2026/aug/10/this-is-india-relationship-with-israel-modi-netanyahu",
+      "title": "This Is IndiaAs conflict in the Middle East intensifies, India’s relationship with Israel deepens",
+      "page_num": 1,
+      "bytes": 372115,
+      "sha1": "2f84d009b2dc091d96ce37f9e1747bd361bdc1ef"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://www.theguardian.com/world/2026/aug/10/benjamin-netanyahu-rejection-us-deal-gaza-risky-gamble",
+      "title": "Flip-flopping Netanyahu rejects Gaza plan but cannot placate all his allies",
+      "page_num": 2,
+      "bytes": 436344,
+      "sha1": "1a9f504bb16253aa9e05fccf6c6b4a60532ec38a"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://www.theguardian.com/stage/2026/aug/10/uk-palestinian-comic-sami-abu-wardeh-edinburgh-show",
+      "title": "UK Palestinian comic Sami Abu Wardeh: ‘I committed the cardinal sin of comedy’",
+      "page_num": 2,
+      "bytes": 344607,
+      "sha1": "f814a7eac52b9c0f63af2a6801f00d4970ec2f24"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://www.theguardian.com/politics/audio/2026/aug/10/revisited-andy-burnham-apologises-for-labours-stance-on-gaza-podcast",
+      "title": "Politics Weekly UKRevisited: Andy Burnham apologises for Labour’s stance on Gaza – podcast",
+      "page_num": 2,
+      "bytes": 336391,
+      "sha1": "103a0c331bb4ebe80d959227e1841dd97583c15b"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://www.theguardian.com/world/2026/aug/09/israel-rejects-us-led-15-point-gaza-peace-plan-says-netanyahu",
+      "title": "Netanyahu rejects US-led 15-point Gaza peace plan in rare public break with Trump",
+      "page_num": 2,
+      "bytes": 473870,
+      "sha1": "456e31b681ebec52fbdff2cc4a02526dfaa3cb81"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://www.theguardian.com/us-news/ng-interactive/2026/aug/06/professor-israel-gaza-university-of-minnesota",
+      "title": "An Israeli professor lost a prestigious US job offer after speaking out on Gaza. Now the university is paying him $250,000",
+      "page_num": 2,
+      "bytes": 357833,
+      "sha1": "ddbf833e50d650fec875e9ca5c63d2ffeb04852e"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://www.theguardian.com/world/2026/aug/06/trump-gaza-board-of-peace-first-building-contract-military-base",
+      "title": "Trump’s Gaza Board of Peace issues first building contract – for a military base",
+      "page_num": 2,
+      "bytes": 354900,
+      "sha1": "075553c3a4fafc4fd6b1eafbe928440a0bb77e14"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://www.theguardian.com/world/video/2026/aug/04/mourners-hold-funeral-for-112-people-killed-in-2023-by-israeli-strike-in-gaza-video",
+      "title": "Mourners hold funeral for 112 people killed in 2023 by Israeli strike in Gaza – video",
+      "page_num": 2,
+      "bytes": 311469,
+      "sha1": "af2e3a8cfcee8dca3f1b915ba94b26eb21b546c0"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://www.theguardian.com/world/2026/aug/04/mass-funeral-gaza-victims-2023-israeli-strike",
+      "title": "Mass funeral held in Gaza for victims of 2023 Israeli strike",
+      "page_num": 2,
+      "bytes": 345507,
+      "sha1": "f5aba6a2f08f2ea8a6b7fa0cfb407a1ddeeb9a8e"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://www.theguardian.com/world/live/2026/aug/03/us-iran-trump-strait-of-hormuz-talks-israel-gaza-lebanon-latest-news-updates",
+      "title": "Middle East crisis liveTrump claims strait of Hormuz could open ‘by tomorrow’ as Iran denies any talks taking place – as it happened",
+      "page_num": 2,
+      "bytes": 658440,
+      "sha1": "8908e8ffed9b7286c1ad4614e3fc4dd4ba9f7d89"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://www.theguardian.com/politics/2026/aug/01/eu-relations-climate-crisis-gaza-ed-miliband-foreign-office-challenges",
+      "title": "EU relations, climate crisis and Gaza: why Ed Miliband is fired up by Foreign Office challenges",
+      "page_num": 2,
+      "bytes": 390407,
+      "sha1": "e6fc65da74be917d467bc0509a6747e0f973a1d1"
+    },
+    {
+      "id": 31,
+      "file": "article_0031.html",
+      "url": "https://www.theguardian.com/world/live/2026/jul/31/us-iran-war-live-updates-trump-claims-gaza-hamas-deal-middle-east-crisis-latest-news",
+      "title": "Middle East crisis liveMiddle East crisis: Trump says ‘Israel is very happy’ with Gaza peace plan but doesn’t say if withdrawal or Hamas disarmament comes first – as it happened",
+      "page_num": 2,
+      "bytes": 894718,
+      "sha1": "8661011b676ee77664b6f255ad47ce6fd6e5b659"
+    },
+    {
+      "id": 32,
+      "file": "article_0032.html",
+      "url": "https://www.theguardian.com/news/audio/2026/jul/31/hamas-agrees-trump-plan-disarm-gaza-the-latest",
+      "title": "Today in FocusHamas agrees to Trump’s plan to disarm in Gaza – The Latest",
+      "page_num": 2,
+      "bytes": 325186,
+      "sha1": "4d27f2b74329908802077490444ad1699d73d682"
+    },
+    {
+      "id": 33,
+      "file": "article_0033.html",
+      "url": "https://www.theguardian.com/news/video/2026/jul/31/can-trumps-hamas-disarmament-plan-work-and-will-israel-agree-to-withdraw-from-gaza-the-latest",
+      "title": "Today in Focus: The LatestCan Trump’s Hamas disarmament plan work and will Israel agree to withdraw from Gaza? - The Latest",
+      "page_num": 2,
+      "bytes": 324133,
+      "sha1": "df704c2af0874c08a5ef41f572606c402e7ccf00"
+    },
+    {
+      "id": 34,
+      "file": "article_0034.html",
+      "url": "https://www.theguardian.com/world/2026/jul/31/trump-hamas-disarmament-agreement-gaza-board-of-peace",
+      "title": "Trump says ‘complete disarmament’ of Hamas agreed in Gaza but Israel yet to accept",
+      "page_num": 2,
+      "bytes": 465450,
+      "sha1": "b7806a2531cdfa699e10d1b7447702892f3d6490"
+    },
+    {
+      "id": 35,
+      "file": "article_0035.html",
+      "url": "https://www.theguardian.com/world/2026/jul/31/friday-briefing-why-attacks-on-hospitals-from-ukraine-to-lebanon-now-happen-with-impunity",
+      "title": "First Edition newsletterFriday briefing: Why attacks on hospitals from Ukraine to Lebanon now happen with impunity",
+      "page_num": 2,
+      "bytes": 399388,
+      "sha1": "21c5de9db6e84f7e2850b83b6eb58b1b3a7a99f0"
+    },
+    {
+      "id": 36,
+      "file": "article_0036.html",
+      "url": "https://www.theguardian.com/us-news/ng-interactive/2026/jul/29/aipac-j-street-zionism",
+      "title": "Aipac’s brand has become toxic. Can this ‘pro-Israel, pro-peace’ rival move in?",
+      "page_num": 2,
+      "bytes": 413198,
+      "sha1": "4257b52f1a6b2eca25070f171e52d15902334886"
+    },
+    {
+      "id": 37,
+      "file": "article_0037.html",
+      "url": "https://www.theguardian.com/world/video/2026/jul/29/israeli-airstrike-hits-mosque-gaza-city-video",
+      "title": "Israeli airstrike hits mosque in Gaza City – video",
+      "page_num": 2,
+      "bytes": 310831,
+      "sha1": "309a3294fc3c7d987394fb53ae1e39fb8d5b52b6"
+    },
+    {
+      "id": 38,
+      "file": "article_0038.html",
+      "url": "https://www.theguardian.com/artanddesign/2026/jul/29/gaza-beekeeper-refusing-to-let-war-end-lifes-work",
+      "title": "The Guardian picture essayFrom 400 hives to 35: the Gaza beekeeper refusing to let war end his life’s work",
+      "page_num": 2,
+      "bytes": 456003,
+      "sha1": "991a865377112b839ca898a4f1fb4d08124ca00b"
+    },
+    {
+      "id": 39,
+      "file": "article_0039.html",
+      "url": "https://www.theguardian.com/politics/2026/jul/28/led-by-donkeys-compensation-seizure-gaza-protest-banner-london",
+      "title": "Led By Donkeys wins compensation over seizure of Gaza protest banner",
+      "page_num": 2,
+      "bytes": 404223,
+      "sha1": "02b9e4da1b46195a2d99871ba1fff8afd6fe4f6c"
+    },
+    {
+      "id": 40,
+      "file": "article_0040.html",
+      "url": "https://www.theguardian.com/world/video/2026/jul/28/why-so-many-american-jews-are-turning-away-from-israel-video",
+      "title": "On the groundWhy so many American Jews are turning away from Israel – video",
+      "page_num": 2,
+      "bytes": 291973,
+      "sha1": "d2404c4adbdfa77b5662c2d783bf82708ac8ed02"
+    },
+    {
+      "id": 41,
+      "file": "article_0041.html",
+      "url": "https://www.theguardian.com/uk-news/2026/jul/27/home-office-blocking-evacuation-women-children-gaza-refugee-family-reunion",
+      "title": "Home Office blocking evacuation of dozens of women and children from Gaza",
+      "page_num": 3,
+      "bytes": 401638,
+      "sha1": "eefcb2636320854d1df37820efb54cc15827b974"
+    },
+    {
+      "id": 42,
+      "file": "article_0042.html",
+      "url": "https://www.theguardian.com/world/2026/jul/25/swimming-classes-resume-gaza-after-three-years-war",
+      "title": "Reclaiming stolen childhoods: swimming classes resume in Gaza after three years of war",
+      "page_num": 3,
+      "bytes": 402369,
+      "sha1": "ec170bd732999259f9cc6a77358ae5d93e24d9c7"
+    },
+    {
+      "id": 43,
+      "file": "article_0043.html",
+      "url": "https://www.theguardian.com/australia-news/2026/jul/25/ed-husic-labor-gaza-genocide-claims-ntwnfb",
+      "title": "Ed Husic-led push for Labor to recognise Gaza genocide fails, preventing public stoush",
+      "page_num": 3,
+      "bytes": 340217,
+      "sha1": "24cfea28eb34f519d90ae198b766a97c7ea63893"
+    },
+    {
+      "id": 44,
+      "file": "article_0044.html",
+      "url": "https://www.theguardian.com/australia-news/2026/jul/23/ed-husic-dissent-labor-party-national-conference-anthony-albanese-ntwnfb",
+      "title": "Husic says Labor ‘allergic to dissent’ as he breaks ranks on key government positions at party conference",
+      "page_num": 3,
+      "bytes": 458581,
+      "sha1": "c53679ddebfc576b012d946e948548e23e5723cb"
+    },
+    {
+      "id": 45,
+      "file": "article_0045.html",
+      "url": "https://www.theguardian.com/us-news/2026/jul/21/mamdani-benjamin-netanyahu-arrest-authority",
+      "title": "Mamdani urges US government to arrest Netanyahu if Israeli PM visits US",
+      "page_num": 3,
+      "bytes": 361518,
+      "sha1": "d8fc7997d93ade15e808e15862127d569033760d"
+    },
+    {
+      "id": 46,
+      "file": "article_0046.html",
+      "url": "https://www.theguardian.com/news/audio/2026/jul/22/the-man-building-swimming-pools-in-gaza-podcast",
+      "title": "Today in FocusThe man building swimming pools in Gaza – podcast",
+      "page_num": 3,
+      "bytes": 338572,
+      "sha1": "5550fa0589d815ef89f1fb5e20bc1ab900c1cb22"
+    },
+    {
+      "id": 47,
+      "file": "article_0047.html",
+      "url": "https://www.theguardian.com/us-news/2026/jul/20/trump-benjamin-netanyahu-will-not-be-arrested",
+      "title": "Trump says Benjamin Netanyahu ‘will not be arrested’ if he visits the US",
+      "page_num": 3,
+      "bytes": 328874,
+      "sha1": "432a5666bf5802ec1206571c5ee3c5b4904d85f9"
+    },
+    {
+      "id": 48,
+      "file": "article_0048.html",
+      "url": "https://www.theguardian.com/world/video/2026/jul/20/palestinians-gaza-celebrate-spain-world-cup-victory-video",
+      "title": "Palestinians in Gaza celebrate Spain's World Cup victory – video",
+      "page_num": 3,
+      "bytes": 312257,
+      "sha1": "12a9217236bc3f4163afe5e0507b4ed59ca5270a"
+    },
+    {
+      "id": 49,
+      "file": "article_0049.html",
+      "url": "https://www.theguardian.com/news/audio/2026/jul/20/saint-levant-the-pop-star-from-gaza-caught-between-passionate-fandom-and-bitter-disapproval-podcast",
+      "title": "The Audio Long ReadSaint Levant: the pop star from Gaza caught between passionate fandom and bitter disapproval – podcast",
+      "page_num": 3,
+      "bytes": 302075,
+      "sha1": "b2b8b035a66c3166a72d0df885a4bbba08e02769"
+    },
+    {
+      "id": 50,
+      "file": "article_0050.html",
+      "url": "https://www.theguardian.com/world/2026/jul/19/israels-brutality-cannot-continue-in-plain-sight",
+      "title": "Israel’s brutality cannot continue in plain sight",
+      "page_num": 3,
+      "bytes": 321104,
+      "sha1": "1dedf7f7963c82c66d7186ffea4e491a1a393567"
+    },
+    {
+      "id": 51,
+      "file": "article_0051.html",
+      "url": "https://www.theguardian.com/world/2026/jul/19/inside-church-of-england-debate-over-palestine-gaza",
+      "title": "‘We hear your voices’: inside the Church of England’s debate over Palestine",
+      "page_num": 3,
+      "bytes": 346316,
+      "sha1": "624837d2df0eb2928c3357d90e50d76238076b25"
+    },
+    {
+      "id": 52,
+      "file": "article_0052.html",
+      "url": "https://www.theguardian.com/commentisfree/2026/jul/18/trump-speech-election-integrity",
+      "title": "The Week in Patriarchydouble quotation markWhen Trump accuses others of wrongdoing, you can bet he’s up to something himself",
+      "page_num": 3,
+      "bytes": 322448,
+      "sha1": "7f0e7a20d0b529a6d91c34ba863f79a32d75958c"
+    },
+    {
+      "id": 53,
+      "file": "article_0053.html",
+      "url": "https://www.theguardian.com/us-news/2026/jul/18/fergie-chambers-stella-schnabel-spain-extradition",
+      "title": "Wife of US heir and activist donor on fighting his extradition to US: ‘It’s incredible that this can happen’",
+      "page_num": 3,
+      "bytes": 334784,
+      "sha1": "4765e46da89d67166fbf7250d5044af7442d5b6b"
+    },
+    {
+      "id": 54,
+      "file": "article_0054.html",
+      "url": "https://www.theguardian.com/world/2026/jul/18/israel-plan-new-illegal-settlements-gaza-west-bank-occupied-palestine",
+      "title": "Israeli ministers announce plans for new illegal settlements in Gaza and West Bank",
+      "page_num": 3,
+      "bytes": 490171,
+      "sha1": "1b5b5aefeb2248659168b4c121c4df7ed03ca8ab"
+    },
+    {
+      "id": 55,
+      "file": "article_0055.html",
+      "url": "https://www.theguardian.com/commentisfree/2026/jul/18/donald-trump-iran-world-danger-bombing-us",
+      "title": "double quotation markTrump, not Iran, is the world’s greatest danger. He’s a one-man weapon of mass destruction",
+      "page_num": 3,
+      "bytes": 347659,
+      "sha1": "1d945626c8a67caed570314d0968f50a08bbfaa5"
+    },
+    {
+      "id": 56,
+      "file": "article_0056.html",
+      "url": "https://www.theguardian.com/world/2026/jul/17/israeli-strike-gaza-funeral-multiple-deaths",
+      "title": "Israeli strike on Gaza funeral killed at least seven people, hospital says",
+      "page_num": 3,
+      "bytes": 424744,
+      "sha1": "ab4a324c7c0116f8de55c0e8b7ed22ea7b4bd742"
+    },
+    {
+      "id": 57,
+      "file": "article_0057.html",
+      "url": "https://www.theguardian.com/us-news/2026/jul/16/democrats-israel-support",
+      "title": "A House vote makes it clear: Israel’s support among Democrats is starting to buckle",
+      "page_num": 3,
+      "bytes": 338554,
+      "sha1": "94ab1ff5cc5c4ef6a7589bc576d1b217d6cb3690"
+    },
+    {
+      "id": 58,
+      "file": "article_0058.html",
+      "url": "https://www.theguardian.com/world/2026/jul/16/trumps-board-of-peace-drops-full-gaza-recovery-plan-for-tiny-pilot-scheme",
+      "title": "Trump’s Board of Peace drops full Gaza recovery plan in favour of tiny pilot scheme",
+      "page_num": 3,
+      "bytes": 497606,
+      "sha1": "b7adf6404deb7c1f70343d957f54d690b3dab12a"
+    },
+    {
+      "id": 59,
+      "file": "article_0059.html",
+      "url": "https://www.theguardian.com/uk-news/2026/jul/15/save-the-children-accusing-starmer-of-complicity-in-gaza-deaths",
+      "title": "Save the Children clashes with Labour after accusing Starmer of ‘complicity’ in Gaza deaths",
+      "page_num": 3,
+      "bytes": 424505,
+      "sha1": "ea7ecbb6b2938245dd2c2864a3c263ef6e43bf4c"
+    },
+    {
+      "id": 60,
+      "file": "article_0060.html",
+      "url": "https://www.theguardian.com/world/2026/jul/15/gaza-flotilla-activist-rape-complaint-israel-anna-liedtke",
+      "title": "‘They want to break our will’: Gaza flotilla activist tells of rape in Israeli detention",
+      "page_num": 3,
+      "bytes": 470009,
+      "sha1": "03fce08d5c3cbc93652d819a41a061c8534c1b03"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 3,
+    "articles": 60,
+    "article_fetch_failures": 0
+  }
+}

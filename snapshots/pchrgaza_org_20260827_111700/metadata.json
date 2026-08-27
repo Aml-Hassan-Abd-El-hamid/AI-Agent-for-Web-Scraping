@@ -1,0 +1,417 @@
+{
+  "website": "pchrgaza",
+  "snapshot_date": "2026-08-27T11:26:22",
+  "pagination_type": "numbered pagination",
+  "scroll_mode": null,
+  "scroll_rounds_requested": null,
+  "load_more_selector": null,
+  "listing_url": "https://pchrgaza.org/ar/category/genocide-on-gaza-ar/testimonies-from-the-war-ar/",
+  "input_urls": [
+    "https://pchrgaza.org/ar/category/genocide-on-gaza-ar/testimonies-from-the-war-ar/",
+    "https://pchrgaza.org/ar/category/genocide-on-gaza-ar/testimonies-from-the-war-ar/page/2/"
+  ],
+  "pagination_pattern": "https://pchrgaza.org/ar/category/genocide-on-gaza-ar/testimonies-from-the-war-ar/page/{page}/",
+  "requirements": "title, date, article body text",
+  "run_dir": "orch_runs/run_20260827_111700",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://pchrgaza.org/ar/category/genocide-on-gaza-ar/testimonies-from-the-war-ar/",
+      "file": "listing_page_001.html",
+      "bytes": 67235,
+      "sha1": "fb38e75fb8c6539d592ad85b7c9d478b8f8927d3"
+    },
+    {
+      "page_num": 2,
+      "url": "https://pchrgaza.org/ar/category/genocide-on-gaza-ar/testimonies-from-the-war-ar/page/2/",
+      "file": "listing_page_002.html",
+      "bytes": 67096,
+      "sha1": "809d40e79fd00f94c1d6a78ebc2c7ad560ae329c"
+    },
+    {
+      "page_num": 3,
+      "url": "https://pchrgaza.org/ar/category/genocide-on-gaza-ar/testimonies-from-the-war-ar/page/3/",
+      "file": "listing_page_003.html",
+      "bytes": 66857,
+      "sha1": "5d146fe3df140136f1ae3ef32e2f5434a5aeea38"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://pchrgaza.org/ar/%d8%b3%d9%84%d8%a7%d9%81%d8%a9-%d8%a3%d8%a8%d9%88-%d9%83%d9%88%d9%8a%d9%83-%d8%a3%d9%85-%d8%aa%d9%88%d8%af%d9%91%d8%b9-%d8%b7%d9%81%d9%84%d8%aa%d9%87%d8%a7-%d8%a8%d9%84%d8%a7-%d9%88%d8%af%d8%a7/",
+      "title": "سلافة أبو كويك ..أم تودّع طفلتها بلا وداع وتفقد ابنها وهو يسعف الجرحى",
+      "page_num": 1,
+      "bytes": 89563,
+      "sha1": "3d4b222d4f05db003cbd76d4b6f28ef2f82548f7"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://pchrgaza.org/ar/%d9%84%d8%a7%d9%81%d9%8a-%d8%a7%d9%84%d9%86%d8%ac%d8%a7%d8%b1-%d9%83%d9%81%d9%8a%d9%81-%d8%a7%d8%b9%d8%aa%d9%82%d9%84%d9%87-%d8%a7%d9%84%d8%a7%d8%ad%d8%aa%d9%84%d8%a7%d9%84-%d9%88%d8%ad%d8%b1%d8%a8/",
+      "title": "لافي النجار .. كفيف اعتقله الاحتلال وحرب الإبادة قتلت اثنين من أطفاله",
+      "page_num": 1,
+      "bytes": 80143,
+      "sha1": "938121d224cb58f6f54e793b528497ecd765ba97"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://pchrgaza.org/ar/%d8%b1%d8%ad%d9%84%d8%a9-%d8%a7%d9%84%d8%a3%d9%84%d9%85-%d9%85%d9%86-%d8%a7%d8%b3%d8%aa%d8%b4%d9%87%d8%a7%d8%af-%d8%a7%d8%a8%d9%86%d9%8a-%d8%a5%d9%84%d9%89-%d8%a7%d9%84%d8%aa%d8%b9%d8%b0%d9%8a%d8%a8/",
+      "title": "رحلة الألم من استشهاد ابني إلى التعذيب وفقدان أمي وأختي",
+      "page_num": 1,
+      "bytes": 89003,
+      "sha1": "6db1ae43ca98e814d31ad786e420763a5325a96f"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://pchrgaza.org/ar/%d8%a7%d9%84%d9%88%d8%a7%d9%82%d8%b9-%d9%81%d9%8a-%d8%ba%d8%b2%d8%a9-%d9%8a%d9%81%d8%b1%d8%b6-%d8%b9%d9%84%d9%89-%d8%a7%d9%84%d9%86%d8%b3%d8%a7%d8%a1-%d8%a3%d8%b9%d8%a8%d8%a7%d8%a1%d9%8b-%d9%85%d8%b6/",
+      "title": "في غزة، النساء في مواجهة فقد مركّب",
+      "page_num": 1,
+      "bytes": 74238,
+      "sha1": "16f8fc0e06bd776daf2cd85cb8670f184e1d4dfd"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://pchrgaza.org/ar/%d9%81%d9%8a-%d8%ba%d8%b2%d8%a9%d8%8c-%d9%84%d8%a7-%d8%aa%d9%8f%d8%b3%d8%aa%d9%87%d8%af%d9%81-%d8%a7%d9%84%d9%86%d8%b3%d8%a7%d8%a1-%d8%a8%d8%a7%d9%84%d9%82%d8%b5%d9%81-%d9%81%d9%82%d8%b7%d8%8c-%d8%a8/",
+      "title": "في غزة، لا تُستهدف النساء بالقصف فقط، بل يُنتهك جسدهن وكرامتهن",
+      "page_num": 1,
+      "bytes": 74314,
+      "sha1": "c97b0c2ee1eb1f727fb7d13ff152b70fc4e3f1ea"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://pchrgaza.org/ar/%d8%a5%d8%b3%d8%aa%d9%87%d8%af%d8%a7%d9%81-%d8%a7%d9%84%d8%aa%d8%b9%d9%84%d9%8a%d9%85-%d9%81%d9%8a-%d8%ba%d8%b2%d8%a9-%d8%b6%d9%85%d9%86-%d8%ac%d8%b1%d9%8a%d9%85%d8%a9-%d8%a5%d8%a8%d8%a7%d8%af%d8%a9/",
+      "title": "إستهداف التعليم في غزة ضمن جريمة إبادة ممنهجة",
+      "page_num": 1,
+      "bytes": 74459,
+      "sha1": "4bbc4b13061c22d17c23a9107da901a637bd8783"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://pchrgaza.org/ar/%d9%8a%d9%8f%d8%aa%d8%b1%d9%83%d9%86-%d9%88%d8%ad%d8%af%d9%87%d9%86-%d9%81%d9%8a-%d9%85%d9%88%d8%a7%d8%ac%d9%87%d8%a9-%d8%ad%d8%b2%d9%86%d9%8d-%d8%a8%d9%84%d8%a7-%d8%b3%d9%86%d8%af-%d8%a3%d9%85%d9%87/",
+      "title": "يُتركن وحدهن في مواجهة حزنٍ بلا سند",
+      "page_num": 1,
+      "bytes": 74218,
+      "sha1": "47ec442ed797fc74cfeeb7507ca604cfea13d109"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://pchrgaza.org/ar/%d8%ad%d9%83%d8%a7%d9%8a%d8%aa%d9%8a-%d9%85%d8%b9-%d8%a3%d8%b4%d9%87%d8%b1-%d9%85%d9%86-%d8%a7%d9%84%d8%aa%d8%b9%d8%b0%d9%8a%d8%a8-%d9%88%d9%81%d9%82%d8%af%d8%a7%d9%86-%d8%a3%d8%ae%d9%8a/",
+      "title": "حكايتي مع أشهر من التعذيب وفقدان أخي",
+      "page_num": 1,
+      "bytes": 85205,
+      "sha1": "1239cbecd8332d30b36bb2327fbf5dd022c38f27"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://pchrgaza.org/ar/%d9%88%d8%ac%d9%87%d8%a7%d9%86-%d9%84%d9%84%d9%81%d9%82%d8%af-%d8%a7%d8%b3%d8%aa%d8%b4%d9%87%d8%a7%d8%af-%d8%a7%d9%84%d8%b2%d9%88%d8%ac-%d9%88%d8%a7%d9%84%d8%a3%d8%a8-%d9%88%d9%85%d8%b9%d8%a7%d9%86/",
+      "title": "وجهان للفقد: استشهاد الزوج والأب.. ومعاناة النزوح والجوع والانهيار النفسي",
+      "page_num": 1,
+      "bytes": 86330,
+      "sha1": "fea2b46a29d16ba0695aed80dd60e13eff188f90"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://pchrgaza.org/ar/%d8%a3%d9%85%d9%8c%d9%91-%d9%81%d9%82%d8%af%d8%aa-%d8%a3%d8%a8%d9%86%d8%a7%d8%a1%d9%87%d8%a7-%d8%a7%d9%84%d8%a3%d8%b1%d8%a8%d8%b9%d8%a9-%d8%b4%d9%87%d8%a7%d8%af%d8%a9-%d9%86%d8%b5%d8%b1%d8%a9-%d8%b9/",
+      "title": "أمٌّ فقدت أبناءها الأربعة: شهادة نصرة عن الفقد في زمن الإبادة",
+      "page_num": 1,
+      "bytes": 81764,
+      "sha1": "e85ebf54a813fe3ba44b03369de58a2238824213"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://pchrgaza.org/ar/%d9%86%d8%ac%d9%88%d8%aa%d9%8f-%d9%85%d9%86-%d8%a7%d9%84%d9%85%d9%88%d8%aa%d8%8c-%d9%88%d9%84%d9%85-%d8%a3%d9%86%d8%ac%d9%8f-%d9%85%d9%86-%d8%a7%d9%84%d9%81%d9%82%d8%af-%d8%b4%d9%87%d8%a7%d8%af%d8%a9/",
+      "title": "نجوتُ من الموت، ولم أنجُ من الفقد: شهادة أم من غزة فقدت ابنتها تحت الركام",
+      "page_num": 1,
+      "bytes": 91466,
+      "sha1": "731fa9cd22dc6b68157576172c627758da717c82"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://pchrgaza.org/ar/%d8%a7%d9%84%d9%86%d8%a7%d8%ac%d9%8a-%d8%a7%d9%84%d9%88%d8%ad%d9%8a%d8%af-%d9%85%d9%86-%d8%aa%d8%ad%d8%aa-%d8%a7%d9%84%d8%b1%d9%83%d8%a7%d9%85-%d9%81%d9%82%d8%af%d8%aa-%d8%b2%d9%88%d8%ac%d8%aa%d9%8a/",
+      "title": "الناجي الوحيد من تحت الركام: فقدت زوجتي وأطفالي الأربعة",
+      "page_num": 1,
+      "bytes": 84501,
+      "sha1": "ca04b229d48dfc82189e9d7034c981a137cf8e16"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://pchrgaza.org/ar/%d9%86%d9%88%d8%b1%d8%b3%d9%8a%d9%86-%d9%88%d9%87%d8%a8%d8%a9-%d9%82%d8%aa%d9%84%d9%87%d9%85%d8%a7-%d9%82%d8%b5%d9%81-%d8%a5%d8%b3%d8%b1%d8%a7%d8%a6%d9%8a%d9%84%d9%8a-%d8%b9%d9%84%d9%89-%d8%b7%d8%a7/",
+      "title": "نورسين وهبة قتلهما قصف إسرائيلي على طابور تعبئة المياه",
+      "page_num": 1,
+      "bytes": 75306,
+      "sha1": "a33c24c6e881cbe805022d776291d2b4ad154212"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://pchrgaza.org/ar/%d8%b9%d8%a7%d8%ac%d8%b2%d8%a9-%d8%b9%d9%86-%d8%a7%d9%84%d9%85%d8%b4%d9%8a-%d8%a7%d9%84%d8%a7%d8%ad%d8%aa%d9%84%d8%a7%d9%84-%d8%a7%d9%84%d8%a5%d8%b3%d8%b1%d8%a7%d8%a6%d9%8a%d9%84%d9%8a-%d9%8a%d9%82/",
+      "title": "عاجزة عن المشي.. الاحتلال الإسرائيلي يقف حاجزًا أمام علاجي وتركيب طرف صناعي",
+      "page_num": 1,
+      "bytes": 81930,
+      "sha1": "29248cfb537d83f3ae0cb720191e864b1a8c94d9"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://pchrgaza.org/ar/%d8%aa%d8%ad%d8%aa-%d9%88%d8%b7%d8%a3%d8%a9-%d9%88%d8%ad%d8%b4%d9%8a%d8%a9-%d8%a7%d9%84%d9%82%d8%b5%d9%81-%d9%86%d8%b2%d8%ad%d9%86%d8%a7-%d9%88%d9%84%d9%85-%d9%86%d8%ac%d8%af-%d9%85%d9%83%d8%a7%d9%86/",
+      "title": "تحت وطأة وحشية القصف نزحنا ولم نجد مكانًا نقيم فيه",
+      "page_num": 1,
+      "bytes": 78324,
+      "sha1": "2260e2b8d8b2dea0862092cf7c4066536d6667f8"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://pchrgaza.org/ar/%d8%b9%d8%a8%d8%af-%d8%a7%d9%84%d8%b3%d9%84%d8%a7%d9%85-%d8%a7%d9%84%d9%86%d8%a7%d8%ac%d9%8a-%d8%a7%d9%84%d9%88%d8%ad%d9%8a%d8%af-%d9%85%d9%86-%d9%85%d8%ac%d8%b2%d8%b1%d8%a9-%d8%a3%d8%a8%d8%a7%d8%af/",
+      "title": "عبد السلام: الناجي الوحيد من مجزرة أبادت عائلته كاملة",
+      "page_num": 1,
+      "bytes": 77359,
+      "sha1": "075c3c578d8a7c695159ea80d9173821546a531a"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://pchrgaza.org/ar/%d8%a8%d8%b9%d8%af-%d9%86%d8%b2%d9%88%d8%ad-%d9%85%d8%aa%d9%83%d8%b1%d8%b1-%d8%a7%d8%ad%d8%aa%d8%b1%d9%82-%d8%ac%d8%b3%d8%af%d9%8a-%d8%a5%d8%ab%d8%b1-%d9%82%d8%b5%d9%81-%d8%a5%d8%b3%d8%b1%d8%a7%d8%a6/",
+      "title": "بعد نزوح متكرر احترق جسدي إثر قصف إسرائيلي",
+      "page_num": 1,
+      "bytes": 75684,
+      "sha1": "617e03e304318cdf0b2298e5d46cf2963ecf71ea"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://pchrgaza.org/ar/%d9%85%d8%b9%d8%a7%d9%86%d8%a7%d8%aa%d9%8a-%d9%85%d9%86-%d8%a7%d9%84%d9%86%d8%b2%d9%88%d8%ad-%d8%a7%d9%84%d9%85%d8%aa%d9%83%d8%b1%d8%b1-%d8%a5%d9%84%d9%89-%d8%a8%d8%aa%d8%b1-%d8%a7%d9%84%d9%82%d8%af/",
+      "title": "معاناتي من النزوح المتكرر إلى بتر القدمين في حرب الإبادة",
+      "page_num": 2,
+      "bytes": 77766,
+      "sha1": "194ca89d5dcc25b46266780edf795a2f190d7e52"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://pchrgaza.org/ar/%d8%b1%d8%ad%d9%84%d8%a9-%d9%85%d8%b9%d8%a7%d9%86%d8%a7%d8%aa%d9%8a-%d9%85%d9%86-%d8%a7%d9%84%d9%86%d8%b2%d9%88%d8%ad-%d9%88%d8%a7%d9%84%d8%a8%d8%aa%d8%b1-%d9%88%d8%a7%d9%84%d8%a7%d9%86%d8%aa%d8%b8/",
+      "title": "رحلة معاناتي من النزوح والبتر والانتظار",
+      "page_num": 2,
+      "bytes": 85896,
+      "sha1": "e4fa1662d8b72a4e0fcaefc61f5cbc0f9a6f9306"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://pchrgaza.org/ar/%d8%b2%d9%8a%d8%a7%d8%af-%d9%88%d8%b9%d8%a7%d8%b7%d9%81-%d8%b7%d9%81%d9%84-%d9%88%d8%b4%d8%a7%d8%a8-%d8%a7%d9%84%d8%aa%d9%87%d9%85%d8%aa%d9%87%d9%85%d8%a7-%d8%a7%d9%84%d8%a5%d8%a8%d8%a7%d8%af%d8%a9/",
+      "title": "زياد وعاطف: طفل وشاب التهمتهما الإبادة والتجويع",
+      "page_num": 2,
+      "bytes": 89159,
+      "sha1": "9cdb21e4bd226cd9e83b7a345510e6869c38d8e0"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://pchrgaza.org/ar/%d9%85%d8%b9%d8%a7%d9%86%d8%a7%d8%aa%d9%8a-%d9%85%d8%b9-%d8%a7%d9%84%d8%b3%d8%b1%d8%b7%d8%a7%d9%86-%d9%88%d8%a7%d9%84%d9%86%d8%b2%d9%88%d8%ad-%d9%88%d8%a7%d9%84%d9%81%d9%82%d8%af/",
+      "title": "معاناتي مع السرطان والنزوح والفقد",
+      "page_num": 2,
+      "bytes": 83549,
+      "sha1": "d2939187888e44c11058c940cb91b92ce9fbaf06"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://pchrgaza.org/ar/%d8%b5%d8%b1%d8%ae%d8%a9-%d9%85%d9%86-%d8%a7%d9%84%d9%85%d8%b9%d8%aa%d9%82%d9%84-%d8%b4%d9%87%d8%a7%d8%af%d8%a9-%d8%a5%d9%8a%d9%86%d8%a7%d8%b3-%d8%a8%d8%af%d8%a7%d9%88%d9%86-%d8%b9%d9%86-%d8%a7%d8%b9/",
+      "title": "صرخة من المعتقل: شهادة إيناس بداون عن اعتقالها داخل سجون الاحتلال الإسرائيلي",
+      "page_num": 2,
+      "bytes": 93586,
+      "sha1": "c8f605e9f23f78da4b5a3280c1b7caff3ff1048f"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://pchrgaza.org/ar/%d8%ba%d8%a7%d8%b1%d8%a9-%d8%a5%d8%b3%d8%b1%d8%a7%d8%a6%d9%8a%d9%84%d9%8a%d8%a9-%d9%82%d8%aa%d9%84%d8%aa-%d9%88%d8%ad%d9%8a%d8%af%d8%aa%d9%8a-%d9%88%d8%a3%d8%ae%d9%8a-%d9%88%d8%a3%d8%b5%d8%a7%d8%a8/",
+      "title": "غارة إسرائيلية قتلت وحيدتي وأخي وأصابتني بجروح",
+      "page_num": 2,
+      "bytes": 74983,
+      "sha1": "f8cdbb1fdd9728ba0ee5729c6973a1867f2d1723"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://pchrgaza.org/ar/%d8%a7%d9%84%d8%b7%d9%81%d9%84%d8%a9-%d8%ac%d9%88%d8%af%d9%8a-%d8%b9%d8%b2%d8%a7%d9%85-%d9%85%d9%86-%d9%81%d8%b1%d8%a7%d8%b4%d8%a9-%d8%a7%d9%84%d8%b9%d8%a7%d8%a6%d9%84%d8%a9-%d8%a7%d9%84%d9%89-%d8%a7/",
+      "title": "الطفلة جودي عزام: من فراشة العائلة الى الناجية الوحيدة من مجزرة محت اسرتها في لحظة",
+      "page_num": 2,
+      "bytes": 77466,
+      "sha1": "6871083881cf171bce07a147c0534a6f9b81031e"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://pchrgaza.org/ar/%d8%a8%d9%84%d8%a7%d9%84-%d8%b2%d9%86%d9%88%d9%86-%d8%b7%d9%81%d9%84-%d8%aa%d8%ad%d8%a7%d8%b5%d8%b1%d9%87-%d8%ad%d8%b3%d8%a7%d8%b3%d9%8a%d8%a9-%d8%a7%d9%84%d9%82%d9%85%d8%ad-%d9%88%d8%a7%d9%84/",
+      "title": "بلال زنون .. طفل تحاصره حساسية القمح والحصار الإسرائيلي",
+      "page_num": 2,
+      "bytes": 101769,
+      "sha1": "8dc69b240a90caca78c54eeb6af4792053b6eb36"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://pchrgaza.org/ar/%d8%ab%d9%85%d8%a7%d9%86%d9%8a%d8%a9-%d8%a3%d8%b1%d9%88%d8%a7%d8%ad-%d9%81%d9%82%d8%af%d8%aa-%d9%81%d9%8a-%d9%84%d8%ad%d8%b8%d8%a9-%d8%b4%d9%87%d8%a7%d8%af%d8%a9-%d8%a3%d9%85-%d8%b9%d9%86-%d8%a7/",
+      "title": "ثمانية أرواح فقدت في لحظة: شهادة أم عن النزوح والفقد",
+      "page_num": 2,
+      "bytes": 77997,
+      "sha1": "4db18d2db0086b34962ea441a1b2a8ab77f23bcd"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://pchrgaza.org/ar/%d8%a7%d9%84%d8%ac%d9%88%d8%b9-%d9%81%d8%aa%d9%83-%d8%a8%d8%ac%d8%b3%d9%85%d9%8a/",
+      "title": "الجوع فتك بجسمي",
+      "page_num": 2,
+      "bytes": 75428,
+      "sha1": "76e5640ee294264fa7fe0c0b25fcb2b6bb575d01"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://pchrgaza.org/ar/%d9%84%d9%85-%d9%8a%d8%b9%d8%af-%d8%a8%d9%8a%d8%aa%d9%86%d8%a7-%d8%a8%d9%8a%d8%aa%d8%a7%d9%8b-%d8%b5%d8%a7%d8%b1-%d9%82%d8%a8%d8%b1%d8%a7%d9%8b-%d8%ac%d9%85%d8%a7%d8%b9%d9%8a%d8%a7%d9%8b-%d9%84/",
+      "title": "لم يعد بيتنا بيتاً.. صار قبراً جماعياً لعائلتي: شهادة فايزة عزام على إبادة عائلتها",
+      "page_num": 2,
+      "bytes": 81722,
+      "sha1": "beeb425fd8f94afec4bdb6e7c7a21aac4b22417c"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://pchrgaza.org/ar/%d9%87%d9%83%d8%b0%d8%a7-%d8%a7%d8%b3%d8%aa%d8%b4%d9%87%d8%af%d8%aa-%d9%88%d8%a7%d9%84%d8%af%d8%aa%d9%8a-%d8%b9%d9%84%d9%89-%d8%b7%d8%a7%d8%a8%d9%88%d8%b1-%d8%a7%d9%84%d8%ac%d9%88%d8%b9-%d9%81%d9%8a/",
+      "title": "هكذا استشهدت والدتي على طابور الجوع في رفح",
+      "page_num": 2,
+      "bytes": 77419,
+      "sha1": "c3059a34aeb9919560b1bfb2259885957524a5b7"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://pchrgaza.org/ar/%d8%a7%d8%b3%d8%aa%d8%b4%d9%87%d8%a7%d8%af-%d8%b7%d9%81%d9%84%d8%aa%d9%8a-%d9%88%d8%a5%d8%b5%d8%a7%d8%a8%d8%a9-%d8%b2%d9%88%d8%ac%d8%aa%d9%8a-%d9%88%d9%81%d9%82%d8%af%d8%a7%d9%86%d9%87%d8%a7-%d8%a7/",
+      "title": "استشهاد طفلتي وإصابة زوجتي وفقدانها النطق بقصف إسرائيلي",
+      "page_num": 3,
+      "bytes": 76258,
+      "sha1": "d1c1ae77860a2fd18d38ece802c711797c02e843"
+    },
+    {
+      "id": 31,
+      "file": "article_0031.html",
+      "url": "https://pchrgaza.org/ar/%d9%84%d8%a7-%d8%a3%d8%ad%d8%af-%d8%b3%d9%88%d8%a7%d9%8a/",
+      "title": "لا أحد سواي",
+      "page_num": 3,
+      "bytes": 72966,
+      "sha1": "a92287adb20cc7c84fe94a9d3e31635c872cf8ba"
+    },
+    {
+      "id": 32,
+      "file": "article_0032.html",
+      "url": "https://pchrgaza.org/ar/%d9%85%d9%86-%d8%a8%d9%8a%d8%aa-%d8%a7%d9%84%d8%b9%d9%85%d8%b1-%d8%a5%d9%84%d9%89-%d8%ae%d9%8a%d9%85%d8%a9-%d8%b1%d8%ad%d9%84%d8%a9-%d8%a7%d9%84%d9%86%d8%b2%d9%88%d8%ad-%d9%88%d8%a7%d9%84%d9%85%d8%b9/",
+      "title": "من بيت العمر إلى خيمة: رحلة النزوح والمعاناة وبتر القدم بدون تخدير",
+      "page_num": 3,
+      "bytes": 87706,
+      "sha1": "00ba827f4f5bb0316a961cc6fe022e75ab9f841e"
+    },
+    {
+      "id": 33,
+      "file": "article_0033.html",
+      "url": "https://pchrgaza.org/ar/%d9%87%d8%ac%d9%91%d8%b1%d9%88%d9%86%d8%a7-11-%d9%85%d8%b1%d8%a9-%d8%ab%d9%85-%d9%82%d8%b5%d9%81%d9%88%d8%a7-%d8%ae%d9%8a%d8%a7%d9%85%d9%86%d8%a7-%d9%88%d9%82%d8%aa%d9%84%d9%88%d8%a7-%d8%a8%d9%86/",
+      "title": "هجّرونا 11 مرة ثم قصفوا خيامنا وقتلوا بنات أخي",
+      "page_num": 3,
+      "bytes": 75828,
+      "sha1": "0c6960e89a41ae735e6842f075f452eaba8be589"
+    },
+    {
+      "id": 34,
+      "file": "article_0034.html",
+      "url": "https://pchrgaza.org/ar/%d8%a7%d9%82%d8%aa%d9%84%d9%88%d8%a7-%d9%83%d9%84-%d9%85%d9%86-%d9%81%d9%8a-%d8%a7%d9%84%d8%a8%d9%8a%d8%aa-%d8%a3%d9%85-%d9%85%d9%86-%d8%ba%d8%b2%d8%a9-%d8%aa%d8%b1%d9%88%d9%8a-%d9%84%d8%ad%d8%b8/",
+      "title": "“اقتلوا كل من في البيت”: أم من غزة تروي لحظات الرعب، التهجير القسري، فقدان المعيل على يد قوات الاحتلال",
+      "page_num": 3,
+      "bytes": 86569,
+      "sha1": "db3bcccf127ee50da8b384d74ea95cdd54370e46"
+    },
+    {
+      "id": 35,
+      "file": "article_0035.html",
+      "url": "https://pchrgaza.org/ar/%d8%b4%d8%b8%d8%a7%d9%8a%d8%a7-%d8%a7%d9%84%d8%b1%d9%88%d8%ad/",
+      "title": "شظايا الروح",
+      "page_num": 3,
+      "bytes": 72803,
+      "sha1": "193d9316a3d16b5a9c798ddb90c50824d0338416"
+    },
+    {
+      "id": 36,
+      "file": "article_0036.html",
+      "url": "https://pchrgaza.org/ar/%d9%85%d9%86-%d8%a8%d9%8a%d9%86-%d8%b1%d9%83%d8%a7%d9%85-%d8%a7%d9%84%d9%85%d8%ac%d8%b2%d8%b1%d8%a9-%d9%83%d9%86%d8%aa-%d8%a7%d9%84%d9%86%d8%a7%d8%ac%d9%8a%d8%a9-%d8%a7%d9%84%d9%88%d8%ad%d9%8a%d8%af/",
+      "title": "من بين ركام المجزرة.. كنت الناجية الوحيدة: شهادة نور عن إبادة عائلتها بالكامل",
+      "page_num": 3,
+      "bytes": 83074,
+      "sha1": "ab62a0c7ad54fbb71a0f7d183a08752c52ce64f7"
+    },
+    {
+      "id": 37,
+      "file": "article_0037.html",
+      "url": "https://pchrgaza.org/ar/%d9%84%d9%85-%d8%a3%d9%88%d8%af%d8%b9-%d8%a7%d8%a8%d9%86%d9%8a-%d9%88%d9%84%d9%85-%d8%a3%d8%ac%d8%af-%d8%ac%d8%ab%d9%85%d8%a7%d9%86%d9%87-%d8%a3%d8%b1%d9%8a%d8%af-%d9%82%d8%a8%d8%b1%d9%8b%d8%a7/",
+      "title": "لم أودع ابني ولم أجد جثمانه.. أريد قبرًا له يخفف وجعي",
+      "page_num": 3,
+      "bytes": 76255,
+      "sha1": "b1e1a213417985a6ac929bb176059f124b22ea55"
+    },
+    {
+      "id": 38,
+      "file": "article_0038.html",
+      "url": "https://pchrgaza.org/ar/%d9%81%d9%8a-%d9%84%d8%ad%d8%b8%d8%a9-%d9%88%d8%a7%d8%ad%d8%af%d8%a9-%d8%a3%d8%b5%d8%a8%d8%ad%d8%aa-%d9%88%d8%ad%d9%8a%d8%af%d9%8b%d8%a7-%d8%a8%d9%84%d8%a7-%d8%a3%d8%a8%d9%86%d8%a7%d8%a1-%d9%88/",
+      "title": "في لحظة واحدة .. أصبحت وحيدًا بلا أبناء ولا زوجة",
+      "page_num": 3,
+      "bytes": 101542,
+      "sha1": "adf9d8d73d82a7498594fb5a1e91d627738ddfd8"
+    },
+    {
+      "id": 39,
+      "file": "article_0039.html",
+      "url": "https://pchrgaza.org/ar/%d9%85%d9%86-%d8%a7%d9%84%d8%ba%d8%b1%d9%82-%d8%a5%d9%84%d9%89-%d8%a7%d9%84%d8%b2%d9%86%d8%a7%d8%b2%d9%8a%d9%86-%d8%b4%d9%87%d8%a7%d8%af%d8%a9-%d8%aa%d9%88%d8%ab%d9%82-%d9%81%d8%b5%d9%88%d9%84%d9%8b/",
+      "title": "من الغرق إلى الزنازين: شهادة توثق فصولًا من التعذيب بسجون الاحتلال",
+      "page_num": 3,
+      "bytes": 89279,
+      "sha1": "c51e1ab6bba974e9e1f19446e95857b3137a8b3f"
+    },
+    {
+      "id": 40,
+      "file": "article_0040.html",
+      "url": "https://pchrgaza.org/ar/%d8%b1%d8%ad%d9%84%d8%a9-%d8%a7%d9%84%d8%ad%d8%b5%d9%88%d9%84-%d8%b9%d9%84%d9%89-%d8%a7%d9%84%d9%85%d8%b3%d8%a7%d8%b9%d8%af%d8%a7%d8%aa-%d8%a7%d9%86%d8%aa%d9%87%d8%aa-%d8%a8%d8%a5%d8%b5%d8%a7%d8%a8-2/",
+      "title": "رحلة الحصول على المساعدات انتهت بإصابتنا واستشهاد ابني",
+      "page_num": 3,
+      "bytes": 74598,
+      "sha1": "d6db4ed12a4038f5cfebac0686f3cfdca0eac019"
+    },
+    {
+      "id": 41,
+      "file": "article_0041.html",
+      "url": "https://pchrgaza.org/ar/%d8%ad%d9%84%d9%85-%d8%b5%d8%ba%d9%8a%d8%b1-%d8%a3%d8%b1%d9%8a%d8%af-%d8%a3%d9%86-%d8%a3%d9%83%d8%aa%d8%a8-%d8%a8%d9%8a%d8%af%d9%8a-%d9%85%d8%ac%d8%af%d8%af%d9%8b%d8%a7/",
+      "title": "حلم صغير: أريد أن أكتب بيدي مجددًا",
+      "page_num": 3,
+      "bytes": 74496,
+      "sha1": "84daae14b5d0e5c8a6308fbe39f1fb3ed42a035c"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 3,
+    "articles": 41,
+    "article_fetch_failures": 0
+  }
+}

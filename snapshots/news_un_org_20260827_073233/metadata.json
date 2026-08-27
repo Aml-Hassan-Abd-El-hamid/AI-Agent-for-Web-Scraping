@@ -1,0 +1,33 @@
+{
+  "website": "news.un.org",
+  "snapshot_date": "2026-08-27T07:39:41",
+  "pagination_type": "numbered pagination",
+  "scroll_mode": null,
+  "scroll_rounds_requested": null,
+  "load_more_selector": null,
+  "listing_url": "https://news.un.org/ar/news/topic/health",
+  "input_urls": [
+    "https://news.un.org/ar/news/topic/health",
+    "https://news.un.org/ar/news/topic/health?page=1"
+  ],
+  "pagination_pattern": "https://news.un.org/ar/news/topic/health?page={page}",
+  "requirements": "title, date, article body text",
+  "run_dir": "orch_runs/run_20260827_073233",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://news.un.org/ar/news/topic/health",
+      "file": "listing_page_001.html",
+      "bytes": 323554,
+      "sha1": "6fe475caffbb41454154ccede005707fb442d434"
+    }
+  ],
+  "articles": [],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 1,
+    "articles": 0,
+    "article_fetch_failures": 0
+  }
+}

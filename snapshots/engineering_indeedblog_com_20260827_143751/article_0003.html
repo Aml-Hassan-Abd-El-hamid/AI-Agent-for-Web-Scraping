@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Importance of Using a Composite Metric to Measure Performance - Indeed Engineering Blog</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://engineering.indeedblog.com/xmlrpc.php">
+<link rel="shortcut icon" href="https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/favicon.ico" />
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/dist/js/html5shiv.js"></script>
+<script src="https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/dist/js/respond.min.js"></script>
+<![endif]-->
+<!--[if lt IE 8]>
+    <link href="https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/dist/css/bootstrap-ie7.css" rel="stylesheet">
+<![endif]-->
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<link rel="alternate" hreflang="en-us" href="https://engineering.indeedblog.com/blog/2024/01/composite-web-performance-metric/" />
+<link rel="alternate" hreflang="x-default" href="https://engineering.indeedblog.com/blog/2024/01/composite-web-performance-metric/" />
+         <!-- Start Google Analytics tracking code here -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-K8RKLN');
+        </script>
+          <!-- END Google Analytics tracking code here -->
+    
+	<!-- This site is optimized with the Yoast SEO plugin v28.1 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<meta name="description" content="The way we measure web performance has changed significantly over the last decade. As the web has modernized, it&#039;s become more important than ever to refine how we measure performance, and we should be using a composite metric to ensure we&#039;re capturing the full story around speed. Composite metrics help us avoid the pitfalls that come with focusing on time to interactive (TTI), or largest contentful paint (LCP)." />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="The Importance of Using a Composite Metric to Measure Performance - Indeed Engineering Blog" />
+	<meta property="og:description" content="The way we measure web performance has changed significantly over the last decade. As the web has modernized, it&#039;s become more important than ever to refine how we measure performance, and we should be using a composite metric to ensure we&#039;re capturing the full story around speed. Composite metrics help us avoid the pitfalls that come with focusing on time to interactive (TTI), or largest contentful paint (LCP)." />
+	<meta property="og:url" content="https://engineering.indeedblog.com/blog/2024/01/composite-web-performance-metric/" />
+	<meta property="og:site_name" content="Indeed Engineering Blog" />
+	<meta property="article:publisher" content="https://www.facebook.com/Indeed" />
+	<meta property="article:published_time" content="2024-01-31T21:57:58+00:00" />
+	<meta property="og:image" content="https://engineering.indeedblog.com/wp-content/uploads/2024/01/image3.png" />
+	<meta property="og:image:width" content="1999" />
+	<meta property="og:image:height" content="1125" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="author" content="Ben Cripps" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@IndeedEng" />
+	<meta name="twitter:site" content="@IndeedEng" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Ben Cripps" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="16 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"https:\/\/engineering.indeedblog.com\/blog\/2024\/01\/composite-web-performance-metric\/#article","isPartOf":{"@id":"https:\/\/engineering.indeedblog.com\/blog\/2024\/01\/composite-web-performance-metric\/"},"author":[{"@id":"https:\/\/engineering.indeedblog.com\/#\/schema\/person\/0a40823f30105e99f04f9c5e8dfdfc77"}],"headline":"The Importance of Using a Composite Metric to Measure Performance","datePublished":"2024-01-31T21:57:58+00:00","mainEntityOfPage":{"@id":"https:\/\/engineering.indeedblog.com\/blog\/2024\/01\/composite-web-performance-metric\/"},"wordCount":2605,"publisher":{"@id":"https:\/\/engineering.indeedblog.com\/#organization"},"image":{"@id":"https:\/\/engineering.indeedblog.com\/blog\/2024\/01\/composite-web-performance-metric\/#primaryimage"},"thumbnailUrl":"https:\/\/engineering.indeedblog.com\/wp-content\/uploads\/2024\/01\/image3.png","articleSection":["Engineering","Performance"],"inLanguage":"en-us"},{"@type":"WebPage","@id":"https:\/\/engineering.indeedblog.com\/blog\/2024\/01\/composite-web-performance-metric\/","url":"https:\/\/engineering.indeedblog.com\/blog\/2024\/01\/composite-web-performance-metric\/","name":"The Importance of Using a Composite Metric to Measure Performance - Indeed Engineering Blog","isPartOf":{"@id":"https:\/\/engineering.indeedblog.com\/#website"},"primaryImageOfPage":{"@id":"https:\/\/engineering.indeedblog.com\/blog\/2024\/01\/composite-web-performance-metric\/#primaryimage"},"image":{"@id":"https:\/\/engineering.indeedblog.com\/blog\/2024\/01\/composite-web-performance-metric\/#primaryimage"},"thumbnailUrl":"https:\/\/engineering.indeedblog.com\/wp-content\/uploads\/2024\/01\/image3.png","datePublished":"2024-01-31T21:57:58+00:00","description":"The way we measure web performance has changed significantly over the last decade. As the web has modernized, it's become more important than ever to refine how we measure performance, and we should be using a composite metric to ensure we're capturing the full story around speed. Composite metrics help us avoid the pitfalls that come with focusing on time to interactive (TTI), or largest contentful paint (LCP).","breadcrumb":{"@id":"https:\/\/engineering.indeedblog.com\/blog\/2024\/01\/composite-web-performance-metric\/#breadcrumb"},"inLanguage":"en-us","potentialAction":[{"@type":"ReadAction","target":["https:\/\/engineering.indeedblog.com\/blog\/2024\/01\/composite-web-performance-metric\/"]}]},{"@type":"ImageObject","inLanguage":"en-us","@id":"https:\/\/engineering.indeedblog.com\/blog\/2024\/01\/composite-web-performance-metric\/#primaryimage","url":"https:\/\/engineering.indeedblog.com\/wp-content\/uploads\/2024\/01\/image3.png","contentUrl":"https:\/\/engineering.indeedblog.com\/wp-content\/uploads\/2024\/01\/image3.png","width":1999,"height":1125,"caption":"A still image depicting a page loading evenly over four seconds"},{"@type":"BreadcrumbList","@id":"https:\/\/engineering.indeedblog.com\/blog\/2024\/01\/composite-web-performance-metric\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/engineering.indeedblog.com\/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https:\/\/engineering.indeedblog.com\/blog\/"},{"@type":"ListItem","position":3,"name":"The Importance of Using a Composite Metric to Measure Performance"}]},{"@type":"WebSite","@id":"https:\/\/engineering.indeedblog.com\/#website","url":"https:\/\/engineering.indeedblog.com\/","name":"Indeed Engineering Blog","description":"We help people get jobs.","publisher":{"@id":"https:\/\/engineering.indeedblog.com\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/engineering.indeedblog.com\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-us"},{"@type":"Organization","@id":"https:\/\/engineering.indeedblog.com\/#organization","name":"Indeed.com","url":"https:\/\/engineering.indeedblog.com\/","logo":{"@type":"ImageObject","inLanguage":"en-us","@id":"https:\/\/engineering.indeedblog.com\/#\/schema\/logo\/image\/","url":"https:\/\/engineering.indeedblog.com\/wp-content\/uploads\/2015\/04\/1024x1024-553d53a6v1_site_icon.png","contentUrl":"https:\/\/engineering.indeedblog.com\/wp-content\/uploads\/2015\/04\/1024x1024-553d53a6v1_site_icon.png","width":512,"height":512,"caption":"Indeed.com"},"image":{"@id":"https:\/\/engineering.indeedblog.com\/#\/schema\/logo\/image\/"},"sameAs":["https:\/\/www.facebook.com\/Indeed","https:\/\/x.com\/IndeedEng","https:\/\/www.youtube.com\/user\/IndeedEng"]},{"@type":"Person","@id":"https:\/\/engineering.indeedblog.com\/#\/schema\/person\/0a40823f30105e99f04f9c5e8dfdfc77","name":"Ben Cripps","image":{"@type":"ImageObject","inLanguage":"en-us","@id":"https:\/\/secure.gravatar.com\/avatar\/1b1298ddd40be2a5d682b14f55575d474eca50b84fac9aa0b221acc9b1adb7c9?s=96&d=identicon&r=gbb8b69383c036c21ddde14888f48e405","url":"https:\/\/secure.gravatar.com\/avatar\/1b1298ddd40be2a5d682b14f55575d474eca50b84fac9aa0b221acc9b1adb7c9?s=96&d=identicon&r=g","contentUrl":"https:\/\/secure.gravatar.com\/avatar\/1b1298ddd40be2a5d682b14f55575d474eca50b84fac9aa0b221acc9b1adb7c9?s=96&d=identicon&r=g","caption":"Ben Cripps"},"url":"https:\/\/engineering.indeedblog.com\/blog\/author\/bcripps\/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//cpwebassets.codepen.io' />
+<link rel='dns-prefetch' href='//www.youtube.com' />
+<link rel="alternate" type="application/rss+xml" title="Indeed Engineering Blog &raquo; Feed" href="https://engineering.indeedblog.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Indeed Engineering Blog &raquo; Comments Feed" href="https://engineering.indeedblog.com/comments/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://engineering.indeedblog.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fengineering.indeedblog.com%2Fblog%2F2024%2F01%2Fcomposite-web-performance-metric%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://engineering.indeedblog.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fengineering.indeedblog.com%2Fblog%2F2024%2F01%2Fcomposite-web-performance-metric%2F&#038;format=xml" />
+<style id='wp-img-auto-sizes-contain-inline-css' type='text/css'>
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://engblogs.wpenginepowered.com/wp-includes/css/dist/block-library/style.min.css?ver=6.9.7' type='text/css' media='all' />
+
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='style.css-css' href='https://engblogs.wpenginepowered.com/wp-content/plugins/indeed-sidebar-widgets/style.css?ver=6.9.7' type='text/css' media='all' />
+<link rel='stylesheet' id='wpml-legacy-dropdown-click-0-css' href='https://engblogs.wpenginepowered.com/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/legacy-dropdown-click/style.min.css?ver=1' type='text/css' media='all' />
+<style id='wpml-legacy-dropdown-click-0-inline-css' type='text/css'>
+.wpml-ls-statics-shortcode_actions, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu, .wpml-ls-statics-shortcode_actions a {border-color:#cdcdcd;}.wpml-ls-statics-shortcode_actions a, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:link, .wpml-ls-statics-shortcode_actions li:not(.wpml-ls-current-language) .wpml-ls-link, .wpml-ls-statics-shortcode_actions li:not(.wpml-ls-current-language) .wpml-ls-link:link {color:#444444;background-color:#ffffff;}.wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:hover,.wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:focus, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:link:hover, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:link:focus {color:#000000;background-color:#eeeeee;}.wpml-ls-statics-shortcode_actions .wpml-ls-current-language > a {color:#444444;background-color:#ffffff;}.wpml-ls-statics-shortcode_actions .wpml-ls-current-language:hover>a, .wpml-ls-statics-shortcode_actions .wpml-ls-current-language>a:focus {color:#000000;background-color:#eeeeee;}
+/*# sourceURL=wpml-legacy-dropdown-click-0-inline-css */
+</style>
+<link rel='stylesheet' id='cms-navigation-style-base-css' href='https://engblogs.wpenginepowered.com/wp-content/plugins/wpml-cms-nav/res/css/cms-navigation-base.css?ver=1.5.6' type='text/css' media='screen' />
+<link rel='stylesheet' id='cms-navigation-style-css' href='https://engblogs.wpenginepowered.com/wp-content/plugins/wpml-cms-nav/res/css/cms-navigation.css?ver=1.5.6' type='text/css' media='screen' />
+<link rel='stylesheet' id='parent-style-css' href='https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/style.css?ver=1.5.6' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-style-css' href='https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/dist/css/bootstrap.min.css?ver=2.6.0' type='text/css' media='all' />
+<link rel='stylesheet' id='indeedblog-style-css' href='https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/style.min.css?ver=2.6.0' type='text/css' media='all' />
+<link rel='stylesheet' id='style_login_widget-css' href='https://engblogs.wpenginepowered.com/wp-content/plugins/miniorange-oauth-oidc-single-sign-on/resources/css/style_login_widget.css?ver=6.9.7' type='text/css' media='all' />
+<script type="text/javascript" src="https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/dist/js/jquery-1-11-1.min.js?ver=2.6.0" id="jquery-js"></script>
+<script type="text/javascript" src="https://engblogs.wpenginepowered.com/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/legacy-dropdown-click/script.min.js?ver=1" id="wpml-legacy-dropdown-click-0-js"></script>
+<script type="text/javascript" src="https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/dist/js/scripts.js?ver=2.6.0" id="scripts-js-js"></script>
+<script type="text/javascript" src="https://www.youtube.com/iframe_api?ver=20210524" id="youtube_iframe_api-js"></script>
+<script type="text/javascript" id="wpml-xdomain-data-js-extra">
+/* <![CDATA[ */
+var wpml_xdomain_data = {"css_selector":"wpml-ls-item","ajax_url":"https://engineering.indeedblog.com/wp-admin/admin-ajax.php","current_lang":"en","_nonce":"f6fb9b3f4e"};
+//# sourceURL=wpml-xdomain-data-js-extra
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://engblogs.wpenginepowered.com/wp-content/plugins/sitepress-multilingual-cms/res/js/xdomain-data.js?ver=496000" id="wpml-xdomain-data-js" defer="defer" data-wp-strategy="defer"></script>
+<link rel="https://api.w.org/" href="https://engineering.indeedblog.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://engineering.indeedblog.com/wp-json/wp/v2/posts/4638" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://engineering.indeedblog.com/xmlrpc.php?rsd" />
+<link rel='shortlink' href='https://engineering.indeedblog.com/?p=4638' />
+<meta name="generator" content="WPML ver:4.9.6 stt:1,28;" />
+<link rel="icon" href="https://engblogs.wpenginepowered.com/wp-content/uploads/2015/04/1024x1024-553d53a6v1_site_icon-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://engblogs.wpenginepowered.com/wp-content/uploads/2015/04/1024x1024-553d53a6v1_site_icon-256x256.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://engblogs.wpenginepowered.com/wp-content/uploads/2015/04/1024x1024-553d53a6v1_site_icon-256x256.png" />
+<meta name="msapplication-TileImage" content="https://engineering.indeedblog.com/wp-content/uploads/2015/04/1024x1024-553d53a6v1_site_icon.png" />
+		<style type="text/css" id="wp-custom-css">
+			/*
+Welcome to Custom CSS!
+
+CSS (Cascading Style Sheets) is a kind of code that tells the browser how
+to render a web page. You may delete these comments and get started with
+your customizations.
+
+By default, your stylesheet will be loaded after the theme stylesheets,
+which means that your rules can take precedence and override the theme CSS
+rules. Just write here what you want to change, you don't need to copy all
+your theme's stylesheet content.
+*/
+.wp-caption-text {
+	font-style: italic;
+	text-align: center;
+}		</style>
+		</head>
+
+<body class="wp-singular post-template-default single single-post postid-4638 single-format-standard wp-theme-indeedblog wp-child-theme-indeedblog-us group-blog">
+      <!-- Start Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8RKLN"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+      <a href="#mainContent" class="skip-link">Skip to Main Content</a>
+  <div id="blogHeader" class="full-width-wrapper">
+    <div class="container">
+      <div class="row">
+        <nav class="navbar navbar-default navbar-static-top">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#headerNavLinks">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="https://engineering.indeedblog.com" class="navbar-brand">
+	          	         	 <img src="https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/images/ind-eng-logo.png" alt="Indeed Engineering" width="300">
+	           
+
+	          </a>
+	    </div>
+        <div id="headerNavLinks" class="collapse navbar-collapse"><ul class=""><li id="menu-item-1211" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1211"><a href="/talks">Tech Talks</a></li>
+<li id="menu-item-1212" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1212"><a href="http://indeed.jobs">Work at Indeed</a></li>
+</ul></div>        </nav>
+
+      </div>
+    </div>
+  </div><!-- end #blogHeader -->
+
+  <main id="mainContent" class="container">
+    <div class="row">
+
+
+		
+			<article id="post-4638" class="col-xs-12 col-sm-8 post-container">
+
+	<header class="entry-header">
+
+		<h1 class="entry-title">The Importance of Using a Composite Metric to Measure Performance</h1>
+
+		<p class="date entry-meta">
+			<span class="posted-on">Posted on <time class="entry-date published" datetime="2024-01-31T15:57:58-06:00">January 31, 2024</time></span><span class="byline"> by Ben Cripps</span>		</p><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<div class="post-banner-image">
+			<img width="747" height="420" src="https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image3-747x420.png" class="img-responsive wp-post-image" alt="A still image depicting a page loading evenly over four seconds" decoding="async" fetchpriority="high" srcset="https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image3-747x420.png 747w, https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image3-300x169.png 300w, https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image3-1024x576.png 1024w, https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image3-768x432.png 768w, https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image3-1536x864.png 1536w, https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image3-374x210.png 374w, https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image3-187x105.png 187w, https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image3.png 1999w" sizes="(max-width: 747px) 100vw, 747px" />		</div>
+
+		<div class="post-body">
+
+			<p><span style="font-weight: 400;">In the past, Indeed has used a variety of metrics to evaluate our client-side performance, but we’ve tended to focus on one at a time. Traditionally, we chose a single performance metric and used it as the measuring stick for whether we were improving or degrading the user experience. </span></p>
+<p><span style="font-weight: 400;">This made it simple to track performance because we only needed to instrument and monitor a single datapoint. Technical and non-technical consumers could easily parse this information and understand how we were doing as an organization.</span></p>
+<p><span style="font-weight: 400;">However, this type of thinking also brought about significant drawbacks that, in many cases, ended up resulting in overall degraded performance and wasted effort. This document examines those drawbacks, and suggests that using a “composite metric” enables us to much better measure what our users are experiencing. </span></p>
+<h2><span style="font-weight: 400;">Past Performance Measurements</span></h2>
+<p><span style="font-weight: 400;">Below we look at a few metrics we’ve used to try and understand client-side performance, attempting to answer the following questions:</span></p>
+<h3>“When did the main JavaScript for the page execute?” —  JSV Delay</h3>
+<p><span style="font-weight: 400;">One of the earliest metrics widely used at Indeed was “JSV delay” (JavaScript Verification Delay) which measured the point at which JavaScript loaded, parsed, and began to execute. It was instrumented as a client-side network request which marked the time at which our main JavaScript began to execute. </span></p>
+<p><span style="font-weight: 400;">This metric was helpful in measuring whether we were degrading the experience by adding extra JS, or content before the JS bundle since that also resulted in slowdowns in JSV Delay. Over time, this measurement was widely adopted but suffered from significant issues:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Failure to capture performance impact of third party content (Google Analytics, Micro Frontends, etc)</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Inability to measure what a user was actually experiencing </span><span style="font-weight: 400;">—</span><span style="font-weight: 400;"> even if JS loaded, the page wasn’t actually usable at the time, and the time to usability wasn&#8217;t being measured </span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Bespoke implementation of the metric meant we were not uniformly measuring performance across our pages </span><span style="font-weight: 400;">—</span><span style="font-weight: 400;"> JSV delay meant something different from one page to another</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">No one really knew what the metric meant </span><span style="font-weight: 400;">—</span><span style="font-weight: 400;"> because it’s only a standard inside Indeed, we were continually explaining the metric, its advantages, and its downsides</span></li>
+</ul>
+<h3>“When did all critical CSS and JavaScript Load?” — domContentLoadEnd</h3>
+<p><span style="font-weight: 400;">After we decided JSV Delay was no longer serving our needs we decided to adopt a metric which was more broadly used in the software industry. </span><a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event"><span style="font-weight: 400;">domContentLoadEnd</span></a><span style="font-weight: 400;"> is defined as:</span></p>
+<p><span style="font-weight: 400;">when the HTML document has been completely parsed, and all deferred scripts… have downloaded and executed. It doesn&#8217;t wait for other things like images, subframes, and async scripts to finish loading.</span></p>
+<p><span style="font-weight: 400;">In layman’s terms, we can interpret domContentLoadEnd as a more generalized JSV Delay </span><span style="font-weight: 400;">—</span><span style="font-weight: 400;"> it fires only after critical HTML, CSS, and JavaScript have loaded. This gave us a much better idea of how the page as a whole was performing, and it was no longer a custom metric, which reduced confusion and ensured that we were uniformly measuring performance across all of our pages. However, this metric too came with significant issues:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">domContentLoadEnd doesn’t capture </span><b>async</b><span style="font-weight: 400;"> scripts, which means it misses out on significant portions of the page</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Similar to JSV Delay, the fact that much of the code had loaded didn’t necessarily mean the page was interactive</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">For some pages, domContentLoadEnd could trigger for entirely blank pages (e.g., single page applications).</span></li>
+</ul>
+<h3>“When did users see the most important content on the page?” — largestContentfulPaint</h3>
+<p><span style="font-weight: 400;">Our last usage of “a single metric to explain performance” was </span><a href="https://developer.mozilla.org/en-US/docs/Web/API/LargestContentfulPaint"><span style="font-weight: 400;">largestContentfulPaint</span></a><span style="font-weight: 400;"> (LCP), which was a big step forward for us because it was our first adoption of a Google-recommended metric which was created to try and measure an ever-evolving web landscape.</span></p>
+<p><span style="font-weight: 400;">This allowed us to, for the first time, use a metric that captured “</span><a href="https://medium.com/@eyaleizenberg/when-actual-performance-is-more-important-than-perceived-performance-e62f38eb33d6#:~:text=Perceived%20performance%20is%20a%20metric,data%20asynchronously%20and%20so%20on."><span style="font-weight: 400;">perceived performance</span></a><span style="font-weight: 400;">,” rather than a more arbitrary datapoint from a browser API. By using LCP, we were making a conscious choice to measure the actual user experience, which was a big step in the right direction. </span></p>
+<p><span style="font-weight: 400;">Because of Indeed’s usage of server-side rendering on high-traffic job search pages, where HTML is immediately visible to users on initial page load, LCP corresponded to the moment where users first saw job cards, the job description, and other critical content. The faster we show our user content, the more time we save them, the more delightful the experience. </span></p>
+<p><span style="font-weight: 400;">Again, however, this measurement came with significant issues:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">LCP is not supported on iOS and other legacy browsers, which means we fail to capture this metric on a large percentage of our page loads, users, etc. </span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Although users can see the critical content, it probably isn’t yet interactive.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">LCP is a web-based metric, only collectible in web browsers, and thus excludes native applications. </span></li>
+</ul>
+<h2><span style="font-weight: 400;">Differing Page Loads </span></h2>
+<p><span style="font-weight: 400;">The lifecycle of a page is complex &#8212; from a technical perspective, a lot happens between the initial navigation to a page and when a user begins interacting with its content. The core problem with using a single metric to understand this complex workflow is that it removes much of the context which is necessary in understanding “how the user perceived the page load”. </span></p>
+<p><span style="font-weight: 400;">Let’s consider the following diagram:</span></p>
+<p><img decoding="async" class="alignnone wp-image-4644 size-full" src="https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image4.gif" alt="Animated timeline showing a page loading evenly over four seconds" width="1920" height="1080" /></p>
+<p><span style="font-weight: 400;">Here we see a standard page which takes 4 seconds to load. To start, the job seeker sees a blank page for 1 second; a second later they see a header and a loading indicator. 1 second later they see the main content of the page (LCP), and a second later the page is fully interactive. Now let’s take a look at the next diagram: </span></p>
+<p><img decoding="async" class="alignnone wp-image-4641 size-full" src="https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image1.gif" alt="Animated timeline showing a page loading four seconds, with the first three changes happening more quickly" width="1920" height="1080" /></p>
+<p><span style="font-weight: 400;">Here we see the same page loading, but we see the main content of the page much quicker! But .. we wait 2.5 seconds for the page to become interactive. If we were using a single metric, say LCP, we would believe the second page is much faster. However, users would be experiencing a lot of frustration waiting for the page to become interactive. </span></p>
+<p><span style="font-weight: 400;">Finally, let’s look at this scenario: </span></p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-4646 size-full" src="https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image5.gif" alt="Animated timeline showing a page loading four seconds, with the last three changes happening quickly near the end of the four seconds" width="1920" height="1080" /></p>
+<p><span style="font-weight: 400;">Here we see that the page is still taking 4 seconds to load but that users don’t see any content until the last second. It’s pretty intuitive that this is a poor experience, since much of the time we’re looking at a blank page, and we don’t even know if it’s working/loading at all. Again if we chose a single metric, we wouldn’t be capturing the actual perceived experience of the page load. What if we improved the time to seeing initial content to 2 seconds from 3.5, while total loading time stayed the same? </span><b>The user would feel that the page is faster, but we wouldn’t be capturing that improvement. </b></p>
+<h2><span style="font-weight: 400;">The Single Metric Problem</span></h2>
+<p><span style="font-weight: 400;">As we can see from the above, the lifecycle of a page can be highly variable, where small changes can have big impacts on how users perceive performance. When we look back on our historical performance measurements which utilized the “single metric approach”, we see two fundamental issues:</span></p>
+<h3>One metric can’t capture perceived performance</h3>
+<p><span style="font-weight: 400;">Holistic performance cannot be captured by a single metric &#8212; as depicted in the diagrams above, there is no single point in a page load which measures how quickly a user becomes engaged with content. </span></p>
+<p><span style="font-weight: 400;">There are thousands (or an infinite number?) of ways to build a web page, and each brings about their own trade offs when it comes to performance. </span></p>
+<p><span style="font-weight: 400;">For pages that don’t implement server-side rendering (SSR), if we chose to only measure </span><a href="https://developer.mozilla.org/en-US/docs/Glossary/First_contentful_paint"><span style="font-weight: 400;">firstContentfulPaint</span></a><span style="font-weight: 400;">, we would be measuring a datapoint which has effectively no value (since this metric would capture when the first blank page was rendered). </span></p>
+<p><span style="font-weight: 400;">For single page applications, if we chose to measure </span><b>only </b><a href="https://gtmetrix.com/time-to-interactive.html#:~:text=Time%20to%20Interactive%20(TTI)%20is,reliably%20ready%20for%20user%20interactivity."><b>time to interactive</b></a><b> (TTI), </b><span style="font-weight: 400;">we would be ignoring how quickly users saw initial content, and how quickly they could begin to interact with the page. The reason is that although TTI is an important indicator, it fails to precisely capture when a page is truly interactive. </span></p>
+<p><span style="font-weight: 400;">Another problem with using a single metric is that our pages change over time, and as a result, so too changes how users perceive the performance of a page. Using the above examples, what if an application went from a server-side rendered approach, to a client-side rendered approach? If we stuck with the same performance measurement, say TTI, we would actually think we hurt performance but in reality we’re now showing content much sooner to the user, with the tradeoff of negligible impact to TTI. Overall the perceived page performance would be drastically improved, but we would fail to measure it. </span></p>
+<p><b>From a business and organizational perspective, that’s an observability gap which has profound implications in the ways we spend our time, and effort. </b></p>
+<h3>Improving one metric often degrades another</h3>
+<p><span style="font-weight: 400;">The second, and perhaps more significant issue with using a single metric to measure speed is that it often results in degraded performance without us realizing it. </span></p>
+<p><span style="font-weight: 400;">The easiest way to improve performance is to ship fewer bytes, and render less content overall. In reality, that’s not always a decision we can make for the business. So as we begin to try to improve performance, we often end up in situations where we’re able to improve a single metric but it either has no bearing on holistic performance, or it actually hurts it! </span></p>
+<p><span style="font-weight: 400;">Let’s take a look at a new diagram (depicted below):</span></p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-4648 size-full" src="https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image2.gif" alt="Animated timeline showing a page loading four seconds, with the page becoming progressively more useful over the four seconds" width="1920" height="1080" /></p>
+<p><span style="font-weight: 400;">Here we see that our page begins loading normally and at the 2 second mark we have our main content, and the page is interactive. At this point our users can perform their primary goal with the page (let’s say apply for a job for example). At the 3 second mark more content pops in, and finally a second later, all content is visible on the page. This is a common loading pattern for async, or client-side rendered applications (e.g., single page apps). </span></p>
+<p><b>Ideally, what we’d like to do is shift each of these frames to the left, improving the perceived performance of each step. However, </b><span style="font-weight: 400;">if we were only measuring time to interactive, which occurs in frame 4, we would completely disregard the most important part of the page load which is “how quickly can we make the main content of our page visible and interactive (frame 2). Similarly, if we only measured LCP (which occurs in frame 2), we would be disregarding TTI, which is where all of the content is finally visible. </span></p>
+<p><span style="font-weight: 400;">In this example, we can see that no single metric captures the true performance of the page, but rather it’s a collection of metrics which help us understand the true perceived performance. </span></p>
+<p><b>Perceived performance is very dependent on how quickly the page loads, but perhaps more important,</b> <b><i>how</i></b><b> it loads. </b></p>
+<h2><span style="font-weight: 400;">Using a Composite Metric: LightHouse Explained</span></h2>
+<p><span style="font-weight: 400;">Finally, this brings us to the use of a “</span><a href="https://en.wikipedia.org/wiki/Composite_measure"><span style="font-weight: 400;">composite metric</span></a><span style="font-weight: 400;">” which is a term used in statistics that simply means “a single measurement based on multiple metrics”. With a </span><a href="https://developer.chrome.com/docs/lighthouse/performance/performance-scoring"><span style="font-weight: 400;">LightHouse</span></a><span style="font-weight: 400;"> score we’re able to derive a single score based on 5 data points, each which represent a different aspect of a page load. </span></p>
+<p><span style="font-weight: 400;">These data points are:</span></p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-4650" src="https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image6.png" alt="A table showing the different metrics in the composite LightHouse score, and how they're weighted" width="1460" height="420" srcset="https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image6.png 1460w, https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image6-300x86.png 300w, https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image6-1024x295.png 1024w, https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image6-768x221.png 768w, https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image6-747x215.png 747w" sizes="auto, (max-width: 1460px) 100vw, 1460px" /></p>
+<p><span style="font-weight: 400;">For brevity, we won’t go into detail on each data point </span><span style="font-weight: 400;">—</span><span style="font-weight: 400;"> you can read more about these page markers </span><a href="https://developer.chrome.com/docs/lighthouse/performance/performance-scoring"><span style="font-weight: 400;">here</span></a><span style="font-weight: 400;">. At a high level, industry experts have agreed upon these 5 markers and weighted them according to how much they contribute to a user perceiving a page as fast and responsive. </span></p>
+<p><span style="font-weight: 400;">As is hopefully evident based on the explanations above, the purpose of using these 5 data points is to best capture the holistic perceived performance. We weight LCP, total blocking time (TBT), and cumulative layout shift the highest because we believe these are the most important indicators of speed. FCP and speedIndex are contributors but less significant overall. </span></p>
+<p><span style="font-weight: 400;">During each page load, we’re able to calculate all of these metrics and use an algorithm to determine a single score </span><span style="font-weight: 400;">—</span><span style="font-weight: 400;"> users who receive a score &gt;= 90 are determined to be “fast and responsive”. Scores below 90 are in need of improvement.</span></p>
+<h2><span style="font-weight: 400;">Composite Metrics in Action</span></h2>
+<p><span style="font-weight: 400;">If we use the same page load diagram from above, we can imagine how using a composite metric allows us to fully capture performance for our users. </span></p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-4652" src="https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image3.png" alt="A still image depicting a page loading evenly over four seconds" width="1999" height="1125" srcset="https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image3.png 1999w, https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image3-300x169.png 300w, https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image3-1024x576.png 1024w, https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image3-768x432.png 768w, https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image3-1536x864.png 1536w, https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image3-747x420.png 747w, https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image3-374x210.png 374w, https://engblogs.wpenginepowered.com/wp-content/uploads/2024/01/image3-187x105.png 187w" sizes="auto, (max-width: 1999px) 100vw, 1999px" /></p>
+<p><span style="font-weight: 400;">Let’s run through a few scenarios: </span></p>
+<p><span style="font-weight: 400;">If we ended up shipping a change which improved FCP and LCP (frames 1 and 2), and did no harm to frames 3 and 4, </span><b>we would see an improvement to our overall LightHouse score.</b></p>
+<p><span style="font-weight: 400;">If we ended up shipping a change which improved FCP and LCP (frames 1 and 2), but degraded frames 3 and 4, </span><b>we would see no improvement to our overall LightHouse score.</b></p>
+<p><span style="font-weight: 400;">If we ended up with an improvement which improved FCP, but degraded frames 2, 3, and 4, we would see an overall degradation that we would have missed if we were monitoring only a single metric. </span></p>
+<h2><span style="font-weight: 400;">Why Can’t We Simply Use “Time to Interactive” (TTI)? </span></h2>
+<p><span style="font-weight: 400;">This is a common question within the performance realm so I wanted to address it here, and how it relates to composite metrics. </span></p>
+<p><span style="font-weight: 400;">First, what is TTI? The </span><a href="https://gtmetrix.com/time-to-interactive.html#:~:text=Time%20to%20Interactive%20(TTI)%20is,reliably%20ready%20for%20user%20interactivity."><span style="font-weight: 400;">most common definition</span></a><span style="font-weight: 400;"> is as follows: </span></p>
+<p><span style="font-weight: 400;">TTI is a performance metric that measures a page&#8217;s load responsiveness and helps identify situations where a page looks interactive but actually isn&#8217;t. TTI measures the earliest time after First Contentful Paint (FCP) when the page is reliably ready for user interactivity.</span></p>
+<p><span style="font-weight: 400;">This sounds great, so why not just use this? Isn’t the most important thing for performance when the page is interactive? </span></p>
+<p><span style="font-weight: 400;">Like all things in software, there’s nuance and tradeoffs. Let’s look at the pros and cons:</span></p>
+<p><span style="font-weight: 400;">Pros:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">A single metric which estimates how long the overall page took to become usable</span></li>
+</ul>
+<p><span style="font-weight: 400;">Cons:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">TTI is no longer recommended, and has been taken out of LightHouse calculations because it’s not believed to be an accurate metric across a wide variety of page load types (CSR, SSR, etc).</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">TTI is an estimation based on network activity, and DOM mutations, not an actual marker of page completion.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Because TTI is just a single metric, it suffers from “the single metric problem” which is explained above.</span></li>
+</ul>
+<p><span style="font-weight: 400;">My point here isn’t that TTI is bad, but rather that it’s an incomplete way of looking at performance. TTI is a useful indicator, but it’s only meaningful if we look at it in context to our other metrics (FCP, LCP, etc). TTI’s main purpose is to provide a corroborating metric, rather than to explain performance overall. </span></p>
+<p><span style="font-weight: 400;">As an organization, we can imagine hundreds of ways to improve </span><b>TTI without actually improving the most critical aspects of perceived performance. Additionally, we can imagine ways which improve TTI that actually hurt the earlier marks of a page load, which may result in degraded performance overall. </b></p>
+<h2><span style="font-weight: 400;">Conclusions </span></h2>
+<p><span style="font-weight: 400;">My hope for readers that have made it this far is that we now have a more nuanced understanding of how we can measure client-side performance. With the advent of the web we developed metrics which helped us figure out how fast static pages were loading &#8212; as the web advanced (thanks a lot jQuery!), so too have our measurements advanced.</span></p>
+<p><span style="font-weight: 400;">Based on the past ~4 years of deep investment in performance improvements at Indeed, I believe these are my most important takeaways: </span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Use a composite metric, but be willing to change the underlying internal metrics.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Be wary of the silver bullet &#8212; metrics or tools that purport to capture everything you need nearly always don’t. </span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Technology changes, and we need to change how we measure performance as a result.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Corroborate your speed metrics with how your page loads and ensure it actually represents what users are experiencing. </span></li>
+</ul>
+		</div>
+		
+
+
+	</div><!-- .entry-content -->
+
+
+	<footer class="entry-meta row">
+			<div id="post-links" class="col-xs-12">
+			<div class="post-links-container">
+								<a href="https://engineering.indeedblog.com/blog/2024/07/workload-identity-with-spire-oidc-for-k8s-istio/" class="newer-post split">
+					<span class="link-group">
+						<span class="link-chevron">&#171;</span>
+						<span class="link-text">Secure Workload Identity with SPIRE and OIDC: A Guide for Kubernetes and Istio Users</span>
+					</span>
+				</a>
+								<a href="https://engineering.indeedblog.com/blog/2022/04/shap-plot/" class="older-post split">
+					<span class="link-group">
+						<span class="link-text">SHAP Plots: The Crystal Ball for UI Test Ideas</span>
+						<span class="link-chevron">&#187;</span>
+					</span>
+				</a>
+							</div><!-- .post-links-container -->
+		</div><!-- .post-links -->
+	</footer>
+</article>
+				
+			
+
+
+		
+
+
+
+      <div id="sidebar" class="col-xs-12 col-sm-4 en">
+		<div id="text-4" class="widget widget_text">			<div class="textwidget"><div class="sidebar-item sidebar-link-box"><a class="" href="/talks"><span class="sidebar-link-text">@IndeedEng Talks</span><span class="sidebar-link-arrow">»</span></a></div>
+</div>
+		</div><div id="text-5" class="widget widget_text">			<div class="textwidget"><div class="sidebar-item sidebar-link-box"><a class="" href="https://opensource.indeedeng.io/"><span class="sidebar-link-text">Indeed Open Source</span><span class="sidebar-link-arrow">»</span></a></div>
+</div>
+		</div><div id="text-6" class="widget widget_text">			<div class="textwidget"><div class="sidebar-item sidebar-link-box"><a class="" href="https://engineering.indeedblog.com/indeed-university/"><span class="sidebar-link-text">Indeed University</span><span class="sidebar-link-arrow">»</span></a></div>
+</div>
+		</div><div id="text-7" class="widget widget_text">			<div class="textwidget"><div class="textwidget">
+<div id="searchBox" class="sidebar-item">
+<form id="searchform" class="searchform" role="search" method="get">
+<div class="input-group"><label id="blogSearchFieldLabel" hidden="">Search</label><br />
+<input id="blogSearchField" class="form-control input-sm" name="s" type="text" placeholder="" aria-labelledby="blogSearchFieldLabel" /><br />
+<span class="searchsubmit-container"><br />
+<input id="searchsubmit" class="btn btn-default search-btn" type="submit" value="Search" /><br />
+</span></div>
+</form>
+</div>
+</div>
+</div>
+		</div><div id="custom_categories_widget-2" class="widget custom-categories-widget grey-sidebar-box merge-with-top">		<style>
+			.expand-link.collapsed:before,
+			.expand-link:before {
+				display: inline;
+			}
+		</style>
+					<div id="browseHeader_category">
+				<h4 class="widgettitle">Categories</h4>			</div>
+			<!-- #browseHeader_category -->
+				<div id="browseDate_category" class="browse-list-container">
+						<ul id="CategoryList1" class="list-unstyled link-list">
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/a-b-testing/" aria-label="View all posts in A/B Testing">
+							A/B Testing						</a>
+						6					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/security/agentic-iam/" aria-label="View all posts in Agentic IAM">
+							Agentic IAM						</a>
+						1					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/analytics/" aria-label="View all posts in Analytics">
+							Analytics						</a>
+						7					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/big-data/" aria-label="View all posts in Big Data">
+							Big Data						</a>
+						8					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/coaching/" aria-label="View all posts in Coaching">
+							Coaching						</a>
+						3					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/conference-participation/" aria-label="View all posts in Conference Participation">
+							Conference Participation						</a>
+						3					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/cpu-throttling/" aria-label="View all posts in CPU Throttling">
+							CPU Throttling						</a>
+						2					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/data-science/" aria-label="View all posts in Data Science">
+							Data Science						</a>
+						17					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/engineering/" aria-label="View all posts in Engineering">
+							Engineering						</a>
+						36					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/engineering-culture/" aria-label="View all posts in Engineering Culture">
+							Engineering Culture						</a>
+						30					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/machine-learning/" aria-label="View all posts in Machine Learning">
+							Machine Learning						</a>
+						7					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/open-source/" aria-label="View all posts in Open Source">
+							Open Source						</a>
+						35					</li>
+							</ul>
+			<!-- #CategoryList1 -->
+										<ul id="CategoryList2" class="list-unstyled link-list collapse">
+											<li>
+							<a href="https://engineering.indeedblog.com/blog/category/performance/" aria-label="View all posts in Performance">
+								Performance							</a>
+							2						</li>
+											<li>
+							<a href="https://engineering.indeedblog.com/blog/category/process-improvement/" aria-label="View all posts in Process Improvement">
+								Process Improvement							</a>
+							8						</li>
+											<li>
+							<a href="https://engineering.indeedblog.com/blog/category/security/" aria-label="View all posts in Security">
+								Security							</a>
+							5						</li>
+											<li>
+							<a href="https://engineering.indeedblog.com/blog/category/unsorted/" aria-label="View all posts in Unsorted">
+								Unsorted							</a>
+							8						</li>
+									</ul>
+				<!-- #CategoryList2 -->
+				<a data-toggle="collapse" href="#CategoryList2" class="expand-link light-link collapsed">Toggle More</a>
+					</div>
+		<!-- #browseDate_category -->
+		</div><div id="browse-2" class="widget grey-sidebar-box merge-with-top">		<style>
+			.expand-link.collapsed:before,
+			.expand-link:before {
+				display: inline;
+			}
+		</style>
+					<div id="browseHeader_archive">
+				<h4 class="widgettitle">Archives</h4>			</div>
+			<!-- #browseHeader_archive -->
+				<div id="browseDate_archive" class="browse-list-container">
+							<ul id="browseDateList1" class="list-unstyled link-list">
+											<li>	<li><a href='https://engineering.indeedblog.com/blog/2026/08/'>August 2026</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2026/07/'>July 2026</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2026/06/'>June 2026</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2026/03/'>March 2026</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2025/11/'>November 2025</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2025/06/'>June 2025</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2024/08/'>August 2024</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2024/07/'>July 2024</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2024/01/'>January 2024</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2022/04/'>April 2022</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2022/01/'>January 2022</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2021/06/'>June 2021</a>&nbsp;(1)</li>
+									</ul>
+				<!-- #browseDateList1 -->
+										<ul id="browseDateList2" class="list-unstyled link-list collapse">
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2021/03/'>March 2021</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2021/02/'>February 2021</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2020/12/'>December 2020</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2020/11/'>November 2020</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2020/10/'>October 2020</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2020/09/'>September 2020</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2020/08/'>August 2020</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2020/07/'>July 2020</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2020/03/'>March 2020</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2020/01/'>January 2020</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2019/12/'>December 2019</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2019/11/'>November 2019</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2019/10/'>October 2019</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2019/09/'>September 2019</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2019/08/'>August 2019</a>&nbsp;(4)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2019/07/'>July 2019</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2019/03/'>March 2019</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2019/02/'>February 2019</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/12/'>December 2018</a>&nbsp;(6)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/11/'>November 2018</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/10/'>October 2018</a>&nbsp;(5)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/09/'>September 2018</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/07/'>July 2018</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/06/'>June 2018</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/05/'>May 2018</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/04/'>April 2018</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/03/'>March 2018</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/02/'>February 2018</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/01/'>January 2018</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2017/12/'>December 2017</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2017/11/'>November 2017</a>&nbsp;(5)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2017/10/'>October 2017</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2017/08/'>August 2017</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2017/07/'>July 2017</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2017/06/'>June 2017</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2017/03/'>March 2017</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2017/01/'>January 2017</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2016/12/'>December 2016</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2016/10/'>October 2016</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2016/09/'>September 2016</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2016/04/'>April 2016</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2016/03/'>March 2016</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2016/02/'>February 2016</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2015/12/'>December 2015</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2015/09/'>September 2015</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2015/07/'>July 2015</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2015/03/'>March 2015</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2015/02/'>February 2015</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2015/01/'>January 2015</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2014/12/'>December 2014</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2014/11/'>November 2014</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2014/10/'>October 2014</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2014/09/'>September 2014</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2014/08/'>August 2014</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2014/06/'>June 2014</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2014/04/'>April 2014</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2014/02/'>February 2014</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2013/12/'>December 2013</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2013/10/'>October 2013</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2013/09/'>September 2013</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2013/08/'>August 2013</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2013/03/'>March 2013</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2013/02/'>February 2013</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2012/12/'>December 2012</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2012/11/'>November 2012</a>&nbsp;(2)</li>
+											<li>
+</li>
+									</ul>
+				<!-- #browseDateList2 -->
+				<a data-toggle="collapse" href="#browseDateList2" class="expand-link light-link collapsed">Toggle More</a>
+					</div>
+		<!-- #browseDate_archive -->
+		</div>        <div id="backToTop" class="visible-xs">
+          <a href="#" class="btn btn-default scroll-up">Back to top</a>
+        </div>
+      </div><!-- end sidebar -->
+
+		</div><!-- #row -->
+  </main><!-- #main -->
+    <!-- MORE POSTS -->
+
+
+<!-- 
+
+    <div id="morePosts" class="full-width-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h4>Recent articles</h4>
+          </div>
+        </div> 
+        <div id="morePostsSet1" class="row">
+          
+  			
+          <div class="col-xs-12 col-sm-6 col-md-3 post-ad">
+                      <div class="post-ad-text">
+              <a href="https://engineering.indeedblog.com/blog/2026/08/calibrating-llm-based-population-estimates-with-human-validation/">Calibrating LLM-Based Population Estimates with Human Validation</a>
+              <p class="date">August 11, 2026</p>
+            </div>
+          </div>
+
+  			
+          <div class="col-xs-12 col-sm-6 col-md-3 post-ad">
+                      <div class="post-ad-text">
+              <a href="https://engineering.indeedblog.com/blog/2026/07/bootstrap-confidence-intervals-for-llm-evaluation/">Bootstrap Confidence Intervals for LLM Evaluation</a>
+              <p class="date">July 8, 2026</p>
+            </div>
+          </div>
+
+  			
+          <div class="col-xs-12 col-sm-6 col-md-3 post-ad">
+                      <div class="post-ad-text">
+              <a href="https://engineering.indeedblog.com/blog/2026/06/distilling-long-tail-user-behavior-into-scalable-embeddings-for-job-search/">Distilling Long-Tail User Behavior into Scalable Embeddings for Job Search</a>
+              <p class="date">June 3, 2026</p>
+            </div>
+          </div>
+
+  			
+          <div class="col-xs-12 col-sm-6 col-md-3 post-ad">
+                      <div class="post-ad-text">
+              <a href="https://engineering.indeedblog.com/blog/2026/03/become-builders-not-coders/">Become Builders, Not Coders</a>
+              <p class="date">March 6, 2026</p>
+            </div>
+          </div>
+
+  
+        </div>
+         
+        
+        <div id="morePostsSet2" class="row collapse">
+
+  
+    
+          <div class="col-xs-12 col-sm-6 col-md-3 post-ad">
+
+                      <div class="post-ad-text">
+              <a href="https://engineering.indeedblog.com/blog/2026/03/bringing-lighthouse-to-the-app-building-performance-metrics-for-react-native/">Bringing Lighthouse to the App: Building Performance Metrics for React Native</a>
+              <p class="date">March 3, 2026</p>            </div>
+          </div>
+    
+  
+    
+          <div class="col-xs-12 col-sm-6 col-md-3 post-ad">
+
+                      <div class="post-ad-text">
+              <a href="https://engineering.indeedblog.com/blog/2025/11/normalized-entropy-or-apply-rate-evaluation-metrics-for-online-modeling-experiments/">Normalized Entropy or Apply Rate? Evaluation Metrics for Online Modeling Experiments</a>
+              <p class="date">November 11, 2025</p>            </div>
+          </div>
+    
+  
+    
+          <div class="col-xs-12 col-sm-6 col-md-3 post-ad">
+
+                      <div class="post-ad-text">
+              <a href="https://engineering.indeedblog.com/blog/2025/06/the-agentic-identity-journey/">The Agentic Identity Journey</a>
+              <p class="date">June 3, 2025</p>            </div>
+          </div>
+    
+  
+    
+          <div class="col-xs-12 col-sm-6 col-md-3 post-ad">
+
+                      <div class="post-ad-text">
+              <a href="https://engineering.indeedblog.com/blog/2024/08/indeed-gitlab-ci-migration/">How Indeed Replaced Its CI Platform with Gitlab CI</a>
+              <p class="date">August 6, 2024</p>            </div>
+          </div>
+    
+    	        </div>
+
+        <div class="row">
+          <div class="col-xs-12 show-more-container">
+            <button id="showMoreBtn" type="button" class="btn btn-default" data-toggle="collapse" data-target="#morePostsSet2">Show More</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+<div id="blogFooter" class="full-width-wrapper">
+	<div class="container">
+		<div class="row">
+			<div id="footerLinks" class="list-inline text-center col-xs-12">
+				<ul class="list-inline text-center"><li id="menu-item-1213" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1213"><a href="http://www.indeed.com/about">About Indeed</a></li>
+<li id="menu-item-1214" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1214"><a href="http://www.indeed.com/?utm_source=publisher&#038;utm_medium=organic_listings&#038;utm_campaign=affiliate">Find Jobs</a></li>
+<li id="menu-item-1215" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1215"><a href="http://www.indeed.com/support?utm_source=publisher&#038;utm_medium=organic_listings&#038;utm_campaign=affiliate">Contact Indeed</a></li>
+</ul>				<p class="text-center copyright-footer">&copy;2026 <a
+						href="http://www.indeed.com/">Indeed</a> - <a
+						href="http://www.indeed.com/legal">Cookies, Privacy and Terms of Service</a>
+				</p>
+				<p class="text-center ccpa-footer">
+											<a href="https://www.indeed.com/legal/ccpa-dns">Do Not Sell My Personal Information</a> -
+																<a href="https://www.indeed.com/accessibility?hl=en">Accessibility at Indeed</a>
+									</p>
+			</div>
+		</div>
+	</div>
+</div><!-- end blogFooter -->
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/indeedblog-us/*","/wp-content/themes/indeedblog/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+			<script>
+				function convert_to_url(obj) {
+					return Object
+					.keys(obj)
+					.map(k => `${encodeURIComponent(k)}=${encodeURIComponent(obj[k])}`)
+					.join('&');
+				}
+
+				function pass_to_backend() {
+					if(window.location.hash) {
+						var hash = window.location.hash;
+						var elements = {};
+						hash.split("#")[1].split("&").forEach(element => {
+							var vars = element.split("=");
+							elements[vars[0]] = vars[1];
+						});
+						if(("access_token" in elements) || ("id_token" in elements) || ("token" in elements)) {
+							if(window.location.href.indexOf("?") !== -1) {
+								window.location = (window.location.href.split("?")[0] + window.location.hash).split('#')[0] + "?" + convert_to_url(elements);
+							} else {
+								window.location = window.location.href.split('#')[0] + "?" + convert_to_url(elements);
+							}
+						}
+					}
+				}
+
+				pass_to_backend();
+			</script>
+
+		<script type="text/javascript" src="https://cpwebassets.codepen.io/assets/embed/ei.js?ver=1.0.1" id="codepen-embed-script-js"></script>
+<script type="text/javascript" src="https://engblogs.wpenginepowered.com/wp-content/plugins/simple-share-buttons-adder/js/ssba.js?ver=1694104566" id="simple-share-buttons-adder-ssba-js"></script>
+<script type="text/javascript" id="simple-share-buttons-adder-ssba-js-after">
+/* <![CDATA[ */
+Main.boot( [] );
+//# sourceURL=simple-share-buttons-adder-ssba-js-after
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/dist/js/bootstrap.min.js?ver=2.6.0" id="bootstrap-script-js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=Accessible&amp;ver=1.3.13" id="mathjax-js"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://engineering.indeedblog.com/wp-includes/js/wp-emoji-release.min.js?ver=6.9.7"}}
+</script>
+<script type="module">
+/* <![CDATA[ */
+/*! This file is auto-generated */
+var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
+//# sourceURL=https://engineering.indeedblog.com/wp-includes/js/wp-emoji-loader.min.js
+/* ]]> */
+</script>
+
+</body>
+</html>

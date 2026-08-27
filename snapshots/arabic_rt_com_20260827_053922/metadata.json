@@ -1,0 +1,167 @@
+{
+  "website": "arabic.rt",
+  "snapshot_date": "2026-08-27T05:45:24",
+  "pagination_type": "load more button",
+  "scroll_mode": "load_more",
+  "scroll_rounds_requested": 2,
+  "load_more_selector": null,
+  "listing_url": "https://arabic.rt.com/russia/",
+  "input_urls": [
+    "https://arabic.rt.com/russia/"
+  ],
+  "pagination_pattern": null,
+  "requirements": "title, date, article body text",
+  "run_dir": "orch_runs/run_20260827_053922",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://arabic.rt.com/russia/",
+      "file": "listing_page_001.html",
+      "bytes": 162173,
+      "sha1": "7f37bf4c7a6679fa1c5758090a5d2aae7ba551be"
+    },
+    {
+      "page_num": 1,
+      "url": "https://arabic.rt.com/russia/",
+      "file": "listing_page_001_expanded.html",
+      "bytes": 163756,
+      "sha1": "7af09abf0b75013d9a0211b521fb6527857a515b",
+      "expanded": true
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://arabic.rt.com/world/1825547-%D8%A7%D8%B1%D8%AA%D9%81%D8%A7%D8%B9-%D8%AD%D8%B5%D9%8A%D9%84%D8%A9-%D8%A7%D9%84%D8%A3%D8%B7%D9%81%D8%A7%D9%84-%D8%B6%D8%AD%D8%A7%D9%8A%D8%A7-%D8%A7%D9%84%D9%87%D8%AC%D9%88%D9%85-%D8%A7%D9%84%D8%A3%D9%88%D9%83%D8%B1%D8%A7%D9%86%D9%8A-%D8%B9%D9%84%D9%89-%D9%83%D8%B1%D8%A7%D8%B3%D9%86%D9%88%D8%AF%D8%A7%D8%B1-%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A%D8%A9-%D8%A5%D9%84%D9%89-4-%D9%82%D8%AA%D9%84%D9%89/",
+      "title": "ارتفاع حصيلة الأطفال ضحايا الهجوم الأوكراني على كراسنودار الروسية إلى 4 قتلى",
+      "page_num": 1,
+      "bytes": 1314651,
+      "sha1": "1ff35a4cb242b250cfc7385923ef9f57b0357452"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://arabic.rt.com/world/1825425-%D8%AA%D9%88%D9%82%D9%8A%D9%81-12-%D8%B4%D8%AE%D8%B5%D8%A7-%D9%81%D9%8A-%D8%A3%D8%AF%D9%8A%D8%BA%D9%8A%D8%A7-%D9%88%D9%83%D8%A8%D8%B1%D8%AF%D9%8A%D9%86%D9%88-%D8%A8%D9%84%D9%82%D8%A7%D8%B1%D9%8A%D8%A7-%D8%A8%D8%AA%D9%87%D9%85-%D8%AA%D8%AA%D8%B9%D9%84%D9%82-%D8%A8%D8%A7%D9%84%D8%A5%D8%B1%D9%87%D8%A7%D8%A8/",
+      "title": "روسيا.. توقيف 12 شخصا في أديغيا وكبردينو بلقاريا بتهم تتعلق بالإرهاب",
+      "page_num": 1,
+      "bytes": 1317970,
+      "sha1": "9dfe2c1ddb465a24e3b915c14cc793fdc069ee1e"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://arabic.rt.com/culture/1825438-%D8%A8%D8%B7%D8%A7%D9%82%D8%A9-%D8%A8%D9%88%D8%B4%D9%83%D9%8A%D9%86-%D8%A3%D9%83%D8%AB%D8%B1-%D9%85%D9%86-40-%D9%85%D9%86-%D9%85%D8%A4%D8%B3%D8%B3%D8%A7%D8%AA%D9%87%D8%A7-%D9%81%D9%8A-%D8%A7%D9%84%D8%B1%D9%8A%D9%81-%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A/",
+      "title": "\"بطاقة بوشكين\".. أكثر من 40% من مؤسساتها في الريف الروسي",
+      "page_num": 1,
+      "bytes": 1313602,
+      "sha1": "cd9a271b8dc4782c762c2527cfaff24de5339c76"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://arabic.rt.com/russia/1825423-%D8%A8%D9%8A%D9%86%D9%87%D9%85-6-%D8%B5%D9%8A%D9%86%D9%8A%D9%8A%D9%86-%D8%B9%D8%AF%D8%AF-%D8%B6%D8%AD%D8%A7%D9%8A%D8%A7-%D8%AD%D8%B1%D9%8A%D9%82-%D9%85%D8%AC%D9%85%D8%B9-%D8%A3%D9%85%D9%88%D8%B1-%D9%84%D9%84%D8%BA%D8%A7%D8%B2-%D9%88%D8%A7%D9%84%D8%A8%D8%AA%D8%B1%D9%88%D9%83%D9%8A%D9%85%D8%A7%D9%88%D9%8A%D8%A7%D8%AA-%D8%A8%D8%B4%D8%B1%D9%82-%D8%B1%D9%88%D8%B3%D9%8A%D8%A7-%D9%8A%D8%B1%D8%AA%D9%81%D8%B9-%D8%A5%D9%84%D9%89-7/",
+      "title": "بينهم 6 صينيين.. عدد ضحايا حريق مجمع أمور للغاز والبتروكيماويات بشرق روسيا يرتفع إلى 7",
+      "page_num": 1,
+      "bytes": 1313300,
+      "sha1": "4779895491a098e6cbb7a804e1e2894efb5e3680"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://arabic.rt.com/world/1825363-%D8%A8%D9%8A%D8%B3%D9%83%D9%88%D9%81-%D8%B2%D9%8A%D8%A7%D8%B1%D8%A9-%D8%B1%D8%A7%D8%AA%D9%83%D9%84%D9%8A%D9%81-%D9%84%D9%85%D9%88%D8%B3%D9%83%D9%88-%D9%85%D8%B1%D8%AA%D8%A8%D8%B7%D8%A9-%D8%A8%D9%80%D8%A7%D8%AA%D8%B5%D8%A7%D9%84%D8%A7%D8%AA-%D8%A8%D9%8A%D9%86-%D8%A3%D8%AC%D9%87%D8%B2%D8%A9-%D8%A7%D9%84%D9%85%D8%AE%D8%A7%D8%A8%D8%B1%D8%A7%D8%AA/",
+      "title": "بيسكوف: زيارة راتكليف لموسكو مرتبطة بـ\"اتصالات بين أجهزة المخابرات\"",
+      "page_num": 1,
+      "bytes": 1315323,
+      "sha1": "37e8f24aca619b9275c6b7f95fa90163512a3d00"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://arabic.rt.com/russia/1825291-%D9%85%D8%AF%D9%81%D9%8A%D8%AF%D9%8A%D9%81-%D8%A7%D9%84%D8%A7%D8%B9%D8%AA%D8%B1%D8%A7%D9%81-%D8%A8%D8%A7%D8%B3%D8%AA%D9%82%D9%84%D8%A7%D9%84-%D8%A3%D8%A8%D8%AE%D8%A7%D8%B2%D9%8A%D8%A7-%D9%8A%D9%85%D8%AB%D9%84-%D8%A7%D9%86%D8%AA%D8%B5%D8%A7%D8%B1%D8%A7-%D9%84%D9%84%D8%B9%D8%AF%D8%A7%D9%84%D8%A9/",
+      "title": "مدفيديف: الاعتراف باستقلال أبخازيا يمثل انتصارا للعدالة",
+      "page_num": 1,
+      "bytes": 1316872,
+      "sha1": "acf2c693ce770f8351a254eb5ccc004a4ae781f9"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://arabic.rt.com/russia/1824986-%D8%B1%D8%AD%D9%8A%D9%84-%D9%85%D8%B5%D9%85%D9%85-%D9%85%D9%86%D8%B8%D9%88%D9%85%D8%A9-%D8%A8%D8%A7%D9%86%D8%AA%D8%B3%D9%8A%D8%B1-%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A%D8%A9-%D8%A7%D9%84%D8%AF%D9%81%D8%A7%D8%B9-%D8%A7%D9%84%D8%AC%D9%88%D9%8A-%D8%A3%D9%84%D9%83%D8%B3%D9%86%D8%AF%D8%B1-%D8%AF%D9%8A%D9%86%D9%8A%D8%B3%D9%88%D9%81/",
+      "title": "رحيل مصمم منظومة \"بانتسير\" الروسية للدفاع الجوي ألكسندر دينيسوف",
+      "page_num": 1,
+      "bytes": 1311143,
+      "sha1": "70e0ee8903a9c56c1af89831b585187695bc8093"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://arabic.rt.com/russia/1824609-%D8%A5%D8%B9%D8%B5%D8%A7%D8%B1-%D9%82%D9%88%D9%8A-%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%B1%D9%88%D8%B3%D9%8A%D8%A9-%D8%A7%D9%84%D8%B4%D8%B1%D9%82-%D8%A7%D9%84%D8%A3%D9%82%D8%B5%D9%89/",
+      "title": "إعصار قوي يضرب في الشرق الأقصى الروسي (فيديو)",
+      "page_num": 1,
+      "bytes": 1310754,
+      "sha1": "d0dc6c97061c627fca968534da7910094f793cdf"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://arabic.rt.com/russia/1824263-%D8%A8%D9%88%D8%AA%D9%8A%D9%86-%D9%81%D9%8A-%D9%83%D9%84%D9%85%D8%A9-%D9%85%D8%B5%D9%88%D8%B1%D8%A9-%D8%A8%D9%85%D9%86%D8%A7%D8%B3%D9%8A%D8%A9-%D8%B0%D9%83%D8%B1%D9%89-%D9%85%D9%8A%D9%84%D8%A7%D8%AF-%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3-%D8%A7%D9%84%D8%A3%D9%88%D9%84-%D9%84%D9%84%D8%B4%D9%8A%D8%B4%D8%A7%D9%86-%D8%A7%D8%B3%D9%85%D9%87-%D9%85%D8%AD%D9%81%D9%88%D8%B1-%D9%81%D9%8A-%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE-%D8%A7%D9%84%D8%A8%D9%84%D8%A7%D8%AF/",
+      "title": "بوتين في كلمة مصورة بمناسية ذكرى ميلاد الرئيس الأول للشيشان: اسمه محفور في تاريخ البلاد",
+      "page_num": 1,
+      "bytes": 1316150,
+      "sha1": "8eaec3c3f9bb18a682c46a4e7c6c74a4784b94df"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://arabic.rt.com/russia/1824150-%D8%A5%D8%B3%D9%82%D8%A7%D8%B7-250-%D8%B7%D8%A7%D8%A6%D8%B1%D8%A9-%D9%85%D8%B3%D9%8A%D8%B1%D8%A9-%D9%85%D8%B9%D8%A7%D8%AF%D9%8A%D8%A9-%D9%81%D9%88%D9%82-%D8%A3%D8%B1%D8%A7%D8%B6%D9%8A-%D8%B1%D9%88%D8%B3%D9%8A%D8%A7-%D8%AE%D9%84%D8%A7%D9%84-%D8%A7%D9%84%D9%8012-%D8%B3%D8%A7%D8%B9%D8%A9-%D8%A7%D9%84%D9%85%D8%A7%D8%B6%D9%8A%D8%A9/",
+      "title": "إسقاط 250 طائرة مسيرة معادية فوق أراضي روسيا خلال الـ12 ساعة الماضية",
+      "page_num": 1,
+      "bytes": 1317105,
+      "sha1": "4638642c15703bcfbfc4e2c80a6536bd172ec288"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://arabic.rt.com/russia/1824141-%D9%85%D8%AF%D9%81%D9%8A%D8%AF%D9%8A%D9%81-%D9%86%D8%AA%D8%B5%D8%AF%D9%89-%D9%84%D9%85%D8%AD%D8%A7%D9%88%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D8%AA%D9%82%D9%84%D9%8A%D9%84-%D9%85%D9%86-%D8%AF%D9%88%D8%B1-%D8%A8%D9%84%D8%A7%D8%AF%D9%86%D8%A7/",
+      "title": "مدفيديف: نتصدى لمحاولات التقليل من دور بلادنا",
+      "page_num": 1,
+      "bytes": 1309041,
+      "sha1": "fb73c3398f2992e18c6e5cef3ddb9f7675e58f71"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://arabic.rt.com/russia/1824070-%D8%A8%D9%88%D8%AA%D9%8A%D9%86-%D9%84%D9%85-%D9%8A%D8%AD%D8%AF%D8%AB-%D8%A3%D9%8A-%D8%AA%D8%AD%D9%88%D9%84-%D9%81%D9%8A-%D8%A7%D9%84%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9-%D9%85%D8%B9-%D8%B1%D9%88%D8%B3%D9%8A%D8%A7-%D9%86%D8%AA%D9%8A%D8%AC%D8%A9-%D9%84%D8%B6%D8%B1%D8%A8%D8%A7%D8%AA-%D8%A7%D9%84%D9%82%D9%88%D8%A7%D8%AA-%D8%A7%D9%84%D8%A3%D9%88%D9%83%D8%B1%D8%A7%D9%86%D9%8A%D8%A9/",
+      "title": "بوتين: لم يحدث أي تحول في المواجهة مع روسيا نتيجة لضربات القوات الأوكرانية",
+      "page_num": 1,
+      "bytes": 1325112,
+      "sha1": "b029124a8d29a31be5e2916e399d1280ad2479ab"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://arabic.rt.com/russia/1824029-%D8%A8%D9%88%D8%AA%D9%8A%D9%86-%D9%8A%D9%87%D9%86%D8%A6-%D8%A7%D9%84%D9%85%D9%88%D8%A7%D8%B7%D9%86%D9%8A%D9%86-%D8%A7%D9%84%D8%B1%D9%88%D8%B3-%D8%A8%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D8%B9%D9%84%D9%85-%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A/",
+      "title": "بوتين يهنئ المواطنين الروس بيوم العلم الوطني",
+      "page_num": 1,
+      "bytes": 1309122,
+      "sha1": "e106e1e746d59332b543d9b1d16f262ebb4438db"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://arabic.rt.com/russia/1824009-%D8%A8%D9%88%D8%AA%D9%8A%D9%86-%D8%A7%D9%84%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%D8%A7%D8%AA-%D8%A7%D9%84%D8%AA%D8%B4%D8%B1%D9%8A%D8%B9%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D9%82%D8%A8%D9%84%D8%A9-%D8%B3%D8%AA%D8%A4%D9%83%D8%AF-%D8%A7%D8%B3%D8%AA%D9%82%D8%B1%D8%A7%D8%B1-%D8%B1%D9%88%D8%B3%D9%8A%D8%A7/",
+      "title": "بوتين: الانتخابات التشريعية المقبلة ستؤكد استقرار روسيا",
+      "page_num": 1,
+      "bytes": 1314492,
+      "sha1": "48dbe3ff24c4207cd6ec43464eac5a0f69f44551"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 2,
+    "articles": 14,
+    "article_fetch_failures": 0
+  }
+}

@@ -1,0 +1,473 @@
+{
+  "website": "abduzeedo",
+  "snapshot_date": "2026-08-27T04:18:20",
+  "pagination_type": "infinite scroll",
+  "scroll_mode": "scroll",
+  "scroll_rounds_requested": 2,
+  "load_more_selector": null,
+  "listing_url": "https://abduzeedo.com/",
+  "input_urls": [
+    "https://abduzeedo.com/"
+  ],
+  "pagination_pattern": null,
+  "requirements": "title, date, author, article body text",
+  "run_dir": "orch_runs/run_20260827_040451",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://abduzeedo.com/",
+      "file": "listing_page_001.html",
+      "bytes": 340965,
+      "sha1": "23f23d05b0812d0279418833f0cdb903326f1573"
+    },
+    {
+      "page_num": 1,
+      "url": "https://abduzeedo.com/",
+      "file": "listing_page_001_expanded.html",
+      "bytes": 354962,
+      "sha1": "0121c24d0d86d235f450e27c9350318a3eeac430",
+      "expanded": true
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://abduzeedo.com/packaging-design-yugen-matcha-oun-deth",
+      "title": "Packaging Design: Yugen Matcha by Oun Deth",
+      "page_num": 1,
+      "bytes": 26263,
+      "sha1": "80a4a6d3e9f40334137b9a4cd3069161e2ed64fa"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://abduzeedo.com/typography-design-regio-display-typeface-ali-aljilani",
+      "title": "Typography Design: REGIO Display Typeface by Ali Aljilani",
+      "page_num": 1,
+      "bytes": 26577,
+      "sha1": "201f0dee879698e13df850663668d490f7b192cc"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://abduzeedo.com/brand-identity-reliance-design-build-truf",
+      "title": "Brand Identity: RELIANCE DESIGN + BUILD by • TRÜF •",
+      "page_num": 1,
+      "bytes": 26712,
+      "sha1": "1dbc1e445d1255aaf19bc1e0559824a9c0a51df5"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://abduzeedo.com/arqe-motion-design-platform-digital-brand-systems",
+      "title": "Arqé Motion Design Platform for Digital Brand Systems",
+      "page_num": 1,
+      "bytes": 26789,
+      "sha1": "fe892ad2565b29c0cf13753be9e34cbdf9907e16"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://abduzeedo.com/packaging-design-drip-silver-takt-studio",
+      "title": "Packaging Design: Drip Silver by Takt Studio",
+      "page_num": 1,
+      "bytes": 26327,
+      "sha1": "4287d9e0a795f1a758a1b3149ff2e2a80d43ff25"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://abduzeedo.com/shanti-meditation-chair-industrial-design-futurewave",
+      "title": "Shanti Meditation Chair Industrial Design by Futurewave",
+      "page_num": 1,
+      "bytes": 27242,
+      "sha1": "99963e44c52e470efd6f5bb5cd4bb877a40645ab"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://abduzeedo.com/desert-coffee-roasters-visual-identity-and-branding-taostudio",
+      "title": "Desert Coffee Roasters Visual Identity and Branding by taoSTUDIO",
+      "page_num": 1,
+      "bytes": 27137,
+      "sha1": "6794edc85e6fcb78ca58f1bf0e07c06f5f70573b"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://abduzeedo.com/visual-identity-cafe-notman-paprika-design",
+      "title": "Visual Identity: Café Notman by Paprika Design",
+      "page_num": 1,
+      "bytes": 26584,
+      "sha1": "3905e2f9bfbc3b3c1efb6ea42fe5984b422ed274"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://abduzeedo.com/tiny-wine-bar-visual-identity-and-branding-polar-dsgn",
+      "title": "Tiny Wine Bar Visual Identity and Branding by POLAR DSGN",
+      "page_num": 1,
+      "bytes": 27306,
+      "sha1": "783404ead5a46d966c48eb7b5960928c90945dae"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://abduzeedo.com/packaging-design-hua-tea-packaging-vladyslava-kravchenko",
+      "title": "Packaging Design: HUA Tea Packaging by Vladyslava Kravchenko",
+      "page_num": 1,
+      "bytes": 26118,
+      "sha1": "514b6ec7beb1dc2e223504b8c15cdc1089b506a0"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://abduzeedo.com/nomea-studio-visual-identity-and-branding-schickeria-studio",
+      "title": "Nomēa Studio Visual Identity and Branding by Schickeria Studio",
+      "page_num": 1,
+      "bytes": 27850,
+      "sha1": "f937df0ee9657344741af86b59853de6116e7986"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://abduzeedo.com/housepitaltm-visual-identity-and-event-branding-dima-shiryaev",
+      "title": "Housepital™ Visual Identity and Event Branding by Dima Shiryaev",
+      "page_num": 1,
+      "bytes": 27549,
+      "sha1": "dadb0300c2f4f5cb0842fab84ac816691b314fa7"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://abduzeedo.com/brand-identity-turkish-towels-naci-mert",
+      "title": "Brand Identity: Turkish Towels by Naci Mert",
+      "page_num": 1,
+      "bytes": 26224,
+      "sha1": "1661ea0e35f9083623db610f9fecb736107165d7"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://abduzeedo.com/land38-brand-visual-identity-interior-architecture",
+      "title": "LAND38 Brand Visual Identity for Interior Architecture",
+      "page_num": 1,
+      "bytes": 25684,
+      "sha1": "3f991fb6ab240008afbf61e358a50643a5b75636"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://abduzeedo.com/tea-branding-identity-teh-cap-arca",
+      "title": "Tea Branding Identity for Teh Cap Arca",
+      "page_num": 1,
+      "bytes": 25577,
+      "sha1": "a9419b17d7a62d769c8b41c4cdd5e05b0ae38b7c"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://abduzeedo.com/myako-display-font-specimen-and-bold-typography",
+      "title": "Myako Display Font Specimen and Bold Typography",
+      "page_num": 1,
+      "bytes": 26399,
+      "sha1": "1c7fa1fe6c80715d17a6b29e43984b714e61469b"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://abduzeedo.com/best-week-modular-systems-and-spatial-layouts",
+      "title": "Best of the Week: Modular Systems and Spatial Layouts",
+      "page_num": 1,
+      "bytes": 28130,
+      "sha1": "a78992268adb9a38a1763bd16c573cc1d56a2e9f"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://abduzeedo.com/packaging-design-grot-premium-water-mariya-churilo",
+      "title": "Packaging Design: GROT premium water by Mariya Churilo",
+      "page_num": 1,
+      "bytes": 25800,
+      "sha1": "cdf34652c49d3ad7bc6ab3a30dff28eef838222c"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://abduzeedo.com/visual-identity-naver-local-ground-maum-studio",
+      "title": "Visual Identity: NAVER LOCAL GROUND by MAUM STUDIO",
+      "page_num": 1,
+      "bytes": 26422,
+      "sha1": "82e281fac23b02dee3b6a10eb02787d69e531a32"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://abduzeedo.com/esh-typeface-typography-design-esh-gruppa",
+      "title": "ESH Typeface Typography Design by ESH Gruppa",
+      "page_num": 1,
+      "bytes": 25657,
+      "sha1": "6d096cc13aa8a98d4f421f506084ddef9d3ecdbc"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://abduzeedo.com/mission-space-visual-identity-sands-studio",
+      "title": "Mission Space Visual Identity by SANDS STUDIO",
+      "page_num": 1,
+      "bytes": 26388,
+      "sha1": "d1cd120b2b98d7c46e51d0600868942e3eeca04b"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://abduzeedo.com/dia-nacional-del-tequila-poster-and-bottle-illustration",
+      "title": "Dia Nacional del Tequila Poster and Bottle Illustration",
+      "page_num": 1,
+      "bytes": 26866,
+      "sha1": "6f457ddb8c7eb414bc2242afcb04725a9917dab3"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://abduzeedo.com/modystka-storefront-redesign-and-polish-signage-branding",
+      "title": "Modystka Storefront Redesign and Polish Signage Branding",
+      "page_num": 1,
+      "bytes": 26684,
+      "sha1": "ed2a2370c2768498a3df029c54aef509e2ab380a"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://abduzeedo.com/ui-ux-design-levyero-anna-mahdina",
+      "title": "UI UX Design: Levyero by Anna Mahdina",
+      "page_num": 1,
+      "bytes": 27634,
+      "sha1": "d51313a5f3a04f45ec858efa187d915024b70797"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://abduzeedo.com/faubourg-galant-parisian-hotel-branding-and-visual-identity",
+      "title": "Faubourg Galant Parisian Hotel Branding and Visual Identity",
+      "page_num": 1,
+      "bytes": 25977,
+      "sha1": "3396c110fedcc75e72bc13a81048eb32395172b3"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://abduzeedo.com/selo-modern-furniture-brand-identity-and-visual-system",
+      "title": "SELO Modern Furniture Brand Identity and Visual System",
+      "page_num": 1,
+      "bytes": 25532,
+      "sha1": "cb85bbfb5a4c9802d568a5c6311c24e7a184559a"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://abduzeedo.com/amaru-photography-brand-identity-and-editorial-design",
+      "title": "Amaru Photography Brand Identity and Editorial Design",
+      "page_num": 1,
+      "bytes": 26248,
+      "sha1": "a9dfad9ddf0d2218d5ce4ab8c5046965bb998a6b"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://abduzeedo.com/logos-marks-2026-vol1-next-mahamudc-ui-ux-concept",
+      "title": "Logos & Marks - 2026 Vol_1 Next Mahamud© UI-UX Concept",
+      "page_num": 1,
+      "bytes": 26804,
+      "sha1": "e947252d7d2c6b917c45ec749a99ada806952179"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://abduzeedo.com/runlab-technical-running-apparel-and-visual-branding",
+      "title": "Runlab Technical Running Apparel and Visual Branding",
+      "page_num": 1,
+      "bytes": 25823,
+      "sha1": "975d3205580f03c9eafa3628c0cf64ad8f31119c"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://abduzeedo.com/tipalti-fintech-platform-web-design-and-design-system",
+      "title": "Tipalti Fintech Platform Web Design and Design System",
+      "page_num": 1,
+      "bytes": 26451,
+      "sha1": "a69fc37ee943fb7ac8e8f604e152c720c313b6ac"
+    },
+    {
+      "id": 31,
+      "file": "article_0031.html",
+      "url": "https://abduzeedo.com/1618-golden-ratio-paperclip-clever-product-design",
+      "title": "1.618 Golden Ratio Paperclip Clever Product Design",
+      "page_num": 1,
+      "bytes": 26102,
+      "sha1": "22f4cdd9a453fcea49d6895107dc4d334a219f2a"
+    },
+    {
+      "id": 32,
+      "file": "article_0032.html",
+      "url": "https://abduzeedo.com/lyx-luxury-interior-and-furniture-branding-identity",
+      "title": "LYX Luxury Interior and Furniture Branding Identity",
+      "page_num": 1,
+      "bytes": 26094,
+      "sha1": "30511f73f733f1a17628f6143f9985798d99e899"
+    },
+    {
+      "id": 33,
+      "file": "article_0033.html",
+      "url": "https://abduzeedo.com/page-common-artisanal-coffee-branding-and-packaging",
+      "title": "Page Common Artisanal Coffee Branding and Packaging",
+      "page_num": 1,
+      "bytes": 25909,
+      "sha1": "8cc3d23d403b2f4331bab735df2256a9edc85f6f"
+    },
+    {
+      "id": 34,
+      "file": "article_0034.html",
+      "url": "https://abduzeedo.com/red-bull-racing-f1-livery-design-simon-ramampiaro",
+      "title": "Red Bull Racing F1 Livery Design Simon Ramampiaro",
+      "page_num": 1,
+      "bytes": 25985,
+      "sha1": "023656a15329e5b90f487b37213cc7e878f1b618"
+    },
+    {
+      "id": 35,
+      "file": "article_0035.html",
+      "url": "https://abduzeedo.com/yunre-skincare-branding-owlsome-studio-branding",
+      "title": "Yunré Skincare Branding Owlsome Studio Branding",
+      "page_num": 1,
+      "bytes": 27252,
+      "sha1": "5c70ccefd3b29d32ba0dd7359454108a8249166c"
+    },
+    {
+      "id": 36,
+      "file": "article_0036.html",
+      "url": "https://abduzeedo.com/editorial-design-die-neue-tradition-schickeria-studio",
+      "title": "Editorial Design: Die neue Tradition by Schickeria Studio",
+      "page_num": 1,
+      "bytes": 27303,
+      "sha1": "7e2a7af1e9cc21224b22785cbdff4219881a1b04"
+    },
+    {
+      "id": 37,
+      "file": "article_0037.html",
+      "url": "https://abduzeedo.com/collective-actions-digital-exhibition-web-design",
+      "title": "Collective Actions Digital Exhibition Web Design",
+      "page_num": 1,
+      "bytes": 25530,
+      "sha1": "8b2bd5958b1d7cb1a1e9c2561656546293402d56"
+    },
+    {
+      "id": 38,
+      "file": "article_0038.html",
+      "url": "https://abduzeedo.com/lane7-entertainment-and-hospitality-branding-identity",
+      "title": "Lane7 Entertainment and Hospitality Branding Identity",
+      "page_num": 1,
+      "bytes": 25988,
+      "sha1": "095c6641ab438d1a196ab22a573ede75a3fd352a"
+    },
+    {
+      "id": 39,
+      "file": "article_0039.html",
+      "url": "https://abduzeedo.com/ui-ux-design-thrive-travel-platform-roman-yashchenko",
+      "title": "UI UX Design: Thrive Travel Platform by Roman Yashchenko",
+      "page_num": 1,
+      "bytes": 26516,
+      "sha1": "2f8d37fb06cb7020dd4f7b42560144f1727cfd11"
+    },
+    {
+      "id": 40,
+      "file": "article_0040.html",
+      "url": "https://abduzeedo.com/taste-health-nutrition-branding-and-packaging-identity",
+      "title": "Taste Health Nutrition Branding and Packaging Identity",
+      "page_num": 1,
+      "bytes": 26420,
+      "sha1": "9425952e20399fb828762e71b938edeb39f79149"
+    },
+    {
+      "id": 41,
+      "file": "article_0041.html",
+      "url": "https://abduzeedo.com/peers-visual-identity-and-modern-typography-branding",
+      "title": "Peers Visual Identity and Modern Typography Branding",
+      "page_num": 1,
+      "bytes": 26414,
+      "sha1": "f238514dd832383ead53199d34cb0267b58820ad"
+    },
+    {
+      "id": 42,
+      "file": "article_0042.html",
+      "url": "https://abduzeedo.com/type-11-expressive-lettering-and-3d-typography",
+      "title": "Type 1.1 Expressive Lettering and 3D Typography",
+      "page_num": 1,
+      "bytes": 25921,
+      "sha1": "5e91a3d89d83ab310dfb630381b0b0368700e7e3"
+    },
+    {
+      "id": 43,
+      "file": "article_0043.html",
+      "url": "https://abduzeedo.com/originbiotics-packaging-maja-regula",
+      "title": "Originbiotics Packaging by Maja Regula",
+      "page_num": 1,
+      "bytes": 26568,
+      "sha1": "108b6a942c7eac0a127b91006e42b9d905b0529b"
+    },
+    {
+      "id": 44,
+      "file": "article_0044.html",
+      "url": "https://abduzeedo.com/vaya-vakantiepark-visual-identity-lakeside-branding",
+      "title": "VAYA Vakantiepark Visual Identity: Lakeside Branding",
+      "page_num": 1,
+      "bytes": 25848,
+      "sha1": "df6e6a00d6cd2efe63d38e6a73b5edc542d28f90"
+    },
+    {
+      "id": 45,
+      "file": "article_0045.html",
+      "url": "https://abduzeedo.com/bruno-x-visual-identity-and-music-branding-system",
+      "title": "Bruno X Visual Identity and Music Branding System",
+      "page_num": 1,
+      "bytes": 26030,
+      "sha1": "9bf531f8921d1d0ee3e8710f03af98fbaa6da342"
+    },
+    {
+      "id": 46,
+      "file": "article_0046.html",
+      "url": "https://abduzeedo.com/best-week-modular-systems-and-expressive-typography",
+      "title": "Best of the Week: Modular Systems and Expressive Typography",
+      "page_num": 1,
+      "bytes": 27240,
+      "sha1": "f659520e5a3a7ba19d2bd06ae61e033c7a57c48b"
+    },
+    {
+      "id": 47,
+      "file": "article_0047.html",
+      "url": "https://abduzeedo.com/issey-miyake-magazine-gunay-hasanova-specimen",
+      "title": "Issey Miyake Magazine Gunay Hasanova Specimen",
+      "page_num": 1,
+      "bytes": 26824,
+      "sha1": "21d6c91d25e7d2c697dc2fce30d9b910667a4c18"
+    },
+    {
+      "id": 48,
+      "file": "article_0048.html",
+      "url": "https://abduzeedo.com/allo-super-significa-b2b-restaurant-platform-design",
+      "title": "allO Super significa: B2B Restaurant Platform Design",
+      "page_num": 1,
+      "bytes": 25786,
+      "sha1": "e0d3e516f31baee67f099c67ea0e32b57818775c"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 2,
+    "articles": 48,
+    "article_fetch_failures": 0
+  }
+}

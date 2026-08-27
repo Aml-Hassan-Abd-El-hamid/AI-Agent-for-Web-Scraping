@@ -1,0 +1,24 @@
+{
+  "website": "palestine-studies",
+  "snapshot_date": "2026-08-27T14:37:51",
+  "pagination_type": "infinite scroll",
+  "scroll_mode": "scroll",
+  "scroll_rounds_requested": 2,
+  "load_more_selector": null,
+  "listing_url": "https://www.palestine-studies.org/ar/blogs/explorer?f%5B0%5D=field_blog_series%3A19943",
+  "input_urls": [
+    "https://www.palestine-studies.org/ar/blogs/explorer?f%5B0%5D=field_blog_series%3A19943"
+  ],
+  "pagination_pattern": null,
+  "requirements": "title, date, author, article body text",
+  "run_dir": "orch_runs/run_20260827_143401",
+  "link_extraction_code_file": null,
+  "listing_pages": [],
+  "articles": [],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 0,
+    "articles": 0,
+    "article_fetch_failures": 0
+  }
+}

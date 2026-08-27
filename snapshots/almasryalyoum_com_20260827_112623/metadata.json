@@ -1,0 +1,318 @@
+{
+  "website": "almasryalyoum",
+  "snapshot_date": "2026-08-27T11:29:54",
+  "pagination_type": "numbered pagination",
+  "scroll_mode": null,
+  "scroll_rounds_requested": null,
+  "load_more_selector": null,
+  "listing_url": "https://www.almasryalyoum.com/news/index?typeid=1&sectionid=10",
+  "input_urls": [
+    "https://www.almasryalyoum.com/news/index?typeid=1&sectionid=10",
+    "https://www.almasryalyoum.com/news/index?typeid=1&sectionid=10&page=2"
+  ],
+  "pagination_pattern": "https://www.almasryalyoum.com/news/index?typeid=1&sectionid=10&page={page}",
+  "requirements": "title, date, author, article body text",
+  "run_dir": "orch_runs/run_20260827_112623",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://www.almasryalyoum.com/news/index?typeid=1&sectionid=10",
+      "file": "listing_page_001.html",
+      "bytes": 246562,
+      "sha1": "68be77c619a51f6a972a696264bc5a5ed41461d3"
+    },
+    {
+      "page_num": 2,
+      "url": "https://www.almasryalyoum.com/news/index?typeid=1&sectionid=10&page=2",
+      "file": "listing_page_002.html",
+      "bytes": 246687,
+      "sha1": "f467c4e979bc19c7d9643cf5cd409da817186453"
+    },
+    {
+      "page_num": 3,
+      "url": "https://www.almasryalyoum.com/news/index?typeid=1&sectionid=10&page=3",
+      "file": "listing_page_003.html",
+      "bytes": 247158,
+      "sha1": "84009c8ed94906f26d417310c9f76883fa3d168c"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346767",
+      "title": "ميمي جمال تكشف تعرضها للسرقة أثناء سير السيارة على الطريق",
+      "page_num": 1,
+      "bytes": 302624,
+      "sha1": "dbd675a4b7587fc44415c2c755485f4f6f0e0505"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346764",
+      "title": "موعد عرض «لعبة جهنم» لـ محمد فراج (تفاصيل)",
+      "page_num": 1,
+      "bytes": 300725,
+      "sha1": "77ff21bc2a7a15a4b8bd0b1e5222d2ba70b720f2"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346763",
+      "title": "شيماء سيف تهنئ محمد سامي بعيد ميلاده: «كل سنة وأنت طيب وقلبك عسل»",
+      "page_num": 1,
+      "bytes": 303284,
+      "sha1": "d6ae639b22dd2d77e4e6e27003d987d80d4c4371"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346758",
+      "title": "المخرج عمر عبدالعزيز يعود للسينما بفيلم «شوربة كوارع»",
+      "page_num": 1,
+      "bytes": 310734,
+      "sha1": "dbacd4045612450ad225f82329b4030ecbeb7d4b"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346748",
+      "title": "طارق الشناوى يوضح موقفه من مصطفى كامل: «نقد مش خلاف شخصي»",
+      "page_num": 1,
+      "bytes": 304389,
+      "sha1": "a9fd489c869a660569f4a20f8ca0c1db3f216e54"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346747",
+      "title": "«تستاهلي الحب كله».. نورهان تدعم هبة مجدي بعد لقائها بالرئيس السيسي",
+      "page_num": 1,
+      "bytes": 305782,
+      "sha1": "a5147db613badd4f8073bd9e5c53f0263e214c1e"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346746",
+      "title": "ميمي جمال تكشف كواليس دخولها الفن: «بدأت التمثيل وأنا عندي 9 سنين»",
+      "page_num": 1,
+      "bytes": 303519,
+      "sha1": "aae5befbce7d9e184279c08cfac121b48ca28d28"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346739",
+      "title": "ميمي جمال: «اتأخرنا كتير في حق الأداء العلني.. وماسبيرو ومدينة الإنتاج طفشوا المنتجين»",
+      "page_num": 1,
+      "bytes": 303127,
+      "sha1": "e11391e79341c51b8086619c89ec212a6caf8ef5"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346738",
+      "title": "والد محمد سامى يحتفل بعيد ميلاده: «مخرج الجماهير وعمدة الإخراج»",
+      "page_num": 1,
+      "bytes": 301747,
+      "sha1": "c0168fa7aa03a475c8dfdafa605da2940fbdbfaf"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346736",
+      "title": "«اللهم لا تجعله آخر العهد».. أحمد حاتم في مناسك العمرة",
+      "page_num": 1,
+      "bytes": 312946,
+      "sha1": "9d2916f1545586b7cd5d2f5127ec9912643bae0e"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346734",
+      "title": "مفاجآت وديوهات على المسرح.. كايروكي تستعد لحفلها الكبير في العلمين غدا (تفاصيل)",
+      "page_num": 2,
+      "bytes": 303944,
+      "sha1": "f607b73c46833c52e1caceb090bb8b1fb0abdfc8"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346727",
+      "title": "رغم خلافهما السابق.. عايض يعلق على اعتزال داليا مبارك: خسارة للفن السعودي",
+      "page_num": 2,
+      "bytes": 306859,
+      "sha1": "88e1cdf3dbb328f026fd2697f53742ecc8ca6975"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346725",
+      "title": "«يا هوا» تزيح «لولا البنات».. الأغانى الشعبية تعود لصدارة «يوتيوب»",
+      "page_num": 2,
+      "bytes": 312382,
+      "sha1": "d5d31c14f9f197dce511c8ee0086735d77c92183"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346724",
+      "title": "«أقولك على سر؟».. الخوف من الزواج يفرق المحبين",
+      "page_num": 2,
+      "bytes": 299618,
+      "sha1": "4c0c977f13c0f8b40491f82b9dd9588abe03f183"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346723",
+      "title": "«أدوني المايك وقلبناها حفلة».. محمد رمضان يفاجئ جمهور الساحل بالغناء بدون فرقة",
+      "page_num": 2,
+      "bytes": 306691,
+      "sha1": "7ebb3506b0ce99f47a373ef7c75e85d7d0256b6b"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346722",
+      "title": "«عنبر الموت».. ملاك الرحمة تُتهم بقتل المرضى",
+      "page_num": 2,
+      "bytes": 303810,
+      "sha1": "678b35fa9a246130896673a1d496c5fae66c0705"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346721",
+      "title": "الأكثر مشاهدة على WATCH IT",
+      "page_num": 2,
+      "bytes": 302242,
+      "sha1": "ecc2699e92c3f788c018b35751863c9fdf6ac10b"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346720",
+      "title": "مى عمر تحتفل بعيد ميلاد محمد سامى: أحبك أكثر مما تستطيع الكلمات أن تقول (صور)",
+      "page_num": 2,
+      "bytes": 314865,
+      "sha1": "305ec8060bf8db76dc09bf6dc2443d082328c3c0"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346717",
+      "title": "«The Gentlemen».. أرستقراطى يدخل عالم الجريمة",
+      "page_num": 2,
+      "bytes": 302085,
+      "sha1": "67635920e401f1dbe19fa3438ef3dc15ce605c97"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346708",
+      "title": "بعد غياب سنوات.. ساندرا بولوك تعود للتمثيل وتحتفل بـ «Practical Magic 2» مع نيكول كيدمان فى لندن",
+      "page_num": 2,
+      "bytes": 305968,
+      "sha1": "fd70f15a2a12db6acca7b3f21d014455faac4eea"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346705",
+      "title": "هبة مجدي تعلق على مشاركتها في احتفالية المولد النبوي بحضور الرئيس السيسي",
+      "page_num": 3,
+      "bytes": 317687,
+      "sha1": "999731c0cc5ca32c7bb3718d111346d4ad5a8297"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346668",
+      "title": "«ليلة عطر النور».. نجوم الفن يحتفلون بمناسبة مولد النبى داخل دار إقامة كبار الفنانين (صور)",
+      "page_num": 3,
+      "bytes": 308655,
+      "sha1": "246353f71cb45b51ed031a73e170cf41123dd911"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346658",
+      "title": "محمود عامر يستغيث بعد واقعة داخل التأمين الصحى: «عايز أوصل الشكوى لأعلى المستويات»",
+      "page_num": 3,
+      "bytes": 305869,
+      "sha1": "025604dbd49386c0e699359d0285d4fd0b1c915f"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346651",
+      "title": "«العدل»: نقدم «العندليب» بروحه فى «زمن الرومانسية»",
+      "page_num": 3,
+      "bytes": 302073,
+      "sha1": "e0e228d1352508dac937eb806f11905f1d5b9ff2"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346643",
+      "title": "بعد تكريمها خلال «الاحتفالية».. آمال إسماعيل: الرئيس تعامل معى بمودة",
+      "page_num": 3,
+      "bytes": 304911,
+      "sha1": "ba538537798adfc73ede0c27cb9712f461b05651"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346642",
+      "title": "هبة مجدى: سعيدة بمشاركتى فى الاحتفال بالمولد النبوي الشريف",
+      "page_num": 3,
+      "bytes": 302538,
+      "sha1": "7ef85b0d1ca9d29d38bfb0341ad2537b593664e5"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346630",
+      "title": "بتوقيت مدينة السلام.. محمد رمضان يكشف موعد إطلاق أغنية «باكو»",
+      "page_num": 3,
+      "bytes": 308342,
+      "sha1": "a79320829cbfe4244d261dcae0de1bd69e697d67"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346613",
+      "title": "تعرف على تفاصيل وأسعار تذاكر حفل محمد حماقي في العلمين الجمعة المقبلة",
+      "page_num": 3,
+      "bytes": 307376,
+      "sha1": "cdc80d701ac4903893d9c87ad4070770cbb96336"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346594",
+      "title": "«لم يكن يظهر إعجابه بي».. ريهام عبدالغفور تكشف تفاصيل علاقتها بوالدها بعد 25 عاما بالفن",
+      "page_num": 3,
+      "bytes": 304412,
+      "sha1": "2ffcbca055e410310efb07b3ebd2eb77c3105a9e"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://www.almasryalyoum.com/news/details/4346563",
+      "title": "يُعرض 25 نوفمبر.. الإعلان عن الجزء الثاني من «Once Upon a Time in.. Hollywood» بطولة براد بيت",
+      "page_num": 3,
+      "bytes": 301797,
+      "sha1": "b3c03c813a38096cbcf6b7f3af5b9cc2429b5796"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 3,
+    "articles": 30,
+    "article_fetch_failures": 0
+  }
+}

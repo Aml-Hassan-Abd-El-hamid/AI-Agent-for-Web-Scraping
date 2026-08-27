@@ -1,0 +1,372 @@
+{
+  "website": "btselem",
+  "snapshot_date": "2026-08-27T13:31:15",
+  "pagination_type": "numbered pagination",
+  "scroll_mode": null,
+  "scroll_rounds_requested": null,
+  "load_more_selector": null,
+  "listing_url": "https://www.btselem.org/ota/100/all",
+  "input_urls": [
+    "https://www.btselem.org/ota/100/all",
+    "https://www.btselem.org/ota/100/all?page=1"
+  ],
+  "pagination_pattern": "https://www.btselem.org/ota/100/all?page={page}",
+  "requirements": "title, date, article body text",
+  "run_dir": "orch_runs/run_20260827_130237",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://www.btselem.org/ota/100/all",
+      "file": "listing_page_001.html",
+      "bytes": 111629,
+      "sha1": "b44583f90628f578729e314cff57cced61afd183"
+    },
+    {
+      "page_num": 2,
+      "url": "https://www.btselem.org/ota/100/all?page=1",
+      "file": "listing_page_002.html",
+      "bytes": 115635,
+      "sha1": "8cb76a2172fd6c5d509c9ceef0af903260236801"
+    },
+    {
+      "page_num": 3,
+      "url": "https://www.btselem.org/ota/100/all?page=2",
+      "file": "listing_page_003.html",
+      "bytes": 114413,
+      "sha1": "2b139efd31645883fd4d9320ac83ce1fd5aa533a"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://www.btselem.org/video/20260715_food_crisis_worsens_with_the_closure_of_international_kitchens_in_gaza#full",
+      "title": "Amid the ongoing genocide, Gaza’s food crisis worsens with closure of World Central Kitchen centers",
+      "page_num": 1,
+      "bytes": 102451,
+      "sha1": "ed3d0200444f9ee1c19e7328c6e30e6e4f956c74"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://www.btselem.org/video/20260604_extreme_rodent_infestation_in_gaza_putting_millions_at_risk",
+      "title": "Extreme rodent infestation in Gaza putting millions at risk",
+      "page_num": 1,
+      "bytes": 106795,
+      "sha1": "9bde8537b1ba841cfdc1695966d8e7fa0cc066ee"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://www.btselem.org/video/20260308_palestinian_women_under_genocide_in_gaza_clinging_to_whats_left_of_life#full",
+      "title": "Clinging to what’s left of life: Palestinian women under genocide in Gaza",
+      "page_num": 1,
+      "bytes": 140755,
+      "sha1": "c4f82ec2a5fc0454e8977cdb0e5128e84b3ca4e9"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://www.btselem.org/gaza_strip/20260223_39_including_children_died_in_gaza_due_to_destruction_of_infrastructure_by_israel_and_severe_weather#full",
+      "title": "After Israel destroyed Gaza’s essential infrastructure, 39 local residents, including 22 minors, lost their lives due to severe weather in December and January",
+      "page_num": 1,
+      "bytes": 107398,
+      "sha1": "852ab6fe44f8216d5b8cbbcf8c4182e998f3ad16"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://www.btselem.org/gaza_strip/202512_no_place_under_heaven_forced_displacement_in_the_gaza_strip_2023_2025",
+      "title": "\"No Place Under Heaven\": Forced displacement in the Gaza Strip, 2023-2025",
+      "page_num": 1,
+      "bytes": 177891,
+      "sha1": "cf4de0341000aafda6675dabce48adbb1390b677"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://projects.btselem.org/nibal/#en",
+      "title": "Scrollytelling: The Displacement Journey of Nibal al-Hisi",
+      "page_num": 1,
+      "bytes": 96922,
+      "sha1": "adc929077f9959682176a491c5d75e8fc52d8afa"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://www.btselem.org/video/20251218_yellow_line_in_gaza_leading_to_more_killing_and_displacement",
+      "title": "Yellow Line of \"ceasefire\" in Gaza leading to more killing and displacement",
+      "page_num": 1,
+      "bytes": 94916,
+      "sha1": "5b722c6fbf9902d8aa03817af31c6b9d6be893af"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://www.btselem.org/video/20251209_november_rainfall_flooded_displacement_camps_in_gaza",
+      "title": "Gaza: The recent November rainfall flooded the displacement camps",
+      "page_num": 1,
+      "bytes": 95904,
+      "sha1": "42b9368606109115f21d360a1d1a4fc4347ac8a6"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://www.btselem.org/voices_from_gaza/amal_aziz_dima_abu_shakayan",
+      "title": "Voices from Gaza: Amal ‘Aziz and Dima Abu Shakayan",
+      "page_num": 1,
+      "bytes": 95656,
+      "sha1": "bc7ccfd79fcdd2f9d5e21bc451b1068c3165d69f"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://www.btselem.org/voices_from_gaza/rajaa_alian",
+      "title": "Voices from Gaza: Rajaa ‘Alian",
+      "page_num": 1,
+      "bytes": 102741,
+      "sha1": "15afc221df8cb3c58defd783490aaba37547f29e"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://www.btselem.org/video/20250821_total_blockade_and_death_traps_how_israel_is_starving_the_gaza_strip#full",
+      "title": "Total blockade and death traps: How Israel is starving the Gaza Strip",
+      "page_num": 1,
+      "bytes": 142183,
+      "sha1": "6d3b75fb1cdba09e1461967bfd9c3603c209fb42"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://www.btselem.org/20250709_israel_denying_thousands_of_amputees_in_gaza_including_children_proper_care",
+      "title": "Israel denying treatment to thousands of Gazans who lost limbs in Israeli attacks, almost 1,000 of them children",
+      "page_num": 1,
+      "bytes": 121598,
+      "sha1": "e643558b0dbe9a412aec44d299ebc4ff5df45c0b"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://www.btselem.org/press_releases/20250505_devastation_bombing_and_starvation_israel_is_destroying_life_in_gaza",
+      "title": "Devastation, bombing and starvation: Israel is destroying life in Gaza",
+      "page_num": 2,
+      "bytes": 105187,
+      "sha1": "753d30da6a2da1b1c7bdce72475a85d2f38003e3"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://www.btselem.org/press_releases/20250403_from_declaration_to_action__israel_is_carrying_out_ethnic_cleansing_in_gaza",
+      "title": "From declaration to action: Israel is carrying out ethnic cleansing in Gaza",
+      "page_num": 2,
+      "bytes": 100923,
+      "sha1": "30f80f829c77f143d78586db8a6a5749f014b971"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://www.btselem.org/press_releases/20250318_israel_resumes_its_campaign_of_killing_and_destruction_in_gaza",
+      "title": "Israel resumes its campaign of killing and destruction in Gaza",
+      "page_num": 2,
+      "bytes": 99560,
+      "sha1": "7ddbd8d381fa154e581b1929e302904f78ddfad5"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://www.btselem.org/press_releases/20250115_btselem_welcomes_deal_but_warns_the_catastrophe_is_ongoing",
+      "title": "B’Tselem welcomes deal but warns the catastrophe is ongoing",
+      "page_num": 2,
+      "bytes": 99365,
+      "sha1": "e4323e4d461ab9a0b18d23f1c9039f3c0e4d014d"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://www.btselem.org/hebrew/press_release/20241121_personal_accountability_is_a_key_element_in_the_struggle_for_justice_and_freedom_for_all",
+      "title": "Personal accountability is a key element in the struggle for justice and freedom for all",
+      "page_num": 2,
+      "bytes": 96964,
+      "sha1": "227419d7ce309b9562e95d0fd04e52e6fa74abda"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://www.btselem.org/press_releases/20241022_the_world_must_stop_the_ethnic_cleansing_of_northern_gaza",
+      "title": "The world must stop the ethnic cleansing of northern Gaza",
+      "page_num": 2,
+      "bytes": 100538,
+      "sha1": "35a64a1b9a13823ebe44e828e6df388e1c6b0b63"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://www.btselem.org/press_releases/20241014_international_community_will_be_complicit_if_israel_forcibly_transfers_the_population_of_northern_gaza",
+      "title": "Israeli NGOs warn international community it will be complicit if Israel forcibly transfers the population of Northern Gaza",
+      "page_num": 2,
+      "bytes": 104259,
+      "sha1": "81eae36b39cb3afab5d2636a99e0c519e21d1864"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://www.btselem.org/video/20240905_btselem_at_unsc#full",
+      "title": "B'Tselem at the UNSC: For the Israeli government, the occupation and the settlements matter more than human life",
+      "page_num": 2,
+      "bytes": 101303,
+      "sha1": "06316409e5c375477d3550471dd4e316cca8560c"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://www.btselem.org/gaza_strip/20240630_israel_must_free_the_hostages_in_a_deal_and_not_at_the_cost_of_killing_hunreds_of_uninvold_gazans",
+      "title": "Israel must free the hostages in a deal, not at the cost of killing hundreds of civilians in Gaza",
+      "page_num": 2,
+      "bytes": 104510,
+      "sha1": "4d58f74670f4474ffa0938f34bc198fbe3c898a0"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://www.btselem.org/press_releases/20240520_the_era_of_impunity_for_israeli_decision_makers_is_over",
+      "title": "The era of impunity for Israeli decision-makers is over",
+      "page_num": 2,
+      "bytes": 97595,
+      "sha1": "5522ad0d8911847d3a9f933948ae2fbb761ae6de"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://www.btselem.org/publications/202404_manufacturing_famine",
+      "title": "New position paper: Manufacturing famine",
+      "page_num": 2,
+      "bytes": 130083,
+      "sha1": "d659a48cb8ac0e7a8df9b138af89cdce603b0dce"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://www.btselem.org/gaza_strip/20240221_establishing_so_called_security_zone_in_gaza_is_a_war_crime",
+      "title": "Establishing a “security zone” in Gaza is a war crime",
+      "page_num": 2,
+      "bytes": 111509,
+      "sha1": "466969eadb751a6dc73540b3b8d7175e8af1e724"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://www.btselem.org/press_releses/20240207_israel_based_civil_society_and_human_rights_organizations_call_for_a_ceasefire",
+      "title": "Israel-based civil society and human rights organizations call for a ceasefire",
+      "page_num": 3,
+      "bytes": 107028,
+      "sha1": "2db6b3fce18e0df59b880c63f016a3c858339e68"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://www.btselem.org/gaza_strip/20240201_epidemics_on_the_rise_and_masses_injured_and_ill_yet_gazas_healthcare_system_is_barely_functioning",
+      "title": "Epidemics on the rise and masses injured and ill – yet Gaza’s healthcare system is barely functioning",
+      "page_num": 3,
+      "bytes": 108929,
+      "sha1": "a6bb8e3ada21fb0001d936ec789764a77d6d963a"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://www.btselem.org/gaza_strip/20240108_israel_is_starving_gaza",
+      "title": "Israel is starving Gaza",
+      "page_num": 3,
+      "bytes": 108430,
+      "sha1": "79801aa1f88c222e2eb40a8b90ebdae21f1aa891"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://www.btselem.org/press_releases/20231218_btselem_calls_for_ceasefire_in_gaza_strip",
+      "title": "B’Tselem calls for ceasefire in Gaza Strip",
+      "page_num": 3,
+      "bytes": 107620,
+      "sha1": "42baebaff510aa50b9878b2cd8f0ae2af6ddf7e6"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://www.btselem.org/hebrew/press_releases/20231213_israeli_organizations_to_president_biden_stop_the_humanitarian_catastrophe",
+      "title": "Israeli organizations to President Biden: stop the humanitarian catastrophe",
+      "page_num": 3,
+      "bytes": 103538,
+      "sha1": "4584b0779665189085d14efcf77533c5eec66c14"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://www.btselem.org/gaza_strip/20231207_humanitarian_catastrophe_as_policy",
+      "title": "Humanitarian catastrophe as policy",
+      "page_num": 3,
+      "bytes": 125187,
+      "sha1": "0fde604aa65005255380e7cbf4c05fed4083f163"
+    },
+    {
+      "id": 31,
+      "file": "article_0031.html",
+      "url": "https://www.btselem.org/gaza_strip/20231205_israel_is_not_fighting_against_hamas_but_against_civilians_implementing_a_criminal_policy_of_bombings",
+      "title": "Israel is not fighting against Hamas but against civilians, implementing a criminal policy of bombings",
+      "page_num": 3,
+      "bytes": 109829,
+      "sha1": "47d2fb59c2493740dc6f37ada6e0c5ad9d2fd233"
+    },
+    {
+      "id": 32,
+      "file": "article_0032.html",
+      "url": "https://www.btselem.org/gaza_strip/20231129_international_community_has_to_clarify_red_lines_israel_must_not_cross_again",
+      "title": "International community has to clarify red lines Israel must not cross again",
+      "page_num": 3,
+      "bytes": 104596,
+      "sha1": "847c29ed8cc14e22b4bbc0c8b42de5ac52ffbeb0"
+    },
+    {
+      "id": 33,
+      "file": "article_0033.html",
+      "url": "https://www.btselem.org/voices_from_gaza",
+      "title": "Testimonies from the scenes of horror in Gaza",
+      "page_num": 3,
+      "bytes": 451544,
+      "sha1": "1b5fbff81b90c1950b98915c9628a4b54d55f19d"
+    },
+    {
+      "id": 34,
+      "file": "article_0034.html",
+      "url": "https://www.btselem.org/gaza_strip/20231116_nowhere_to_go_israeli_military_evacuation_order_for_east_of_khan_yunis_unfeasible",
+      "title": "Nowhere to go: Israeli military evacuation order for east of Khan Yunis unfeasible",
+      "page_num": 3,
+      "bytes": 102143,
+      "sha1": "e910b5e7941bfc5e499139bc6680e69c0ca24c43"
+    },
+    {
+      "id": 35,
+      "file": "article_0035.html",
+      "url": "https://www.btselem.org/press_releases/20231110_gaza_needs_a_humanitarian_pause_now",
+      "title": "Gaza needs a humanitarian pause now",
+      "page_num": 3,
+      "bytes": 106675,
+      "sha1": "b9ed9c23412bb2454f0512162551dcf2af07e427"
+    },
+    {
+      "id": 36,
+      "file": "article_0036.html",
+      "url": "https://www.btselem.org/gaza_strip/20231108_israel_has_killed_more_than_10000_people_in_gaza_it_must_stop",
+      "title": "Israel has killed more than 10,000 people, over half of them women and children, in its attacks on Gaza. It must stop",
+      "page_num": 3,
+      "bytes": 101976,
+      "sha1": "10fee423be50bb1cc1c324bd1db7532eb49c8972"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 3,
+    "articles": 36,
+    "article_fetch_failures": 0
+  }
+}

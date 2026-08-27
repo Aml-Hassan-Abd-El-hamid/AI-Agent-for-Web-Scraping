@@ -1,0 +1,149 @@
+{
+  "website": "qudsn",
+  "snapshot_date": "2026-08-27T09:44:43",
+  "pagination_type": "numbered pagination",
+  "scroll_mode": null,
+  "scroll_rounds_requested": null,
+  "load_more_selector": null,
+  "listing_url": "https://qudsn.co/post/category/6024/%D9%85%D8%AA%D8%A7%D8%A8%D8%B9%D8%A7%D8%AA-%D9%82%D8%AF%D8%B3",
+  "input_urls": [
+    "https://qudsn.co/post/category/6024/%D9%85%D8%AA%D8%A7%D8%A8%D8%B9%D8%A7%D8%AA-%D9%82%D8%AF%D8%B3",
+    "https://qudsn.co/post/category/6024/%D9%85%D8%AA%D8%A7%D8%A8%D8%B9%D8%A7%D8%AA-%D9%82%D8%AF%D8%B3?page=2"
+  ],
+  "pagination_pattern": "https://qudsn.co/post/category/6024/%D9%85%D8%AA%D8%A7%D8%A8%D8%B9%D8%A7%D8%AA-%D9%82%D8%AF%D8%B3?page={page}",
+  "requirements": "title, date, article body text",
+  "run_dir": "orch_runs/run_20260827_094221",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://qudsn.co/post/category/6024/%D9%85%D8%AA%D8%A7%D8%A8%D8%B9%D8%A7%D8%AA-%D9%82%D8%AF%D8%B3",
+      "file": "listing_page_001.html",
+      "bytes": 139409,
+      "sha1": "6a96ab228df68c7dfb09d857f021d6b27d92c738"
+    },
+    {
+      "page_num": 2,
+      "url": "https://qudsn.co/post/category/6024/%D9%85%D8%AA%D8%A7%D8%A8%D8%B9%D8%A7%D8%AA-%D9%82%D8%AF%D8%B3?page=2",
+      "file": "listing_page_002.html",
+      "bytes": 139419,
+      "sha1": "f77b40de4f5ae0ec1a9642bd663cd2be211192a8"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://qudsn.co/post?id=217247&slug=%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84-%D8%AA%D8%AF%D8%B1%D8%B3-%D8%B7%D8%B1%D8%AF-%D9%85%D8%B3%D8%A4%D9%88%D9%84%D9%8A%D9%86-%D8%A8%D8%B1%D9%8A%D8%B7%D8%A7%D9%86%D9%8A%D9%8A%D9%86-%D9%88%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A%D9%8A%D9%86-%D9%85%D9%86-%D9%85%D8%B1%D9%83%D8%B2-%D8%AA%D9%86%D8%B3%D9%8A%D9%82-%D8%BA%D8%B2%D8%A9",
+      "title": "إسرائيل تدرس طرد مسؤولين بريطانيين وأوروبيين من مركز تنسيق غزة",
+      "page_num": 1,
+      "bytes": 168306,
+      "sha1": "f8d87bb40ae0f1be6afadcfd0d5308897cbed794"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://qudsn.co/post?id=217245&slug=%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D8%A7-%D8%AA%D8%B5%D9%86%D9%91%D9%81-%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86-%D8%A3%D9%83%D8%B4%D9%86-%D9%88%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B1-%D8%A7%D9%84%D8%A8%D8%AF%D9%8A%D9%84-%D9%85%D9%86%D8%B8%D9%85%D8%AA%D9%8A%D9%86-%D8%A5%D8%B1%D9%87%D8%A7%D8%A8%D9%8A%D8%AA%D9%8A%D9%86-%D9%88%D8%AA%D9%81%D8%B1%D8%B6-%D8%B9%D9%82%D9%88%D8%A8%D8%A7%D8%AA-%D8%B9%D9%84%D9%8A%D9%87%D9%85%D8%A7",
+      "title": "أمريكا تصنّف \"فلسطين أكشن\" و\"المسار البديل\" منظمتين إرهابيتين وتفرض عقوبات عليهما",
+      "page_num": 1,
+      "bytes": 171798,
+      "sha1": "f21094438ed029a4a1e66e499348f6c6576ab111"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://qudsn.co/post?id=217243&slug=%D9%85%D8%B4%D8%AA%D8%B1%D8%B7%D8%A7%D9%8B-%D8%A7%D9%84%D8%AA%D8%B7%D8%A8%D9%8A%D8%B9-%D9%85%D8%B9-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84-%D8%AA%D8%B1%D8%A7%D9%85%D8%A8-%D9%8A%D8%AD%D9%8A%D9%84-%D8%A7%D8%AA%D9%81%D8%A7%D9%82-%D8%A7%D9%84%D8%AA%D8%B9%D8%A7%D9%88%D9%86-%D8%A7%D9%84%D9%86%D9%88%D9%88%D9%8A-%D9%85%D8%B9-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D9%83%D9%88%D9%86%D8%BA%D8%B1%D8%B3",
+      "title": "مشترطاً التطبيع مع \"إسرائيل\".. ترامب يحيل اتفاق التعاون النووي مع السعودية إلى الكونغرس",
+      "page_num": 1,
+      "bytes": 169780,
+      "sha1": "5b8d14005a7d616fa0cef5eb632e6b6137c0d24d"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://qudsn.co/post?id=217242&slug=%D8%A7%D8%B1%D8%A8%D8%B7%D9%88%D9%87%D9%85-%D8%A8%D8%AD%D9%85%D8%A7%D8%B3-%D8%AC%D9%86%D8%AF%D9%8A-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84%D9%8A-%D9%8A%D9%83%D8%B4%D9%81-%D9%83%D9%8A%D9%81-%D9%8A%D8%A8%D8%B1%D8%B1-%D8%A7%D9%84%D8%A7%D8%AD%D8%AA%D9%84%D8%A7%D9%84-%D9%85%D8%AC%D8%A7%D8%B2%D8%B1%D9%87-%D9%81%D9%8A-%D8%BA%D8%B2%D8%A9",
+      "title": "\"اربطوهم بحماس\".. جندي إسرائيلي يكشف كيف يبرر الاحتلال مجازره في غزة",
+      "page_num": 1,
+      "bytes": 169965,
+      "sha1": "c811686e599b802a27ea7f5f18556f478b8baecf"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://qudsn.co/post?id=217241&slug=%D9%85%D8%B9%D9%87%D8%AF-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84%D9%8A-%D9%8A%D8%AA%D9%87%D9%85-%D8%A7%D9%84%D9%85%D9%86%D8%A7%D9%87%D8%AC-%D8%A7%D9%84%D8%A3%D8%B1%D8%AF%D9%86%D9%8A%D8%A9-%D8%A8%D8%AA%D8%A8%D9%86%D9%8A-%D9%85%D8%B9%D8%A7%D8%AF%D8%A7%D8%A9-%D8%A7%D9%84%D8%B3%D8%A7%D9%85%D9%8A%D8%A9",
+      "title": "معهد إسرائيلي يتهم المناهج الأردنية بتبني \"معاداة السامية\"",
+      "page_num": 1,
+      "bytes": 169046,
+      "sha1": "18309b36df621514097479633a599a794cdd4ab7"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://qudsn.co/post?id=217227&slug=%D8%A3%D9%88%D9%86%D8%B1%D9%88%D8%A7-%D9%84%D9%80-%D8%B4%D8%A8%D9%83%D8%A9-%D9%82%D9%8F%D8%AF%D8%B3-%D9%86%D8%B7%D8%A7%D9%84%D8%A8-%D8%A8%D8%AA%D8%AF%D8%AE%D9%84-%D8%AF%D9%88%D9%84%D9%8A-%D9%81%D9%88%D8%B1%D9%8A-%D9%84%D9%84%D8%AD%D9%81%D8%A7%D8%B8-%D8%B9%D9%84%D9%89-%D9%85%D8%B9%D9%87%D8%AF-%D9%82%D9%84%D9%86%D8%AF%D9%8A%D8%A7%C2%A0",
+      "title": "أونروا لـ \"شبكة قُدس\": نطالب بتدخل دولي فوري للحفاظ على معهد قلنديا",
+      "page_num": 1,
+      "bytes": 176838,
+      "sha1": "1b08746285e41f395133a6e7b03edb9d15353216"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://qudsn.co/post?id=217225&slug=%D9%81%D8%B5%D8%A7%D8%A6%D9%84-%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A%D8%A9-%D8%A7%D8%B3%D8%AA%D9%87%D8%AF%D8%A7%D9%81-%D8%A7%D9%84%D8%A3%D9%88%D9%86%D8%B1%D9%88%D8%A7-%D9%85%D8%AD%D8%A7%D9%88%D9%84%D8%A9-%D9%84%D8%B6%D8%B1%D8%A8-%D8%A5%D8%AD%D8%AF%D9%89-%D8%A3%D9%87%D9%85-%D8%A7%D9%84%D9%85%D8%A4%D8%B3%D8%B3%D8%A7%D8%AA-%D8%A7%D9%84%D8%AF%D9%88%D9%84%D9%8A%D8%A9",
+      "title": "فصائل فلسطينية: استهداف الأونروا محاولة لضرب إحدى أهم المؤسسات الدولية",
+      "page_num": 1,
+      "bytes": 175229,
+      "sha1": "c679635abd15e9fd5a5ca1df884b0c299c9c5f3d"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://qudsn.co/post?id=217221&slug=%D8%AB%D9%84%D8%A7%D8%AB%D8%A9-%D8%A3%D8%B4%D9%82%D8%A7%D8%A1-%D9%88%D9%88%D8%A7%D9%84%D8%AF%D8%AA%D9%87%D9%85-%D9%8A%D8%B6%D8%B1%D8%A8%D9%88%D9%86-%D8%B9%D9%86-%D8%A7%D9%84%D8%B7%D8%B9%D8%A7%D9%85-%D8%A7%D8%AD%D8%AA%D8%AC%D8%A7%D8%AC%D8%A7-%D8%B9%D9%84%D9%89-%D8%A7%D8%B3%D8%AA%D9%85%D8%B1%D8%A7%D8%B1-%D8%A7%D8%B9%D8%AA%D9%82%D8%A7%D9%84%D9%87%D9%85-%D9%81%D9%8A-%D8%B3%D8%AC%D9%86-%D8%A7%D9%84%D8%AC%D9%86%D9%8A%D8%AF",
+      "title": "ثلاثة أشقاء ووالدتهم يضربون عن الطعام احتجاجا على استمرار اعتقالهم في سجن الجنيد",
+      "page_num": 1,
+      "bytes": 168629,
+      "sha1": "741d0639b4312612d7ba47bd717aad13aa0d6037"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://qudsn.co/post?id=217220&slug=68-%D8%AD%D8%A7%D8%AF%D8%AB%D9%8B%D8%A7-%D8%AE%D9%84%D8%A7%D9%84-6-%D8%A3%D8%B4%D9%87%D8%B1-%D9%83%D9%8A%D9%81-%D8%AA%D8%AD%D9%88%D9%84-%D9%85%D8%B6%D9%8A%D9%82-%D9%87%D8%B1%D9%85%D8%B2-%D8%A5%D9%84%D9%89-%D8%B3%D8%A7%D8%AD%D8%A9-%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9-%D9%84%D9%84%D8%AD%D8%B1%D8%A8%D8%9F",
+      "title": "68 حادثًا خلال 6 أشهر.. كيف تحول مضيق هرمز إلى ساحة رئيسية للحرب؟",
+      "page_num": 1,
+      "bytes": 170411,
+      "sha1": "a9860bd7d67a3c65e6de494bab9245928138f00d"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://qudsn.co/post?id=217219&slug=4113-%D8%A7%D8%B9%D8%AA%D8%AF%D8%A7%D8%A1%D9%8B-%D9%84%D9%84%D9%85%D8%B3%D8%AA%D9%88%D8%B7%D9%86%D9%8A%D9%86-%D9%81%D9%8A-%D8%A7%D9%84%D8%B6%D9%81%D8%A9-%D8%AE%D9%84%D8%A7%D9%84-7-%D8%A3%D8%B4%D9%87%D8%B1-%D8%A7%D8%B1%D8%AA%D9%81%D8%A7%D8%B9-63-%D8%B9%D9%86-2025",
+      "title": "4113 اعتداءً للمستوطنين في الضفة خلال 7 أشهر.. ارتفاع 63% عن 2025",
+      "page_num": 1,
+      "bytes": 169197,
+      "sha1": "3c7890a93711befa57c585a0cb111e13c9e7e82a"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://qudsn.co/post?id=217218&slug=%D8%A5%D8%AE%D9%84%D8%A7%D8%A1-%D9%85%D8%B9%D9%87%D8%AF-%D9%82%D9%84%D9%86%D8%AF%D9%8A%D8%A7-%D8%A8%D9%86-%D8%BA%D9%81%D9%8A%D8%B1-%D9%8A%D9%82%D9%88%D8%AF-%D8%A7%D9%82%D8%AA%D8%AD%D8%A7%D9%85-%D8%A7%D9%84%D8%A7%D8%AD%D8%AA%D9%84%D8%A7%D9%84-%D9%84%D9%85%D9%86%D8%B4%D8%A3%D8%A9-%D8%AA%D8%A7%D8%A8%D8%B9%D8%A9-%D9%84%D9%84%D8%A3%D9%88%D9%86%D8%B1%D9%88%D8%A7-%D8%B4%D9%85%D8%A7%D9%84-%D8%A7%D9%84%D9%82%D8%AF%D8%B3",
+      "title": "إخلاء معهد قلنديا.. بن غفير يقود اقتحام الاحتلال لمنشأة تابعة للأونروا شمال القدس",
+      "page_num": 1,
+      "bytes": 169337,
+      "sha1": "0bc55dc8bb01322d7cbeb7ba8fe9731494d48ef3"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://qudsn.co/post?id=217216&slug=%D8%B1%D8%AD%D9%8A%D9%84-%D8%B5%D8%A7%D8%AD%D8%A8-%D8%A3%D9%8A%D9%82%D9%88%D9%86%D8%A9-%D8%AC%D9%85%D9%84-%D8%A7%D9%84%D9%85%D8%AD%D8%A7%D9%85%D9%84-%D9%85%D9%86-%D9%87%D9%88-%D8%A7%D9%84%D9%81%D9%86%D8%A7%D9%86-%D8%A7%D9%84%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A-%D8%B3%D9%84%D9%8A%D9%85%D8%A7%D9%86-%D9%85%D9%86%D8%B5%D9%88%D8%B1%D8%9F",
+      "title": "رحيل صاحب أيقونة \"جمل المحامل\".. من هو الفنان الفلسطيني سليمان منصور؟",
+      "page_num": 1,
+      "bytes": 170360,
+      "sha1": "1c98e0ecfbfa1bdf743f3e31629512a0de4b6afd"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 2,
+    "articles": 12,
+    "article_fetch_failures": 0
+  }
+}

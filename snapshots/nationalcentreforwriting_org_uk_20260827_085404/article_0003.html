@@ -1,0 +1,1755 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+<script>
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}});
+</script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <script src="https://webcomponents.spektrix.com/stable/webcomponents-loader.js"></script>
+	<script src="https://webcomponents.spektrix.com/stable/spektrix-component-loader.js" data-components="spektrix-donate,spektrix-merchandise,spektrix-basket-summary,spektrix-memberships,spektrix-gift-vouchers" async></script>
+  <script type="text/javascript" src="https://tickets.nationalcentreforwriting.org.uk/writerscentre/website/scripts/integrate.js"></script>
+
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v28.3 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>The spirit of place: Laurence Mitchell on Flint Country | National Centre for Writing | NCW</title>
+	<meta name="description" content="In this episode of The Writing Life Podcast, Laurence Mitchell reveals how he brought the spirit of place onto the page in his book, Flint Country." />
+	<link rel="canonical" href="https://nationalcentreforwriting.org.uk/writing-hub/the-spirit-of-place-laurence-mitchell-on-flint-country/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="The spirit of place: Laurence Mitchell on Flint Country" />
+	<meta property="og:description" content="In this episode of The Writing Life Podcast, Laurence Mitchell reveals how he brought the spirit of landscape and place onto the page in his book, Flint Country: A Stone Journey." />
+	<meta property="og:url" content="https://nationalcentreforwriting.org.uk/writing-hub/the-spirit-of-place-laurence-mitchell-on-flint-country/" />
+	<meta property="og:site_name" content="National Centre for Writing | NCW" />
+	<meta property="article:modified_time" content="2026-08-24T11:34:00+00:00" />
+	<meta property="og:image" content="https://nationalcentreforwriting.org.uk/wp-content/uploads/2026/05/LaurenceMitchell.jpg" />
+	<meta property="og:image:width" content="900" />
+	<meta property="og:image:height" content="900" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="1 minute" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/the-spirit-of-place-laurence-mitchell-on-flint-country\/","url":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/the-spirit-of-place-laurence-mitchell-on-flint-country\/","name":"The spirit of place: Laurence Mitchell on Flint Country | National Centre for Writing | NCW","isPartOf":{"@id":"https:\/\/nationalcentreforwriting.org.uk\/#website"},"primaryImageOfPage":{"@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/the-spirit-of-place-laurence-mitchell-on-flint-country\/#primaryimage"},"image":{"@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/the-spirit-of-place-laurence-mitchell-on-flint-country\/#primaryimage"},"thumbnailUrl":"https:\/\/nationalcentreforwriting.org.uk\/wp-content\/uploads\/2026\/05\/LaurenceMitchell.jpg","datePublished":"2026-08-24T04:05:00+00:00","dateModified":"2026-08-24T11:34:00+00:00","description":"In this episode of The Writing Life Podcast, Laurence Mitchell reveals how he brought the spirit of place onto the page in his book, Flint Country.","breadcrumb":{"@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/the-spirit-of-place-laurence-mitchell-on-flint-country\/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/the-spirit-of-place-laurence-mitchell-on-flint-country\/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/the-spirit-of-place-laurence-mitchell-on-flint-country\/#primaryimage","url":"https:\/\/nationalcentreforwriting.org.uk\/wp-content\/uploads\/2026\/05\/LaurenceMitchell.jpg","contentUrl":"https:\/\/nationalcentreforwriting.org.uk\/wp-content\/uploads\/2026\/05\/LaurenceMitchell.jpg","width":900,"height":900,"caption":"The Spirit of Place with Laurence Mitchell"},{"@type":"BreadcrumbList","@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/the-spirit-of-place-laurence-mitchell-on-flint-country\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/nationalcentreforwriting.org.uk\/"},{"@type":"ListItem","position":2,"name":"The spirit of place: Laurence Mitchell on Flint Country"}]},{"@type":"WebSite","@id":"https:\/\/nationalcentreforwriting.org.uk\/#website","url":"https:\/\/nationalcentreforwriting.org.uk\/","name":"National Centre for Writing | NCW","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/nationalcentreforwriting.org.uk\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="National Centre for Writing | NCW &raquo; Feed" href="https://nationalcentreforwriting.org.uk/feed/" />
+<link rel="alternate" type="application/rss+xml" title="National Centre for Writing | NCW &raquo; Comments Feed" href="https://nationalcentreforwriting.org.uk/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="National Centre for Writing | NCW &raquo; The spirit of place: Laurence Mitchell on Flint Country Comments Feed" href="https://nationalcentreforwriting.org.uk/writing-hub/the-spirit-of-place-laurence-mitchell-on-flint-country/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://nationalcentreforwriting.org.uk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnationalcentreforwriting.org.uk%2Fwriting-hub%2Fthe-spirit-of-place-laurence-mitchell-on-flint-country%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://nationalcentreforwriting.org.uk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnationalcentreforwriting.org.uk%2Fwriting-hub%2Fthe-spirit-of-place-laurence-mitchell-on-flint-country%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='search-filter-plugin-styles-css' href='https://nationalcentreforwriting.org.uk/wp-content/plugins/search-filter-pro/public/assets/css/search-filter.min.css?ver=2.5.21' media='all' />
+<link rel='stylesheet' id='ncw-style-css' href='https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/style.css?ver=1771947514' media='all' />
+<link rel='stylesheet' id='mobile-nav-css' href='https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/lib/mobile-navigation/mmenu.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='ncw-slick-style-css' href='https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/css/slick.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='ncw-slick-theme-css' href='https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/css/slick-theme.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='moove_gdpr_frontend-css' href='https://nationalcentreforwriting.org.uk/wp-content/plugins/gdpr-cookie-compliance/dist/styles/gdpr-main-nf.css?ver=5.1.0' media='all' />
+<style id="moove_gdpr_frontend-inline-css">
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.moove-gdpr-infobar-settings-btn,
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-settings-btn {
+					background-color: transparent;
+					box-shadow: inset 0 0 0 1px currentColor;
+					opacity: .7;
+					color: #202020;
+				}
+
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.moove-gdpr-infobar-settings-btn:hover,
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-settings-btn:hover {
+					background-color: #202020;
+					box-shadow: none;
+					color: #fff;
+					opacity: 1;
+				}
+
+				#moove_gdpr_cookie_info_bar:not(.gdpr-full-screen-infobar).moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.moove-gdpr-infobar-settings-btn, #moove_gdpr_cookie_info_bar:not(.gdpr-full-screen-infobar).moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-settings-btn {
+					background-color: transparent;
+					box-shadow: inset 0 0 0 1px currentColor;
+					opacity: .7;
+					color: #fff;
+				}
+
+				#moove_gdpr_cookie_info_bar:not(.gdpr-full-screen-infobar).moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.moove-gdpr-infobar-settings-btn:hover, #moove_gdpr_cookie_info_bar:not(.gdpr-full-screen-infobar).moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-settings-btn:hover {
+					box-shadow: none;
+					opacity: 1;
+					color: #202020;
+					background-color: #fff;
+				}
+							#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main h3.tab-title, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main span.tab-title,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content .moove-gdpr-branding-cnt a,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton,
+				#moove_gdpr_cookie_modal .cookie-switch .cookie-slider:after, 
+				#moove_gdpr_cookie_modal .cookie-switch .slider:after, 
+				#moove_gdpr_cookie_modal .switch .cookie-slider:after, 
+				#moove_gdpr_cookie_modal .switch .slider:after,
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content p, 
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content p a,
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton, 
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h1, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h2, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h3, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h4, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h5, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h6,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-modal-title .tab-title,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-tab-main h3.tab-title, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-tab-main span.tab-title,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-branding-cnt a {
+					font-weight: inherit				}
+			#moove_gdpr_cookie_modal,#moove_gdpr_cookie_info_bar,.gdpr_cookie_settings_shortcode_content{font-family:inherit}#moove_gdpr_save_popup_settings_button{background-color:#373737;color:#fff}#moove_gdpr_save_popup_settings_button:hover{background-color:#000}#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton,#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton{background-color:#f6a000}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton,.gdpr_cookie_settings_shortcode_content .gdpr-shr-button.button-green,.gdpr-blocked-recaptcha .gdpr-shr-button.button-green{background-color:#f6a000;border-color:#f6a000}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton:hover,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton:hover,.gdpr_cookie_settings_shortcode_content .gdpr-shr-button.button-green:hover,.gdpr-blocked-recaptcha .gdpr-shr-button.button-green:hover{background-color:#fff;color:#f6a000}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close span.gdpr-icon{background-color:#f6a000;border:1px solid #f6a000}#moove_gdpr_cookie_info_bar span.moove-gdpr-infobar-allow-all.focus-g,#moove_gdpr_cookie_info_bar span.moove-gdpr-infobar-allow-all:focus,#moove_gdpr_cookie_info_bar button.moove-gdpr-infobar-allow-all.focus-g,#moove_gdpr_cookie_info_bar button.moove-gdpr-infobar-allow-all:focus,#moove_gdpr_cookie_info_bar span.moove-gdpr-infobar-reject-btn.focus-g,#moove_gdpr_cookie_info_bar span.moove-gdpr-infobar-reject-btn:focus,#moove_gdpr_cookie_info_bar button.moove-gdpr-infobar-reject-btn.focus-g,#moove_gdpr_cookie_info_bar button.moove-gdpr-infobar-reject-btn:focus,#moove_gdpr_cookie_info_bar span.change-settings-button.focus-g,#moove_gdpr_cookie_info_bar span.change-settings-button:focus,#moove_gdpr_cookie_info_bar button.change-settings-button.focus-g,#moove_gdpr_cookie_info_bar button.change-settings-button:focus{-webkit-box-shadow:0 0 1px 3px #f6a000;-moz-box-shadow:0 0 1px 3px #f6a000;box-shadow:0 0 1px 3px #f6a000}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close i:hover,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close span.gdpr-icon:hover,#moove_gdpr_cookie_info_bar span[data-href]>u.change-settings-button{color:#f6a000}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li.menu-item-selected a span.gdpr-icon,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li.menu-item-selected button span.gdpr-icon{color:inherit}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a span.gdpr-icon,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button span.gdpr-icon{color:inherit}#moove_gdpr_cookie_modal .gdpr-acc-link{line-height:0;font-size:0;color:transparent;position:absolute}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close:hover i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content a:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content span.change-settings-button:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.change-settings-button:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content u.change-settings-button:hover,#moove_gdpr_cookie_info_bar span[data-href]>u.change-settings-button,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content span.change-settings-button.focus-g,span.change-settings-button:focus,button.change-settings-button.focus-g,button.change-settings-button:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content u.change-settings-button.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content u.change-settings-button:focus{color:#f6a000}#moove_gdpr_cookie_modal .moove-gdpr-branding.focus-g span,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main a.focus-g,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .gdpr-cd-details-toggle.focus-g{color:#f6a000}#moove_gdpr_cookie_modal.gdpr_lightbox-hide{display:none}#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton,#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton,.gdpr-shr-button,#moove_gdpr_cookie_info_bar .moove-gdpr-infobar-close-btn{border-radius:0}
+/*# sourceURL=moove_gdpr_frontend-inline-css */
+</style>
+<script id="jquery-js" src="//ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js?ver=20171012"></script>
+<script id="search-filter-plugin-build-js-extra">
+var SF_LDATA = {"ajax_url":"https://nationalcentreforwriting.org.uk/wp-admin/admin-ajax.php","home_url":"https://nationalcentreforwriting.org.uk/","extensions":[]};
+//# sourceURL=search-filter-plugin-build-js-extra
+</script>
+<script id="search-filter-plugin-build-js" src="https://nationalcentreforwriting.org.uk/wp-content/plugins/search-filter-pro/public/assets/js/search-filter-build.min.js?ver=2.5.21"></script>
+<script id="search-filter-plugin-chosen-js" src="https://nationalcentreforwriting.org.uk/wp-content/plugins/search-filter-pro/public/assets/js/chosen.jquery.min.js?ver=2.5.21"></script>
+<link rel="https://api.w.org/" href="https://nationalcentreforwriting.org.uk/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://nationalcentreforwriting.org.uk/wp-json/wp/v2/writing_hub/51283" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://nationalcentreforwriting.org.uk/xmlrpc.php?rsd" />
+<link rel='shortlink' href='https://nationalcentreforwriting.org.uk/?p=51283' />
+<meta name="cdp-version" content="1.5.6" /><link rel="pingback" href="https://nationalcentreforwriting.org.uk/xmlrpc.php">      	<style>
+		.internal_hero{
+			background-image: url("https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/default-header.png");
+      background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/default-header.png");
+      background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/default-header.png");
+      background-position: 0px 0px, 50% 50%;
+      background-size: auto, cover;
+      background-repeat: repeat, no-repeat;
+		}
+	</style>
+  <link rel='stylesheet' id='gform_basic-css' href='https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/css/dist/basic.min.css?ver=3.0.3' media='all' />
+<link rel='stylesheet' id='gform_theme_components-css' href='https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/css/dist/theme-components.min.css?ver=3.0.3' media='all' />
+<link rel='stylesheet' id='gform_theme-css' href='https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/css/dist/theme.min.css?ver=3.0.3' media='all' />
+
+</head>
+
+<body class="wp-singular writing_hub-template-default single single-writing_hub postid-51283 wp-theme-ncw">
+
+<div class="site_wrapper"> <!-- Site Wrapper -->
+
+	<div id="page" class="site">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+    
+    
+      <header id="masthead" class="site-header">
+
+        
+        <div class="logo_nav_holder"> <!-- Logo Nav Holder -->
+
+          <div class="logo"> <!-- Logo -->
+            <a href="https://nationalcentreforwriting.org.uk/" rel="home">
+              <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/ncw-logo.svg" alt="NCW Logo" />
+            </a>
+          </div> <!-- / Logo -->
+
+          <div class="nav_icon"><!-- Nav Icon -->
+            <a href="#mobile-navigation">
+              <div id="nav_icon" class="hamburger hamburger--squeeze">
+                <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+                </div>
+              </div>
+            </a>
+          </div> <!-- / Nav Icon -->
+
+          <div class="main_nav"> <!-- Main Nav -->
+
+            <nav id="site-navigation" class="main-navigation">
+              <div class="menu-menu-1-container"><ul id="primary-menu" class="menu"><li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-109"><a href="https://nationalcentreforwriting.org.uk/whats-on/">What’s On</a>
+<ul class="sub-menu">
+	<li id="menu-item-16582" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16582"><a href="https://nationalcentreforwriting.org.uk/whats-on/">All Events</a></li>
+	<li id="menu-item-51505" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51505"><a href="https://nationalcentreforwriting.org.uk/darkest-chapter/">Darkest Chapter</a></li>
+	<li id="menu-item-48417" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48417"><a href="https://nationalcentreforwriting.org.uk/whats-on/summer/">Summer at the National Centre for Writing</a></li>
+	<li id="menu-item-43339" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43339"><a href="https://nationalcentreforwriting.org.uk/programmes/browse-our-season-brochure/">Season Brochure</a></li>
+	<li id="menu-item-33130" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33130"><a href="https://nationalcentreforwriting.org.uk/the-global-page-2/">The Global Page  </a></li>
+</ul>
+</li>
+<li id="menu-item-63" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-63"><a href="https://nationalcentreforwriting.org.uk/get-involved/">Get involved</a>
+<ul class="sub-menu">
+	<li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="https://nationalcentreforwriting.org.uk/get-involved/writers/">For writers</a></li>
+	<li id="menu-item-61" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="https://nationalcentreforwriting.org.uk/get-involved/translators/">For translators</a></li>
+	<li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="https://nationalcentreforwriting.org.uk/get-involved/communities/">For communities</a></li>
+	<li id="menu-item-825" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-825"><a href="https://nationalcentreforwriting.org.uk/get-involved/young-people/">For young people</a></li>
+	<li id="menu-item-826" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-826"><a href="https://nationalcentreforwriting.org.uk/get-involved/families/">For families</a></li>
+	<li id="menu-item-827" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-827"><a href="https://nationalcentreforwriting.org.uk/get-involved/schools/">For teachers</a></li>
+	<li id="menu-item-828" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-828"><a href="https://nationalcentreforwriting.org.uk/norwich-unesco-city-of-literature/">Norwich UNESCO City of Literature</a></li>
+</ul>
+</li>
+<li id="menu-item-55" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-55"><a href="https://nationalcentreforwriting.org.uk/academy/">Academy</a>
+<ul class="sub-menu">
+	<li id="menu-item-44919" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44919"><a href="https://nationalcentreforwriting.org.uk/the-writing-life-challenge/">The Writing Life Challenge</a></li>
+	<li id="menu-item-830" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-830"><a href="https://nationalcentreforwriting.org.uk/academy/tutored-courses/">Online tutored courses</a></li>
+	<li id="menu-item-832" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-832"><a href="https://nationalcentreforwriting.org.uk/academy/workshops/">Workshops</a></li>
+	<li id="menu-item-65" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65"><a href="https://nationalcentreforwriting.org.uk/academy/mentoring/">Mentoring</a></li>
+	<li id="menu-item-831" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-831"><a href="https://nationalcentreforwriting.org.uk/academy/live-evening-courses/">Evening courses</a></li>
+	<li id="menu-item-829" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-829"><a href="https://nationalcentreforwriting.org.uk/academy/self-paced-courses/">Self-paced online courses</a></li>
+	<li id="menu-item-8145" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8145"><a href="https://nationalcentreforwriting.org.uk/get-involved/writers/resources/">Free resources</a></li>
+</ul>
+</li>
+<li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="https://nationalcentreforwriting.org.uk/writing-hub/">Writing Hub</a></li>
+<li id="menu-item-10937" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10937"><a href="https://nationalcentreforwriting.org.uk/visit-us/">Visit</a>
+<ul class="sub-menu">
+	<li id="menu-item-27672" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27672"><a href="https://nationalcentreforwriting.org.uk/plan-your-visit/">Plan your visit</a></li>
+	<li id="menu-item-26050" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26050"><a href="https://nationalcentreforwriting.org.uk/writers-room/">Writers’ Room</a></li>
+	<li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="https://nationalcentreforwriting.org.uk/visit-us/the-literature-house/accessibility/">Accessibility</a></li>
+</ul>
+</li>
+<li id="menu-item-10938" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10938"><a href="https://nationalcentreforwriting.org.uk/about-us/">About us</a>
+<ul class="sub-menu">
+	<li id="menu-item-10731" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10731"><a href="https://nationalcentreforwriting.org.uk/support-us/">Join and support</a></li>
+	<li id="menu-item-14985" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14985"><a href="https://nationalcentreforwriting.org.uk/vacancies/">Join the team</a></li>
+	<li id="menu-item-14344" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14344"><a href="https://nationalcentreforwriting.org.uk/shop/">Shop</a></li>
+	<li id="menu-item-64" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"><a href="https://nationalcentreforwriting.org.uk/hire/">Hire Dragon Hall</a></li>
+	<li id="menu-item-38328" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38328"><a href="https://nationalcentreforwriting.org.uk/press/">Press</a></li>
+	<li id="menu-item-8326" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8326"><a href="https://nationalcentreforwriting.org.uk/in-the-region/">In the region</a></li>
+	<li id="menu-item-8094" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8094"><a href="https://nationalcentreforwriting.org.uk/contact/">Contact us</a></li>
+</ul>
+</li>
+<li id="menu-item-838" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-838"><a href="https://nationalcentreforwriting.org.uk/norwich-unesco-city-of-literature/">Norwich UNESCO City of Literature</a></li>
+<li id="menu-item-9085" class="mobile_only menu-item menu-item-type-custom menu-item-object-custom menu-item-9085"><a href="https://ncw-online.teachable.com/l/products">Academy Portal</a></li>
+</ul></div>            </nav><!-- #site-navigation -->
+
+            <div class="top_icons"> <!-- Top Icons -->
+
+              <a href="/my-account/"><img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/login-white.svg" width="32" height="32" alt="Profile Icon" /></a>
+              <spektrix-basket-summary client-name="writerscentre" custom-domain="tickets.nationalcentreforwriting.org.uk">
+                <a href="https://nationalcentreforwriting.org.uk/basket/" class="account_basket">
+                <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/basket-white.svg" width="32" height="32" alt="Basket Icon" />
+                <span class="basket_item_count" data-basket-item-count></span>
+                </a>
+              </spektrix-basket-summary>
+            </div> <!-- / Top Icons -->
+
+            <div class="top_link">
+              <a href="https://sso.teachable.com/secure/231323/identity/login/password" target="_blank">Academy Portal</a>
+            </div>
+
+          </div> <!-- / Main Nav -->
+
+          <div class="flyout-container" >
+
+            <div class="support_us_flyout flyout-button pink_bg" id="flyout-1-button" ><a href="#">SUPPORT NCW<img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/support_us_arrow.svg" alt="Arrow"/></a></div> <!-- Support Us Flyout -->
+
+            <div class="donation_form flyout flyout-1 pink_bg" id="donation_flyout"> <!-- Donation Form -->
+
+              <div class="donation_slider_holder"> <!-- Donation Slider Holder -->
+
+                <p class="donation_flyout_text">Every donation spreads the lifelong benefits of reading, writing and stories.</p>
+
+                <div class="donation_close"><a href="#close_search"><img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/close-white.svg" alt="X Close Icon" /></a></div>
+
+                
+                  <spektrix-donate id="steps-2801AQDNLVMHMKCPBDVJNRVPGGRHGRKHB" client-name="writerscentre" custom-domain="tickets.nationalcentreforwriting.org.uk" fund-id="2801AQDNLVMHMKCPBDVJNRVPGGRHGRKHB" forward-to="https://nationalcentreforwriting.org.uk/basket/">
+
+                      <p class="h5">Choose an amount: £<span data-display-donation-amount>0</span></p>
+                      <div class="donate_buttons">
+                        <button data-donate-amount="5">£5</button>
+                        <button data-donate-amount="10">£10</button>
+                        <button data-donate-amount="25">£25</button>
+                        <button data-donate-amount="50">£50</button>
+                        <label for="other" class="screen-reader-text">Other Amount:</label>
+                        <input class="donation_other" type="text" data-custom-donation-input placeholder="£ Other" name="other" id="other">
+                        <button class="donation_submit" data-submit-donation>add donation to basket</button>
+                      </div>
+
+                      <div data-success-container style="display: none;">Thank you. Your donation has been added to your basket.</div>
+                      <div data-fail-container style="display: none;">Sorry there was an issue with your donation. Please try again. If the problem persists please contact us.</div>
+
+                  </spektrix-donate>
+
+                
+              </div> <!-- / Donation Slider Holder -->
+
+                              <p class="h5">Donate, join us as a member, advertise your business and more...</p>
+              
+                                                                <a href="https://www.nationalcentreforwriting.org.uk/support-us" class="btn btn_sm ">More ways to get involved</a>
+                                              
+            </div> <!-- / Donation Form -->
+
+            
+            <div class="search_icon"><a href="#"><img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/icon-search-black.svg" width="32" height="32" alt="Magnifying Glass Search Icon" /></a></div>
+
+          </div>
+
+        </div> <!-- / Logo Nav Holder -->
+
+        <div class="search_full yellow_bg"> <!-- Search Full -->
+
+          <div class="search_form_content" id="search_form_content" tabindex="-1"> <!-- Search Form Holder-->
+
+              <form role="search" method="get" class="search-form" action="https://nationalcentreforwriting.org.uk">
+
+                  <div class="search_form_holder"> <!-- Search Form Holder -->
+                      <div class="label_input">
+                        <label for="site_search">Enter Search Terms:</label>
+                        <input type="search" id="site_search" class="search-field" value="" name="s" title="Search for:" />
+                      </div>
+                      <input type="submit" class="search-submit" value="Search" />
+                  </div> <!-- / Search Form Holder -->
+
+              </form>
+
+              <div class="search_close"> <!-- Search Close -->
+                <a href="#close_search"><img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/icon-close.svg" alt="X Close Icon" /></a>
+              </div> <!-- / Search Close -->
+
+          </div> <!-- / Search Form Holder -->
+
+        </div> <!-- / Search Full -->
+
+      </header><!-- #masthead -->
+
+    
+		<div id="content" class="site-content">
+
+		
+      <div class="writing_hub_hero"> <!-- Writing Hub Hero -->
+
+        <div class="writing_hub_hero_content"> <!-- Writing Hub Hero Content -->
+
+          <div class="title">The spirit of place: Laurence Mitchell on Flint Country</div> <!-- Title -->
+
+          
+        </div> <!-- / Writing Hub Hero Content -->
+                  <div class="button_container"> <!-- Button Container -->
+            <a href="https://nationalcentreforwriting.org.uk/writing-hub/" class="btn_text">BACK TO THE HUB</a>
+          </div> <!-- / Button Container -->
+        
+      </div> <!-- / Writing Hub Hero -->
+
+    
+<div id="primary" class="content-area">
+  <main id="main" class="site-main">
+
+  
+      
+
+
+
+<div class="full_content dark_bg pt_sm pb_md"> <!-- Full Content -->
+  <div class="media_contained_block image_left"> <!-- Media Contained Block -->
+
+     <!-- Content Block -->
+      
+        <div class="content_container"> <!-- Content Container -->
+
+          <div class="text_col"> <!-- Text Column -->
+
+            
+             <!-- / Title & SEO -->
+
+             <!-- Introduction -->
+              <p class="intro_text">In this episode of The Writing Life Podcast, Norfolk-based writer Laurence Mitchell reveals how he brought the spirit of landscape and place onto the page in his award-winning book, <em>Flint Country: A Stone Journey</em>.</p>
+             <!-- / Introduction -->
+
+             <!-- Text Content -->
+              <div class="text_block">
+                <p><span style="font-weight: 400;"><em>Flint Country</em> won the General Non-Fiction category in the <a href="https://nationalcentreforwriting.org.uk/get-involved/writers/eaba/">East Anglian Book Awards</a> 2025.</span></p>
+              </div>
+             <!-- / Text Content -->
+
+             <!-- / Button Repeater -->
+
+          </div> <!-- / Text Column -->
+
+          <div class="image"> <!-- Image -->
+                        <img decoding="async" src="https://nationalcentreforwriting.org.uk/wp-content/uploads/2026/05/LaurenceMitchell.jpg" alt="The Spirit of Place with Laurence Mitchell">
+          </div> <!-- / Image -->
+
+        </div> <!-- / Content Container -->
+
+           <!-- / Content Block -->
+
+  </div> <!-- / Media Contained Block -->
+</div> <!-- / Full Content -->
+
+
+
+
+
+<div class="full_content light_bg pt_md pb_md "> <!-- Full Content -->
+  <div class="column_text_block mw_960 "> <!-- Column Text Block -->
+
+    
+     <!-- / Title & SEO -->
+
+    
+       <!-- Introduction -->
+        <p class="intro_text">He sat down with NCW’s Holly Ainley to discuss the ‘spirit of place’ and how writers can weave culture, folklore, and personal memory into their portrayal of landscape. They also explore his decision to write about Norfolk flint, how writers can bring their own personality to the narrative, and what it means to think about landscape as a character.</p>
+       <!-- / Introduction -->
+
+       <!-- Text Content -->
+        <div class="text_block">
+          <p><span style="font-weight: 400;">Laurence Mitchell is a travel writer with a number of guidebooks and walking guides to his name. He also writes features for magazines like Geographical, Walk and Discovering Britain. He has contributed to </span><i><span style="font-weight: 400;">Echtrai Journal</span></i><span style="font-weight: 400;">, </span><i><span style="font-weight: 400;">Elsewhere: a journal of place</span></i><span style="font-weight: 400;"> and several anthologies, and was a regular guest writer for the Berlin-based magazine </span><i><span style="font-weight: 400;">hidden europe</span></i><span style="font-weight: 400;"> for many years. His first book for Saraband, </span><i><span style="font-weight: 400;">Westering</span></i><span style="font-weight: 400;">, was published in 2021 and his second, </span><i><span style="font-weight: 400;">Flint Country</span></i><span style="font-weight: 400;">, published in 2025.</span></p>
+        </div>
+       <!-- / Text Content -->
+
+    
+     <!-- / Button Repeater -->
+
+    
+  </div> <!-- / Column Text Block -->
+</div> <!-- / Full Content -->
+
+
+
+
+
+<div class="full_content dark_bg pt_md pb_md animated"> <!-- Full Content -->
+  <div class="column_text_block  animated"> <!-- Column Text Block -->
+
+          <div class="mw_720"> <!-- Max Width 720px -->
+    
+    
+      <div class="title_container"> <!-- Title Container -->
+
+        <p class="h2">Listen now</p> <!-- Title & SEO -->
+
+         <!-- / Subtitle & SEO -->
+
+      </div> <!-- / Title Container -->
+
+     <!-- / Title & SEO -->
+
+    
+       <!-- / Featured Text -->
+
+       <!-- / Introduction -->
+
+       <!-- Text Content -->
+        <div class="text_block">
+          <p><iframe style="border: none; min-width: min(100%, 430px); height: 150px;" title="The spirit of place: Laurence Mitchell on Flint Country" src="https://www.podbean.com/player-v2/?i=24n3r-1b3d606-pb&amp;from=pb6admin&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Arial&amp;skin=f6f6f6&amp;font-color=&amp;logo_link=episode_page&amp;btn-skin=1b1b1b" width="100%" height="150" scrolling="no" data-name="pb-iframe-player"></iframe></p>
+<p>Edited by Omni Mix</p>
+        </div>
+       <!-- / Text Content -->
+
+    
+     <!-- / Button Repeater -->
+
+          </div> <!-- Max Width 720px -->
+    
+  </div> <!-- / Column Text Block -->
+</div> <!-- / Full Content -->
+
+
+
+
+
+<div class="full_content light_bg pt_md pb_md"> <!-- Full Content -->
+  <div class="media_contained_block image_left"> <!-- Media Contained Block -->
+
+     <!-- Content Block -->
+      
+        <div class="content_container"> <!-- Content Container -->
+
+          <div class="text_col"> <!-- Text Column -->
+
+            
+             <!-- Title & SEO -->
+              <p class="h2"><em>Flint Country: A Stone Journey</em></p>             <!-- / Title & SEO -->
+
+             <!-- Introduction -->
+              <p class="intro_text">Laurence Mitchell uncovers the stories that flint has to tell us in this celebratory journey through the natural and cultural history of the stone.</p>
+             <!-- / Introduction -->
+
+             <!-- Text Content -->
+              <div class="text_block">
+                <p>Beneath the bands of chalk that cover the UK lies flint, a mineral that has shaped our landscape, history and heritage. <em>Flint Country </em>tells the story of this abundant resource’s formation, what we can learn from its fossil records, and how it has been worked with and prized through millennia – from our prehistoric and ancient ancestors through to the present day.</p>
+<p>&nbsp;</p>
+              </div>
+             <!-- / Text Content -->
+
+             <!-- Button Repeater -->
+                                                <a href="https://saraband.net/sb-title/flint-country/" class="btn btn_dark">Find out more &#038; buy</a>
+                                           <!-- / Button Repeater -->
+
+          </div> <!-- / Text Column -->
+
+          <div class="image"> <!-- Image -->
+                        <img decoding="async" src="https://nationalcentreforwriting.org.uk/wp-content/uploads/2026/08/Flint-Country.png" alt="">
+          </div> <!-- / Image -->
+
+        </div> <!-- / Content Container -->
+
+           <!-- / Content Block -->
+
+  </div> <!-- / Media Contained Block -->
+</div> <!-- / Full Content -->
+
+
+
+
+
+<div class="full_content dark_bg pt_md pb_sm animated"> <!-- Full Content -->
+  <div class="column_text_block  animated"> <!-- Column Text Block -->
+
+          <div class="mw_720"> <!-- Max Width 720px -->
+    
+    
+      <div class="title_container"> <!-- Title Container -->
+
+        <p class="h2">Transcript</p> <!-- Title & SEO -->
+
+         <!-- / Subtitle & SEO -->
+
+      </div> <!-- / Title Container -->
+
+     <!-- / Title & SEO -->
+
+    
+       <!-- / Featured Text -->
+
+       <!-- / Introduction -->
+
+       <!-- / Text Content -->
+
+    
+     <!-- / Button Repeater -->
+
+          </div> <!-- Max Width 720px -->
+    
+  </div> <!-- / Column Text Block -->
+</div> <!-- / Full Content -->
+
+
+
+
+
+<div class="full_content light_bg pt_md pb_md "> <!-- Full Content -->
+  <div class="column_text_block mw_960 "> <!-- Column Text Block -->
+
+    
+     <!-- / Title & SEO -->
+
+    
+       <!-- / Introduction -->
+
+       <!-- Text Content -->
+        <div class="text_block">
+          <p><strong>Holly</strong></p>
+<p>Laurence, welcome to the Writing Life podcast.</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>Thank you very much. Thank you for inviting me.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>We should let people know that we are recording today in our lovely podcast studio at Dragon Hall. But we are in the middle of heatwave number four this summer.</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>Number four so far.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>So if we sound at all dozy or like we&#8217;re stopping to have a drink of water, that&#8217;s why.</p>
+<p>So it&#8217;s fantastic to have you here today. Your book <em>Flint Country</em> has already come up a lot of times for us at National Centre for Writing. Obviously, you were winner in your category at the East Anglian Book Awards this year, and you&#8217;ve also run a brilliant workshop for us as part of NCW Academy on the Spirit of Place and on place writing. And I think it would be great to kind of take that as our theme and our lead into the conversation today.</p>
+<p>So when we think about place writing, I think it&#8217;s often grounded in a specific region or a landscape or a trail, but you&#8217;ve actually chosen a physical material to anchor your story rather than one place. And that&#8217;s flint. So I think my first question is: why flint?</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>Well, I think it came around about really because it was during lockdown. I sort of had the first ideas of this, and my background really is sort of travel writing, and that&#8217;s what I&#8217;ve done before. But during the, I think it was the first lockdown, I just started, I was at a bit of a loose end really, and I wanted to start getting writing on it. What&#8217;s a perfect time to do some writing during lockdown, when there&#8217;s not much else you can do?</p>
+<p>But I was sort of thinking of different subjects and things I couldn&#8217;t really write about, and everything else felt a bit too detached and far away, or, you know, a memoir about something else. And I wanted to do something there and now. And then, on one of my lockdown walks, I mean, it sounds like a road to Damascus sort of moment, but it wasn&#8217;t really. But I started, I had a regular walk I used to do, quite close to my home, because you were allotted time for walking.</p>
+<p>Yeah. And I quite often ended up in this church nearby, or the churchyard nearby. And it wasn&#8217;t a particularly old church, Norwich is full of medieval churches. This was a Victorian church. But it was faithful to the common material for building churches in this city and in this area, flint.</p>
+<p>And I&#8217;d never really given flint that much thought before. I mean, I was aware that it was there, and I didn&#8217;t know much about it. I knew it was, the whole region was sort of covered. All the fields were covered in flint and everything like that. But then I thought, well, maybe here&#8217;s a theme, a link, something I can expand on.</p>
+<p>Because obviously I did a lot of research later on, but I was aware that flint wasn&#8217;t just a very important building material, particularly for this area. It was very much of the sort of build of East Anglia.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>Yeah, we see it all around us, don’t we?</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>All around us. Absolutely, not just in churches either, in farm buildings and houses and its walls. And Norwich has got some particularly fabulous walls.</p>
+<p>I&#8217;m quite an enthusiastic archaeologist, or amateur archaeologist. And I also think, well, yes, this goes back to flint tools.</p>
+<p>And in fact, the story there is, one day I went another way and I was walking and I saw a great big mural of these flint axes, these sort of Neolithic axes. And I thought, I wonder what that place is. I wonder what that shop is for.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>Is that in Norwich?</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>In Norwich. Yeah. And what I thought at first, me being sort of very fanciful, thinking, ‘Oh, maybe they&#8217;re selling sort of reproduction flint tools. They&#8217;re great. When it&#8217;s open, I&#8217;ll go and get some.’</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>There’s a real market for those.</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>Yeah. But then I thought, well, that&#8217;s a bit too niche even for Norwich. Norwich has these sort of quirky things.</p>
+<p>And then, of course, I looked online. ‘Oh, it&#8217;s a hairdressers. It&#8217;s a ladies&#8217; hairdressers’.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>Yeah. There&#8217;s a colleague of mine who goes to Flint.</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>Yeah. I&#8217;ve met people since who go to Flint. But I mean, I was quite ignorant of ladies&#8217; hairdressers in Norwich, so I wasn&#8217;t aware of that, but it just seemed all these little pointers. And so I thought, well, yeah, maybe I can start writing about this.</p>
+<p>And that&#8217;s the key to that, is actually it&#8217;s all very local, most of it anyway. So <em>Flint Country</em>, as it came about, is largely East Anglia based, but not exclusively. I do go to various other parts of Britain and actually occasionally go abroad, but it&#8217;s mostly centred in East Anglia, where, as it says, Flint Country is very, you know, this is the whole geology of the place or the building material is of flint.</p>
+<p>I mean, you could equally say the same thing about, I guess, parts of Kent, Sussex, and Hampshire.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>But that&#8217;s so interesting that it was this material that then led you to approach the landscape, or how you portrayed the landscape, in a particular way. And you&#8217;ve mentioned memoir, you&#8217;ve mentioned amateur archaeology, geology, and, I mean, all of those things. The book is such a beautiful blend of all of those things, also of science, of natural history.</p>
+<p>But, to be honest, when I was preparing for this, I was thinking, if I&#8217;d just read that this was a book about these particular subjects, I don&#8217;t think I&#8217;d necessarily have been drawn to that combination of themes. But I really, really loved this book, and I found it really accessible, with flint as a way in, perhaps because I am from the area and I see it all around me.</p>
+<p>But I think it&#8217;s a real skill, interweaving all of those different elements, geology, archaeology, science. And, as you mentioned there, I wanted to talk to you a bit about the research and all the information. And yet there&#8217;s still a real lightness of tone to the book. And I wonder if you could talk a little bit about that. Is that something you&#8217;re very practised at? I mean, does that come from your journalistic background, that ability to kind of blend all the research but still keep it very, very accessible?</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>I don&#8217;t know. I suppose it just comes from my own sort of preference when I&#8217;m&#8230; I like to, well, things I enjoy reading, I like to have a certain lightness of touch. Although, it doesn&#8217;t mean you can&#8217;t have profound ideas or talking about things.</p>
+<p>When I was writing the book, I was a bit aware that I didn&#8217;t want it to read like a series of disconnected essays because there&#8217;s a danger in that. This is flint building material. This is flint for churches. This is flint&#8217;s archaeology, etc. Though I have sort of done it separately like that, I&#8217;ve tried to have this common theme throughout and return to the centre, if you like, which is sort of living here in Norwich.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>So it&#8217;s rooted in a place, but the flint allows you to kind of go and explore and journey into these other areas?</p>
+<p><strong> </strong></p>
+<p><strong>Laurence</strong></p>
+<p>Yes, exactly. I mean, it&#8217;s rooted in place. And also what I think I also went into, well, what I did go into also was looking at very particular flint landscapes, which are particular to this part of the world.</p>
+<p>I&#8217;m thinking of the spits on the coast, which are flint pebbles, like Blakeney Point, famously Orford Ness, even Great Yarmouth, which people don&#8217;t think about, is actually, where Great Yarmouth is built wasn&#8217;t there six or seven hundred years ago. It&#8217;s built all on flint, and a spit which has developed into solid land. And then it became a fishing port.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>Yeah. I didn&#8217;t know that until I read the book.</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>No, I don&#8217;t think I was aware of that, to be honest, until I looked a bit more into it.</p>
+<p>And what I didn&#8217;t want it to be was a geology book. And that was one of my fears. I think people thought, ‘oh, it&#8217;s a book about flint’, you know. Well, it is, but it&#8217;s not about&#8230; I go into the formation of flint, but I try to sort of not dwell on it too much.</p>
+<p>I&#8217;m more interested in it being a cultural history, sort of interaction between, as a material for human use.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>Yeah, that&#8217;s really interesting. That&#8217;s not one that was on my list. But you&#8217;re right. Cultural history, social history in some ways. And that&#8217;s really interesting.</p>
+<p>And I guess there&#8217;ll be people listening who are writing similar things, who are trying to blend lots of different elements into their writing. I wonder, because you do bring your own experience, you are the narrator of the book, and I wonder how you went about, or how a writer would go about, not dominating a narrative of place with your own story, how you keep that balance.</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>It&#8217;s a very good question. I&#8217;m not sure I can answer it. I sort of want there to be a presence there, as you say, as a narrator. And I want to bring in little bits of memoir when I think they&#8217;re relevant as well, because there are some that go back quite a long time that, to me, are quite extraordinary experiences that I feel I should incorporate.</p>
+<p>But on the same hand, it&#8217;s not, I don&#8217;t want it to be all about me. ‘Here I am walking along a beach, looking at flint,’ sort of thing. So I try and sort of detach as well. So how I do that, if I do it successfully or not, I&#8217;m not sure.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>I think you do it very successfully. Otherwise, as you say, it would have been classed as pure memoir and it wouldn&#8217;t be what we&#8217;re talking about, which is place writing and is about this idea of the spirit of place.</p>
+<p>I&#8217;d be quite interested to talk a bit about that, because I know it&#8217;s something that, you know, when you led your creative writing workshop for us, it&#8217;s something you explored.</p>
+<p>But it seems to me a very difficult thing to pin down, the spirit of place, because surely the spirit of place is invisible. So I wonder what you think, or what you found, perhaps as you were writing <em>Flint Country</em>, that needed to be included to capture the spirit of place.</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>That&#8217;s right. I mean, spirit of place is a difficult thing to pin down, and it means a lot of different things. Traditionally, people refer to the genius loci of a place.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>Yes. And what is that Latin for&gt;</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>It really goes back to the Romans who thought of particular places as having a spirit or a deity that sort of protected it. And so they would develop a shrine or something like that. And often the cult of a particular, you know, to follow that deity, that cult, and that was belonging to particular places, like the Mithraic cult in London, where, you know, underground God, which was worshipped by Roman soldiers particularly, I think. So that was a very, very particular meaning.</p>
+<p>I did a bit of research in this when I was doing the workshop, but also it has a very specific meaning in architecture. Architects are, I think, often told you must develop the spirit of place. And what they mean is, I think, just to make sure that the building fits into the environment in a sort of pleasing way.</p>
+<p>I mean, I suppose the obvious example of that is if you go to the North coast and you want to build a house in Cley, for example, you, the idea of not using flint pebbles is just, you know, you can&#8217;t do it. You have to do it, very, very strict planning laws.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>For anyone who&#8217;s listening who doesn&#8217;t know Cley, it is a beautiful kind of chocolate-box seaside village where pretty much every building is made of flint. I&#8217;d say all the cottages.</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>And I believe there was one building that was put up there that wasn&#8217;t, you know, just put up without the permission, and it had to be demolished, as extreme as that.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>Gosh, yeah. So architecture is very central to spirit of place, but what about the sort of&#8230; because what comes through in your book is the history of a place, or perhaps a folklore or myth associated with the place?</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>Yes. I think there&#8217;s a sort of whole weave of things that you can attribute to a place. I mean, the question remains, does everywhere have a spirit of place, or are other places, you know, devoid of that entirely? But that&#8217;s another question.</p>
+<p>But, I mean, the spirit of places, it&#8217;s the peculiarities of the place. It&#8217;s the places, the things that make it specific, and it&#8217;s the things that make it different. It could be in the geology or the vegetation or the wildlife. It could be the history associated with it or the prehistory associated with it, or it could also be personal, personal connections with it or family connections.</p>
+<p>And more often than not, I think it&#8217;s a mix of all these things together. So places that the spirits of place. And I think that the writer&#8217;s job, if they&#8217;re focusing on that, is to try and bring these things across. So it&#8217;s there to see for other people.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>Yeah. And as you said before, that it doesn&#8217;t become, as with your book, just a book about geology, just the facts, or just about the myth or the architecture. It&#8217;s a blend of all of those things.</p>
+<p>You mentioned there, you know, does everywhere have a spirit of place? And I&#8217;m really interested in what you think, because I think we all have probably quite mundane places, but that are special to us for certain reasons. So would you say that every place is worth writing about?</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>Undoubtedly, yes, I would. I mean, I think we&#8217;ve, in the twenty-first century now, developed a lot, or built quite a lot, of what philosophers might call sort of non-places, airports, out-of-town shopping malls, that sort of thing. A lot of new-build developments and housing developments which appear to have no character.</p>
+<p>But of course, people live there, they have lives, they bring their own histories. And, you know, after a while, it develops a sort of patina of people living there. So, yeah, I think everywhere has a spirit of place and everywhere is worth writing about.</p>
+<p>There&#8217;s a quotation, I think it&#8217;s this American poet Wendell Berry, and he&#8217;s talking about, well, he&#8217;s talking about it in terms of sacred places. He says there are no un-sacred places. There are only sacred places and desecrated places. So, in other words, everywhere is sacred unless it&#8217;s been desecrated in some way, spoiled and ruined. But then it becomes something else anyway.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>That&#8217;s so interesting, isn&#8217;t it? So therefore, again, if you&#8217;re writing about place, it&#8217;s A, you&#8217;re including perhaps a personal narrative or the stories of humans that have interacted with the place, but then also the history of it.</p>
+<p>And actually, that&#8217;s another thing I wanted to ask you about, about places that perhaps somebody might have had a bad experience of, or places that perhaps are perceived as difficult places, maybe graveyards or battlefields, for example, where bad things have happened.</p>
+<p>But I wonder if the act of writing might be quite redemptive for place, whether, through the retelling of the story of the place, you can reframe it for readers or for the writer themselves.</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>Well, I certainly think it can be redemptive for the writer to actually, you know, confront, probably too strong a word, but to take the place that creates this atmosphere or these bad memories and to sort of work the way through that, I think. And so, yes, it can be quite redemptive, I think.</p>
+<p>But, I mean, there are places, like you said, battlefields and churchyards, there are always going to be places where the grief associated with them is quite obvious.</p>
+<p>Yeah. I think it&#8217;s also, often a lot of new housing developments are now in places like old hospital sites, which are, you know, places. Well, they&#8217;re places of suffering, places of joy too, of course, hospitals, because good things happen there as well.</p>
+<p>But I mean, also workhouses. I told my wife I was talking to her, we were looking at these workhouse places which had been turned into really nice apartments, but we both said, ‘I wouldn&#8217;t want to live there personally, just the embedded sort of memory of the place and the suffering that took place there’.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>Yeah. So there&#8217;s something about the spirit of the place.</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>The spirit of the place actually in the very fabric of it, though that may be just a sort of personal view, but that&#8217;s really sensitive about it, perhaps.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>Well, no, no, I think that makes complete sense, doesn&#8217;t it? When you, it&#8217;s like with all of our houses, you know, once you understand who&#8217;s been there before or what might have happened there before, it can have a real effect on your connection to the place.</p>
+<p>But there&#8217;s something really interesting here then about a writer&#8217;s identity and the act of writing about place. And I wonder as well, if we talked about the act of writing place as redemption, but also, I guess, maybe like reclamation, because there are some places which might be, I don&#8217;t know, I&#8217;m thinking about housing estates or, you know, run-down places where people are kind of assumed to be a type of person who lives there, but actually, by their own telling of that place, they can reclaim their story or the story of the place.</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>And sometimes these stories are completely lost. I think the writer Ian Sinclair wrote a lot about the development of the Olympics in east London, and one of his major concerns about it was just all this history was lost.</p>
+<p>You know, it was taken. The people were living their lives. Their grandparents had lived there. And all of a sudden, it was changed and they had to go and live somewhere else.</p>
+<p>And a lot, you could argue, ‘well, they had much better housing now’ and things like that. But I mean, the thing is, the actual history of those streets was gone and it hadn&#8217;t been recorded.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>That&#8217;s a really good point. So actually, their telling of that place, were they to write about that area, would teach us something very different.</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>Yes. And it&#8217;s also this notion of home as well. You know, we all have different notions of home, but we all know what it means. And it&#8217;s different from just house or dwelling or building. You know, home is a very strong emotion that we have a sense of.</p>
+<p>And if we lose our homes or whatever, you know, then it&#8217;s obviously a very tragic time in our lives. But I do, you know, I think the notion of home, I&#8217;m just very interested in that whole idea of, you know, what becomes home? How do we make a place home?</p>
+<p>I&#8217;m thinking not just about a house. I&#8217;m thinking about a place to live. And, you know, again, going back to sacred sites and things like that as well.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>Yeah. I think it&#8217;s fascinating. I guess all of these elements that, when a writer is, you know, has a place as their subject, all of these things are kind of in the mix, aren&#8217;t they? As a way in, as you used flint as your way in.</p>
+<p>I just wanted to go back to what we were talking about, buildings, and connection to buildings, and particularly the flint churches in East Anglia. And you write very passionately about them and sort of, I guess, monuments as well that are made of flint.</p>
+<p>And I wonder how thinking about architecture and people&#8217;s connections to buildings affected the way that you write about place, those stories, and how people interact with those physical entities.</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>Yes. I&#8217;m not sure about that. I&#8217;m not sure about whether the people who live in flint houses are different from anybody else, sort of thing.</p>
+<p>But I mean, it does, obviously, the whole landscape of a region is important. And one of the characteristic things of East Anglia, which everybody goes on about, is how flat it is, of course, which it is fairly flat. But, you know, let&#8217;s not dwell on that too much.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>We have our mini hills.</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>We have mini hills, that&#8217;s right. And there&#8217;s a lot of rivers and estuaries, and a very, you know, extremely different&#8230; And that&#8217;s going back to the coast as well.</p>
+<p>We have a very, Norfolk in particular, the coastline of Norfolk is very distinctive. It&#8217;s very unique, really, in many ways. These, these sort of&#8230; And again, that comes back to flint again, you know, flint spits.</p>
+<p>Generally speaking, you know, those places make it special and they give a particular atmosphere to the place. So I think, yeah, I mean, living in a flint village in North Norfolk, it carries a, so, I mean, I suppose it carries a certain degree of sort of quaintness now, doesn&#8217;t it? It&#8217;s seen as, you know, an idyllic sort of place to live.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>But do you think you learned by exploring the buildings and perhaps those places where people come and interact with the flint, or live within the flint? Do you think that kind of gave a different flavour to the writing? Gave you a kind of different angle on it, rather than just simply exploring the flint and how it came up from the ground and&#8230;</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>Oh, absolutely. Yeah, that&#8217;s right. I mean, and also, I would think I was sort of interested in&#8230; I mean, this is how I got into the flint in the first place in East Anglia.</p>
+<p>I mean, I&#8217;m very into sort of sacred sites and megaliths and things like that, which East Anglia doesn&#8217;t have because we don&#8217;t have that sort of stone. We have, but what we have here in East Anglia is flint, and that&#8217;s so that I think it crosses time.</p>
+<p>I mean, it gives a link back to, obviously, there are lots of medieval references. Just walking out of this building, everywhere, the houses, the churches and so on, we&#8217;re all immediately in that age. It&#8217;s not so much of the twentieth and twenty-first century here really, where we are.</p>
+<p>But you can go to other parts where you&#8217;ve seen things that, you know, places like Grime&#8217;s Graves, where there were Neolithic flint mines, and, or, you know, and also various sort of Neolithic, Neanderthal sites too.</p>
+<p>So, you know, it gives you a sense of how people have actually lived here for a much, much longer than you can possibly imagine. And they&#8217;ve come and gone and, you know, they&#8217;ve come across Doggerland to, to reinhabit the British Isles and everything. But East Anglia had this continued continuity of people living here. And flint has been a sort of common factor throughout that.</p>
+<p>I&#8217;m thinking of the Happisburgh finds in the early twenty-first century, 2001, I think it was, when they found these handaxes in the cliffs there, and they were able to date it very precisely. And they knew it was sort of Palaeolithic, which is very old indeed, but they managed to date it to about eight hundred thousand years ago. So it&#8217;s nearly a million years old.</p>
+<p>And these weren&#8217;t made by, you know, Homo sapiens. They were made by three or four back, earlier sort of hominid. But they, you know, had the same sort of characteristics. They were wandering hunter-gatherers, I guess, who were here, and they left their evidence there.</p>
+<p>So it&#8217;s just this incredible sort of spread of history, and they had a flint axe. And that&#8217;s the thing that fascinated me, is because flint was the first technology for an awful long time, for much, much longer than, you know, anything else. I mean, the Iron Age, the Bronze Age, so, you know, in the scheme of like nearly a million years, are just nothing. There&#8217;s a few thousand years ago, tiny percentage of time. And the atomic age is just a, you know, one minute to midnight thing.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>It&#8217;s incredible. Hearing you talk about and sort of seeing your face light up, thinking about that kind of span of time.</p>
+<p>And actually, it reminds me, I really wanted to ask you because, you know, you are, as you say, there&#8217;s almost a million years of history and geology that you&#8217;re exploring in the book, and yet you&#8217;re also talking about the more recent history. You&#8217;re also, you&#8217;ve got yourself in the present day. So you&#8217;ve got a kind of a very human lifespan there.</p>
+<p>And I wonder, you know, was the treatment of time a kind of structural challenge when you were putting the book together? How did you sort of balance those different time scales?</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>Yes. Well, I think what I tried to do, I tried to sort of pull it together a bit in the last chapter, the whole notion of time really, because I think increasingly so, we&#8217;re living in a time where the past, the present and the future are sort of coalescing a lot more. You know, everything, particularly in the digital age, where everything, you don&#8217;t have to watch things in real time on the television anymore. But it&#8217;s more than that. It&#8217;s just constantly we know what happened, you know, and so it&#8217;s all been conflated together.</p>
+<p>And I think that&#8217;s part of the interest that a lot of people, particularly in this sort of troubled time really, when things we never quite know what it&#8217;s going to be like in a few years&#8217; time or even tomorrow, really, that it&#8217;s quite comforting to look at this huge span of time and the continuity that took place throughout that time.</p>
+<p>And that&#8217;s, I think, why there&#8217;s quite a big draw to looking at sort of megalithic sites and that sort of thing. You know, Neolithic, Stonehenge and Avebury and all those things as well.</p>
+<p>But I mean, flint is actually central to all that because it was the main tool they had, before, well, long before they started building with it. You know, it was used as a sort of main thing for cutting and for fire-making as well as being as basic as that. Flint was what they had.</p>
+<p>And if they didn&#8217;t, if you were in a region where you didn&#8217;t have flint, then you would take it with you. You&#8217;d actually carry flints with you so you could make fire and you could use the tools.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>Can you identify in other places in the country where flint has moved around, if people have found Norfolk flint in other places?</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>I can&#8217;t think of any particular places, but yes, it&#8217;s certainly there. I mean, I think, for example, in Scotland, flint is very rare in Scotland, though it&#8217;s found in some places near Aberdeen, and it&#8217;s found in one place, a couple of places in the Western Isles.</p>
+<p>But, yeah, I mean, they found flint weapons, or flint tools rather, in places miles and miles and miles away because, obviously, they took them with them. And also, where a place where they did find flint, there were often middens of all the sort of flint work that went on there. They&#8217;d actually think, ‘Oh, great, we&#8217;ve found a source of this stuff. We&#8217;re going to make the most of it and do a lot of work there.’</p>
+<p>So they leave a big pile of the shards, and then they&#8217;ll take the sort of the actual tools with them.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>That&#8217;s so interesting. So, in writing about one landscape, it kind of helps you then connect, as we were saying, to other places in the country.</p>
+<p>And it just makes me think, you know, the passion you have for this material. This inanimate material, which is, you know, it&#8217;s interesting because most narratives, it&#8217;s human subjects who are providing us with, you know, drama and conflict and all of those things.</p>
+<p>And, of course, you&#8217;re the narrator, and of course there are human experiences that you bring into the book. But I wanted to ask you whether you consciously had to think of the flint, and maybe the land, the sort of flinty landscapes, as characters in themselves. You know, do you feel like they had to be animated to tell your story?</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>I haven&#8217;t animated, but I mean, I think they have a personality, certainly. I mean, I think landscape has a personality in some ways, you know, in some sort of non-fiction, or even in fiction. You know, it can actually be the character. The landscape is the most important character in the same way people talk about film in that way. You know, they say <em>Lawrence of Arabia</em>, the main character is the desert, you know, and that sort of same notion.</p>
+<p>So I think that&#8217;s very true of, I mean, I write about some of these flint spits in the book. I write about Orford Ness, which is quite well documented by a lot of writers, actually, Blakeney Point and also Dungeness in Kent, where Derek Jarman lived his last years of his life in his fisherman&#8217;s hut.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>Which is an incredible landscape.</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>It&#8217;s an incredible landscape and, in a way, it&#8217;s got parallels to Orford Ness. They had weapons research, secret laboratories and things there.</p>
+<p>And, yes, it&#8217;s got lights. It&#8217;s got two lighthouses, actually. But Jarman made this garden around his cottage, and it&#8217;s wonderful because he was working with extreme restrictions. You know, if you&#8217;re planting plants into a flint shingle, there&#8217;s not a lot of things that will survive there, but there are some. And he made the most of it, and he found the ones that worked.</p>
+<p>But he also used, he also did a lot of sculpture using found objects in the garden too. A lot of that was flint and what we call hagstones, the ones with the hole in the middle.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>Yeah. And it&#8217;s fascinating, actually, as you say, landscape has character. I hadn&#8217;t really considered that. But of course it is. When there&#8217;s, as you say, in a novel, there&#8217;s a backdrop of incredible mountains or whatever, it&#8217;s that spirit of place that is infusing the story.</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>Or marshland areas.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>Yeah, it&#8217;s fascinating. So you mentioned there about the digital age and the kind of effect that it has on conflating time. But I also wanted to ask you about perhaps the place of landscape or place writing within the digital age, because it feels like with social media, well, not even just with social media, but, you know, every place we go, every landscape is photographed. You know, it&#8217;s mapped. We can, at the click of a button, we don&#8217;t need to go there. We can see it.</p>
+<p>So I wonder, you know, you mentioned that you&#8217;re writing, you&#8217;ve done in the past, is travel writing. But what&#8217;s the kind of, what do you think that the role of the modern travel or place landscape writer is?</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>Well, I think I would describe myself more as a landscape or a place writer now rather than a travel writer, because I think I&#8217;ve moved in that direction because you just said what&#8217;s happened now with a lot of travel writing. In the digital age, you can sort of look at somewhere, you can look at it with Google Earth, you can see from the sky, you can see everything about a place before you get there. And then there&#8217;s no end of sort of vloggers who walk around with a camera on a stick talking about the markets there and everything like that.</p>
+<p>So, okay, you can go somewhere and try and ignore all that and just go with an open mind. But it&#8217;s increasingly difficult. I mean, and it&#8217;s just this arc of how travel writing has sort of changed, even through my lifetime really.</p>
+<p>I always wanted to be a travel writer, and I eventually sort of became one. At first I thought, well, you know, it&#8217;s not for people like me, but then I realised, well, why not have a go? And I always liked travelling.</p>
+<p>But what&#8217;s happened now? I mean, you know, when I first went travelling, I used to get books out of the library and they had all the, and they were like written in the fifties by, you know, by sort of quite crusty old colonial people. And the photographs were black and white, and you had sort of a vague idea about somewhere, but you didn&#8217;t really, you just sort of saw it through their eyes.</p>
+<p>And then, I mean, I eventually, you know, I went on the overland route to India and all that back in the seventies. And of course you think, oh, it&#8217;s in colour. And it&#8217;s very, very sort of different. But even then, even then, it was just the period just before guidebooks. So your information came from other people and just naivety in a way. People, but people are very kind and helpful on the whole. Fellow travellers, and you helped each other along.</p>
+<p>Then came the whole age of sort of guidebooks, which I&#8217;m, you know, guilty of as well, because I contributed to quite a few guidebooks. I&#8217;ve written quite a few.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>Well, where would we have been without guidebooks before the internet?</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>Yes, exactly. But what&#8217;s happened now with the internet and a lot of guidebooks are published, guidebook publishers are really struggling in a way because people don&#8217;t think, well, why should I pay twenty pounds for a book when I can just get it all for free off the internet?</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>And also, why would I carry a heavy guidebook in my rucksack when I&#8217;ve got my phone?</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>Well, that&#8217;s it, that&#8217;s what&#8217;s happened. The genie&#8217;s out of the bottle, I&#8217;m afraid. You know, so to go back there, it&#8217;s difficult. But, yeah.</p>
+<p>So, in a way, I was finding it, you know, you can still write about places, but you&#8217;ve got to give your own spin on it. And some guidebooks do that anyway, as well as just giving you practical details. They do that. I mean, I like to think mine do, but, yeah.</p>
+<p>So I think what happens now is, rather than sort of look for the exotic, you know, writing at Venice or, you know, Angkor Wat or whatever, find places that are particular to you. And I think it&#8217;s really important also to, you know, we have, there are places that we all have, personal places that are quite special to us.</p>
+<p>And I think it&#8217;s almost a matter of sort of re-enchantment of the, the more, you know, the ordinary, you know, in a way, thinking, okay, well, you know, most people don&#8217;t think anything special about this place, but I do. What is it, what is it about that that makes it special to me?</p>
+<p>And it&#8217;s probably, like I said earlier, it&#8217;s a weave of, you know, what it looks like, its geology, its natural history, but also your own personal story as well, or your own history, or the histories associated with it.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>I love that. Yeah, that idea that perhaps re-enchantment, that was the word you used, because, I mean, I think of somewhere like the Lake District, for example, which is, you know, so over, there&#8217;s a lot of overtourism there.</p>
+<p>And I guess you go there and you could have a list of things that, you know, are there or that you know about it that are kind of in everybody talks about. But actually, the really interesting thing would be to read a book from the perspective of somebody. I mean, I guess like you, exactly like you&#8217;ve done for us here in Norfolk. Actually, I know the places I could go in Norfolk, but I didn&#8217;t know about all this flint. And that&#8217;s going to lead me on a kind of an alternative experience.</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>Well, I mean, I think the Lake District is a really good example about how we perceive places through time. I mean, it was made famous by the Romantic poets, Wordsworth and so on, and waxed lyrical about how beautiful it was. And it is a beautiful place and it&#8217;s a wonderful place.</p>
+<p>But not that long before that, it was a place to be feared. People used to fear mountains. People lived in their villages and towns, and they didn&#8217;t, you know, these were wild places where, why do you want to go there for? It really was like that.</p>
+<p>It was only sort of two or three hundred years ago where we started seeing the beauty in these landscapes. And it&#8217;s only in the last fifty years we&#8217;ve overpopulated them with various things.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>And of course, now there&#8217;s the Beatrix Potter Museum and all these sort of sites, specific places. But it would be wonderful to go there with a very alternative piece of place writing in your pocket that can kind of help you find some of the hidden gems.</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>Yes. Right. Yes. And I think that&#8217;s it. I always find it quite, if I&#8217;m going somewhere that is quite famous and has particular sights, you know, that you must go and see, and you can&#8217;t help yourself but go and see them. I always like going back a second or third time and just completely ignoring those places and going just where my feet take me.</p>
+<p>And you often find you get more out of the experience because you, with all you involve, you&#8217;re interacting with people who aren&#8217;t involved with tourism for a start, you know, so you get a very different perspective of more ordinary lives.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>Yeah. Which is another great tip for people, then, who are wanting to write about places. It doesn&#8217;t matter if they&#8217;ve been written about a lot before, because perhaps you talk to someone different, or you find the hidden story perspective.</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>Just try and look at it from a different angle.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>Yeah, yeah, that&#8217;s really great advice. I want to ask you one question about language because you do, in the book, come back to the actual word flint various times and the etymology of it. And I wonder, as you say, you come across it as the name of a hairdresser. Did this sort of deep dive into the language of place, or did that help you to uncover more about your subject? What did it give you?</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>I&#8217;m not sure it really helped that much. I mean, I thought, I think it&#8217;s quite interesting about the, you know, flint is used as a sort of adjective as well.</p>
+<p>I mean, it&#8217;s used as a place name in North Wales as a town called Flint, which doesn&#8217;t have any flint anywhere near it. So that&#8217;s no good.</p>
+<p>But I mean, like I said, Flint hairdresser is just a name and so on. But then, I mean, there&#8217;s a vineyard that&#8217;s set up in South Norfolk called Flint Vineyard, which is near Bungay, but it&#8217;s in Norfolk, just south-facing slope and all that.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>Delicious wines.</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>Yeah. I&#8217;m sure. Absolutely.</p>
+<p>But in terms of wine, I mean, you know, flint is a word they use very precisely to describe the flinty character of a wine. As you know, they talk about minerality of the taste and everything like that.</p>
+<p>But in another way, it&#8217;s used as a sort of slightly pejorative sort of way of describing somebody&#8217;s expression, you know, flinty, like a hard face, like, you know, uncaring, unsympathetic.</p>
+<p>So, you know, in terms of that, I think it&#8217;s quite interesting how the word has been used. And Shakespeare used it quite a lot in that sense.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>In the negative sense?</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>Yeah. In the negative sense, in the sort of unflinching sort of character.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>That is another, I suppose, advantage to the fact that you, as your way in, are kind of using this material that spreads beyond the landscape, kind of into language and into our minds. Brilliant.</p>
+<p>I have got two final questions I wanted to ask you. One is potentially a big question, just because we talked about all the things that <em>Flint Country</em> is. You know, it&#8217;s memoir and it&#8217;s science and it&#8217;s natural history and archaeology. But I wonder whether you find kind of genre to be a very useful descriptor, because your book is so many things. Does labelling, and where it gets put in the bookshop, do you feel like it limits it?</p>
+<p><strong> </strong></p>
+<p><strong>Laurence</strong></p>
+<p>I do. I thought quite a lot about this, and probably I wasn&#8217;t so aware of it when I actually wrote it. But, yeah, it is hard to place, in a way, because it does cover quite a few genres.</p>
+<p>And, well, I mean, I&#8217;m just thinking, if I&#8217;d sort of read a review of it or something, where would I go and look for it in the bookshop?</p>
+<p>I mean, one large bookshop chain I won&#8217;t mention begins with a W. I found it in there and it&#8217;s under natural history, which is fair enough, you know, natural history. But then I thought, well, you know, it&#8217;s quite right being there, but I think it could also, then they&#8217;ve got a section on sort of local books and British. And there&#8217;s almost a section that&#8217;s not quite called place writing, but it is, and I feel it should be there, and it&#8217;s not there.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>That&#8217;s interesting. So perhaps this is a new genre, which we&#8217;re not kind of&#8230;?</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>Well, yeah. I mean, sometimes I don&#8217;t think it has… It probably does say in the back of the book, but, you know, the various sort of places to put it in a bookshop.</p>
+<p>But, yeah. I mean, it does cross genres and I&#8217;m happy that it does, but I do think it&#8217;s hard to place in that sense.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>It&#8217;s interesting, isn&#8217;t it, that, you know, as a writer, you write what you&#8217;re interested in, and it doesn&#8217;t matter. And it shouldn&#8217;t matter when you&#8217;re writing it.</p>
+<p>And I think more and more, you know, creative non-fiction is a real blend. But it&#8217;s interesting then that kind of, once it goes out into the publishing world and onto the bookshelves.</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>That&#8217;s right. And I think publishers are very keen to know, to be able to place it as well. I think that troubles them a bit if they can&#8217;t neatly compartmentalise it, in a sense, you know, where it should go in a bookshop. You know, they want to know what&#8217;s the selling factor of it or whatever.</p>
+<p>I can understand they want to sell books, of course.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>But it risks overlooking some of the nuance.</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>Yes, it does. Yes, it does. And I mean, thankfully, I don&#8217;t think it&#8217;s ever been placed under geology, although, you know, it contains geology in there, because I feel I need to explain it.</p>
+<p>But I mean, the thing is, I almost feel like it should have a subtitle: ‘This is not a geology book’, because, you know&#8230;</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>Yeah. I mean, and it could equally be found under memoir, but I love the idea of bookshops having a place writing section. I feel like that it could contain multitudes.</p>
+<p>Yes, yes. Perhaps that&#8217;s a new campaign.</p>
+<p>We&#8217;ve got time for just one more question. And we talked a lot about the fact that you, you research and there were lots of different elements that you researched. And I know that this book is so full of brilliant information and stories, but I&#8217;m wondering if there was anything really fascinating you uncovered that you sort of maybe had to leave out that didn&#8217;t fit the book&#8217;s structure?</p>
+<p>Are there any hidden gems about flint?</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>Oh, dear. I mean, there are, yeah, I think what I found at one time when I was doing my research, when I was, I mean, I went and travelled around quite a lot of places and things as well, but I did a lot of research and I did find myself going down rabbit holes.</p>
+<p>Like, I said, ‘Why am I reading this PhD thesis on handaxe design?’ And because I was fascinated in it, but I thought, no, this is not for the layperson. This is not going to enhance the book in any way. So I think that sort of detailed stuff, otherwise it would become a completely different book. And it would have been an academic-type book. And I&#8217;m not an academic in that sense, and, you know, I&#8217;m certainly not a geologist or an archaeologist, you know, that very, very nuanced, very refined sort of sense of change and things like that.</p>
+<p>So I did find myself occasionally thinking, no, that&#8217;s enough of that. Let&#8217;s get back to the nitty-gritty of, you know, what it&#8217;s about, rather than looking at fine sort of changes.</p>
+<p>But, yeah, I mean, I felt that the whole thing about the design of flint tools was absolutely fascinating. You know, how one design basically lasted for half a million years and then sort of, ‘Oh, I know, we&#8217;ll change it and we&#8217;ll do it. Let&#8217;s make it slightly different.’ And it did, you know, and it was quite an organic thing, but it took an awful long time over, you know, thousands of generations, because, you know, what&#8217;s wrong with the old one? The old one still works.</p>
+<p>So, yeah, that was very interesting to, I mean, I could have done, you know, there&#8217;s, well, books have been written, there&#8217;s an awful lot that could be written about churches and architecture and so on. But again, I just wanted to outline that and then look at that sort of architecture in the context of East Anglia particularly, particularly like round tower churches, which are unique, almost, not quite, but almost unique to East Anglia.</p>
+<p>Ninety per cent of the world&#8217;s round tower churches are in Norfolk, you know, so that&#8217;s quite a feat. And I think, well, yeah, you can understand why they built them like that, but why didn&#8217;t they build them like that somewhere else where they also had the same materials? There&#8217;s no real clear answer to that. No one seems to know.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>So it&#8217;s a real lesson for people listening, you know, who are writing in this, in this space, that you do have to make narrative choices.</p>
+<p>And you might have done all this research, but maybe there&#8217;s a spin-off in there about, you know, flint tools that could sit in a different place in the bookshop.</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>Yes. Possibly.</p>
+<p>&nbsp;</p>
+<p><strong>Holly</strong></p>
+<p>Oh, well, Larence, thank you so much. It&#8217;s been really fascinating to talk about your book and to think about what place writing really is. And I hope that our listeners have gained some real insights. I&#8217;m sure they have. Thank you.</p>
+<p>&nbsp;</p>
+<p><strong>Laurence</strong></p>
+<p>Thank you very much.</p>
+        </div>
+       <!-- / Text Content -->
+
+    
+     <!-- / Button Repeater -->
+
+    
+  </div> <!-- / Column Text Block -->
+</div> <!-- / Full Content -->  
+
+
+        
+  <div class="full_content dark_bg pt_md pb_lrg"> <!-- Full Content -->
+    <div class="feature_row_feed dark_bg"> <!-- Feature Row Feed -->
+
+      <div class="main_title"> <!-- Main Title -->
+        <h2>You may also like...</h2>
+      </div> <!-- / Main Title -->
+
+      
+        <div class="feed_container"> <!-- Feed Container -->
+
+          
+            <div class="feed_item"> <!-- Feed Item -->
+
+              <div class="image_container"> <!-- Image Container -->
+
+                 <!-- Image -->
+                                  <a href="https://nationalcentreforwriting.org.uk/writing-hub/narrative-form-ashley-hickson-lovence-podcast/">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/uploads/2026/05/Ashley-Hickson-Lovence-c-Anna-Davidson-500x250.png" alt="" />
+                  </a>
+                 <!-- / Image -->
+
+              </div> <!-- / Image Container -->
+
+              <div class="text_content"> <!-- Text Content -->
+
+                <p class="title">Experimenting with narrative form: Ashley Hickson-Lovence on About to Fall Apart</p> <!-- Title -->
+
+                 <!-- Excerpt -->
+                  <p><span style="font-weight: 400;">In this episode of The Writing Life Podcast, Norwich-based writer Ashley Hickson-Lovence discusses experimenting with narrative, form, and structure in his latest novel, </span><i><span style="font-weight: 400;">About to Fall Apart.</span></i></p>
+                 <!-- / Excerpt -->
+
+                <div class="date_container"> <!-- Date Container -->
+
+                  <div class="icon"> <!-- Icon -->
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/calendar.svg" alt="Calendar">
+                  </div> <!-- / Icon -->
+
+                  <p class="date">18th May 2026</p> <!-- Date -->
+
+                </div> <!-- / Date Container -->
+
+                <div class="tags"> <!-- Tags -->
+                                      <div class="tag">Interview</div>
+                                      <div class="tag">The Writing Life</div>
+                                      <div class="tag">Tips and Advice</div>
+                                  </div> <!-- / Tags -->
+
+                
+                <a href="https://nationalcentreforwriting.org.uk/writing-hub/narrative-form-ashley-hickson-lovence-podcast/" class="btn btn_sm">Listen</a> <!-- Button -->
+
+              </div> <!-- / Text Content -->
+
+            </div> <!-- / Feed Item -->
+
+          
+            <div class="feed_item"> <!-- Feed Item -->
+
+              <div class="image_container"> <!-- Image Container -->
+
+                 <!-- Image -->
+                                  <a href="https://nationalcentreforwriting.org.uk/writing-hub/poets-in-conversation-john-osborne-lewis-buxton-on-performance-humour-and-place/">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/uploads/2026/01/Poets-in-conversation-podcast-500x250.png" alt="" />
+                  </a>
+                 <!-- / Image -->
+
+              </div> <!-- / Image Container -->
+
+              <div class="text_content"> <!-- Text Content -->
+
+                <p class="title">Poets in conversation: Lewis Buxton &amp; John Osborne on performance, humour, and place</p> <!-- Title -->
+
+                 <!-- Excerpt -->
+                  <p>In this episode of The Writing Life Podcast, Norwich-based writers John Osborne and Lewis Buxton discuss writing poetry for page and performance.</p>
+                 <!-- / Excerpt -->
+
+                <div class="date_container"> <!-- Date Container -->
+
+                  <div class="icon"> <!-- Icon -->
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/calendar.svg" alt="Calendar">
+                  </div> <!-- / Icon -->
+
+                  <p class="date">12th January 2026</p> <!-- Date -->
+
+                </div> <!-- / Date Container -->
+
+                <div class="tags"> <!-- Tags -->
+                                      <div class="tag">Norwich City of Literature</div>
+                                      <div class="tag">Poetry</div>
+                                      <div class="tag">The Writing Life</div>
+                                      <div class="tag">Tips and Advice</div>
+                                  </div> <!-- / Tags -->
+
+                
+                <a href="https://nationalcentreforwriting.org.uk/writing-hub/poets-in-conversation-john-osborne-lewis-buxton-on-performance-humour-and-place/" class="btn btn_sm">Listen</a> <!-- Button -->
+
+              </div> <!-- / Text Content -->
+
+            </div> <!-- / Feed Item -->
+
+          
+            <div class="feed_item"> <!-- Feed Item -->
+
+              <div class="image_container"> <!-- Image Container -->
+
+                 <!-- Image -->
+                                  <a href="https://nationalcentreforwriting.org.uk/writing-hub/writing-through-place-podcast/">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/uploads/2024/10/Writing-through-place-podcast-500x250.png" alt="" />
+                  </a>
+                 <!-- / Image -->
+
+              </div> <!-- / Image Container -->
+
+              <div class="text_content"> <!-- Text Content -->
+
+                <p class="title">Writing through place: Heidi Williamson &amp; Rebecca Goss on poetry, memory and healing</p> <!-- Title -->
+
+                 <!-- Excerpt -->
+                  <p>In this episode of The Writing Life, poets Rebecca Goss and Heidi Williamson discuss using place in poetry to write about difficult memories.</p>
+                 <!-- / Excerpt -->
+
+                <div class="date_container"> <!-- Date Container -->
+
+                  <div class="icon"> <!-- Icon -->
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/calendar.svg" alt="Calendar">
+                  </div> <!-- / Icon -->
+
+                  <p class="date">7th October 2024</p> <!-- Date -->
+
+                </div> <!-- / Date Container -->
+
+                <div class="tags"> <!-- Tags -->
+                                      <div class="tag">Nature Writing</div>
+                                      <div class="tag">Poetry</div>
+                                      <div class="tag">The Writing Life</div>
+                                      <div class="tag">Tips and Advice</div>
+                                  </div> <!-- / Tags -->
+
+                
+                <a href="https://nationalcentreforwriting.org.uk/writing-hub/writing-through-place-podcast/" class="btn btn_sm">Listen</a> <!-- Button -->
+
+              </div> <!-- / Text Content -->
+
+            </div> <!-- / Feed Item -->
+
+          
+        </div> <!-- / Feed Container -->
+
+      
+    </div> <!-- / Full Content -->
+  </div> <!-- / Feature Row Feed -->
+
+  </main><!-- #main -->
+</div><!-- #primary -->
+
+
+	</div><!-- #content -->
+
+	<footer id="colophon" class="site-footer">
+
+		<div class="footer_content"> <!-- Footer Content -->
+
+      <div class="top_panel"> <!-- Top Panel -->
+
+        <div class="navigation_container"> <!-- Navigation Container -->
+
+          <p class="h6 title">Navigation</p> <!-- Title -->
+
+          <div class="navigation"> <!-- Navigation -->
+
+            <div class="col_1"> <!-- Column One -->
+
+               <!-- Column One Links -->
+                <div class="links">
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/support-us/" target="_self">Support us</a> <!-- / Link -->
+
+                       <!-- Child Links -->
+                        <div class="child_links">
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/support-us/donate/" target="_self">Donate</a> <!-- / Link -->
+
+                            
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/support-us/ways-to-support-us/" target="_self">More Ways to Support</a> <!-- / Link -->
+
+                            
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/support-us/ways-to-support-us/our-supporters/" target="_self">Our Supporters</a> <!-- / Link -->
+
+                            
+                                                  </div>
+                       <!-- / Child Links -->
+
+                    
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/about-us/environmental-impact/" target="_self">Environmental Impact</a> <!-- / Link -->
+
+                       <!-- / Child Links -->
+
+                    
+                                  </div>
+               <!-- / Column One Links -->
+
+            </div> <!-- / Column One -->
+
+            <div class="col_2"> <!-- Column Two -->
+
+               <!-- Column Two Links -->
+                <div class="links">
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/about-us/" target="_self">About us</a> <!-- / Link -->
+
+                       <!-- Child Links -->
+                        <div class="child_links">
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/about-us/our-team/" target="_self">Our team</a> <!-- / Link -->
+
+                            
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/about-us/board/" target="_self">Our Board</a> <!-- / Link -->
+
+                            
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/vacancies/" target="_self">Jobs &amp; Volunteering</a> <!-- / Link -->
+
+                            
+                                                  </div>
+                       <!-- / Child Links -->
+
+                    
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/visit-us/" target="_self">Visit us</a> <!-- / Link -->
+
+                       <!-- Child Links -->
+                        <div class="child_links">
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/visit-us/the-literature-house/accessibility/" target="_self">Accessibility</a> <!-- / Link -->
+
+                            
+                                                  </div>
+                       <!-- / Child Links -->
+
+                    
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/hire/" target="_self">Hire Dragon Hall</a> <!-- / Link -->
+
+                       <!-- / Child Links -->
+
+                    
+                                  </div>
+               <!-- / Column Two Links -->
+
+            </div> <!-- / Column Two -->
+
+            <div class="col_3"> <!-- Column Three -->
+
+               <!-- Column Three Links -->
+                <div class="links">
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/contact/" target="_self">Contact us</a> <!-- / Link -->
+
+                    
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/terms-conditions/" target="_self">Terms &amp; Conditions</a> <!-- / Link -->
+
+                    
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/privacy-policy/" target="_self">Privacy Policy</a> <!-- / Link -->
+
+                    
+                                  </div>
+               <!-- / Column Three Links -->
+
+              <div class="social_links"> <!-- Social Links -->
+
+                 <!-- Social Link -->
+                  <div class="social_link">
+                    <a href="https://www.facebook.com/NationalCentreforWriting/" target="_blank">
+                      <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/facebook.png" alt="Twitter Logo" />
+                    </a>
+                  </div>
+                 <!-- / Social Link -->
+
+                 <!-- Social Link -->
+                  <div class="social_link">
+                    <a href="https://bsky.app/profile/writerscentre.bsky.social" target="_blank">
+                      <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/twitter.png" alt="Twitter Logo" />
+                    </a>
+                  </div>
+                 <!-- / Social Link -->
+
+                 <!-- Social Link -->
+                  <div class="social_link">
+                  <a href="https://www.linkedin.com/company/writerscentre/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=uk" target="_blank">
+                      <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/linkedin.png" alt="Linkedin Logo" />
+                    </a>
+                  </div>
+                 <!-- / Social Link -->
+
+                 <!-- Social Link -->
+                  <div class="social_link">
+                  <a href="https://www.youtube.com/user/WCNonline" target="_blank">
+                      <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/youtube.png" alt="Youtube Logo" />
+                    </a>
+                  </div>
+                 <!-- / Social Link -->
+
+                 <!-- Social Link -->
+                  <div class="social_link">
+                    <a href="https://www.instagram.com/writerscentre/?hl=en" target="_blank">
+                      <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/instagram.png" alt="Instagram Logo" />
+                    </a>
+                  </div>
+                 <!-- / Social Link -->
+
+              </div> <!-- / Social Links -->
+
+              <a href="https://www.splitpixel.co.uk/huddersfield-digital-agency/web-design/" target="_blank">Website designed by Splitpixel</a>
+
+            </div> <!-- / Column Three -->
+
+          </div> <!-- / Navigation -->
+
+        </div> <!-- / Navigation Container -->
+
+        <div class="newsletter_container"> <!-- Newsletter Container -->
+          <div class="newsletter"> <!-- Newsletter -->
+
+            <p class="h6 title">Newsletter Signup</p> <!-- Title -->
+
+            
+                <div class='gf_browser_chrome gform_wrapper gravity-theme gform-theme--no-framework' data-form-theme='gravity-theme' data-form-index='0' id='gform_wrapper_6' ><div id='gf_6' class='gform_anchor' tabindex='-1'></div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_6' id='gform_6'  action='/writing-hub/the-spirit-of-place-laurence-mitchell-on-flint-country/#gf_6' data-formid='6' novalidate>
+                        <div class='gform-body gform_body'><div id='gform_fields_6' class='gform_fields top_label form_sublabel_below description_below validation_below'><div id="field_6_9" class="gfield gfield--type-honeypot gform_validation_container field_sublabel_below gfield--has-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_6_9'><span class='gform-field-label__text'>Company</span></label><div class='ginput_container'><input name='input_9' id='input_6_9' type='text' value='' autocomplete='new-password'/></div><div class='gfield_description' id='gfield_description_6_9'>This field is for validation purposes and should be left unchanged.</div></div><div id="field_6_7" class="gfield gfield--type-html gfield--input-type-html gfield--width-full gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><div style="font-size:13px;">Sign up to receive newsletters about our work, including events, workshops, writer and translator opportunities, resources and ways to support us.</div></div><div id="field_6_1" class="gfield gfield--type-text gfield--input-type-text gfield--width-half gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_6_1'><span class='gform-field-label__text'>First Name</span><span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></label><div class='ginput_container ginput_container_text'><input name='input_1' id='input_6_1' type='text' value='' class='large'     aria-required="true" aria-invalid="false"   /></div></div><div id="field_6_3" class="gfield gfield--type-text gfield--input-type-text gfield--width-half gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_6_3'><span class='gform-field-label__text'>Last Name</span><span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></label><div class='ginput_container ginput_container_text'><input name='input_3' id='input_6_3' type='text' value='' class='large'     aria-required="true" aria-invalid="false"   /></div></div><div id="field_6_4" class="gfield gfield--type-email gfield--input-type-email gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_6_4'><span class='gform-field-label__text'>Email Address</span><span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></label><div class='ginput_container ginput_container_email'>
+                            <input name='input_4' id='input_6_4' type='email' value='' class='large'    aria-required="true" aria-invalid="false"  />
+                        </div></div><fieldset id="field_6_6" class="gfield gfield--type-checkbox gfield--type-choice gfield--input-type-checkbox gfield--width-full field_sublabel_below gfield--has-description field_description_above field_validation_below gfield_visibility_visible gfield--choice-align-vertical"  ><legend class='gfield_label gform-field-label gfield_label_before_complex' ><span class='gform-field-label__text'>Additional Interests</span></legend><div class='gfield_description' id='gfield_description_6_6'><div style="font-size:13px;">I am also interested in....</div></div><div class='ginput_container ginput_container_checkbox'><div class='gfield_checkbox ' id='input_6_6'><div class='gchoice gchoice_6_6_1'>
+								<input class='gfield-choice-input' name='input_6.1' type='checkbox'  value='601APNNMRMBJQQPBSCNQGQHGKKCRPSSGN'  id='choice_6_6_1'   aria-describedby="gfield_description_6_6"/>
+								<label for='choice_6_6_1' id='label_6_6_1' class='gform-field-label gform-field-label--type-inline'>Literary Translation</label>
+							</div><div class='gchoice gchoice_6_6_2'>
+								<input class='gfield-choice-input' name='input_6.2' type='checkbox'  value='401ANPJQJQPQMRSBDNMVNLSPGTRBVQVRH'  id='choice_6_6_2'   />
+								<label for='choice_6_6_2' id='label_6_6_2' class='gform-field-label gform-field-label--type-inline'>Young People &amp; Families</label>
+							</div><div class='gchoice gchoice_6_6_3'>
+								<input class='gfield-choice-input' name='input_6.3' type='checkbox'  value='802AJGBTDPGVCVMGPKHTKDLNBHRQNQDQG'  id='choice_6_6_3'   />
+								<label for='choice_6_6_3' id='label_6_6_3' class='gform-field-label gform-field-label--type-inline'>NCW Academy</label>
+							</div><div class='gchoice gchoice_6_6_4'>
+								<input class='gfield-choice-input' name='input_6.4' type='checkbox'  value='1805ALLBRLTKSTCLTLPMMNKTTNHVPCSDJ'  id='choice_6_6_4'   />
+								<label for='choice_6_6_4' id='label_6_6_4' class='gform-field-label gform-field-label--type-inline'>Norwich City of Literature</label>
+							</div></div></div></fieldset><div id="field_6_8" class="gfield gfield--type-text gfield--input-type-text gfield--width-full field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_hidden"  ><div class="admin-hidden-markup"><i class="gform-icon gform-icon--hidden" aria-hidden="true" title="This field is hidden when viewing the form"></i><span>This field is hidden when viewing the form</span></div><label class='gfield_label gform-field-label' for='input_6_8'><span class='gform-field-label__text'>Newsletter Contact Pref</span></label><div class='ginput_container ginput_container_text'><input name='input_8' id='input_6_8' type='text' value='201AGBHDRLQHNHPHKKMPKLGPMDRDTDMVL' class='large'      aria-invalid="false"   /></div></div><fieldset id="field_6_5" class="gfield gfield--type-consent gfield--type-choice gfield--input-type-consent gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below hidden_label field_validation_below gfield_visibility_visible gfield--choice-align-vertical"  ><legend class='gfield_label gform-field-label gfield_label_before_complex' ><span class='gform-field-label__text'>Privacy Policy</span><span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></legend><div class='ginput_container ginput_container_consent'><input name='input_5.1' id='input_6_5_1' type='checkbox' value='1'   aria-required="true" aria-invalid="false"   /> <label class="gform-field-label gform-field-label--type-inline gfield_consent_label" for='input_6_5_1' ><span class='gform-field-label__text'>I have read and agree to the <a href="https://nationalcentreforwriting.org.uk/privacy-policy/" target="_blank" class="text_link">privacy and terms.</a></span><span class="gfield_required gfield_required_text">(Required)</span></label><input type='hidden' name='input_5.2' value='I have read and agree to the &lt;a href=&quot;https://nationalcentreforwriting.org.uk/privacy-policy/&quot; target=&quot;_blank&quot; class=&quot;text_link&quot;&gt;privacy and terms.&lt;/a&gt;' class='gform_hidden' /><input type='hidden' name='input_5.3' value='6' class='gform_hidden' /></div></fieldset></div></div>
+        <div class='gform-footer gform_footer top_label'> <button type='submit' id='gform_submit_button_6' class='gform_button button' onclick='gform.submission.handleButtonClick(this);' data-submission-type='submit' >Go</button> <input type='hidden' name='gform_ajax' value='form_id=6&amp;title=&amp;description=&amp;tabindex=0&amp;theme=gravity-theme&amp;styles=[]&amp;hash=bca65a3dacc449f29fd73b19ba12290c' />
+            <input type='hidden' class='gform_hidden' name='gform_submission_method' data-js='gform_submission_method_6' value='iframe' />
+            <input type='hidden' class='gform_hidden' name='gform_theme' data-js='gform_theme_6' id='gform_theme_6' value='gravity-theme' />
+            <input type='hidden' class='gform_hidden' name='gform_style_settings' data-js='gform_style_settings_6' id='gform_style_settings_6' value='[]' />
+            <input type='hidden' class='gform_hidden' name='is_submit_6' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='6' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_currency' data-currency='GBP' value='YiP45r+UwCJTfIhlxxEEbmUkSqrVG5+h1CPd4U2KJpeBmHU2j6Wlucpy1MiC3VuhX5KoVKCBnXPvbQB89c7WSGKDsJED2CuuFBsLklL9Iq6K+IA=' />
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_6' value='WyJ7XCI2LjFcIjpcImM5NWU4Y2Q5NmMxYWFkY2YyZWRhODJiZTdlOWQyMGM5XCIsXCI2LjJcIjpcImIyNTdkMGY2OWJkNzA0NGU1YmY3Y2M4NTQ2MTZlOWJlXCIsXCI2LjNcIjpcImU1NmVkYzQxNzkyMTBhMjZmMTMyYmRmMTllNzI2ZTJkXCIsXCI2LjRcIjpcImZhNzM3ZWFiN2M4ZTYzYjFmMmQ3ODMzMzIwNzU0Nzk2XCIsXCI1LjFcIjpcImNkMDg5OWY3OTIzZGMxYjViZjQwMDI0YWZlNGU3YjJjXCIsXCI1LjJcIjpcIjg0YmJlYWIxNjE0NWY4NjQ2YTAwOGQ3MDA4NWU2ZDVmXCIsXCI1LjNcIjpcImVhNTZiNGNhYmY1MjBiZjViOTRkZjk3MzhiZGJkNmE1XCIsXCJnZm9ybV9zdWJtaXNzaW9uX21ldGhvZFwiOltcImVkYWQ0YTMzYzlmNDU4YTRlZjllZDg1M2UyNTkwOGE0XCIsXCJhNjZjZTUwYjUyOTk2YmY5ZDI3MDc1NmRiMjlkYTMxNFwiLFwiZGMwMGZhM2JjMjVlNDc0Y2YyZmE3NWI1ODVkNjBmMzlcIl0sXCJnZm9ybV90aGVtZVwiOlwiZjU3MTU1ZmRhM2I0NjFiODE1MzZjYTM3YzIwZDgxNThcIixcImdmb3JtX3N0eWxlX3NldHRpbmdzXCI6XCIxZmJhYTJlNjAyMDRiYjBlYmM1NzQwN2NhODg3M2QzZlwiLFwiZm9ybV9pZFwiOlwiZWE1NmI0Y2FiZjUyMGJmNWI5NGRmOTczOGJkYmQ2YTVcIixcInVybFwiOlwiZTU1NjYxZWVhNmU1NjJkNWY2Y2MyOThmNmVjNmU3YTVcIixcInN0YXRlX3RpbWVzdGFtcFwiOlwiZjljMjA1ZGM0OThmYzljNDZlNTJmNzkwNGQzMTY5NDdcIn0iLCJkODVmOTA0ZmMwNjZmMTNiYzIxMzZiOTEwODA5ZjAzMiIsMTc4NzgxMDE0NF0=' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_target_page_number_6' id='gform_target_page_number_6' value='0' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_source_page_number_6' id='gform_source_page_number_6' value='1' />
+            <input type='hidden' name='gform_field_values' value='check=First+Choice%2CSecond+Choice' />
+            
+        </div>
+                        </form>
+                        </div>
+		                <iframe style='display:none;width:0px;height:0px;' src='about:blank' name='gform_ajax_frame_6' id='gform_ajax_frame_6' title='This iframe contains the logic required to handle Ajax powered Gravity Forms.'></iframe>
+		                <script>
+gform.initializeOnLoaded( function() {jQuery('#gform_ajax_frame_6').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_6');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_6').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_6').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_6').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_6').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_6').offset().top - mt); }, 50 );var current_page = jQuery('#gform_source_page_number_6').val();jQuery(document).trigger('gform_page_loaded', [6, current_page]);window['gf_submitting_6'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}jQuery('#gform_wrapper_6').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_6').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [6]);window['gf_submitting_6'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_6').text());}else{jQuery('#gform_6').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger("gform_pre_post_render", [{ formId: "6", currentPage: "current_page", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_6" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_6";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_6" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 6, current_page );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );} );
+</script>
+
+          </div> <!-- / Newsletter -->
+        </div> <!-- / Newsletter Container -->
+
+      </div> <!-- / Top Panel -->
+
+      <div class="bottom_panel">
+
+        <div class="partners_container"> <!-- Partners Container -->
+
+          <div class="partners"> <!-- Partners -->
+
+            <p class="h6 title">Our Partners</p> <!-- Title -->
+
+            <div class="partners_flex_container"> <!-- Partners Flex Container -->
+
+              <div class="col_1"> <!-- Column One -->
+
+                <div class="partner_logo">
+                  <a href="https://www.artscouncil.org.uk/" target="_blank">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/ace_logo.png" alt="Arts Council England Logo" />
+                  </a>
+                </div> <!-- Partner Logo -->
+                <div class="partner_logo city_of_literature">
+                  <a href="/norwich-unesco-city-of-literature/">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/city-of-literature.png" alt="Norwich City of Literature Logo" />
+                  </a>
+                </div> <!-- Partner Logo -->
+
+              </div> <!-- / Column One -->
+
+              <div class="col_2"> <!-- Column Two -->
+
+                <div class="partner_logo">
+                  <a href="https://www.norwich.gov.uk/site/" target="_blank">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/ncc_logo.png" alt="Norwich City Council Logo" />
+                  </a>
+                </div> <!-- Partner Logo -->
+                <div class="partner_logo">
+                  <a href="https://ec.europa.eu/regional_policy/funding/erdf_en" target="_blank">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/sgs_logo.jpg" alt="Small Grant Scheme Logo" />
+                  </a>
+                </div> <!-- Partner Logo -->
+                <div class="partner_logo">
+                  <a href="https://www.uea.ac.uk/" target="_blank">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/uea_logo.png" alt="University of East Anglia Logo" />
+                  </a>
+                </div> <!-- Partner Logo -->
+
+              </div> <!-- / Column Two -->
+
+            </div> <!-- / Partners Flex Container -->
+
+          </div> <!-- / Partners -->
+
+        </div> <!-- / Partners Container -->
+
+        <div class="company_info_container"> <!-- Company Information Container -->
+
+          <p class="h6 title">Company Information</p> <!-- Title -->
+
+          <div class="company_info"> <!-- Company Information -->
+
+             <!-- Address -->
+              <p>© National Centre for Writing, Dragon Hall, 115-123 King Street, Norwich, NR1 1QE</p>
+             <!-- / Address -->
+
+            <p>Company Number: 05242876</p> <!-- Company Number -->
+
+            <p>National Centre for Writing is a registered charity. Our charity number is 1110725</p> <!-- Charity Number -->
+
+             <!-- Number -->
+                            <a href="mailto:info@nationalcentreforwriting.org.uk?subject=Website%20Enquiry">info@nationalcentreforwriting.org.uk</a>
+             <!-- / Number -->
+
+          </div> <!-- / Company Information -->
+
+        </div> <!-- / Company Information Container -->
+
+      </div> <!-- / Bottom Panel -->
+
+		</div> <!-- / Footer Content -->
+
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+	<nav id="mobile-navigation">
+		<ul>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-109"><a href="https://nationalcentreforwriting.org.uk/whats-on/">What’s On</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16582"><a href="https://nationalcentreforwriting.org.uk/whats-on/">All Events</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51505"><a href="https://nationalcentreforwriting.org.uk/darkest-chapter/">Darkest Chapter</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48417"><a href="https://nationalcentreforwriting.org.uk/whats-on/summer/">Summer at the National Centre for Writing</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43339"><a href="https://nationalcentreforwriting.org.uk/programmes/browse-our-season-brochure/">Season Brochure</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33130"><a href="https://nationalcentreforwriting.org.uk/the-global-page-2/">The Global Page  </a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-63"><a href="https://nationalcentreforwriting.org.uk/get-involved/">Get involved</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="https://nationalcentreforwriting.org.uk/get-involved/writers/">For writers</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="https://nationalcentreforwriting.org.uk/get-involved/translators/">For translators</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="https://nationalcentreforwriting.org.uk/get-involved/communities/">For communities</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-825"><a href="https://nationalcentreforwriting.org.uk/get-involved/young-people/">For young people</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-826"><a href="https://nationalcentreforwriting.org.uk/get-involved/families/">For families</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-827"><a href="https://nationalcentreforwriting.org.uk/get-involved/schools/">For teachers</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-828"><a href="https://nationalcentreforwriting.org.uk/norwich-unesco-city-of-literature/">Norwich UNESCO City of Literature</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-55"><a href="https://nationalcentreforwriting.org.uk/academy/">Academy</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44919"><a href="https://nationalcentreforwriting.org.uk/the-writing-life-challenge/">The Writing Life Challenge</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-830"><a href="https://nationalcentreforwriting.org.uk/academy/tutored-courses/">Online tutored courses</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-832"><a href="https://nationalcentreforwriting.org.uk/academy/workshops/">Workshops</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65"><a href="https://nationalcentreforwriting.org.uk/academy/mentoring/">Mentoring</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-831"><a href="https://nationalcentreforwriting.org.uk/academy/live-evening-courses/">Evening courses</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-829"><a href="https://nationalcentreforwriting.org.uk/academy/self-paced-courses/">Self-paced online courses</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8145"><a href="https://nationalcentreforwriting.org.uk/get-involved/writers/resources/">Free resources</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="https://nationalcentreforwriting.org.uk/writing-hub/">Writing Hub</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10937"><a href="https://nationalcentreforwriting.org.uk/visit-us/">Visit</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27672"><a href="https://nationalcentreforwriting.org.uk/plan-your-visit/">Plan your visit</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26050"><a href="https://nationalcentreforwriting.org.uk/writers-room/">Writers’ Room</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="https://nationalcentreforwriting.org.uk/visit-us/the-literature-house/accessibility/">Accessibility</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10938"><a href="https://nationalcentreforwriting.org.uk/about-us/">About us</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10731"><a href="https://nationalcentreforwriting.org.uk/support-us/">Join and support</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14985"><a href="https://nationalcentreforwriting.org.uk/vacancies/">Join the team</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14344"><a href="https://nationalcentreforwriting.org.uk/shop/">Shop</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"><a href="https://nationalcentreforwriting.org.uk/hire/">Hire Dragon Hall</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38328"><a href="https://nationalcentreforwriting.org.uk/press/">Press</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8326"><a href="https://nationalcentreforwriting.org.uk/in-the-region/">In the region</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8094"><a href="https://nationalcentreforwriting.org.uk/contact/">Contact us</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-838"><a href="https://nationalcentreforwriting.org.uk/norwich-unesco-city-of-literature/">Norwich UNESCO City of Literature</a></li>
+<li class="mobile_only menu-item menu-item-type-custom menu-item-object-custom menu-item-9085"><a href="https://ncw-online.teachable.com/l/products">Academy Portal</a></li>
+      <li>
+        <form role="search" method="get" class="search-form mobile_search_form" action="https://nationalcentreforwriting.org.uk">
+
+          <div class="mobile_search_form_holder"> <!-- Search Form Holder -->
+              <div class="label_input">
+                <label for="mobile_site_search">Search our site:</label>
+                <input type="search" id="mobile_site_search" class="search-field" value="" name="s" title="Search for:" />
+              </div>
+              <input type="submit" class="search-submit" value="Search" />
+          </div> <!-- / Search Form Holder -->
+
+        </form>
+      </li>
+		</ul>
+	</nav> <!-- #site-navigation -->
+
+	<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/ncw/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+	<!--copyscapeskip-->
+	<aside id="moove_gdpr_cookie_info_bar" class="moove-gdpr-info-bar-hidden moove-gdpr-align-center moove-gdpr-dark-scheme gdpr_infobar_postion_bottom" aria-label="GDPR Cookie Banner" style="display: none;">
+	<div class="moove-gdpr-info-bar-container">
+		<div class="moove-gdpr-info-bar-content">
+		
+<div class="moove-gdpr-cookie-notice">
+  <p><span style="font-size: 11pt">We use cookies to give you the best experience on our website. If you're ok with this, click 'accept' to allow all cookies. Click 'reject' to restrict tracking cookies and only use required cookies. You can find out more about which cookies we are using or switch them off in <button  aria-haspopup="true" data-href="#moove_gdpr_cookie_modal" class="change-settings-button gdpr-settings-btn-style-2">settings</button>.</span></p>
+</div>
+<!--  .moove-gdpr-cookie-notice -->
+		
+<div class="moove-gdpr-button-holder">
+			<button class="mgbutton moove-gdpr-infobar-allow-all gdpr-fbo-0" aria-label="Accept" >Accept</button>
+						<button class="mgbutton moove-gdpr-infobar-reject-btn gdpr-fbo-1 "  aria-label="Reject">Reject</button>
+			</div>
+<!--  .button-container -->
+		</div>
+		<!-- moove-gdpr-info-bar-content -->
+	</div>
+	<!-- moove-gdpr-info-bar-container -->
+	</aside>
+	<!-- #moove_gdpr_cookie_info_bar -->
+	<!--/copyscapeskip-->
+<script id="jquery-ui-core-js-before">
+jQuery.uiBackCompat = true;
+//# sourceURL=jquery-ui-core-js-before
+</script>
+<script id="jquery-ui-core-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/jquery/ui/core.min.js?ver=1.14.2"></script>
+<script id="jquery-ui-datepicker-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.14.2"></script>
+<script id="jquery-ui-datepicker-js-after">
+jQuery(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+//# sourceURL=jquery-ui-datepicker-js-after
+</script>
+<script id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+//# sourceURL=rocket-browser-checker-js-after
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"/whats-on/|/events/|/events/|/writing-hub/|/writing-hub/|/showcase/|/showcase/|/resources/|/resources/|/courses/|/courses/|/programmes/|/programmes/|/login/|/logout/|/basket/|/checkout/|/(?:.+/)?feed(?:/(?:.+/?)?)?$|/(?:.+/)?embed/|/(index.php/)?(.*)wp-json(/.*|$)|/refer/|/go/|/recommend/|/recommends/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https://nationalcentreforwriting.org.uk","onHoverDelay":"100","rateThrottle":"3"};
+//# sourceURL=rocket-preload-links-js-extra
+</script>
+<script id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+
+//# sourceURL=rocket-preload-links-js-after
+</script>
+<script id="ncw-navigation-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/js/navigation.js?ver=20151215"></script>
+<script id="ncw-skip-link-focus-fix-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/js/skip-link-focus-fix.js?ver=20151215"></script>
+<script id="ncw-mmenu-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/lib/mobile-navigation/mmenu.js?ver=20171102"></script>
+<script id="ncw-mobile-nav-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/lib/mobile-navigation/mobile-navigation.js?ver=20171102"></script>
+<script id="ncw-mobile-polyfills-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/lib/mobile-navigation/mmenu.polyfills.js?ver=20171102"></script>
+<script id="ncw-slick-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/js/slick.min.js?ver=20171012"></script>
+<script id="ncw-custom-scripts-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/js/custom-scripts.js?ver=20171012"></script>
+<script id="moove_gdpr_frontend-js-extra">
+var moove_frontend_gdpr_scripts = {"ajaxurl":"https://nationalcentreforwriting.org.uk/wp-admin/admin-ajax.php","post_id":"51283","plugin_dir":"https://nationalcentreforwriting.org.uk/wp-content/plugins/gdpr-cookie-compliance","show_icons":"all","is_page":"","ajax_cookie_removal":"false","strict_init":"2","enabled_default":{"strict":1,"third_party":0,"advanced":0,"performance":0,"preference":0},"geo_location":"false","force_reload":"false","is_single":"1","hide_save_btn":"false","current_user":"0","cookie_expiration":"365","script_delay":"2000","close_btn_action":"1","close_btn_rdr":"","scripts_defined":"{\"cache\":true,\"header\":\"\",\"body\":\"\",\"footer\":\"\",\"thirdparty\":{\"header\":\"\\t\\t\\t\\t\\t\\t\\t\\t\u003C!-- Google Tag Manager --\u003E\\n\\t\\t\\t\\t\u003Cscript data-gdpr data-type=\\\"gdpr-integration\\\"\u003E(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\\n\\t\\t\\t\\tnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\\n\\t\\t\\t\\tj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\\n\\t\\t\\t\\t'https:\\/\\/www.googletagmanager.com\\/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\\n\\t\\t\\t\\t})(window,document,'script','dataLayer','GTM-T7QPRS3');\u003C\\/script\u003E\\n\\t\\t\\t\\t\u003C!-- End Google Tag Manager --\u003E\\n\\t\\t\\t\\t\",\"body\":\"\\t\\t\\t\\t\u003C!-- Google Tag Manager (noscript) --\u003E\\n\\t\\t\\t\\t\u003Cnoscript data-type=\\\"gdpr-integration\\\"\u003E\u003Ciframe src=\\\"https:\\/\\/www.googletagmanager.com\\/ns.html?id=GTM-T7QPRS3\\\"\\n\\t\\t\\t\\theight=\\\"0\\\" width=\\\"0\\\" style=\\\"display:none;visibility:hidden\\\"\u003E\u003C\\/iframe\u003E\u003C\\/noscript\u003E\\n\\t\\t\\t\\t\u003C!-- End Google Tag Manager (noscript) --\u003E\\n\\t\\t\\t\\t\\t\\t\\t\\t\",\"footer\":\"\"},\"strict\":{\"header\":\"\",\"body\":\"\",\"footer\":\"\"},\"advanced\":{\"header\":\"\",\"body\":\"\",\"footer\":\"\"}}","gdpr_scor":"true","wp_lang":"","wp_consent_api":"false","gdpr_nonce":"41c80a2cbb"};
+//# sourceURL=moove_gdpr_frontend-js-extra
+</script>
+<script id="moove_gdpr_frontend-js" src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gdpr-cookie-compliance/dist/scripts/main.js?ver=5.1.0"></script>
+<script id="moove_gdpr_frontend-js-after">
+var gdpr_c=document.cookie.match(/(?:^|;\s*)moove_gdpr_popup=([^;]*)/);var gdpr_d=gdpr_c?JSON.parse(decodeURIComponent(gdpr_c[1])):{};var gdpr_consent__strict=gdpr_d.strict==="1"?"true":"false";var gdpr_consent__thirdparty=gdpr_d.thirdparty==="1"?"true":"false";var gdpr_consent__advanced=gdpr_d.advanced==="1"?"true":"false";var gdpr_consent__performance=gdpr_d.performance==="1"?"true":"false";var gdpr_consent__preference=gdpr_d.preference==="1"?"true":"false";var _cc=[];if(gdpr_d.strict==="1")_cc.push("strict");if(gdpr_d.thirdparty==="1")_cc.push("thirdparty");if(gdpr_d.advanced==="1")_cc.push("advanced");if(gdpr_d.performance==="1")_cc.push("performance");if(gdpr_d.preference==="1")_cc.push("preference");var gdpr_consent__cookies=_cc.join("|");
+//# sourceURL=moove_gdpr_frontend-js-after
+</script>
+<script id="wp-dom-ready-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/dist/dom-ready.min.js?ver=3fe927cab37bf38d6a23"></script>
+<script id="wp-hooks-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/dist/hooks.min.js?ver=f0f188028580e8dc1255"></script>
+<script id="wp-i18n-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/dist/i18n.min.js?ver=1dfe7db3940c23ea9216"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script id="wp-a11y-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/dist/a11y.min.js?ver=31c6cec5a4ff7aff483d"></script>
+<script id="gform_json-js" defer='defer' src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=3.0.3"></script>
+<script id="gform_gravityforms-js-extra">
+var gform_i18n = {"datepicker":{"wdOffset":1,"helpTextShort":"Press F1 for help","helpText":"Press the arrow keys to navigate by day, PageUp and PageDown to navigate by month, Alt+PageUp and Alt+PageDown to navigate by year, or Escape to cancel.","openOnFocusHelpText":"Press Down arrow to browse the calendar, or Escape to close.","tooltipTxt":"Press Escape to cancel","disabledTxt":"Disabled","markedTxt":"Selected","prevTxt":"Previous","nextTxt":"Next","monthTxt":"Month","yearTxt":"Year","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"days":[{"s":"S","l":"Sunday"},{"s":"M","l":"Monday"},{"s":"T","l":"Tuesday"},{"s":"W","l":"Wednesday"},{"s":"T","l":"Thursday"},{"s":"F","l":"Friday"},{"s":"S","l":"Saturday"}]}};
+var gf_legacy_multi = [];
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","file_uploaded":"File uploaded","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled","error":"Error","message":"Message"},"vars":{"images_url":"https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/images"}};
+var gf_global = {"gf_currency_config":{"name":"Pound Sterling","symbol_left":"&#163;","symbol_right":"","symbol_padding":" ","thousand_separator":",","decimal_separator":".","decimals":2,"code":"GBP"},"base_url":"https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms","number_formats":[],"version_hash":"c20fb5453cebeae694df2545a989fe68","countries":{"AF":"Afghanistan","AX":"\u00c5land Islands","AL":"Albania","DZ":"Algeria","AS":"American Samoa","AD":"Andorra","AO":"Angola","AI":"Anguilla","AQ":"Antarctica","AG":"Antigua and Barbuda","AR":"Argentina","AM":"Armenia","AW":"Aruba","AU":"Australia","AT":"Austria","AZ":"Azerbaijan","BS":"Bahamas","BH":"Bahrain","BD":"Bangladesh","BB":"Barbados","BY":"Belarus","BE":"Belgium","BZ":"Belize","BJ":"Benin","BM":"Bermuda","BT":"Bhutan","BO":"Bolivia","BQ":"Bonaire, Sint Eustatius and Saba","BA":"Bosnia and Herzegovina","BW":"Botswana","BV":"Bouvet Island","BR":"Brazil","IO":"British Indian Ocean Territory","BN":"Brunei Darussalam","BG":"Bulgaria","BF":"Burkina Faso","BI":"Burundi","CV":"Cabo Verde","KH":"Cambodia","CM":"Cameroon","CA":"Canada","KY":"Cayman Islands","CF":"Central African Republic","TD":"Chad","CL":"Chile","CN":"China","CX":"Christmas Island","CC":"Cocos Islands","CO":"Colombia","KM":"Comoros","CD":"Congo, Democratic Republic of the","CG":"Congo","CK":"Cook Islands","CR":"Costa Rica","CI":"C\u00f4te d'Ivoire","HR":"Croatia","CU":"Cuba","CW":"Cura\u00e7ao","CY":"Cyprus","CZ":"Czechia","DK":"Denmark","DJ":"Djibouti","DM":"Dominica","DO":"Dominican Republic","EC":"Ecuador","EG":"Egypt","SV":"El Salvador","GQ":"Equatorial Guinea","ER":"Eritrea","EE":"Estonia","SZ":"Eswatini","ET":"Ethiopia","FK":"Falkland Islands","FO":"Faroe Islands","FJ":"Fiji","FI":"Finland","FR":"France","GF":"French Guiana","PF":"French Polynesia","TF":"French Southern Territories","GA":"Gabon","GM":"Gambia","GE":"Georgia","DE":"Germany","GH":"Ghana","GI":"Gibraltar","GR":"Greece","GL":"Greenland","GD":"Grenada","GP":"Guadeloupe","GU":"Guam","GT":"Guatemala","GG":"Guernsey","GN":"Guinea","GW":"Guinea-Bissau","GY":"Guyana","HT":"Haiti","HM":"Heard Island and McDonald Islands","VA":"Holy See","HN":"Honduras","HK":"Hong Kong","HU":"Hungary","IS":"Iceland","IN":"India","ID":"Indonesia","IR":"Iran","IQ":"Iraq","IE":"Ireland","IM":"Isle of Man","IL":"Israel","IT":"Italy","JM":"Jamaica","JP":"Japan","JE":"Jersey","JO":"Jordan","KZ":"Kazakhstan","KE":"Kenya","KI":"Kiribati","KP":"Korea, Democratic People's Republic of","KR":"Korea, Republic of","KW":"Kuwait","KG":"Kyrgyzstan","LA":"Lao People's Democratic Republic","LV":"Latvia","LB":"Lebanon","LS":"Lesotho","LR":"Liberia","LY":"Libya","LI":"Liechtenstein","LT":"Lithuania","LU":"Luxembourg","MO":"Macao","MG":"Madagascar","MW":"Malawi","MY":"Malaysia","MV":"Maldives","ML":"Mali","MT":"Malta","MH":"Marshall Islands","MQ":"Martinique","MR":"Mauritania","MU":"Mauritius","YT":"Mayotte","MX":"Mexico","FM":"Micronesia","MD":"Moldova","MC":"Monaco","MN":"Mongolia","ME":"Montenegro","MS":"Montserrat","MA":"Morocco","MZ":"Mozambique","MM":"Myanmar","NA":"Namibia","NR":"Nauru","NP":"Nepal","NL":"Netherlands","NC":"New Caledonia","NZ":"New Zealand","NI":"Nicaragua","NE":"Niger","NG":"Nigeria","NU":"Niue","NF":"Norfolk Island","MK":"North Macedonia","MP":"Northern Mariana Islands","NO":"Norway","OM":"Oman","PK":"Pakistan","PW":"Palau","PS":"Palestine, State of","PA":"Panama","PG":"Papua New Guinea","PY":"Paraguay","PE":"Peru","PH":"Philippines","PN":"Pitcairn","PL":"Poland","PT":"Portugal","PR":"Puerto Rico","QA":"Qatar","RE":"R\u00e9union","RO":"Romania","RU":"Russian Federation","RW":"Rwanda","BL":"Saint Barth\u00e9lemy","SH":"Saint Helena, Ascension and Tristan da Cunha","KN":"Saint Kitts and Nevis","LC":"Saint Lucia","MF":"Saint Martin","PM":"Saint Pierre and Miquelon","VC":"Saint Vincent and the Grenadines","WS":"Samoa","SM":"San Marino","ST":"Sao Tome and Principe","SA":"Saudi Arabia","SN":"Senegal","RS":"Serbia","SC":"Seychelles","SL":"Sierra Leone","SG":"Singapore","SX":"Sint Maarten","SK":"Slovakia","SI":"Slovenia","SB":"Solomon Islands","SO":"Somalia","ZA":"South Africa","GS":"South Georgia and the South Sandwich Islands","SS":"South Sudan","ES":"Spain","LK":"Sri Lanka","SD":"Sudan","SR":"Suriname","SJ":"Svalbard and Jan Mayen","SE":"Sweden","CH":"Switzerland","SY":"Syria Arab Republic","TW":"Taiwan","TJ":"Tajikistan","TZ":"Tanzania, the United Republic of","TH":"Thailand","TL":"Timor-Leste","TG":"Togo","TK":"Tokelau","TO":"Tonga","TT":"Trinidad and Tobago","TN":"Tunisia","TR":"T\u00fcrkiye","TM":"Turkmenistan","TC":"Turks and Caicos Islands","TV":"Tuvalu","UG":"Uganda","UA":"Ukraine","AE":"United Arab Emirates","GB":"United Kingdom","US":"United States","UY":"Uruguay","UM":"US Minor Outlying Islands","UZ":"Uzbekistan","VU":"Vanuatu","VE":"Venezuela","VN":"Viet Nam","VG":"Virgin Islands, British","VI":"Virgin Islands, U.S.","WF":"Wallis and Futuna","EH":"Western Sahara","YE":"Yemen","ZM":"Zambia","ZW":"Zimbabwe"},"strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+//# sourceURL=gform_gravityforms-js-extra
+</script>
+<script id="gform_gravityforms-js" defer='defer' src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=3.0.3"></script>
+<script id="gform_gravityforms_utils-js" defer='defer' src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/js/dist/utils.min.js?ver=69a9db57304a9f86c3d1a0bea5fd2cf9"></script>
+<script id="gform_gravityforms_theme_vendors-js" defer='defer' src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/js/dist/vendor-theme.min.js?ver=0c901cb641ce64b99c20ea1a4d208cc9"></script>
+<script id="gform_gravityforms_theme-js-extra">
+var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"c20fb5453cebeae694df2545a989fe68"},"ajax":{"ajaxurl":"https://nationalcentreforwriting.org.uk/wp-admin/admin-ajax.php","ajax_submission_nonce":"32df38e956","i18n":{"step_announcement":"Step %1$s of %2$s, %3$s","unknown_error":"There was an unknown error processing your request. Please try again.","error_403":"The request was blocked (403 error) for unknown security reasons. Remove any code-like text (scripts or DB queries) and try again."}}}},"hmr_dev":"","public_path":"https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/js/dist/","config_nonce":"40397dcefe"};
+//# sourceURL=gform_gravityforms_theme-js-extra
+</script>
+<script id="gform_gravityforms_theme-js" defer='defer' src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/js/dist/scripts-theme.min.js?ver=75b66edcf00dc5031d1c38e899136fda"></script>
+
+    
+	<!--copyscapeskip-->
+	<!-- V1 -->
+		<dialog id="moove_gdpr_cookie_modal" class="gdpr_lightbox-hide" open aria-modal="true" aria-label="GDPR Settings Screen">
+	<div class="moove-gdpr-modal-content moove-clearfix logo-position-left moove_gdpr_modal_theme_v1">
+		    
+		<button class="moove-gdpr-modal-close" autofocus aria-label="Close GDPR Cookie Settings">
+			<span class="gdpr-sr-only">Close GDPR Cookie Settings</span>
+			<span class="gdpr-icon moovegdpr-arrow-close"></span>
+		</button>
+				<div class="moove-gdpr-modal-left-content">
+		
+<div class="moove-gdpr-company-logo-holder">
+	<img src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gdpr-cookie-compliance/dist/images/gdpr-logo.png" alt="National Centre for Writing | NCW"   width="350"  height="233"  class="img-responsive" />
+</div>
+<!--  .moove-gdpr-company-logo-holder -->
+		<ul id="moove-gdpr-menu">
+			
+<li class="menu-item-on menu-item-privacy_overview menu-item-selected">
+	<button data-href="#privacy_overview" class="moove-gdpr-tab-nav" aria-label="Privacy Overview">
+	<span class="gdpr-nav-tab-title">Privacy Overview</span>
+	</button>
+</li>
+
+	<li class="menu-item-strict-necessary-cookies menu-item-off">
+	<button data-href="#strict-necessary-cookies" class="moove-gdpr-tab-nav" aria-label="Strictly Necessary Cookies">
+		<span class="gdpr-nav-tab-title">Strictly Necessary Cookies</span>
+	</button>
+	</li>
+
+
+	<li class="menu-item-off menu-item-third_party_cookies">
+	<button data-href="#third_party_cookies" class="moove-gdpr-tab-nav" aria-label="3rd Party Cookies">
+		<span class="gdpr-nav-tab-title">3rd Party Cookies</span>
+	</button>
+	</li>
+
+
+
+		</ul>
+		
+<div class="moove-gdpr-branding-cnt">
+			<a href="https://wordpress.org/plugins/gdpr-cookie-compliance/" rel="noopener noreferrer" target="_blank" class='moove-gdpr-branding'>Powered by&nbsp; <span>GDPR Cookie Compliance</span></a>
+		</div>
+<!--  .moove-gdpr-branding -->
+		</div>
+		<!--  .moove-gdpr-modal-left-content -->
+		<div class="moove-gdpr-modal-right-content">
+		<div class="moove-gdpr-modal-title">
+			 
+		</div>
+		<!-- .moove-gdpr-modal-ritle -->
+		<div class="main-modal-content">
+
+			<div class="moove-gdpr-tab-content">
+			
+<div id="privacy_overview" class="moove-gdpr-tab-main">
+		<span class="tab-title">Privacy Overview</span>
+		<div class="moove-gdpr-tab-main-content">
+	<p>This website uses cookies so that we can provide you with the best user experience possible. Cookie information is stored in your browser and performs functions such as recognising you when you return to our website and helping our team to understand which sections of the website you find most interesting and useful.</p>
+		</div>
+	<!--  .moove-gdpr-tab-main-content -->
+
+</div>
+<!-- #privacy_overview -->
+			
+  <div id="strict-necessary-cookies" class="moove-gdpr-tab-main" style="display:none">
+    <span class="tab-title">Strictly Necessary Cookies</span>
+    <div class="moove-gdpr-tab-main-content">
+      <p>Strictly Necessary Cookie should be enabled at all times so that we can save your preferences for cookie settings.</p>
+      <div class="moove-gdpr-status-bar ">
+        <div class="gdpr-cc-form-wrap">
+          <div class="gdpr-cc-form-fieldset">
+            <label class="cookie-switch" for="moove_gdpr_strict_cookies">    
+              <span class="gdpr-sr-only">Enable or Disable Cookies</span>        
+              <input type="checkbox" aria-label="Strictly Necessary Cookies"  value="check" name="moove_gdpr_strict_cookies" id="moove_gdpr_strict_cookies">
+              <span class="cookie-slider cookie-round gdpr-sr" data-text-enable="Enabled" data-text-disabled="Disabled">
+                <span class="gdpr-sr-label">
+                  <span class="gdpr-sr-enable">Enabled</span>
+                  <span class="gdpr-sr-disable">Disabled</span>
+                </span>
+              </span>
+            </label>
+          </div>
+          <!-- .gdpr-cc-form-fieldset -->
+        </div>
+        <!-- .gdpr-cc-form-wrap -->
+      </div>
+      <!-- .moove-gdpr-status-bar -->
+                                              
+    </div>
+    <!--  .moove-gdpr-tab-main-content -->
+  </div>
+  <!-- #strict-necesarry-cookies -->
+			
+  <div id="third_party_cookies" class="moove-gdpr-tab-main" style="display:none">
+    <span class="tab-title">3rd Party Cookies</span>
+    <div class="moove-gdpr-tab-main-content">
+      <p>This website uses Google Analytics to collect anonymous information such as the number of visitors to the site, and the most popular pages. It also uses Facebook Pixel to help us recommend events to our audiences.</p>
+<p>Keeping this cookie enabled helps us to improve our website.</p>
+      <div class="moove-gdpr-status-bar">
+        <div class="gdpr-cc-form-wrap">
+          <div class="gdpr-cc-form-fieldset">
+            <label class="cookie-switch" for="moove_gdpr_performance_cookies">    
+              <span class="gdpr-sr-only">Enable or Disable Cookies</span>     
+              <input type="checkbox" aria-label="3rd Party Cookies" value="check" name="moove_gdpr_performance_cookies" id="moove_gdpr_performance_cookies" disabled>
+              <span class="cookie-slider cookie-round gdpr-sr" data-text-enable="Enabled" data-text-disabled="Disabled">
+                <span class="gdpr-sr-label">
+                  <span class="gdpr-sr-enable">Enabled</span>
+                  <span class="gdpr-sr-disable">Disabled</span>
+                </span>
+              </span>
+            </label>
+          </div>
+          <!-- .gdpr-cc-form-fieldset -->
+        </div>
+        <!-- .gdpr-cc-form-wrap -->
+      </div>
+      <!-- .moove-gdpr-status-bar -->
+             
+    </div>
+    <!--  .moove-gdpr-tab-main-content -->
+  </div>
+  <!-- #third_party_cookies -->
+			
+									
+			</div>
+			<!--  .moove-gdpr-tab-content -->
+		</div>
+		<!--  .main-modal-content -->
+		<div class="moove-gdpr-modal-footer-content">
+			<div class="moove-gdpr-button-holder">
+						<button class="mgbutton moove-gdpr-modal-allow-all button-visible" aria-label="Enable All">Enable All</button>
+								<button class="mgbutton moove-gdpr-modal-save-settings button-visible" aria-label="Save Settings">Save Settings</button>
+				</div>
+<!--  .moove-gdpr-button-holder -->
+		</div>
+		<!--  .moove-gdpr-modal-footer-content -->
+		</div>
+		<!--  .moove-gdpr-modal-right-content -->
+
+		<div class="moove-clearfix"></div>
+
+	</div>
+	<!--  .moove-gdpr-modal-content -->
+	</dialog>
+	<!-- #moove_gdpr_cookie_modal -->
+	<!--/copyscapeskip-->
+<script>
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 6) {} } );jQuery(document).on('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+</script>
+<script>
+gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_render", [{ formId: "6", currentPage: "1", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_6" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_6";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_6" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 6, 1 );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );
+</script>
+
+</div> <!-- / Site Wrapper -->
+
+</body>
+</html>

@@ -1,0 +1,1671 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+<script>
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}});
+</script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <script src="https://webcomponents.spektrix.com/stable/webcomponents-loader.js"></script>
+	<script src="https://webcomponents.spektrix.com/stable/spektrix-component-loader.js" data-components="spektrix-donate,spektrix-merchandise,spektrix-basket-summary,spektrix-memberships,spektrix-gift-vouchers" async></script>
+  <script type="text/javascript" src="https://tickets.nationalcentreforwriting.org.uk/writerscentre/website/scripts/integrate.js"></script>
+
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v28.3 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>Writing relationships: Jem Calder on I Want You to Be Happy | National Centre for Writing | NCW</title>
+	<meta name="description" content="In this episode of The Writing Life Podcast, Jem Calder shares insights into developing the central relationship in his novel, I Want You to Be Happy." />
+	<link rel="canonical" href="https://nationalcentreforwriting.org.uk/writing-hub/writing-relationships-jem-calder-podcast/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Writing relationships: Jem Calder on I Want You to Be Happy" />
+	<meta property="og:description" content="In this episode of The Writing Life Podcast, Jem Calder shares insights into developing the central relationship in his novel, I Want You to Be Happy." />
+	<meta property="og:url" content="https://nationalcentreforwriting.org.uk/writing-hub/writing-relationships-jem-calder-podcast/" />
+	<meta property="og:site_name" content="National Centre for Writing | NCW" />
+	<meta property="og:image" content="https://nationalcentreforwriting.org.uk/wp-content/uploads/2026/07/Jem-Calder-podcast.png" />
+	<meta property="og:image:width" content="900" />
+	<meta property="og:image:height" content="900" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="34 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/writing-relationships-jem-calder-podcast\/","url":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/writing-relationships-jem-calder-podcast\/","name":"Writing relationships: Jem Calder on I Want You to Be Happy | National Centre for Writing | NCW","isPartOf":{"@id":"https:\/\/nationalcentreforwriting.org.uk\/#website"},"primaryImageOfPage":{"@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/writing-relationships-jem-calder-podcast\/#primaryimage"},"image":{"@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/writing-relationships-jem-calder-podcast\/#primaryimage"},"thumbnailUrl":"https:\/\/nationalcentreforwriting.org.uk\/wp-content\/uploads\/2026\/07\/Jem-Calder-podcast.png","datePublished":"2026-07-13T04:05:00+00:00","description":"In this episode of The Writing Life Podcast, Jem Calder shares insights into developing the central relationship in his novel, I Want You to Be Happy.","breadcrumb":{"@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/writing-relationships-jem-calder-podcast\/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/writing-relationships-jem-calder-podcast\/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/writing-relationships-jem-calder-podcast\/#primaryimage","url":"https:\/\/nationalcentreforwriting.org.uk\/wp-content\/uploads\/2026\/07\/Jem-Calder-podcast.png","contentUrl":"https:\/\/nationalcentreforwriting.org.uk\/wp-content\/uploads\/2026\/07\/Jem-Calder-podcast.png","width":900,"height":900},{"@type":"BreadcrumbList","@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/writing-relationships-jem-calder-podcast\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/nationalcentreforwriting.org.uk\/"},{"@type":"ListItem","position":2,"name":"Writing relationships: Jem Calder on I Want You to Be Happy"}]},{"@type":"WebSite","@id":"https:\/\/nationalcentreforwriting.org.uk\/#website","url":"https:\/\/nationalcentreforwriting.org.uk\/","name":"National Centre for Writing | NCW","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/nationalcentreforwriting.org.uk\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="National Centre for Writing | NCW &raquo; Feed" href="https://nationalcentreforwriting.org.uk/feed/" />
+<link rel="alternate" type="application/rss+xml" title="National Centre for Writing | NCW &raquo; Comments Feed" href="https://nationalcentreforwriting.org.uk/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="National Centre for Writing | NCW &raquo; Writing relationships: Jem Calder on I Want You to Be Happy Comments Feed" href="https://nationalcentreforwriting.org.uk/writing-hub/writing-relationships-jem-calder-podcast/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://nationalcentreforwriting.org.uk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnationalcentreforwriting.org.uk%2Fwriting-hub%2Fwriting-relationships-jem-calder-podcast%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://nationalcentreforwriting.org.uk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnationalcentreforwriting.org.uk%2Fwriting-hub%2Fwriting-relationships-jem-calder-podcast%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='search-filter-plugin-styles-css' href='https://nationalcentreforwriting.org.uk/wp-content/plugins/search-filter-pro/public/assets/css/search-filter.min.css?ver=2.5.21' media='all' />
+<link rel='stylesheet' id='ncw-style-css' href='https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/style.css?ver=1771947514' media='all' />
+<link rel='stylesheet' id='mobile-nav-css' href='https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/lib/mobile-navigation/mmenu.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='ncw-slick-style-css' href='https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/css/slick.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='ncw-slick-theme-css' href='https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/css/slick-theme.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='moove_gdpr_frontend-css' href='https://nationalcentreforwriting.org.uk/wp-content/plugins/gdpr-cookie-compliance/dist/styles/gdpr-main-nf.css?ver=5.1.0' media='all' />
+<style id="moove_gdpr_frontend-inline-css">
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.moove-gdpr-infobar-settings-btn,
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-settings-btn {
+					background-color: transparent;
+					box-shadow: inset 0 0 0 1px currentColor;
+					opacity: .7;
+					color: #202020;
+				}
+
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.moove-gdpr-infobar-settings-btn:hover,
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-settings-btn:hover {
+					background-color: #202020;
+					box-shadow: none;
+					color: #fff;
+					opacity: 1;
+				}
+
+				#moove_gdpr_cookie_info_bar:not(.gdpr-full-screen-infobar).moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.moove-gdpr-infobar-settings-btn, #moove_gdpr_cookie_info_bar:not(.gdpr-full-screen-infobar).moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-settings-btn {
+					background-color: transparent;
+					box-shadow: inset 0 0 0 1px currentColor;
+					opacity: .7;
+					color: #fff;
+				}
+
+				#moove_gdpr_cookie_info_bar:not(.gdpr-full-screen-infobar).moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.moove-gdpr-infobar-settings-btn:hover, #moove_gdpr_cookie_info_bar:not(.gdpr-full-screen-infobar).moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-settings-btn:hover {
+					box-shadow: none;
+					opacity: 1;
+					color: #202020;
+					background-color: #fff;
+				}
+							#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main h3.tab-title, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main span.tab-title,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content .moove-gdpr-branding-cnt a,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton,
+				#moove_gdpr_cookie_modal .cookie-switch .cookie-slider:after, 
+				#moove_gdpr_cookie_modal .cookie-switch .slider:after, 
+				#moove_gdpr_cookie_modal .switch .cookie-slider:after, 
+				#moove_gdpr_cookie_modal .switch .slider:after,
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content p, 
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content p a,
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton, 
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h1, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h2, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h3, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h4, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h5, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h6,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-modal-title .tab-title,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-tab-main h3.tab-title, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-tab-main span.tab-title,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-branding-cnt a {
+					font-weight: inherit				}
+			#moove_gdpr_cookie_modal,#moove_gdpr_cookie_info_bar,.gdpr_cookie_settings_shortcode_content{font-family:inherit}#moove_gdpr_save_popup_settings_button{background-color:#373737;color:#fff}#moove_gdpr_save_popup_settings_button:hover{background-color:#000}#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton,#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton{background-color:#f6a000}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton,.gdpr_cookie_settings_shortcode_content .gdpr-shr-button.button-green,.gdpr-blocked-recaptcha .gdpr-shr-button.button-green{background-color:#f6a000;border-color:#f6a000}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton:hover,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton:hover,.gdpr_cookie_settings_shortcode_content .gdpr-shr-button.button-green:hover,.gdpr-blocked-recaptcha .gdpr-shr-button.button-green:hover{background-color:#fff;color:#f6a000}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close span.gdpr-icon{background-color:#f6a000;border:1px solid #f6a000}#moove_gdpr_cookie_info_bar span.moove-gdpr-infobar-allow-all.focus-g,#moove_gdpr_cookie_info_bar span.moove-gdpr-infobar-allow-all:focus,#moove_gdpr_cookie_info_bar button.moove-gdpr-infobar-allow-all.focus-g,#moove_gdpr_cookie_info_bar button.moove-gdpr-infobar-allow-all:focus,#moove_gdpr_cookie_info_bar span.moove-gdpr-infobar-reject-btn.focus-g,#moove_gdpr_cookie_info_bar span.moove-gdpr-infobar-reject-btn:focus,#moove_gdpr_cookie_info_bar button.moove-gdpr-infobar-reject-btn.focus-g,#moove_gdpr_cookie_info_bar button.moove-gdpr-infobar-reject-btn:focus,#moove_gdpr_cookie_info_bar span.change-settings-button.focus-g,#moove_gdpr_cookie_info_bar span.change-settings-button:focus,#moove_gdpr_cookie_info_bar button.change-settings-button.focus-g,#moove_gdpr_cookie_info_bar button.change-settings-button:focus{-webkit-box-shadow:0 0 1px 3px #f6a000;-moz-box-shadow:0 0 1px 3px #f6a000;box-shadow:0 0 1px 3px #f6a000}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close i:hover,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close span.gdpr-icon:hover,#moove_gdpr_cookie_info_bar span[data-href]>u.change-settings-button{color:#f6a000}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li.menu-item-selected a span.gdpr-icon,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li.menu-item-selected button span.gdpr-icon{color:inherit}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a span.gdpr-icon,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button span.gdpr-icon{color:inherit}#moove_gdpr_cookie_modal .gdpr-acc-link{line-height:0;font-size:0;color:transparent;position:absolute}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close:hover i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content a:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content span.change-settings-button:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.change-settings-button:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content u.change-settings-button:hover,#moove_gdpr_cookie_info_bar span[data-href]>u.change-settings-button,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content span.change-settings-button.focus-g,span.change-settings-button:focus,button.change-settings-button.focus-g,button.change-settings-button:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content u.change-settings-button.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content u.change-settings-button:focus{color:#f6a000}#moove_gdpr_cookie_modal .moove-gdpr-branding.focus-g span,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main a.focus-g,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .gdpr-cd-details-toggle.focus-g{color:#f6a000}#moove_gdpr_cookie_modal.gdpr_lightbox-hide{display:none}#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton,#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton,.gdpr-shr-button,#moove_gdpr_cookie_info_bar .moove-gdpr-infobar-close-btn{border-radius:0}
+/*# sourceURL=moove_gdpr_frontend-inline-css */
+</style>
+<script id="jquery-js" src="//ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js?ver=20171012"></script>
+<script id="search-filter-plugin-build-js-extra">
+var SF_LDATA = {"ajax_url":"https://nationalcentreforwriting.org.uk/wp-admin/admin-ajax.php","home_url":"https://nationalcentreforwriting.org.uk/","extensions":[]};
+//# sourceURL=search-filter-plugin-build-js-extra
+</script>
+<script id="search-filter-plugin-build-js" src="https://nationalcentreforwriting.org.uk/wp-content/plugins/search-filter-pro/public/assets/js/search-filter-build.min.js?ver=2.5.21"></script>
+<script id="search-filter-plugin-chosen-js" src="https://nationalcentreforwriting.org.uk/wp-content/plugins/search-filter-pro/public/assets/js/chosen.jquery.min.js?ver=2.5.21"></script>
+<link rel="https://api.w.org/" href="https://nationalcentreforwriting.org.uk/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://nationalcentreforwriting.org.uk/wp-json/wp/v2/writing_hub/49978" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://nationalcentreforwriting.org.uk/xmlrpc.php?rsd" />
+<link rel='shortlink' href='https://nationalcentreforwriting.org.uk/?p=49978' />
+<meta name="cdp-version" content="1.5.6" /><link rel="pingback" href="https://nationalcentreforwriting.org.uk/xmlrpc.php">      	<style>
+		.internal_hero{
+			background-image: url("https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/default-header.png");
+      background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/default-header.png");
+      background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/default-header.png");
+      background-position: 0px 0px, 50% 50%;
+      background-size: auto, cover;
+      background-repeat: repeat, no-repeat;
+		}
+	</style>
+  <link rel='stylesheet' id='gform_basic-css' href='https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/css/dist/basic.min.css?ver=3.0.3' media='all' />
+<link rel='stylesheet' id='gform_theme_components-css' href='https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/css/dist/theme-components.min.css?ver=3.0.3' media='all' />
+<link rel='stylesheet' id='gform_theme-css' href='https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/css/dist/theme.min.css?ver=3.0.3' media='all' />
+
+</head>
+
+<body class="wp-singular writing_hub-template-default single single-writing_hub postid-49978 wp-theme-ncw">
+
+<div class="site_wrapper"> <!-- Site Wrapper -->
+
+	<div id="page" class="site">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+    
+    
+      <header id="masthead" class="site-header">
+
+        
+        <div class="logo_nav_holder"> <!-- Logo Nav Holder -->
+
+          <div class="logo"> <!-- Logo -->
+            <a href="https://nationalcentreforwriting.org.uk/" rel="home">
+              <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/ncw-logo.svg" alt="NCW Logo" />
+            </a>
+          </div> <!-- / Logo -->
+
+          <div class="nav_icon"><!-- Nav Icon -->
+            <a href="#mobile-navigation">
+              <div id="nav_icon" class="hamburger hamburger--squeeze">
+                <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+                </div>
+              </div>
+            </a>
+          </div> <!-- / Nav Icon -->
+
+          <div class="main_nav"> <!-- Main Nav -->
+
+            <nav id="site-navigation" class="main-navigation">
+              <div class="menu-menu-1-container"><ul id="primary-menu" class="menu"><li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-109"><a href="https://nationalcentreforwriting.org.uk/whats-on/">What’s On</a>
+<ul class="sub-menu">
+	<li id="menu-item-16582" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16582"><a href="https://nationalcentreforwriting.org.uk/whats-on/">All Events</a></li>
+	<li id="menu-item-51505" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51505"><a href="https://nationalcentreforwriting.org.uk/darkest-chapter/">Darkest Chapter</a></li>
+	<li id="menu-item-48417" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48417"><a href="https://nationalcentreforwriting.org.uk/whats-on/summer/">Summer at the National Centre for Writing</a></li>
+	<li id="menu-item-43339" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43339"><a href="https://nationalcentreforwriting.org.uk/programmes/browse-our-season-brochure/">Season Brochure</a></li>
+	<li id="menu-item-33130" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33130"><a href="https://nationalcentreforwriting.org.uk/the-global-page-2/">The Global Page  </a></li>
+</ul>
+</li>
+<li id="menu-item-63" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-63"><a href="https://nationalcentreforwriting.org.uk/get-involved/">Get involved</a>
+<ul class="sub-menu">
+	<li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="https://nationalcentreforwriting.org.uk/get-involved/writers/">For writers</a></li>
+	<li id="menu-item-61" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="https://nationalcentreforwriting.org.uk/get-involved/translators/">For translators</a></li>
+	<li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="https://nationalcentreforwriting.org.uk/get-involved/communities/">For communities</a></li>
+	<li id="menu-item-825" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-825"><a href="https://nationalcentreforwriting.org.uk/get-involved/young-people/">For young people</a></li>
+	<li id="menu-item-826" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-826"><a href="https://nationalcentreforwriting.org.uk/get-involved/families/">For families</a></li>
+	<li id="menu-item-827" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-827"><a href="https://nationalcentreforwriting.org.uk/get-involved/schools/">For teachers</a></li>
+	<li id="menu-item-828" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-828"><a href="https://nationalcentreforwriting.org.uk/norwich-unesco-city-of-literature/">Norwich UNESCO City of Literature</a></li>
+</ul>
+</li>
+<li id="menu-item-55" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-55"><a href="https://nationalcentreforwriting.org.uk/academy/">Academy</a>
+<ul class="sub-menu">
+	<li id="menu-item-44919" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44919"><a href="https://nationalcentreforwriting.org.uk/the-writing-life-challenge/">The Writing Life Challenge</a></li>
+	<li id="menu-item-830" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-830"><a href="https://nationalcentreforwriting.org.uk/academy/tutored-courses/">Online tutored courses</a></li>
+	<li id="menu-item-832" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-832"><a href="https://nationalcentreforwriting.org.uk/academy/workshops/">Workshops</a></li>
+	<li id="menu-item-65" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65"><a href="https://nationalcentreforwriting.org.uk/academy/mentoring/">Mentoring</a></li>
+	<li id="menu-item-831" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-831"><a href="https://nationalcentreforwriting.org.uk/academy/live-evening-courses/">Evening courses</a></li>
+	<li id="menu-item-829" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-829"><a href="https://nationalcentreforwriting.org.uk/academy/self-paced-courses/">Self-paced online courses</a></li>
+	<li id="menu-item-8145" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8145"><a href="https://nationalcentreforwriting.org.uk/get-involved/writers/resources/">Free resources</a></li>
+</ul>
+</li>
+<li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="https://nationalcentreforwriting.org.uk/writing-hub/">Writing Hub</a></li>
+<li id="menu-item-10937" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10937"><a href="https://nationalcentreforwriting.org.uk/visit-us/">Visit</a>
+<ul class="sub-menu">
+	<li id="menu-item-27672" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27672"><a href="https://nationalcentreforwriting.org.uk/plan-your-visit/">Plan your visit</a></li>
+	<li id="menu-item-26050" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26050"><a href="https://nationalcentreforwriting.org.uk/writers-room/">Writers’ Room</a></li>
+	<li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="https://nationalcentreforwriting.org.uk/visit-us/the-literature-house/accessibility/">Accessibility</a></li>
+</ul>
+</li>
+<li id="menu-item-10938" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10938"><a href="https://nationalcentreforwriting.org.uk/about-us/">About us</a>
+<ul class="sub-menu">
+	<li id="menu-item-10731" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10731"><a href="https://nationalcentreforwriting.org.uk/support-us/">Join and support</a></li>
+	<li id="menu-item-14985" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14985"><a href="https://nationalcentreforwriting.org.uk/vacancies/">Join the team</a></li>
+	<li id="menu-item-14344" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14344"><a href="https://nationalcentreforwriting.org.uk/shop/">Shop</a></li>
+	<li id="menu-item-64" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"><a href="https://nationalcentreforwriting.org.uk/hire/">Hire Dragon Hall</a></li>
+	<li id="menu-item-38328" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38328"><a href="https://nationalcentreforwriting.org.uk/press/">Press</a></li>
+	<li id="menu-item-8326" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8326"><a href="https://nationalcentreforwriting.org.uk/in-the-region/">In the region</a></li>
+	<li id="menu-item-8094" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8094"><a href="https://nationalcentreforwriting.org.uk/contact/">Contact us</a></li>
+</ul>
+</li>
+<li id="menu-item-838" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-838"><a href="https://nationalcentreforwriting.org.uk/norwich-unesco-city-of-literature/">Norwich UNESCO City of Literature</a></li>
+<li id="menu-item-9085" class="mobile_only menu-item menu-item-type-custom menu-item-object-custom menu-item-9085"><a href="https://ncw-online.teachable.com/l/products">Academy Portal</a></li>
+</ul></div>            </nav><!-- #site-navigation -->
+
+            <div class="top_icons"> <!-- Top Icons -->
+
+              <a href="/my-account/"><img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/login-white.svg" width="32" height="32" alt="Profile Icon" /></a>
+              <spektrix-basket-summary client-name="writerscentre" custom-domain="tickets.nationalcentreforwriting.org.uk">
+                <a href="https://nationalcentreforwriting.org.uk/basket/" class="account_basket">
+                <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/basket-white.svg" width="32" height="32" alt="Basket Icon" />
+                <span class="basket_item_count" data-basket-item-count></span>
+                </a>
+              </spektrix-basket-summary>
+            </div> <!-- / Top Icons -->
+
+            <div class="top_link">
+              <a href="https://sso.teachable.com/secure/231323/identity/login/password" target="_blank">Academy Portal</a>
+            </div>
+
+          </div> <!-- / Main Nav -->
+
+          <div class="flyout-container" >
+
+            <div class="support_us_flyout flyout-button pink_bg" id="flyout-1-button" ><a href="#">SUPPORT NCW<img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/support_us_arrow.svg" alt="Arrow"/></a></div> <!-- Support Us Flyout -->
+
+            <div class="donation_form flyout flyout-1 pink_bg" id="donation_flyout"> <!-- Donation Form -->
+
+              <div class="donation_slider_holder"> <!-- Donation Slider Holder -->
+
+                <p class="donation_flyout_text">Every donation spreads the lifelong benefits of reading, writing and stories.</p>
+
+                <div class="donation_close"><a href="#close_search"><img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/close-white.svg" alt="X Close Icon" /></a></div>
+
+                
+                  <spektrix-donate id="steps-2801AQDNLVMHMKCPBDVJNRVPGGRHGRKHB" client-name="writerscentre" custom-domain="tickets.nationalcentreforwriting.org.uk" fund-id="2801AQDNLVMHMKCPBDVJNRVPGGRHGRKHB" forward-to="https://nationalcentreforwriting.org.uk/basket/">
+
+                      <p class="h5">Choose an amount: £<span data-display-donation-amount>0</span></p>
+                      <div class="donate_buttons">
+                        <button data-donate-amount="5">£5</button>
+                        <button data-donate-amount="10">£10</button>
+                        <button data-donate-amount="25">£25</button>
+                        <button data-donate-amount="50">£50</button>
+                        <label for="other" class="screen-reader-text">Other Amount:</label>
+                        <input class="donation_other" type="text" data-custom-donation-input placeholder="£ Other" name="other" id="other">
+                        <button class="donation_submit" data-submit-donation>add donation to basket</button>
+                      </div>
+
+                      <div data-success-container style="display: none;">Thank you. Your donation has been added to your basket.</div>
+                      <div data-fail-container style="display: none;">Sorry there was an issue with your donation. Please try again. If the problem persists please contact us.</div>
+
+                  </spektrix-donate>
+
+                
+              </div> <!-- / Donation Slider Holder -->
+
+                              <p class="h5">Donate, join us as a member, advertise your business and more...</p>
+              
+                                                                <a href="https://www.nationalcentreforwriting.org.uk/support-us" class="btn btn_sm ">More ways to get involved</a>
+                                              
+            </div> <!-- / Donation Form -->
+
+            
+            <div class="search_icon"><a href="#"><img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/icon-search-black.svg" width="32" height="32" alt="Magnifying Glass Search Icon" /></a></div>
+
+          </div>
+
+        </div> <!-- / Logo Nav Holder -->
+
+        <div class="search_full yellow_bg"> <!-- Search Full -->
+
+          <div class="search_form_content" id="search_form_content" tabindex="-1"> <!-- Search Form Holder-->
+
+              <form role="search" method="get" class="search-form" action="https://nationalcentreforwriting.org.uk">
+
+                  <div class="search_form_holder"> <!-- Search Form Holder -->
+                      <div class="label_input">
+                        <label for="site_search">Enter Search Terms:</label>
+                        <input type="search" id="site_search" class="search-field" value="" name="s" title="Search for:" />
+                      </div>
+                      <input type="submit" class="search-submit" value="Search" />
+                  </div> <!-- / Search Form Holder -->
+
+              </form>
+
+              <div class="search_close"> <!-- Search Close -->
+                <a href="#close_search"><img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/icon-close.svg" alt="X Close Icon" /></a>
+              </div> <!-- / Search Close -->
+
+          </div> <!-- / Search Form Holder -->
+
+        </div> <!-- / Search Full -->
+
+      </header><!-- #masthead -->
+
+    
+		<div id="content" class="site-content">
+
+		
+      <div class="writing_hub_hero"> <!-- Writing Hub Hero -->
+
+        <div class="writing_hub_hero_content"> <!-- Writing Hub Hero Content -->
+
+          <div class="title">Writing relationships: Jem Calder on I Want You to Be Happy</div> <!-- Title -->
+
+          
+        </div> <!-- / Writing Hub Hero Content -->
+                  <div class="button_container"> <!-- Button Container -->
+            <a href="https://nationalcentreforwriting.org.uk/writing-hub/" class="btn_text">BACK TO THE HUB</a>
+          </div> <!-- / Button Container -->
+        
+      </div> <!-- / Writing Hub Hero -->
+
+    
+<div id="primary" class="content-area">
+  <main id="main" class="site-main">
+
+  
+      
+
+
+
+<div class="full_content dark_bg pt_sm pb_md"> <!-- Full Content -->
+  <div class="media_contained_block image_left"> <!-- Media Contained Block -->
+
+     <!-- Content Block -->
+      
+        <div class="content_container"> <!-- Content Container -->
+
+          <div class="text_col"> <!-- Text Column -->
+
+            
+             <!-- / Title & SEO -->
+
+             <!-- Introduction -->
+              <p class="intro_text">In this episode of <strong>The Writing Life Podcast</strong>, debut novelist Jem Calder shares insights into developing the  complex central relationship in his novel, <i>I Want You to Be Happy</i> – a sharp-eyed tale of two people searching for meaning and connection in modern times, missing the mark maybe, but trying.</p>
+             <!-- / Introduction -->
+
+             <!-- / Text Content -->
+
+             <!-- / Button Repeater -->
+
+          </div> <!-- / Text Column -->
+
+          <div class="image"> <!-- Image -->
+                        <img decoding="async" src="https://nationalcentreforwriting.org.uk/wp-content/uploads/2026/07/Jem-Calder-podcast.png" alt="">
+          </div> <!-- / Image -->
+
+        </div> <!-- / Content Container -->
+
+           <!-- / Content Block -->
+
+  </div> <!-- / Media Contained Block -->
+</div> <!-- / Full Content -->
+
+
+
+
+
+<div class="full_content light_bg pt_md pb_md "> <!-- Full Content -->
+  <div class="column_text_block mw_960 "> <!-- Column Text Block -->
+
+    
+     <!-- / Title & SEO -->
+
+    
+       <!-- Introduction -->
+        <p class="intro_text">He sat down with NCW’s Lucy May to discuss his approach to crafting the novel’s relationship, from shaping two distinct characters to exploring the dynamic that unfolds between them. Their conversation also covers writing with the reader in mind, the appeal of writing about writers, and his advice for creating convincing relationships in fiction.</p>
+       <!-- / Introduction -->
+
+       <!-- Text Content -->
+        <div class="text_block">
+          <p>Jem Calder was born in Cambridge, and lives and works in London. His fiction has been published in The Stinging Fly and Granta, and his debut short story collection, <em>Reward System</em>, was published by Faber in 2022. <em>I Want You to Be Happy</em> is his debut novel.</p>
+        </div>
+       <!-- / Text Content -->
+
+    
+     <!-- / Button Repeater -->
+
+    
+  </div> <!-- / Column Text Block -->
+</div> <!-- / Full Content -->
+
+
+
+
+
+<div class="full_content dark_bg pt_md pb_md animated"> <!-- Full Content -->
+  <div class="column_text_block  animated"> <!-- Column Text Block -->
+
+          <div class="mw_720"> <!-- Max Width 720px -->
+    
+    
+      <div class="title_container"> <!-- Title Container -->
+
+        <p class="h2">Listen now</p> <!-- Title & SEO -->
+
+         <!-- / Subtitle & SEO -->
+
+      </div> <!-- / Title Container -->
+
+     <!-- / Title & SEO -->
+
+    
+       <!-- / Featured Text -->
+
+       <!-- / Introduction -->
+
+       <!-- Text Content -->
+        <div class="text_block">
+          <p><iframe style="border: none; min-width: min(100%, 430px); height: 150px;" title="Writing relationships: Jem Calder on I Want You to Be Happy" src="https://www.podbean.com/player-v2/?i=s76jw-1b096ba-pb&amp;from=pb6admin&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Arial&amp;skin=f6f6f6&amp;font-color=&amp;logo_link=episode_page&amp;btn-skin=1b1b1b" width="100%" height="150" scrolling="no" data-name="pb-iframe-player"></iframe></p>
+<p>Edited by Omni Mix</p>
+        </div>
+       <!-- / Text Content -->
+
+    
+     <!-- / Button Repeater -->
+
+          </div> <!-- Max Width 720px -->
+    
+  </div> <!-- / Column Text Block -->
+</div> <!-- / Full Content -->
+
+
+
+
+
+<div class="full_content light_bg pt_md pb_md"> <!-- Full Content -->
+  <div class="media_contained_block image_left"> <!-- Media Contained Block -->
+
+     <!-- Content Block -->
+      
+        <div class="content_container"> <!-- Content Container -->
+
+          <div class="text_col"> <!-- Text Column -->
+
+            
+             <!-- Title & SEO -->
+              <p class="h2"><em>I Want You to Be Happy</em></p>             <!-- / Title & SEO -->
+
+             <!-- Introduction -->
+              <p class="intro_text">Chuck and Joey meet in a bar. He&#8217;s in his mid-thirties; she&#8217;s twelve years younger. He&#8217;s long abandoned his ambition of becoming a novelist and now works as a copywriter at a big ad agency. &#8216;Lead copywriter,&#8217; he corrects himself. Joey lives paycheck to paycheck on her barista wages and privately dreams of making it as a poet. They go back to Chuck&#8217;s luxury flat-a world away from Joey&#8217;s cramped house-share, the crumbs in her bed. Soon, Joey&#8217;s imagining a future between them, and Chuck&#8217;s moving on from a mistake in his recent past. Amazing, how meeting a new person can make you feel so new.</p>
+             <!-- / Introduction -->
+
+             <!-- Text Content -->
+              <div class="text_block">
+                <p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+              </div>
+             <!-- / Text Content -->
+
+             <!-- Button Repeater -->
+                                                <a href="https://www.faber.co.uk/product/9780571387458-i-want-you-to-be-happy/?srsltid=AfmBOoq5VVu4DPUcCJKov3qVo-AvkiKH53T6CJPgOK4MJ_h2ZOdT7dtg" class="btn btn_dark">find out more &#038; buy</a>
+                                           <!-- / Button Repeater -->
+
+          </div> <!-- / Text Column -->
+
+          <div class="image"> <!-- Image -->
+                        <img decoding="async" src="https://nationalcentreforwriting.org.uk/wp-content/uploads/2026/07/I-Want-You-To-Be-Happy-Jem-Calder.png" alt="">
+          </div> <!-- / Image -->
+
+        </div> <!-- / Content Container -->
+
+           <!-- / Content Block -->
+
+  </div> <!-- / Media Contained Block -->
+</div> <!-- / Full Content -->
+
+
+
+
+
+<div class="full_content dark_bg pt_md pb_sm animated"> <!-- Full Content -->
+  <div class="column_text_block  animated"> <!-- Column Text Block -->
+
+          <div class="mw_720"> <!-- Max Width 720px -->
+    
+    
+      <div class="title_container"> <!-- Title Container -->
+
+        <p class="h2">Transcript</p> <!-- Title & SEO -->
+
+         <!-- / Subtitle & SEO -->
+
+      </div> <!-- / Title Container -->
+
+     <!-- / Title & SEO -->
+
+    
+       <!-- / Featured Text -->
+
+       <!-- / Introduction -->
+
+       <!-- / Text Content -->
+
+    
+     <!-- / Button Repeater -->
+
+          </div> <!-- Max Width 720px -->
+    
+  </div> <!-- / Column Text Block -->
+</div> <!-- / Full Content -->
+
+
+
+
+
+<div class="full_content light_bg pt_md pb_md "> <!-- Full Content -->
+  <div class="column_text_block mw_960 "> <!-- Column Text Block -->
+
+    
+     <!-- / Title & SEO -->
+
+    
+       <!-- / Introduction -->
+
+       <!-- Text Content -->
+        <div class="text_block">
+          <p><strong>Lucy</strong></p>
+<p>Hello, everybody. Thank you for listening to this episode of the Writing Life Podcast.</p>
+<p>I&#8217;m Lucy, and I&#8217;m here today with Jem, who is the author of <em>I Want You To Be Happy</em>.</p>
+<p>Thank you so much for joining me today. It&#8217;s really exciting to meet you.</p>
+<p>&nbsp;</p>
+<p><strong>Jem</strong></p>
+<p>Thank you for having me, Lucy. Very, very happy to be here.</p>
+<p>&nbsp;</p>
+<p><strong>Lucy</strong></p>
+<p><em>I Want You To Be Happy</em> is out now with Faber, and it&#8217;s one of their leading titles at the moment. There&#8217;s been a lot of fuss around it that I&#8217;ve seen.</p>
+<p>What is that, what is that like for you? This must be exciting.</p>
+<p>&nbsp;</p>
+<p><strong>Jem</strong></p>
+<p>It is nice. I really feel quite happy about it because I put out a short story collection a couple of years ago, also with Faber, and that went well. You know, like it got kind reviews and did fine. But it&#8217;s a different order of magnitude putting out a novel. Like a lot more people pay attention to novels. And I just kind of, I was quite excited for more people to read this than I the regular audience that would read short stories. There&#8217;s a sort of inbuilt limit with how far short stories tend to travel.</p>
+<p>So it&#8217;s been really nice. It&#8217;s been a really good experience. I&#8217;ve done a few interviews and things like that, and I keep on seeing people reading it, so it&#8217;s kind of staying present for me in a strange way.</p>
+<p>Like I&#8217;ve seen it out in the wild quite a lot, people reading it on the train and stuff. So yeah, it&#8217;s very, very surreal.</p>
+<p>&nbsp;</p>
+<p><strong>Lucy</strong></p>
+<p>That must be fun, sitting opposite someone on the train and being like, ‘I wrote that!’ That&#8217;s so fun.</p>
+<p>Are you somebody who has always written? I&#8217;d love to hear a bit about your relationship with writing.</p>
+<p>&nbsp;</p>
+<p><strong>Jem</strong></p>
+<p>Yeah. It&#8217;s a good question.</p>
+<p>Yeah, I think I am. Yeah, I definitely remember being very young and writing at the kitchen table and sort of coming up with really long stories.</p>
+<p>I was really into sci-fi and fantasy, even when I was very&#8230; even I remember being really into sci-fi even before I had read anything that was sci-fi or seen&#8230; and, you know, just like seeing VHS boxes and stuff. I was just so curious.</p>
+<p>And I would write these really, really long stories. But then I really quit for a good&#8230; probably from when I was about 19 to when I was about 24, I don&#8217;t think I wrote anything.</p>
+<p>I kind of actually completely stepped away from the idea of being a writer and my interest in writing. And throughout my teens, I&#8217;d kind of, you know, written on and off. So  yeah, when I was very young, I was really into it. And then, in my mid-20s, I got right back into it and got very serious about it.</p>
+<p>I think the real world had set in a bit, and I&#8217;d,  gotten a fairly serious copywriting job and things like that. So I just decided to put it down in quite, what I can now see as like, quite a dramatic fashion, that I didn&#8217;t really need to be that all or nothing about it.</p>
+<p>But, yeah, I kind of gave up for a bit.</p>
+<p>&nbsp;</p>
+<p><strong>Lucy</strong></p>
+<p>Yeah, I think I get you. I think I can be pretty all or nothing as well, myself.</p>
+<p>Yeah, and it&#8217;s hard because I also write. It&#8217;s hard to kind of, when you know that you want to be a writer, what ‘career’ you&#8217;re going to have alongside that to supplement that.</p>
+<p>&nbsp;</p>
+<p><strong>Jem</strong></p>
+<p>If we&#8217;re giving craft advice and stuff like that, one of the first pieces of advice is, if people are really serious about writing, because I&#8217;ve worked a lot of manual jobs and practical jobs for a long time, and then making the move to a desk job, it is really useful to be able to have your work in a Google Doc or wherever you write, if you&#8217;re able to just sort of check in on your own writing a few times a day, even if it&#8217;s just like five or ten minutes here and there, I think that does, it kind of keeps the pace quite high.</p>
+<p>And when I got into having office jobs and being able to, you know, on my lunch break, maybe just sit and work on some stuff, and kind of stopped being quite so all or nothing about it and just sort of accepted that work was a bit of an inevitability. And if you really want to pursue this, you&#8217;re going to have to&#8230; you kind of can&#8217;t take it lying down, and you have to put up a bit of resistance.</p>
+<p>And so that was sort of when I started coming back to it. I think it linked quite closely with getting those types of jobs where I had access to an internet browser and not constant oversight from a boss over my shoulder.</p>
+<p>&nbsp;</p>
+<p><strong>Lucy</strong></p>
+<p>This might be a good time to ask you about if you have a writing routine. You&#8217;re saying you would dip in and out of it a little bit at work, or are you someone who starts early in the morning or writes in the evening?</p>
+<p>&nbsp;</p>
+<p><strong>Jem</strong></p>
+<p>Yeah, so I&#8217;m quite&#8230; I would never say this about myself, but enough people have said it about me, I&#8217;m quite disciplined, I suppose.</p>
+<p>I wake up early every day and work for as long as I can. Then I&#8217;ll go to&#8230; so I have a kind of on-off relationship with work, actually. And luckily, things have gone pretty well with this last book where I think I&#8217;ll be able to take an extended period of time off work to work on a second novel, which is kind of what I&#8217;m setting up now.</p>
+<p>But when I&#8217;m not doing that, it is really a case&#8230; yeah, I would get up at, like, six, work for two or three hours, then head to work. At work, I&#8217;d try and check in on my writing a few times, and then when I came home, keep on working.</p>
+<p>So it really is&#8230; it&#8217;s kind of become something that I do with almost all of my free time, where, so long as I&#8217;m not around someone else, I&#8217;m probably working on my writing. But I would say I&#8217;m fairly&#8230; I have quite a lot I want to get done.</p>
+<p>And so it&#8217;s just a case of trying to find the time when I can. It&#8217;s always a struggle to get that time.</p>
+<p>&nbsp;</p>
+<p><strong>Lucy</strong></p>
+<p>Yeah, I totally get what you mean, protecting your time is half of the challenge.</p>
+<p>&nbsp;</p>
+<p><strong>Jem</strong></p>
+<p>Yeah. And I also think one thing I would say is, when I say about being disciplined and putting a lot of time into it, that doesn&#8217;t actually mean I produce a lot of work. I&#8217;m a very slow writer, much slower than most other people I know.</p>
+<p>And the way I tend to work is I produce one draft. So I go linearly, like from the very beginning to the very end in one go.</p>
+<p>Again, because I know other writers who sort of do, you know, it seems like you&#8217;re kind of in one of two camps. You kind of do what I do, which is&#8230; it seems like there&#8217;s fewer of those, I will say. And a lot of other people seem to go through a sort of long drafting and redrafting process.</p>
+<p>And I really don&#8217;t think there&#8217;s a right or wrong way. I think people do what works for them. But I will agonise over word by word. And sometimes a whole day will result in, like, half a line of keepable material for me. But I&#8217;m just very&#8230; I just don&#8217;t want to have to go back and sort of correct it at the end.</p>
+<p>And also, one piece of advice I would give to listeners who are writing is that you have to really try not to get disheartened if you&#8217;re trying to begin a project.</p>
+<p>For me, I&#8217;ve found, and just kind of accepted, that the process of beginning something takes me about 18 months. That&#8217;s how it went with my collection of short stories. That&#8217;s how it went with the novel I wrote. That&#8217;s how it&#8217;s going with this thing I&#8217;m working on. It&#8217;s just like it takes pretty much a year of just trying different things and none of it working.</p>
+<p>But then you have to take solace in the fact that when something doesn&#8217;t work, and this also comes in on the sentence level as well, that, for me, is the closest I get to knowing what will work, is this kind of process of elimination.</p>
+<p>I can tell when something is bad, and I&#8217;ll just kind of keep doing it in different ways, and I&#8217;ll be like, ‘Oh, it&#8217;s still bad, it&#8217;s still bad,’ and I&#8217;ll try this different idea.</p>
+<p>But then eventually, you know, you&#8217;ll have something that you don&#8217;t want to delete. And for me, it&#8217;s kind of stacking up those experiences and those sort of fragments of my writing. And once I&#8217;ve got enough of those together, these things that are so keepable to me that I just don&#8217;t want to get rid of, then I&#8217;ll be like, ‘Okay, this is the new project.’</p>
+<p>So it kind of really does start from nothing.</p>
+<p>&nbsp;</p>
+<p><strong>Lucy</strong></p>
+<p>That&#8217;s really interesting to hear. I think now would be a good time to jump into specifically <em>I Want You To Be Happy</em>.</p>
+<p>So you&#8217;re saying it took 18 months before you hit on the, like, the right starting note for that?</p>
+<p>&nbsp;</p>
+<p><strong>Jem</strong></p>
+<p>I think so, yeah. I think it was, I would say, between a year to 18 months. And again, it&#8217;s really difficult to say when something actually starts when you&#8217;re writing, because a lot of stuff&#8230; I&#8217;ll very often delete stuff and just put it in a separate file and be like, ‘I&#8217;m going to get to this later. I&#8217;ll come back to this.’</p>
+<p>And I very, very rarely do, but it&#8217;s just much easier on my sort of conscience to be able&#8230; that&#8217;s kind of like the only way I&#8217;ll be able to let myself get rid of a piece of work that I&#8217;ve been working on for, you know, weeks or longer, is to just say, ‘Oh, I will actually come back to that.’</p>
+<p>And I literally never do.</p>
+<p>But yeah,  it was a long process of&#8230; I kind of had an idea of two characters and sort of how their relationship might work, but yeah, it was just trying, trying different things. It is just this really lengthy process of elimination.</p>
+<p>I mean, I was also trying to write a completely different novel for a bit of time. You know, you just have to keep iterating through versions of things that don&#8217;t work.</p>
+<p>But yeah, I would say it took at least a year for the structure of <em>I Want You To Be Happy</em> to become clear, and the two characters.</p>
+<p>The novel pretty much just exists between two characters who are in this relationship. We follow them from when they first meet to across the next few months in their lives after they&#8217;ve met.</p>
+<p>And I&#8217;m always, like, quite conscious&#8230; I&#8217;m always self-conscious about how it comes across. But, like, I suppose you do need to sort of get to know the characters a bit and understand what&#8217;s going through their head and understand the things that the characters aren&#8217;t aware of that the reader will be aware of about the character, you know, and sort of figure that out. You know, the same way real people&#8230; you know, like, I could look at my friend and be like, ‘Oh, he&#8217;s dealing with this,’  and he might not even be aware of that.</p>
+<p>In fact, I think life is often that way, where someone, an external person, in this case a reader, will be able to kind of see what&#8217;s going on with you.</p>
+<p>And I really like that, actually. I really like me and the reader being in sort of communication, and the character kind of off doing their own thing.</p>
+<p>&nbsp;</p>
+<p><strong>Lucy</strong></p>
+<p>Yeah, I remember once going to a talk by an author, I think it might have been Elizabeth McNeil, and it really struck me, because I don&#8217;t relate to this at all, when she said she doesn&#8217;t really get that emotionally attached to her characters, and she sees them more as kind of like vessels for the storytelling.</p>
+<p>I&#8217;d be really interested to know, how emotionally attached you feel to Joey and Chuck, or do you think of them as vessels for portraying something else?</p>
+<p>&nbsp;</p>
+<p><strong>Jem</strong></p>
+<p>That’s interesting.</p>
+<p>I definitely don&#8217;t think of them as vessels for portraying something. No, I kind of regard them as, like, fully existent human beings, to be honest with you, which, of course, they are patently not. They are literally just things I&#8217;ve come up&#8230; I suppose I did really try and divide different parts of my personality between the two characters, to the extent where, like, sometimes I was making decisions about, like, ‘Oh, I kind of think this,’ and then I would be like, ‘Oh, that&#8217;s more of a Joey thought,’ you know?</p>
+<p>So I would kind of&#8230; I do feel like there&#8217;s a lot of myself in each of them. I&#8217;d say each of the characters is, like, 50% me and then 50% themselves, but, yeah, I do get very emotionally attached to the characters.</p>
+<p>And I know that the characters aren&#8217;t always particularly likeable, but that&#8217;s still&#8230; I&#8217;m fine with that, because to me, that means, okay, but at least you&#8217;re getting the sort of, like, honest experience of what this person&#8217;s interiority is like.</p>
+<p>And if you reject that, that&#8217;s fine. Like, I frequently am kind of repulsed by the things that happen in the book, but they&#8217;re kind of, like, humanity, and just the fact that they feel really real is very, very important to me.</p>
+<p>&nbsp;</p>
+<p><strong>Lucy</strong></p>
+<p>They definitely feel real. I think maybe it might be nice if we talk about them. Maybe start with Joey and then go to Chuck.</p>
+<p>I really liked Joey. I found her quite relatable. And I think of her as quite an anxious person. Arguably, she&#8217;s got an awful lot to be anxious about. Was that what you set out to write?</p>
+<p>&nbsp;</p>
+<p><strong>Jem</strong></p>
+<p>Yeah, yeah, for sure.</p>
+<p>I mean, for me, like, she is really a reflection of me when I was 23 and the sort of people I knew at that age. I&#8217;m much closer to Chuck&#8217;s age now.</p>
+<p>And when you&#8217;re that age, and it&#8217;s not a comment on sort of a person&#8217;s value or the fact that they&#8217;re doing anything wrong, but I think when you are in your early twenties, you just feel like you have so much to prove, and you&#8217;ve done so little of what you want to do that you kind of&#8230;</p>
+<p>My sort of feelings of first moving to London in my early 20s are like, you&#8217;re just very helpless and kind of looking for community and trying to find like-minded people. That can be a very difficult experience.</p>
+<p>And then you&#8217;re also balancing that with working for what is probably a lower-paid job than you&#8217;re ever going to work for the rest of your life, hopefully. But it doesn&#8217;t seem like that&#8217;s always the case.</p>
+<p>So, for me, it was kind of like this profound anxiety and sort of someone trying to figure out, you know, who really they are and using another person to facilitate some of that self-discovery, the way that I think a lot of people do when they&#8217;re in their early 20s.</p>
+<p>And yeah, if you move somewhere new, you date people, you meet people, and kind of, form your personality in reaction to that.</p>
+<p>So one of the ideas with Joey, she kind of… I guess she&#8217;s lived in London longer than&#8230; you know, she&#8217;s not new there, but, yeah, it&#8217;s just this idea of the struggle to find your place, and land on the ground. That was one of the big concerns I had with her, and so trying to make sure she found something like that.</p>
+<p>&nbsp;</p>
+<p><strong>Lucy</strong></p>
+<p>Yeah, definitely. I found Joey really interesting, and something I thought about her was that she seems to want to find a home, which is why I personally felt she went for Chuck. He provides access to this stability to a degree and access to indulgences and luxuries that feel a world away for her right now.</p>
+<p>Could you talk a little bit about what you think it is about Joey that draws her to Chuck?</p>
+<p>&nbsp;</p>
+<p><strong>Jem</strong></p>
+<p>I think it&#8217;s a feeling of insecurity. And I suppose this is one of the other things that I remember from when I was 23, is, you are kind of like&#8230; and again, this isn&#8217;t a judgment, but I think there can be a part of you like, ‘I don&#8217;t feel very, like, accurately represented by the people around me, and I feel different.’</p>
+<p>And it&#8217;s not like I feel smarter or more interesting, but you&#8217;re like, ‘I just feel like my concerns are a bit more, a bit more complicated than what I&#8217;m seeing other people do around me,’ and really wanting someone to recognise that.</p>
+<p>And I think that, for her, when Chuck comes along, he&#8217;s someone who does validate that view of herself. It can be quite painful because you also see in the novel that Joey sees a lot of her friends getting these kind of, like, cool media careers or, like, arts-related careers, and she&#8217;s working in the service industry, which I spent a lot of time doing.</p>
+<p>And it&#8217;s just a difficult place to be and feel it. And I think people who want to write tend to relate to that as well, which is, you know where you should be, but it&#8217;s really unclear how you get there.</p>
+<p>And so meeting someone who respects her as an intellectual peer, because I think she&#8217;s a very smart woman, that is very validating and perhaps actually a bit too validating when, you know, we actually become less sure as the novel goes on, how much Chuck respects some of that ambition that Joey has, or believes in it.</p>
+<p>&nbsp;</p>
+<p><strong>Lucy</strong></p>
+<p>I hadn&#8217;t actually thought of that, of how, he represents, in a way, the future she wants to have, if he&#8217;s technically writing for a living, even if it&#8217;s not the kind of writing that she wants to do.</p>
+<p>I find the power dynamic between Chuck and Joey really interesting as well.</p>
+<p>&nbsp;</p>
+<p><strong>Jem</strong></p>
+<p>It&#8217;s an interesting one.</p>
+<p>I love literary fiction, obviously; that&#8217;s the type of book I like to read. But I&#8217;m also interested in shifting dynamics and imbalances between people, and how people try and communicate across and around problems that they have with the person they&#8217;re communicating with.</p>
+<p>So I guess I&#8217;m saying, like, I always like there to be a problem. And I always like the ground to be kind of shifting. I think that&#8217;s what keeps the writing interesting.</p>
+<p>I suppose some people would say that&#8217;s like conflict, but I don&#8217;t think it always needs to be that there&#8217;s some problem that needs to be solved. It&#8217;s just the communication itself is the problem. Like, no real communication is happening.</p>
+<p>I think probably that was a part of why I felt energised when I started to write this novel, as it&#8217;s one of those things that&#8217;s in the cultural conversation as well. I feel like every five or so years, there&#8217;s always a big conversation about age-gap relationships, and people vent their different feelings about it.</p>
+<p>And I think ultimately, there are just very different types of relationship, and it&#8217;s very hard to speak in generalities. But I kind of wanted to almost blur my eyes a bit and portray something like a shape of a relationship that I&#8217;d seen occurring a few times around me.</p>
+<p>And yeah, that’s where the dynamic between the two of them started.</p>
+<p>&nbsp;</p>
+<p><strong>Lucy</strong></p>
+<p>Yeah, that is really interesting. And I think, because he is that little bit older, it&#8217;s a kind of slight generational jump in terms of that.</p>
+<p>So would you say Chuck and Joey arrived as a couple for you, or did one of them come before the other in your head?</p>
+<p>&nbsp;</p>
+<p><strong>Jem</strong></p>
+<p>No, there was never one without the other, to be honest.</p>
+<p>And it was only when I got about halfway through the writing process, I think, that I became more interested. And I feel like that&#8217;s kind of how the novel goes as well, as they&#8217;re quite closely intertwined at first, and then we start to experience a bit more time with them.</p>
+<p>So I think they did come to me pretty much all in one go. I think, kind of what we were saying in the previous question, it really was the dynamic and recognising that I have some unreconciled parts of myself on some level, where I do still feel caught between those two characters and the way they feel.</p>
+<p>You know, Chuck is very cynical, and he knows how he likes things, and he kind of has this idea of the life he wants to live, and to some extent, he&#8217;s willing to sacrifice things to achieve that. But I think ultimately he&#8217;s a pretty cynical guy.</p>
+<p>And then Joey just has&#8230; she&#8217;s more open to the world and to things happening around her.</p>
+<p>And I think part of when the two characters, I decided to start writing about them, was me trying to kind of reconcile&#8230; you know, where on that divide do I fit? And, you know, what are the beliefs I have?</p>
+<p>I suppose, you know, the characters were a way of interrogating myself because I&#8217;m actually&#8230; maybe it doesn&#8217;t sound that believable, but I&#8217;m actually not the most introspective person in the world, probably because I put a lot of energy into my writing, to be honest, that I don&#8217;t actually spend too much time thinking about what I think about things.</p>
+<p>Yeah, so I suppose I was sort of trying to, like, uncover a bit of a mystery there and sort of figure out myself between them.</p>
+<p>But also, just to caveat that, I will say that they also did feel very different to me in a lot of ways, and they had their own thought processes that aren&#8217;t mine, you know? Like, very similar to mine in a lot of ways, but, like, they&#8217;ll kind of zigzag in ways that I zigzag in other ways.</p>
+<p>And that was always really fun to do, when I twigged something that they were thinking or something that they would do. That was always really satisfying.</p>
+<p>&nbsp;</p>
+<p><strong>Lucy</strong></p>
+<p>I think for Chuck in particular, initially, he&#8217;s just a fascinating character throughout, but I hope you don&#8217;t mind me saying that I really didn&#8217;t like him by the end of the book.</p>
+<p>He feels to me like a bit of a representation of this epidemic of avoidant people we have out here at the moment.</p>
+<p>He&#8217;s scared to make commitments to romantic relationships and he is quite introspective. But he is also, yeah, it&#8217;s like he&#8217;s introspective, but he&#8217;s emotionally avoidant.</p>
+<p>What is it like kind of rendering that inner world and getting information across to a reader about a character while the character in themselves doesn&#8217;t really want to look inward?</p>
+<p>&nbsp;</p>
+<p><strong>Jem</strong></p>
+<p>It&#8217;s quite difficult, as it happens.</p>
+<p>&nbsp;</p>
+<p><strong>Lucy</strong></p>
+<p>Yeah, it doesn&#8217;t sound easy.</p>
+<p>&nbsp;</p>
+<p><strong>Jem</strong></p>
+<p>That was one thing I knew was going to be a challenge going into this. I would say, Chuck more than Joey, but the characters are, like, fairly isolated. And that&#8217;s, like, different.</p>
+<p>I would say Joey has more of a social life. She has more people she hangs out with, and those sort of interactions were always really fun to write. But the difficulty with Chuck is I knew he was going to live a lot in his own head.</p>
+<p>So I was going to have to really think hard about how I portrayed that. And I also&#8230; it was difficult because I also agree, there&#8217;s not a lot of interrogating himself, but he does sort of&#8230; he&#8217;s hung up on a lot of things and he ruminates a lot.</p>
+<p>But I also find it&#8230; I&#8217;m not the biggest fan of sort of extended flashbacks in novels and things like that. It&#8217;s only a personal preference, and there are also plenty of great novels that do this, and I would really enjoy reading them.</p>
+<p>But I just think, in general, I always feel like it&#8217;s a bit of a detour when a novel sort of goes in and describes a memory at length. I&#8217;m always much more interested in what&#8217;s happening in the present.</p>
+<p>So what I would do is, with Chuck, I paid really close attention to how he would live his life and what he would do. And I was always trying to kind of describe that in the funniest way I could, honestly.</p>
+<p>And then, like, very occasionally, there&#8217;ll be these kind of bursts of, you know, memory, or he reads an email from, or, you know, a message from someone from his past. So I was always really conscious that he lived mostly in his head, but actually he still lives in the physical world.</p>
+<p>And I needed to address the way he lives in the physical world because that, to me, it&#8217;s also just more fun to describe. And I kind of think more fun to read. And I knew I was going to have to use&#8230; I was going to have to illuminate his thought processes very carefully.</p>
+<p>I think keeping some of those insights so spare throughout the novel makes them land harder and resonate when they do. So you actually feel like you&#8217;re drawn quite a bit closer to him in these moments of revelation.</p>
+<p>One of the things I always do when I start a new writing project is I, you know, have all this backstory and all this thinking, and all the characters have known each other for this long, but this is happening. And I&#8217;m always trying to get that all across in the first chapter.</p>
+<p>And I realised actually that all I&#8217;m doing is killing a lot of the momentum by over-explaining in the short term. And then also a lot of these conflicts would be more interesting if they were drawn out and only highlighted when they come to a head and we get that kind of revelation.</p>
+<p>So that was really important. And actually in my edits from Faber, there were a couple of moments, not huge things, but just in the last chapter of the book, there&#8217;s something on the first page of the last chapter where one of the characters has changed their job.</p>
+<p>And originally the first line of that chapter stated that, and actually their advice to me was to move that, like, a page later. And I think it works so much nicer like that, and that little insight from them in the edit, I&#8217;ve kind of taken forward with me, and I&#8217;m like, actually, a bit of delayed gratification does go a long way.</p>
+<p>And because I always struggle with the impulse of, like, okay, the reader&#8217;s working their way through this sequentially. I want to get all the fun stuff in at the beginning, but it&#8217;s actually just a case of overcrowding it.</p>
+<p>&nbsp;</p>
+<p><strong>Lucy</strong></p>
+<p>Yeah, it&#8217;s the distribution of information is always the hardest part.</p>
+<p>&nbsp;</p>
+<p><strong>Jem</strong></p>
+<p>Yes, absolutely.</p>
+<p>And one note I always make to myself is, like, if something I&#8217;m doing is starting to lag and to feel a bit baggy. Like, it&#8217;s a really basic note, but I always think to myself, like, I have to keep the rate at which key information is being delivered higher.</p>
+<p>I almost think of it as, like, a speedometer, and it&#8217;s like, okay, that actually needs to be pushing up now because we&#8217;ve gone so&#8230; you know, we&#8217;ve slackened so much in the last scene.</p>
+<p>And you can&#8217;t have, like, pedal to the metal in terms of constantly just giving these big insights and revelations. But I think you need to keep that balance, and you need to be aware that the reader&#8217;s attention is on a sliding scale.</p>
+<p>And, you know, it&#8217;s not your job to constantly keep&#8230; you know, to be like a TikTok and just relentlessly capture attention and do the lowest common denominator thing that you know is going to get them reading. There&#8217;s no art in that.</p>
+<p>But it is your job to kind of, like, pay close attention to, like, okay, we&#8217;ve had two scenes in a row of kind of, like, internal, you know, like, things like that, and we need to kind of, like, expand out.</p>
+<p>Like, I think I always really try and keep the reader in mind a lot, probably too much to some extent. Like, it kind of pains me how much I think about them, but yeah.</p>
+<p>&nbsp;</p>
+<p><strong>Lucy</strong></p>
+<p>Yeah, I remember you saying earlier that you come at your novels chronologically, right? That is almost from the reader&#8217;s perspective, isn&#8217;t it?</p>
+<p>&nbsp;</p>
+<p><strong>Jem</strong></p>
+<p>Yeah, that&#8217;s really true.</p>
+<p>Yeah, I&#8217;m always really, really focused on the reader. And it&#8217;s actually, it&#8217;s funny when I say that, because I&#8217;m not really imagining it, I suppose I&#8217;m just imagining another version of myself that is just picking this up and approaching this from the outside.</p>
+<p>&nbsp;</p>
+<p><strong>Lucy</strong></p>
+<p>I also wanted to ask you about writing about writing, because I think that writing is something that&#8217;s so important to both Chuck and Joey, and I think it forms&#8230; I hope it&#8217;s not too much of a spoiler in the book to say that it forms a real catalyst in their relationship.</p>
+<p>How did you find writing about writers, and what maybe do you think it means separately to Joey and to Chuck?</p>
+<p>&nbsp;</p>
+<p><strong>Jem</strong></p>
+<p>That&#8217;s a really great question. I really like that you&#8217;ve asked that question.</p>
+<p>At the beginning of the process, I kind of knew that I wanted the characters to be writers, but different people respond differently to that. And I have seen some stuff about, like, ‘Oh, people are sick of reading about writers.’</p>
+<p>But I actually think if you read literary fiction, chances are you&#8217;ve either tried to write yourself or you think about writing a lot, and it&#8217;s a medium you enjoy. You know, like, I think if you&#8217;re picking up this novel, you have enough interest in the writing process and the identities of people who are writers that you probably won&#8217;t be put off by it.</p>
+<p>I was really struggling with that for a while, and I was like, ‘I don&#8217;t know if I want to write about writers. Like, that does put me in a really tight box.’ But then what clicked in my head is, I was like, ‘Actually, I am writing about writers, but I&#8217;m writing about amateur writers, and I&#8217;m writing about people who are writing for the first time and trying to discover things.’</p>
+<p>And after that, I stopped worrying about it because I was like, ‘Actually, I think a huge amount of people can relate to this.’ And these aren&#8217;t two writers who are, like, A-level, you know, who&#8230; that is, like, beyond anything really that your regular reader of literary fiction won&#8217;t have experienced, which is, like, ‘Oh, I&#8217;ve tried to write some things myself. Some of it&#8217;s been good. Some of it&#8217;s been bad.’</p>
+<p>So after that, I kind of let myself off the hook. And I do think people have responded well to that. So that&#8217;s been really nice.</p>
+<p>And one more thing as well&#8230; yeah, I just do think that if you read literary fiction, chances are you&#8217;re interested in the way that it&#8217;s produced and the world in which the writer exists, and is that the regular world? You know, like, there&#8217;s just&#8230; I&#8217;ve always been interested in that.</p>
+<p>You know, I suppose kind of that&#8217;s also a bit the nature of this podcast, so I&#8217;m talking to the right people about it.</p>
+<p>But in terms of the two characters&#8217; relationships to their writing, I would say Chuck has kind of this more entitled sense. He kind of thinks of himself as, like, this thwarted, like&#8230; it&#8217;s so&#8230; I don&#8217;t want to parody him, but it is this kind of like&#8230; he&#8217;s very, very overly confident in his abilities.</p>
+<p>And there&#8217;s a line where it&#8217;s something like he&#8230; he&#8217;s so sure that he&#8217;ll be good at writing that he never even bothers to try, because it&#8217;s like, he&#8217;s just&#8230; he&#8217;s almost feels like he&#8217;s achieved it. He&#8217;s that confident.</p>
+<p>Whereas Joey is much more&#8230; you know, regards it as kind of a craft that is really closely tied to her.</p>
+<p>Yeah, I feel like spirituality is the wrong word, but it is this, like, quite&#8230; it&#8217;s more important to her than anything else. And she&#8217;s very private about it and takes great care with it.</p>
+<p>And I think ultimately, actually, you have to have a bit of both in order to be productive and kind of, you know, finish work.</p>
+<p>Yeah. I kind of set them up a bit as sort of not quite opposites, but, you know, like, they&#8217;re a real contrast in the way they feel about their writing.</p>
+<p>&nbsp;</p>
+<p><strong>Lucy</strong></p>
+<p>I really enjoyed seeing that contrast, and they feel almost like opposite ends of a spectrum.</p>
+<p>But I also found it interesting in terms of how their power dynamic shifts around it. It&#8217;s like, again, without wishing to spoil the novel too much, it&#8217;s almost like Joey has potential in her writing career that maybe Chuck feels that he is past or is starting to get past.</p>
+<p>&nbsp;</p>
+<p><strong>Jem</strong></p>
+<p>Yeah, I think it&#8217;s tough.</p>
+<p>I think probably the way I would address that, you know, almost as in hindsight, because this wasn&#8217;t necessarily what I was thinking at the time, but it&#8217;s like&#8230; I think ultimately the difference is really humility.</p>
+<p>And I think, like, you have to be very&#8230; like, I never talk about my writing with anyone I know, really. Like, I just think it&#8217;s really good to kind of, like, approach it with an almost minimalist attitude.</p>
+<p>I mean, you know, like, it&#8217;s taken over my life. It is what I do all the time. But equally, like, I try not to be too&#8230;</p>
+<p>I think you&#8217;re really setting yourself up to fail if you think your writing is going to be able to do everything and kind of, like, solve everyone&#8217;s problem and represent everything. I think it&#8217;s always going to be flawed. It&#8217;s not going to be for everyone.</p>
+<p>And I think when you kind of start to accept that, then you lean into your strengths more and kind of realize what you can do.</p>
+<p>I think both the characters are at kind of different levels of that. I think Joey definitely has a lot of, like, humility and is kind of willing to&#8230; yeah, I suppose what I mean by humility is, like, a willingness to learn and to accept that you haven&#8217;t quite mastered the form.</p>
+<p>Because that&#8217;s one of the things I&#8217;m always interested in: why a writer who feels like they are at the height of their powers, why would you carry on going if you think you can&#8230; you know, if you kind of feel fully in control of what you do?</p>
+<p>You know, like, the whole&#8230; it&#8217;s really painful, and you wish you could just sit down and, like, force the thoughts to be really good, but ultimately it kind of has to come as a surprise.</p>
+<p>And if you could force the surprise, it wouldn&#8217;t be a surprise.</p>
+<p>You can really bash your head against the wall, but ultimately that means probably, like, something good is coming.</p>
+<p>&nbsp;</p>
+<p><strong>Lucy</strong></p>
+<p>Yeah, being a writer is always being open to learning, I like that.</p>
+<p>&nbsp;</p>
+<p><strong>Jem</strong></p>
+<p>Yeah, there&#8217;s a guitarist called John Fahey, and I&#8217;ve read an interview with him. He&#8217;s dead now, but he was a country folk guitarist.</p>
+<p>But he said, like, he talked about keeping an open subconscious. Someone asked him, like, what his process is, and he said, ‘I just practice and try and keep an open subconscious.’</p>
+<p>And I think that&#8217;s the goal, really. It&#8217;s like, just regard everything you do as, like, practicing and an attempt. And I would never put the terms on myself that this has to be the thing because I think as soon as you do that, for me, sort of anything that might be interesting about it starts to go away because it becomes a job.</p>
+<p>And then I think that open subconscious thing is really important. It&#8217;s just, like, you have to be waiting for some level of surprise.</p>
+<p>And that can be anything. Like, for me, very often it&#8217;s at a sentence level where just, like, some new way&#8230; you know, the way I thought I was going to communicate this to&#8230; there&#8217;s a shorter way, or there&#8217;s a funnier way, or I can actually split this over two lines.</p>
+<p>You know, like, so I&#8217;m not actually talking in particularly lofty terms, but I just think over time, if you have enough instances of that kind of, like, strange or very personalised technique, that is what readers really respond to.</p>
+<p>And, like, in terms of writers getting your stuff read by agents and picked up out of the slush pile, that, in my experience with other writers I&#8217;ve seen, tends to be the stuff that people get really excited by.</p>
+<p>&nbsp;</p>
+<p><strong>Lucy</strong></p>
+<p>Just to finish off I would love to hear if you&#8217;ve got any tips for our listeners on writing convincing relationships?</p>
+<p>&nbsp;</p>
+<p><strong>Jem</strong></p>
+<p>I mean, it will be harder than you think to do because it seems like something that&#8217;s quite straightforward and everyone&#8217;s had a relationship, but kind of, it&#8217;s one of those things where, as soon as you start, then so many questions come in and you&#8217;re like, well, how did they end up here? Why do they like this?</p>
+<p>And you have to try not to throw in the kitchen sink and over-explain everything. That&#8217;s a big thing that I had to figure out early, was how to use the minimum possible number of scenes to portray what I wanted to portray. Otherwise, you end up repeating yourself a lot.</p>
+<p>But I think it really is helpful to kind of, like&#8230; okay, yeah, here&#8217;s one. Here&#8217;s one. You can get so in your head about, like, oh, this and then this character would do this, and this would do that, and their motivation to do that.</p>
+<p>And over time, if you do that too much, you can actually end up getting to some quite contrived territory. So I really would ask yourself constantly: what would I do? How would I reply if I was being spoken to this way? What would I think if someone had done this? Why would I do that?</p>
+<p>And then from there you&#8217;ll be able to kind of, like, reframe your thinking through the character&#8217;s mind. Do you know what I mean?</p>
+<p>It&#8217;s like, in a weird way, I think people have a tendency to kind of almost step too far out of their own writing and be like, ‘Well, this character&#8230;’ Actually, I think everyone thinks relatively similarly.</p>
+<p>And a lot of the anxieties are located differently, and the concerns and worries are located differently and dispersed differently in that relationship. But ultimately, you can have faith that your own perspective is enough and will be interesting.</p>
+<p>And you get the fun job of being able to kind of pick and choose the parts that go into the different personalities in this relationship.</p>
+<p>I think what would really be my advice, is, like, don&#8217;t ever get too far from your own feelings and from how you would respond and what you would think about and say in these scenes, because authenticity is really what you&#8217;re shooting for here.</p>
+<p>You know, if you&#8217;re writing something that&#8217;s mostly about relationships, and I think, you know, a big part of it feeling authentic is that it&#8217;s relatable and that your reader will read it and be like, ‘Yeah, I would probably say that too,’ or, ‘I would think something like that.’</p>
+<p>So never try and go too far out on a limb in terms of, like, really trying to set up these huge arguments where the characters would take completely opposite&#8230; It really needs to be plausible more than everything.</p>
+<p>But then the good news is that once you&#8217;ve achieved a kind of baseline of plausibility, then you can really start to do a lot more and start to raise the bar in that relationship and raise the stakes.</p>
+<p>I hope that&#8217;s a good answer.</p>
+<p>&nbsp;</p>
+<p><strong>Lucy</strong></p>
+<p>Yeah, I think it&#8217;s great. Don&#8217;t get too tangled up in the, like, macro overview of what you&#8217;re doing. Spend time emotionally in the moment.</p>
+<p>That&#8217;s really nice. What can we look out from you next?</p>
+<p>&nbsp;</p>
+<p><strong>Jem</strong></p>
+<p>I have some&#8230; some non-fiction stuff for some newspaper, I think, that’s coming out over the summer, so keep an eye out for that.</p>
+<p>And then, yeah, I’m working on Novel Two at the moment. And, yeah, hopefully there should be an announcement at some point.</p>
+<p>But yeah.</p>
+<p>&nbsp;</p>
+<p><strong>Lucy</strong></p>
+<p>That&#8217;s exciting.</p>
+<p>I also just wanted to say that I actually found out about this book from a different podcast. The host recommended it to all of the listeners of her podcast, and I feel like I&#8217;ve come a full circle moment now of, like, hearing about it on a podcast and then coming back now.</p>
+<p>&nbsp;</p>
+<p><strong>Jem</strong></p>
+<p>On, wow. Amazing. Who was the podcast?</p>
+<p>&nbsp;</p>
+<p><strong>Lucy</strong></p>
+<p>If I Speak with Ash Sarkar</p>
+<p>&nbsp;</p>
+<p><strong>Jem</strong></p>
+<p>Really, really cool.</p>
+<p>&nbsp;</p>
+<p><strong>Lucy</strong></p>
+<p>Thank you everybody for listening to this episode of The Writing Life and I hope you enjoy <em>I Want You To Be Happy</em>. You should definitely go and read it.</p>
+        </div>
+       <!-- / Text Content -->
+
+    
+     <!-- / Button Repeater -->
+
+    
+  </div> <!-- / Column Text Block -->
+</div> <!-- / Full Content -->  
+
+
+        
+  <div class="full_content dark_bg pt_md pb_lrg"> <!-- Full Content -->
+    <div class="feature_row_feed dark_bg"> <!-- Feature Row Feed -->
+
+      <div class="main_title"> <!-- Main Title -->
+        <h2>You may also like...</h2>
+      </div> <!-- / Main Title -->
+
+      
+        <div class="feed_container"> <!-- Feed Container -->
+
+          
+            <div class="feed_item"> <!-- Feed Item -->
+
+              <div class="image_container"> <!-- Image Container -->
+
+                 <!-- Image -->
+                                  <a href="https://nationalcentreforwriting.org.uk/writing-hub/from-draft-to-debut-anna-goldreich-on-the-leveret/">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/uploads/2026/06/Anna-Goldreich-500x250.png" alt="" />
+                  </a>
+                 <!-- / Image -->
+
+              </div> <!-- / Image Container -->
+
+              <div class="text_content"> <!-- Text Content -->
+
+                <p class="title">From draft to debut: Anna Goldreich on The Leveret</p> <!-- Title -->
+
+                 <!-- Excerpt -->
+                  <p>In this episode of The Writing Life Podcast, writer Anna Goldreich reflects on the personal and creative journey behind her debut novel, <em>The Leveret</em>.</p>
+                 <!-- / Excerpt -->
+
+                <div class="date_container"> <!-- Date Container -->
+
+                  <div class="icon"> <!-- Icon -->
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/calendar.svg" alt="Calendar">
+                  </div> <!-- / Icon -->
+
+                  <p class="date">15th June 2026</p> <!-- Date -->
+
+                </div> <!-- / Date Container -->
+
+                <div class="tags"> <!-- Tags -->
+                                      <div class="tag">Interview</div>
+                                      <div class="tag">The Writing Life</div>
+                                      <div class="tag">Tips and Advice</div>
+                                  </div> <!-- / Tags -->
+
+                
+                <a href="https://nationalcentreforwriting.org.uk/writing-hub/from-draft-to-debut-anna-goldreich-on-the-leveret/" class="btn btn_sm">Listen</a> <!-- Button -->
+
+              </div> <!-- / Text Content -->
+
+            </div> <!-- / Feed Item -->
+
+          
+            <div class="feed_item"> <!-- Feed Item -->
+
+              <div class="image_container"> <!-- Image Container -->
+
+                 <!-- Image -->
+                                  <a href="https://nationalcentreforwriting.org.uk/writing-hub/narrative-form-ashley-hickson-lovence-podcast/">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/uploads/2026/05/Ashley-Hickson-Lovence-c-Anna-Davidson-500x250.png" alt="" />
+                  </a>
+                 <!-- / Image -->
+
+              </div> <!-- / Image Container -->
+
+              <div class="text_content"> <!-- Text Content -->
+
+                <p class="title">Experimenting with narrative form: Ashley Hickson-Lovence on About to Fall Apart</p> <!-- Title -->
+
+                 <!-- Excerpt -->
+                  <p><span style="font-weight: 400;">In this episode of The Writing Life Podcast, Norwich-based writer Ashley Hickson-Lovence discusses experimenting with narrative, form, and structure in his latest novel, </span><i><span style="font-weight: 400;">About to Fall Apart.</span></i></p>
+                 <!-- / Excerpt -->
+
+                <div class="date_container"> <!-- Date Container -->
+
+                  <div class="icon"> <!-- Icon -->
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/calendar.svg" alt="Calendar">
+                  </div> <!-- / Icon -->
+
+                  <p class="date">18th May 2026</p> <!-- Date -->
+
+                </div> <!-- / Date Container -->
+
+                <div class="tags"> <!-- Tags -->
+                                      <div class="tag">Interview</div>
+                                      <div class="tag">The Writing Life</div>
+                                      <div class="tag">Tips and Advice</div>
+                                  </div> <!-- / Tags -->
+
+                
+                <a href="https://nationalcentreforwriting.org.uk/writing-hub/narrative-form-ashley-hickson-lovence-podcast/" class="btn btn_sm">Listen</a> <!-- Button -->
+
+              </div> <!-- / Text Content -->
+
+            </div> <!-- / Feed Item -->
+
+          
+            <div class="feed_item"> <!-- Feed Item -->
+
+              <div class="image_container"> <!-- Image Container -->
+
+                 <!-- Image -->
+                                  <a href="https://nationalcentreforwriting.org.uk/writing-hub/the-path-to-publication-grace-murray-podcast/">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/uploads/2026/03/Grace-Murray-Path-to-publication-podcast-500x250.png" alt="" />
+                  </a>
+                 <!-- / Image -->
+
+              </div> <!-- / Image Container -->
+
+              <div class="text_content"> <!-- Text Content -->
+
+                <p class="title">The path to publication: Grace Murray on Blank Canvas</p> <!-- Title -->
+
+                 <!-- Excerpt -->
+                  <p>In this episode of The Writing Life, literary newcomer Grace Murray shares the process from mentorship to the publication of her debut novel <em>Blank Canvas</em>.</p>
+                 <!-- / Excerpt -->
+
+                <div class="date_container"> <!-- Date Container -->
+
+                  <div class="icon"> <!-- Icon -->
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/calendar.svg" alt="Calendar">
+                  </div> <!-- / Icon -->
+
+                  <p class="date">23rd March 2026</p> <!-- Date -->
+
+                </div> <!-- / Date Container -->
+
+                <div class="tags"> <!-- Tags -->
+                                      <div class="tag">Fiction</div>
+                                      <div class="tag">The Writing Life</div>
+                                      <div class="tag">Tips and Advice</div>
+                                  </div> <!-- / Tags -->
+
+                
+                <a href="https://nationalcentreforwriting.org.uk/writing-hub/the-path-to-publication-grace-murray-podcast/" class="btn btn_sm">Listen</a> <!-- Button -->
+
+              </div> <!-- / Text Content -->
+
+            </div> <!-- / Feed Item -->
+
+          
+        </div> <!-- / Feed Container -->
+
+      
+    </div> <!-- / Full Content -->
+  </div> <!-- / Feature Row Feed -->
+
+  </main><!-- #main -->
+</div><!-- #primary -->
+
+
+	</div><!-- #content -->
+
+	<footer id="colophon" class="site-footer">
+
+		<div class="footer_content"> <!-- Footer Content -->
+
+      <div class="top_panel"> <!-- Top Panel -->
+
+        <div class="navigation_container"> <!-- Navigation Container -->
+
+          <p class="h6 title">Navigation</p> <!-- Title -->
+
+          <div class="navigation"> <!-- Navigation -->
+
+            <div class="col_1"> <!-- Column One -->
+
+               <!-- Column One Links -->
+                <div class="links">
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/support-us/" target="_self">Support us</a> <!-- / Link -->
+
+                       <!-- Child Links -->
+                        <div class="child_links">
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/support-us/donate/" target="_self">Donate</a> <!-- / Link -->
+
+                            
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/support-us/ways-to-support-us/" target="_self">More Ways to Support</a> <!-- / Link -->
+
+                            
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/support-us/ways-to-support-us/our-supporters/" target="_self">Our Supporters</a> <!-- / Link -->
+
+                            
+                                                  </div>
+                       <!-- / Child Links -->
+
+                    
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/about-us/environmental-impact/" target="_self">Environmental Impact</a> <!-- / Link -->
+
+                       <!-- / Child Links -->
+
+                    
+                                  </div>
+               <!-- / Column One Links -->
+
+            </div> <!-- / Column One -->
+
+            <div class="col_2"> <!-- Column Two -->
+
+               <!-- Column Two Links -->
+                <div class="links">
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/about-us/" target="_self">About us</a> <!-- / Link -->
+
+                       <!-- Child Links -->
+                        <div class="child_links">
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/about-us/our-team/" target="_self">Our team</a> <!-- / Link -->
+
+                            
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/about-us/board/" target="_self">Our Board</a> <!-- / Link -->
+
+                            
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/vacancies/" target="_self">Jobs &amp; Volunteering</a> <!-- / Link -->
+
+                            
+                                                  </div>
+                       <!-- / Child Links -->
+
+                    
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/visit-us/" target="_self">Visit us</a> <!-- / Link -->
+
+                       <!-- Child Links -->
+                        <div class="child_links">
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/visit-us/the-literature-house/accessibility/" target="_self">Accessibility</a> <!-- / Link -->
+
+                            
+                                                  </div>
+                       <!-- / Child Links -->
+
+                    
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/hire/" target="_self">Hire Dragon Hall</a> <!-- / Link -->
+
+                       <!-- / Child Links -->
+
+                    
+                                  </div>
+               <!-- / Column Two Links -->
+
+            </div> <!-- / Column Two -->
+
+            <div class="col_3"> <!-- Column Three -->
+
+               <!-- Column Three Links -->
+                <div class="links">
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/contact/" target="_self">Contact us</a> <!-- / Link -->
+
+                    
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/terms-conditions/" target="_self">Terms &amp; Conditions</a> <!-- / Link -->
+
+                    
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/privacy-policy/" target="_self">Privacy Policy</a> <!-- / Link -->
+
+                    
+                                  </div>
+               <!-- / Column Three Links -->
+
+              <div class="social_links"> <!-- Social Links -->
+
+                 <!-- Social Link -->
+                  <div class="social_link">
+                    <a href="https://www.facebook.com/NationalCentreforWriting/" target="_blank">
+                      <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/facebook.png" alt="Twitter Logo" />
+                    </a>
+                  </div>
+                 <!-- / Social Link -->
+
+                 <!-- Social Link -->
+                  <div class="social_link">
+                    <a href="https://bsky.app/profile/writerscentre.bsky.social" target="_blank">
+                      <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/twitter.png" alt="Twitter Logo" />
+                    </a>
+                  </div>
+                 <!-- / Social Link -->
+
+                 <!-- Social Link -->
+                  <div class="social_link">
+                  <a href="https://www.linkedin.com/company/writerscentre/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=uk" target="_blank">
+                      <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/linkedin.png" alt="Linkedin Logo" />
+                    </a>
+                  </div>
+                 <!-- / Social Link -->
+
+                 <!-- Social Link -->
+                  <div class="social_link">
+                  <a href="https://www.youtube.com/user/WCNonline" target="_blank">
+                      <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/youtube.png" alt="Youtube Logo" />
+                    </a>
+                  </div>
+                 <!-- / Social Link -->
+
+                 <!-- Social Link -->
+                  <div class="social_link">
+                    <a href="https://www.instagram.com/writerscentre/?hl=en" target="_blank">
+                      <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/instagram.png" alt="Instagram Logo" />
+                    </a>
+                  </div>
+                 <!-- / Social Link -->
+
+              </div> <!-- / Social Links -->
+
+              <a href="https://www.splitpixel.co.uk/huddersfield-digital-agency/web-design/" target="_blank">Website designed by Splitpixel</a>
+
+            </div> <!-- / Column Three -->
+
+          </div> <!-- / Navigation -->
+
+        </div> <!-- / Navigation Container -->
+
+        <div class="newsletter_container"> <!-- Newsletter Container -->
+          <div class="newsletter"> <!-- Newsletter -->
+
+            <p class="h6 title">Newsletter Signup</p> <!-- Title -->
+
+            
+                <div class='gf_browser_chrome gform_wrapper gravity-theme gform-theme--no-framework' data-form-theme='gravity-theme' data-form-index='0' id='gform_wrapper_6' ><div id='gf_6' class='gform_anchor' tabindex='-1'></div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_6' id='gform_6'  action='/writing-hub/writing-relationships-jem-calder-podcast/#gf_6' data-formid='6' novalidate>
+                        <div class='gform-body gform_body'><div id='gform_fields_6' class='gform_fields top_label form_sublabel_below description_below validation_below'><div id="field_6_9" class="gfield gfield--type-honeypot gform_validation_container field_sublabel_below gfield--has-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_6_9'><span class='gform-field-label__text'>Comments</span></label><div class='ginput_container'><input name='input_9' id='input_6_9' type='text' value='' autocomplete='new-password'/></div><div class='gfield_description' id='gfield_description_6_9'>This field is for validation purposes and should be left unchanged.</div></div><div id="field_6_7" class="gfield gfield--type-html gfield--input-type-html gfield--width-full gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><div style="font-size:13px;">Sign up to receive newsletters about our work, including events, workshops, writer and translator opportunities, resources and ways to support us.</div></div><div id="field_6_1" class="gfield gfield--type-text gfield--input-type-text gfield--width-half gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_6_1'><span class='gform-field-label__text'>First Name</span><span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></label><div class='ginput_container ginput_container_text'><input name='input_1' id='input_6_1' type='text' value='' class='large'     aria-required="true" aria-invalid="false"   /></div></div><div id="field_6_3" class="gfield gfield--type-text gfield--input-type-text gfield--width-half gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_6_3'><span class='gform-field-label__text'>Last Name</span><span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></label><div class='ginput_container ginput_container_text'><input name='input_3' id='input_6_3' type='text' value='' class='large'     aria-required="true" aria-invalid="false"   /></div></div><div id="field_6_4" class="gfield gfield--type-email gfield--input-type-email gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_6_4'><span class='gform-field-label__text'>Email Address</span><span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></label><div class='ginput_container ginput_container_email'>
+                            <input name='input_4' id='input_6_4' type='email' value='' class='large'    aria-required="true" aria-invalid="false"  />
+                        </div></div><fieldset id="field_6_6" class="gfield gfield--type-checkbox gfield--type-choice gfield--input-type-checkbox gfield--width-full field_sublabel_below gfield--has-description field_description_above field_validation_below gfield_visibility_visible gfield--choice-align-vertical"  ><legend class='gfield_label gform-field-label gfield_label_before_complex' ><span class='gform-field-label__text'>Additional Interests</span></legend><div class='gfield_description' id='gfield_description_6_6'><div style="font-size:13px;">I am also interested in....</div></div><div class='ginput_container ginput_container_checkbox'><div class='gfield_checkbox ' id='input_6_6'><div class='gchoice gchoice_6_6_1'>
+								<input class='gfield-choice-input' name='input_6.1' type='checkbox'  value='601APNNMRMBJQQPBSCNQGQHGKKCRPSSGN'  id='choice_6_6_1'   aria-describedby="gfield_description_6_6"/>
+								<label for='choice_6_6_1' id='label_6_6_1' class='gform-field-label gform-field-label--type-inline'>Literary Translation</label>
+							</div><div class='gchoice gchoice_6_6_2'>
+								<input class='gfield-choice-input' name='input_6.2' type='checkbox'  value='401ANPJQJQPQMRSBDNMVNLSPGTRBVQVRH'  id='choice_6_6_2'   />
+								<label for='choice_6_6_2' id='label_6_6_2' class='gform-field-label gform-field-label--type-inline'>Young People &amp; Families</label>
+							</div><div class='gchoice gchoice_6_6_3'>
+								<input class='gfield-choice-input' name='input_6.3' type='checkbox'  value='802AJGBTDPGVCVMGPKHTKDLNBHRQNQDQG'  id='choice_6_6_3'   />
+								<label for='choice_6_6_3' id='label_6_6_3' class='gform-field-label gform-field-label--type-inline'>NCW Academy</label>
+							</div><div class='gchoice gchoice_6_6_4'>
+								<input class='gfield-choice-input' name='input_6.4' type='checkbox'  value='1805ALLBRLTKSTCLTLPMMNKTTNHVPCSDJ'  id='choice_6_6_4'   />
+								<label for='choice_6_6_4' id='label_6_6_4' class='gform-field-label gform-field-label--type-inline'>Norwich City of Literature</label>
+							</div></div></div></fieldset><div id="field_6_8" class="gfield gfield--type-text gfield--input-type-text gfield--width-full field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_hidden"  ><div class="admin-hidden-markup"><i class="gform-icon gform-icon--hidden" aria-hidden="true" title="This field is hidden when viewing the form"></i><span>This field is hidden when viewing the form</span></div><label class='gfield_label gform-field-label' for='input_6_8'><span class='gform-field-label__text'>Newsletter Contact Pref</span></label><div class='ginput_container ginput_container_text'><input name='input_8' id='input_6_8' type='text' value='201AGBHDRLQHNHPHKKMPKLGPMDRDTDMVL' class='large'      aria-invalid="false"   /></div></div><fieldset id="field_6_5" class="gfield gfield--type-consent gfield--type-choice gfield--input-type-consent gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below hidden_label field_validation_below gfield_visibility_visible gfield--choice-align-vertical"  ><legend class='gfield_label gform-field-label gfield_label_before_complex' ><span class='gform-field-label__text'>Privacy Policy</span><span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></legend><div class='ginput_container ginput_container_consent'><input name='input_5.1' id='input_6_5_1' type='checkbox' value='1'   aria-required="true" aria-invalid="false"   /> <label class="gform-field-label gform-field-label--type-inline gfield_consent_label" for='input_6_5_1' ><span class='gform-field-label__text'>I have read and agree to the <a href="https://nationalcentreforwriting.org.uk/privacy-policy/" target="_blank" class="text_link">privacy and terms.</a></span><span class="gfield_required gfield_required_text">(Required)</span></label><input type='hidden' name='input_5.2' value='I have read and agree to the &lt;a href=&quot;https://nationalcentreforwriting.org.uk/privacy-policy/&quot; target=&quot;_blank&quot; class=&quot;text_link&quot;&gt;privacy and terms.&lt;/a&gt;' class='gform_hidden' /><input type='hidden' name='input_5.3' value='6' class='gform_hidden' /></div></fieldset></div></div>
+        <div class='gform-footer gform_footer top_label'> <button type='submit' id='gform_submit_button_6' class='gform_button button' onclick='gform.submission.handleButtonClick(this);' data-submission-type='submit' >Go</button> <input type='hidden' name='gform_ajax' value='form_id=6&amp;title=&amp;description=&amp;tabindex=0&amp;theme=gravity-theme&amp;styles=[]&amp;hash=bca65a3dacc449f29fd73b19ba12290c' />
+            <input type='hidden' class='gform_hidden' name='gform_submission_method' data-js='gform_submission_method_6' value='iframe' />
+            <input type='hidden' class='gform_hidden' name='gform_theme' data-js='gform_theme_6' id='gform_theme_6' value='gravity-theme' />
+            <input type='hidden' class='gform_hidden' name='gform_style_settings' data-js='gform_style_settings_6' id='gform_style_settings_6' value='[]' />
+            <input type='hidden' class='gform_hidden' name='is_submit_6' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='6' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_currency' data-currency='GBP' value='0ECb4dEWBCkjf5LSJdYj3kTrT9OIoE0C1CaPpXfzZDRvH3uQj4aHiLI/hi7R3elrCYkEd4Px5/JWUjmxac7Ku16/RbLfJEeI13y3x+jTcaSR34g=' />
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_6' value='WyJ7XCI2LjFcIjpcImM5NWU4Y2Q5NmMxYWFkY2YyZWRhODJiZTdlOWQyMGM5XCIsXCI2LjJcIjpcImIyNTdkMGY2OWJkNzA0NGU1YmY3Y2M4NTQ2MTZlOWJlXCIsXCI2LjNcIjpcImU1NmVkYzQxNzkyMTBhMjZmMTMyYmRmMTllNzI2ZTJkXCIsXCI2LjRcIjpcImZhNzM3ZWFiN2M4ZTYzYjFmMmQ3ODMzMzIwNzU0Nzk2XCIsXCI1LjFcIjpcImNkMDg5OWY3OTIzZGMxYjViZjQwMDI0YWZlNGU3YjJjXCIsXCI1LjJcIjpcIjg0YmJlYWIxNjE0NWY4NjQ2YTAwOGQ3MDA4NWU2ZDVmXCIsXCI1LjNcIjpcImVhNTZiNGNhYmY1MjBiZjViOTRkZjk3MzhiZGJkNmE1XCIsXCJnZm9ybV9zdWJtaXNzaW9uX21ldGhvZFwiOltcImVkYWQ0YTMzYzlmNDU4YTRlZjllZDg1M2UyNTkwOGE0XCIsXCJhNjZjZTUwYjUyOTk2YmY5ZDI3MDc1NmRiMjlkYTMxNFwiLFwiZGMwMGZhM2JjMjVlNDc0Y2YyZmE3NWI1ODVkNjBmMzlcIl0sXCJnZm9ybV90aGVtZVwiOlwiZjU3MTU1ZmRhM2I0NjFiODE1MzZjYTM3YzIwZDgxNThcIixcImdmb3JtX3N0eWxlX3NldHRpbmdzXCI6XCIxZmJhYTJlNjAyMDRiYjBlYmM1NzQwN2NhODg3M2QzZlwiLFwiZm9ybV9pZFwiOlwiZWE1NmI0Y2FiZjUyMGJmNWI5NGRmOTczOGJkYmQ2YTVcIixcInVybFwiOlwiNGM3Yjk5ZjhjZWE1NmM2NjNmNjRmMWFjZjBmYzE4YjJcIixcInN0YXRlX3RpbWVzdGFtcFwiOlwiNDRlZWFmZDkyYmIzODc1NjkwMzM4OTdiMWM2MzU5YWJcIn0iLCI0MWEzNmZjMTYwZjkxYmI3YmE0OWI3NzU0YTYzZjQ0OSIsMTc4NzgxMDMwOV0=' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_target_page_number_6' id='gform_target_page_number_6' value='0' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_source_page_number_6' id='gform_source_page_number_6' value='1' />
+            <input type='hidden' name='gform_field_values' value='check=First+Choice%2CSecond+Choice' />
+            
+        </div>
+                        </form>
+                        </div>
+		                <iframe style='display:none;width:0px;height:0px;' src='about:blank' name='gform_ajax_frame_6' id='gform_ajax_frame_6' title='This iframe contains the logic required to handle Ajax powered Gravity Forms.'></iframe>
+		                <script>
+gform.initializeOnLoaded( function() {jQuery('#gform_ajax_frame_6').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_6');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_6').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_6').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_6').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_6').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_6').offset().top - mt); }, 50 );var current_page = jQuery('#gform_source_page_number_6').val();jQuery(document).trigger('gform_page_loaded', [6, current_page]);window['gf_submitting_6'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}jQuery('#gform_wrapper_6').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_6').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [6]);window['gf_submitting_6'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_6').text());}else{jQuery('#gform_6').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger("gform_pre_post_render", [{ formId: "6", currentPage: "current_page", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_6" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_6";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_6" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 6, current_page );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );} );
+</script>
+
+          </div> <!-- / Newsletter -->
+        </div> <!-- / Newsletter Container -->
+
+      </div> <!-- / Top Panel -->
+
+      <div class="bottom_panel">
+
+        <div class="partners_container"> <!-- Partners Container -->
+
+          <div class="partners"> <!-- Partners -->
+
+            <p class="h6 title">Our Partners</p> <!-- Title -->
+
+            <div class="partners_flex_container"> <!-- Partners Flex Container -->
+
+              <div class="col_1"> <!-- Column One -->
+
+                <div class="partner_logo">
+                  <a href="https://www.artscouncil.org.uk/" target="_blank">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/ace_logo.png" alt="Arts Council England Logo" />
+                  </a>
+                </div> <!-- Partner Logo -->
+                <div class="partner_logo city_of_literature">
+                  <a href="/norwich-unesco-city-of-literature/">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/city-of-literature.png" alt="Norwich City of Literature Logo" />
+                  </a>
+                </div> <!-- Partner Logo -->
+
+              </div> <!-- / Column One -->
+
+              <div class="col_2"> <!-- Column Two -->
+
+                <div class="partner_logo">
+                  <a href="https://www.norwich.gov.uk/site/" target="_blank">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/ncc_logo.png" alt="Norwich City Council Logo" />
+                  </a>
+                </div> <!-- Partner Logo -->
+                <div class="partner_logo">
+                  <a href="https://ec.europa.eu/regional_policy/funding/erdf_en" target="_blank">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/sgs_logo.jpg" alt="Small Grant Scheme Logo" />
+                  </a>
+                </div> <!-- Partner Logo -->
+                <div class="partner_logo">
+                  <a href="https://www.uea.ac.uk/" target="_blank">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/uea_logo.png" alt="University of East Anglia Logo" />
+                  </a>
+                </div> <!-- Partner Logo -->
+
+              </div> <!-- / Column Two -->
+
+            </div> <!-- / Partners Flex Container -->
+
+          </div> <!-- / Partners -->
+
+        </div> <!-- / Partners Container -->
+
+        <div class="company_info_container"> <!-- Company Information Container -->
+
+          <p class="h6 title">Company Information</p> <!-- Title -->
+
+          <div class="company_info"> <!-- Company Information -->
+
+             <!-- Address -->
+              <p>© National Centre for Writing, Dragon Hall, 115-123 King Street, Norwich, NR1 1QE</p>
+             <!-- / Address -->
+
+            <p>Company Number: 05242876</p> <!-- Company Number -->
+
+            <p>National Centre for Writing is a registered charity. Our charity number is 1110725</p> <!-- Charity Number -->
+
+             <!-- Number -->
+                            <a href="mailto:info@nationalcentreforwriting.org.uk?subject=Website%20Enquiry">info@nationalcentreforwriting.org.uk</a>
+             <!-- / Number -->
+
+          </div> <!-- / Company Information -->
+
+        </div> <!-- / Company Information Container -->
+
+      </div> <!-- / Bottom Panel -->
+
+		</div> <!-- / Footer Content -->
+
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+	<nav id="mobile-navigation">
+		<ul>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-109"><a href="https://nationalcentreforwriting.org.uk/whats-on/">What’s On</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16582"><a href="https://nationalcentreforwriting.org.uk/whats-on/">All Events</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51505"><a href="https://nationalcentreforwriting.org.uk/darkest-chapter/">Darkest Chapter</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48417"><a href="https://nationalcentreforwriting.org.uk/whats-on/summer/">Summer at the National Centre for Writing</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43339"><a href="https://nationalcentreforwriting.org.uk/programmes/browse-our-season-brochure/">Season Brochure</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33130"><a href="https://nationalcentreforwriting.org.uk/the-global-page-2/">The Global Page  </a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-63"><a href="https://nationalcentreforwriting.org.uk/get-involved/">Get involved</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="https://nationalcentreforwriting.org.uk/get-involved/writers/">For writers</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="https://nationalcentreforwriting.org.uk/get-involved/translators/">For translators</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="https://nationalcentreforwriting.org.uk/get-involved/communities/">For communities</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-825"><a href="https://nationalcentreforwriting.org.uk/get-involved/young-people/">For young people</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-826"><a href="https://nationalcentreforwriting.org.uk/get-involved/families/">For families</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-827"><a href="https://nationalcentreforwriting.org.uk/get-involved/schools/">For teachers</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-828"><a href="https://nationalcentreforwriting.org.uk/norwich-unesco-city-of-literature/">Norwich UNESCO City of Literature</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-55"><a href="https://nationalcentreforwriting.org.uk/academy/">Academy</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44919"><a href="https://nationalcentreforwriting.org.uk/the-writing-life-challenge/">The Writing Life Challenge</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-830"><a href="https://nationalcentreforwriting.org.uk/academy/tutored-courses/">Online tutored courses</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-832"><a href="https://nationalcentreforwriting.org.uk/academy/workshops/">Workshops</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65"><a href="https://nationalcentreforwriting.org.uk/academy/mentoring/">Mentoring</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-831"><a href="https://nationalcentreforwriting.org.uk/academy/live-evening-courses/">Evening courses</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-829"><a href="https://nationalcentreforwriting.org.uk/academy/self-paced-courses/">Self-paced online courses</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8145"><a href="https://nationalcentreforwriting.org.uk/get-involved/writers/resources/">Free resources</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="https://nationalcentreforwriting.org.uk/writing-hub/">Writing Hub</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10937"><a href="https://nationalcentreforwriting.org.uk/visit-us/">Visit</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27672"><a href="https://nationalcentreforwriting.org.uk/plan-your-visit/">Plan your visit</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26050"><a href="https://nationalcentreforwriting.org.uk/writers-room/">Writers’ Room</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="https://nationalcentreforwriting.org.uk/visit-us/the-literature-house/accessibility/">Accessibility</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10938"><a href="https://nationalcentreforwriting.org.uk/about-us/">About us</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10731"><a href="https://nationalcentreforwriting.org.uk/support-us/">Join and support</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14985"><a href="https://nationalcentreforwriting.org.uk/vacancies/">Join the team</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14344"><a href="https://nationalcentreforwriting.org.uk/shop/">Shop</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"><a href="https://nationalcentreforwriting.org.uk/hire/">Hire Dragon Hall</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38328"><a href="https://nationalcentreforwriting.org.uk/press/">Press</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8326"><a href="https://nationalcentreforwriting.org.uk/in-the-region/">In the region</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8094"><a href="https://nationalcentreforwriting.org.uk/contact/">Contact us</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-838"><a href="https://nationalcentreforwriting.org.uk/norwich-unesco-city-of-literature/">Norwich UNESCO City of Literature</a></li>
+<li class="mobile_only menu-item menu-item-type-custom menu-item-object-custom menu-item-9085"><a href="https://ncw-online.teachable.com/l/products">Academy Portal</a></li>
+      <li>
+        <form role="search" method="get" class="search-form mobile_search_form" action="https://nationalcentreforwriting.org.uk">
+
+          <div class="mobile_search_form_holder"> <!-- Search Form Holder -->
+              <div class="label_input">
+                <label for="mobile_site_search">Search our site:</label>
+                <input type="search" id="mobile_site_search" class="search-field" value="" name="s" title="Search for:" />
+              </div>
+              <input type="submit" class="search-submit" value="Search" />
+          </div> <!-- / Search Form Holder -->
+
+        </form>
+      </li>
+		</ul>
+	</nav> <!-- #site-navigation -->
+
+	<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/ncw/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+	<!--copyscapeskip-->
+	<aside id="moove_gdpr_cookie_info_bar" class="moove-gdpr-info-bar-hidden moove-gdpr-align-center moove-gdpr-dark-scheme gdpr_infobar_postion_bottom" aria-label="GDPR Cookie Banner" style="display: none;">
+	<div class="moove-gdpr-info-bar-container">
+		<div class="moove-gdpr-info-bar-content">
+		
+<div class="moove-gdpr-cookie-notice">
+  <p><span style="font-size: 11pt">We use cookies to give you the best experience on our website. If you're ok with this, click 'accept' to allow all cookies. Click 'reject' to restrict tracking cookies and only use required cookies. You can find out more about which cookies we are using or switch them off in <button  aria-haspopup="true" data-href="#moove_gdpr_cookie_modal" class="change-settings-button gdpr-settings-btn-style-2">settings</button>.</span></p>
+</div>
+<!--  .moove-gdpr-cookie-notice -->
+		
+<div class="moove-gdpr-button-holder">
+			<button class="mgbutton moove-gdpr-infobar-allow-all gdpr-fbo-0" aria-label="Accept" >Accept</button>
+						<button class="mgbutton moove-gdpr-infobar-reject-btn gdpr-fbo-1 "  aria-label="Reject">Reject</button>
+			</div>
+<!--  .button-container -->
+		</div>
+		<!-- moove-gdpr-info-bar-content -->
+	</div>
+	<!-- moove-gdpr-info-bar-container -->
+	</aside>
+	<!-- #moove_gdpr_cookie_info_bar -->
+	<!--/copyscapeskip-->
+<script id="jquery-ui-core-js-before">
+jQuery.uiBackCompat = true;
+//# sourceURL=jquery-ui-core-js-before
+</script>
+<script id="jquery-ui-core-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/jquery/ui/core.min.js?ver=1.14.2"></script>
+<script id="jquery-ui-datepicker-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.14.2"></script>
+<script id="jquery-ui-datepicker-js-after">
+jQuery(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+//# sourceURL=jquery-ui-datepicker-js-after
+</script>
+<script id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+//# sourceURL=rocket-browser-checker-js-after
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"/whats-on/|/events/|/events/|/writing-hub/|/writing-hub/|/showcase/|/showcase/|/resources/|/resources/|/courses/|/courses/|/programmes/|/programmes/|/login/|/logout/|/basket/|/checkout/|/(?:.+/)?feed(?:/(?:.+/?)?)?$|/(?:.+/)?embed/|/(index.php/)?(.*)wp-json(/.*|$)|/refer/|/go/|/recommend/|/recommends/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https://nationalcentreforwriting.org.uk","onHoverDelay":"100","rateThrottle":"3"};
+//# sourceURL=rocket-preload-links-js-extra
+</script>
+<script id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+
+//# sourceURL=rocket-preload-links-js-after
+</script>
+<script id="ncw-navigation-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/js/navigation.js?ver=20151215"></script>
+<script id="ncw-skip-link-focus-fix-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/js/skip-link-focus-fix.js?ver=20151215"></script>
+<script id="ncw-mmenu-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/lib/mobile-navigation/mmenu.js?ver=20171102"></script>
+<script id="ncw-mobile-nav-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/lib/mobile-navigation/mobile-navigation.js?ver=20171102"></script>
+<script id="ncw-mobile-polyfills-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/lib/mobile-navigation/mmenu.polyfills.js?ver=20171102"></script>
+<script id="ncw-slick-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/js/slick.min.js?ver=20171012"></script>
+<script id="ncw-custom-scripts-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/js/custom-scripts.js?ver=20171012"></script>
+<script id="moove_gdpr_frontend-js-extra">
+var moove_frontend_gdpr_scripts = {"ajaxurl":"https://nationalcentreforwriting.org.uk/wp-admin/admin-ajax.php","post_id":"49978","plugin_dir":"https://nationalcentreforwriting.org.uk/wp-content/plugins/gdpr-cookie-compliance","show_icons":"all","is_page":"","ajax_cookie_removal":"false","strict_init":"2","enabled_default":{"strict":1,"third_party":0,"advanced":0,"performance":0,"preference":0},"geo_location":"false","force_reload":"false","is_single":"1","hide_save_btn":"false","current_user":"0","cookie_expiration":"365","script_delay":"2000","close_btn_action":"1","close_btn_rdr":"","scripts_defined":"{\"cache\":true,\"header\":\"\",\"body\":\"\",\"footer\":\"\",\"thirdparty\":{\"header\":\"\\t\\t\\t\\t\\t\\t\\t\\t\u003C!-- Google Tag Manager --\u003E\\n\\t\\t\\t\\t\u003Cscript data-gdpr data-type=\\\"gdpr-integration\\\"\u003E(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\\n\\t\\t\\t\\tnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\\n\\t\\t\\t\\tj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\\n\\t\\t\\t\\t'https:\\/\\/www.googletagmanager.com\\/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\\n\\t\\t\\t\\t})(window,document,'script','dataLayer','GTM-T7QPRS3');\u003C\\/script\u003E\\n\\t\\t\\t\\t\u003C!-- End Google Tag Manager --\u003E\\n\\t\\t\\t\\t\",\"body\":\"\\t\\t\\t\\t\u003C!-- Google Tag Manager (noscript) --\u003E\\n\\t\\t\\t\\t\u003Cnoscript data-type=\\\"gdpr-integration\\\"\u003E\u003Ciframe src=\\\"https:\\/\\/www.googletagmanager.com\\/ns.html?id=GTM-T7QPRS3\\\"\\n\\t\\t\\t\\theight=\\\"0\\\" width=\\\"0\\\" style=\\\"display:none;visibility:hidden\\\"\u003E\u003C\\/iframe\u003E\u003C\\/noscript\u003E\\n\\t\\t\\t\\t\u003C!-- End Google Tag Manager (noscript) --\u003E\\n\\t\\t\\t\\t\\t\\t\\t\\t\",\"footer\":\"\"},\"strict\":{\"header\":\"\",\"body\":\"\",\"footer\":\"\"},\"advanced\":{\"header\":\"\",\"body\":\"\",\"footer\":\"\"}}","gdpr_scor":"true","wp_lang":"","wp_consent_api":"false","gdpr_nonce":"41c80a2cbb"};
+//# sourceURL=moove_gdpr_frontend-js-extra
+</script>
+<script id="moove_gdpr_frontend-js" src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gdpr-cookie-compliance/dist/scripts/main.js?ver=5.1.0"></script>
+<script id="moove_gdpr_frontend-js-after">
+var gdpr_c=document.cookie.match(/(?:^|;\s*)moove_gdpr_popup=([^;]*)/);var gdpr_d=gdpr_c?JSON.parse(decodeURIComponent(gdpr_c[1])):{};var gdpr_consent__strict=gdpr_d.strict==="1"?"true":"false";var gdpr_consent__thirdparty=gdpr_d.thirdparty==="1"?"true":"false";var gdpr_consent__advanced=gdpr_d.advanced==="1"?"true":"false";var gdpr_consent__performance=gdpr_d.performance==="1"?"true":"false";var gdpr_consent__preference=gdpr_d.preference==="1"?"true":"false";var _cc=[];if(gdpr_d.strict==="1")_cc.push("strict");if(gdpr_d.thirdparty==="1")_cc.push("thirdparty");if(gdpr_d.advanced==="1")_cc.push("advanced");if(gdpr_d.performance==="1")_cc.push("performance");if(gdpr_d.preference==="1")_cc.push("preference");var gdpr_consent__cookies=_cc.join("|");
+//# sourceURL=moove_gdpr_frontend-js-after
+</script>
+<script id="wp-dom-ready-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/dist/dom-ready.min.js?ver=3fe927cab37bf38d6a23"></script>
+<script id="wp-hooks-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/dist/hooks.min.js?ver=f0f188028580e8dc1255"></script>
+<script id="wp-i18n-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/dist/i18n.min.js?ver=1dfe7db3940c23ea9216"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script id="wp-a11y-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/dist/a11y.min.js?ver=31c6cec5a4ff7aff483d"></script>
+<script id="gform_json-js" defer='defer' src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=3.0.3"></script>
+<script id="gform_gravityforms-js-extra">
+var gform_i18n = {"datepicker":{"wdOffset":1,"helpTextShort":"Press F1 for help","helpText":"Press the arrow keys to navigate by day, PageUp and PageDown to navigate by month, Alt+PageUp and Alt+PageDown to navigate by year, or Escape to cancel.","openOnFocusHelpText":"Press Down arrow to browse the calendar, or Escape to close.","tooltipTxt":"Press Escape to cancel","disabledTxt":"Disabled","markedTxt":"Selected","prevTxt":"Previous","nextTxt":"Next","monthTxt":"Month","yearTxt":"Year","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"days":[{"s":"S","l":"Sunday"},{"s":"M","l":"Monday"},{"s":"T","l":"Tuesday"},{"s":"W","l":"Wednesday"},{"s":"T","l":"Thursday"},{"s":"F","l":"Friday"},{"s":"S","l":"Saturday"}]}};
+var gf_legacy_multi = [];
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","file_uploaded":"File uploaded","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled","error":"Error","message":"Message"},"vars":{"images_url":"https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/images"}};
+var gf_global = {"gf_currency_config":{"name":"Pound Sterling","symbol_left":"&#163;","symbol_right":"","symbol_padding":" ","thousand_separator":",","decimal_separator":".","decimals":2,"code":"GBP"},"base_url":"https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms","number_formats":[],"version_hash":"c20fb5453cebeae694df2545a989fe68","countries":{"AF":"Afghanistan","AX":"\u00c5land Islands","AL":"Albania","DZ":"Algeria","AS":"American Samoa","AD":"Andorra","AO":"Angola","AI":"Anguilla","AQ":"Antarctica","AG":"Antigua and Barbuda","AR":"Argentina","AM":"Armenia","AW":"Aruba","AU":"Australia","AT":"Austria","AZ":"Azerbaijan","BS":"Bahamas","BH":"Bahrain","BD":"Bangladesh","BB":"Barbados","BY":"Belarus","BE":"Belgium","BZ":"Belize","BJ":"Benin","BM":"Bermuda","BT":"Bhutan","BO":"Bolivia","BQ":"Bonaire, Sint Eustatius and Saba","BA":"Bosnia and Herzegovina","BW":"Botswana","BV":"Bouvet Island","BR":"Brazil","IO":"British Indian Ocean Territory","BN":"Brunei Darussalam","BG":"Bulgaria","BF":"Burkina Faso","BI":"Burundi","CV":"Cabo Verde","KH":"Cambodia","CM":"Cameroon","CA":"Canada","KY":"Cayman Islands","CF":"Central African Republic","TD":"Chad","CL":"Chile","CN":"China","CX":"Christmas Island","CC":"Cocos Islands","CO":"Colombia","KM":"Comoros","CD":"Congo, Democratic Republic of the","CG":"Congo","CK":"Cook Islands","CR":"Costa Rica","CI":"C\u00f4te d'Ivoire","HR":"Croatia","CU":"Cuba","CW":"Cura\u00e7ao","CY":"Cyprus","CZ":"Czechia","DK":"Denmark","DJ":"Djibouti","DM":"Dominica","DO":"Dominican Republic","EC":"Ecuador","EG":"Egypt","SV":"El Salvador","GQ":"Equatorial Guinea","ER":"Eritrea","EE":"Estonia","SZ":"Eswatini","ET":"Ethiopia","FK":"Falkland Islands","FO":"Faroe Islands","FJ":"Fiji","FI":"Finland","FR":"France","GF":"French Guiana","PF":"French Polynesia","TF":"French Southern Territories","GA":"Gabon","GM":"Gambia","GE":"Georgia","DE":"Germany","GH":"Ghana","GI":"Gibraltar","GR":"Greece","GL":"Greenland","GD":"Grenada","GP":"Guadeloupe","GU":"Guam","GT":"Guatemala","GG":"Guernsey","GN":"Guinea","GW":"Guinea-Bissau","GY":"Guyana","HT":"Haiti","HM":"Heard Island and McDonald Islands","VA":"Holy See","HN":"Honduras","HK":"Hong Kong","HU":"Hungary","IS":"Iceland","IN":"India","ID":"Indonesia","IR":"Iran","IQ":"Iraq","IE":"Ireland","IM":"Isle of Man","IL":"Israel","IT":"Italy","JM":"Jamaica","JP":"Japan","JE":"Jersey","JO":"Jordan","KZ":"Kazakhstan","KE":"Kenya","KI":"Kiribati","KP":"Korea, Democratic People's Republic of","KR":"Korea, Republic of","KW":"Kuwait","KG":"Kyrgyzstan","LA":"Lao People's Democratic Republic","LV":"Latvia","LB":"Lebanon","LS":"Lesotho","LR":"Liberia","LY":"Libya","LI":"Liechtenstein","LT":"Lithuania","LU":"Luxembourg","MO":"Macao","MG":"Madagascar","MW":"Malawi","MY":"Malaysia","MV":"Maldives","ML":"Mali","MT":"Malta","MH":"Marshall Islands","MQ":"Martinique","MR":"Mauritania","MU":"Mauritius","YT":"Mayotte","MX":"Mexico","FM":"Micronesia","MD":"Moldova","MC":"Monaco","MN":"Mongolia","ME":"Montenegro","MS":"Montserrat","MA":"Morocco","MZ":"Mozambique","MM":"Myanmar","NA":"Namibia","NR":"Nauru","NP":"Nepal","NL":"Netherlands","NC":"New Caledonia","NZ":"New Zealand","NI":"Nicaragua","NE":"Niger","NG":"Nigeria","NU":"Niue","NF":"Norfolk Island","MK":"North Macedonia","MP":"Northern Mariana Islands","NO":"Norway","OM":"Oman","PK":"Pakistan","PW":"Palau","PS":"Palestine, State of","PA":"Panama","PG":"Papua New Guinea","PY":"Paraguay","PE":"Peru","PH":"Philippines","PN":"Pitcairn","PL":"Poland","PT":"Portugal","PR":"Puerto Rico","QA":"Qatar","RE":"R\u00e9union","RO":"Romania","RU":"Russian Federation","RW":"Rwanda","BL":"Saint Barth\u00e9lemy","SH":"Saint Helena, Ascension and Tristan da Cunha","KN":"Saint Kitts and Nevis","LC":"Saint Lucia","MF":"Saint Martin","PM":"Saint Pierre and Miquelon","VC":"Saint Vincent and the Grenadines","WS":"Samoa","SM":"San Marino","ST":"Sao Tome and Principe","SA":"Saudi Arabia","SN":"Senegal","RS":"Serbia","SC":"Seychelles","SL":"Sierra Leone","SG":"Singapore","SX":"Sint Maarten","SK":"Slovakia","SI":"Slovenia","SB":"Solomon Islands","SO":"Somalia","ZA":"South Africa","GS":"South Georgia and the South Sandwich Islands","SS":"South Sudan","ES":"Spain","LK":"Sri Lanka","SD":"Sudan","SR":"Suriname","SJ":"Svalbard and Jan Mayen","SE":"Sweden","CH":"Switzerland","SY":"Syria Arab Republic","TW":"Taiwan","TJ":"Tajikistan","TZ":"Tanzania, the United Republic of","TH":"Thailand","TL":"Timor-Leste","TG":"Togo","TK":"Tokelau","TO":"Tonga","TT":"Trinidad and Tobago","TN":"Tunisia","TR":"T\u00fcrkiye","TM":"Turkmenistan","TC":"Turks and Caicos Islands","TV":"Tuvalu","UG":"Uganda","UA":"Ukraine","AE":"United Arab Emirates","GB":"United Kingdom","US":"United States","UY":"Uruguay","UM":"US Minor Outlying Islands","UZ":"Uzbekistan","VU":"Vanuatu","VE":"Venezuela","VN":"Viet Nam","VG":"Virgin Islands, British","VI":"Virgin Islands, U.S.","WF":"Wallis and Futuna","EH":"Western Sahara","YE":"Yemen","ZM":"Zambia","ZW":"Zimbabwe"},"strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+//# sourceURL=gform_gravityforms-js-extra
+</script>
+<script id="gform_gravityforms-js" defer='defer' src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=3.0.3"></script>
+<script id="gform_gravityforms_utils-js" defer='defer' src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/js/dist/utils.min.js?ver=69a9db57304a9f86c3d1a0bea5fd2cf9"></script>
+<script id="gform_gravityforms_theme_vendors-js" defer='defer' src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/js/dist/vendor-theme.min.js?ver=0c901cb641ce64b99c20ea1a4d208cc9"></script>
+<script id="gform_gravityforms_theme-js-extra">
+var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"c20fb5453cebeae694df2545a989fe68"},"ajax":{"ajaxurl":"https://nationalcentreforwriting.org.uk/wp-admin/admin-ajax.php","ajax_submission_nonce":"32df38e956","i18n":{"step_announcement":"Step %1$s of %2$s, %3$s","unknown_error":"There was an unknown error processing your request. Please try again.","error_403":"The request was blocked (403 error) for unknown security reasons. Remove any code-like text (scripts or DB queries) and try again."}}}},"hmr_dev":"","public_path":"https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/js/dist/","config_nonce":"40397dcefe"};
+//# sourceURL=gform_gravityforms_theme-js-extra
+</script>
+<script id="gform_gravityforms_theme-js" defer='defer' src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/js/dist/scripts-theme.min.js?ver=75b66edcf00dc5031d1c38e899136fda"></script>
+
+    
+	<!--copyscapeskip-->
+	<!-- V1 -->
+		<dialog id="moove_gdpr_cookie_modal" class="gdpr_lightbox-hide" open aria-modal="true" aria-label="GDPR Settings Screen">
+	<div class="moove-gdpr-modal-content moove-clearfix logo-position-left moove_gdpr_modal_theme_v1">
+		    
+		<button class="moove-gdpr-modal-close" autofocus aria-label="Close GDPR Cookie Settings">
+			<span class="gdpr-sr-only">Close GDPR Cookie Settings</span>
+			<span class="gdpr-icon moovegdpr-arrow-close"></span>
+		</button>
+				<div class="moove-gdpr-modal-left-content">
+		
+<div class="moove-gdpr-company-logo-holder">
+	<img src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gdpr-cookie-compliance/dist/images/gdpr-logo.png" alt="National Centre for Writing | NCW"   width="350"  height="233"  class="img-responsive" />
+</div>
+<!--  .moove-gdpr-company-logo-holder -->
+		<ul id="moove-gdpr-menu">
+			
+<li class="menu-item-on menu-item-privacy_overview menu-item-selected">
+	<button data-href="#privacy_overview" class="moove-gdpr-tab-nav" aria-label="Privacy Overview">
+	<span class="gdpr-nav-tab-title">Privacy Overview</span>
+	</button>
+</li>
+
+	<li class="menu-item-strict-necessary-cookies menu-item-off">
+	<button data-href="#strict-necessary-cookies" class="moove-gdpr-tab-nav" aria-label="Strictly Necessary Cookies">
+		<span class="gdpr-nav-tab-title">Strictly Necessary Cookies</span>
+	</button>
+	</li>
+
+
+	<li class="menu-item-off menu-item-third_party_cookies">
+	<button data-href="#third_party_cookies" class="moove-gdpr-tab-nav" aria-label="3rd Party Cookies">
+		<span class="gdpr-nav-tab-title">3rd Party Cookies</span>
+	</button>
+	</li>
+
+
+
+		</ul>
+		
+<div class="moove-gdpr-branding-cnt">
+			<a href="https://wordpress.org/plugins/gdpr-cookie-compliance/" rel="noopener noreferrer" target="_blank" class='moove-gdpr-branding'>Powered by&nbsp; <span>GDPR Cookie Compliance</span></a>
+		</div>
+<!--  .moove-gdpr-branding -->
+		</div>
+		<!--  .moove-gdpr-modal-left-content -->
+		<div class="moove-gdpr-modal-right-content">
+		<div class="moove-gdpr-modal-title">
+			 
+		</div>
+		<!-- .moove-gdpr-modal-ritle -->
+		<div class="main-modal-content">
+
+			<div class="moove-gdpr-tab-content">
+			
+<div id="privacy_overview" class="moove-gdpr-tab-main">
+		<span class="tab-title">Privacy Overview</span>
+		<div class="moove-gdpr-tab-main-content">
+	<p>This website uses cookies so that we can provide you with the best user experience possible. Cookie information is stored in your browser and performs functions such as recognising you when you return to our website and helping our team to understand which sections of the website you find most interesting and useful.</p>
+		</div>
+	<!--  .moove-gdpr-tab-main-content -->
+
+</div>
+<!-- #privacy_overview -->
+			
+  <div id="strict-necessary-cookies" class="moove-gdpr-tab-main" style="display:none">
+    <span class="tab-title">Strictly Necessary Cookies</span>
+    <div class="moove-gdpr-tab-main-content">
+      <p>Strictly Necessary Cookie should be enabled at all times so that we can save your preferences for cookie settings.</p>
+      <div class="moove-gdpr-status-bar ">
+        <div class="gdpr-cc-form-wrap">
+          <div class="gdpr-cc-form-fieldset">
+            <label class="cookie-switch" for="moove_gdpr_strict_cookies">    
+              <span class="gdpr-sr-only">Enable or Disable Cookies</span>        
+              <input type="checkbox" aria-label="Strictly Necessary Cookies"  value="check" name="moove_gdpr_strict_cookies" id="moove_gdpr_strict_cookies">
+              <span class="cookie-slider cookie-round gdpr-sr" data-text-enable="Enabled" data-text-disabled="Disabled">
+                <span class="gdpr-sr-label">
+                  <span class="gdpr-sr-enable">Enabled</span>
+                  <span class="gdpr-sr-disable">Disabled</span>
+                </span>
+              </span>
+            </label>
+          </div>
+          <!-- .gdpr-cc-form-fieldset -->
+        </div>
+        <!-- .gdpr-cc-form-wrap -->
+      </div>
+      <!-- .moove-gdpr-status-bar -->
+                                              
+    </div>
+    <!--  .moove-gdpr-tab-main-content -->
+  </div>
+  <!-- #strict-necesarry-cookies -->
+			
+  <div id="third_party_cookies" class="moove-gdpr-tab-main" style="display:none">
+    <span class="tab-title">3rd Party Cookies</span>
+    <div class="moove-gdpr-tab-main-content">
+      <p>This website uses Google Analytics to collect anonymous information such as the number of visitors to the site, and the most popular pages. It also uses Facebook Pixel to help us recommend events to our audiences.</p>
+<p>Keeping this cookie enabled helps us to improve our website.</p>
+      <div class="moove-gdpr-status-bar">
+        <div class="gdpr-cc-form-wrap">
+          <div class="gdpr-cc-form-fieldset">
+            <label class="cookie-switch" for="moove_gdpr_performance_cookies">    
+              <span class="gdpr-sr-only">Enable or Disable Cookies</span>     
+              <input type="checkbox" aria-label="3rd Party Cookies" value="check" name="moove_gdpr_performance_cookies" id="moove_gdpr_performance_cookies" disabled>
+              <span class="cookie-slider cookie-round gdpr-sr" data-text-enable="Enabled" data-text-disabled="Disabled">
+                <span class="gdpr-sr-label">
+                  <span class="gdpr-sr-enable">Enabled</span>
+                  <span class="gdpr-sr-disable">Disabled</span>
+                </span>
+              </span>
+            </label>
+          </div>
+          <!-- .gdpr-cc-form-fieldset -->
+        </div>
+        <!-- .gdpr-cc-form-wrap -->
+      </div>
+      <!-- .moove-gdpr-status-bar -->
+             
+    </div>
+    <!--  .moove-gdpr-tab-main-content -->
+  </div>
+  <!-- #third_party_cookies -->
+			
+									
+			</div>
+			<!--  .moove-gdpr-tab-content -->
+		</div>
+		<!--  .main-modal-content -->
+		<div class="moove-gdpr-modal-footer-content">
+			<div class="moove-gdpr-button-holder">
+						<button class="mgbutton moove-gdpr-modal-allow-all button-visible" aria-label="Enable All">Enable All</button>
+								<button class="mgbutton moove-gdpr-modal-save-settings button-visible" aria-label="Save Settings">Save Settings</button>
+				</div>
+<!--  .moove-gdpr-button-holder -->
+		</div>
+		<!--  .moove-gdpr-modal-footer-content -->
+		</div>
+		<!--  .moove-gdpr-modal-right-content -->
+
+		<div class="moove-clearfix"></div>
+
+	</div>
+	<!--  .moove-gdpr-modal-content -->
+	</dialog>
+	<!-- #moove_gdpr_cookie_modal -->
+	<!--/copyscapeskip-->
+<script>
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 6) {} } );jQuery(document).on('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+</script>
+<script>
+gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_render", [{ formId: "6", currentPage: "1", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_6" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_6";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_6" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 6, 1 );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );
+</script>
+
+</div> <!-- / Site Wrapper -->
+
+</body>
+</html>

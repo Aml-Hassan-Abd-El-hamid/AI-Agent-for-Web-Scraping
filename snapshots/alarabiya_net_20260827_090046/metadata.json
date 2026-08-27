@@ -1,0 +1,321 @@
+{
+  "website": "alarabiya",
+  "snapshot_date": "2026-08-27T09:14:32",
+  "pagination_type": "load more button",
+  "scroll_mode": "load_more",
+  "scroll_rounds_requested": 2,
+  "load_more_selector": null,
+  "listing_url": "https://www.alarabiya.net/views",
+  "input_urls": [
+    "https://www.alarabiya.net/views"
+  ],
+  "pagination_pattern": null,
+  "requirements": "title, date, author, article body text",
+  "run_dir": "orch_runs/run_20260827_090046",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://www.alarabiya.net/views",
+      "file": "listing_page_001.html",
+      "bytes": 153087,
+      "sha1": "56258e717ace159916c8ca21a0df40f95d684d0c"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://www.alarabiya.net/politics/2026/08/26/الضفة-الغربية-جيش-بلا-سياسة-ومجتمع-بلا-رزق-",
+      "title": "الضفة الغربية: جيشٌ بلا سياسة، ومجتمعٌ بلا رزق",
+      "page_num": 1,
+      "bytes": 225728,
+      "sha1": "35c693aaace6747716609bc6b8866bb7a6ce76b5"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://www.alarabiya.net/politics/2026/08/26/سياسات-نفطية",
+      "title": "سياسات نفطية",
+      "page_num": 1,
+      "bytes": 219424,
+      "sha1": "c1d2096781fb1db252d140bf77876e99f8e0d097"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://www.alarabiya.net/politics/2026/08/26/الحكومة-لم-تبدا-الحرب-لماذا-يريد-الثنائي-تحميل-الدولة-ثمن-قرار-الحزب-",
+      "title": "الحكومة لم تبدأ الحرب: لماذا يريد الثنائي تحميل الدولة ثمن قرار \"الحزب\"؟",
+      "page_num": 1,
+      "bytes": 178262,
+      "sha1": "89e9422f077e0b2c84cd70b2d6b173ec43fb0706"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://www.alarabiya.net/politics/2026/08/26/التاريخ-حكواتي-ة-الانترنت-والمنابر",
+      "title": "التاريخ.. حكواتيّة الإنترنت والمنابر",
+      "page_num": 1,
+      "bytes": 220590,
+      "sha1": "c85764e061444768cd668bac59bb89695a65f2c1"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://www.alarabiya.net/politics/2026/08/26/سعي-مصر-الى-تطوير-صناعاتها-الدفاعية-وخياراتها-في-مصادر-التكنولوجيا-وعواقبها-المحتملة",
+      "title": "سعي مصر الى تطوير صناعاتها الدفاعية وخياراتها في مصادر التكنولوجيا وعواقبها المحتملة",
+      "page_num": 1,
+      "bytes": 235467,
+      "sha1": "4760fc04ea317d33a71c276cd167a6990c936fbc"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://www.alarabiya.net/politics/2026/08/26/غلطة-مبارك-الثانية",
+      "title": "غلطة مبارك الثانية",
+      "page_num": 1,
+      "bytes": 166686,
+      "sha1": "43062d942cdda137d75f3a5d722cb65ae64698c2"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://www.alarabiya.net/politics/2026/08/26/تنافس-ام-عداء-",
+      "title": "تنافس أم عداء؟",
+      "page_num": 1,
+      "bytes": 219202,
+      "sha1": "7c58c78a9bf2c3d2ffa9ed562f6db9c25a0596d0"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://www.alarabiya.net/politics/2026/08/26/من-باريس-السعودية-ترسم-شراكاتها-الجديدة",
+      "title": "من باريس.. السعودية ترسم شراكاتها الجديدة",
+      "page_num": 1,
+      "bytes": 168469,
+      "sha1": "33b69d01c9bf309b9e3b3c3cf08f93c2c445ab94"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://www.alarabiya.net/politics/2026/08/26/الوطن-في-فكر-الامير-محمد-بن-سلمان-15",
+      "title": "الوطن في فكر الأمير محمد بن سلمان 15",
+      "page_num": 1,
+      "bytes": 170882,
+      "sha1": "7887a99340d481fd2aa1b141625ab47abdab2ade"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://www.alarabiya.net/politics/2026/08/26/عندما-اصبح-ذلك-المرض-مرضي",
+      "title": "عندما أصبح «ذلك المرض» مرضي",
+      "page_num": 1,
+      "bytes": 224586,
+      "sha1": "57f9250133981a163d9d17259d7c9643d62f1d2b"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://www.alarabiya.net/politics/2026/08/26/من-مكة-الى-المدينة-كيف-و-لد-معنى-الوطن-",
+      "title": "من مكة إلى المدينة.. كيف وُلد معنى الوطن؟",
+      "page_num": 1,
+      "bytes": 225344,
+      "sha1": "6b03bcb7e4dfeda1f09cd6451f5352f40b68b485"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://www.alarabiya.net/politics/2026/08/26/الحرب-والمفاوضات-",
+      "title": "الحرب والمفاوضات؟!",
+      "page_num": 1,
+      "bytes": 166029,
+      "sha1": "56546077d76f2f477ec1ae059fa480ef8b25d984"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://www.alarabiya.net/politics/2026/08/26/المعركة-وصلت-الى-اباريق-الشاى-",
+      "title": "المعركة وصلت إلى «أباريق الشاى»",
+      "page_num": 1,
+      "bytes": 167077,
+      "sha1": "1817d4976dbe8223402735ea8aeb86b22586167d"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://www.alarabiya.net/politics/2026/08/26/تعميم-وحدة-الساحات-والصراع-على-النفوذ",
+      "title": "تعميم \"وحدة الساحات\" والصراع على النفوذ",
+      "page_num": 1,
+      "bytes": 228785,
+      "sha1": "c37a67767551c6652f4689de6b2b7526f47ad2ba"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://www.alarabiya.net/politics/2026/08/25/التخلف-حالة-ثقافية-بلدان-متقاربان-جغرافي-ا-ومتباعدان-ثقافي-ا-",
+      "title": "التخلف حالة ثقافية... بلدان متقاربان جغرافيّاً ومتباعدان ثقافيّاً!",
+      "page_num": 1,
+      "bytes": 175565,
+      "sha1": "363b06d17dec86ef35aa74eac2cf284983920fcb"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://www.alarabiya.net/politics/2026/08/25/السعودية-وفرنسا-والاستثمار-في-المستقبل",
+      "title": "السعودية وفرنسا والاستثمار في المستقبل",
+      "page_num": 1,
+      "bytes": 171327,
+      "sha1": "29286bcb3164963186d82764a49b7b62175139c1"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://www.alarabiya.net/sport/views/2026/08/25/تخارج-نوعي",
+      "title": "تخارج نوعي",
+      "page_num": 1,
+      "bytes": 220090,
+      "sha1": "55e4a04cf53e4a0089d0ebc0098c94aeaaccc175"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://www.alarabiya.net/sport/views/2026/08/24/انفانتينو-ر-ب-كلمة-",
+      "title": "إنفانتينو... «رُبَّ كلمة»",
+      "page_num": 1,
+      "bytes": 222089,
+      "sha1": "7c239d84306fd54ece71a6d66046e2ac2d9126e3"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://www.alarabiya.net/sport/views/2026/08/24/ليس-كل-من-ركل-الكرة-يجيد-تحليلها",
+      "title": "ليس كل من ركل الكرة.. يجيد تحليلها",
+      "page_num": 1,
+      "bytes": 220876,
+      "sha1": "bd8d12329d0be6ab44a5df6d45b2f7cfc1552b22"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://www.alarabiya.net/sport/views/2026/08/24/هل-بدا-ضبط-المشهد-الاعلامي-",
+      "title": "هل بدأ ضبط المشهد الإعلامي؟",
+      "page_num": 1,
+      "bytes": 167973,
+      "sha1": "b9cb1879d503d97c5dbb590366e4904167de3e5d"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://www.alarabiya.net/sport/views/2026/08/21/هل-انقذ-الصندوق-الاتحاد-من-سندي-",
+      "title": "هل أنقذ الصندوق الاتحاد من سندي؟",
+      "page_num": 1,
+      "bytes": 220337,
+      "sha1": "87b3d3d0b0562659726269c56dd6217acc5c442d"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://www.alarabiya.net/sport/views/2026/08/21/-تطلعات-تفتح-ملف-الاعلام-الرياضي-ماذا-نريد-",
+      "title": "«تطلعات» تفتح ملف الإعلام الرياضي.. ماذا نريد؟",
+      "page_num": 1,
+      "bytes": 169449,
+      "sha1": "09e4d9ea5e17d77da70334065fa237a0ba694f3b"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://www.alarabiya.net/sport/views/2026/08/21/الهلال-و-الحقيقة-الغائبة-",
+      "title": "الهلال و«الحقيقة الغائبة»",
+      "page_num": 1,
+      "bytes": 219630,
+      "sha1": "4b8e43cf0d4e058fad60c6ef3e941ba62592f281"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://www.alarabiya.net/sport/views/2026/08/20/-كلاسيكو-البحرين-منصة-اللحمة-الوطنية",
+      "title": "«كلاسيكو البحرين» منصة اللحمة الوطنية",
+      "page_num": 1,
+      "bytes": 168078,
+      "sha1": "7c0f853d8c860ad6b45507d5dff6b1aef298e8e2"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://www.alarabiya.net/saudi-today/views/2026/08/26/ذاكرة-فرنسا-الغني-ة-عن-السعودية",
+      "title": "ذاكرة فرنسا الغنيّة عن السعودية",
+      "page_num": 1,
+      "bytes": 223482,
+      "sha1": "efeeacc5e640bfa5694f8553c48e0425b99341f3"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://www.alarabiya.net/saudi-today/views/2026/08/26/سعودية-ت-دير-منظمة-الصحة-العالمية",
+      "title": "سعودية تُدير منظمة الصحة العالمية",
+      "page_num": 1,
+      "bytes": 225641,
+      "sha1": "ec37c3f806ef2ddaef379502dceafdef7c823323"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://www.alarabiya.net/saudi-today/views/2026/08/26/من-باريس-السعودية-ترسم-شراكاتها-الجديدة0",
+      "title": "من باريس.. السعودية ترسم شراكاتها الجديدة",
+      "page_num": 1,
+      "bytes": 169203,
+      "sha1": "7c886a38fd69552887b512521724261d85384da6"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://www.alarabiya.net/saudi-today/views/2026/08/26/الوطن-في-فكر-الامير-محمد-بن-سلمان-150",
+      "title": "الوطن في فكر الأمير محمد بن سلمان 15",
+      "page_num": 1,
+      "bytes": 167308,
+      "sha1": "b418e1eca889d8b335b5195499aa87ca3da6b659"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://www.alarabiya.net/saudi-today/views/2026/08/26/اغلاق-ايران-لـمضيق-هرمز-يفقده-اهميته-الدولية",
+      "title": "إغلاق إيران لـ\"مضيق هرمز\" يفقده أهميته الدولية",
+      "page_num": 1,
+      "bytes": 228128,
+      "sha1": "b4a2f56dc67a764e898e59eb57f05d1fcdfc89b3"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://www.alarabiya.net/saudi-today/views/2026/08/26/الملك-سلمان-والرياض-المدينة-والصحيفة",
+      "title": "الملك سلمان.. والرياض المدينة والصحيفة",
+      "page_num": 1,
+      "bytes": 169680,
+      "sha1": "c5b7f5aef2eaa1dcf6eb798e06399ec7e6ff47aa"
+    },
+    {
+      "id": 31,
+      "file": "article_0031.html",
+      "url": "https://www.alarabiya.net/saudi-today/views/2026/08/26/من-قاعة-التشريح-الى-قاعة-الشعر",
+      "title": "من قاعة التشريح إلى قاعة الشعر",
+      "page_num": 1,
+      "bytes": 221095,
+      "sha1": "0c3d49a8104d98ef59df36a84e5d6a9b52894755"
+    },
+    {
+      "id": 32,
+      "file": "article_0032.html",
+      "url": "https://www.alarabiya.net/saudi-today/views/2026/08/25/شطرنجيات-بقائي",
+      "title": "شطرنجيات بقائي",
+      "page_num": 1,
+      "bytes": 168454,
+      "sha1": "266ec0f196a7076477c9d093636d5c21a83b6ee0"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 1,
+    "articles": 32,
+    "article_fetch_failures": 0
+  }
+}

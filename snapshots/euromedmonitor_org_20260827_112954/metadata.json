@@ -1,0 +1,327 @@
+{
+  "website": "euromedmonitor",
+  "snapshot_date": "2026-08-27T11:40:39",
+  "pagination_type": "numbered pagination",
+  "scroll_mode": null,
+  "scroll_rounds_requested": null,
+  "load_more_selector": null,
+  "listing_url": "https://euromedmonitor.org/ar/category/26/%D8%A7%D9%84%D9%86%D8%B2%D8%A7%D8%B9%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D8%AD%D8%A9",
+  "input_urls": [
+    "https://euromedmonitor.org/ar/category/26/%D8%A7%D9%84%D9%86%D8%B2%D8%A7%D8%B9%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D8%AD%D8%A9",
+    "https://euromedmonitor.org/ar/category/26/%D8%A7%D9%84%D9%86%D8%B2%D8%A7%D8%B9%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D8%AD%D8%A9?page=2"
+  ],
+  "pagination_pattern": "https://euromedmonitor.org/ar/category/26/%D8%A7%D9%84%D9%86%D8%B2%D8%A7%D8%B9%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D8%AD%D8%A9?page={page}",
+  "requirements": "title, date, article body text",
+  "run_dir": "orch_runs/run_20260827_112954",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://euromedmonitor.org/ar/category/26/%D8%A7%D9%84%D9%86%D8%B2%D8%A7%D8%B9%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D8%AD%D8%A9",
+      "file": "listing_page_001.html",
+      "bytes": 212374,
+      "sha1": "cdf468162f4d2333d6c7369506eae0edf3145736"
+    },
+    {
+      "page_num": 2,
+      "url": "https://euromedmonitor.org/ar/category/26/%D8%A7%D9%84%D9%86%D8%B2%D8%A7%D8%B9%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D8%AD%D8%A9?page=2",
+      "file": "listing_page_002.html",
+      "bytes": 212420,
+      "sha1": "94090c5aa345b83d77cdbd458998dc2d2e2ac9be"
+    },
+    {
+      "page_num": 3,
+      "url": "https://euromedmonitor.org/ar/category/26/%D8%A7%D9%84%D9%86%D8%B2%D8%A7%D8%B9%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D8%AD%D8%A9?page=3",
+      "file": "listing_page_003.html",
+      "bytes": 211419,
+      "sha1": "975fbe9c4b085a0af1573e16005b9bdfb1f7af7d"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://euromedmonitor.org/ar/article/7097/%D8%A8%D8%B9%D8%AF-7-%D8%A3%D9%83%D8%AA%D9%88%D8%A8%D8%B1..-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84-%D8%AA%D9%88%D8%B3%D9%91%D8%B9-%D8%A3%D8%AF%D9%88%D8%A7%D8%AA-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%B9%D9%86%D8%B5%D8%B1%D9%8A-%D8%B6%D8%AF-%D8%A7%D9%84%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A%D9%8A%D9%86-%D8%A7%D9%84%D9%85%D9%88%D8%A7%D8%B7%D9%86%D9%8A%D9%86-%D8%AF%D8%A7%D8%AE%D9%84%D9%87%D8%A7",
+      "title": "بعد 7 أكتوبر.. إسرائيل توسّع أدوات الفصل العنصري ضد الفلسطينيين المواطنين داخلها",
+      "page_num": 1,
+      "bytes": 207847,
+      "sha1": "4e8676665a0e5819fcbedb63c8b0a67681193600"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://euromedmonitor.org/ar/country/1/-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84-%D8%A7%D9%84%D8%A3%D8%B1%D8%A7%D8%B6%D9%8A-%D8%A7%D9%84%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A%D8%A9",
+      "title": "إسرائيل-الأراضي الفلسطينية",
+      "page_num": 1,
+      "bytes": 217199,
+      "sha1": "1e43a2d0ef5ef37980dadd1447a8bfe8fb205398"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://euromedmonitor.org/ar/article/7065/%D8%A7%D8%B3%D8%AA%D9%85%D8%B1%D8%A7%D8%B1-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84-%D8%A8%D8%A7%D8%B3%D8%AA%D9%87%D8%AF%D8%A7%D9%81-%D8%A7%D9%84%D9%85%D8%AF%D9%86%D9%8A%D9%8A%D9%86-%D9%81%D9%8A-%D9%84%D8%A8%D9%86%D8%A7%D9%86-%D8%B1%D8%BA%D9%85-%D8%A7%D9%84%D8%AA%D9%81%D8%A7%D9%87%D9%85%D8%A7%D8%AA-%D9%8A%D9%8F%D9%81%D8%B1%D8%BA-%D9%88%D9%82%D9%81-%D8%A5%D8%B7%D9%84%D8%A7%D9%82-%D8%A7%D9%84%D9%86%D8%A7%D8%B1-%D9%85%D9%86-%D9%85%D8%B6%D9%85%D9%88%D9%86%D9%87-%D8%A7%D9%84%D8%AD%D9%85%D8%A7%D8%A6%D9%8A",
+      "title": "استمرار إسرائيل باستهداف المدنيين في لبنان رغم التفاهمات يُفرغ وقف إطلاق النار من مضمونه الحمائي",
+      "page_num": 1,
+      "bytes": 202262,
+      "sha1": "d030ebaecf8d900ce86716ecda3b8d85d0b7f25b"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://euromedmonitor.org/ar/country/5/%D9%84%D8%A8%D9%86%D8%A7%D9%86",
+      "title": "لبنان",
+      "page_num": 1,
+      "bytes": 217280,
+      "sha1": "c18a96bb66d6a244381598ea658bfd4e078164c1"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://euromedmonitor.org/ar/article/7053/%D9%84%D8%A8%D9%86%D8%A7%D9%86..-%D8%A7%D9%84%D8%AA%D8%B5%D8%B9%D9%8A%D8%AF-%D8%A7%D9%84%D8%B9%D8%B3%D9%83%D8%B1%D9%8A-%D8%A7%D9%84%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84%D9%8A-%D9%8A%D8%B1%D8%B3%D9%91%D8%AE-%D8%AA%D9%87%D8%AC%D9%8A%D8%B1%D9%8B%D8%A7-%D9%82%D8%B3%D8%B1%D9%8A%D9%8B%D8%A7-%D9%88%D8%A7%D8%B3%D8%B9-%D8%A7%D9%84%D9%86%D8%B7%D8%A7%D9%82-%D9%88%D9%8A%D9%87%D8%AF%D8%AF-%D8%A8%D9%81%D8%B1%D8%B6-%D9%88%D9%82%D8%A7%D8%A6%D8%B9-%D8%AC%D8%BA%D8%B1%D8%A7%D9%81%D9%8A%D8%A9-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9",
+      "title": "لبنان.. التصعيد العسكري الإسرائيلي يرسّخ تهجيرًا قسريًا واسع النطاق ويهدد بفرض وقائع جغرافية جديدة",
+      "page_num": 1,
+      "bytes": 202567,
+      "sha1": "ca63f761dacb82624d680b2930d29803420136aa"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://euromedmonitor.org/ar/article/6968/%D8%A8%D8%AD%D8%AB-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84-%D8%B9%D9%86-%D8%AC%D8%AB%D8%A9-%D8%A3%D8%B3%D9%8A%D8%B1%D9%87%D8%A7-%D8%A7%D9%84%D8%A3%D8%AE%D9%8A%D8%B1-%D9%81%D9%8A-%D8%BA%D8%B2%D8%A9-%D9%84%D8%A7-%D9%8A%D8%A8%D8%B1%D8%B1-%D8%A7%D9%84%D8%AA%D9%88%D8%B3%D8%B9-%D8%A8%D9%86%D8%A8%D8%B4-%D8%A7%D9%84%D9%82%D8%A8%D9%88%D8%B1-%D8%A7%D9%84%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D8%B3-%D8%A8%D9%83%D8%B1%D8%A7%D9%85%D8%A9-%D8%A7%D9%84%D9%85%D9%88%D8%AA%D9%89",
+      "title": "بحث إسرائيل عن جثة أسيرها الأخير في غزة لا يبرر التوسع بنبش القبور الفلسطينية والمساس بكرامة الموتى",
+      "page_num": 1,
+      "bytes": 197597,
+      "sha1": "1a101590208c62917eb57a870c484d66cffd1710"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://euromedmonitor.org/ar/article/6964/%D9%87%D8%AF%D9%85-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84-%D9%85%D9%86%D8%B4%D8%A2%D8%AA-%D8%A3%D9%88%D9%86%D8%B1%D9%88%D8%A7-%D9%8A%D9%83%D8%B1%D9%91%D8%B3-%D8%AA%D9%82%D9%88%D9%8A%D8%B6%D9%8B%D8%A7-%D9%85%D8%AA%D8%B9%D9%85%D9%91%D8%AF%D9%8B%D8%A7-%D9%84%D8%B9%D9%85%D9%84-%D8%A7%D9%84%D8%A3%D9%85%D9%85-%D8%A7%D9%84%D9%85%D8%AA%D8%AD%D8%AF%D8%A9-%D9%88%D9%8A%D9%81%D8%B1%D8%B6-%D9%88%D9%82%D8%A7%D8%A6%D8%B9-%D8%B6%D9%85%D9%91-%D9%81%D8%B9%D9%84%D9%8A-%D9%81%D9%8A-%D8%A7%D9%84%D9%82%D8%AF%D8%B3-%D8%A7%D9%84%D8%B4%D8%B1%D9%82%D9%8A%D8%A9",
+      "title": "هدم إسرائيل منشآت أونروا يكرّس تقويضًا متعمّدًا لعمل الأمم المتحدة ويفرض وقائع ضمّ فعلي في القدس الشرقية",
+      "page_num": 1,
+      "bytes": 202860,
+      "sha1": "89314eadc3496e58171c9041dc918ab1b1b058f1"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://euromedmonitor.org/ar/article/6962/%D8%A7%D9%84%D8%B3%D9%88%D8%AF%D8%A7%D9%86..-%D9%85%D8%B3%D9%8A%D9%91%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D8%AF%D8%B9%D9%85-%D8%A7%D9%84%D8%B3%D8%B1%D9%8A%D8%B9-%D8%AA%D9%81%D8%AA%D9%83-%D8%A8%D8%A7%D9%84%D9%85%D8%AF%D9%86%D9%8A%D9%8A%D9%86-%D9%88%D9%84%D8%A7-%D8%AC%D9%87%D9%88%D8%AF-%D8%AC%D8%A7%D8%AF%D8%A9-%D9%84%D9%88%D9%82%D9%81-%D8%A7%D9%84%D8%AA%D8%AF%D9%81%D9%82-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A-%D9%84%D9%84%D8%A3%D8%B3%D9%84%D8%AD%D8%A9",
+      "title": "السودان.. مسيّرات الدعم السريع تفتك بالمدنيين ولا جهود جادة لوقف التدفق الخارجي للأسلحة",
+      "page_num": 1,
+      "bytes": 198041,
+      "sha1": "1904b830217276435a1e89ddce1f4e2b1d502131"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://euromedmonitor.org/ar/country/32/%D8%A7%D9%84%D8%B3%D9%88%D8%AF%D8%A7%D9%86",
+      "title": "السودان",
+      "page_num": 1,
+      "bytes": 212357,
+      "sha1": "6733df717c529ce1119c0473fb3c390b333bd75e"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://euromedmonitor.org/ar/article/6957/%D9%85%D8%B9-%D8%AA%D8%AE%D8%B7%D9%8A%D8%B7-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84-%D9%84%D8%A5%D8%B2%D8%A7%D9%84%D8%A9-%D8%A3%D9%86%D9%82%D8%A7%D8%B6-%D8%B1%D9%81%D8%AD..-%D9%8A%D8%AA%D9%88%D8%AC%D8%A8-%D8%AA%D8%AF%D8%AE%D9%84-%D8%AF%D9%88%D9%84%D9%8A-%D9%88%D9%81%D8%B1%D9%82-%D9%85%D8%AA%D8%AE%D8%B5%D8%B5%D8%A9-%D9%84%D8%A7%D9%86%D8%AA%D8%B4%D8%A7%D9%84-%D8%AC%D8%AB%D8%A7%D9%85%D9%8A%D9%86-%D9%85%D8%A6%D8%A7%D8%AA-%D8%A7%D9%84%D8%B6%D8%AD%D8%A7%D9%8A%D8%A7",
+      "title": "مع تخطيط إسرائيل لإزالة أنقاض رفح.. يتوجب تدخل دولي وفرق متخصصة لانتشال جثامين مئات الضحايا",
+      "page_num": 1,
+      "bytes": 198911,
+      "sha1": "d85227e3c44e0d7fbe4d78a17cef9aa51c13609a"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://euromedmonitor.org/ar/article/6947/%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84-%D8%AA%D8%AD%D9%88%D9%91%D9%84-%D8%A7%D9%84%D8%B4%D8%AA%D8%A7%D8%A1-%D8%A5%D9%84%D9%89-%D8%B3%D9%84%D8%A7%D8%AD-%D9%84%D8%A5%D9%87%D9%84%D8%A7%D9%83-%D8%B3%D9%83%D8%A7%D9%86-%D8%BA%D8%B2%D8%A9-%D9%88%D9%8A%D8%AC%D8%A8-%D8%A7%D9%84%D8%B6%D8%BA%D8%B7-%D8%B9%D9%84%D9%8A%D9%87%D8%A7-%D9%84%D8%A5%D8%AF%D8%AE%D8%A7%D9%84-%D8%A7%D9%84%D9%85%D8%B3%D8%A7%D9%83%D9%86-%D8%A7%D9%84%D9%85%D8%A4%D9%82%D8%AA%D8%A9-%D9%81%D9%88%D8%B1%D9%8B%D8%A7",
+      "title": "إسرائيل تحوّل الشتاء إلى سلاح لإهلاك سكان غزة ويجب الضغط عليها لإدخال المساكن المؤقتة فورًا",
+      "page_num": 1,
+      "bytes": 200156,
+      "sha1": "04b3331fbaed51765502790d68f81943175d6fd8"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://euromedmonitor.org/ar/article/6945/%D8%A7%D9%84%D9%88%D9%84%D8%A7%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%AA%D8%AD%D8%AF%D8%A9-%D8%AA%D9%85%D9%86%D8%AD-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84-%D8%BA%D8%B7%D8%A7%D8%A1%D9%8B-%D9%84%D8%AA%D8%A3%D8%A8%D9%8A%D8%AF-%D8%A7%D9%84%D9%88%D8%B6%D8%B9-%D8%A7%D9%84%D8%B1%D8%A7%D9%87%D9%86-%D9%88%D9%85%D9%88%D8%A7%D8%B5%D9%84%D8%A9-%D8%A7%D9%84%D8%A5%D8%A8%D8%A7%D8%AF%D8%A9-%D8%A7%D9%84%D8%AC%D9%85%D8%A7%D8%B9%D9%8A%D8%A9-%D9%81%D9%8A-%D8%BA%D8%B2%D8%A9",
+      "title": "الولايات المتحدة تمنح إسرائيل غطاءً لتأبيد الوضع الراهن ومواصلة الإبادة الجماعية في غزة",
+      "page_num": 1,
+      "bytes": 200752,
+      "sha1": "08ee9bf51dd7979a0296cd052c4ab35b05f44124"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://euromedmonitor.org/ar/article/6941/%D9%82%D8%AA%D9%84-%D8%A7%D9%84%D8%AC%D9%8A%D8%B4-%D8%A7%D9%84%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84%D9%8A-%D8%B7%D9%81%D9%84%D9%8B%D8%A7-%D8%AC%D8%B1%D9%8A%D8%AD%D9%8B%D8%A7-%D8%AF%D8%B9%D8%B3%D9%8B%D8%A7-%D8%A8%D8%AC%D8%B1%D8%A7%D9%81%D8%A9-%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9-%D9%8A%D8%AC%D8%B3%D9%91%D8%AF-%D9%86%D9%85%D8%B7%D9%8B%D8%A7-%D9%85%D8%B1%D9%88%D9%91%D8%B9%D8%A7-%D9%85%D9%86-%D8%A7%D9%84%D9%82%D8%AA%D9%84-%D9%81%D9%8A-%D8%BA%D8%B2%D8%A9",
+      "title": "قتل الجيش الإسرائيلي طفلًا جريحًا دعسًا بجرافة عسكرية يجسّد نمطًا مروّعا من القتل في غزة",
+      "page_num": 2,
+      "bytes": 198676,
+      "sha1": "5b5cf05951d3866dd0f0accd6fe89d4ddd75363a"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://euromedmonitor.org/ar/article/6936/%D8%AF%D9%81%D9%86-%D8%A7%D9%84%D8%AC%D9%8A%D8%B4-%D8%A7%D9%84%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84%D9%8A-%D8%AC%D8%AB%D8%A7%D9%85%D9%8A%D9%86-%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A%D9%8A%D9%86-%D8%A8%D9%85%D9%82%D8%A7%D8%A8%D8%B1-%D9%85%D8%AC%D9%87%D9%88%D9%84%D8%A9-%D9%86%D9%85%D8%B7-%D9%85%D9%86%D9%87%D8%AC%D9%8A-%D9%8A%D8%B3%D8%AA%D9%88%D8%AC%D8%A8-%D8%AA%D8%AD%D9%82%D9%8A%D9%82%D9%8B%D8%A7-%D9%88%D9%85%D8%B3%D8%A7%D8%A1%D9%84%D8%A9-%D8%AC%D9%86%D8%A7%D8%A6%D9%8A%D8%A9",
+      "title": "دفن الجيش الإسرائيلي جثامين فلسطينيين بمقابر مجهولة نمط منهجي يستوجب تحقيقًا ومساءلة جنائية",
+      "page_num": 2,
+      "bytes": 199593,
+      "sha1": "7904f6a5daecec51b728d40e960461da15f8a230"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://euromedmonitor.org/ar/article/6915/%D8%A5%D9%82%D8%B1%D8%A7%D8%B1-%D8%A7%D9%84%D9%83%D9%86%D9%8A%D8%B3%D8%AA-%D9%84%D9%85%D8%B4%D8%B1%D9%88%D8%B9-%D9%82%D8%A7%D9%86%D9%88%D9%86-%D8%B9%D9%82%D9%88%D8%A8%D8%A9-%D8%A7%D9%84%D8%A5%D8%B9%D8%AF%D8%A7%D9%85-%D8%AE%D8%B7%D9%88%D8%A9-%D8%AE%D8%B7%D9%8A%D8%B1%D8%A9-%D9%84%D8%AA%D8%B9%D9%85%D9%8A%D9%82-%D9%86%D8%B8%D8%A7%D9%85-%D8%A7%D9%84%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%B9%D9%86%D8%B5%D8%B1%D9%8A-%D8%A7%D9%84%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84%D9%8A-%D8%B6%D8%AF-%D8%A7%D9%84%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A%D9%8A%D9%86",
+      "title": "إقرار الكنيست لمشروع قانون عقوبة الإعدام خطوة خطيرة لتعميق نظام الفصل العنصري الإسرائيلي ضد الفلسطينيين",
+      "page_num": 2,
+      "bytes": 203220,
+      "sha1": "240f9cc9e1f156f9332b325776d8b27621f38ac8"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://euromedmonitor.org/ar/article/6911/%D8%B4%D9%87%D8%B1-%D8%B9%D9%84%D9%89-%D9%88%D9%82%D9%81-%D8%A5%D8%B7%D9%84%D8%A7%D9%82-%D8%A7%D9%84%D9%86%D8%A7%D8%B1..-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84-%D8%AA%D9%88%D8%A7%D8%B5%D9%84-%D8%A7%D9%84%D8%A5%D8%A8%D8%A7%D8%AF%D8%A9-%D8%A7%D9%84%D8%AC%D9%85%D8%A7%D8%B9%D9%8A%D8%A9-%D9%81%D9%8A-%D8%BA%D8%B2%D8%A9-%D8%A8%D8%A3%D8%B3%D8%A7%D9%84%D9%8A%D8%A8-%D9%85%D8%AE%D8%AA%D9%84%D9%81%D8%A9",
+      "title": "شهر على وقف إطلاق النار.. إسرائيل تواصل الإبادة الجماعية في غزة بأساليب مختلفة",
+      "page_num": 2,
+      "bytes": 199049,
+      "sha1": "36cbcb9c794adf54755a295ef0a0536d80e21ce8"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://euromedmonitor.org/ar/article/6909/%D8%AA%D8%B5%D8%A7%D8%B9%D8%AF-%D8%AC%D8%B1%D8%A7%D8%A6%D9%85-%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%88%D8%B7%D9%86%D9%8A%D9%86-%D9%88%D8%AA%D9%85%D8%AF%D8%AF-%D8%A7%D9%84%D9%85%D9%86%D8%B8%D9%88%D9%85%D8%A9-%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%8A%D8%B7%D8%A7%D9%86%D9%8A%D8%A9-%D8%BA%D9%8A%D8%B1-%D8%A7%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86%D9%8A%D8%A9-%D8%AA%D9%83%D8%B1%D9%8A%D8%B3%D9%8C-%D9%84%D8%B6%D9%85%D9%91-%D8%A7%D9%84%D8%B6%D9%81%D8%A9-%D8%A7%D9%84%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9-%D9%88%D8%B7%D8%B1%D8%AF-%D8%B3%D9%83%D8%A7%D9%86%D9%87%D8%A7-%D8%A7%D9%84%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A%D9%8A%D9%86",
+      "title": "تصاعد جرائم المستوطنين وتمدد المنظومة الاستيطانية غير القانونية تكريسٌ لضمّ الضفة الغربية وطرد سكانها الفلسطينيين",
+      "page_num": 2,
+      "bytes": 204006,
+      "sha1": "1c6fa3e0fe1fd6389cd3d3c8a7f5f257a6cee747"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://euromedmonitor.org/ar/article/6901/%D8%A7%D9%84%D8%B3%D9%88%D8%AF%D8%A7%D9%86..-%D9%85%D8%A4%D8%B4%D8%B1%D8%A7%D8%AA-%D8%B9%D9%84%D9%89-%D8%A7%D8%B1%D8%AA%D9%83%D8%A7%D8%A8-%D8%A7%D9%84%D8%AF%D8%B9%D9%85-%D8%A7%D9%84%D8%B3%D8%B1%D9%8A%D8%B9-%D8%AC%D8%B1%D8%A7%D8%A6%D9%85-%D8%AD%D8%B1%D8%A8-%D9%88%D8%AC%D8%B1%D8%A7%D8%A6%D9%85-%D8%B6%D8%AF-%D8%A7%D9%84%D8%A5%D9%86%D8%B3%D8%A7%D9%86%D9%8A%D8%A9-%D8%A8%D8%B9%D8%AF-%D8%A7%D9%84%D8%B3%D9%8A%D8%B7%D8%B1%D8%A9-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D9%81%D8%A7%D8%B4%D8%B1",
+      "title": "السودان.. مؤشرات على ارتكاب الدعم السريع جرائم حرب وجرائم ضد الإنسانية بعد السيطرة على الفاشر",
+      "page_num": 2,
+      "bytes": 200409,
+      "sha1": "6e86a1f382126ee2db7b8323508400f30361509f"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://euromedmonitor.org/ar/article/6896/%D9%84%D9%85-%D9%8A%D9%86%D8%AC%D9%8F-%D8%A3%D8%AD%D8%AF:-%D8%A7%D9%84%D8%A3%D9%88%D8%B1%D9%88%D9%85%D8%AA%D9%88%D8%B3%D8%B7%D9%8A-%D9%8A%D9%88%D8%AB%D9%82-%D8%A5%D8%AD%D8%B5%D8%A7%D8%A1%D8%A7%D8%AA-%D8%B5%D8%A7%D8%AF%D9%85%D8%A9-%D8%A8%D8%B9%D8%AF-%D8%B9%D8%A7%D9%85%D9%8A%D9%86-%D9%85%D9%86-%D8%AC%D8%B1%D9%8A%D9%85%D8%A9-%D8%A7%D9%84%D8%A5%D8%A8%D8%A7%D8%AF%D8%A9-%D8%A7%D9%84%D8%AC%D9%85%D8%A7%D8%B9%D9%8A%D8%A9-%D9%81%D9%8A-%D8%BA%D8%B2%D8%A9",
+      "title": "لم ينجُ أحد: الأورومتوسطي يوثق إحصاءات صادمة بعد عامين من جريمة الإبادة الجماعية في غزة",
+      "page_num": 2,
+      "bytes": 201605,
+      "sha1": "6f251b944ef8aacc5d99ef8164bab91258da4338"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://euromedmonitor.org/ar/article/6893/%D8%A7%D9%84%D9%83%D9%88%D9%84%D9%8A%D8%B1%D8%A7-%D8%AA%D8%AA%D9%81%D8%B4%D9%89-%D9%81%D9%8A-%D8%A7%D9%84%D9%8A%D9%85%D9%86:-%D9%85%D9%84%D8%A7%D9%8A%D9%8A%D9%86-%D9%85%D9%87%D8%AF%D9%91%D8%AF%D9%88%D9%86-%D9%85%D8%B9-%D8%A7%D8%B3%D8%AA%D9%85%D8%B1%D8%A7%D8%B1-%D8%A7%D9%84%D9%86%D8%B2%D8%A7%D8%B9-%D9%88%D8%AA%D8%B1%D8%A7%D8%AC%D8%B9-%D8%A7%D9%84%D8%AA%D9%85%D9%88%D9%8A%D9%84",
+      "title": "الكوليرا تتفشى في اليمن: ملايين مهدّدون مع استمرار النزاع وتراجع التمويل",
+      "page_num": 2,
+      "bytes": 199998,
+      "sha1": "7bf93f9e6262325d6de9c1d8402984c567bc42ff"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://euromedmonitor.org/ar/country/17/%D8%A7%D9%84%D9%8A%D9%85%D9%86",
+      "title": "اليمن",
+      "page_num": 2,
+      "bytes": 217656,
+      "sha1": "1fac426abeed597495881af095f4f570241de87a"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://euromedmonitor.org/ar/article/6891/%D8%A7%D9%84%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF-%D8%A7%D9%84%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A-%D9%85%D8%B7%D8%A7%D9%84%D8%A8%D9%8C-%D8%A8%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D8%A9-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84-%D8%B9%D9%86-%D8%AA%D8%AF%D9%85%D9%8A%D8%B1-%D8%A7%D9%84%D9%85%D8%B4%D8%A7%D8%B1%D9%8A%D8%B9-%D8%A7%D9%84%D9%85%D9%85%D9%88%D9%84%D8%A9-%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A%D9%8B%D8%A7-%D9%81%D9%8A-%D8%BA%D8%B2%D8%A9",
+      "title": "الاتحاد الأوروبي مطالبٌ بمحاسبة إسرائيل عن تدمير المشاريع الممولة أوروبيًا في غزة",
+      "page_num": 2,
+      "bytes": 200807,
+      "sha1": "5eb3ec60edf48ea73560f4c0776786dc38c41f09"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://euromedmonitor.org/ar/article/6887/%D8%A7%D9%84%D8%B3%D9%88%D8%AF%D8%A7%D9%86..-%D8%AA%D8%AC%D9%88%D9%8A%D8%B9-%D9%88%D9%82%D8%AA%D9%84-%D8%AC%D9%85%D8%A7%D8%B9%D9%8A-%D9%84%D9%84%D9%85%D8%AF%D9%86%D9%8A%D9%8A%D9%86-%D9%81%D9%8A-%D8%A7%D9%84%D9%81%D8%A7%D8%B4%D8%B1-%D9%88%D8%B3%D8%B7-%D8%AA%D9%82%D8%A7%D8%B9%D8%B3-%D8%AF%D9%88%D9%84%D9%8A-%D8%BA%D9%8A%D8%B1-%D9%85%D8%A8%D8%B1%D8%B1",
+      "title": "السودان.. تجويع وقتل جماعي للمدنيين في الفاشر وسط تقاعس دولي غير مبرر",
+      "page_num": 3,
+      "bytes": 197455,
+      "sha1": "1944d5c954812a2fb64493068aaa2190a1119f45"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://euromedmonitor.org/ar/article/6848/%D8%BA%D8%B2%D8%A9:-%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%A7%D9%84%D9%85%D9%88%D8%A7%D8%B5%D9%8A-%D9%84%D9%8A%D8%B3%D8%AA-%D8%A5%D9%86%D8%B3%D8%A7%D9%86%D9%8A%D8%A9-%D9%83%D9%85%D8%A7-%D8%AA%D8%B2%D8%B9%D9%85-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84-%D8%A8%D9%84-%D8%B3%D8%A7%D8%AD%D8%A9-%D9%82%D8%AA%D9%84-%D9%88%D8%AA%D8%AC%D9%88%D9%8A%D8%B9",
+      "title": "غزة: منطقة المواصي ليست إنسانية كما تزعم إسرائيل بل ساحة قتل وتجويع",
+      "page_num": 3,
+      "bytes": 199944,
+      "sha1": "29891955bdafdf4daacc9bb49fc2198e0d570dbc"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://euromedmonitor.org/ar/article/6845/%D8%A7%D9%84%D8%AC%D9%8A%D8%B4-%D8%A7%D9%84%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84%D9%8A-%D9%8A%D8%B5%D8%B9%D8%AF-%D9%82%D8%AA%D9%84-%D8%A7%D9%84%D9%85%D8%AF%D9%86%D9%8A%D9%8A%D9%86-%D9%81%D9%8A-%D8%A7%D9%84%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%A7%D9%84%D8%A5%D9%86%D8%B3%D8%A7%D9%86%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D8%B2%D8%B9%D9%88%D9%85%D8%A9-%D9%81%D9%8A-%D8%BA%D8%B2%D8%A9",
+      "title": "الجيش الإسرائيلي يصعد قتل المدنيين في المنطقة الإنسانية المزعومة في غزة",
+      "page_num": 3,
+      "bytes": 199817,
+      "sha1": "7f5055d17575fd6d2232b0b26e27f23101240e28"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://euromedmonitor.org/ar/article/6843/%D8%A7%D9%84%D8%AC%D9%8A%D8%B4-%D8%A7%D9%84%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84%D9%8A-%D9%8A%D9%86%D8%B3%D9%81-%D9%8A%D9%88%D9%85%D9%8A%D9%8B%D8%A7-%D9%86%D8%AD%D9%88-300-%D9%88%D8%AD%D8%AF%D8%A9-%D8%B3%D9%83%D9%86%D9%8A%D8%A9-%D9%81%D9%8A-%D8%BA%D8%B2%D8%A9-%D8%A8%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D9%81%D8%AE%D8%AE%D8%A9",
+      "title": "الجيش الإسرائيلي ينسف يوميًا نحو 300 وحدة سكنية في غزة بالعربات المفخخة",
+      "page_num": 3,
+      "bytes": 203989,
+      "sha1": "c9b005981d65adb061adf501c2e9cc9828c773dd"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://euromedmonitor.org/ar/article/6841/%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84-%D8%AA%D9%82%D8%AA%D9%84-%D8%B7%D8%A8%D9%8A%D8%A8%D9%8B%D8%A7-%D9%88%D8%AE%D9%85%D8%B3%D8%A9-%D8%B5%D8%AD%D8%A7%D9%81%D9%8A%D9%8A%D9%86-%D9%88%D8%B9%D9%86%D8%B5%D8%B1%D9%8B%D8%A7-%D9%81%D9%8A-%D8%A7%D9%84%D8%AF%D9%81%D8%A7%D8%B9-%D8%A7%D9%84%D9%85%D8%AF%D9%86%D9%8A-%D8%AF%D8%A7%D8%AE%D9%84-%D9%85%D8%AC%D9%85%D8%B9-%D8%B7%D8%A8%D9%8A-%D8%AC%D9%86%D9%88%D8%A8%D9%8A-%D8%A7%D9%84%D9%82%D8%B7%D8%A7%D8%B9",
+      "title": "إسرائيل تقتل طبيبًا وخمسة صحافيين وعنصرًا في الدفاع المدني داخل مجمع طبي جنوبي القطاع",
+      "page_num": 3,
+      "bytes": 198116,
+      "sha1": "200ff5f473f3a048e6f136649a02f51decbc389f"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://euromedmonitor.org/ar/article/6839/%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84-%D8%A8%D8%AF%D8%A3%D8%AA-%D9%81%D8%B9%D9%84%D9%8A%D8%A7-%D8%A8%D9%85%D8%AD%D9%88-%D9%85%D8%AF%D9%8A%D9%86%D8%A9-%D8%BA%D8%B2%D8%A9-%D9%88%D9%84%D8%A7-%D8%AA%D8%AD%D8%B1%D9%83%D8%A7%D8%AA-%D8%AF%D9%88%D9%84%D9%8A%D8%A9-%D9%81%D8%B9%D8%A7%D9%84%D8%A9-%D9%84%D9%85%D9%86%D8%B9-%D8%A7%D9%84%D8%AC%D8%B1%D9%8A%D9%85%D8%A9-%D8%A7%D9%84%D9%83%D8%A8%D8%B1%D9%89",
+      "title": "إسرائيل بدأت فعليا بمحو مدينة غزة ولا تحركات دولية فعالة لمنع الجريمة الكبرى",
+      "page_num": 3,
+      "bytes": 198876,
+      "sha1": "c21a67fb1c412ff6fd0f3cb64c801e5c31cb1d59"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://euromedmonitor.org/ar/article/6836/%D8%A8%D8%B9%D8%AF-%D8%AA%D8%A3%D9%83%D9%8A%D8%AF-%D8%A7%D9%84%D8%A3%D9%85%D9%85-%D8%A7%D9%84%D9%85%D8%AA%D8%AD%D8%AF%D8%A9-%D8%A7%D9%84%D9%85%D8%AC%D8%A7%D8%B9%D8%A9-%D9%81%D9%8A-%D8%BA%D8%B2%D8%A9..%C2%A0%D8%AF%D8%B9%D9%88%D8%A9-%D8%B9%D8%A7%D8%AC%D9%84%D8%A9-%D9%84%D9%84%D8%AC%D9%85%D8%B9%D9%8A%D8%A9-%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D8%A9-%D9%84%D9%84%D8%AA%D8%AD%D8%B1%D9%83-%D8%B9%D8%A8%D8%B1-%22%D8%A7%D9%84%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF-%D9%85%D9%86-%D8%A3%D8%AC%D9%84-%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%22",
+      "title": "بعد تأكيد الأمم المتحدة المجاعة في غزة.. دعوة عاجلة للجمعية العامة للتحرك عبر \"الاتحاد من أجل السلام\"",
+      "page_num": 3,
+      "bytes": 201875,
+      "sha1": "0332191ae4d00508c27b39b2ee1542e4687017e5"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://euromedmonitor.org/ar/article/6835/%D9%82%D8%AA%D9%84-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84-%D8%A7%D9%84%D9%85%D8%B2%D8%A7%D8%B1%D8%B9%D9%8A%D9%86-%D8%A7%D9%84%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A%D9%8A%D9%86-%D8%AC%D8%B2%D8%A1-%D9%85%D9%86-%D9%86%D9%87%D8%AC-%D9%85%D8%AA%D9%83%D8%B1%D8%B1-%D9%84%D8%AA%D9%83%D8%B1%D9%8A%D8%B3-%D8%A7%D9%84%D8%AA%D8%AC%D9%88%D9%8A%D8%B9-%D9%81%D9%8A-%D9%82%D8%B7%D8%A7%D8%B9-%D8%BA%D8%B2%D8%A9",
+      "title": "قتل إسرائيل المزارعين الفلسطينيين جزء من نهج متكرر لتكريس التجويع في قطاع غزة",
+      "page_num": 3,
+      "bytes": 198990,
+      "sha1": "a73c685d4fbfaf1a7c274bd860bbaee0e433b069"
+    },
+    {
+      "id": 31,
+      "file": "article_0031.html",
+      "url": "https://euromedmonitor.org/ar/article/6830/%D8%AF%D9%84%D9%8A%D9%84-%D8%AF%D8%A7%D9%85%D8%BA-%D8%B9%D9%84%D9%89-%D8%AA%D8%B9%D9%85%D8%AF-%D9%82%D8%AA%D9%84-%D8%A7%D9%84%D8%A3%D8%B7%D9%81%D8%A7%D9%84..-%D8%A7%D9%84%D8%A3%D9%88%D8%B1%D9%88%D9%85%D8%AA%D9%88%D8%B3%D8%B7%D9%8A-%D9%8A%D8%AA%D8%AD%D9%82%D9%82-%D9%85%D9%86-%D9%85%D9%82%D8%B7%D8%B9-%D9%85%D8%B5%D9%88%D8%B1-%D9%84%D8%A7%D8%B3%D8%AA%D9%87%D8%AF%D8%A7%D9%81-%D8%A7%D9%84%D8%AC%D9%8A%D8%B4-%D8%A7%D9%84%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84%D9%8A-%D8%B7%D9%81%D9%84%D8%A9-%D9%81%D9%8A-%D8%BA%D8%B2%D8%A9",
+      "title": "دليل دامغ على تعمد قتل الأطفال.. الأورومتوسطي يتحقق من مقطع مصور لاستهداف الجيش الإسرائيلي طفلة في غزة",
+      "page_num": 3,
+      "bytes": 198204,
+      "sha1": "ad415c6742e84c9639f2f2235de1c91d3aef809f"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 3,
+    "articles": 31,
+    "article_fetch_failures": 0
+  }
+}

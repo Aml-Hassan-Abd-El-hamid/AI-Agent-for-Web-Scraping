@@ -1,0 +1,318 @@
+{
+  "website": "edahabapp",
+  "snapshot_date": "2026-08-27T10:11:23",
+  "pagination_type": "numbered pagination",
+  "scroll_mode": null,
+  "scroll_rounds_requested": null,
+  "load_more_selector": null,
+  "listing_url": "https://edahabapp.com/articles",
+  "input_urls": [
+    "https://edahabapp.com/articles",
+    "https://edahabapp.com/articles?page=2"
+  ],
+  "pagination_pattern": "https://edahabapp.com/articles?page={page}",
+  "requirements": "title, date, author, article body text",
+  "run_dir": "orch_runs/run_20260827_094817",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://edahabapp.com/articles",
+      "file": "listing_page_001.html",
+      "bytes": 298397,
+      "sha1": "b673a46229b93797fdd2da684e274a6401ecf263"
+    },
+    {
+      "page_num": 2,
+      "url": "https://edahabapp.com/articles?page=2",
+      "file": "listing_page_002.html",
+      "bytes": 296206,
+      "sha1": "5066a7638fa265ef75b58eef56e42f3f75bac5c5"
+    },
+    {
+      "page_num": 3,
+      "url": "https://edahabapp.com/articles?page=3",
+      "file": "listing_page_003.html",
+      "bytes": 296191,
+      "sha1": "d9a75fccd17d1fe26662f8e42bc39c51612cf663"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://edahabapp.com/article/2435",
+      "title": "الذهب يتراجع من قمة 3 أشهر.. والأنظار على التضخم الأميركي",
+      "page_num": 1,
+      "bytes": 15443,
+      "sha1": "3c513f99142437ac239ba6d99bd2b9ce556f7cee"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://edahabapp.com/article/2434",
+      "title": "سعر الدولار اليوم في مصر الثلاثاء 25 أغسطس 2026.. ارتفاع الجنيه",
+      "page_num": 1,
+      "bytes": 16434,
+      "sha1": "69dbe901929b95848c010f6c8ab440226a22fc81"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://edahabapp.com/article/2433",
+      "title": "صباح المال: النفط يتراجع والذهب يصعد قبيل حرب اقتصادية أميركية على إيران",
+      "page_num": 1,
+      "bytes": 16136,
+      "sha1": "1768a676969b4d7727f5cde720f796e81a9087ac"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://edahabapp.com/article/2432",
+      "title": "أسعار الذهب تقفز إلى 1% إلى 4646 دولاراً للأونصة",
+      "page_num": 1,
+      "bytes": 17168,
+      "sha1": "e050acbb2b1c3e9a9605954f44d8bd8de9551d34"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://edahabapp.com/article/2431",
+      "title": "سعر الدولار في مصر الأحد 23 أغسطس 2026.. الجنيه يواصل الهبوط",
+      "page_num": 1,
+      "bytes": 16483,
+      "sha1": "d0e533c965a8d7410c7aa4a69f7463672be83adf"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://edahabapp.com/article/2430",
+      "title": "أين تحتفظ البنوك المركزية باحتياطياتها من الذهب؟",
+      "page_num": 1,
+      "bytes": 15489,
+      "sha1": "72b8a19a626f1da1cea3041d55afc3f2564f7dfe"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://edahabapp.com/article/2429",
+      "title": "عاجل| المركزي المصري يقرر الإبقاء على أسعار الفائدة دون تغيير",
+      "page_num": 1,
+      "bytes": 13580,
+      "sha1": "3e891c740429ed04b5b47858f567d33a2487f12e"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://edahabapp.com/article/2428",
+      "title": "الذهب أمام اختبار حاسم عند 4,517 دولارًا.. هل يسبق التشبع الشرائي موجة تصحيح؟",
+      "page_num": 1,
+      "bytes": 18881,
+      "sha1": "38903e1827546082f4d5667353b4fe060d72555a"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://edahabapp.com/article/2427",
+      "title": "الذهب يتراجع بعد قفزة لأعلى مستوى في أكثر من شهرين",
+      "page_num": 1,
+      "bytes": 16901,
+      "sha1": "13219d38281412ce77f4b9dd99cc939b40e56238"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://edahabapp.com/article/2426",
+      "title": "عاجل: الدولار يسقط بقوة والذهب يصعد بعد إعلان وزارة الخزانة..ما الذي تغيّر؟",
+      "page_num": 1,
+      "bytes": 17204,
+      "sha1": "a99d7a2027763d864fa9890944c3ec6ea9b74e38"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://edahabapp.com/article/2425",
+      "title": "الدولار يتراجع قبيل محضر الفيدرالي الأميركي",
+      "page_num": 2,
+      "bytes": 16268,
+      "sha1": "93a5ff8262e748f6e82ca8908364ac0ede100217"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://edahabapp.com/article/2424",
+      "title": "الذهب يتذبذب مع تراجع عوائد الخزانة.. والأنظار على محضر الفيدرالي",
+      "page_num": 2,
+      "bytes": 17409,
+      "sha1": "7771dab998e0e0c8813b9f0187c1315f08e2aeef"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://edahabapp.com/article/2423",
+      "title": "أسعار الفائدة في مصر تحت ضغوط عودة ارتفاع التضخم",
+      "page_num": 2,
+      "bytes": 16156,
+      "sha1": "ed42cc4782c0c6e33cfc3d25321c52b6a3fc4e1a"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://edahabapp.com/article/2422",
+      "title": "ارتداد الذهب يواجه رياح معاكسة: النفط وعوائد السندات",
+      "page_num": 2,
+      "bytes": 17675,
+      "sha1": "be23cb4551ed974c48bb445938091329775afc22"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://edahabapp.com/article/2421",
+      "title": "الدولار يسجل زيادة جديدة أمام الجنيه المصري",
+      "page_num": 2,
+      "bytes": 18737,
+      "sha1": "e09be8effe9c4e05200934f9bd1dc47a5f4513f6"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://edahabapp.com/article/2420",
+      "title": "الدولار يصل لهذا السعر في مصر وسط مطالبات هامة من صندوق النقد",
+      "page_num": 2,
+      "bytes": 18958,
+      "sha1": "1aa42ceecaa30f596fad1e4bf794ccca8dc4a2ab"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://edahabapp.com/article/2419",
+      "title": "الذهب أمام اختبار حاسم.. هل يواصل الصعود أم يبدأ التصحيح؟",
+      "page_num": 2,
+      "bytes": 23656,
+      "sha1": "408ac186b6df7a1018c5151b56993f730153857c"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://edahabapp.com/article/2418",
+      "title": "الذهب يتصدر المشهد.. تدفقات قياسية تعكس مخاوف المستثمرين من ضعف الدولار",
+      "page_num": 2,
+      "bytes": 15924,
+      "sha1": "f140bfc2c379d62f06befc55aad089c4d6c74eb0"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://edahabapp.com/article/2417",
+      "title": "لماذا عاد الذهب للارتفاع رغم اختفاء أسباب صعوده؟",
+      "page_num": 2,
+      "bytes": 22815,
+      "sha1": "f0b805875611d3715265b2cab42ab4adf5860f9e"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://edahabapp.com/article/2416",
+      "title": "رهانات الفائدة وتداعيات الحرب تقود الأسواق.. قفزة الذهب والنفط",
+      "page_num": 2,
+      "bytes": 17082,
+      "sha1": "d5e1124f0acfdb367c028f778db9f3607e61a04b"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://edahabapp.com/article/2415",
+      "title": "سعر الدولار في مصر الأحد 16 أغسطس 2026.. تحديثات البنوك",
+      "page_num": 3,
+      "bytes": 16346,
+      "sha1": "4843b98ec96a770e349f0193451013a6d26eceb1"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://edahabapp.com/article/2414",
+      "title": "الملاذ الآمن.. استثمار جزئي في المحفظة أم رهان منفرد؟",
+      "page_num": 3,
+      "bytes": 17560,
+      "sha1": "fdfd2ae0fe5bf0390e20fe41ef5c859deb800de5"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://edahabapp.com/article/2413",
+      "title": "سعر الذهب يستقر فوق 4300 دولار مع تقييم مسار الفائدة الأميركية",
+      "page_num": 3,
+      "bytes": 16009,
+      "sha1": "6a79a4d5ef4a1ea55750501af50ff441beb9a5f0"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://edahabapp.com/article/2412",
+      "title": "الذهب أم الفضة؟ أيهما قد يقود موجة المعادن الثمينة المقبلة؟",
+      "page_num": 3,
+      "bytes": 18162,
+      "sha1": "29e712291e49101b9331e69fc2e4e7e0248172bd"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://edahabapp.com/article/2411",
+      "title": "الذهب يتراجع بعد اختراق 4,500 دولار.. هل بدأت موجة التصحيح؟",
+      "page_num": 3,
+      "bytes": 16418,
+      "sha1": "825a6286a5d92cc7132437a797510b6294ec11e0"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://edahabapp.com/article/2410",
+      "title": "تاريخ الذهب يشير إلى احتمال تباطؤ المكاسب المقبلة",
+      "page_num": 3,
+      "bytes": 15667,
+      "sha1": "e14e2eee3a011e9d8513ee677874d1aba711430a"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://edahabapp.com/article/2409",
+      "title": "الذهب يتراجع من أعلى مستوى له في أكثر من شهرين",
+      "page_num": 3,
+      "bytes": 14495,
+      "sha1": "845e37bd69d875f86ec92ab40046acefcaed2f00"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://edahabapp.com/article/2408",
+      "title": "الذهب يلتقط الأنفاس قرب أعلى مستوى في أكثر من شهرين",
+      "page_num": 3,
+      "bytes": 16428,
+      "sha1": "b5c090c63b295b2e36f56fdd88c5b94984e7bb07"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://edahabapp.com/article/2407",
+      "title": "الأسواق ترجّح تثبيت الفائدة في سبتمبر بعد تباطؤ التضخم السنوي بأميركا خلال يوليو",
+      "page_num": 3,
+      "bytes": 15132,
+      "sha1": "eb234321225db598192529a1ba5a04c10960fc1e"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://edahabapp.com/article/2406",
+      "title": "الفضة قد ترتفع إلى 90 دولاراً للأوقية مع تنامي الطلب الاستثماري",
+      "page_num": 3,
+      "bytes": 14922,
+      "sha1": "49179d253bea70ec26bc4fbf0b96bc6e4364cc28"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 3,
+    "articles": 30,
+    "article_fetch_failures": 0
+  }
+}

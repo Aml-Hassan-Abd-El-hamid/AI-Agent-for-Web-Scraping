@@ -1,0 +1,599 @@
+{
+  "website": "independentarabia",
+  "snapshot_date": "2026-08-27T12:22:03",
+  "pagination_type": "infinite scroll",
+  "scroll_mode": "scroll",
+  "scroll_rounds_requested": 2,
+  "load_more_selector": null,
+  "listing_url": "https://www.independentarabia.com/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7",
+  "input_urls": [
+    "https://www.independentarabia.com/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7"
+  ],
+  "pagination_pattern": null,
+  "requirements": "title, date, author, article body text",
+  "run_dir": "orch_runs/run_20260827_121746",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://www.independentarabia.com/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7",
+      "file": "listing_page_001.html",
+      "bytes": 237738,
+      "sha1": "624f4b0b53ea2b9bc84cd9bdb5a31cc380a6bde8"
+    },
+    {
+      "page_num": 1,
+      "url": "https://www.independentarabia.com/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7",
+      "file": "listing_page_001_expanded.html",
+      "bytes": 247896,
+      "sha1": "3b85461ec3e6a6964463e695c8276e5cb609b4f2",
+      "expanded": true
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://www.independentarabia.com/node/653424/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%AA%D9%88%D9%8A-%D8%B3%D8%AA%D9%88%D8%B1%D9%8A-5-%D8%B7%D9%81%D9%88%D9%84%D8%A9-%D8%A8%D9%84%D8%A7-%D8%A3%D9%84%D8%B9%D8%A7%D8%A8",
+      "title": "\"توي ستوري 5\"... طفولة بلا ألعاب",
+      "page_num": 1,
+      "bytes": 119865,
+      "sha1": "449b5825f572d3a3c0b5a0ed2aff268e49e94d2d"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://www.independentarabia.com/node/653345/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%A7%D9%84%D8%A3%D8%A8%D8%B7%D8%A7%D9%84-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D9%82%D9%88%D9%86-%D8%B9%D9%86-%D8%B3%D9%8A%D9%86%D9%85%D8%A7-%D8%AA%D9%83%D8%B1%D8%B3-%D8%A7%D9%84%D8%AA%D9%86%D9%85%D9%8A%D8%B7-%D9%88%D8%A7%D9%84%D8%AA%D8%B1%D9%81%D9%8A%D9%87",
+      "title": "الأبطال الخارقون: عن سينما تكرس التنميط والترفيه",
+      "page_num": 1,
+      "bytes": 121106,
+      "sha1": "ef7a97409b5dd223be22361a48935e0a43aa81c0"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://www.independentarabia.com/node/653242/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%B3%D9%8A%D9%86%D9%85%D8%A7-%D8%B1%D8%B9%D8%A7%D8%A9-%D8%A7%D9%84%D8%A8%D9%82%D8%B1-%D9%88%D8%AB%D8%A7%D8%A6%D9%82-%D8%A8%D8%B5%D8%B1%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D9%88%D8%AD%D8%B4",
+      "title": "سينما \"رعاة البقر\"... وثائق بصرية للتوحش",
+      "page_num": 1,
+      "bytes": 121007,
+      "sha1": "c1177e7955cf7188abe2d93f4866a5d526fb9176"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://www.independentarabia.com/node/653136/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%A8%D8%A7%D9%83%D8%B1%D9%88%D9%85%D8%B2-%D9%85%D9%86-%D8%A7%D9%84%D8%B9%D9%88%D8%A7%D9%84%D9%85-%D8%A7%D9%84%D8%AE%D9%84%D9%81%D9%8A%D8%A9-%D8%A5%D9%84%D9%89-%D8%AA%D8%A8%D9%88%D8%A1-%D8%B9%D8%B1%D8%B4-%D8%A7%D9%84%D8%AA%D8%B0%D8%A7%D9%83%D8%B1",
+      "title": "\"باكرومز\"... من العوالم الخلفية إلى تبوء عرش التذاكر",
+      "page_num": 1,
+      "bytes": 122478,
+      "sha1": "ac462dfd86ef126b03e5243472ac44e8e22f028e"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://www.independentarabia.com/node/656554/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%AF%D9%85%D9%88%D9%8A-%D9%85%D8%B3%D8%AA%D8%B4%D9%81%D9%89-%D9%8A%D8%AE%D8%AA%D8%A8%D8%B1-%D8%AD%D8%AF%D9%88%D8%AF-%D8%A7%D9%84%D8%AC%D8%B3%D8%AF-%D9%88%D8%A7%D9%84%D8%AE%D9%88%D9%81",
+      "title": "\"دموي\"... مستشفى يختبر حدود الجسد والخوف",
+      "page_num": 1,
+      "bytes": 122128,
+      "sha1": "76a4e59d779029d33904ad8e0ef626dd1a527c4f"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://www.independentarabia.com/node/656481/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%A7%D9%84%D8%A8%D9%86%D8%AF%D9%82%D9%8A%D8%A9-%D8%A7%D9%84%D8%B3%D9%8A%D9%86%D9%85%D8%A7%D8%A6%D9%8A-%D9%8A%D8%B6%D9%8A%D9%81-%D9%88%D8%AB%D8%A7%D8%A6%D9%82%D9%8A%D8%A7-%D8%B9%D9%86-%D8%BA%D8%B2%D8%A9-%D8%A5%D9%84%D9%89-%D8%A7%D8%AE%D8%AA%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA%D9%87",
+      "title": "\"البندقية السينمائي\" يضيف وثائقيا عن غزة إلى اختياراته",
+      "page_num": 1,
+      "bytes": 113394,
+      "sha1": "c3328711d91df509ec7c0d4c35e09f01700d7152"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://www.independentarabia.com/node/656245/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%B1%D8%AD%D9%8A%D9%84-%D9%85%D8%B5%D8%B7%D9%81%D9%89-%D8%A7%D9%84%D8%AF%D8%B1%D9%82%D8%A7%D9%88%D9%8A-%D8%B1%D8%A7%D8%A6%D8%AF-%D8%A7%D9%84%D8%AA%D8%AC%D8%B1%D9%8A%D8%A8-%D9%81%D9%8A-%D8%A7%D9%84%D8%B3%D9%8A%D9%86%D9%85%D8%A7-%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
+      "title": "رحيل مصطفى الدرقاوي رائد التجريب في السينما المغربية",
+      "page_num": 1,
+      "bytes": 120212,
+      "sha1": "45010b1d1cf7281f10ffb96d8d135e03e4b1eeef"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://www.independentarabia.com/node/656044/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%A8-%D8%A7%D9%84%D8%A3%D9%85%D9%8A%D8%B1%D9%83%D9%8A-%D9%8A%D8%B9%D8%B1%D8%B6-%D9%84%D9%85%D9%88%D8%A7%D8%B7%D9%86%D9%8A%D9%87-%D8%AD%D9%82%D9%8A%D9%82%D8%A9-%D8%BA%D8%B2%D8%A9-%D8%A7%D9%84%D9%85%D8%A4%D9%84%D9%85%D8%A9",
+      "title": "\"الطبيب الأميركي\" يعرض لمواطنيه حقيقة غزة المؤلمة",
+      "page_num": 1,
+      "bytes": 118448,
+      "sha1": "6f7f3e3e03ab81e2b5e1d3dd9e1707dadccff393"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://www.independentarabia.com/node/655808/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%A7%D9%84%D8%AD%D9%88%D8%A7%D8%B1-%D8%A7%D9%84%D8%B3%D9%8A%D9%86%D9%85%D8%A7%D8%A6%D9%8A-%D8%AA%D8%B4%D9%83%D9%8A%D9%84-%D8%A7%D9%84%D8%B0%D8%A7%D9%83%D8%B1%D8%A9-%D8%A7%D9%84%D9%81%D8%B1%D8%AF%D9%8A%D8%A9",
+      "title": "الحوار السينمائي... تشكيل الذاكرة الفردية",
+      "page_num": 1,
+      "bytes": 123013,
+      "sha1": "1904d8dc88e611b5c41b267347682c80e873b4c7"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://www.independentarabia.com/node/655792/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D9%87%D9%84-%D9%8A%D8%B1%D9%85%D9%85-%D8%A7%D9%84%D8%A5%D9%86%D8%AA%D8%A7%D8%AC-%D8%A7%D9%84%D9%85%D8%B4%D8%AA%D8%B1%D9%83-%D9%88%D8%A7%D9%82%D8%B9-%D8%A7%D9%84%D8%B3%D9%8A%D9%86%D9%85%D8%A7-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9%D8%9F",
+      "title": "هل يرمم الإنتاج المشترك واقع السينما العربية؟",
+      "page_num": 1,
+      "bytes": 123593,
+      "sha1": "9e238ecb98ed46a333be407ba7ce90ab66fda472"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://www.independentarabia.com/node/655787/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%A7%D9%84%D8%B3%D9%8A%D9%86%D9%85%D8%A7-%D8%A7%D9%84%D9%87%D9%86%D8%AF%D9%8A%D8%A9-%D8%B5%D9%86%D8%A7%D8%B9%D8%A9-%D9%85%D8%B1%D8%A8%D8%AD%D8%A9-%D9%84%D9%83%D9%86%D9%87%D8%A7-%D8%AA%D8%AE%D9%88%D9%86-%D9%86%D9%81%D8%B3%D9%87%D8%A7",
+      "title": "السينما الهندية: صناعة مربحة لكنها تخون نفسها",
+      "page_num": 1,
+      "bytes": 124325,
+      "sha1": "56909c0d126584aabeee1db3a7f8178f08545033"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://www.independentarabia.com/node/655782/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%AC%D8%A7%D8%A6%D8%B2%D8%A9-%D8%A7%D9%84%D9%86%D9%85%D8%B1-%D8%A7%D9%84%D8%B0%D9%87%D8%A8%D9%8A-%D8%AA%D8%AA%D9%88%D8%AC-%D8%A7%D9%84%D8%B3%D9%8A%D9%86%D9%85%D8%A7-%D8%A7%D9%84%D8%B1%D9%88%D9%85%D8%A7%D9%86%D9%8A%D8%A9-%D9%81%D9%8A-%D9%84%D9%88%D9%83%D8%A7%D8%B1%D9%86%D9%88",
+      "title": "جائزة \"النمر الذهبي\" تتوج السينما الرومانية في لوكارنو",
+      "page_num": 1,
+      "bytes": 119504,
+      "sha1": "53a776566131c347ee280e4e8322f5e0a6c0da61"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://www.independentarabia.com/node/655733/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%AF%D9%8A%D8%B2%D9%86%D9%8A-%D8%AA%D8%B3%D8%AA%D8%B9%D8%B1%D8%B6-%D8%A3%D8%A8%D8%B1%D8%B2-%D9%85%D8%B4%D8%A7%D8%B1%D9%8A%D8%B9%D9%87%D8%A7-%D8%A7%D9%84%D9%85%D9%82%D8%A8%D9%84%D8%A9-%D9%88%D8%AA%D9%83%D8%B4%D9%81-%D8%B9%D9%86-%D8%A3%D8%A8%D8%B7%D8%A7%D9%84-%D8%A5%D9%83%D8%B3-%D9%85%D9%8A%D9%86",
+      "title": "\"ديزني\" تستعرض أبرز مشاريعها المقبلة وتكشف عن أبطال \"إكس-مين\"",
+      "page_num": 1,
+      "bytes": 116501,
+      "sha1": "9af8ddc2459570f8d8895ccdeec7eb5d6331eb69"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://www.independentarabia.com/node/655726/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D9%85%D8%AD%D8%AA%D8%AC%D8%B2%D9%88%D9%86-%D9%81%D9%8A-%D9%85%D9%86%D8%B2%D9%84%D9%86%D8%A7-%D8%A2%D8%AE%D8%B1-%D8%B9%D8%A7%D8%A6%D9%84%D8%A9-%D8%AA%D9%88%D8%A7%D8%AC%D9%87%D9%8F-%D9%86%D9%87%D8%A7%D9%8A%D8%A9%D9%8E-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85",
+      "title": "\"محتجزون في منزلنا\"... آخر عائلة تواجهُ نهايةَ العالم",
+      "page_num": 1,
+      "bytes": 119733,
+      "sha1": "aab86ab0fb27f045b69d7d1b44fb3154693e5c05"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://www.independentarabia.com/node/655638/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%AC%D9%85%D9%87%D9%88%D8%B1-%D9%84%D9%88%D9%83%D8%A7%D8%B1%D9%86%D9%88-%D9%8A%D8%AD%D9%8A%D9%8A-%D8%AC%D8%A7%D9%86-%D9%84%D9%88%D9%83-%D8%A8%D9%8A%D8%AF%D9%88-%D9%85%D9%85%D8%AB%D9%84%D8%A7-%D8%AE%D8%A7%D8%B1%D8%AC-%D8%A7%D9%84%D8%B4%D9%8A%D8%AE%D9%88%D8%AE%D8%A9",
+      "title": "جمهور لوكارنو يحيي جان لوك بيدو ممثلا خارج الشيخوخة",
+      "page_num": 1,
+      "bytes": 118346,
+      "sha1": "9673ebf62cc689bc5a2acb6c7152e904efda02cb"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://www.independentarabia.com/node/655636/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D9%83%D8%B4%D9%81-%D9%82%D8%B5%D9%8A%D8%AF%D8%A9-%D8%B3%D9%8A%D9%86%D9%85%D8%A7%D8%A6%D9%8A%D8%A9-%D9%84%D8%B3%D8%A8%D9%8A%D9%84%D8%A8%D8%B1%D8%BA-%D8%B9%D9%86-%D8%A7%D9%84%D8%AA%D8%B9%D8%A7%D8%B7%D9%81",
+      "title": "\"يوم الكشف\" قصيدة سينمائية لسبيلبرغ عن التعاطف",
+      "page_num": 1,
+      "bytes": 122287,
+      "sha1": "9a4a5ee3675eb70f6fc4748598490abf1ca60d0b"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://www.independentarabia.com/node/655560",
+      "title": "\"صبي الكونغو\" يحمل إلى لوكارنو مشقات الحياة الأفريقية",
+      "page_num": 1,
+      "bytes": 120309,
+      "sha1": "8977545c111aa54522b9b4cd6fa82da6c49aacc3"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://www.independentarabia.com/node/655489",
+      "title": "بيتر برونر يكشف أميركا المشردين في مهرجان لوكارنو",
+      "page_num": 1,
+      "bytes": 120674,
+      "sha1": "52015f47859ba39f0f91856ef7b5f63a4ec28f89"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://www.independentarabia.com/node/655422",
+      "title": "أفلام تتنافس في لوكارنو حول مفهومي الانتماء والإرث",
+      "page_num": 1,
+      "bytes": 120100,
+      "sha1": "d2d794affeee06d2f37790c5dcd746de1511a351"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://www.independentarabia.com/node/655332/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D9%85%D9%87%D8%B1%D8%AC%D8%A7%D9%86-%D9%84%D9%88%D9%83%D8%A7%D8%B1%D9%86%D9%88-%D9%8A%D8%AA%D9%88%D8%AC-%D9%85%D8%B3%D9%8A%D8%B1%D8%A9-%D8%A7%D9%84%D8%A5%D9%8A%D8%B7%D8%A7%D9%84%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D8%B4%D8%A7%D9%83%D8%B3%D8%A9-%D8%A2%D8%B3%D9%8A%D8%A7-%D8%A3%D8%B1%D8%AC%D9%86%D8%AA%D9%88",
+      "title": "مهرجان لوكارنو يتوج مسيرة الإيطالية المشاكسة آسيا أرجنتو",
+      "page_num": 1,
+      "bytes": 120009,
+      "sha1": "4fa1e5d832869d0ba92aa4d28a7c1af75cee2784"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://www.independentarabia.com/node/655265/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%AC%D9%85%D9%87%D9%88%D8%B1-%D9%84%D9%88%D9%83%D8%A7%D8%B1%D9%86%D9%88-%D9%8A%D8%AA%D8%AF%D9%81%D9%82-%D8%A8%D8%BA%D8%B2%D8%A7%D8%B1%D8%A9-%D9%88%D9%8A%D8%AD%D8%B1%D8%AC-%D8%A7%D9%84%D9%85%D8%AE%D8%B1%D8%AC%D9%8A%D9%86-%D9%88%D8%A7%D9%84%D9%85%D9%85%D8%AB%D9%84%D9%8A%D9%86",
+      "title": "جمهور لوكارنو يتدفق بغزارة ويحرج المخرجين والممثلين",
+      "page_num": 1,
+      "bytes": 120630,
+      "sha1": "0aa9c30b54e24fdf1be955f31a5f166e5c1a56b3"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://www.independentarabia.com/node/655253/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%A3%D8%B1%D8%B6-%D8%A7%D9%84%D9%85%D9%84%D8%A7%D8%AD%D9%85-%D8%A7%D9%84%D9%85%D8%BA%D8%B1%D8%A8-%D9%88%D8%AC%D9%87%D8%A9-%D8%B5%D9%86%D8%A7%D8%B9-%D8%A7%D9%84%D8%B3%D9%8A%D9%86%D9%85%D8%A7-%D8%A7%D9%84%D8%A3%D8%AC%D9%86%D8%A8%D9%8A%D8%A9",
+      "title": "أرض الملاحم... المغرب وجهة صناع السينما الأجنبية",
+      "page_num": 1,
+      "bytes": 122726,
+      "sha1": "2bfd2a1c796605fc7cdd71ab9611a4a252cb0e0f"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://www.independentarabia.com/node/655199/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D9%85%D9%87%D8%B1%D8%AC%D8%A7%D9%86-%D9%84%D9%88%D9%83%D8%A7%D8%B1%D9%86%D9%88-%D9%8A%D8%B3%D8%AA%D8%B9%D9%8A%D8%AF-%D9%85%D9%84%D9%81-%D8%A7%D9%84%D9%85%D9%83%D8%A7%D8%B1%D8%AB%D9%8A%D8%A9-%D9%81%D9%8A-%D9%87%D9%88%D9%84%D9%8A%D9%88%D9%88%D8%AF",
+      "title": "مهرجان لوكارنو يستعيد ملف المكارثية في هوليوود",
+      "page_num": 1,
+      "bytes": 121547,
+      "sha1": "0aa8d17ae89eedd62e2a628262f1cb5d092b2d56"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://www.independentarabia.com/node/655115/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D9%81%D9%8A%D9%84%D9%85-%D9%81%D8%B1%D9%86%D8%B3%D9%8A-%D8%B9%D9%86-%D8%A7%D9%84%D8%AA%D8%B1%D8%AD%D9%8A%D9%84-%D9%8A%D9%81%D8%AA%D8%AA%D8%AD-%D9%85%D9%87%D8%B1%D8%AC%D8%A7%D9%86-%D9%84%D9%88%D9%83%D8%A7%D8%B1%D9%86%D9%88",
+      "title": "فيلم فرنسي عن الترحيل يفتتح مهرجان لوكارنو",
+      "page_num": 1,
+      "bytes": 119019,
+      "sha1": "b4c1bb685320011a1813d67a2857f02c184001d9"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://www.independentarabia.com/node/654960/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D9%85%D8%AD%D9%85%D8%AF-%D8%AE%D8%A7%D9%86-%D8%B1%D8%A7%D8%A6%D8%AF-%D8%A7%D9%84%D9%88%D8%A7%D9%82%D8%B9%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A%D8%A9-%D8%AC%D8%B9%D9%84-%D8%A7%D9%84%D8%B3%D9%8A%D9%86%D9%85%D8%A7-%D9%81%D8%B9%D9%84-%D8%AD%D9%8A%D8%A7%D8%A9",
+      "title": "محمد خان رائد \"الواقعية المصرية\" جعل السينما فعل حياة",
+      "page_num": 1,
+      "bytes": 121361,
+      "sha1": "1f4ced1cb8d8240c312115481b6086dab355ade0"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://www.independentarabia.com/node/654770/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D8%B9%D9%85%D8%B1%D8%A9-%D8%AE%D8%B1%D9%8A%D8%B7%D8%A9-%D8%B9%D8%B2%D9%84%D8%A9-%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
+      "title": "\"المستعمرة\" ... خريطة عزلة مصرية",
+      "page_num": 1,
+      "bytes": 116613,
+      "sha1": "64de5ed9d6f848d4b90f7973591e7f37f3a996cf"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://www.independentarabia.com/node/654767/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%A8%D8%A7%D8%A8%D8%A7-%D9%88%D8%A7%D9%84%D9%82%D8%B0%D8%A7%D9%81%D9%8A-%D8%AD%D9%8A%D9%86-%D9%8A%D8%B1%D9%88%D9%8A-%D8%A7%D9%84%D8%BA%D8%A7%D8%A6%D8%A8-%D8%AD%D9%83%D8%A7%D9%8A%D8%A9-%D8%A7%D9%84%D8%B7%D8%A7%D8%BA%D9%8A%D8%A9",
+      "title": "\"بابا والقذافي\"... حين يروي الغائب حكاية الطاغية",
+      "page_num": 1,
+      "bytes": 118315,
+      "sha1": "0c0018a4036da5a9b945887bebb44142cb486735"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://www.independentarabia.com/node/654765/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%A7%D9%84%D9%85%D9%88%D8%AC%D8%A9-%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D9%88%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%B4%D8%A7%D8%B4%D8%A9-%D8%AB%D9%88%D8%B1%D8%A9-%D8%A3%D9%8A%D8%B6%D8%A7",
+      "title": "\"الموجة الجديدة\"... وعلى الشاشة ثورة أيضا",
+      "page_num": 1,
+      "bytes": 119626,
+      "sha1": "3ab505421a4dcb44a896a4b3a0f7e8ca442d3deb"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://www.independentarabia.com/node/654693/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D9%88%D8%AB%D8%A7%D8%A6%D9%82%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D9%86%D8%AC%D9%88%D9%85-%D8%AD%D9%8A%D9%86-%D8%AA%D8%B9%D9%8A%D8%AF-%D8%A7%D9%84%D8%B3%D9%8A%D8%B1%D8%A9-%D8%B1%D8%B3%D9%85-%D8%A7%D9%84%D8%B5%D9%88%D8%B1%D8%A9",
+      "title": "وثائقيات النجوم: حين تعيد السيرة رسم الصورة",
+      "page_num": 1,
+      "bytes": 122215,
+      "sha1": "5a50bc92b2a594d0eb1ab854bd14468570d7dbfc"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://www.independentarabia.com/node/654692/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D9%85%D8%AD%D9%85%D8%AF-%D8%AE%D8%A7%D9%86-%D9%85%D8%AE%D8%B1%D8%AC-%D8%A7%D9%84%D8%A3%D9%85%D9%83%D9%86%D8%A9-%D8%A7%D9%84%D8%B0%D9%8A-%D9%84%D8%A7-%D9%8A%D8%B5%D8%B1%D8%AE-%D8%A5%D9%86%D9%85%D8%A7-%D9%8A%D8%B9%D8%A8%D8%B1",
+      "title": "محمد خان... مخرج الأمكنة الذي لا يصرخ إنما يعبر",
+      "page_num": 1,
+      "bytes": 125490,
+      "sha1": "21143a64035dd85a749096d90f15e281bac2eb0e"
+    },
+    {
+      "id": 31,
+      "file": "article_0031.html",
+      "url": "https://www.independentarabia.com/node/654679/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%B9%D8%B5%D8%A7%D9%81%D9%8A%D8%B1-%D8%A7%D9%84%D8%AD%D8%B1%D8%A8-%D9%82%D8%B5%D8%A9-%D8%AD%D8%A8-%D9%81%D9%88%D9%82-%D8%B1%D9%83%D8%A7%D9%85-%D8%A8%D9%84%D8%AF%D9%8A%D9%86",
+      "title": "\"عصافير الحرب\"... قصة حب فوق ركام بلدين",
+      "page_num": 1,
+      "bytes": 118734,
+      "sha1": "b432e08547a1330ed7e21e80e0af356aaf108903"
+    },
+    {
+      "id": 32,
+      "file": "article_0032.html",
+      "url": "https://www.independentarabia.com/node/654655/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D9%85%D9%84%D9%83%D8%A9-%D8%A7%D9%84%D9%82%D8%B7%D9%86-%D8%AD%D9%82%D9%84-%D9%8A%D8%A8%D8%AA%D9%84%D8%B9-%D8%AD%D9%83%D8%A7%D9%8A%D8%A9-%D8%A7%D9%84%D8%B3%D9%88%D8%AF%D8%A7%D9%86",
+      "title": "\"ملكة القطن\"... حقل يبتلع حكاية السودان",
+      "page_num": 1,
+      "bytes": 118183,
+      "sha1": "1191b8a3a16d0d8122928229d52eb13979bd41a9"
+    },
+    {
+      "id": 33,
+      "file": "article_0033.html",
+      "url": "https://www.independentarabia.com/node/654617/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D9%87%D9%85%D9%88%D9%85-%D8%A7%D9%84%D8%B7%D8%A8%D9%82%D8%A9-%D8%A7%D9%84%D9%88%D8%B3%D8%B7%D9%89-%D8%A8%D8%B1%D9%88%D8%AD-%D9%83%D9%88%D9%85%D9%8A%D8%AF%D9%8A%D8%A9-%D9%81%D9%8A-%D9%85%D8%AC%D8%B1%D8%AF-%D9%88%D9%87%D9%85",
+      "title": "هموم الطبقة الوسطى بروح كوميدية في \"مجرد وهم\"",
+      "page_num": 1,
+      "bytes": 120036,
+      "sha1": "cb1a8ffde3dcf603005af292ab0f4633499b3bdb"
+    },
+    {
+      "id": 34,
+      "file": "article_0034.html",
+      "url": "https://www.independentarabia.com/node/654554/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%A8%D9%88%D8%A8%D9%8A%D8%A9-%D9%81%D9%8A%D9%84%D9%85-%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1%D9%8A-%D9%8A%D8%B3%D8%AA%D9%84%D9%87%D9%85-%D8%A7%D9%84%D9%85%D8%A7%D8%B6%D9%8A-%D9%81%D9%8A-%D9%83%D9%88%D9%85%D9%8A%D8%AF%D9%8A%D8%A7-%D8%B3%D9%88%D8%AF%D8%A7%D8%A1",
+      "title": "\"بوبية\" فيلم جزائري يستلهم الماضي في كوميديا سوداء",
+      "page_num": 1,
+      "bytes": 119538,
+      "sha1": "7d88a905de495a37303bcc8de8423c5d3d9c551d"
+    },
+    {
+      "id": 35,
+      "file": "article_0035.html",
+      "url": "https://www.independentarabia.com/node/654394/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%AC%D9%88%D9%86-%D8%AA%D8%B1%D8%A7%D9%81%D9%88%D9%84%D8%AA%D8%A7-%D9%88%D8%B1%D8%A7%D8%A1-%D8%A7%D9%84%D9%83%D8%A7%D9%85%D9%8A%D8%B1%D8%A7-%D8%A8%D8%B9%D8%AF-50-%D8%B9%D8%A7%D9%85%D8%A7-%D8%A3%D9%85%D8%A7%D9%85%D9%87%D8%A7",
+      "title": "جون ترافولتا وراء الكاميرا بعد 50 عاما أمامها",
+      "page_num": 1,
+      "bytes": 120986,
+      "sha1": "2a254e82e06f792665139314f9e8c34b3331ce6b"
+    },
+    {
+      "id": 36,
+      "file": "article_0036.html",
+      "url": "https://www.independentarabia.com/node/654343/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D9%85%D9%86-%D9%8A%D9%82%D9%8A%D9%86-%D8%B7%D8%B1%D9%88%D8%A7%D8%AF%D8%A9-%D8%A5%D9%84%D9%89-%D8%B4%D9%83-%D8%A7%D9%84%D8%A3%D9%88%D8%AF%D9%8A%D8%B3%D8%A9",
+      "title": "من يقين \"طروادة\" إلى شك \"الأوديسة\"",
+      "page_num": 1,
+      "bytes": 133122,
+      "sha1": "2a7005f27d9cff75de6ca4c5f445e779637f4a4c"
+    },
+    {
+      "id": 37,
+      "file": "article_0037.html",
+      "url": "https://www.independentarabia.com/node/654340/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D9%83%D9%8A%D9%81-%D8%A3%D9%8A%D9%82%D8%B8%D8%AA-%D8%A7%D9%84%D8%A3%D9%88%D8%AF%D9%8A%D8%B3%D8%A9-%D8%A3%D8%B3%D8%A6%D9%84%D8%A9-%D8%A7%D9%84%D9%85%D9%84%D8%A7%D8%AD%D9%85-%D8%A7%D9%84%D9%85%D9%87%D9%85%D9%84%D8%A9%D8%9F",
+      "title": "كيف أيقظت \"الأوديسة\" أسئلة الملاحم المهملة؟",
+      "page_num": 1,
+      "bytes": 125543,
+      "sha1": "6da9ddac43771bb6428035a25275316172b6c08b"
+    },
+    {
+      "id": 38,
+      "file": "article_0038.html",
+      "url": "https://www.independentarabia.com/node/654326/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D9%83%D8%B1%D9%8A%D8%B3%D8%AA%D9%88%D9%81%D8%B1-%D9%86%D9%88%D9%84%D8%A7%D9%86-%D9%8A%D9%82%D8%AA%D8%AD%D9%85-%D8%A7%D9%84%D8%A3%D9%88%D8%AF%D9%8A%D8%B3%D8%A9-%D8%A8%D8%B1%D8%A4%D9%8A%D8%A9-%D8%A8%D8%B5%D8%B1%D9%8A%D8%A9-%D8%B1%D9%87%D9%8A%D8%A8%D8%A9",
+      "title": "كريستوفر نولان يقتحم \"الأوديسة\" برؤية بصرية رهيبة",
+      "page_num": 1,
+      "bytes": 125763,
+      "sha1": "0d10ec60c16912f67bd04e41f19ad75810d3a66e"
+    },
+    {
+      "id": 39,
+      "file": "article_0039.html",
+      "url": "https://www.independentarabia.com/node/654299",
+      "title": "حتى \"الأوديسة\" لا تكفي لفك لغز كريستوفر نولان",
+      "page_num": 1,
+      "bytes": 125206,
+      "sha1": "b35d2cc069efa86252b7d6009dc9c126fc1661e1"
+    },
+    {
+      "id": 40,
+      "file": "article_0040.html",
+      "url": "https://www.independentarabia.com/node/654255",
+      "title": "لماذا لم تعد سينما الخيال العلمي تغري الجمهور؟",
+      "page_num": 1,
+      "bytes": 121591,
+      "sha1": "667abc7571cd30812acb09282a2c4c24157e8968"
+    },
+    {
+      "id": 41,
+      "file": "article_0041.html",
+      "url": "https://www.independentarabia.com/node/654229",
+      "title": "مهرجان لوكارنو يكرم جيمس غراي السينمائي المجدد",
+      "page_num": 1,
+      "bytes": 120260,
+      "sha1": "316152baf9f0b1850e46c7c0d6f8ef9a1a9b4726"
+    },
+    {
+      "id": 42,
+      "file": "article_0042.html",
+      "url": "https://www.independentarabia.com/node/654190/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%A7%D9%84%D8%B4%D8%B9%D8%B1-%D9%88%D8%A7%D9%84%D8%B3%D9%8A%D9%86%D9%85%D8%A7-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85-%D9%83%D9%82%D8%B5%D9%8A%D8%AF%D8%A9-%D8%AA%D8%AA%D8%AD%D8%B1%D9%83",
+      "title": "الشعر والسينما... العالم كقصيدة تتحرك",
+      "page_num": 1,
+      "bytes": 122557,
+      "sha1": "fcd251ea64cbb44f51ddf859765acd116f7d7bad"
+    },
+    {
+      "id": 43,
+      "file": "article_0043.html",
+      "url": "https://www.independentarabia.com/node/654172/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%A7%D9%84%D9%85%D8%B0%D9%83%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D8%B3%D9%8A%D9%86%D9%85%D8%A7%D8%A6%D9%8A%D8%A9-%D8%A7%D9%86%D8%AA%D8%B5%D8%A7%D8%B1-%D8%AE%D8%A7%D8%B5-%D8%B9%D9%84%D9%89-%D8%B9%D8%AA%D8%A7%D8%A9-%D8%A7%D9%84%D8%B1%D9%88%D8%A7%D9%8A%D8%A9-%D8%B9%D8%A7%D9%84%D9%85%D9%8A%D8%A7",
+      "title": "المذكرات السينمائية: انتصار خاص على عتاة الرواية عالميا",
+      "page_num": 1,
+      "bytes": 120616,
+      "sha1": "10bd8fe4a9eac159d6c8393b1728de8ce5c67c9c"
+    },
+    {
+      "id": 44,
+      "file": "article_0044.html",
+      "url": "https://www.independentarabia.com/node/654122/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D9%85%D9%84%D8%AD%D9%85%D8%A9-%D9%86%D9%88%D9%84%D8%A7%D9%86-%D8%AA%D8%A8%D9%84%D8%BA-%D8%B0%D8%B1%D9%88%D8%AA%D9%87%D8%A7-%D9%85%D8%B9-%D8%A7%D9%84%D8%A3%D9%88%D8%AF%D9%8A%D8%B3%D8%A9",
+      "title": "ملحمة نولان تبلغ ذروتها مع \"الأوديسة\"",
+      "page_num": 1,
+      "bytes": 122575,
+      "sha1": "5d6984ef659807178ca80d2a0574daba87c91c03"
+    },
+    {
+      "id": 45,
+      "file": "article_0045.html",
+      "url": "https://www.independentarabia.com/node/654055/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D9%85%D8%A7-%D9%88%D8%B1%D8%A7%D8%A1-%D8%A7%D9%84%D8%A5%D8%B7%D8%A7%D8%B1-%D8%B4%D8%B9%D8%A7%D8%B1-%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D8%A9-%D8%A7%D9%84%D8%B3%D8%A7%D8%A8%D8%B9%D8%A9-%D9%84%D9%85%D9%87%D8%B1%D8%AC%D8%A7%D9%86-%D8%B9%D9%85%D8%A7%D9%86-%D8%A7%D9%84%D8%B3%D9%8A%D9%86%D9%85%D8%A7%D8%A6%D9%8A",
+      "title": "\"ما وراء الإطار\" شعار الدورة السابعة لمهرجان عمان السينمائي",
+      "page_num": 1,
+      "bytes": 123969,
+      "sha1": "1100a5b18a963784063b13356e71be22fe6af47f"
+    },
+    {
+      "id": 46,
+      "file": "article_0046.html",
+      "url": "https://www.independentarabia.com/node/654027/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%A7%D9%84%D8%B9%D8%B5%D8%B1-%D8%A7%D9%84%D8%B0%D9%87%D8%A8%D9%8A-%D9%8A%D8%AF%D8%B1%D8%AC-%D8%A7%D9%84%D9%85%D9%85%D8%AB%D9%84%D9%8A%D9%86-%D9%81%D9%8A-%D9%84%D9%82%D8%B7%D8%A7%D8%AA-%D8%A3%D8%B1%D8%B4%D9%8A%D9%81%D9%8A%D8%A9",
+      "title": "\"العصر الذهبي\" يدرج الممثلين في لقطات أرشيفية",
+      "page_num": 1,
+      "bytes": 117623,
+      "sha1": "e3938d0b0435fc77e5962178e14825457425a3b5"
+    },
+    {
+      "id": 47,
+      "file": "article_0047.html",
+      "url": "https://www.independentarabia.com/node/653985/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D9%87%D9%88%D9%84%D9%8A%D9%88%D9%88%D8%AF-%D8%AA%D9%86%D9%81%D8%AA%D8%AD-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1-%D8%A7%D9%84%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A-%D9%88%D8%AA%D8%AA%D9%85%D8%B3%D9%83-%D8%A8%D8%A7%D9%84%D8%A5%D8%A8%D8%AF%D8%A7%D8%B9",
+      "title": "هوليوود تنفتح على الذكاء الاصطناعي وتتمسك بالإبداع",
+      "page_num": 1,
+      "bytes": 120486,
+      "sha1": "f688f44ccc786648413a62c68a8ca180d8becedd"
+    },
+    {
+      "id": 48,
+      "file": "article_0048.html",
+      "url": "https://www.independentarabia.com/node/653949/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%B5%D8%AF%D9%85%D8%A9-%D8%A7%D9%84%D9%81%D9%82%D8%AF-%D9%88%D8%A7%D9%84%D8%AD%D8%AF%D8%A7%D8%AF-%D9%81%D9%8A-%D9%81%D9%8A%D9%84%D9%85-%D9%88%D9%84%D9%86%D8%A7-%D9%81%D9%8A-%D8%A7%D9%84%D8%AE%D9%8A%D8%A7%D9%84-%D8%AD%D8%A8%D8%9F",
+      "title": "صدمة الفقد والحداد في فيلم \"ولنا في الخيال... حب؟\"",
+      "page_num": 1,
+      "bytes": 121345,
+      "sha1": "24c7295e8946721da1267d41d605c308be9f32c8"
+    },
+    {
+      "id": 49,
+      "file": "article_0049.html",
+      "url": "https://www.independentarabia.com/node/653902/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D9%85%D8%A3%D8%B2%D9%82-%D8%A7%D9%84%D8%B3%D9%8A%D9%86%D8%A7%D8%B1%D9%8A%D9%88-%D9%81%D9%8A-%D8%A7%D9%84%D8%B3%D9%8A%D9%86%D9%85%D8%A7-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
+      "title": "مأزق السيناريو في السينما العربية",
+      "page_num": 1,
+      "bytes": 121346,
+      "sha1": "76e4154ab99809fc40684fce797293d6af626346"
+    },
+    {
+      "id": 50,
+      "file": "article_0050.html",
+      "url": "https://www.independentarabia.com/node/653765/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%A7%D9%84%D8%B0%D8%A7%D9%83%D8%B1%D8%A9-%D8%A7%D9%84%D8%B3%D9%8A%D9%86%D9%85%D8%A7%D8%A6%D9%8A%D8%A9-%D8%AA%D8%B3%D8%AA%D8%B9%D9%8A%D8%AF-%D8%A3%D9%81%D9%86%D8%AF%D9%8A-%D8%A7%D9%84%D8%AE%D9%85%D8%B3%D9%8A%D9%86%D9%8A%D8%A7%D8%AA-%D9%81%D9%8A-%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82",
+      "title": "الذاكرة السينمائية تستعيد أفندي الخمسينيات في العراق",
+      "page_num": 1,
+      "bytes": 131147,
+      "sha1": "6cdfbd87c3ad42a120abdc6b8f4fc1303f1a5354"
+    },
+    {
+      "id": 51,
+      "file": "article_0051.html",
+      "url": "https://www.independentarabia.com/node/653754/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D9%85%D8%AA%D8%B1%D9%88%D8%A8%D9%88%D9%84%D9%8A%D8%B3-%D9%85%D8%BA%D8%A7%D9%85%D8%B1%D8%A9-%D8%B3%D9%8A%D9%86%D9%85%D8%A7%D8%A6%D9%8A%D8%A9-%D8%A8%D9%8A%D9%86-%D8%AD%D8%B1%D8%A8%D9%8A%D9%86-%D8%B9%D9%84%D9%89-%D9%84%D8%A8%D9%86%D8%A7%D9%86",
+      "title": "\"متروبوليس\" مغامرة سينمائية بين حربين على لبنان",
+      "page_num": 1,
+      "bytes": 119083,
+      "sha1": "3f8e59f3370d30d17da7709e92151c7374e51a20"
+    },
+    {
+      "id": 52,
+      "file": "article_0052.html",
+      "url": "https://www.independentarabia.com/node/653700/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%A3%D9%88%D8%A8%D8%B3%D9%8A%D8%B4%D9%86-%D9%8A%D9%82%D8%AA%D8%B1%D8%A8-%D9%85%D9%86-%D8%AF%D8%AE%D9%88%D9%84-%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE-%D8%A7%D9%84%D8%B3%D9%8A%D9%86%D9%85%D8%A7-%D8%A8%D9%81%D8%B6%D9%84-%D8%B9%D8%A7%D8%A6%D8%AF%D8%A7%D8%AA%D9%87-%D8%A7%D9%84%D9%82%D9%8A%D8%A7%D8%B3%D9%8A%D8%A9",
+      "title": "\"أوبسيشن\" يقترب من دخول تاريخ السينما بفضل عائداته القياسية",
+      "page_num": 1,
+      "bytes": 116261,
+      "sha1": "b6fd9fb56afeeac015820e5ba3997547e06a86c0"
+    },
+    {
+      "id": 53,
+      "file": "article_0053.html",
+      "url": "https://www.independentarabia.com/node/653501/%D8%AB%D9%82%D8%A7%D9%81%D8%A9/%D8%B3%D9%8A%D9%86%D9%85%D8%A7/%D8%B1%D8%AD%D9%84%D8%A9-%D8%B3%D8%A7%D8%AE%D8%B1%D8%A9-%D8%A5%D9%84%D9%89-%D9%82%D9%84%D8%A8-%D9%85%D8%A3%D8%B3%D8%A7%D8%A9-%D9%87%D8%AC%D9%85%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%AF%D8%A7%D8%B1%D8%B3-%D9%81%D9%8A-%D8%A3%D9%85%D9%8A%D8%B1%D9%83%D8%A7",
+      "title": "رحلة ساخرة إلى قلب مأساة هجمات المدارس في أميركا",
+      "page_num": 1,
+      "bytes": 124239,
+      "sha1": "834d2485a63975f63fb7bdbce0d83552dadb77f0"
+    },
+    {
+      "id": 54,
+      "file": "article_0054.html",
+      "url": "https://www.independentarabia.com/node/653078",
+      "title": "\"ثنائية الجنس\" تحدث التباسا في السينما المعاصرة",
+      "page_num": 1,
+      "bytes": 120843,
+      "sha1": "030daf5432ebc252afdf9c60f727edc3b9a91824"
+    },
+    {
+      "id": 55,
+      "file": "article_0055.html",
+      "url": "https://www.independentarabia.com/node/652633",
+      "title": "السينما الغنائية... زخم التاريخ وهشاشة الحاضر",
+      "page_num": 1,
+      "bytes": 124741,
+      "sha1": "ca1576ea10340a5acebfed8c572857173115540f"
+    },
+    {
+      "id": 56,
+      "file": "article_0056.html",
+      "url": "https://www.independentarabia.com/node/652593",
+      "title": "السينما العراقية تتحدى الظروف وتبحث عن طريقها إلى العالمية",
+      "page_num": 1,
+      "bytes": 119914,
+      "sha1": "b97f46d0b884f5c7f4474ddf09045debed8b0dfd"
+    },
+    {
+      "id": 57,
+      "file": "article_0057.html",
+      "url": "https://www.independentarabia.com/node/652484",
+      "title": "سينما المدينة... حين تعيد الصورة تشكيل الذاكرة",
+      "page_num": 1,
+      "bytes": 121285,
+      "sha1": "bd73b67436d6aca1bacc494ce7a98e5ecd5f0eb0"
+    },
+    {
+      "id": 58,
+      "file": "article_0058.html",
+      "url": "https://www.independentarabia.com/node/652361",
+      "title": "لبنانية وسوري زوجان عاشقان شهدت عليهما الحرب والشاشة",
+      "page_num": 1,
+      "bytes": 115339,
+      "sha1": "387bc94bcad82a10e03b98a41d4a9ce48dcdc9e9"
+    },
+    {
+      "id": 59,
+      "file": "article_0059.html",
+      "url": "https://www.independentarabia.com/node/652326",
+      "title": "السجن لمخرج فيلم \"47 رونين\" بسبب الاحتيال على \"نتفليكس\"",
+      "page_num": 1,
+      "bytes": 114048,
+      "sha1": "cff5571d7181aa21c345b27622094b5c146ac59c"
+    },
+    {
+      "id": 60,
+      "file": "article_0060.html",
+      "url": "https://www.independentarabia.com/node/652197",
+      "title": "\"أفلام الرقص\"... الجسد يختصر البطل والحكاية معا",
+      "page_num": 1,
+      "bytes": 123964,
+      "sha1": "8a58189a380a2e0cfff9f786ebacb7a41049de4d"
+    },
+    {
+      "id": 61,
+      "file": "article_0061.html",
+      "url": "https://www.independentarabia.com/node/652027",
+      "title": "نيكولاس فيندينغ رفن تنقله صدمة الموت إلى اليابان",
+      "page_num": 1,
+      "bytes": 120440,
+      "sha1": "cfcb92cbfa6f14c5c7965dd77471604fc1013164"
+    },
+    {
+      "id": 62,
+      "file": "article_0062.html",
+      "url": "https://www.independentarabia.com/node/651851",
+      "title": "قدر كبير من الضعف... أنجلينا تجسد محنة السرطان",
+      "page_num": 1,
+      "bytes": 115455,
+      "sha1": "7f791ab4f04d502acd4b0a56c08c0b27e0eb61de"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 2,
+    "articles": 62,
+    "article_fetch_failures": 0
+  }
+}

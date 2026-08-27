@@ -1,0 +1,723 @@
+{
+  "website": "bar-alkhaleej",
+  "snapshot_date": "2026-08-27T08:09:46",
+  "pagination_type": "numbered pagination",
+  "scroll_mode": null,
+  "scroll_rounds_requested": null,
+  "load_more_selector": null,
+  "listing_url": "https://akhbar-alkhaleej.com/news/section/BUSI",
+  "input_urls": [
+    "https://akhbar-alkhaleej.com/news/section/BUSI",
+    "https://akhbar-alkhaleej.com/news/section/BUSI/25"
+  ],
+  "pagination_pattern": "https://akhbar-alkhaleej.com/news/section/BUSI/{page}",
+  "requirements": "title, date, article body text",
+  "run_dir": "orch_runs/run_20260827_075825",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://akhbar-alkhaleej.com/news/section/BUSI",
+      "file": "listing_page_001.html",
+      "bytes": 84907,
+      "sha1": "5d89d51f16f3e1f434a24ae63c823cd8d028c68b"
+    },
+    {
+      "page_num": 2,
+      "url": "https://akhbar-alkhaleej.com/news/section/BUSI/25",
+      "file": "listing_page_002.html",
+      "bytes": 84761,
+      "sha1": "d1f80a478e3364ef15c97978c9ceda8039c16a8b"
+    },
+    {
+      "page_num": 3,
+      "url": "https://akhbar-alkhaleej.com/news/section/BUSI/50",
+      "file": "listing_page_003.html",
+      "bytes": 84670,
+      "sha1": "afef042e27434a346c52d1161c655b071a21f991"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448463",
+      "title": "عقارات السيف توقع اتفاقية مع «بي نت» لنشر شبكة الفايبر ضمن مشروع تطوير مجمع السيف",
+      "page_num": 1,
+      "bytes": 53864,
+      "sha1": "1c4d4490547dce7491e7eb04eef4860ae9c5f79e"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448460",
+      "title": "بنك البحرين الإسلامي يوسع نطاق التمويل العقاري للبحرينيين ومواطني دول مجلس التعاون",
+      "page_num": 1,
+      "bytes": 52964,
+      "sha1": "ab70294d9fb1ed4b83b2530eeed0540200d615f7"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448461",
+      "title": "محمد فاروق المؤيد يهنئ صاحبة السمو الملكي الأميرة سبيكة بنت إبراهيم آل خليفة بمناسبة انطلاق اليوبيل الفضي لمسيرة المرأة البحرينية",
+      "page_num": 1,
+      "bytes": 51920,
+      "sha1": "38626f9aff532153c07573db405b665cfd2b7db4"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448462",
+      "title": "هلا فاروق المؤيد تهنئ صاحبة السمو الملكي الأميرة سبيكة بنت إبراهيم آل خليفة بذكرى اليوبيل الفضي لانطلاق مسيرة المرأة البحرينية",
+      "page_num": 1,
+      "bytes": 51715,
+      "sha1": "ba0b676d66302551d753862f200395ef7122f360"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448464",
+      "title": "سيارة لاند روفر ديفيندر2026 بانتظار أحد حاملي بطاقات «إلى» وايت و«إلى» بلاك الائتمانية من ماستركارد",
+      "page_num": 1,
+      "bytes": 52942,
+      "sha1": "0ba912fd04c5f7826a24558ba96ab967f4911f9a"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448465",
+      "title": "المالية تنشر التقرير الاقتصادي للربع الأول من عام 2026أداء قوي خلال شهري يناير وفبراير قبل أن يتأثر جراء الاعتداءات الإيرانية الآثمة",
+      "page_num": 1,
+      "bytes": 54083,
+      "sha1": "03b572d4e604e2f89e70fe2ae24f0fc555df0a23"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448466",
+      "title": "تطبيق ONE يطلق موظفه المدعوم بالذكاء الاصطناعي لمساعدة المستخدمين",
+      "page_num": 1,
+      "bytes": 53484,
+      "sha1": "3faeb4eb2a7c54912bebb7c234028a6a9b0061c2"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448467",
+      "title": "الغرفة و«الدراسات القضائية» يطلقان برنامج «احمِ مشروعك واعرف حقك كتاجر»",
+      "page_num": 1,
+      "bytes": 52089,
+      "sha1": "3dd191a283b7767b2bd247fa06884424cb39aa02"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448468",
+      "title": "فرصة جديدة للعملاء للفوز بأكبر جائزة شهريةبيت التمويل الكويتي - البحرين يقدم جائزة شهرية بقيمة مليون دولار ضمن «حصادي»",
+      "page_num": 1,
+      "bytes": 53094,
+      "sha1": "b56e6cc83382b2f07033755346e2bcf8f16b2aa0"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448469",
+      "title": "بالتعاون مع «إنجاز البحرين»..مجموعة البركة وبنك البركة الإسلامي ينظمان برنامجا لريادة الأعمال لأبناء الموظفين",
+      "page_num": 1,
+      "bytes": 53330,
+      "sha1": "28f81886e9e85dda76f806d251781c15abeeeb2b"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448470",
+      "title": "مركز البحرين العالمي للمعارض يواصل استعداداته لاستضافة كونجرس الاتحاد العالمي للمعارض UFI بنسخته الـ93",
+      "page_num": 1,
+      "bytes": 53937,
+      "sha1": "245a05888fbc820371acb92e8dc15b8e087fe22a"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448459",
+      "title": "يقام تحت رعاية الملكمعرض «صنع في الخليج 2026» يفتح التسجيل للمشاركة في نسخته الأولى في البحرين",
+      "page_num": 1,
+      "bytes": 52899,
+      "sha1": "35d9d05512df2baa243e26848ad760e4835ed0a7"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448438",
+      "title": "تطبيق ONE يطلق موظفه المدعوم بالذكاء الاصطناعي لمساعدة المستخدمين على معرفة منتجاته وخدماته",
+      "page_num": 1,
+      "bytes": 49895,
+      "sha1": "d563e95065700302403f2535874a55b59a2e829c"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448290",
+      "title": "1% من البشر يملكون 50% من ثروات العالم!د. جعفري: الثروات المستغلة في العالم 9% فقط.. والمشكلة هي نقل الموارد من المحتاج إلى غير المحتاج",
+      "page_num": 1,
+      "bytes": 64786,
+      "sha1": "162f6cb35cc8e32d4c844f5657c0a064b7fe4c9d"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448281",
+      "title": "«الصناعة والتجارة» و«غرفة البحرين» تطلقان حملة مشتركة لتحديث بيانات الأعضاء وتعزيز الخدمات الرقمية",
+      "page_num": 1,
+      "bytes": 52600,
+      "sha1": "5d08fd925d29c097e279491e189b446242a1c5bf"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448282",
+      "title": "شراكة حصرية بين «البحرين والكويت» و«بروبرتي فايندر» لتقديم تجربة رقمية متكاملة في التمويل العقاري",
+      "page_num": 1,
+      "bytes": 53906,
+      "sha1": "e285b5cae3c95ae415907f118282e35a14cad36f"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448283",
+      "title": "بنك السلام مديرا رئيسيا مشتركا ومديرا للاكتتاب في إصدار صكوك بقيمة 2.75 مليار دولار للشركة السعودية لإعادة التمويل العقاري",
+      "page_num": 1,
+      "bytes": 53317,
+      "sha1": "0037f37aaea8d6660d0c5276cf28c130564030fc"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448284",
+      "title": "وزيرة السياحة: اليوبيل الفضي للمجلس الأعلى للمرأة يجسد ربع قرن من العمل المؤسسي لتقدم المرأة",
+      "page_num": 1,
+      "bytes": 51733,
+      "sha1": "5adc0946c95e265902af08783e617e5260039fc3"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448285",
+      "title": "«المبرّة الخليفية» تطلق برنامجا متقدما في الأمن السيبراني لطلبة «رايات»",
+      "page_num": 1,
+      "bytes": 52041,
+      "sha1": "728ad1684df11cbd8b3860649a16862ad2024a8d"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448286",
+      "title": "جمعية مصارف البحرين تطلق النسخة الثانية من جوائز الابتكار الرقمي",
+      "page_num": 1,
+      "bytes": 53282,
+      "sha1": "c2bb76a54f34a8d17acc5c65d6eb0c470d65b334"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448287",
+      "title": "اليوبيل الفضي للمجلس الأعلى للمرأة..ربع قرن من الإنجاز وتعزيز إسهامات المرأة في التنمية الاقتصادية",
+      "page_num": 1,
+      "bytes": 61217,
+      "sha1": "2a9c82c43cf5d15cb109a4f560685dcf69a23907"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448288",
+      "title": "في إطار ترسيخ الشراكة الوطنية في تمكين الشباببنك البحرين الوطني يختتم مشاركته في مدينة شباب 2030",
+      "page_num": 1,
+      "bytes": 51323,
+      "sha1": "ef10550eb5c9586df120e29ef8f1755e7ed0a1d5"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448289",
+      "title": "مناقصات تتجاوز 2.2 مليون دينار تشمل رقمنة 3 ملايين وثيقة وطباعة مركزية وبرنامج هندسة كيميائية لبابكو",
+      "page_num": 1,
+      "bytes": 53283,
+      "sha1": "e56fa79bc75534cb81653ea8199adf8aae218517"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448291",
+      "title": "اطلعت على مراحل التنفيذ والإنجاز«التنظيم العقاري» تزور مشروعي «مراسي تيراسيز» و«أوركيد بيتش ريزيدنس»",
+      "page_num": 1,
+      "bytes": 52747,
+      "sha1": "27a297b09e8808e23a4b3978cca8ffcffa48ef01"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448292",
+      "title": "يشارك بكلمة افتتاحية في منتدى «منتجات رواد الأعمال العُمانيين» بصلالةالسلوم: تحويل العلاقات البحرينية العُمانية إلى فرص اقتصادية وشراكات ناجحة",
+      "page_num": 1,
+      "bytes": 54140,
+      "sha1": "9b83275296204f0f288890d10d69933b754242e6"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448206",
+      "title": "«الخدمة المدنية» و«Beyon Solutions» يوقعان اتفاقية لتعزيز التحول الرقمي في مجال الموارد البشرية الحكومية",
+      "page_num": 2,
+      "bytes": 55815,
+      "sha1": "5a34df3b26ad98c14f3e4c3303e38f24b883c54f"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448203",
+      "title": "بمناسبة اليوبيل الفضي لتأسيس المجلس.. فعاليات اقتصادية:«الأعلى للمرأة» رسّخ تقدم المرأة البحرينية وتمكينها اقتصاديا",
+      "page_num": 2,
+      "bytes": 68485,
+      "sha1": "a5956a1c458122c302c27c1380227b4ef8957b94"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448259",
+      "title": "بنك السلام مديرًا رئيسيًا مشتركًا ومديرًا للاكتتاب في إصدار صكوك بقيمة 2.75 مليار دولار أمريكي للشركة السعودية لإعادة التمويل العقاري",
+      "page_num": 2,
+      "bytes": 51238,
+      "sha1": "abd559b01dc83fe58cd1229cdd1b51fee7c641c2"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448204",
+      "title": "وزير الصناعة والتجارة: «الأعلى للمرأة» المحرك الأساسي لتمكين المرأة البحرينية في القطاع التجاري والاستثماري",
+      "page_num": 2,
+      "bytes": 52042,
+      "sha1": "257729f33eb87d0d5d6e572acce5ece45a4bad04"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448205",
+      "title": "وزير الصناعة والتجارة يستقبل السفيرة التركية لدى المملكة",
+      "page_num": 2,
+      "bytes": 50537,
+      "sha1": "7dc1ea2427d223825635a8d0e6a6df1c3859a3d1"
+    },
+    {
+      "id": 31,
+      "file": "article_0031.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448207",
+      "title": "نورة جمشير رئيسا تنفيذيا لشركة سينرجي للخدمات المشتركة",
+      "page_num": 2,
+      "bytes": 51697,
+      "sha1": "40e73cdacb3c8759f48cda9e4b76bb3e564f8817"
+    },
+    {
+      "id": 32,
+      "file": "article_0032.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448208",
+      "title": "Bede تطلق حملة العودة إلى المدارس لتوفير حلول تمويل للمستلزمات والرسوم الدراسية",
+      "page_num": 2,
+      "bytes": 51353,
+      "sha1": "fa1c0e2a687f762676278ba40ae4807d787c9073"
+    },
+    {
+      "id": 33,
+      "file": "article_0033.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448209",
+      "title": "جمعية حفظ النعمة وبنك الطعام السعودي يوسعان نطاق التعاون للحد من هدر الطعام",
+      "page_num": 2,
+      "bytes": 53362,
+      "sha1": "83069fda0dceddc2be3fb9ff8963b40a5f5d04c4"
+    },
+    {
+      "id": 34,
+      "file": "article_0034.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448210",
+      "title": "واردات البحرين تتجاوز 2.68 مليار دينار في 7 أشهر..الواردات تقفز إلى 437.9 مليون دينار في يوليو",
+      "page_num": 2,
+      "bytes": 54291,
+      "sha1": "39c7eeee0fdb8e5529b11b83f853c2789f3ddbf5"
+    },
+    {
+      "id": 35,
+      "file": "article_0035.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448075",
+      "title": "الذهب عيار 21 يسجل مستوى جديدا ويتجاوز 49 دينارا للجراممشتريات البنوك المركزية واستمرار الطلب على الذهب كملاذ آمن يدعمان السعر",
+      "page_num": 2,
+      "bytes": 52412,
+      "sha1": "ac5893823b27fc2215648e49d7755ee58f2147b4"
+    },
+    {
+      "id": 36,
+      "file": "article_0036.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448078",
+      "title": "بمناسبة اليوبيل الفضي لتأسيس المجلس الأعلى للمرأةكانو: المرأة البحرينية شريك رئيسي في نمو القطاع الخاص وتعزيز تنافسية الاقتصاد الوطني",
+      "page_num": 2,
+      "bytes": 53222,
+      "sha1": "5d612ac7ed07add8833d373c3a5038def21f197d"
+    },
+    {
+      "id": 37,
+      "file": "article_0037.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448090",
+      "title": "كيف تغيِّر الأزمات سلوك المستهلكين؟ 2-2لماذا يمتلك المستهلك الخليجي مساحة أوسع للمناورة وقت الأزمات؟",
+      "page_num": 2,
+      "bytes": 73825,
+      "sha1": "e650c14ad55d9508cb48e6358b6a5e41860e301c"
+    },
+    {
+      "id": 38,
+      "file": "article_0038.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448082",
+      "title": "الرئيس التنفيذي لبنك البحرين للتنمية:اليوبيل الفضي للمجلس الأعلى للمرأة يجسد مسيرة وطنية رائدة في تقدم المرأة البحرينية",
+      "page_num": 2,
+      "bytes": 52511,
+      "sha1": "0e4f7e395f806988cce093a9185c9457794c56ad"
+    },
+    {
+      "id": 39,
+      "file": "article_0039.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448084",
+      "title": "تعاون بين زين البحرين و«شرف دي جي» لتوفير حلول دفع مرنة للعملاء",
+      "page_num": 2,
+      "bytes": 52662,
+      "sha1": "f6408e28a52b1ccc296484f7f2f6eb2860fa068b"
+    },
+    {
+      "id": 40,
+      "file": "article_0040.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1448083",
+      "title": "اتفاقية التجارة في الخدمات والاستثمار بين الإمارات وروسيا تدخل حيز التنفيذ",
+      "page_num": 2,
+      "bytes": 51797,
+      "sha1": "0bcf11aaf9c02f4bf59fb8307b5b949fc705a788"
+    },
+    {
+      "id": 41,
+      "file": "article_0041.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447901",
+      "title": "بابكو إنرجيز تتبنى رحلة متواصلة من التطوير احتفاء باليوبيل الفضي لتأسيس المجلس الأعلى للمرأة..مارك توماس: 25 عاما من الإنجازات عززت حضور المرأة البحرينية في مواقع القيادة وصنع القرار",
+      "page_num": 2,
+      "bytes": 53677,
+      "sha1": "137c6a0af580ccd6ee04b255ea0d3579da730a18"
+    },
+    {
+      "id": 42,
+      "file": "article_0042.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447902",
+      "title": "مركز البحرين العالمي للمعارض يفوز بجائزة «أفضل مركز بمساحة تتجاوز 10,000 متر مربع» ضمن جوائز «ميدل إيست إيفنت» في دبي",
+      "page_num": 2,
+      "bytes": 53125,
+      "sha1": "ed16453781ee2c2ffec6d291626df520e033134d"
+    },
+    {
+      "id": 43,
+      "file": "article_0043.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447903",
+      "title": "بنك البحرين الوطني يكافئ العملاء بجوائز نقدية قيّمة عند استخدام تطبيقه الرقمي",
+      "page_num": 2,
+      "bytes": 51677,
+      "sha1": "ce20cb537b9e2aa5a1e64dec7ab1690f6c6b610d"
+    },
+    {
+      "id": 44,
+      "file": "article_0044.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447905",
+      "title": "وكيل شؤون الموانئ والملاحة البحرية يترأس اجتماع لجنة مسؤولي سلطات الموانئ والإدارات البحرية بدول مجلس التعاون",
+      "page_num": 2,
+      "bytes": 52057,
+      "sha1": "1fde6ee2fa7c99daffc1b8364aa5f38dcb2388ea"
+    },
+    {
+      "id": 45,
+      "file": "article_0045.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447907",
+      "title": "عرض فترة محدودة حتى 31 أغسطس 2026بنك البحرين والكويت في الهند يقدم للهنود غير المقيمين عائدا سنويا 6.5% على ودائع الدولار",
+      "page_num": 2,
+      "bytes": 54564,
+      "sha1": "e909f18ba35ed1472f0530ef2cc4dfd8213ae276"
+    },
+    {
+      "id": 46,
+      "file": "article_0046.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447906",
+      "title": "Stc البحرين تعيِّن خالد عاليه رئيسا للقطاع الرقمي وتجربة العملاء",
+      "page_num": 2,
+      "bytes": 50724,
+      "sha1": "d37af1c83b7d3a29f12fd151494efeff6f198648"
+    },
+    {
+      "id": 47,
+      "file": "article_0047.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447904",
+      "title": "3.87 ملايين دينار أكبر عطاء لمجمع البحرين الدبلوماسي في الدوحة",
+      "page_num": 2,
+      "bytes": 51902,
+      "sha1": "4668b01dff423c3457f33929dfdbed064874dfa4"
+    },
+    {
+      "id": 48,
+      "file": "article_0048.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447805",
+      "title": "ارتفاع أسعار القرطاسية 50%.. والمواد البلاستيكية تتجاوز 60 %الشحن يرفع كلفة المستلزمات المدرسية",
+      "page_num": 2,
+      "bytes": 57587,
+      "sha1": "0eb487f45733711d802b648a82aa25e94776f924"
+    },
+    {
+      "id": 49,
+      "file": "article_0049.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447799",
+      "title": "كيف تغير الأزمات سلوك المستهلكين؟ 1-2تحول هيكلي في قرارات الشراء وإعادة رسم خريطة الإنفاق",
+      "page_num": 2,
+      "bytes": 64857,
+      "sha1": "229c4157e66124e27a850da5ede0f329266901de"
+    },
+    {
+      "id": 50,
+      "file": "article_0050.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447800",
+      "title": "خلال زيارة ميدانية شملت جلسة حوارية وجولة في سوق القيصرية.. كانو:الحفاظ على هوية سوق المحرق وتطويره يعززان مكانته كوجهة تجارية وسياحية",
+      "page_num": 2,
+      "bytes": 54166,
+      "sha1": "dd21a4ff8d8a833a3f67c3e0ac26cca1ac5e0e1c"
+    },
+    {
+      "id": 51,
+      "file": "article_0051.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447801",
+      "title": "وزير المالية والاقتصاد الوطني يستقبل وكيل الأمين العام للأمم المتحدة الأمين التنفيذي للإسكوا",
+      "page_num": 3,
+      "bytes": 51234,
+      "sha1": "8fbb8c97b2540d789ca6cb84675ba6666b74483e"
+    },
+    {
+      "id": 52,
+      "file": "article_0052.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447802",
+      "title": "وزير الصناعة والتجارة يستقبل وكيل الأمين العام للأمم المتحدة والأمين التنفيذي للإسكوا",
+      "page_num": 3,
+      "bytes": 50555,
+      "sha1": "446d0dda0054c95e138cdc3dc93d6a2a1a00e20c"
+    },
+    {
+      "id": 53,
+      "file": "article_0053.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447806",
+      "title": "بنك السلام يتعاون مع «صندوق الأمل» لتقديم برنامج مكافآت الولاء الوظيفي لموظفيه",
+      "page_num": 3,
+      "bytes": 52908,
+      "sha1": "1d519f4a71a52002dea473dcfa2b1e11c5591b8f"
+    },
+    {
+      "id": 54,
+      "file": "article_0054.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447807",
+      "title": "في حفل توقيع إصدارات النسخة الثانية:بنك البحرين الإسلامي يحتفي بمبدعي «نكتب بالعربية»",
+      "page_num": 3,
+      "bytes": 54265,
+      "sha1": "57c3fa777de2db4f59af7758bbd77f45e6c41c74"
+    },
+    {
+      "id": 55,
+      "file": "article_0055.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447808",
+      "title": "OneCX من زين البحرين تنضم إلى برنامج Text Solution Partner لتعزيز دعم العملاء باستخدام الذكاء الاصطناعي",
+      "page_num": 3,
+      "bytes": 52170,
+      "sha1": "51c67e3d349eb8cdae7f09322b99de948b71f1ed"
+    },
+    {
+      "id": 56,
+      "file": "article_0056.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447809",
+      "title": "البحرين للتسهيلات التجارية تطلق برنامج «بداية» للتدريب الصيفي 2026",
+      "page_num": 3,
+      "bytes": 51764,
+      "sha1": "0787d97ac7288770360fe3602074e0c2d591cfe1"
+    },
+    {
+      "id": 57,
+      "file": "article_0057.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447696",
+      "title": "بنك الكويت الوطني – البحرين يحقق أرباحا صافية بقيمة 160.45 مليون دولار في النصف الأول من 2026",
+      "page_num": 3,
+      "bytes": 54320,
+      "sha1": "887e895ddc16694acd2841aeeb4c3036e0f026b9"
+    },
+    {
+      "id": 58,
+      "file": "article_0058.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447699",
+      "title": "الصادرات البحرينية تتجاوز 1.95 مليار دينار في النصف الأول  الألمنيوم والحديد في مقدمة الصادرات",
+      "page_num": 3,
+      "bytes": 53857,
+      "sha1": "509872b952bf1a488b2b59ecbbd5e51c818c2ada"
+    },
+    {
+      "id": 59,
+      "file": "article_0059.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447782",
+      "title": "بنك السلام يتعاون مع «صندوق الأمل» لتقديم برنامج مكافآت الولاء الوظيفي لموظفيه",
+      "page_num": 3,
+      "bytes": 49881,
+      "sha1": "f474d42986a97a6b89015ee3f3a6afe2b191d04d"
+    },
+    {
+      "id": 60,
+      "file": "article_0060.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447697",
+      "title": "Stc البحرين تعزز تجربة الطلبة بطرح باقة تجمع بين الضمان الممتد والحماية السيبرانية",
+      "page_num": 3,
+      "bytes": 51710,
+      "sha1": "6af231723b99c8bc0caf836b05edd9ade5697b95"
+    },
+    {
+      "id": 61,
+      "file": "article_0061.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447700",
+      "title": "وزارة الصناعة والتجارة تواصل تنفيذ النسخة الخامسة من مبادرة «صديق المستهلك» مع العودة إلى المدارس",
+      "page_num": 3,
+      "bytes": 1021,
+      "sha1": "d222633e3b02f8b652bd658c3d890010c84b85fb"
+    },
+    {
+      "id": 62,
+      "file": "article_0062.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447701",
+      "title": "«بنفت» تطلق خدمة الخصم المباشر الرقمي لتطوير منظومة الإقراض في مملكة البحرين",
+      "page_num": 3,
+      "bytes": 1021,
+      "sha1": "d222633e3b02f8b652bd658c3d890010c84b85fb"
+    },
+    {
+      "id": 63,
+      "file": "article_0063.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447702",
+      "title": "شركة البحرين البحرية القابضة تعلن تعيين مجلس إدارتها وتوحيد أصولها البحرية",
+      "page_num": 3,
+      "bytes": 1021,
+      "sha1": "d222633e3b02f8b652bd658c3d890010c84b85fb"
+    },
+    {
+      "id": 64,
+      "file": "article_0064.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447705",
+      "title": "بنك «إلى» يحصد لقب «أفضل نيو بنك للعام في الشرق الأوسط»",
+      "page_num": 3,
+      "bytes": 1021,
+      "sha1": "d222633e3b02f8b652bd658c3d890010c84b85fb"
+    },
+    {
+      "id": 65,
+      "file": "article_0065.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447707",
+      "title": "«تمكين» يعلن تمديد فترة التقديم على برنامج «مساندة» حتى 30 سبتمبر مع زيادة فترة دعم النفقات التشغيلية",
+      "page_num": 3,
+      "bytes": 1021,
+      "sha1": "d222633e3b02f8b652bd658c3d890010c84b85fb"
+    },
+    {
+      "id": 66,
+      "file": "article_0066.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447708",
+      "title": "شارك الشرق الأوسط بنسبة 30% تقريبا من عدد الحضور في دورة العام الماضيفي مؤتمر قطاع الاجتماعات والحوافز والمؤتمرات والمعارض العالمي في موسكو",
+      "page_num": 3,
+      "bytes": 1021,
+      "sha1": "d222633e3b02f8b652bd658c3d890010c84b85fb"
+    },
+    {
+      "id": 67,
+      "file": "article_0067.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447709",
+      "title": "زين البحرين تزور مدينة شباب 2030 وتطلع على أبرز برامجها ومبادراتها",
+      "page_num": 3,
+      "bytes": 1021,
+      "sha1": "d222633e3b02f8b652bd658c3d890010c84b85fb"
+    },
+    {
+      "id": 68,
+      "file": "article_0068.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447711",
+      "title": "تغطية إصدارات أذونات  الخزانة الحكومية – 12 شهرا",
+      "page_num": 3,
+      "bytes": 1021,
+      "sha1": "d222633e3b02f8b652bd658c3d890010c84b85fb"
+    },
+    {
+      "id": 69,
+      "file": "article_0069.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447713",
+      "title": "بورصة البحرين تنظم ورشة متخصصة في الذكاء الاصطناعي",
+      "page_num": 3,
+      "bytes": 1021,
+      "sha1": "d222633e3b02f8b652bd658c3d890010c84b85fb"
+    },
+    {
+      "id": 70,
+      "file": "article_0070.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447633",
+      "title": "غرفة البحرين تختتم النسخة الخامسة من «جرب تشتغل» بمشاركة 60 طالبا وطالبة«جرب تشتغل» يسجل نموا بنسبة 87.5% في أعداد المشاركين خلال عام واحد",
+      "page_num": 3,
+      "bytes": 1021,
+      "sha1": "d222633e3b02f8b652bd658c3d890010c84b85fb"
+    },
+    {
+      "id": 71,
+      "file": "article_0071.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447635",
+      "title": "القمة العالمية للاستثمار: 20.27 مليار دولار استثمارات خليجية متوقعة في المياه والاقتصاد الدائري واللوجستيات بحلول 2030",
+      "page_num": 3,
+      "bytes": 1021,
+      "sha1": "d222633e3b02f8b652bd658c3d890010c84b85fb"
+    },
+    {
+      "id": 72,
+      "file": "article_0072.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447629",
+      "title": "10.9 ملايين دينار أعلى عطاء لإنشاء مدرسة ابتدائية للبنين في شرق الحد",
+      "page_num": 3,
+      "bytes": 1021,
+      "sha1": "d222633e3b02f8b652bd658c3d890010c84b85fb"
+    },
+    {
+      "id": 73,
+      "file": "article_0073.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447630",
+      "title": "زيارة الملك لمدينة شباب 2030 تجسد الثقة بقدرات الشباب البحريني",
+      "page_num": 3,
+      "bytes": 1021,
+      "sha1": "d222633e3b02f8b652bd658c3d890010c84b85fb"
+    },
+    {
+      "id": 74,
+      "file": "article_0074.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447631",
+      "title": "«الغرفة» تكرّم ليلى الشكر وسارة وحيد تقديرا لإسهاماتهما في تطوير العمل المؤسسي",
+      "page_num": 3,
+      "bytes": 1021,
+      "sha1": "d222633e3b02f8b652bd658c3d890010c84b85fb"
+    },
+    {
+      "id": 75,
+      "file": "article_0075.html",
+      "url": "https://akhbar-alkhaleej.com/news/article/1447634",
+      "title": "stc البحرين تعلن تأهل نخبة من الشركات الناشئة للمرحلة النهائية لبرنامج inspireU",
+      "page_num": 3,
+      "bytes": 1021,
+      "sha1": "d222633e3b02f8b652bd658c3d890010c84b85fb"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 3,
+    "articles": 75,
+    "article_fetch_failures": 0
+  }
+}

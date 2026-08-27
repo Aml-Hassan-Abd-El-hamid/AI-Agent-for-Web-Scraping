@@ -1,0 +1,383 @@
+{
+  "website": "techcrunch",
+  "snapshot_date": "2026-08-27T04:04:51",
+  "pagination_type": "load more button",
+  "scroll_mode": "load_more",
+  "scroll_rounds_requested": 2,
+  "load_more_selector": null,
+  "listing_url": "https://techcrunch.com/category/artificial-intelligence/",
+  "input_urls": [
+    "https://techcrunch.com/category/artificial-intelligence/"
+  ],
+  "pagination_pattern": null,
+  "requirements": "title, date, author, article body text",
+  "run_dir": "orch_runs/run_20260827_035702",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://techcrunch.com/category/artificial-intelligence/",
+      "file": "listing_page_001.html",
+      "bytes": 323138,
+      "sha1": "4073e7e308605338619eb43f354ed645c210b39a"
+    },
+    {
+      "page_num": 1,
+      "url": "https://techcrunch.com/category/artificial-intelligence/",
+      "file": "listing_page_001_expanded.html",
+      "bytes": 319076,
+      "sha1": "1865187ce058a2f98d386b8a6d672a6ae0d6e80e",
+      "expanded": true
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://techcrunch.com/2026/08/26/viral-ai-startup-instinct-has-raised-350-million-at-a-2-5-billion-valuation/",
+      "title": "Viral AI startup Instinct has raised $350 million at a $2.5 billion valuation",
+      "page_num": 1,
+      "bytes": 212792,
+      "sha1": "70c5f03d1f8b56fefbb84ec27eca9e0512793f75"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://techcrunch.com/2026/08/26/bill-gates-wants-to-see-a-robot-tax-and-human-reserved-jobs-to-mitigate-harms-from-ai/",
+      "title": "Bill Gates wants to see a robot tax and ‘Human Reserved’ jobs to mitigate harms from AI",
+      "page_num": 1,
+      "bytes": 212835,
+      "sha1": "50091c0f2b6a482127e524da15f49b6f200dd0e1"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://techcrunch.com/2026/08/26/surprise-z-ai-is-the-ai-lab-behind-the-mysterious-ox-alpha-model/",
+      "title": "Surprise: Z.ai is the AI lab behind the mysterious Ox Alpha model",
+      "page_num": 1,
+      "bytes": 213594,
+      "sha1": "125fc81a77c47e56bb76134b90bcc0702eb9b26e"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://techcrunch.com/2026/08/24/situational-awareness-star-ai-hedge-fund-that-nearly-imploded-now-being-probed-by-the-sec/",
+      "title": "Situational Awareness, star AI hedge fund that nearly imploded, now being probed by the SEC",
+      "page_num": 1,
+      "bytes": 216396,
+      "sha1": "6b16adad4e21c000c8d3893e59be0db5c5fcaf23"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://techcrunch.com/2026/08/24/trump-bought-spacex-shares-two-weeks-after-blockbuster-ipo/",
+      "title": "Trump bought SpaceX shares two weeks after blockbuster IPO",
+      "page_num": 1,
+      "bytes": 214307,
+      "sha1": "fc8cee700e9f589d44ec9f90e127748bd78ead0d"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://techcrunch.com/events/techcrunch-disrupt/",
+      "title": "Amjad Masad, CEO and co-founder of Replit, joins the Disrupt Stage at TechCrunch Disrupt 2026",
+      "page_num": 1,
+      "bytes": 375219,
+      "sha1": "4dd7e1228ebda2623bb70f3345944ad0f58e7b0d"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://techcrunch.com/2026/08/25/fitbit-founders-launch-luffu-link-an-lte-health-and-safety-band/",
+      "title": "Fitbit founders launch Luffu Link, an LTE health and safety band",
+      "page_num": 1,
+      "bytes": 239521,
+      "sha1": "352e3df411d9c2986864d5c355b14770ed300bcb"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://techcrunch.com/2026/08/22/two-years-after-launch-walmarts-flipkart-is-closing-in-on-indias-quick-commerce-leaders/",
+      "title": "Two years after launch, Walmart’s Flipkart is closing in on India’s quick-commerce leaders",
+      "page_num": 1,
+      "bytes": 239501,
+      "sha1": "db0ace810c4af016db4f613f39950d1457a93136"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://techcrunch.com/2026/08/22/inherent-founded-by-deepmind-alumni-says-its-ai-teammate-just-outperformed-anthropic-and-openai-at-replicating-research/",
+      "title": "Inherent, founded by DeepMind alumni, says its AI ‘teammate’ just outperformed Anthropic and OpenAI at replicating research",
+      "page_num": 1,
+      "bytes": 241287,
+      "sha1": "44f20ac635fc0154144a5344614acce411259d14"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://techcrunch.com/2026/08/21/michael-polansky-is-training-an-ai-model-on-skin-thats-still-alive/",
+      "title": "Michael Polansky is training an AI model on skin that’s still alive",
+      "page_num": 1,
+      "bytes": 249075,
+      "sha1": "b062e7eb41555fe67e3637bc0e80065a9052a537"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://techcrunch.com/2026/08/21/how-ai-accounting-startup-rillet-raised-100m-and-became-a-unicorn-in-48-hours/",
+      "title": "How AI accounting startup Rillet raised $100M and became a unicorn in 48 hours",
+      "page_num": 1,
+      "bytes": 240244,
+      "sha1": "6ed16f4c5234cc2c2f2abac5968cf3cfbc09ad9e"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://techcrunch.com/2026/08/21/teslas-solar-roof-is-dead-heres-what-went-wrong/",
+      "title": "Tesla’s solar roof is dead — here’s what went wrong",
+      "page_num": 1,
+      "bytes": 234732,
+      "sha1": "ee5c4982c4e642f13da164ef76228850ef8b962d"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://techcrunch.com/2026/08/21/oura-faces-lawsuit-accusing-it-of-misleading-consumers-about-sleep-tracking-accuracy/",
+      "title": "Oura faces lawsuit accusing it of misleading consumers about sleep-tracking accuracy",
+      "page_num": 1,
+      "bytes": 235782,
+      "sha1": "458bb91a94c4be20b4bb024ae046ce799a918e3e"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://techcrunch.com/2026/08/26/amazon-just-tripled-its-order-of-nvidia-chips-over-surging-demand/",
+      "title": "Amazon just tripled its order of Nvidia chips over ‘surging demand’",
+      "page_num": 1,
+      "bytes": 241899,
+      "sha1": "56461796f9bc50058f0f7806b981bfa247cfb01b"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://techcrunch.com/2026/08/26/anthropic-continues-compute-gobbling-streak-in-45-billion-deal-with-nscale/",
+      "title": "Anthropic continues compute-gobbling streak in $45B deal with Nscale",
+      "page_num": 1,
+      "bytes": 231254,
+      "sha1": "60f105ee4fcf78320d36269db62bdbd719f9edab"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://techcrunch.com/2026/08/26/googles-gemini-has-a-branding-problem-and-so-does-the-rest-of-ai/",
+      "title": "Google’s Gemini has a branding problem, and so does the rest of AI",
+      "page_num": 1,
+      "bytes": 235534,
+      "sha1": "7c6923e1c0ae245e486a16d2df571cbd43e6cee0"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://techcrunch.com/2026/08/26/how-do-we-explain-openais-executive-exodus/",
+      "title": "How do we explain OpenAI’s executive exodus?",
+      "page_num": 1,
+      "bytes": 232564,
+      "sha1": "0d800824cb31b9afb3157b20bd6afed86783ccb9"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://techcrunch.com/2026/08/26/openai-releases-its-official-report-on-the-hugging-face-breach/",
+      "title": "OpenAI releases its official report on the Hugging Face breach",
+      "page_num": 1,
+      "bytes": 231945,
+      "sha1": "227432ee77aa13e52a850a56ddf84d90648f9d8c"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://techcrunch.com/2026/08/26/radar-makes-podcasts-searchable-and-usable-by-ai-agents/",
+      "title": "Radar makes podcasts searchable — and usable by AI agents",
+      "page_num": 1,
+      "bytes": 244032,
+      "sha1": "768a15837a6bc36b6f31fc47862044c930e54bab"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://techcrunch.com/2026/08/26/ex-meta-scientists-want-to-bring-visual-ai-to-the-factory-floor/",
+      "title": "Ex-Meta scientists want to bring visual AI to the factory floor",
+      "page_num": 1,
+      "bytes": 233677,
+      "sha1": "8d5d967d6d9f41c25b74c3a933e6edcf66d75bfa"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://techcrunch.com/2026/08/26/robot-brain-builders-are-pushing-out-of-their-gpt-2-era/",
+      "title": "Robot brain builders are pushing out of their GPT-2 era",
+      "page_num": 1,
+      "bytes": 236163,
+      "sha1": "92ba9f1a269e3254e8663fbd08e6f151bd11623a"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://techcrunch.com/2026/08/26/querystory-wants-you-to-believe-what-ai-is-telling-you/",
+      "title": "QueryStory wants you to believe what AI is telling you",
+      "page_num": 1,
+      "bytes": 244941,
+      "sha1": "23e2c165b650df7fdbd339df1b6d367ffc787405"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://techcrunch.com/2026/08/26/arga-is-building-a-better-way-to-train-enterprise-ai-agents/",
+      "title": "Arga Labs is building a better way to train enterprise AI agents",
+      "page_num": 1,
+      "bytes": 231862,
+      "sha1": "5f4de29160bc31b456a76a4f91be3b4bd2827c33"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://techcrunch.com/2026/08/26/hearing-tech-startup-legato-emerges-from-stealth-with-12m-and-a-peek-at-its-ai-hearing-glasses/",
+      "title": "Hearing tech startup Legato emerges from stealth with $12M and a peek at its AI hearing glasses",
+      "page_num": 1,
+      "bytes": 242595,
+      "sha1": "2659a9e5ef16a191688d5c4dda52b41a84772878"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://techcrunch.com/2026/08/26/runable-hits-21m-to-bet-ai-agents-can-go-from-building-businesses-to-growing-them/",
+      "title": "Runable hits $21M to bet AI agents can go from building businesses to growing them",
+      "page_num": 1,
+      "bytes": 237792,
+      "sha1": "e9727c45a3990c7e506645aa21000a1bbadd8647"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://techcrunch.com/2026/08/25/indias-ringg-gets-backing-from-peak-xv-as-it-pushes-voice-ai-past-the-phone-call/",
+      "title": "India’s Ringg gets backing from Peak XV as it pushes voice AI past the phone call",
+      "page_num": 1,
+      "bytes": 236309,
+      "sha1": "e0fe3b7f3352e70b4ba5eef8a18e4937995bb760"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://techcrunch.com/2026/08/25/robotics-startup-generalist-reaches-3b-valuation-sources-say/",
+      "title": "Robotics startup Generalist reaches $3B valuation, sources say",
+      "page_num": 1,
+      "bytes": 230444,
+      "sha1": "f4eb2c21775a355fc0a0383120ebb0b3d1db7bea"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://techcrunch.com/2026/08/25/openai-loses-a-top-data-center-exec-as-stream-of-high-profile-departures-continues/",
+      "title": "OpenAI loses a top data center exec as stream of high-profile departures continues",
+      "page_num": 1,
+      "bytes": 236661,
+      "sha1": "1e7b7680f6888d1554cf568802daaaca98d7baac"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://techcrunch.com/2026/08/25/stability-ai-maker-of-image-generator-stable-diffusion-raises-76-million-in-fresh-funding/",
+      "title": "Stability AI, maker of image generator Stable Diffusion, raises $76 million in fresh funding",
+      "page_num": 1,
+      "bytes": 231092,
+      "sha1": "c9631127bb59e7ea690ef1923ffc56261aa1143d"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://techcrunch.com/2026/08/25/claude-cowork-finally-remembers-what-you-told-the-app-in-chat/",
+      "title": "Claude Cowork finally remembers what you told the app in chat",
+      "page_num": 1,
+      "bytes": 236639,
+      "sha1": "5c276974dc8d5ee1627e577035bdda5e6acfac49"
+    },
+    {
+      "id": 31,
+      "file": "article_0031.html",
+      "url": "https://techcrunch.com/2026/08/25/gamma-acquires-accel-backed-design-startup-lica/",
+      "title": "Gamma acquires Accel-backed design startup Lica",
+      "page_num": 1,
+      "bytes": 233534,
+      "sha1": "daf516b5cac4fd2bfda6424cc568f488c8d5ce9e"
+    },
+    {
+      "id": 32,
+      "file": "article_0032.html",
+      "url": "https://techcrunch.com/2026/08/25/openais-jalapeno-chip-is-built-for-fast-inference-at-scale-benchmarks-show/",
+      "title": "OpenAI’s Jalapeño chip is built for fast inference at scale, benchmarks show",
+      "page_num": 1,
+      "bytes": 229937,
+      "sha1": "0f991e9f39392def691bb1072b57e53efd473493"
+    },
+    {
+      "id": 33,
+      "file": "article_0033.html",
+      "url": "https://techcrunch.com/2026/08/25/accel-backed-keenable-is-indexing-the-web-for-ai-agents/",
+      "title": "Accel-backed Keenable is indexing the web for AI agents",
+      "page_num": 1,
+      "bytes": 235486,
+      "sha1": "40656f91e22a2810fd738df8ba4acd0c7fb73f37"
+    },
+    {
+      "id": 34,
+      "file": "article_0034.html",
+      "url": "https://techcrunch.com/2026/08/25/the-world-seems-to-be-ready-an-interview-with-openai-head-of-product-thibault-sottiaux/",
+      "title": "‘The world seems to be ready’: An interview with OpenAI head of product Thibault Sottiaux",
+      "page_num": 1,
+      "bytes": 238873,
+      "sha1": "0caaae784f793ea046087423513dab66bf2fe3a8"
+    },
+    {
+      "id": 35,
+      "file": "article_0035.html",
+      "url": "https://techcrunch.com/2026/08/24/amjad-masad-ceo-and-co-founder-of-replit-joins-the-disrupt-stage-at-techcrunch-disrupt-2026/",
+      "title": "Amjad Masad, CEO and co-founder of Replit, joins the Disrupt Stage at TechCrunch Disrupt 2026",
+      "page_num": 1,
+      "bytes": 236057,
+      "sha1": "4bdde1ec5f78d7717e8458e0966461e1fe7d6471"
+    },
+    {
+      "id": 36,
+      "file": "article_0036.html",
+      "url": "https://techcrunch.com/2026/08/24/instincts-powerful-ai-assistant-is-raising-privacy-and-security-concerns/",
+      "title": "Instinct’s powerful AI assistant is raising privacy and security concerns",
+      "page_num": 1,
+      "bytes": 247519,
+      "sha1": "89b1c95f5efa3a3d3e04642b94db7c332739e64f"
+    },
+    {
+      "id": 37,
+      "file": "article_0037.html",
+      "url": "https://techcrunch.com/2026/08/24/valor-point72-back-general-intuition-at-6b-valuation-as-ai-startup-pushes-into-robotics/",
+      "title": "Valor, Point72 back General Intuition at $6B valuation as AI startup pushes into robotics",
+      "page_num": 1,
+      "bytes": 235536,
+      "sha1": "34df01602fea75d5f35af30d5c019177ee30a448"
+    },
+    {
+      "id": 38,
+      "file": "article_0038.html",
+      "url": "https://techcrunch.com/2026/08/24/openai-is-building-an-ai-agent-for-everything-will-everyone-use-them/",
+      "title": "OpenAI is building AI agents for everything. Will everyone use them?",
+      "page_num": 1,
+      "bytes": 255337,
+      "sha1": "9205acb68362a9ab72bc95ac61dd0c0c7debed15"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 2,
+    "articles": 38,
+    "article_fetch_failures": 0
+  }
+}

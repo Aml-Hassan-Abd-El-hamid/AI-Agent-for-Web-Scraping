@@ -1,0 +1,318 @@
+{
+  "website": "litreactor",
+  "snapshot_date": "2026-08-27T08:41:14",
+  "pagination_type": "numbered pagination",
+  "scroll_mode": null,
+  "scroll_rounds_requested": null,
+  "load_more_selector": null,
+  "listing_url": "https://litreactor.com/columns/",
+  "input_urls": [
+    "https://litreactor.com/columns/",
+    "https://litreactor.com/columns/page/2"
+  ],
+  "pagination_pattern": "https://litreactor.com/columns/page/{page}",
+  "requirements": "title, author, article body text",
+  "run_dir": "orch_runs/run_20260827_083103",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://litreactor.com/columns/",
+      "file": "listing_page_001.html",
+      "bytes": 46321,
+      "sha1": "a5479eeff7563c9c19d94145cea4acc491c828cc"
+    },
+    {
+      "page_num": 2,
+      "url": "https://litreactor.com/columns/page/2",
+      "file": "listing_page_002.html",
+      "bytes": 54334,
+      "sha1": "26430b8821bc047a2f8e0255d206f5800bc7be80"
+    },
+    {
+      "page_num": 3,
+      "url": "https://litreactor.com/columns/page/3",
+      "file": "listing_page_003.html",
+      "bytes": 55137,
+      "sha1": "63e50ef292ea76d5e97e33e64d0c406dd4596e92"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://litreactor.com/columns/book-cover-design-services/",
+      "title": "7 Best Book Cover Design Services for Authors in 2026",
+      "page_num": 1,
+      "bytes": 67218,
+      "sha1": "09a0190eb1a6b522d8c46acc6219373b22590330"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://litreactor.com/columns/human-editors-vs-ai-editing/",
+      "title": "Human Editors vs AI Editing: What AI Still Can’t Do",
+      "page_num": 1,
+      "bytes": 50971,
+      "sha1": "a43e35e594d09a2c651ad22e255e97c65873fa6c"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://litreactor.com/columns/the-best-book-formatting-software-7-tools-compared/",
+      "title": "The Best Book Formatting Software: 7 Tools Compared",
+      "page_num": 1,
+      "bytes": 61580,
+      "sha1": "38f7383997c0553017e1facd77cc279a31c24ba4"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://litreactor.com/columns/best-books-about-book-marketing/",
+      "title": "The 5 Best Books About Book Marketing",
+      "page_num": 1,
+      "bytes": 53652,
+      "sha1": "cd82a84284374abfbe2dbd7dd0fc87f4d11d7488"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://litreactor.com/columns/the-9-best-writing-tools-for-2026/",
+      "title": "The 9 Best Writing Tools for 2026",
+      "page_num": 1,
+      "bytes": 82342,
+      "sha1": "0582812e1963a4adb087e93647f79bb9f9c1655a"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://litreactor.com/columns/goodreads-for-authors/",
+      "title": "Goodreads for Authors: How to Utilize The World’s Largest Reader Community",
+      "page_num": 1,
+      "bytes": 54803,
+      "sha1": "6d08cf9950ca89918800a99879e00d9c9f6585f3"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://litreactor.com/columns/how-to-write-a-fable/",
+      "title": "How To Write a Fable in 6 Simple Steps",
+      "page_num": 1,
+      "bytes": 57647,
+      "sha1": "5db5dac6ec71fb4464790619618932a4297666f6"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://litreactor.com/columns/what-we-can-know-review/",
+      "title": "\"What We Can Know\" Threads Literary Mystery Into a Dystopian Future",
+      "page_num": 1,
+      "bytes": 50096,
+      "sha1": "25cd508dbdf2915afeea7116c92d846cb1bfe41b"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://litreactor.com/columns/high-fantasy-vs-low-fantasy/",
+      "title": "High Fantasy vs Low Fantasy: What’s the Difference?",
+      "page_num": 1,
+      "bytes": 62687,
+      "sha1": "da2d60e747531d36a0be71c7785dc66370ee4b8b"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://litreactor.com/columns/culling-the-classics-das-kapital/",
+      "title": "Culling The Classics: Das Kapital",
+      "page_num": 1,
+      "bytes": 53507,
+      "sha1": "97514fff155689c586f4adbe2202b921ed5c2d9c"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://litreactor.com/columns/freelance-book-editors/",
+      "title": "15 Freelance Book Editors for Hire in 2025",
+      "page_num": 2,
+      "bytes": 60933,
+      "sha1": "eb617c9ac9bc5bd50070f9627cd80521839e8f01"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://litreactor.com/columns/how-to-find-your-voice-in-writing/",
+      "title": "How to Find Your Voice As a Writer: 5 Key Tips",
+      "page_num": 2,
+      "bytes": 50690,
+      "sha1": "9248a9262849ec0be52a4c99346cd95c889aecc8"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://litreactor.com/columns/character-personalities/",
+      "title": "Character Personalities: How to Build Characters in 7 Steps",
+      "page_num": 2,
+      "bytes": 55950,
+      "sha1": "737673ba7a139a4d9c1c916edbb05ae97265248f"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://litreactor.com/columns/will-ai-replace-writers/",
+      "title": "Will AI Replace Writers? One Author’s Perspective",
+      "page_num": 2,
+      "bytes": 49339,
+      "sha1": "ffea6a28ec60f2dabd7a3a80ced2dccb6042b39d"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://litreactor.com/columns/short-story-editors/",
+      "title": "10 Short Story Editors Who Can Help You Get Published",
+      "page_num": 2,
+      "bytes": 54857,
+      "sha1": "1d9ef38e46f7cb2c8db4ca26775d8fdad3161ca0"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://litreactor.com/columns/how-to-design-a-book-cover/",
+      "title": "How to Design a Book Cover - And Avoid Fatal Mistakes",
+      "page_num": 2,
+      "bytes": 62182,
+      "sha1": "8877a5eb8815643bba09c3c9173be6f329a16fd3"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://litreactor.com/columns/childrens-book-manuscript/",
+      "title": "How to Format a Picture Book Manuscript (With Examples)",
+      "page_num": 2,
+      "bytes": 55149,
+      "sha1": "0c3cc33a8b619ff545cec9bb9123ef88ec13689a"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://litreactor.com/columns/how-to-outline-a-novel/",
+      "title": "How to Outline a Novel in 7 Steps - With Jena Brown",
+      "page_num": 2,
+      "bytes": 57953,
+      "sha1": "2b80277583445da9b8c563fe3102b8cceb6993eb"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://litreactor.com/columns/self-publishing-vs-traditional-publishing/",
+      "title": "Traditional vs. Self-Publishing: Which Path is Right for You?",
+      "page_num": 2,
+      "bytes": 59547,
+      "sha1": "7b1cc775d14e2b0fc998e270699830df9118ebfe"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://litreactor.com/columns/how-to-get-a-job-in-publishing/",
+      "title": "How to Get a Job in Publishing: Industry Tips & Tricks",
+      "page_num": 2,
+      "bytes": 72986,
+      "sha1": "058d0eb1d645a83279ad621ceccb94333f50479a"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://litreactor.com/columns/culling-the-classics-the-mysterious-affair-at-styles/",
+      "title": "Culling The Classics: The Mysterious Affair at Styles",
+      "page_num": 3,
+      "bytes": 52763,
+      "sha1": "75f22eaac9789f0335ba91e253beb021b7e4aeb6"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://litreactor.com/columns/how-to-get-ghostwriting-jobs/",
+      "title": "How to Get Ghostwriting Jobs: 10+ Places Hiring Now",
+      "page_num": 3,
+      "bytes": 64839,
+      "sha1": "b09347ea679ef23711e98de9c8c66c136e9ab6a3"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://litreactor.com/columns/how-to-edit-a-book/",
+      "title": "How to Edit a Book - With Paul Michael Anderson",
+      "page_num": 3,
+      "bytes": 61553,
+      "sha1": "3031066843cd87ceb465efcf58fd95093ed3b5aa"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://litreactor.com/columns/how-to-get-a-book-deal/",
+      "title": "How to Get a Book Deal: A 6-Step Guide that Works",
+      "page_num": 3,
+      "bytes": 55579,
+      "sha1": "4b83be0d612e581ea3a577debb7cc495121ae8d3"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://litreactor.com/columns/fantasy-editors/",
+      "title": "Fantasy Editors: 11 Professionals to Give Your Book That Magic Touch",
+      "page_num": 3,
+      "bytes": 55470,
+      "sha1": "9b12797e5500a110564eeb11db9cdf8f26a0c8f8"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://litreactor.com/columns/bad-writing-advice/",
+      "title": "10 Pieces of Bad Writing Advice (and How to Fix Them)",
+      "page_num": 3,
+      "bytes": 58985,
+      "sha1": "570a26f9c4a27a3443bad95f725b48e8abed5bb3"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://litreactor.com/columns/folk-horror/",
+      "title": "The Rise of Folk Horror: What Is It? And How to Write It",
+      "page_num": 3,
+      "bytes": 55398,
+      "sha1": "b49dd4f484213d695899f414e0038f7b6bfeecad"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://litreactor.com/columns/lightfall-review/",
+      "title": "\"Lightfall\" Is a Vampire Murder Mystery With a Beating Heart",
+      "page_num": 3,
+      "bytes": 50678,
+      "sha1": "4493c8d4a3316b4068165ab101c966b512f3354d"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://litreactor.com/columns/how-to-become-an-editor/",
+      "title": "How to Become an Editor: 6 Steps to Build a Successful Career",
+      "page_num": 3,
+      "bytes": 54124,
+      "sha1": "fe3839d195f97f7fd768baba2e133cda041edcfd"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://litreactor.com/columns/how-to-write-a-novella/",
+      "title": "How to Write a Novella - With Paul Michael Anderson",
+      "page_num": 3,
+      "bytes": 67941,
+      "sha1": "7f116028e03e8478e5e67621cd931286aa5be99b"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 3,
+    "articles": 30,
+    "article_fetch_failures": 0
+  }
+}

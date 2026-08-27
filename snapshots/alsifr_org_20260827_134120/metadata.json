@@ -1,0 +1,365 @@
+{
+  "website": "alsifr",
+  "snapshot_date": "2026-08-27T13:43:32",
+  "pagination_type": "load more button",
+  "scroll_mode": "load_more",
+  "scroll_rounds_requested": 2,
+  "load_more_selector": null,
+  "listing_url": "https://alsifr.org/kam-kaif",
+  "input_urls": [
+    "https://alsifr.org/kam-kaif"
+  ],
+  "pagination_pattern": null,
+  "requirements": "title, date, author, article body text",
+  "run_dir": "orch_runs/run_20260827_134120",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://alsifr.org/kam-kaif",
+      "file": "listing_page_001.html",
+      "bytes": 166431,
+      "sha1": "f57e56ddd3c300fbfeb9b1ab83cbef3936a5a033"
+    },
+    {
+      "page_num": 1,
+      "url": "https://alsifr.org/kam-kaif",
+      "file": "listing_page_001_expanded.html",
+      "bytes": 223587,
+      "sha1": "6ecaef0ba38da48f0b8680895bbf94126258e8da",
+      "expanded": true
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://alsifr.org/lebanon-consumption-vs-production",
+      "title": "مقابل كل 100 ليرة يُنتجها اللبنانيون يستهلكون 120 ليرة: فمن أين يأتي الفارق؟",
+      "page_num": 1,
+      "bytes": 154698,
+      "sha1": "3093e3e22fa4815f4bbc44a568e5143dc3c6ad34"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://alsifr.org/lebanon-internet-real-cost",
+      "title": "لبنان من أرخص دول العالم في الإنترنت: هل هذا صحيح؟",
+      "page_num": 1,
+      "bytes": 148066,
+      "sha1": "dcd8be49b7a7d5513cf7fb70a328d1fb1d18b0c0"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://alsifr.org/heat-wave-tunisia",
+      "title": "كيف تنتقل كلفة موجات الحر من منظومة الطاقة إلى الفئات الأكثر هشاشة؟ تونس نموذجاً",
+      "page_num": 1,
+      "bytes": 156259,
+      "sha1": "00f7a9bcde619e3bda8ddee429f8387ee30d4b56"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://alsifr.org/bank-financing-egypt-andt-he-state-vision-private-sector",
+      "title": "هل التمويل المصرفي في مصر يدعم  الدور الذي تريده الدولة للقطاع الخاص؟",
+      "page_num": 1,
+      "bytes": 153122,
+      "sha1": "e8e1aaf02813eb0d02565a7c67fea6b1d765dc07"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://alsifr.org/bab-elmandeb-new-chokepoint",
+      "title": "ماذا يعني استهداف باب المندب لأسواق النفط العالمية؟",
+      "page_num": 1,
+      "bytes": 152557,
+      "sha1": "fe11c1b6372cf672ce8527838389a8bc315fdbcb"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://alsifr.org/migration-lebanon",
+      "title": "730 ألف لبناني هاجروا منذ انهيار 2019، فمن سيعيد إعمار لبنان؟",
+      "page_num": 1,
+      "bytes": 152103,
+      "sha1": "c6cba1dc6bafce0ff14234a551257cd010428c18"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://alsifr.org/alternatives-bypass-hormuz",
+      "title": "هل هناك بدائل لتصدير نفط وغاز الخليج من دون المرور عبر مضيق هرمز؟",
+      "page_num": 1,
+      "bytes": 152614,
+      "sha1": "519ff400e895f32cda8049cb2ba0db049deb78d0"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://alsifr.org/how-hunger-and-obesity-coexist-middle-east-and-north-africa",
+      "title": "كيف يتعايش الجوع مع السُمنة في الشرق الأوسط وشمال أفريقيا؟",
+      "page_num": 1,
+      "bytes": 152918,
+      "sha1": "beaac127df496ad046a22efbf88137a7298e2301"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://alsifr.org/egypt-fiscal-sustainability-cost",
+      "title": "كيف تحقّق مصر «الاستدامة المالية»؟ ومن يدفع ثمنها؟",
+      "page_num": 1,
+      "bytes": 151065,
+      "sha1": "46c0d7cc8128ccd2455ff759f281b2cba3e83590"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://alsifr.org/labor-during-war",
+      "title": "كيف تعامل أصحاب العمل مع العمّال خلال الحرب على لبنان؟ 4 رسوم بيانية تشرح ذلك",
+      "page_num": 1,
+      "bytes": 150286,
+      "sha1": "f4a1eed7454678c865e23fc4ce6440a745a0eaa1"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://alsifr.org/debt-trap-lost-decade-development",
+      "title": "لماذا وقعت الدول النامية في فخ المديونية؟ وكيف أضاعت عقداً كاملاً من التنمية؟",
+      "page_num": 1,
+      "bytes": 151739,
+      "sha1": "14ecdcfd43e376a6bc9310ccc7cd992424ecc906"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://alsifr.org/strategic-waterways-could-become-next-strait-hormuz",
+      "title": "أين تقع الممرات المائية الأكثر عرضة للتوتّرات الجيوسياسية؟",
+      "page_num": 1,
+      "bytes": 152916,
+      "sha1": "804ebc852f30309bff6d72028835f3b787072686"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://alsifr.org/lebanese-exports-2026",
+      "title": "ماذا يعني انكماش صادرات لبنان في الثلث الأول من عام 2026؟",
+      "page_num": 1,
+      "bytes": 150080,
+      "sha1": "164d85d8c580643ce1371e3b12267dd8b7224d86"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://alsifr.org/political-economy-solar-panel-licenses-lebanon",
+      "title": "من يستحوذ على تراخيص الطاقة الشمسية في لبنان؟",
+      "page_num": 1,
+      "bytes": 148365,
+      "sha1": "f5ea222f4886973209d7622aaa99a46b01650a13"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://alsifr.org/uaes-opec-exit-frees-oil-wealth-it-bets-big-ai",
+      "title": "هل تراهن الإمارات على الذكاء الاصطناعي بعد انسحابها من أوبك؟",
+      "page_num": 1,
+      "bytes": 147661,
+      "sha1": "7d187bf7339e5324f4647d07cd123079b8f6534b"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://alsifr.org/lebanese-government-saves-banks-not-society",
+      "title": "لماذا تستطيع الحكومة اللبنانية إنقاذ المصارف ولكنها تعجز عن إنقاذ المجتمع؟",
+      "page_num": 1,
+      "bytes": 150269,
+      "sha1": "1a70afcac448e0a6ac36e1706721ec54df3bdad0"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://alsifr.org/egypts-trade-deficit-reveals-industrial-weakness",
+      "title": "ماذا تكشف حسابات التجارة الخارجية المصرية عن الفجوة بين الخطاب الشائع والواقع الحقيقي؟",
+      "page_num": 1,
+      "bytes": 159964,
+      "sha1": "a21a4e366a3a13b0b6bf239aef5e70d487142cee"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://alsifr.org/why-cement-selling-three-times-its-official-price",
+      "title": "كيف صار سعر طنّ الترابة في السوق ثلاثة أضعاف السعر الرسمي؟",
+      "page_num": 1,
+      "bytes": 153098,
+      "sha1": "d35df19e081e4a5fbe70b12b2b2ecf78c9687e37"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://alsifr.org/how-public-finance-egypt-transfers-wealth-upward",
+      "title": "كيف تحوّل الدين العام في مصر إلى قناة ضخمة لإعادة توزيع الدخل من أسفل إلى أعلى؟",
+      "page_num": 1,
+      "bytes": 149811,
+      "sha1": "864ad201144aa21d61a8936b3871f52cc4d876ba"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://alsifr.org/starlink-threatens-lebanons-sovereignty",
+      "title": "كيف تهدِّد «ستارلينك» سيادة لبنان؟",
+      "page_num": 1,
+      "bytes": 155526,
+      "sha1": "4e2d4c75c54978f1ef6f01568b13f05452c57b80"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://alsifr.org/which-workers-are-most-affected-war",
+      "title": "من هم العمّال الأكثر تأثراً بالحرب؟",
+      "page_num": 1,
+      "bytes": 150648,
+      "sha1": "8ad3c5173655c3edc79072938a286ac61dc59516"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://alsifr.org/expensive-housing",
+      "title": "لماذا أصبح الحصول على سكن لائق مكلفاً جداً؟",
+      "page_num": 1,
+      "bytes": 152746,
+      "sha1": "495ff1162bf4d2a47629994e6ceae0dd9fee82ae"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://alsifr.org/turkey-fills-american-umberella-vacuum",
+      "title": "كيف تحوّلت مزاعم الحماية العسكرية من التزام سياسي إلى سلعة مرتفعة الثمن؟",
+      "page_num": 1,
+      "bytes": 154962,
+      "sha1": "3f20141c0a5106c36d424f289b7d43352fb5c252"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://alsifr.org/egyptian-shadow-economy",
+      "title": "كيف تكشف الحرب دورة الربح الخفي في مصر؟",
+      "page_num": 1,
+      "bytes": 155280,
+      "sha1": "797741eb8902f1b93b8d056d85095849b045fdaa"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://alsifr.org/end-service-fund-lebanon",
+      "title": "كيف موّل العمّال «البونزي» اللبناني؟",
+      "page_num": 1,
+      "bytes": 150467,
+      "sha1": "0757282bf3845b34048444d6e4bf653efb8b1523"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://alsifr.org/who-profits-agricultural-sector-lebanon",
+      "title": "من يربح من القطاع الزراعي في لبنان؟ ومن يخسر فيه؟",
+      "page_num": 1,
+      "bytes": 150653,
+      "sha1": "214be093b7e45ede5cc279936b7747504f70ed15"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://alsifr.org/west-sanctions-iran",
+      "title": "بمَن تفتك العقوبات الاقتصادية على إيران؟",
+      "page_num": 1,
+      "bytes": 180181,
+      "sha1": "c5fe6ec654285b0de5f6b66fa8f689a46b93f185"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://alsifr.org/energy-crisis",
+      "title": "هل بدأت أزمة النفط الحقيقية الآن؟",
+      "page_num": 1,
+      "bytes": 152839,
+      "sha1": "da1f68bbd82b9bb35d7d3af8d3615746b361db10"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://alsifr.org/cash-assistance-limits",
+      "title": "لماذا تفشل المساعدات النقدية في معالجة الفقر؟ طرابلس نموذجاً",
+      "page_num": 1,
+      "bytes": 147483,
+      "sha1": "6b447573764eb0f03b7d3612ff0b6e59431a9005"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://alsifr.org/gdp-losses-war",
+      "title": "كم يخسر الناتج المحلي الإجمالي بسبب الحرب؟",
+      "page_num": 1,
+      "bytes": 149670,
+      "sha1": "74fc17aca35953043ded4701b57ffd36619b1fc9"
+    },
+    {
+      "id": 31,
+      "file": "article_0031.html",
+      "url": "https://alsifr.org/trump-meets-xi",
+      "title": "الولايات المتّحدة في مواجهة الصين",
+      "page_num": 1,
+      "bytes": 161279,
+      "sha1": "2c6a84b942cecaa5e29864ab981e3b5cc84270f9"
+    },
+    {
+      "id": 32,
+      "file": "article_0032.html",
+      "url": "https://alsifr.org/war-worsening-food-crisis-lebanon",
+      "title": "كيف فاقمت الحرب أزمة الأمن الغذائي في لبنان؟",
+      "page_num": 1,
+      "bytes": 149960,
+      "sha1": "52a3bbebc1e11438057c31d905bc3de3e49361e6"
+    },
+    {
+      "id": 33,
+      "file": "article_0033.html",
+      "url": "https://alsifr.org/war-reshaphing-base-metals-market",
+      "title": "كيف تؤثّر الحرب في أسعار المعادن الأساسية؟",
+      "page_num": 1,
+      "bytes": 149462,
+      "sha1": "36d4296f14f76a8ca3aa2e8d6ffbddd4a545529e"
+    },
+    {
+      "id": 34,
+      "file": "article_0034.html",
+      "url": "https://alsifr.org/exporting-labor-policies-egypt",
+      "title": "كيف تحوّلت هجرة العمالة المصرية من نتيجة لاختلالات الاقتصاد إلى إحدى أدوات إدارة أزمته؟",
+      "page_num": 1,
+      "bytes": 152887,
+      "sha1": "5be1022dd467b00b9a0de20fd51b27358023ad7a"
+    },
+    {
+      "id": 35,
+      "file": "article_0035.html",
+      "url": "https://alsifr.org/sovereignty-over-gold-inlebanon",
+      "title": "لماذا أصبح مكان تخزين الذهب أهم من امتلاكه؟",
+      "page_num": 1,
+      "bytes": 149331,
+      "sha1": "18259afee9df05194e337e26e795602038b92f54"
+    },
+    {
+      "id": 36,
+      "file": "article_0036.html",
+      "url": "https://alsifr.org/major-fossil-fuel-companies-profits-war",
+      "title": "6 شركات نفطية كبرى تحقّق 3,000 دولار أرباحاً في كلّ ثانية",
+      "page_num": 1,
+      "bytes": 148263,
+      "sha1": "d8acd00601ad1047d5d58542bd19579424f2efde"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 2,
+    "articles": 36,
+    "article_fetch_failures": 0
+  }
+}

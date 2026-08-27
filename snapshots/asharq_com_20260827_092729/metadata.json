@@ -1,0 +1,122 @@
+{
+  "website": "asharq",
+  "snapshot_date": "2026-08-27T09:30:02",
+  "pagination_type": "load more button",
+  "scroll_mode": "load_more",
+  "scroll_rounds_requested": 2,
+  "load_more_selector": null,
+  "listing_url": "https://asharq.com/politics/",
+  "input_urls": [
+    "https://asharq.com/politics/"
+  ],
+  "pagination_pattern": null,
+  "requirements": "title, date, article body text",
+  "run_dir": "orch_runs/run_20260827_092729",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://asharq.com/politics/",
+      "file": "listing_page_001.html",
+      "bytes": 224814,
+      "sha1": "ac026deee31e9a21a6f16fe27d4009dc5710285a"
+    },
+    {
+      "page_num": 1,
+      "url": "https://asharq.com/politics/",
+      "file": "listing_page_001_expanded.html",
+      "bytes": 190214,
+      "sha1": "e0e3be8fe1b41b9576970f2c2ee953207a3d27fa",
+      "expanded": true
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://asharq.com/politics/194432/ملادينوف-يعرض-أمام-مجلس-الأمن-شروط-تنفيذ-خريطة-الطريق-في-غزة/",
+      "title": "ملادينوف يعرض أمام مجلس الأمن شروط تنفيذ خريطة الطريق في غزة",
+      "page_num": 1,
+      "bytes": 197928,
+      "sha1": "0b7fe92496585c4ec6ba750a0c7c91299aaada4a"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://asharq.com/politics/194473/تقرير-مدير-cia-حذر-روسيا-من-توغل-بري-محتمل-في-البلطيق/",
+      "title": "تقرير: مدير CIA زار روسيا للتحذير من توغل بري محتمل في البلطيق",
+      "page_num": 1,
+      "bytes": 140956,
+      "sha1": "52943d121d5b6675df60b90d26419160ee4ff430"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://asharq.com/politics/194455/نصف-البريطانيين-يؤيدون-حظر-التجارة-مع-المستوطنات-الإسرائيلية/",
+      "title": "استطلاع: نصف البريطانيين يؤيدون حظر التجارة مع المستوطنات الإسرائيلية",
+      "page_num": 1,
+      "bytes": 157061,
+      "sha1": "ec9c1729f60ba05d3c4c28ee9622536912d9314e"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://asharq.com/politics/194401/تحذير-أممي-من-خط-أخلاقي-أحمر-بشأن-الأسلحة-ذاتية-التشغيل/",
+      "title": "الأمم المتحدة تحذر من \"خط أخلاقي أحمر\" بشأن الأسلحة ذاتية التشغيل",
+      "page_num": 1,
+      "bytes": 140969,
+      "sha1": "d5a3e4541e8ca8cddfec63efce4510a0bf53efa4"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://asharq.com/politics/194392/إقالات-هيجسيث-لكبار-الجنرالات-تترك-الجيش-الأميركي-بلا-قيادة/",
+      "title": "إقالات هيجسيث لكبار الجنرالات تترك الجيش الأميركي بلا قيادة واضحة",
+      "page_num": 1,
+      "bytes": 178652,
+      "sha1": "5fe8cc32b941755dac6fa9b5d469d570656e148f"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://asharq.com/politics/194407/تاكايتشي-سندافع-عن-الجنائية-الدولية-في-مواجهة-ضغوط-واشنطن/",
+      "title": "تاكايتشي: سندافع عن المحكمة الجنائية الدولية في مواجهة ضغوط واشنطن",
+      "page_num": 1,
+      "bytes": 142117,
+      "sha1": "257386c55472519b8bd36761b668dcc8faeff76a"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://asharq.com/videos/194418/عقد-من-التحولات-كيف-وصلت-قسد-من-التأسيس-إلى-الحل/",
+      "title": "عقد من التحولات.. كيف وصلت \"قسد\" من التأسيس إلى الحل؟",
+      "page_num": 1,
+      "bytes": 77830,
+      "sha1": "974ca682d50ee2498d43a998bbf43d109e4d98ab"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://asharq.com/politics/194440/بوتين-يتجه-لتصعيد-الحرب-بأوكرانيا-بعد-انهيار-محادثات-السلام/",
+      "title": "\"بلومبرغ\": بوتين يتجه لتصعيد حرب أوكرانيا بعد انهيار محادثات السلام",
+      "page_num": 1,
+      "bytes": 167254,
+      "sha1": "51abdc7966acb11bd1acce680ec82ab5ac9936e0"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://asharq.com/videos/194416/من-العملات-إلى-النفط-واشنطن-تستهدف-البنية-المالية-لإيران/",
+      "title": "من العملات الرقمية إلى أساطيل النفط.. واشنطن تستهدف البنية المالية لإيران",
+      "page_num": 1,
+      "bytes": 78051,
+      "sha1": "88dc1802b5f54aefa7fe29659ea5d0d3f732c77c"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 2,
+    "articles": 9,
+    "article_fetch_failures": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "website": "almayadeen",
+  "snapshot_date": "2026-08-27T09:38:01",
+  "pagination_type": "load more button",
+  "scroll_mode": "load_more",
+  "scroll_rounds_requested": 2,
+  "load_more_selector": null,
+  "listing_url": "https://www.almayadeen.net/news/politics",
+  "input_urls": [
+    "https://www.almayadeen.net/news/politics"
+  ],
+  "pagination_pattern": null,
+  "requirements": "title, date, author, article body text",
+  "run_dir": "orch_runs/run_20260827_093422",
+  "link_extraction_code_file": null,
+  "listing_pages": [],
+  "articles": [],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 0,
+    "articles": 0,
+    "article_fetch_failures": 0
+  }
+}

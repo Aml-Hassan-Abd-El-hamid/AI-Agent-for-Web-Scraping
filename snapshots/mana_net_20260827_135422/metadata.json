@@ -1,0 +1,354 @@
+{
+  "website": "mana",
+  "snapshot_date": "2026-08-27T13:59:21",
+  "pagination_type": "numbered pagination",
+  "scroll_mode": null,
+  "scroll_rounds_requested": null,
+  "load_more_selector": null,
+  "listing_url": "https://mana.net/category/articles/",
+  "input_urls": [
+    "https://mana.net/category/articles/",
+    "https://mana.net/category/articles/page/2/"
+  ],
+  "pagination_pattern": "https://mana.net/category/articles/page/{page}/",
+  "requirements": "title, date, article body text",
+  "run_dir": "orch_runs/run_20260827_135422",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://mana.net/category/articles/",
+      "file": "listing_page_001.html",
+      "bytes": 432347,
+      "sha1": "a52e2c9e146859e90ac362ba3f80d49e3dd0ad03"
+    },
+    {
+      "page_num": 2,
+      "url": "https://mana.net/category/articles/page/2/",
+      "file": "listing_page_002.html",
+      "bytes": 425417,
+      "sha1": "c72bc753f7247c7660599df7ff42496a004ef248"
+    },
+    {
+      "page_num": 3,
+      "url": "https://mana.net/category/articles/page/3/",
+      "file": "listing_page_003.html",
+      "bytes": 626788,
+      "sha1": "1ec1404f4f6f8b45b666f78b1f6f706738c45ad3"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://mana.net/worries-of-a-short-life-badr-mostafa/",
+      "title": "هموم قصر العمر | بدر مصطفى",
+      "page_num": 1,
+      "bytes": 411916,
+      "sha1": "6538cc83cbbe8c05dcca59aa96765f3881d6e6fe"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://mana.net/%d9%81%d9%84%d8%b3%d9%81%d8%a9-%d8%a7%d9%84%d8%af%d9%91%d9%8a%d9%86-%d8%b9%d9%86%d8%af-%d9%81%d8%b1%d9%8a%d8%af%d8%b1%d9%8a%d9%83-%d9%86%d9%8a%d8%aa%d8%b4%d9%87-%d9%85%d8%ad%d9%85%d8%af-%da%ad/",
+      "title": "فلسفة الدّين عند فريدريك نيتشه | محمد  ڭـــزّو",
+      "page_num": 1,
+      "bytes": 428301,
+      "sha1": "530e71b1ca13fce4a27899b11530b07605329248"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://mana.net/if-he-were-a-man-badr-mostafa/",
+      "title": "لو كان رجلًا!| بدر مصطفى",
+      "page_num": 1,
+      "bytes": 411842,
+      "sha1": "acd55aa8ce4f578622d30d39774253d905c1c3bb"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://mana.net/%d9%85%d9%82%d8%a7%d8%b1%d8%a8%d8%a9-%d8%b3%d9%8a%d9%85%d9%8a%d8%a7%d8%a6%d9%8a%d8%a9-%d8%aa%d8%a3%d9%88%d9%8a%d9%84%d9%8a%d8%a9-%d9%84%d8%a5%d8%b9%d8%a7%d8%af%d8%a9-%d8%a8%d9%86%d8%a7%d8%a1-%d8%a7/",
+      "title": "مقاربة سيميائية تأويلية لإعادة بناء الأهل والمكان والقيمة في لامية العرب |حاكمة السعدي",
+      "page_num": 1,
+      "bytes": 424906,
+      "sha1": "5d4b61d9cdd9bcc46e4287c7d60a6fa20b89eb17"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://mana.net/%d9%85%d8%a7-%d8%a7%d9%84%d8%b0%d9%8a-%d9%8a%d8%ac%d8%b9%d9%84-%d8%a7%d9%84%d9%85%d9%88%d8%a7%d8%b7%d9%86-%d9%8a%d8%a8%d8%af%d9%88-%d9%85%d9%88%d8%a7%d8%b7%d9%86%d9%8b%d8%a7%d8%9f-%d9%83%d8%b1%d8%a9/",
+      "title": "ما الذي يجعل المواطن يبدو مواطنًا؟ كرة القدم وإسبانيا وسياسة النسب | إحساين إلحيان ترجمة: نيهاد القزوي",
+      "page_num": 1,
+      "bytes": 439341,
+      "sha1": "78d191259ec574166c4f2ec1c36931bba840cfea"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://mana.net/the-aesthetics-of-dissimilarity-why-we-should-be-suspicious-of-things-that-seem-perfect-badr-mostafa/",
+      "title": "جماليات اللاتطابق..لماذا يجب أن نرتاب في الأشياء التي تبدو كاملة؟ | بدر مصطفى",
+      "page_num": 1,
+      "bytes": 415047,
+      "sha1": "cea9f57aba783ffa9d5d5c4ae0d98ef5730c6322"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://mana.net/restoring-the-cosmic-role-of-women-outside-the-cage-of-dependency/",
+      "title": "استعادة الدور الكوني للأنثى خارج قفص التبعية: كيف صادر النظام الأبوي المتطرف السلطة الكونية للأنوثة؟ | مريم علي",
+      "page_num": 1,
+      "bytes": 418808,
+      "sha1": "00005bebb48f129ff9f5aa435f9870e477cc3be5"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://mana.net/education-without-governance-training-towards-the-concept-of-interpretive-incapacity-as-an-explanation-of-the-crisis-of-formation-in-the-arab-world-salman-al-harbi/",
+      "title": "التعليم بلا تربية على الحكم: نحو مفهوم العجز التأويلي بوصفه تفسيرًا لأزمة التكوين في المجال العربي | سلمان الحربي",
+      "page_num": 1,
+      "bytes": 430049,
+      "sha1": "2e4320010c8b31d245936c8ced2cb40d85279a2e"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://mana.net/from-question-to-sanctification-the-problematic-reception-of-western-philosophy-in-the-arab-world-emad-al-mazrawi/",
+      "title": "من السؤال إلى التقديس: إشكالية التلقي العربي للفلسفة الغربية | عماد المزراوي",
+      "page_num": 1,
+      "bytes": 424333,
+      "sha1": "f4dd31eb5ae1106e7816a95846312e43b3515a60"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://mana.net/metaphysics-of-the-elevator-and-staircase-badr-mustafa/",
+      "title": "ميتافيزيقا المصعد والسلم | بدر مصطفى",
+      "page_num": 1,
+      "bytes": 412539,
+      "sha1": "07d7474961fbd62ee595db73bd8e4e8d76f8356f"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://mana.net/zakat-as-god-intended-it-in-his-book-the-missing-equation-for-eradicating-poverty-bader-al-homoud/",
+      "title": "الزكاة كما أرادها الله في كتابه: المعادلة المفقودة للقضاء على الفقر | بدر الحمود",
+      "page_num": 1,
+      "bytes": 419958,
+      "sha1": "820a86899d0dd54c5cacd8010cd5a91fd6bbfcf9"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://mana.net/petrarch-and-the-bullying-of-the-middle-ages-sarah-omari/",
+      "title": "بترارك والبلطجة على القرون الوسطى | سارة عمري",
+      "page_num": 1,
+      "bytes": 425533,
+      "sha1": "5330bb16c2cfe6677fa6334e3e77174ad372cf3f"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://mana.net/how-to-detect-and-debug-social-programming-maryam-ali/",
+      "title": "كيف نكتشف البرمجة المجتمعية وننظّف عقولنا منها؟ | مريم علي",
+      "page_num": 1,
+      "bytes": 412823,
+      "sha1": "479e5aeb25b407e1094e6e5f4775379b45a133b3"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://mana.net/on-the-hidden-maps-of-civilizational-contempt-by-badr-mostafa/",
+      "title": "عن الخرائط الخفية للاحتقار الحضاري | بدر مصطفى",
+      "page_num": 1,
+      "bytes": 410719,
+      "sha1": "d3aee01f021983e53d353ab0982c125c17451c21"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://mana.net/samaritan-psychology/",
+      "title": "سيكولوجية السامري: كيف يُهندس المخادعون «عجول» التبعية في كل عصر؟ | مريم علي",
+      "page_num": 2,
+      "bytes": 413623,
+      "sha1": "b34af45c9546d79162a4dca24b061b2abd569f8e"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://mana.net/the-will-to-be/",
+      "title": "إرادة الكينونة | محمد بن ماضي",
+      "page_num": 2,
+      "bytes": 407456,
+      "sha1": "15e7483801dcd8d6d81f2c7352dc38d126dd6fa6"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://mana.net/philosophy-of-recognition/",
+      "title": "فلسفة الاعتراف | بدر مصطفى",
+      "page_num": 2,
+      "bytes": 408967,
+      "sha1": "b7a799aa2330031e403e2edc210567fd9fe39496"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://mana.net/the-painter-of-minds-classical-and-dialectical-metaphysics-from-a-systems-theory-perspective-karim-al-sayyad/",
+      "title": "رَسّام العقول: الميتافيزيقا الكلاسيكية والجدلية من منظور نظرية النظُم | كريم الصياد",
+      "page_num": 2,
+      "bytes": 440307,
+      "sha1": "7ead95b03e10eef5ae545fe0c4f8f668492b9fdf"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://mana.net/disclosure-day-humanity-in-the-face-of-the-worlds-surplus-badr-mostafa/",
+      "title": "«يوم الإفصاح»: الإنسان أمام فائض العالم | بدر مصطفى",
+      "page_num": 2,
+      "bytes": 422410,
+      "sha1": "69353f859f25b490c70b1fe90da1d1185afaefc9"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://mana.net/%d8%b9%d9%86-%d8%a3%d9%88%d9%87%d8%a7%d9%85-%d8%a7%d9%84%d8%b0%d8%a7%d9%83%d8%b1%d8%a9-%d9%88%d8%b9%d8%b1%d9%8e%d8%a7%d8%a1-%d8%a7%d9%84%d8%ac%d8%af%d8%b1%d8%a7%d9%86-%d8%b3%d9%84%d9%8a%d9%85%d8%a7/",
+      "title": "عن أوهام الذاكرة وعرَاء الجدران | سليمان إبراهيم",
+      "page_num": 2,
+      "bytes": 417159,
+      "sha1": "592e836fa941e0693d2cb94142ae19fe3d1288f8"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://mana.net/the-donmeh-and-the-sociology-of-dual-identity-muhammad-abu-saq/",
+      "title": "الدونمة وسوسيولوجيا الهوية المزدوجة | محمد أبو ساق",
+      "page_num": 2,
+      "bytes": 413261,
+      "sha1": "097505e9bbba236f0035e7d654a06499738581b6"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://mana.net/edgar-morin-and-western-modernity-when-it-confronts-its-barbarity/",
+      "title": "إدغار موران والحداثة الغربية حين تواجه بربريتها | بدر مصطفى",
+      "page_num": 2,
+      "bytes": 414280,
+      "sha1": "c6a62b6e306d97df992505374e666a3108fa0169"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://mana.net/from-prophecy-to-prediction/",
+      "title": "من النبوة إلى النبوءة: عَرَفة.. إنسان محفوظ الأخير وفاوِسْت الإسلامِ | كريم الصياد",
+      "page_num": 2,
+      "bytes": 442174,
+      "sha1": "055ecfd28bede46abdbd24033a5a93044ad0c418"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://mana.net/the-tungsten-corridor-the-search-for-salvation-in-a-dead-end/",
+      "title": "رُدْهَةُ «التِّنجستين»، والبحثُ عن خلاصٍ في أُفُقٍ مسدود | سليمان إبراهيم",
+      "page_num": 2,
+      "bytes": 413957,
+      "sha1": "81b39abb65fe1b7a7d378c9f73092706b5034562"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://mana.net/non-replaceable/",
+      "title": "ما لا يُستبدل | بدر مصطفى",
+      "page_num": 3,
+      "bytes": 407470,
+      "sha1": "6de6f8bfbc09aeae29e50a88ddaa83e5f23af90d"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://mana.net/semantic-alienation-and-the-crisis-of-meaning-in-the-arab-world/",
+      "title": "الاستلاب الدلالي وأزمة المعنى في المجال العربي |سلمان الحربي",
+      "page_num": 3,
+      "bytes": 423818,
+      "sha1": "5e0ca11811435096a1367c9a84461972569f22fd"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://mana.net/%d8%a7%d9%84%d8%b3%d8%b1%d8%af-%d8%a7%d9%84%d8%ba%d9%8a%d9%88%d8%b1-%d8%ba%d9%8a%d8%b1%d8%a9-%d8%a7%d9%84%d8%b4%d8%ae%d8%b5%d9%8a%d8%a7%d8%aa-%d8%a7%d9%84%d8%b1%d9%88%d8%a7%d8%a6%d9%8a%d8%a9-%d8%b7/",
+      "title": "السرد الغيور: غيرة الشخصيات الروائية | طامي السميري",
+      "page_num": 3,
+      "bytes": 447900,
+      "sha1": "1433035cfe36480d46d640f58c58b31355ddd163"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://mana.net/when-word-situations-tested-in-hard-times/",
+      "title": "حين تُختبر الكلمة والمواقف في وقت الشدائد | بدر مصطفى",
+      "page_num": 3,
+      "bytes": 412473,
+      "sha1": "d20f98c7fcd210f69cd6727648da1f908b70822e"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://mana.net/when-the-world-becomes-less-habitable/",
+      "title": "حين يصبح العالم أقل قابلية للسكن | بدر مصطفى",
+      "page_num": 3,
+      "bytes": 410069,
+      "sha1": "47d3d02909a59b43e08ad1e54c04ded55088bb70"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://mana.net/%d8%a7%d8%b5%d8%b7%d9%81%d8%a7%d9%81%d9%8f-%d8%a7%d9%84%d9%83%d9%88%d8%a7%d9%83%d9%90%d8%a8%d9%90-%d9%88%d9%85%d8%b9%d9%86%d9%89-%d8%a7%d9%84%d8%aa%d9%8e%d9%91%d8%b3%d8%a8%d9%8a%d8%ad%d9%90/",
+      "title": "اصطفافُ الكواكِبِ… ومعنى التَّسبيحِ وصِراطِ اللهِ المُستقيمِ في الوجودِ والإنسانِ | بدر الحمود",
+      "page_num": 3,
+      "bytes": 416251,
+      "sha1": "bc4fb4cb5639203f14d08d4c33ae9bd3f73f9452"
+    },
+    {
+      "id": 31,
+      "file": "article_0031.html",
+      "url": "https://mana.net/the-time-of-genuine-awakening-an-awakening-without-aggression/",
+      "title": "زمنُ الصحوَة الصادقة.. صَحوَةٌ بلا عُدوانٍ | بدر الحمود",
+      "page_num": 3,
+      "bytes": 413320,
+      "sha1": "5f2c838c085dc9f7bb91f06560062eb9b4b58bb5"
+    },
+    {
+      "id": 32,
+      "file": "article_0032.html",
+      "url": "https://mana.net/%d8%a7%d9%84%d8%ad%d8%a7%d8%ac%d8%a9-%d8%a7%d9%84%d8%aa%d9%8a-%d8%aa%d9%83%d8%aa%d8%a8-%d8%b3%d9%8a%d8%b1%d8%aa%d9%86%d8%a7-%d8%a8%d8%af%d8%b1-%d9%85%d8%b5%d8%b7%d9%81%d9%89/",
+      "title": "الحاجة التي تكتب سيرتنا | بدر مصطفى",
+      "page_num": 3,
+      "bytes": 413713,
+      "sha1": "824851aeff101a6cad902a5c45a4464d14dbbd65"
+    },
+    {
+      "id": 33,
+      "file": "article_0033.html",
+      "url": "https://mana.net/likes/",
+      "title": "الذات المشوَّهة | مارك ميليرس – بِن وايت – ت: رضا زيدان",
+      "page_num": 3,
+      "bytes": 467437,
+      "sha1": "3b00905efdeeac3691d1ad64d58b7c1832ec62c0"
+    },
+    {
+      "id": 34,
+      "file": "article_0034.html",
+      "url": "https://mana.net/children-and-globalization/",
+      "title": "قصص الأطفال والعولمة: تربية الأبناء على قيم وفضائل الحضارات العظيمة | ياكوف رابكين – ت: رسلان عامر",
+      "page_num": 3,
+      "bytes": 442057,
+      "sha1": "38a49c86ed8ff2b53d306dbf1e26328b93b001b2"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 3,
+    "articles": 34,
+    "article_fetch_failures": 0
+  }
+}

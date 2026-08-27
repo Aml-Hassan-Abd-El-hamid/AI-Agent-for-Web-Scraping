@@ -1,0 +1,129 @@
+{
+  "website": "market.isagha",
+  "snapshot_date": "2026-08-27T09:48:17",
+  "pagination_type": "numbered pagination",
+  "scroll_mode": null,
+  "scroll_rounds_requested": null,
+  "load_more_selector": null,
+  "listing_url": "https://market.isagha.com/articles",
+  "input_urls": [
+    "https://market.isagha.com/articles",
+    "https://market.isagha.com/articles?page=2"
+  ],
+  "pagination_pattern": "https://market.isagha.com/articles?page={page}",
+  "requirements": "title, date, article body text",
+  "run_dir": "orch_runs/run_20260827_094443",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://market.isagha.com/articles",
+      "file": "listing_page_001.html",
+      "bytes": 133692,
+      "sha1": "f6c64309421775b903db7c03df642a75c41d95c6"
+    },
+    {
+      "page_num": 2,
+      "url": "https://market.isagha.com/articles?page=2",
+      "file": "listing_page_002.html",
+      "bytes": 131437,
+      "sha1": "2a9b84529e4233e193096b0c42dcab899097ecce"
+    },
+    {
+      "page_num": 3,
+      "url": "https://market.isagha.com/articles?page=3",
+      "file": "listing_page_003.html",
+      "bytes": 131701,
+      "sha1": "77293bda76043655a65177ed4d1a07e7d38d595f"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://market.isagha.com/articles/2424",
+      "title": "التضخم الأساسي في أميركا يتسارع إلى 3.3% خلال يوليو.. والناتج المحلي ينمو 1.5%",
+      "page_num": 1,
+      "bytes": 56374,
+      "sha1": "6e81419b99e204042f455becb92a6c91d17e0c4a"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://market.isagha.com/articles/2423",
+      "title": "الذهب يتراجع 25 جنيهًا في مصر وعيار 21 يسجل 6550 جنيهًا.. الأسواق تترقب خطاب وارش في جاكسون هول",
+      "page_num": 1,
+      "bytes": 68321,
+      "sha1": "2b3cd02bb2259aa2f72ff362a6871760231c2053"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://market.isagha.com/articles/2422",
+      "title": "معاك ذهب من غير فاتورة؟.. المهندس سعيد إمبابي يجيب: هل يمكن بيعه في مصر وهل الفاتورة شرط للبيع؟ ويوضح حقوق المستهلك والتاجر",
+      "page_num": 1,
+      "bytes": 68982,
+      "sha1": "efbeb58feec682c2676dce9e28c7fec8648d6278"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://market.isagha.com/articles/2421",
+      "title": "أسعار الفضة تتراجع محليًا إلى 113 جنيهًا.. والأوقية تهبط 1.92% عالميًا والفجوة السعرية ترتفع إلى 2.87%",
+      "page_num": 2,
+      "bytes": 64727,
+      "sha1": "1e350910f4df3ba839a9c367e496f3154b309473"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://market.isagha.com/articles/2420",
+      "title": "الذهب يفقد 10 جنيهات في مصر.. والجنيه الذهب يتراجع دون 53 ألف جنيه رغم تداول عيار 21 أعلى من السعر العادل بـ30 جنيهًا والأوقية عند 4640 دولارًا",
+      "page_num": 2,
+      "bytes": 68997,
+      "sha1": "7436ab0170717059299aee384892c2eaa66587e7"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://market.isagha.com/articles/2419",
+      "title": "الذهب يقفز 50 جنيهًا في مصر.. والسعر المحلي يتجاوز العالمي مع شح السيولة وإجازة الصاغة",
+      "page_num": 2,
+      "bytes": 67591,
+      "sha1": "c548e4b0d302b06f73a790ca425d2cb22a21428e"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://market.isagha.com/articles/2418",
+      "title": "بيع المواطنين يضغط على الذهب.. عيار 21 يتراجع إلى 6600 جنيه والسوق المحلية دون السعر العالمي",
+      "page_num": 3,
+      "bytes": 68790,
+      "sha1": "b981b3e27240bc0f8f87653ed97c9f135dc99c8a"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://market.isagha.com/articles/2417",
+      "title": "جولدمان ساكس: البنوك المركزية تنوع أماكن تخزين الذهب تحسبًا للمخاطر السياسية والقانونية",
+      "page_num": 3,
+      "bytes": 62916,
+      "sha1": "3a3965676460ebc7bd6546a7a31351d29a3c96bd"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://market.isagha.com/articles/2416",
+      "title": "أسعار الفضة في مصر تقفز 11.5% خلال أسبوع.. وعيار 999 يسجل 114.75 جنيهًا والأوقية تقترب من 69 دولارًا",
+      "page_num": 3,
+      "bytes": 69028,
+      "sha1": "b3fab6471d421b6bc0250651452b8283cfc7ef4e"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 3,
+    "articles": 9,
+    "article_fetch_failures": 0
+  }
+}

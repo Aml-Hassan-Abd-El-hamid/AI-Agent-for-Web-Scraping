@@ -1,0 +1,981 @@
+{
+  "website": "acpss.ahram",
+  "snapshot_date": "2026-08-27T14:34:01",
+  "pagination_type": "numbered pagination",
+  "scroll_mode": null,
+  "scroll_rounds_requested": null,
+  "load_more_selector": null,
+  "listing_url": "https://acpss.ahram.org.eg/OuterWriter/28/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA/0.aspx",
+  "input_urls": [
+    "https://acpss.ahram.org.eg/OuterWriter/28/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA/0.aspx",
+    "https://acpss.ahram.org.eg/OuterWriter/28/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA/30.aspx"
+  ],
+  "pagination_pattern": "https://acpss.ahram.org.eg/OuterWriter/28/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA/{page}0.aspx",
+  "requirements": "title, date, author, article body text",
+  "run_dir": "orch_runs/run_20260827_135922",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://acpss.ahram.org.eg/OuterWriter/28/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA/0.aspx",
+      "file": "listing_page_001.html",
+      "bytes": 119916,
+      "sha1": "dc8a46e556f22a4f0497c55165277ae2e7a88ab8"
+    },
+    {
+      "page_num": 2,
+      "url": "https://acpss.ahram.org.eg/OuterWriter/28/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA/30.aspx",
+      "file": "listing_page_002.html",
+      "bytes": 119317,
+      "sha1": "1564b94ab006ba4240a6bf16070414c102699bb4"
+    },
+    {
+      "page_num": 3,
+      "url": "https://acpss.ahram.org.eg/OuterWriter/28/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA/60.aspx",
+      "file": "listing_page_003.html",
+      "bytes": 120532,
+      "sha1": "484c5c080fb35ad6a472f6f515084d5e0c5cb723"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://acpss.ahram.org.eg/News/21799.aspx",
+      "title": "زيارة الرئيس الصيني إلى مصر.. نقطة انطلاق جديدة؟",
+      "page_num": 1,
+      "bytes": 97275,
+      "sha1": "92c29ed97cf7095aa9a3b58cb1c22a3d9c3d9120"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://acpss.ahram.org.eg/News/21796.aspx",
+      "title": "سوريا ومعادلة التشابكات الدولية والإقليمية مجدداً: عودة روسيا.. وإسرائيل تواجه تركيا",
+      "page_num": 1,
+      "bytes": 96613,
+      "sha1": "cdd5978eeb89b04f88871e6f0852b36eb8750c8a"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://acpss.ahram.org.eg/News/21793.aspx",
+      "title": "مشروع الشرق الأوسط وتفكيك الهوية العربية: المرتكز الثقافى",
+      "page_num": 1,
+      "bytes": 95750,
+      "sha1": "f9a1238d8fac352db6f29a6fd94c4caa7398033d"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://acpss.ahram.org.eg/News/21768.aspx",
+      "title": "رسائل سد نيريرى",
+      "page_num": 1,
+      "bytes": 92707,
+      "sha1": "b12b64b91961dd64fb0fa7dec0396f2d1448c47f"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://acpss.ahram.org.eg/News/21791.aspx",
+      "title": "توظيف الأطفال في المحتوى الرقمي: إشكاليات الخصوصية والاستغلال في اقتصاد المنصات",
+      "page_num": 1,
+      "bytes": 100580,
+      "sha1": "232e40899fc65c245a8ec1570a969edb5d73dd32"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://acpss.ahram.org.eg/News/21790.aspx",
+      "title": "التجربة الأمريكية: التاريخ الأمريكي وترامب قبل انتخابات التجديد النصفي 2026",
+      "page_num": 1,
+      "bytes": 99834,
+      "sha1": "6b36393e81fb3b5110b94739af0da8365c4f29f7"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://acpss.ahram.org.eg/News/21789.aspx",
+      "title": "تصريحات نتنياهو: خطاب قديم في واقع جديد",
+      "page_num": 1,
+      "bytes": 108956,
+      "sha1": "2a572f594ed694d92b8802d9c4f581d76a012362"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://acpss.ahram.org.eg/News/21788.aspx",
+      "title": "الزي الصيني الجديد: موضة عابرة أم بداية تحول ثقافي؟",
+      "page_num": 1,
+      "bytes": 101215,
+      "sha1": "0d934e9b059b2e7f4f9df71f9f33af0beef47daf"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://acpss.ahram.org.eg/News/21787.aspx",
+      "title": "ما بعد \"صدمة هرمز\": كيف تعيد مصر بناء استراتيجية أمن الطاقة؟",
+      "page_num": 1,
+      "bytes": 96322,
+      "sha1": "bcfc9fd5e96e42296108fd19e4f98ba0a8e51469"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://acpss.ahram.org.eg/News/21786.aspx",
+      "title": "تحولات سائلة: لماذا تتعثر \"التحالفات المتماسكة\" في الشرق الأوسط؟",
+      "page_num": 1,
+      "bytes": 98676,
+      "sha1": "11720121384f9499b2101bb9ab110c70a0abbfba"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://acpss.ahram.org.eg/News/21785.aspx",
+      "title": "إنفاذ معيار أم إكراه تفاوضي؟: قراءة في الموقف الأمريكي من استخدام الأسلحة الكيماوية في السودان",
+      "page_num": 1,
+      "bytes": 90268,
+      "sha1": "4b677cb48034a48c1a3aca7d6e3c56460d5ebcb6"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://acpss.ahram.org.eg/News/21783.aspx",
+      "title": "من الجغرافيا إلى التاريخ: متى تستنفد الحروب أهدافها الاستراتيجية؟",
+      "page_num": 1,
+      "bytes": 98696,
+      "sha1": "5c11bd144256d28939ffe354adc82b97fbddb4d6"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://acpss.ahram.org.eg/News/21779.aspx",
+      "title": "انتباه الثواني الأولى: تحولات المجال المعلوماتي أثناء الأزمات",
+      "page_num": 1,
+      "bytes": 94332,
+      "sha1": "22d6a76e40d9783c4abfbfdd4bf4609dcecbbec6"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://acpss.ahram.org.eg/News/21778.aspx",
+      "title": "هل يستطيع ترامب الضغط على إسرائيل لتفعيل خطة السلام في غزة؟",
+      "page_num": 1,
+      "bytes": 91544,
+      "sha1": "d039c1f85b197473402f0c42dd9a636882f382ad"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://acpss.ahram.org.eg/News/21777.aspx",
+      "title": "ماذا تعني \"روح شنغهاي\" لمصر في النظام الدولي الجديد؟",
+      "page_num": 1,
+      "bytes": 93436,
+      "sha1": "152628e8b129dc74ffcc06bc877295edc472398e"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://acpss.ahram.org.eg/News/21775.aspx",
+      "title": "كيف تزايد انتشار ظاهرة \"التنمر السياسي\" في العلاقات الدولية؟",
+      "page_num": 1,
+      "bytes": 96929,
+      "sha1": "d5d2137e4a02943e5b72a5bd04f353b705eaaa84"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://acpss.ahram.org.eg/News/21774.aspx",
+      "title": "فرص تجميد الحرب الروسية-الأوكرانية",
+      "page_num": 1,
+      "bytes": 101818,
+      "sha1": "8581b48a5f27a5b7de1e1a118e0ef7e587b6ac40"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://acpss.ahram.org.eg/News/21772.aspx",
+      "title": "الصين والحرب الأمريكية الإسرائيلية ضد إيران",
+      "page_num": 1,
+      "bytes": 91824,
+      "sha1": "7f5ab1e86a4cccb68bd37ec1e15e7c51ff3b7e5f"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://acpss.ahram.org.eg/News/21771.aspx",
+      "title": "الزيدى من واشنطن إلى طهران: العراق أمام اختبارات صعبة بين الشراكة والتبعية",
+      "page_num": 1,
+      "bytes": 91730,
+      "sha1": "5e743b6e3a8cd03ddd78a2de0b3065e2148b15aa"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://acpss.ahram.org.eg/News/21767.aspx",
+      "title": "\"صحاك الشوق\": إعادة قراءة مساحات الفن والشهرة بين التطرف والتسييس والتغييب",
+      "page_num": 1,
+      "bytes": 102898,
+      "sha1": "264e8efafbf21a1336c9453030382e0c54abcf8e"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://acpss.ahram.org.eg/News/21766.aspx",
+      "title": "شرق المتوسط.. هل أصبح بناء الاستقرار أهم من انتظار السلام الشامل؟",
+      "page_num": 1,
+      "bytes": 92371,
+      "sha1": "dd29f1ed4f9cc6016a662d2b77f7e13bdc2e769e"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://acpss.ahram.org.eg/News/21765.aspx",
+      "title": "بيان مجموعة السبع والتحرك الأمريكي: قراءة في هندسة الهدنة الإنسانية السودانية",
+      "page_num": 1,
+      "bytes": 89849,
+      "sha1": "e90a5c772661513611644d0d55ffecd58ce8a184"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://acpss.ahram.org.eg/News/21764.aspx",
+      "title": "كيف وظَّفت إيران أدوات الاتصال السياسي في مراسم تشييع خامنئي؟",
+      "page_num": 1,
+      "bytes": 100041,
+      "sha1": "78e1fc6e2afa134c898009d80831db41abc3f46b"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://acpss.ahram.org.eg/News/21763.aspx",
+      "title": "زيارة سلام لاسطنبول: أبعاد دور تركي محتمل في لبنان",
+      "page_num": 1,
+      "bytes": 97796,
+      "sha1": "5edc896d6f5d22fda1ec5ad6c1ac6f8f5fd0f8e3"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://acpss.ahram.org.eg/News/21761.aspx",
+      "title": "كيف أعادت البيئة الرقمية تشكيل العلاقة بين النخب والجمهور؟: البودكاست نموذجاً",
+      "page_num": 1,
+      "bytes": 92640,
+      "sha1": "2dfd1171e1acc32d36b57afa39696dc8372d2d3b"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://acpss.ahram.org.eg/News/21759.aspx",
+      "title": "لماذا تزايد اللجوء إلى \"البذاءات السياسية\" في العلاقات الدولية؟",
+      "page_num": 1,
+      "bytes": 96834,
+      "sha1": "0d3c035b9c9bdeeda4a51a47b5953e0f1c8764dd"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://acpss.ahram.org.eg/News/21758.aspx",
+      "title": "القوة الناعمة المصرية.. تعزيز الثقة الوطنية وروح التفاؤل ضرورة استراتيجية",
+      "page_num": 1,
+      "bytes": 92416,
+      "sha1": "f1f9178bab45a67e55084b203ce93cde29cffa65"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://acpss.ahram.org.eg/News/21756.aspx",
+      "title": "أسئلة ما بعد مشاركة المنتخب المصري في المونديال",
+      "page_num": 1,
+      "bytes": 94353,
+      "sha1": "22f3d44d473eab52687df0bf17a2b4ebc62737e3"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://acpss.ahram.org.eg/News/21755.aspx",
+      "title": "كيف شكلت الثقافة الحقوقية الجدل حول قانون الأحوال الشخصية؟",
+      "page_num": 1,
+      "bytes": 94263,
+      "sha1": "31d2acc1bc3c6a087e0aaf4084a735417145b5fe"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://acpss.ahram.org.eg/News/21752.aspx",
+      "title": "ثمن الموقع: هل تحول البحر الأحمر إلى سوق سياسية؟",
+      "page_num": 1,
+      "bytes": 99606,
+      "sha1": "605a9655a74e2d4c9c366c54d59eaa4593125b98"
+    },
+    {
+      "id": 31,
+      "file": "article_0031.html",
+      "url": "https://acpss.ahram.org.eg/News/21750.aspx",
+      "title": "\"الحضور الهادئ\" كأداة للنفوذ: قراءة في نمط التحرك المصري إقليمياً ودولياً",
+      "page_num": 2,
+      "bytes": 95522,
+      "sha1": "af73512f974ef700d4f1ecdb2eb8a27d81d3c92f"
+    },
+    {
+      "id": 32,
+      "file": "article_0032.html",
+      "url": "https://acpss.ahram.org.eg/News/21747.aspx",
+      "title": "الهيمنة الخوارزمية ومناهضة جيل \"زد\"",
+      "page_num": 2,
+      "bytes": 115925,
+      "sha1": "a7c53e0e0993b01a08db97b1c04ec0b0f0ed3902"
+    },
+    {
+      "id": 33,
+      "file": "article_0033.html",
+      "url": "https://acpss.ahram.org.eg/News/21746.aspx",
+      "title": "الخريطة الاقتصادية للشركات التقنية الكبرى",
+      "page_num": 2,
+      "bytes": 153197,
+      "sha1": "9f593b7d9cc9e6922f2c0fef202298d7a6392ae1"
+    },
+    {
+      "id": 34,
+      "file": "article_0034.html",
+      "url": "https://acpss.ahram.org.eg/News/21744.aspx",
+      "title": "هل تصبح \"آسيان\" نموذجاً لأمن الخليج العربي؟",
+      "page_num": 2,
+      "bytes": 95346,
+      "sha1": "8e246326bb9339e6d38341bb7a7f862e8596687b"
+    },
+    {
+      "id": 35,
+      "file": "article_0035.html",
+      "url": "https://acpss.ahram.org.eg/News/21743.aspx",
+      "title": "اختبار بالنار لـ \"قواعد اشتباك\" جديدة أم \"تثبيت للهدنة\" بين حزب الله وإسرائيل؟",
+      "page_num": 2,
+      "bytes": 99511,
+      "sha1": "2a1ba2c986e3a2be21f1910722eb296e1ae3eb38"
+    },
+    {
+      "id": 36,
+      "file": "article_0036.html",
+      "url": "https://acpss.ahram.org.eg/News/21742.aspx",
+      "title": "النخب السودانية: بين أزمات الثقة والحاجة إلى رؤية وطنية جامعة",
+      "page_num": 2,
+      "bytes": 92371,
+      "sha1": "e1780dcdd84211b89843fc7b9b62d5facd319144"
+    },
+    {
+      "id": 37,
+      "file": "article_0037.html",
+      "url": "https://acpss.ahram.org.eg/News/21740.aspx",
+      "title": "من الخطاب الثوري إلى \"From Tehran to D.C\": كيف أعاد \"AI\" تشكيل أدوات الدعاية الإيرانية؟",
+      "page_num": 2,
+      "bytes": 92550,
+      "sha1": "df67b24b1b863cae332834b127840c7aa72a5fd1"
+    },
+    {
+      "id": 38,
+      "file": "article_0038.html",
+      "url": "https://acpss.ahram.org.eg/News/21739.aspx",
+      "title": "منظمة الأمن والتعاون في أوروبا: هل تصلح نموذجاً لأمن الخليج العربي؟",
+      "page_num": 2,
+      "bytes": 97023,
+      "sha1": "2be77280479693eeaa5944608454d643f21fef57"
+    },
+    {
+      "id": 39,
+      "file": "article_0039.html",
+      "url": "https://acpss.ahram.org.eg/News/21737.aspx",
+      "title": "هل تصبح إيران \"يابان الشرق الأوسط\"؟",
+      "page_num": 2,
+      "bytes": 95151,
+      "sha1": "e12593601c822ede769128444cd3e4c633610315"
+    },
+    {
+      "id": 40,
+      "file": "article_0040.html",
+      "url": "https://acpss.ahram.org.eg/News/21736.aspx",
+      "title": "لبنان: موجة عدوان إسرائيلي جديدة بالتوازي مع التفاوض",
+      "page_num": 2,
+      "bytes": 110384,
+      "sha1": "f2ad952eec29ae32f9ef7a3716f80b33295ee97e"
+    },
+    {
+      "id": 41,
+      "file": "article_0041.html",
+      "url": "https://acpss.ahram.org.eg/News/21735.aspx",
+      "title": "دلالات الصراع الأمريكي - الإيراني",
+      "page_num": 2,
+      "bytes": 99392,
+      "sha1": "138cb79b59f9bde4e7ccfcc16e57f35f5eb6e245"
+    },
+    {
+      "id": 42,
+      "file": "article_0042.html",
+      "url": "https://acpss.ahram.org.eg/News/21732.aspx",
+      "title": "العالم العربي في زمن القوى الحضارية: حدود الفاعلية وإشكاليات التنسيق",
+      "page_num": 2,
+      "bytes": 101751,
+      "sha1": "ae441895576e02dbbdf6624eb6f5ae8f1a97c768"
+    },
+    {
+      "id": 43,
+      "file": "article_0043.html",
+      "url": "https://acpss.ahram.org.eg/News/21731.aspx",
+      "title": "كيف تدير إيران الزمن في أوقات الأزمات؟",
+      "page_num": 2,
+      "bytes": 99333,
+      "sha1": "f86ea5b4594edc61adfce16d0be6ddf26d1484d7"
+    },
+    {
+      "id": 44,
+      "file": "article_0044.html",
+      "url": "https://acpss.ahram.org.eg/News/21729.aspx",
+      "title": "السياسة النووية لكوريا الشمالية ومصداقية الردع النووي",
+      "page_num": 2,
+      "bytes": 95110,
+      "sha1": "ac58e32ccb2cd81174a9045620fe3af22a9d43cb"
+    },
+    {
+      "id": 45,
+      "file": "article_0045.html",
+      "url": "https://acpss.ahram.org.eg/News/21728.aspx",
+      "title": "لبنان: تمديد 45 يوماً للهدنة الجزئية وسلاح نوعي جديد بيد حزب الله",
+      "page_num": 2,
+      "bytes": 103664,
+      "sha1": "4f64e704404b7e967ccf1cbbef9c54f55e7a3dda"
+    },
+    {
+      "id": 46,
+      "file": "article_0046.html",
+      "url": "https://acpss.ahram.org.eg/News/21726.aspx",
+      "title": "قمة شي ـ بوتين: هل يتشكل محور أوراسي جديد في الشرق الأوسط يضم إيران؟",
+      "page_num": 2,
+      "bytes": 94777,
+      "sha1": "ad9f5c3d55a8587be4cb1845103bac2324cd3c93"
+    },
+    {
+      "id": 47,
+      "file": "article_0047.html",
+      "url": "https://acpss.ahram.org.eg/News/21725.aspx",
+      "title": "أزمة ستارمر.. إلى أين؟",
+      "page_num": 2,
+      "bytes": 104706,
+      "sha1": "02a77ea6cb4cfa857e259befea9cc32dd664a2cd"
+    },
+    {
+      "id": 48,
+      "file": "article_0048.html",
+      "url": "https://acpss.ahram.org.eg/News/21724.aspx",
+      "title": "\"الدبلوماسية البصرية\" وإعادة إنتاج صورة الدولة:  قراءة في دلالات حضور القادة الأجانب في الفضاء العام المصري",
+      "page_num": 2,
+      "bytes": 90827,
+      "sha1": "dc9ba79f612af656ff38aaabaf4a6c0f8a4fc0f4"
+    },
+    {
+      "id": 49,
+      "file": "article_0049.html",
+      "url": "https://acpss.ahram.org.eg/News/21721.aspx",
+      "title": "نتنياهو يعيد تقييم سياسة تغيير الشرق الأوسط",
+      "page_num": 2,
+      "bytes": 92815,
+      "sha1": "f8e8db737896129572a516b9a686951289c42a38"
+    },
+    {
+      "id": 50,
+      "file": "article_0050.html",
+      "url": "https://acpss.ahram.org.eg/News/21720.aspx",
+      "title": "السودان في مفترق الحرائق: حين يغلق الضغط الخارجي أبواب التسوية",
+      "page_num": 2,
+      "bytes": 92036,
+      "sha1": "3e8df788a34383374caa1d963d75fd9bf21a1a4b"
+    },
+    {
+      "id": 51,
+      "file": "article_0051.html",
+      "url": "https://acpss.ahram.org.eg/News/21718.aspx",
+      "title": "زيارة نواف سلام لدمشق: مفردات جديدة لعلاقات مصالح متوازنة",
+      "page_num": 2,
+      "bytes": 95426,
+      "sha1": "523f5ac1ea79af0197534411b05c71aec932532b"
+    },
+    {
+      "id": 52,
+      "file": "article_0052.html",
+      "url": "https://acpss.ahram.org.eg/News/21717.aspx",
+      "title": "ماذا يريد الرئيس شي من الولايات المتحدة؟",
+      "page_num": 2,
+      "bytes": 92694,
+      "sha1": "78fce5fab60c16ef5b8e794b89abe8c366a51f35"
+    },
+    {
+      "id": 53,
+      "file": "article_0053.html",
+      "url": "https://acpss.ahram.org.eg/News/21716.aspx",
+      "title": "ماذا يريد الرئيس ترامب من الصين؟",
+      "page_num": 2,
+      "bytes": 94918,
+      "sha1": "2895c8e297ddbec1dc0981e6b22563685f825fa7"
+    },
+    {
+      "id": 54,
+      "file": "article_0054.html",
+      "url": "https://acpss.ahram.org.eg/News/21713.aspx",
+      "title": "تأثير الحرب الإيرانية على وضع الصحافة في دول الصراع",
+      "page_num": 2,
+      "bytes": 103130,
+      "sha1": "44d8513dba2c5f40275140bca12b8a86216b7c94"
+    },
+    {
+      "id": 55,
+      "file": "article_0055.html",
+      "url": "https://acpss.ahram.org.eg/News/21711.aspx",
+      "title": "نحو منظمة للأمن والتعاون في الخليج: وجهة نظر",
+      "page_num": 2,
+      "bytes": 93750,
+      "sha1": "89ce31bc2dade78c48329445ea3fb244fdb24fc2"
+    },
+    {
+      "id": 56,
+      "file": "article_0056.html",
+      "url": "https://acpss.ahram.org.eg/News/21710.aspx",
+      "title": "خنق الصادرات: تداعيات الحصار البحري الأمريكي على الاقتصاد الإيراني",
+      "page_num": 2,
+      "bytes": 107089,
+      "sha1": "cd77e9e97ce2a50b76cfb06533b9dad81d7eb658"
+    },
+    {
+      "id": 57,
+      "file": "article_0057.html",
+      "url": "https://acpss.ahram.org.eg/News/21709.aspx",
+      "title": "توظيف الصورة في المجال العام: التأثير البصري والردع الرمزي",
+      "page_num": 2,
+      "bytes": 91925,
+      "sha1": "961faac4b20a38ca24e08103ef608aaa1753302b"
+    },
+    {
+      "id": 58,
+      "file": "article_0058.html",
+      "url": "https://acpss.ahram.org.eg/News/21707.aspx",
+      "title": "كيف تسببت الحرب في تصاعد أزمة الهيليوم؟",
+      "page_num": 2,
+      "bytes": 94374,
+      "sha1": "6add990d96683bcf3d9866315a8afa5b06bfce75"
+    },
+    {
+      "id": 59,
+      "file": "article_0059.html",
+      "url": "https://acpss.ahram.org.eg/News/21705.aspx",
+      "title": "خروج الإمارات من \"أوبك\" و\"أوبك بلس\".. لحظة انكشاف في تاريخ النفط والسياسة",
+      "page_num": 2,
+      "bytes": 90987,
+      "sha1": "0caaa893b09b86221813a82b57ad77032f725053"
+    },
+    {
+      "id": 60,
+      "file": "article_0060.html",
+      "url": "https://acpss.ahram.org.eg/News/21704.aspx",
+      "title": "متلازمة باماكو: معضلة مالي وصعود القاعدة في الساحل",
+      "page_num": 2,
+      "bytes": 101677,
+      "sha1": "e2c831e160a17e10a3894fbffb8b8bb209973505"
+    },
+    {
+      "id": 61,
+      "file": "article_0061.html",
+      "url": "https://acpss.ahram.org.eg/News/21784.aspx",
+      "title": "مقاربة نفسية - سياسية: متى يتحول ارتباط الأحلام الخاصة والعامة لحقيقة أو كابوس؟",
+      "page_num": 2,
+      "bytes": 122802,
+      "sha1": "ac5a773fe2ff6db33799095b277f3d665976c93a"
+    },
+    {
+      "id": 62,
+      "file": "article_0062.html",
+      "url": "https://acpss.ahram.org.eg/News/21780.aspx",
+      "title": "المواقف الفلسطينية من مجلس السلام وترتيبات المرحلة الانتقالية في غزة: بين تباين الرؤى وإشكاليات التنفيذ",
+      "page_num": 2,
+      "bytes": 117000,
+      "sha1": "7bea97f1d341295df4cf34e06ccdc30d8a786857"
+    },
+    {
+      "id": 63,
+      "file": "article_0063.html",
+      "url": "https://acpss.ahram.org.eg/News/21734.aspx",
+      "title": "الحرب على إيران وفخ استراتيجية \"الرجل المجنون\"",
+      "page_num": 2,
+      "bytes": 118519,
+      "sha1": "03877e9dec31d4d7feba3db35a51f8f62aa5b116"
+    },
+    {
+      "id": 64,
+      "file": "article_0064.html",
+      "url": "https://acpss.ahram.org.eg/News/21727.aspx",
+      "title": "جيل Z في إيران.. لماذا لم يُحوِّل الحرب إلى فرصة لإسقاط النظام؟",
+      "page_num": 2,
+      "bytes": 114864,
+      "sha1": "ce996a31aaf198289d59f8ae2041d31d52026641"
+    },
+    {
+      "id": 65,
+      "file": "article_0065.html",
+      "url": "https://acpss.ahram.org.eg/News/21373.aspx",
+      "title": "الانتخابات الألمانية: تداعيات ما بعد صعود اليمين الشعبوي واليسار",
+      "page_num": 2,
+      "bytes": 99205,
+      "sha1": "cca59e72c61d8c503a89d239df536baf608d099a"
+    },
+    {
+      "id": 66,
+      "file": "article_0066.html",
+      "url": "https://acpss.ahram.org.eg/News/21598.aspx",
+      "title": "مستقبل الأمن الإقليمي في الشرق الأوسط (ملف خاص)",
+      "page_num": 2,
+      "bytes": 88056,
+      "sha1": "16f99876e9968c2f16df9468c71a377cfad33f65"
+    },
+    {
+      "id": 67,
+      "file": "article_0067.html",
+      "url": "https://acpss.ahram.org.eg/News/21379.aspx",
+      "title": "تعزيز الشراكة الاستراتيجية بين الناتو وموريتانيا: فرص وتحديات",
+      "page_num": 2,
+      "bytes": 91461,
+      "sha1": "ccc2455e5ae8bb91c3fbc27b5d701947e9da5a10"
+    },
+    {
+      "id": 68,
+      "file": "article_0068.html",
+      "url": "https://acpss.ahram.org.eg/News/21521.aspx",
+      "title": "حرب أكتوبر: 52 عاما على الانتصار العظيم (ملف خاص)",
+      "page_num": 2,
+      "bytes": 83933,
+      "sha1": "772f5693c0975b053cfbb0ef11a5172265236d5b"
+    },
+    {
+      "id": 69,
+      "file": "article_0069.html",
+      "url": "https://acpss.ahram.org.eg/News/21571.aspx",
+      "title": "الآسيوية الجديدة: رؤية سياسية لما بعد الهيمنة الغربية",
+      "page_num": 2,
+      "bytes": 100163,
+      "sha1": "988d8ebc5462917f400d29b7cadccfaf1ab72e1d"
+    },
+    {
+      "id": 70,
+      "file": "article_0070.html",
+      "url": "https://acpss.ahram.org.eg/News/21198.aspx",
+      "title": "قراءة في نتائج انتخابات البرلمان الأوروبي 2024",
+      "page_num": 2,
+      "bytes": 100822,
+      "sha1": "aa58a9b00da9a8994cc884c7fa309bbb5798df67"
+    },
+    {
+      "id": 71,
+      "file": "article_0071.html",
+      "url": "https://acpss.ahram.org.eg/News/21399.aspx",
+      "title": "إسرائيل إلى أين؟ (ملف خاص)",
+      "page_num": 2,
+      "bytes": 91511,
+      "sha1": "8a848f884549b79434a542e54195c98ba96f1673"
+    },
+    {
+      "id": 72,
+      "file": "article_0072.html",
+      "url": "https://acpss.ahram.org.eg/News/21051.aspx",
+      "title": "دلالات تصاعد استهداف داعش للقوات السورية",
+      "page_num": 2,
+      "bytes": 92270,
+      "sha1": "a69547b62a1c26cff0b9b9cd4c19e7cbeae3b7d2"
+    },
+    {
+      "id": 73,
+      "file": "article_0073.html",
+      "url": "https://acpss.ahram.org.eg/News/21124.aspx",
+      "title": "دوافع تشكيل قوة \"أسبيدس\" الأوروبية في البحر الأحمر",
+      "page_num": 2,
+      "bytes": 95774,
+      "sha1": "5011c6a1efb681ccafe1d8d99e7769268238a653"
+    },
+    {
+      "id": 74,
+      "file": "article_0074.html",
+      "url": "https://acpss.ahram.org.eg/News/21703.aspx",
+      "title": "الأحزاب السياسية في أوروبا: تحولات بنيوية في مشهد غير مستقر",
+      "page_num": 3,
+      "bytes": 95152,
+      "sha1": "efecbf5cc2ac9e7f979c18c87875aa7de21f4af8"
+    },
+    {
+      "id": 75,
+      "file": "article_0075.html",
+      "url": "https://acpss.ahram.org.eg/News/21702.aspx",
+      "title": "الزيدى رئيسًا لوزراء العراق.. مرشح \"تسوية توافقى\" من خارج التوقعات",
+      "page_num": 3,
+      "bytes": 95062,
+      "sha1": "cbaeb740b58446f5236a7712157df9da554c4d06"
+    },
+    {
+      "id": 76,
+      "file": "article_0076.html",
+      "url": "https://acpss.ahram.org.eg/News/21701.aspx",
+      "title": "التحولات الدولية والإقليمية وانعكاساتها على مصر: قراءة في التقرير الاستراتيجي العربي 2025",
+      "page_num": 3,
+      "bytes": 101602,
+      "sha1": "2d322774e2abd141b409a7a7d2a281d1409c0a0d"
+    },
+    {
+      "id": 77,
+      "file": "article_0077.html",
+      "url": "https://acpss.ahram.org.eg/News/21699.aspx",
+      "title": "لبنان: تمديد الهدنة لحرب لاتزال مشتعلة في الجنوب",
+      "page_num": 3,
+      "bytes": 111262,
+      "sha1": "ad3e3e7608decdd9b7477fc91f3dc24b0704dbfa"
+    },
+    {
+      "id": 78,
+      "file": "article_0078.html",
+      "url": "https://acpss.ahram.org.eg/News/21698.aspx",
+      "title": "هل تسقط مالي في قبضة الجماعات الإرهابية؟",
+      "page_num": 3,
+      "bytes": 97469,
+      "sha1": "b5f3ca96da5f776a886dc72c5ded5d7ad1478caf"
+    },
+    {
+      "id": 79,
+      "file": "article_0079.html",
+      "url": "https://acpss.ahram.org.eg/News/21695.aspx",
+      "title": "سقوط أوربان.. تآكل الداخل وتكلفة الاختيارات الخارجية في المجر",
+      "page_num": 3,
+      "bytes": 102886,
+      "sha1": "0928dcfb2e74946e9c495b115eefba957e0365d8"
+    },
+    {
+      "id": 80,
+      "file": "article_0080.html",
+      "url": "https://acpss.ahram.org.eg/News/21686.aspx",
+      "title": "سياقات الحروب: لماذا تتصاعد دعوات \"التعويضات\" في الشرق الأوسط عام 2026؟",
+      "page_num": 3,
+      "bytes": 96099,
+      "sha1": "7b9fe8a9bc0efc690367217cc92f3398d6ae671c"
+    },
+    {
+      "id": 81,
+      "file": "article_0081.html",
+      "url": "https://acpss.ahram.org.eg/News/21685.aspx",
+      "title": "من \"الوسيط النزيه\" إلى \"الشريك الضامن\": ما هي الحسابات الاستراتيجية الصينية في مضيق هرمز؟",
+      "page_num": 3,
+      "bytes": 90427,
+      "sha1": "945b89130dd0b825fa702120f5be12eefd44fb68"
+    },
+    {
+      "id": 82,
+      "file": "article_0082.html",
+      "url": "https://acpss.ahram.org.eg/News/21684.aspx",
+      "title": "هل تلجأ إسرائيل للسلاح النووي لإنهاء الحرب مع إيران؟",
+      "page_num": 3,
+      "bytes": 96685,
+      "sha1": "aa9cfb78b1d9aa43c8437993626f02ba1dea75d7"
+    },
+    {
+      "id": 83,
+      "file": "article_0083.html",
+      "url": "https://acpss.ahram.org.eg/News/21682.aspx",
+      "title": "العراق: انتخاب رئيس جديد  بعيداً عن آلية \"المرشح التوافقى\"",
+      "page_num": 3,
+      "bytes": 96358,
+      "sha1": "c624b6ad38abcfc5466ff4ba7077f56225721160"
+    },
+    {
+      "id": 84,
+      "file": "article_0084.html",
+      "url": "https://acpss.ahram.org.eg/News/21679.aspx",
+      "title": "كيف يبدو العراق بعد شهر من الحرب الأمريكية - الإسرائيلية على إيران؟",
+      "page_num": 3,
+      "bytes": 98680,
+      "sha1": "8706d2ed0745914ac8354aea87b59e720b90d7cd"
+    },
+    {
+      "id": 85,
+      "file": "article_0085.html",
+      "url": "https://acpss.ahram.org.eg/News/21678.aspx",
+      "title": "الترقب الحذِر: لماذا تتجنب الكويت معاداة إيران في حربها ضد واشنطن وتل أبيب؟",
+      "page_num": 3,
+      "bytes": 94286,
+      "sha1": "8baa6bf632db08eae96a52e01fe150a19b7a1e70"
+    },
+    {
+      "id": 86,
+      "file": "article_0086.html",
+      "url": "https://acpss.ahram.org.eg/News/21677.aspx",
+      "title": "أخطر الأزمات: الحريديم والجيش الإسرائيلي.. صراع الظل يخرج للعلن",
+      "page_num": 3,
+      "bytes": 95275,
+      "sha1": "9d5734aede27a4886351d04238e77fff770c67e9"
+    },
+    {
+      "id": 87,
+      "file": "article_0087.html",
+      "url": "https://acpss.ahram.org.eg/News/21676.aspx",
+      "title": "هل تنجح دبلوماسية خفض التصعيد في بناء السلام بمنطقة الشرق الأوسط؟",
+      "page_num": 3,
+      "bytes": 94044,
+      "sha1": "78f601087c5e1a24a45d45ea31cd1d045bc5f13d"
+    },
+    {
+      "id": 88,
+      "file": "article_0088.html",
+      "url": "https://acpss.ahram.org.eg/News/21674.aspx",
+      "title": "توجهات الإعلام الإيراني في الحرب: تركيز السردية الوطنية والسيطرة على الفضاء المعلوماتي",
+      "page_num": 3,
+      "bytes": 92270,
+      "sha1": "129c885daf33a7bab925cd68de1cb0a05e02be56"
+    },
+    {
+      "id": 89,
+      "file": "article_0089.html",
+      "url": "https://acpss.ahram.org.eg/News/21673.aspx",
+      "title": "زحف إسرائيلي جنوب لبنان وحزب الله ينصب الفخاخ",
+      "page_num": 3,
+      "bytes": 112674,
+      "sha1": "181eb852c77a78cd291d6e57ca50c00fdfb9e243"
+    },
+    {
+      "id": 90,
+      "file": "article_0090.html",
+      "url": "https://acpss.ahram.org.eg/News/21672.aspx",
+      "title": "بمناسبة يوم الخارجية المصرية 15 مارس: إسهام مؤلفات الدبلوماسيين في الدبلوماسية العامة وتشكيل الرأي العام",
+      "page_num": 3,
+      "bytes": 95966,
+      "sha1": "2bad239eb9e14d5c249b84fc07736d73ce170e1a"
+    },
+    {
+      "id": 91,
+      "file": "article_0091.html",
+      "url": "https://acpss.ahram.org.eg/News/21668.aspx",
+      "title": "حسابات مسقط: كيف تُدار السياسة العُمانية تجاه الحرب الأمريكية الإسرائيلية الإيرانية؟",
+      "page_num": 3,
+      "bytes": 99256,
+      "sha1": "50f0fc1cae4e435483e48a4a7b7a4b384dd16f7e"
+    },
+    {
+      "id": 92,
+      "file": "article_0092.html",
+      "url": "https://acpss.ahram.org.eg/News/21667.aspx",
+      "title": "عصر ما بعد القيم في النظام الدولي: هل تصبح القوة بديلاً عن الشرعية؟",
+      "page_num": 3,
+      "bytes": 96387,
+      "sha1": "031b7d755ca6c762d721fe5def53745e9fe6efa4"
+    },
+    {
+      "id": 93,
+      "file": "article_0093.html",
+      "url": "https://acpss.ahram.org.eg/News/21665.aspx",
+      "title": "\"المناطق الرمادية\" في الحرب الأمريكية-الإسرائيلية على إيران",
+      "page_num": 3,
+      "bytes": 97104,
+      "sha1": "dd8ed925775f59a6a7d9e2709a0d3f40abb90de5"
+    },
+    {
+      "id": 94,
+      "file": "article_0094.html",
+      "url": "https://acpss.ahram.org.eg/News/21664.aspx",
+      "title": "السودان في ظل حرب إيران: إعادة تشكيل الصراع الداخلي",
+      "page_num": 3,
+      "bytes": 90775,
+      "sha1": "27dbb67b4f4b5340f9cb9744501d9c9a30bab4cf"
+    },
+    {
+      "id": 95,
+      "file": "article_0095.html",
+      "url": "https://acpss.ahram.org.eg/News/21662.aspx",
+      "title": "المشروعات  \"الصغيرة والجميلة\": أولوية في مبادرة الحزام والطريق",
+      "page_num": 3,
+      "bytes": 99161,
+      "sha1": "85e95328016d6e7983de2d76f003922417142529"
+    },
+    {
+      "id": 96,
+      "file": "article_0096.html",
+      "url": "https://acpss.ahram.org.eg/News/21661.aspx",
+      "title": "لبنان: مبادرة فرنسية وميدان مشتعل!",
+      "page_num": 3,
+      "bytes": 102544,
+      "sha1": "9d88bdfcfd28ca697918c8e3cdb725918267c210"
+    },
+    {
+      "id": 97,
+      "file": "article_0097.html",
+      "url": "https://acpss.ahram.org.eg/News/21659.aspx",
+      "title": "المتاهة: إشكاليات \"اليوم التالي\" للحرب الأمريكية-الإسرائيلية على إيران",
+      "page_num": 3,
+      "bytes": 97220,
+      "sha1": "66c898a97dc7b89efea7997552ee3c8da904ed90"
+    },
+    {
+      "id": 98,
+      "file": "article_0098.html",
+      "url": "https://acpss.ahram.org.eg/News/21658.aspx",
+      "title": "هل تصبح مصر \"صمام أمان\" الطاقة في العالم؟",
+      "page_num": 3,
+      "bytes": 95028,
+      "sha1": "d2ae3a54c998af17dd7d673b5aba1ebc8212151a"
+    },
+    {
+      "id": 99,
+      "file": "article_0099.html",
+      "url": "https://acpss.ahram.org.eg/News/21655.aspx",
+      "title": "الدراما كساحة للصراع السردي: لماذا أثار \"صحاب الأرض\" قلق إسرائيل؟",
+      "page_num": 3,
+      "bytes": 94898,
+      "sha1": "f018b5c43487ea584c540fb2c03803919ff26691"
+    },
+    {
+      "id": 100,
+      "file": "article_0100.html",
+      "url": "https://acpss.ahram.org.eg/News/21653.aspx",
+      "title": "هل يمكن أن يفوز الطرف الأضعف في الحروب؟",
+      "page_num": 3,
+      "bytes": 92118,
+      "sha1": "c0a3b78bfb4d64690fede1bf8a5af4cd37743ce8"
+    },
+    {
+      "id": 101,
+      "file": "article_0101.html",
+      "url": "https://acpss.ahram.org.eg/News/21652.aspx",
+      "title": "حسابات طهران: هل تتسع رقعة الحرب إلى القرن الأفريقي؟",
+      "page_num": 3,
+      "bytes": 96243,
+      "sha1": "0d85f9da7f89bba739bfe70c165c7809e554e066"
+    },
+    {
+      "id": 102,
+      "file": "article_0102.html",
+      "url": "https://acpss.ahram.org.eg/News/21651.aspx",
+      "title": "إيران ما بعد \"خامنئي\".. إلى أين؟",
+      "page_num": 3,
+      "bytes": 107420,
+      "sha1": "4aae92ef29dbc6942c51150d34d076a375cb0539"
+    },
+    {
+      "id": 103,
+      "file": "article_0103.html",
+      "url": "https://acpss.ahram.org.eg/News/21650.aspx",
+      "title": "الداخل الإيراني تحت ضغط الحرب: المزاج العام للمجتمع وتأثير المعارضة المحتمل",
+      "page_num": 3,
+      "bytes": 100915,
+      "sha1": "391d5b649b935316b63b2d387d48b6ca787e3c82"
+    }
+  ],
+  "article_fetch_failures": [
+    {
+      "url": "https://acpss.ahram.org.eg/Portal/2/متابعات تحليلية/0.aspx",
+      "title": "قضايا وتحليلات",
+      "reason": "Empty response"
+    }
+  ],
+  "counts": {
+    "listing_pages": 3,
+    "articles": 103,
+    "article_fetch_failures": 1
+  }
+}

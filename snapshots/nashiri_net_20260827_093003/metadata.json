@@ -1,0 +1,237 @@
+{
+  "website": "nashiri",
+  "snapshot_date": "2026-08-27T09:34:21",
+  "pagination_type": "numbered pagination",
+  "scroll_mode": null,
+  "scroll_rounds_requested": null,
+  "load_more_selector": null,
+  "listing_url": "https://www.nashiri.net/index.php/articles/literature-and-art",
+  "input_urls": [
+    "https://www.nashiri.net/index.php/articles/literature-and-art",
+    "https://www.nashiri.net/index.php/articles/literature-and-art?start=7"
+  ],
+  "pagination_pattern": "https://www.nashiri.net/index.php/articles/literature-and-art?start={page}",
+  "requirements": "title, date, author, article body text",
+  "run_dir": "orch_runs/run_20260827_093003",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://www.nashiri.net/index.php/articles/literature-and-art",
+      "file": "listing_page_001.html",
+      "bytes": 77071,
+      "sha1": "8ce78c503f36153045e5b7831de77d9eb7a3dfc1"
+    },
+    {
+      "page_num": 2,
+      "url": "https://www.nashiri.net/index.php/articles/literature-and-art?start=7",
+      "file": "listing_page_002.html",
+      "bytes": 78008,
+      "sha1": "002bb69ec0fce4ccddb171f4bcb6a937cc5995cc"
+    },
+    {
+      "page_num": 3,
+      "url": "https://www.nashiri.net/index.php/articles/literature-and-art?start=14",
+      "file": "listing_page_003.html",
+      "bytes": 75439,
+      "sha1": "0db732be748a728c005642cad7f1ffadc2218902"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://www.nashiri.net/index.php/articles/literature-and-art/6566-1929-swt-mn-alkwyt",
+      "title": "1929: صوت من الكويت",
+      "page_num": 1,
+      "bytes": 75990,
+      "sha1": "4b6ffb19ebf0a17cece80b1069baf9b006f53726"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://www.nashiri.net/index.php/articles/literature-and-art/6472-2022-06-05-17-52-36",
+      "title": "قراءة أسلوبية في كتاب \"الفصول والغايات\" لأبي العلاء المعري",
+      "page_num": 1,
+      "bytes": 147462,
+      "sha1": "b65a29b885dc14ec63889338901a3f261b4dcbdc"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://www.nashiri.net/index.php/articles/literature-and-art/6295-2019-12-20-14-53-13",
+      "title": "مقترحات لتوظيف الذكاء الاصطناعي في خدمة اللغة العربية",
+      "page_num": 1,
+      "bytes": 83284,
+      "sha1": "38113197dde7e831ffe7f95f80ea102738415cd3"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://www.nashiri.net/index.php/articles/literature-and-art/6294-2019-11-08-00-48-34",
+      "title": "مسرحية القلعة",
+      "page_num": 1,
+      "bytes": 189147,
+      "sha1": "661dd312e8f5dfb3a1f9f553d580619c984209cf"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://www.nashiri.net/index.php/articles/literature-and-art/6286-2019-07-06-09-43-13",
+      "title": "غير صالح للإبداع!",
+      "page_num": 1,
+      "bytes": 81862,
+      "sha1": "462171223047a3a9afd9fafa0638a97e54106306"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://www.nashiri.net/index.php/articles/literature-and-art/6276-2019-04-08-04-39-59",
+      "title": "غازي القصيبي: الوزير الشاعر",
+      "page_num": 1,
+      "bytes": 101447,
+      "sha1": "eb854d280e1be2bc8cb85d14eab9f8808c0f6ae5"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://www.nashiri.net/index.php/articles/literature-and-art/6270-2019-02-18-07-55-36",
+      "title": "رسائل الرصافي",
+      "page_num": 1,
+      "bytes": 90937,
+      "sha1": "7924c890f1ab83321f70567f7756274060c2d2a3"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://www.nashiri.net/index.php/articles/literature-and-art/6230-2018-05-07-11-22-15",
+      "title": "تأديب الأدب!",
+      "page_num": 2,
+      "bytes": 138407,
+      "sha1": "54db7ec4ca232b1112beaecd08b359dec350e070"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://www.nashiri.net/index.php/articles/literature-and-art/6224-2018-04-14-19-07-24",
+      "title": "الأبيض والأسود (مسرحية رمزية قصيرة من فصل واحد)",
+      "page_num": 2,
+      "bytes": 105352,
+      "sha1": "e5ae7e9b53a3ab4ef32db5aad8a43cb1aa59bf49"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://www.nashiri.net/index.php/articles/literature-and-art/6202-2018-02-01-03-11-03",
+      "title": "فن \"المنمنمات\" الإسلامي",
+      "page_num": 2,
+      "bytes": 374099,
+      "sha1": "868349717ed13e82999e411b2bc06d128efb22d0"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://www.nashiri.net/index.php/articles/literature-and-art/6207-2018-02-14-09-11-51",
+      "title": "الرومانسية الأدبية والهمجية الڤالنتاينية",
+      "page_num": 2,
+      "bytes": 97087,
+      "sha1": "11537a240965eedcf681e5ef383a9a4b59abd028"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://www.nashiri.net/index.php/articles/literature-and-art/6206-2018-02-11-13-24-22",
+      "title": "إشارات ولطائف في علوم اللسان",
+      "page_num": 2,
+      "bytes": 331243,
+      "sha1": "78af97d77fa60999be2fc8e0457fed5d28c839a2"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://www.nashiri.net/index.php/articles/literature-and-art/6198-2018-01-11-11-15-51",
+      "title": "كعب يلبس عباءة الشعراء",
+      "page_num": 2,
+      "bytes": 88997,
+      "sha1": "7a204d847ec3798dfa8569839143b441c1105902"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://www.nashiri.net/index.php/articles/literature-and-art/6178-2017-10-20-23-23-41",
+      "title": "المخطوطات الأدبية السنسكريتية المترجمة الى الفارسية في الهند خلال عصور الحكم الإسلامي",
+      "page_num": 2,
+      "bytes": 189378,
+      "sha1": "9c34a0d9f99b72265c34a87cd4a6de01afba84c7"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://www.nashiri.net/index.php/articles/literature-and-art/6174-2017-10-05-10-39-07",
+      "title": "الإبداع الأدبي بسبب القيود، لا رغما عنها!",
+      "page_num": 3,
+      "bytes": 82554,
+      "sha1": "5284d3889285fb96d6d9124ba6b2d08223db8b71"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://www.nashiri.net/index.php/articles/literature-and-art/6133-2017-06-08-14-00-42",
+      "title": "عَنْقَاء الرقابة التي لا تنقرض!",
+      "page_num": 3,
+      "bytes": 117465,
+      "sha1": "54ee7d9df9fd6f4a95e8707f01ee663ae11d4c19"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://www.nashiri.net/index.php/articles/literature-and-art/6104-2017-04-15-20-34-30",
+      "title": "لام التعريف",
+      "page_num": 3,
+      "bytes": 85572,
+      "sha1": "60ec2fac0a143f7d394d7dcd695912f940780a0d"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://www.nashiri.net/index.php/articles/literature-and-art/6094-2017-04-09-06-12-33",
+      "title": "نصوص ولصوص",
+      "page_num": 3,
+      "bytes": 93493,
+      "sha1": "86860dbe8dee5b664e5b508b3c4487498ea3b52a"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://www.nashiri.net/index.php/articles/literature-and-art/6064-2017-03-02-11-03-20",
+      "title": "معارك ساخنة على مائدة الأدب",
+      "page_num": 3,
+      "bytes": 83013,
+      "sha1": "f4712cd91b575bfc42831833933a0cb5b15a8f8a"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://www.nashiri.net/index.php/articles/literature-and-art/6061-2017-02-28-15-54-37",
+      "title": "الأمل: نصوص مترجمة مختارة",
+      "page_num": 3,
+      "bytes": 209769,
+      "sha1": "fbfa87687a7b552ec8a4fc516f4d1e7318525bf6"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://www.nashiri.net/index.php/articles/literature-and-art/6052-2017-02-25-13-32-40",
+      "title": "عرعار: في ظلال القصيدة والثورة والحوار",
+      "page_num": 3,
+      "bytes": 197353,
+      "sha1": "958698a7b282fb440f8397a4cf98995a1658cbf3"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 3,
+    "articles": 21,
+    "article_fetch_failures": 0
+  }
+}

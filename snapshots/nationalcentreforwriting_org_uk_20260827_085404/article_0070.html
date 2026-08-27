@@ -1,0 +1,1621 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+<script>
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}});
+</script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <script src="https://webcomponents.spektrix.com/stable/webcomponents-loader.js"></script>
+	<script src="https://webcomponents.spektrix.com/stable/spektrix-component-loader.js" data-components="spektrix-donate,spektrix-merchandise,spektrix-basket-summary,spektrix-memberships,spektrix-gift-vouchers" async></script>
+  <script type="text/javascript" src="https://tickets.nationalcentreforwriting.org.uk/writerscentre/website/scripts/integrate.js"></script>
+
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v28.3 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>Wonder and Loss: Writing Grief and Memoir with Sam Meekings | National Centre for Writing | NCW</title>
+	<meta name="description" content="In this episode of The Writing Life Podcast, Sam Meekings shares the process behind writing his latest book, Wonder and Loss: A Practical Memoir for Writing about Grief." />
+	<link rel="canonical" href="https://nationalcentreforwriting.org.uk/writing-hub/wonder-and-loss-writing-grief-and-memoir-with-sam-meekings/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Wonder and Loss: Writing Grief and Memoir with Sam Meekings" />
+	<meta property="og:description" content="In this episode of The Writing Life Podcast, Sam Meekings shares the process behind writing his latest book, Wonder and Loss: A Practical Memoir for Writing about Grief." />
+	<meta property="og:url" content="https://nationalcentreforwriting.org.uk/writing-hub/wonder-and-loss-writing-grief-and-memoir-with-sam-meekings/" />
+	<meta property="og:site_name" content="National Centre for Writing | NCW" />
+	<meta property="article:modified_time" content="2026-03-09T11:54:18+00:00" />
+	<meta property="og:image" content="https://nationalcentreforwriting.org.uk/wp-content/uploads/2026/03/Writing-Grief-and-Memoir-with-Sam-Meekings-podcast.png" />
+	<meta property="og:image:width" content="900" />
+	<meta property="og:image:height" content="900" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="37 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/wonder-and-loss-writing-grief-and-memoir-with-sam-meekings\/","url":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/wonder-and-loss-writing-grief-and-memoir-with-sam-meekings\/","name":"Wonder and Loss: Writing Grief and Memoir with Sam Meekings | National Centre for Writing | NCW","isPartOf":{"@id":"https:\/\/nationalcentreforwriting.org.uk\/#website"},"primaryImageOfPage":{"@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/wonder-and-loss-writing-grief-and-memoir-with-sam-meekings\/#primaryimage"},"image":{"@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/wonder-and-loss-writing-grief-and-memoir-with-sam-meekings\/#primaryimage"},"thumbnailUrl":"https:\/\/nationalcentreforwriting.org.uk\/wp-content\/uploads\/2026\/03\/Writing-Grief-and-Memoir-with-Sam-Meekings-podcast.png","datePublished":"2026-03-09T05:05:00+00:00","dateModified":"2026-03-09T11:54:18+00:00","description":"In this episode of The Writing Life Podcast, Sam Meekings shares the process behind writing his latest book, Wonder and Loss: A Practical Memoir for Writing about Grief.","breadcrumb":{"@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/wonder-and-loss-writing-grief-and-memoir-with-sam-meekings\/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/wonder-and-loss-writing-grief-and-memoir-with-sam-meekings\/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/wonder-and-loss-writing-grief-and-memoir-with-sam-meekings\/#primaryimage","url":"https:\/\/nationalcentreforwriting.org.uk\/wp-content\/uploads\/2026\/03\/Writing-Grief-and-Memoir-with-Sam-Meekings-podcast.png","contentUrl":"https:\/\/nationalcentreforwriting.org.uk\/wp-content\/uploads\/2026\/03\/Writing-Grief-and-Memoir-with-Sam-Meekings-podcast.png","width":900,"height":900},{"@type":"BreadcrumbList","@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/wonder-and-loss-writing-grief-and-memoir-with-sam-meekings\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/nationalcentreforwriting.org.uk\/"},{"@type":"ListItem","position":2,"name":"Wonder and Loss: Writing Grief and Memoir with Sam Meekings"}]},{"@type":"WebSite","@id":"https:\/\/nationalcentreforwriting.org.uk\/#website","url":"https:\/\/nationalcentreforwriting.org.uk\/","name":"National Centre for Writing | NCW","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/nationalcentreforwriting.org.uk\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="National Centre for Writing | NCW &raquo; Feed" href="https://nationalcentreforwriting.org.uk/feed/" />
+<link rel="alternate" type="application/rss+xml" title="National Centre for Writing | NCW &raquo; Comments Feed" href="https://nationalcentreforwriting.org.uk/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="National Centre for Writing | NCW &raquo; Wonder and Loss: Writing Grief and Memoir with Sam Meekings Comments Feed" href="https://nationalcentreforwriting.org.uk/writing-hub/wonder-and-loss-writing-grief-and-memoir-with-sam-meekings/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://nationalcentreforwriting.org.uk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnationalcentreforwriting.org.uk%2Fwriting-hub%2Fwonder-and-loss-writing-grief-and-memoir-with-sam-meekings%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://nationalcentreforwriting.org.uk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnationalcentreforwriting.org.uk%2Fwriting-hub%2Fwonder-and-loss-writing-grief-and-memoir-with-sam-meekings%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='search-filter-plugin-styles-css' href='https://nationalcentreforwriting.org.uk/wp-content/plugins/search-filter-pro/public/assets/css/search-filter.min.css?ver=2.5.21' media='all' />
+<link rel='stylesheet' id='ncw-style-css' href='https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/style.css?ver=1771947514' media='all' />
+<link rel='stylesheet' id='mobile-nav-css' href='https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/lib/mobile-navigation/mmenu.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='ncw-slick-style-css' href='https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/css/slick.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='ncw-slick-theme-css' href='https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/css/slick-theme.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='moove_gdpr_frontend-css' href='https://nationalcentreforwriting.org.uk/wp-content/plugins/gdpr-cookie-compliance/dist/styles/gdpr-main-nf.css?ver=5.1.0' media='all' />
+<style id="moove_gdpr_frontend-inline-css">
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.moove-gdpr-infobar-settings-btn,
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-settings-btn {
+					background-color: transparent;
+					box-shadow: inset 0 0 0 1px currentColor;
+					opacity: .7;
+					color: #202020;
+				}
+
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.moove-gdpr-infobar-settings-btn:hover,
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-settings-btn:hover {
+					background-color: #202020;
+					box-shadow: none;
+					color: #fff;
+					opacity: 1;
+				}
+
+				#moove_gdpr_cookie_info_bar:not(.gdpr-full-screen-infobar).moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.moove-gdpr-infobar-settings-btn, #moove_gdpr_cookie_info_bar:not(.gdpr-full-screen-infobar).moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-settings-btn {
+					background-color: transparent;
+					box-shadow: inset 0 0 0 1px currentColor;
+					opacity: .7;
+					color: #fff;
+				}
+
+				#moove_gdpr_cookie_info_bar:not(.gdpr-full-screen-infobar).moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.moove-gdpr-infobar-settings-btn:hover, #moove_gdpr_cookie_info_bar:not(.gdpr-full-screen-infobar).moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-settings-btn:hover {
+					box-shadow: none;
+					opacity: 1;
+					color: #202020;
+					background-color: #fff;
+				}
+							#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main h3.tab-title, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main span.tab-title,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content .moove-gdpr-branding-cnt a,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton,
+				#moove_gdpr_cookie_modal .cookie-switch .cookie-slider:after, 
+				#moove_gdpr_cookie_modal .cookie-switch .slider:after, 
+				#moove_gdpr_cookie_modal .switch .cookie-slider:after, 
+				#moove_gdpr_cookie_modal .switch .slider:after,
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content p, 
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content p a,
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton, 
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h1, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h2, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h3, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h4, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h5, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h6,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-modal-title .tab-title,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-tab-main h3.tab-title, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-tab-main span.tab-title,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-branding-cnt a {
+					font-weight: inherit				}
+			#moove_gdpr_cookie_modal,#moove_gdpr_cookie_info_bar,.gdpr_cookie_settings_shortcode_content{font-family:inherit}#moove_gdpr_save_popup_settings_button{background-color:#373737;color:#fff}#moove_gdpr_save_popup_settings_button:hover{background-color:#000}#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton,#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton{background-color:#f6a000}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton,.gdpr_cookie_settings_shortcode_content .gdpr-shr-button.button-green,.gdpr-blocked-recaptcha .gdpr-shr-button.button-green{background-color:#f6a000;border-color:#f6a000}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton:hover,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton:hover,.gdpr_cookie_settings_shortcode_content .gdpr-shr-button.button-green:hover,.gdpr-blocked-recaptcha .gdpr-shr-button.button-green:hover{background-color:#fff;color:#f6a000}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close span.gdpr-icon{background-color:#f6a000;border:1px solid #f6a000}#moove_gdpr_cookie_info_bar span.moove-gdpr-infobar-allow-all.focus-g,#moove_gdpr_cookie_info_bar span.moove-gdpr-infobar-allow-all:focus,#moove_gdpr_cookie_info_bar button.moove-gdpr-infobar-allow-all.focus-g,#moove_gdpr_cookie_info_bar button.moove-gdpr-infobar-allow-all:focus,#moove_gdpr_cookie_info_bar span.moove-gdpr-infobar-reject-btn.focus-g,#moove_gdpr_cookie_info_bar span.moove-gdpr-infobar-reject-btn:focus,#moove_gdpr_cookie_info_bar button.moove-gdpr-infobar-reject-btn.focus-g,#moove_gdpr_cookie_info_bar button.moove-gdpr-infobar-reject-btn:focus,#moove_gdpr_cookie_info_bar span.change-settings-button.focus-g,#moove_gdpr_cookie_info_bar span.change-settings-button:focus,#moove_gdpr_cookie_info_bar button.change-settings-button.focus-g,#moove_gdpr_cookie_info_bar button.change-settings-button:focus{-webkit-box-shadow:0 0 1px 3px #f6a000;-moz-box-shadow:0 0 1px 3px #f6a000;box-shadow:0 0 1px 3px #f6a000}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close i:hover,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close span.gdpr-icon:hover,#moove_gdpr_cookie_info_bar span[data-href]>u.change-settings-button{color:#f6a000}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li.menu-item-selected a span.gdpr-icon,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li.menu-item-selected button span.gdpr-icon{color:inherit}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a span.gdpr-icon,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button span.gdpr-icon{color:inherit}#moove_gdpr_cookie_modal .gdpr-acc-link{line-height:0;font-size:0;color:transparent;position:absolute}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close:hover i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content a:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content span.change-settings-button:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.change-settings-button:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content u.change-settings-button:hover,#moove_gdpr_cookie_info_bar span[data-href]>u.change-settings-button,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content span.change-settings-button.focus-g,span.change-settings-button:focus,button.change-settings-button.focus-g,button.change-settings-button:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content u.change-settings-button.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content u.change-settings-button:focus{color:#f6a000}#moove_gdpr_cookie_modal .moove-gdpr-branding.focus-g span,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main a.focus-g,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .gdpr-cd-details-toggle.focus-g{color:#f6a000}#moove_gdpr_cookie_modal.gdpr_lightbox-hide{display:none}#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton,#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton,.gdpr-shr-button,#moove_gdpr_cookie_info_bar .moove-gdpr-infobar-close-btn{border-radius:0}
+/*# sourceURL=moove_gdpr_frontend-inline-css */
+</style>
+<script id="jquery-js" src="//ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js?ver=20171012"></script>
+<script id="search-filter-plugin-build-js-extra">
+var SF_LDATA = {"ajax_url":"https://nationalcentreforwriting.org.uk/wp-admin/admin-ajax.php","home_url":"https://nationalcentreforwriting.org.uk/","extensions":[]};
+//# sourceURL=search-filter-plugin-build-js-extra
+</script>
+<script id="search-filter-plugin-build-js" src="https://nationalcentreforwriting.org.uk/wp-content/plugins/search-filter-pro/public/assets/js/search-filter-build.min.js?ver=2.5.21"></script>
+<script id="search-filter-plugin-chosen-js" src="https://nationalcentreforwriting.org.uk/wp-content/plugins/search-filter-pro/public/assets/js/chosen.jquery.min.js?ver=2.5.21"></script>
+<link rel="https://api.w.org/" href="https://nationalcentreforwriting.org.uk/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://nationalcentreforwriting.org.uk/wp-json/wp/v2/writing_hub/46967" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://nationalcentreforwriting.org.uk/xmlrpc.php?rsd" />
+<link rel='shortlink' href='https://nationalcentreforwriting.org.uk/?p=46967' />
+<meta name="cdp-version" content="1.5.6" /><link rel="pingback" href="https://nationalcentreforwriting.org.uk/xmlrpc.php">      	<style>
+		.internal_hero{
+			background-image: url("https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/default-header.png");
+      background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/default-header.png");
+      background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/default-header.png");
+      background-position: 0px 0px, 50% 50%;
+      background-size: auto, cover;
+      background-repeat: repeat, no-repeat;
+		}
+	</style>
+  <link rel='stylesheet' id='gform_basic-css' href='https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/css/dist/basic.min.css?ver=3.0.3' media='all' />
+<link rel='stylesheet' id='gform_theme_components-css' href='https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/css/dist/theme-components.min.css?ver=3.0.3' media='all' />
+<link rel='stylesheet' id='gform_theme-css' href='https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/css/dist/theme.min.css?ver=3.0.3' media='all' />
+
+</head>
+
+<body class="wp-singular writing_hub-template-default single single-writing_hub postid-46967 wp-theme-ncw">
+
+<div class="site_wrapper"> <!-- Site Wrapper -->
+
+	<div id="page" class="site">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+    
+    
+      <header id="masthead" class="site-header">
+
+        
+        <div class="logo_nav_holder"> <!-- Logo Nav Holder -->
+
+          <div class="logo"> <!-- Logo -->
+            <a href="https://nationalcentreforwriting.org.uk/" rel="home">
+              <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/ncw-logo.svg" alt="NCW Logo" />
+            </a>
+          </div> <!-- / Logo -->
+
+          <div class="nav_icon"><!-- Nav Icon -->
+            <a href="#mobile-navigation">
+              <div id="nav_icon" class="hamburger hamburger--squeeze">
+                <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+                </div>
+              </div>
+            </a>
+          </div> <!-- / Nav Icon -->
+
+          <div class="main_nav"> <!-- Main Nav -->
+
+            <nav id="site-navigation" class="main-navigation">
+              <div class="menu-menu-1-container"><ul id="primary-menu" class="menu"><li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-109"><a href="https://nationalcentreforwriting.org.uk/whats-on/">What’s On</a>
+<ul class="sub-menu">
+	<li id="menu-item-16582" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16582"><a href="https://nationalcentreforwriting.org.uk/whats-on/">All Events</a></li>
+	<li id="menu-item-51505" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51505"><a href="https://nationalcentreforwriting.org.uk/darkest-chapter/">Darkest Chapter</a></li>
+	<li id="menu-item-48417" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48417"><a href="https://nationalcentreforwriting.org.uk/whats-on/summer/">Summer at the National Centre for Writing</a></li>
+	<li id="menu-item-43339" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43339"><a href="https://nationalcentreforwriting.org.uk/programmes/browse-our-season-brochure/">Season Brochure</a></li>
+	<li id="menu-item-33130" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33130"><a href="https://nationalcentreforwriting.org.uk/the-global-page-2/">The Global Page  </a></li>
+</ul>
+</li>
+<li id="menu-item-63" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-63"><a href="https://nationalcentreforwriting.org.uk/get-involved/">Get involved</a>
+<ul class="sub-menu">
+	<li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="https://nationalcentreforwriting.org.uk/get-involved/writers/">For writers</a></li>
+	<li id="menu-item-61" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="https://nationalcentreforwriting.org.uk/get-involved/translators/">For translators</a></li>
+	<li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="https://nationalcentreforwriting.org.uk/get-involved/communities/">For communities</a></li>
+	<li id="menu-item-825" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-825"><a href="https://nationalcentreforwriting.org.uk/get-involved/young-people/">For young people</a></li>
+	<li id="menu-item-826" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-826"><a href="https://nationalcentreforwriting.org.uk/get-involved/families/">For families</a></li>
+	<li id="menu-item-827" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-827"><a href="https://nationalcentreforwriting.org.uk/get-involved/schools/">For teachers</a></li>
+	<li id="menu-item-828" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-828"><a href="https://nationalcentreforwriting.org.uk/norwich-unesco-city-of-literature/">Norwich UNESCO City of Literature</a></li>
+</ul>
+</li>
+<li id="menu-item-55" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-55"><a href="https://nationalcentreforwriting.org.uk/academy/">Academy</a>
+<ul class="sub-menu">
+	<li id="menu-item-44919" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44919"><a href="https://nationalcentreforwriting.org.uk/the-writing-life-challenge/">The Writing Life Challenge</a></li>
+	<li id="menu-item-830" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-830"><a href="https://nationalcentreforwriting.org.uk/academy/tutored-courses/">Online tutored courses</a></li>
+	<li id="menu-item-832" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-832"><a href="https://nationalcentreforwriting.org.uk/academy/workshops/">Workshops</a></li>
+	<li id="menu-item-65" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65"><a href="https://nationalcentreforwriting.org.uk/academy/mentoring/">Mentoring</a></li>
+	<li id="menu-item-831" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-831"><a href="https://nationalcentreforwriting.org.uk/academy/live-evening-courses/">Evening courses</a></li>
+	<li id="menu-item-829" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-829"><a href="https://nationalcentreforwriting.org.uk/academy/self-paced-courses/">Self-paced online courses</a></li>
+	<li id="menu-item-8145" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8145"><a href="https://nationalcentreforwriting.org.uk/get-involved/writers/resources/">Free resources</a></li>
+</ul>
+</li>
+<li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="https://nationalcentreforwriting.org.uk/writing-hub/">Writing Hub</a></li>
+<li id="menu-item-10937" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10937"><a href="https://nationalcentreforwriting.org.uk/visit-us/">Visit</a>
+<ul class="sub-menu">
+	<li id="menu-item-27672" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27672"><a href="https://nationalcentreforwriting.org.uk/plan-your-visit/">Plan your visit</a></li>
+	<li id="menu-item-26050" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26050"><a href="https://nationalcentreforwriting.org.uk/writers-room/">Writers’ Room</a></li>
+	<li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="https://nationalcentreforwriting.org.uk/visit-us/the-literature-house/accessibility/">Accessibility</a></li>
+</ul>
+</li>
+<li id="menu-item-10938" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10938"><a href="https://nationalcentreforwriting.org.uk/about-us/">About us</a>
+<ul class="sub-menu">
+	<li id="menu-item-10731" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10731"><a href="https://nationalcentreforwriting.org.uk/support-us/">Join and support</a></li>
+	<li id="menu-item-14985" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14985"><a href="https://nationalcentreforwriting.org.uk/vacancies/">Join the team</a></li>
+	<li id="menu-item-14344" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14344"><a href="https://nationalcentreforwriting.org.uk/shop/">Shop</a></li>
+	<li id="menu-item-64" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"><a href="https://nationalcentreforwriting.org.uk/hire/">Hire Dragon Hall</a></li>
+	<li id="menu-item-38328" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38328"><a href="https://nationalcentreforwriting.org.uk/press/">Press</a></li>
+	<li id="menu-item-8326" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8326"><a href="https://nationalcentreforwriting.org.uk/in-the-region/">In the region</a></li>
+	<li id="menu-item-8094" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8094"><a href="https://nationalcentreforwriting.org.uk/contact/">Contact us</a></li>
+</ul>
+</li>
+<li id="menu-item-838" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-838"><a href="https://nationalcentreforwriting.org.uk/norwich-unesco-city-of-literature/">Norwich UNESCO City of Literature</a></li>
+<li id="menu-item-9085" class="mobile_only menu-item menu-item-type-custom menu-item-object-custom menu-item-9085"><a href="https://ncw-online.teachable.com/l/products">Academy Portal</a></li>
+</ul></div>            </nav><!-- #site-navigation -->
+
+            <div class="top_icons"> <!-- Top Icons -->
+
+              <a href="/my-account/"><img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/login-white.svg" width="32" height="32" alt="Profile Icon" /></a>
+              <spektrix-basket-summary client-name="writerscentre" custom-domain="tickets.nationalcentreforwriting.org.uk">
+                <a href="https://nationalcentreforwriting.org.uk/basket/" class="account_basket">
+                <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/basket-white.svg" width="32" height="32" alt="Basket Icon" />
+                <span class="basket_item_count" data-basket-item-count></span>
+                </a>
+              </spektrix-basket-summary>
+            </div> <!-- / Top Icons -->
+
+            <div class="top_link">
+              <a href="https://sso.teachable.com/secure/231323/identity/login/password" target="_blank">Academy Portal</a>
+            </div>
+
+          </div> <!-- / Main Nav -->
+
+          <div class="flyout-container" >
+
+            <div class="support_us_flyout flyout-button pink_bg" id="flyout-1-button" ><a href="#">SUPPORT NCW<img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/support_us_arrow.svg" alt="Arrow"/></a></div> <!-- Support Us Flyout -->
+
+            <div class="donation_form flyout flyout-1 pink_bg" id="donation_flyout"> <!-- Donation Form -->
+
+              <div class="donation_slider_holder"> <!-- Donation Slider Holder -->
+
+                <p class="donation_flyout_text">Every donation spreads the lifelong benefits of reading, writing and stories.</p>
+
+                <div class="donation_close"><a href="#close_search"><img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/close-white.svg" alt="X Close Icon" /></a></div>
+
+                
+                  <spektrix-donate id="steps-2801AQDNLVMHMKCPBDVJNRVPGGRHGRKHB" client-name="writerscentre" custom-domain="tickets.nationalcentreforwriting.org.uk" fund-id="2801AQDNLVMHMKCPBDVJNRVPGGRHGRKHB" forward-to="https://nationalcentreforwriting.org.uk/basket/">
+
+                      <p class="h5">Choose an amount: £<span data-display-donation-amount>0</span></p>
+                      <div class="donate_buttons">
+                        <button data-donate-amount="5">£5</button>
+                        <button data-donate-amount="10">£10</button>
+                        <button data-donate-amount="25">£25</button>
+                        <button data-donate-amount="50">£50</button>
+                        <label for="other" class="screen-reader-text">Other Amount:</label>
+                        <input class="donation_other" type="text" data-custom-donation-input placeholder="£ Other" name="other" id="other">
+                        <button class="donation_submit" data-submit-donation>add donation to basket</button>
+                      </div>
+
+                      <div data-success-container style="display: none;">Thank you. Your donation has been added to your basket.</div>
+                      <div data-fail-container style="display: none;">Sorry there was an issue with your donation. Please try again. If the problem persists please contact us.</div>
+
+                  </spektrix-donate>
+
+                
+              </div> <!-- / Donation Slider Holder -->
+
+                              <p class="h5">Donate, join us as a member, advertise your business and more...</p>
+              
+                                                                <a href="https://www.nationalcentreforwriting.org.uk/support-us" class="btn btn_sm ">More ways to get involved</a>
+                                              
+            </div> <!-- / Donation Form -->
+
+            
+            <div class="search_icon"><a href="#"><img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/icon-search-black.svg" width="32" height="32" alt="Magnifying Glass Search Icon" /></a></div>
+
+          </div>
+
+        </div> <!-- / Logo Nav Holder -->
+
+        <div class="search_full yellow_bg"> <!-- Search Full -->
+
+          <div class="search_form_content" id="search_form_content" tabindex="-1"> <!-- Search Form Holder-->
+
+              <form role="search" method="get" class="search-form" action="https://nationalcentreforwriting.org.uk">
+
+                  <div class="search_form_holder"> <!-- Search Form Holder -->
+                      <div class="label_input">
+                        <label for="site_search">Enter Search Terms:</label>
+                        <input type="search" id="site_search" class="search-field" value="" name="s" title="Search for:" />
+                      </div>
+                      <input type="submit" class="search-submit" value="Search" />
+                  </div> <!-- / Search Form Holder -->
+
+              </form>
+
+              <div class="search_close"> <!-- Search Close -->
+                <a href="#close_search"><img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/icon-close.svg" alt="X Close Icon" /></a>
+              </div> <!-- / Search Close -->
+
+          </div> <!-- / Search Form Holder -->
+
+        </div> <!-- / Search Full -->
+
+      </header><!-- #masthead -->
+
+    
+		<div id="content" class="site-content">
+
+		
+      <div class="writing_hub_hero"> <!-- Writing Hub Hero -->
+
+        <div class="writing_hub_hero_content"> <!-- Writing Hub Hero Content -->
+
+          <div class="title">Wonder and Loss: Writing Grief and Memoir with Sam Meekings</div> <!-- Title -->
+
+          
+        </div> <!-- / Writing Hub Hero Content -->
+                  <div class="button_container"> <!-- Button Container -->
+            <a href="https://nationalcentreforwriting.org.uk/writing-hub/" class="btn_text">BACK TO THE HUB</a>
+          </div> <!-- / Button Container -->
+        
+      </div> <!-- / Writing Hub Hero -->
+
+    
+<div id="primary" class="content-area">
+  <main id="main" class="site-main">
+
+  
+      
+
+
+
+<div class="full_content dark_bg pt_sm pb_md"> <!-- Full Content -->
+  <div class="media_contained_block image_left"> <!-- Media Contained Block -->
+
+     <!-- Content Block -->
+      
+        <div class="content_container"> <!-- Content Container -->
+
+          <div class="text_col"> <!-- Text Column -->
+
+            
+             <!-- / Title & SEO -->
+
+             <!-- Introduction -->
+              <p class="intro_text">In this episode of <strong>The Writing Life Podcast</strong>, novelist, poet and Associate Professor of Creative Writing Sam Meekings shares the process behind writing his latest book, <em>Wonder and Loss: A Practical Memoir for Writing about Grief</em>, which interweaves memoir and his personal journey through grief with practical guidance and insight on how to write about it.</p>
+             <!-- / Introduction -->
+
+             <!-- / Text Content -->
+
+             <!-- / Button Repeater -->
+
+          </div> <!-- / Text Column -->
+
+          <div class="image"> <!-- Image -->
+                        <img decoding="async" src="https://nationalcentreforwriting.org.uk/wp-content/uploads/2026/03/Writing-Grief-and-Memoir-with-Sam-Meekings-podcast.png" alt="">
+          </div> <!-- / Image -->
+
+        </div> <!-- / Content Container -->
+
+           <!-- / Content Block -->
+
+  </div> <!-- / Media Contained Block -->
+</div> <!-- / Full Content -->
+
+
+
+
+
+<div class="full_content light_bg pt_md pb_md "> <!-- Full Content -->
+  <div class="column_text_block mw_960 "> <!-- Column Text Block -->
+
+    
+     <!-- / Title & SEO -->
+
+    
+       <!-- Introduction -->
+        <p class="intro_text">Sam sat down with Steph for a candid and insightful discussion about writing as therapy, the importance of intention and of setting boundaries, the role of vulnerability, and of embracing the unknown when undertaking a writing project which draws upon lived, painful experiences. There is also lots of room for wonder, magic and play!</p>
+       <!-- / Introduction -->
+
+       <!-- Text Content -->
+        <div class="text_block">
+          <p>Sam Meekings is a British novelist and poet. He is the author of <em>Under Fishbone Clouds</em> (called &#8216;a poetic evocation of the country and its people&#8217; by the <em>New York Times</em>) and <em>The Afterlives of Doctor Gachet</em>. He currently works as an Associate Professor of Creative Writing at Northwestern University in Qatar, and has spent the last few years living and working in China and the Middle East. He balances his time between teaching, research, raising two kids as a single father, and drinking copious cups of tea.</p>
+        </div>
+       <!-- / Text Content -->
+
+    
+     <!-- / Button Repeater -->
+
+    
+  </div> <!-- / Column Text Block -->
+</div> <!-- / Full Content -->
+
+
+
+
+
+<div class="full_content dark_bg pt_md pb_md animated"> <!-- Full Content -->
+  <div class="column_text_block  animated"> <!-- Column Text Block -->
+
+          <div class="mw_720"> <!-- Max Width 720px -->
+    
+    
+      <div class="title_container"> <!-- Title Container -->
+
+        <p class="h2">Listen now</p> <!-- Title & SEO -->
+
+         <!-- / Subtitle & SEO -->
+
+      </div> <!-- / Title Container -->
+
+     <!-- / Title & SEO -->
+
+    
+       <!-- / Featured Text -->
+
+       <!-- / Introduction -->
+
+       <!-- Text Content -->
+        <div class="text_block">
+          <p><iframe style="border: none; min-width: min(100%, 430px); height: 150px;" title="Wonder and Loss: Writing Grief and Memoir with Sam Meekings" src="https://www.podbean.com/player-v2/?i=h85y2-1a63224-pb&amp;from=pb6admin&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Arial&amp;skin=1&amp;font-color=&amp;logo_link=episode_page&amp;btn-skin=fb0584" width="100%" height="150" scrolling="no" data-name="pb-iframe-player"></iframe></p>
+<p>Edited by Omni Mix</p>
+        </div>
+       <!-- / Text Content -->
+
+    
+     <!-- / Button Repeater -->
+
+          </div> <!-- Max Width 720px -->
+    
+  </div> <!-- / Column Text Block -->
+</div> <!-- / Full Content -->
+
+
+
+
+
+<div class="full_content light_bg pt_md pb_md"> <!-- Full Content -->
+  <div class="media_contained_block image_left"> <!-- Media Contained Block -->
+
+     <!-- Content Block -->
+      
+        <div class="content_container"> <!-- Content Container -->
+
+          <div class="text_col"> <!-- Text Column -->
+
+            
+             <!-- Title & SEO -->
+              <p class="h2"><em>Wonder and Loss: A Practical Memoir for Writing about Grief</em></p>             <!-- / Title & SEO -->
+
+             <!-- Introduction -->
+              <p class="intro_text">A braided memoir that interweaves the author&#8217;s personal journey through grief with a guide on how to write about it, this book is both Sam Meekings&#8217; raw account of the death of his younger brother and a step-by-step breakdown of the memoir writing process.</p>
+             <!-- / Introduction -->
+
+             <!-- Text Content -->
+              <div class="text_block">
+                <p>With a twin focus on how to heal and preserve precious memories whilst exploring the mechanics of writing about the self, <em>Wonder and Loss</em> uses personal story, writing theories, useful strategies and detailed prompts to invite the reader to write alongside Sam on a path that is both painful and profound.</p>
+              </div>
+             <!-- / Text Content -->
+
+             <!-- / Button Repeater -->
+
+          </div> <!-- / Text Column -->
+
+          <div class="image"> <!-- Image -->
+                        <img decoding="async" src="https://nationalcentreforwriting.org.uk/wp-content/uploads/2026/03/Wonder-and-Loss-Sam-Meekings.png" alt="">
+          </div> <!-- / Image -->
+
+        </div> <!-- / Content Container -->
+
+           <!-- / Content Block -->
+
+  </div> <!-- / Media Contained Block -->
+</div> <!-- / Full Content -->
+
+
+
+
+
+<div class="full_content dark_bg pt_md pb_sm animated"> <!-- Full Content -->
+  <div class="column_text_block  animated"> <!-- Column Text Block -->
+
+          <div class="mw_720"> <!-- Max Width 720px -->
+    
+    
+      <div class="title_container"> <!-- Title Container -->
+
+        <p class="h2">Transcript</p> <!-- Title & SEO -->
+
+         <!-- / Subtitle & SEO -->
+
+      </div> <!-- / Title Container -->
+
+     <!-- / Title & SEO -->
+
+    
+       <!-- / Featured Text -->
+
+       <!-- / Introduction -->
+
+       <!-- / Text Content -->
+
+    
+     <!-- / Button Repeater -->
+
+          </div> <!-- Max Width 720px -->
+    
+  </div> <!-- / Column Text Block -->
+</div> <!-- / Full Content -->
+
+
+
+
+
+<div class="full_content light_bg pt_md pb_md "> <!-- Full Content -->
+  <div class="column_text_block mw_960 "> <!-- Column Text Block -->
+
+    
+     <!-- / Title & SEO -->
+
+    
+       <!-- / Introduction -->
+
+       <!-- Text Content -->
+        <div class="text_block">
+          <p><strong>Steph</strong></p>
+<p>Sam, welcome to The Writing Life. It&#8217;s such a pleasure to have you with us.</p>
+<p>&nbsp;</p>
+<p><strong>Sam</strong></p>
+<p>It&#8217;s a pleasure to be here, thanks for having me.</p>
+<p>&nbsp;</p>
+<p><strong>Steph</strong></p>
+<p>We’re here to talk about your book<em>, Wonder and Loss: A Practical Memoir for Writing About Grief, </em>which was published last year.</p>
+<p>&nbsp;</p>
+<p><strong>Sam</strong></p>
+<p>Yes, in November.</p>
+<p>&nbsp;</p>
+<p><strong>Steph</strong></p>
+<p>Excellent. Well, I’ve had a read of it recently, and it’s remarkable, really. It’s this braided memoir which interweaves your personal journey through grief after the passing of your brother. But it also provides a step-by-step guide for anyone who wants to write about their own unique experiences. And you call it both an invitation and a guidebook to forge your way through grief.</p>
+<p>Before we dive into more detail, I wanted to start with you because you approach grief in this book both as a curious scholar and as a grieving brother, and I was interested in that, in the chronology of how you came to that. You’ve got an interest in grief and grief narratives, haven’t you?</p>
+<p>&nbsp;</p>
+<p><strong>Sam</strong></p>
+<p>Yeah, I do. I think they came together probably from the beginning, but it was only in putting this book together that I realised why I’ve been so interested in these things for so long.</p>
+<p>My brother did not die recently. He died quite a few years ago. At the time, I was completely unable to process what I was going through, and I was unable to talk about it, to be honest. It was so shocking what I was going through, and dumbfounding, and emotionally overwhelming to me that I couldn’t even begin to articulate what I was feeling. And to separate out all of those different emotions, the longing, the rage, the anger, the sadness, the disappointment, the regret, all of those different strands.</p>
+<p>Certainly in the weeks, many weeks, after the funeral for my brother, people would invite me to go out, have a coffee, meet up, and I kept making excuses because I thought, ‘People ask me how I’m feeling, how I’m doing, I’m going to break down, I’m going to lose control, but I won’t be able to speak about it.’</p>
+<p>Nonetheless, at the same time, I did find myself drawn to memoirs, especially books about grief, novels as well. I was particularly drawn to people writing about their experiences of grief, and I did get a bit of comfort from them. That was my way in, as a scholar, over the years, to begin studying that side and thinking, ‘OK, there’s something really interesting about the way these memoirs work, and about the way trauma, and grief in particular as a trauma, is explored and worked through and performed, to a certain extent, through writing about it.’</p>
+<p>That led to a lot of academic research and study. But if you’d asked me while I was doing all of that, I probably would have said, ‘Well, this is just a fascinating area for me,’ and I would have tried to make a dispassionate, objective argument that it’s just a really interesting area of scholarship.</p>
+<p>Now, looking back, I think, ‘Well, of course I was drawn to it because of my own experiences,’ but I didn’t, or I couldn’t, see that at the time. It was those twin areas, I suppose: my own experience of grief, but also my growing interest in grief work and the literature around the intersections between grief and writing. Bit by bit, that drew me toward writing this book.</p>
+<p>&nbsp;</p>
+<p><strong>Steph</strong></p>
+<p>Did you always intend for <em>Loss and Wonder</em> to be that hybrid between your own personal memoir and a practical writing guide? Or did you originally imagine maybe writing something more traditional?</p>
+<p>&nbsp;</p>
+<p><strong>Sam</strong></p>
+<p>Yeah, I suppose I did imagine writing something more traditional, definitely. It was, I suppose, quite late in the process that this idea came to me. I started writing about my own experience of grief and about my brother probably about three months after he died.</p>
+<p>It got to a point where I was unable to speak about how I was feeling, and I didn’t feel able to bring it up. I didn’t want to burden other people with it. I was grieving my brother a lot, and I knew that if I was feeling so much pain, my parents would be feeling even worse. So I didn’t bring it up to anybody.</p>
+<p>It got to a point where I can’t remember what sparked it, but I started writing to my brother, writing short letters, partly updating him on what was happening around us, and partly haranguing him a little, saying, ‘How dare you? How could you have left us all behind?’</p>
+<p>That became a really useful way for me to articulate and process how I was feeling. The more I wrote to him, the more I found myself also writing about him and our experiences together. He loved where we grew up in West Sussex and stayed there his whole life, until he died very young at 24. I’d left to go to university and then travelled to China and explored. We lived very different lives. When we met again, we’d reminisce about shared adventures, scrapes, and mishaps we’d gotten into as kids.</p>
+<p>I found myself thinking, ‘What happens to that shared history if I don’t have him to talk about it with? If we’re not meeting for coffee or a pint and going over those stories, what’s going to happen to that history of our childhood, of all our adventures?’ I thought, ‘I’ve got to write it down before year by year they become a little more blurry.’</p>
+<p>My writing grew from writing to him to writing about him, processing my grief that way, but also trying to preserve something of him. At first, I had no intention of letting anyone else read it, not my parents, not anyone close to me, certainly no one in the wider world. I wrote and wrote. Only after a little time and a bit of critical distance did I look at it and think, ‘There’s something else here that’s interesting, I think.’</p>
+<p>At the same time, I was doing scholarly work, working as a lecturer of creative writing, exploring writing, grief writing, and trauma, these intersections that really interested me. I thought, ‘Is there a way to make what I’ve learned from scholarly research a little more accessible to people who may not be interested in the theory of grief, but may actually be going through grief themselves and looking for a way to articulate and process it through writing?’</p>
+<p>That made me think, ‘If I write the research in a slightly more accessible way, I have to model it somehow. It’s very easy to say, ‘Here’s one option,’ but in an abstract way, it’s hard to understand.’ I had to share my story, my struggles, my pain, and how I approached these issues, how I grappled with these problems, to show what it might look like.</p>
+<p>That’s how I drew from all the writing I’d done, from countless pages and files, to make it fit the structure of the book, where each chapter explores a different way in, a different strategy, a different approach.</p>
+<p>&nbsp;</p>
+<p><strong>Steph</strong></p>
+<p>Yes. You started with the personal segments and then went back and added in the theory, the writing prompts, and the personal reflections in a way that gently guides the reader through</p>
+<p>&nbsp;</p>
+<p><strong>Sam</strong></p>
+<p>Yeah, absolutely. But I also had, I suppose, an idea in my mind that it potentially could be read in two or three different ways.</p>
+<p>You could read the whole book: read my journey, my story of grief, of losing my brother and how I got through that, and then read the theory and the prompts and try them out yourself.</p>
+<p>If you’re just interested in the memoir, you could just read the first section of each chapter as an additional memoir. If you’re not that interested in my personal experience, that’s absolutely fine. You could just read the theory and the prompts and use it wholly as a set of writing prompts.</p>
+<p>So I think there are many ways you could grapple with the book, I suppose.</p>
+<p>&nbsp;</p>
+<p><strong>Steph</strong></p>
+<p>Yeah, yeah. And the book doesn’t just teach craft, does it? It also, as you say, explores the therapeutic potential of writing through pain and loss. It’s very mindful of that.</p>
+<p>Why do you think we feel such a strong urge to document our hardest experiences like that? What are we reaching for when we put those moments into words?</p>
+<p>&nbsp;</p>
+<p><strong>Sam</strong></p>
+<p>Yeah, I think it’s part of the fundamental human experience, I guess. When the book came out in November, I did a few readings and I’m still doing a few around the country.</p>
+<p>One person at a reading said to me, ‘Death makes storytellers of all of us,’ because that’s our instinctive response, to share those stories, to keep those stories alive. Through telling them, we’re remembering, celebrating, preserving something of the people we’ve lost. We’re keeping that connection with them alive through talking about them, writing about them, telling their stories.</p>
+<p>It keeps them with us. It keeps that link working. That was certainly true for me. I took great pleasure in writing a lot of these memories and experiences. There is pain involved, of course, but I was very adamant that I wanted the title to have some positive element as well: wonder and loss, not just loss, sadness, or grief and loss. There is joy in remembering, in telling those stories, in reanimating and keeping all of that alive.</p>
+<p>I felt almost my brother standing over my shoulder as I typed, as though he was there with me. I felt that connection strengthened by the writing, and I wanted to share that. I didn’t want it to be a kind of guide to craft in terms of, ‘If you want to have a published story or memoir, this is what you should do.’ I wanted something more in keeping with how writing was helpful for me and how it’s been helpful for many others, as I’ve seen through my research, something meant for ourselves, which maybe we may consider sharing later, but that’s not the primary goal.</p>
+<p>The primary goal is having a means of processing and articulating our grief in ways that are less and less accessible these days. We’re expected to have the funeral, a few days or a week off work, and then go back to work and get on with our lives. We don’t always feel we have a way to speak about grief, or feel comfortable sharing those emotions with others.</p>
+<p>Writing gives us a space and a means to do that, but it also keeps those stories alive. Those were the two instrumental things in writing about my brother and in writing this book, to help others do the same, hopefully.</p>
+<p>&nbsp;</p>
+<p><strong>Steph</strong></p>
+<p>That leads me very nicely into intentions, actually, because that’s something you talk about in the book, examining perhaps your own intentions before embarking on a project like this.</p>
+<p>From my own experience, I lost my mum very suddenly a few years ago, very tragically. I was recommended, around the three-month mark, to start journaling as an early means of healing, to continue that conversation with my mother and share the things I would usually share with her in person.</p>
+<p>But memoir is something different from journaling, isn’t it? What distinguishes memoir from journaling, do you think? And why might someone who’s thinking about writing down these memories or painful experiences choose one over the other?</p>
+<p>&nbsp;</p>
+<p><strong>Sam</strong></p>
+<p>Yeah, I think it comes down to the fact that we return to them for different things. I’ve done journaling as well, particularly during difficult times, and I found it hugely beneficial.</p>
+<p>One of the great values of writing, whether memoir, stories, or journaling, is that it gets those thoughts, feelings, emotions, and ideas out of our head onto paper or a document on the laptop. It stops those same thoughts from spiralling round and round in our minds.</p>
+<p>We’ve all experienced lying in bed at night, unable to get one thought, idea, or worry out of our heads. Writing separates us from those thoughts a little, and sometimes we’re able to get more of a grip on them through journaling.</p>
+<p>I say to my students all the time that sometimes we don’t know exactly how we feel about something, or what we believe about a topic or idea, until we articulate it, put it into words. For me, that means writing, revising, and editing.</p>
+<p>That’s the distinction between journaling and memoir: revising and editing. Sometimes I look back over old journals and think, ‘It was useful at the time, but I have no interest in reading this now, except to remind me what state I was in at that point in time.’</p>
+<p>Memoir, by contrast, is something we want to return to. It records a moment in our lives, even a difficult one, but it also records precious memories. Etymologically, memoir comes from the same root as memory: to keep, to remind. That’s a crucial goal of this kind of writing.</p>
+<p>I’ve met so many people on the book tour who said, ‘I want to write about the person I’ve lost, my spouse, my sibling, my parent, my partner, my child, but I don’t know where to begin.’ We feel that these are three-dimensional, complex people, and we want to do them justice.</p>
+<p>We need strategies, we need structures. That’s what I try to provide in the book: different structures and approaches with the intention of recording that person, preserving those memories to look back on later. My brother died before my daughter was born, but I want to share something of him with her. I don’t want the spirit to just disappear. It’s something to go along with old, fading photographs, to say, ‘This is who he was, and this is what he was like.’</p>
+<p>Journaling gets us through difficult times, but memoir is something we tend to return to, repeatedly.</p>
+<p>&nbsp;</p>
+<p><strong>Steph</strong></p>
+<p>And perhaps we’re less likely to share journaling with someone else. Memoir, by contrast, you might intend to share with readers or other audiences.</p>
+<p>It’s interesting you talk about that pull between wanting to include everything about someone you care about, to capture every aspect of who they were and the life they led.</p>
+<p>But when embarking on a writing project, it’s useful to set goals, limits, or parameters. That’s important in any writing if we want it to feel focused and purposeful, but perhaps even more so when the material is deeply personal.</p>
+<p>When you were writing about your brother, how did you decide what belonged on the page and what remained private? How did you set those fences, limits, or parameters around what you were going to share about him?</p>
+<p>&nbsp;</p>
+<p><strong>Sam</strong></p>
+<p>Yeah, that’s a good question, because I don’t think I really set those parameters when I was writing originally. I set them when I was revising and editing. I drew from the many, many pages I’d written about my brother to think, ‘OK, what’s going to fit in this book, and what’s going to be a good illustration of this strategy, this approach, or this writing goal?’</p>
+<p>It was then that I thought, ‘What am I comfortable, one, sharing with the world, with people who don’t know me, and two, what are my parents and family going to be happy about me sharing?’</p>
+<p>When I wrote, I didn’t think about that at all. I tried not to edit myself as I wrote so that it could be a more beneficial process, more like journaling.</p>
+<p>On the book tour, brief segue, I went to Todd Morton Library, just outside Manchester. They have a famous death café where people talk about death instead of pushing it to the sidelines. They run events where people are encouraged to write a letter to the person they’ve lost, not just the positives, but also negatives, unspoken resentments, arguments, regrets, putting everything down. At the end, they take these letters and burn them on a bonfire as a kind of celebration.</p>
+<p>I thought that was fantastic. Sometimes we have to get everything out, but we don’t have to share everything. Sometimes the goal is just having done it. If we then burn it, so be it. That was my approach when writing.</p>
+<p>I think it has to be to some extent, because otherwise we’re not doing justice to the people we care about and the people we’re preserving. There’s no such thing as a perfect person. My brother wasn’t perfect, I’m certainly not perfect. I wanted to be true to that on the page, not just write a hagiography listing all the wonderful things about him.</p>
+<p>I wanted to dive deep into our arguments. Anyone with a sibling knows you have ferocious arguments growing up as teenagers. These are people who know your triggers, the things you hate most about yourself, and exactly which buttons to press. I wanted to honour that relationship. I couldn’t do that if I edited out embarrassing or unflattering moments.</p>
+<p>Later, I went through and asked, ‘What am I going to share? What am I not going to share? What’s useful to illustrate strategies for other people going through grief?’ That’s how I picked certain memories and arguments to include. I edited once with my parents in mind, then again with the wider world in mind.</p>
+<p>I still feel I’ve left a lot of messiness in there because grief is messy. The rawness is important. Each chapter is filled with options, strategies, some helpful, some not for every reader. One of those strategies is to be completely open and share everything, with the idea that you might not share it with anyone else. It comes back to asking, ‘What are we doing it for? Is our goal to share, or is it to articulate what we’ve been through and who this person really was?’ Those are different, though complementary, goals.</p>
+<p>&nbsp;</p>
+<p><strong>Steph</strong></p>
+<p>I’m glad you mentioned the messiness, actually, because that’s something I want to come back to shortly in the section about the unknown, which I really, really loved.</p>
+<p>You talk candidly throughout about the challenges of being vulnerable when writing, and the temptation to leave out embarrassing or shameful details.</p>
+<p>Can you share a moment in your writing when you chose to lean into something uncomfortable rather than editing it away? What made you decide to keep it, and why is it important for writers not to retreat from that discomfort too quickly?</p>
+<p>&nbsp;</p>
+<p><strong>Sam</strong></p>
+<p>Yeah, I think to answer the last bit first: the discomfort is the human bit. It’s the real bit. It’s what connects us with everyone else. That’s the heart of vulnerability.</p>
+<p>I’ve taught workshops and classes on memoir, particularly with young students, and I always have a couple whose first writing ends up looking like a LinkedIn post. ‘Humbled to announce,” ‘I’m excited to share’, —all the positive stuff, with the real stuff edited out.</p>
+<p>But we get enough of that on our phones and apps: the edits for achievements, fancy meals, holidays, everything we choose to share.</p>
+<p>What draws us to good writing  is a rawness, a kind of messiness. I wanted to lean into that.</p>
+<p>I chose to open the book, in the very first chapter, with a slightly embarrassing escapade: running around a supermarket chasing a guy I thought was my brother. From the back, from the haircut, the shirt he was wearing, he looked just like him. Of course, it wasn’t him at all because he had died two weeks before.</p>
+<p>I wanted to show that confusing messiness, the way grief breaks reality. If I’ve done that, I have to go all in and show people that there’s value, artistic value, in vulnerability. Artistic because it connects, because it builds connection with readers and other people. That’s often why we read: to make those connections.</p>
+<p>I leaned into that particularly in the third chapter, which I called <em>Setting Myself on Fire</em>, about writing the lowest ebbs. I had a lot of qualms about keeping that one in. I went back and forth because I thought, ‘My boss is going to read this.’</p>
+<p>It’s a chapter about the months after my brother died: drinking too much, hiding drinks without other people noticing, heading into town alone drunk, aiming to get into some kind of fight, which fortunately didn’t happen. Completely humiliating experiences where I look back and want to cringe, hide my head in my hands just talking about it.</p>
+<p>But this is what makes us human, and this is what is real about grief. It’s also proof of love, proof of how much my brother meant to me. If he hadn’t, I wouldn’t have had so much trouble dealing with these emotions. I wouldn’t have been pushing myself into self-destructive habits. It broke me so much; I had no other clue how to respond.</p>
+<p>That brings us full circle to writing the book. I read a study done in the U.S. in 2022 that suggested one in seven adult men has no friends at all,  no one to talk to. Even if we have friends, we might not feel comfortable burdening them with our emotions. We may have grown up socialised not to overshare, not to cry in public, not to let out messy, difficult, hard-to-deal-with emotions.</p>
+<p>Where do we take those emotions? We don’t have the rituals we used to, like in Victorian days, when people wore black for six months after a death and slowly reintegrated into society. We have none of that.</p>
+<p>For me, the space really was the page. For other people, grief can be processed through art, painting, music, or other forms of expression. For me, it’s writing. For many people, having the opportunity to express and explore on the page without judgment is vital. We have fewer venues to do that in today’s world.</p>
+<p>&nbsp;</p>
+<p><strong>Steph</strong></p>
+<p>When you’ve put those difficult memories, those embarrassing moments onto paper, has it changed your relationship to them, your memory of them?</p>
+<p>&nbsp;</p>
+<p><strong>Sam</strong></p>
+<p>Yeah, I think it has. I mean, and that’s also one of my worries in the book that I address in it. You know, I address, near the beginning, two big worries.</p>
+<p>Number one, that writing is going to be triggering, that it’s going to be re-traumatising.</p>
+<p>But number two, that by writing, we kind of almost replace the memory, right? That once it’s on the page, it’s kind of fixed and it’s there, and we don’t have to think about it so much, and we don’t have to recall so much because it’s there on the page. So our relationship with that memory changes.</p>
+<p>I address the kind of theories and psychological discussion of those in the book. But for me, those changes were almost always positive ones, whereby I got a little bit of perspective, I think. And I feel like I understood my brother a little by writing more and more about him. And I certainly understood myself a bit better.</p>
+<p>And, you know, I think one of the truths of the world is, you know, I think we hear all the time these days, I certainly do, about people saying you’ve got to practice self-care. And I think that’s absolutely true. But I know for a fact that at the same time, it’s very easy to take care of other people, or people we love and people we care about, our kids, our family, our friends. And we show them a degree of care and of grace and of forgiveness that most of us would never ever apply to ourselves. And we’re so much harsher in judging ourselves, in pushing us.</p>
+<p>And I feel like I maybe got a different perspective on myself and my actions, and was able to say, ‘Well, okay, this is who I am. And maybe I do need to be a little forgiving or a little understanding of myself,’ rather than holding myself to a different standard, which I think most of us are guilty of all the time.</p>
+<p>&nbsp;</p>
+<p><strong>Steph</strong></p>
+<p>Absolutely. You mentioned truth there. I think one of those sort of big concerns that comes is explored in the book and is something that I&#8217;ve thought about when I&#8217;m writing and talking, and that idea of sharing our truth and being accurate.</p>
+<p>What do you think truth means in the context of writing memoir? How important is factual truth versus emotional truth? Because truth can change, can&#8217;t it? Something can be true in the moment when you&#8217;re writing about it, but as you say, it might change later on.</p>
+<p>&nbsp;</p>
+<p><strong>Sam</strong></p>
+<p>I think that&#8217;s absolutely right. I mean, I think it&#8217;s important sometimes to draw those distinctions: there are personal truths and emotional truths, and there are factual truths. I try to encourage a range of approaches in the book so that people can draw from these different truths, so to speak.</p>
+<p>I&#8217;ve got a chapter about the kind of research we might do. Talking to other people, I talked to my brother&#8217;s friends, people he was at school with, people that I knew and people that I didn&#8217;t know that I was kind of meeting for the first time. I talked to my parents, especially. That was interesting when I found their memory of an event was completely different from mine.</p>
+<p>I did online research too, newspaper databases to find what the big newspaper stories were on the day he was born, what the weather was actually like during the snowy winter that I remember and keep coming back to in the book, which appears in the final chapter, in order not to have it just be the kind of personal truth of memory.</p>
+<p>Having said all that, anyone who writes and grapples with memoir has to accept that it&#8217;s the spirit of the law rather than the letter of the law, so to speak. We&#8217;re getting to the spirit of how things happened and of how someone was, rather than the literal truth.</p>
+<p>That&#8217;s kind of self-evident. If I try to write down a conversation I had with my colleague yesterday, just 24 hours ago, it’s not going to be word perfect. Recalling things that happened when I was six, seven, eight, and so on, there has to be a degree of invention. But I try to recreate as close to what happened as possible.</p>
+<p>I think it&#8217;s useful and instructive to draw from the toolbox of fiction, how we bring events to life. Before this book, all my other books of creative writing have been historical fiction. I’ve been thinking for a long time about how to bring the past to life, how to create and invent conversations, invent details to make things authentic, make things real, and be true to what happened, without being able to report the exact words spoken at the exact moment.</p>
+<p>I think that&#8217;s the tightrope we have to walk as memoir writers. The only way to do it is by continually reflecting on it, going back and analysing, asking: Is there another perspective to this? Who can I talk to about this? Are there other ways of looking at it? How important is my personal truth, my emotional truth, versus the facts of what happened?</p>
+<p>I think you can&#8217;t write memoir without reflecting. It&#8217;s part of the process, and hopefully a beneficial and useful part of it as well. I struggled with that. Anyone writing about the past struggles with that. I wanted to have a space in the book for my brother to speak back, to hear from him. I went back through some of his old writings, messages, old school books, and tried to throw in as much of that as possible, again, to give a flavour rather than the whole side of him.</p>
+<p>I was very conscious of the fact that it&#8217;s always lopsided. All we can do is acknowledge that and continue to reflect on it as we do it.</p>
+<p>&nbsp;</p>
+<p><strong>Steph</strong></p>
+<p>Yeah, embracing the inconsistencies, I guess, of memory and the messiness that you referred to before, and the ways that we change our minds about the past, I guess. I mean, that is truth, isn&#8217;t it?</p>
+<p>&nbsp;</p>
+<p><strong>Sam</strong></p>
+<p>Yeah, the messiness, the imperfections of it, the gaps, the holes, the fragments. Yeah, it has to be a part of it.</p>
+<p>&nbsp;</p>
+<p><strong>Steph</strong></p>
+<p>You mentioned there about when people remember the same event differently. Were there any tensions in the book when you were writing and trying to portray an event and people having different memories of that? How do you navigate that responsibly? And were you ever thinking about that in your writing?</p>
+<p>&nbsp;</p>
+<p><strong>Sam</strong></p>
+<p>Yeah, absolutely. I was thinking about that in my writing and I think it&#8217;s very difficult. I mean, it&#8217;s difficult with writing about people we&#8217;ve lost because we can&#8217;t check with them. I think that&#8217;s a huge responsibility, and that&#8217;s the one that I found daunting. I was able to speak to my parents and to say, what do you think about this? What do you think about that?</p>
+<p>Sometimes they said, my mom in particular, ‘why have you written about, you know, growing up in this little red brick house? We never lived in a red brick house. It was grey.’ And that was the one detail that leapt out to her, that no, we never lived in a house like that.</p>
+<p>But in my mind&#8217;s eye, that&#8217;s the colour I see when I picture that house that we were in as kids.</p>
+<p>Beyond that small detail, my parents were very understanding of the project in saying, ‘Well, that’s not how we remember it, but it&#8217;s not so far from the truth that it&#8217;s problematic.’ I think it&#8217;s good to have those different sides. I&#8217;ve tried to include some contrast where people do remember things differently in the book.</p>
+<p>My big struggle was, you know, what would my brother have said? ‘This didn&#8217;t happen at all. It wasn&#8217;t like that, you&#8217;re misinterpreting.’ I think he would say those things, absolutely. And at those points where I think he might have said that, I&#8217;ve tried to throw that into the book to keep his voice intact, so to speak, and to continually acknowledge that&#8217;s the nature of memoir.</p>
+<p>It is not a historical document in and of itself. It&#8217;s not a definitive statement of record. It is a highly subjective, highly personal sense of how we experience life, how we experience the world, how we interacted with a person, and what they mean to us.</p>
+<p>I think, partly for that reason, I chose lots of experiences that were, I suppose, small scale, in that they involved one or two or three people, that were very focused, and that I feel fairly certain about, and I&#8217;ve been able to corroborate a little bit. But where I haven&#8217;t, I do believe they&#8217;re true to the spirit of who we were then and the kind of things we were doing.</p>
+<p>&nbsp;</p>
+<p><strong>Steph</strong></p>
+<p>One of the chapters that really stayed with me in this book was your exploration of fable and myth as well, and the ways that they can be used to sort of reach an emotional truth, and actually how, you know, there is a place for imagination in memoir.</p>
+<p>Could you talk a little bit about that and what, you know, fiction or imagination allowed you to access that so straightforward realism perhaps couldn&#8217;t?</p>
+<p>&nbsp;</p>
+<p><strong>Sam</strong></p>
+<p>Yeah, absolutely. I mean, that was part of my intention with the book, to give people different strategies, different ways in. There’s another chapter as well on poetic tools, using poetry instead.</p>
+<p>I think with the fiction, it does two things. One, it acknowledges that memoir is, or contains some degree of, artifice. But also, I think it&#8217;s freeing to be able to use those fictional tools and to get out some of the deeper and sometimes richer psychological truths of how we live or how we approach the world, that kind of personal mythos of what we may have felt as kids.</p>
+<p>I wanted to explore my brother&#8217;s frustrations and his approach to the world as though, yeah, he was a character, not just a character, actually, the central character, the protagonist of a fairy tale.</p>
+<p>You know, and it was really fun to write it because I wasn&#8217;t trying to remember exactly. I was trying to fit all of what I knew of him in a new mode, and that kind of being freed from the tight confines of realism.</p>
+<p>It let me play and explore and kind of keep going with Luke, Luke is my brother, of having these kind of almost conversations with him, of having these negotiations with him, of these hypotheticals: how would he have behaved?</p>
+<p>And I think it allowed me to explore a different side of him without having to link it to particular memories and occasions, but just to show these hundreds of other sides that we all have, and these personal mythologies, and the way we see ourselves as central characters in the bigger stories or myths of our lives.</p>
+<p>And it was so beneficial for me that I thought ‘I&#8217;ve got to make a chapter around that.’</p>
+<p>&nbsp;</p>
+<p><strong>Steph</strong></p>
+<p>Yeah, you can really sense that playfulness and that sense of fun, actually, in that chapter.</p>
+<p>You mentioned before that idea of wonder, and actually, writing about grief and about difficult experiences doesn&#8217;t, won&#8217;t always be hard. There is absolutely room for a sense of experimentation and invention and playfulness, isn&#8217;t there? That&#8217;s something that people shouldn&#8217;t be worried about embracing.</p>
+<p>&nbsp;</p>
+<p><strong>Sam</strong></p>
+<p>Absolutely, because I think that&#8217;s part of grappling with something creatively, I suppose. That it brings the past into the present. It makes it vivid and alive and real now. It brings people we&#8217;ve lost into the present. We&#8217;re engaging with them in the here and now.</p>
+<p>And yeah, I think that is fun. I think there is a pleasure. I took a deep pleasure writing the book. I don&#8217;t think that&#8217;s always the same as saying it made me happy. I think they&#8217;re distinct things, but yeah, it was a rich and a deeper and a melancholic happiness, and sometimes a pleasure rather. Sometimes a more joyful pleasure of seeing my brother in my mind&#8217;s eye and capturing some of that in the description and seeing him in action, so to speak.</p>
+<p>&nbsp;</p>
+<p><strong>Steph</strong></p>
+<p>It bears similarities, I think, to that. I&#8217;m sure lots of people do this. You know, the conversations I have in my head all the time with my mother as if she were there with me. And I&#8217;m kind of imagining what she would say in certain circumstances or what her response would be if I updated her about something I was doing.</p>
+<p>And sometimes it&#8217;s a little bit raw and melancholic, but actually it&#8217;s part of the joy of still having her with me.</p>
+<p>&nbsp;</p>
+<p><strong>Sam</strong></p>
+<p>Yeah, absolutely. And it&#8217;s part of the tapestry of our lives. I talk in the second chapter of the book, right near the beginning, about the fact that grief kind of does double duty, right? We lose someone we care deeply about and we&#8217;re grieving that person. But we also lose something of ourselves.</p>
+<p>There&#8217;s a hole inside of us. In Social Cognitivist thought, they would call that the relational role. There’s some theorists that suggest that&#8217;s what our self is, our identity or self-concept, as it&#8217;s often referred to in psychological literature. That&#8217;s what our self-concept is. It&#8217;s made up of this different web of roles that we play, you know, father, son, friend, colleague, brother.</p>
+<p>And when we lose one of those roles, we lose an aspect of our identity and we struggle to kind of renegotiate that.</p>
+<p>And what we often end up doing, and I think for clear reason, is wanting to keep that alive as well as keep the person alive, because the people we care about are fundamentally a part of ourselves, and it&#8217;s impossible to completely unstitch them from who we are and from our personal histories and from how we live.</p>
+<p>&nbsp;</p>
+<p><strong>Steph</strong></p>
+<p>In a bid to wrap up our conversation nicely, you spoke before about embracing uncertainty and resisting that urge to force neat conclusions onto things that don&#8217;t, especially in memoir, tie up into a neat bow.</p>
+<p>And even more so in the context of grief, there&#8217;s so much there in that experience of losing someone that we just don&#8217;t get to resolve. So when writing this book, when you were sort of approaching the end and going through the editing process and attempting to finalise it, where did you feel that pull to tidy things up? And what would you say to people who are thinking in their minds, ‘I actually need to somehow find a clear conclusion to this book that I&#8217;m writing’?</p>
+<p>&nbsp;</p>
+<p><strong>Sam</strong></p>
+<p>Yeah, I think that&#8217;s a really complex question, actually, because I&#8217;m reminded really of several things that I dislike and I suppose tried to swerve against.</p>
+<p>One thing I learned was that the more psychology and the more academic study of grief I did, the more I disliked the classical model many people know as the five stages of grief. It&#8217;s technically called the Kubler-Ross model, which suggests we go through anger and then denial and then bargaining. And not only is it psychologically disproved, but it goes against my experience and the experience of everyone else, really.</p>
+<p>&nbsp;</p>
+<p><strong>Steph</strong></p>
+<p>I disliked that as well.</p>
+<p>&nbsp;</p>
+<p><strong>Sam</strong></p>
+<p>Yeah, because there is no one model for grief. There are as many types of grief as there are people. And I&#8217;ve lost other people besides my brother. The harsh and difficult truth is we will all go through grief many times in our lives. It&#8217;s an unavoidable fact of being human. And it&#8217;s different every time. Everyone&#8217;s grief journey is different.</p>
+<p>Grief is not linear either. It&#8217;s not like when we go through a difficult breakup or a divorce and things are terrible for many months, but then they gradually get better until we feel put together enough to let our friends drag us out to meet someone new and start a new relationship. Grief&#8217;s not linear like that. There is no straightforward path. It&#8217;s more of a topsy-turvy roller coaster. Even now, even after writing the book, many years after my brother died, I could be having a good day and hear one of his favourite songs come up on shuffle or in a movie, I can see someone who looks a bit like him, I can smell someone wearing the aftershave he used to wear, and I&#8217;m suddenly right back in the deep pain, sadness, and rawness of when he died.</p>
+<p>So, yeah, there&#8217;s no one model. I wanted to avoid this idea that we get closure. I don&#8217;t like that word. I don&#8217;t use it in the book. I didn&#8217;t want to frame this book as writing through grief, because that kind of implies we get to the end and then we&#8217;re done with it, and everything&#8217;s healed and wonderful. I don&#8217;t think it works like that either. We carry it around with us forever, but in different forms, and we learn to live with grief and incorporate it in our lives in different ways. One thing I learned through my writing is that one thing you can&#8217;t do is run away from it, bury your head in the sand. I wanted to not give some kind of neat little bow tying up every loose end, because that&#8217;s not possible.</p>
+<p>The publishing house, fortunately, was very good and generous in saying to me, ‘Well, what are you thinking about for the cover? What would you like?’ And I said to them, I know what I don&#8217;t want. I don&#8217;t want someone with their head in their hands, or a silhouette, or someone tearful leaning against a window with rain beating against it. I don&#8217;t want two figures hand in hand walking off toward a sunset with that full sense of ending where everything&#8217;s okay. Fortunately, I got a wonderful cover, and hopefully some of your listeners may Google it and have a look, and also be tempted to read it. It&#8217;s a beautiful, colourful cover, because of the joy, but also because grief goes on, in different ways.</p>
+<p>So I have the last chapter about endings. I talk about my experience of living with grief, of carrying my brother with me, of trying to honour and preserve his memories, of trying not to forget him and not brush him aside, but also not feel completely stuck. We have a duty to keep going for the people who are no longer with us. That impels us forward. I write a little bit about writing into the future, writing about where we go next. For me, that&#8217;s more interesting than trying to have an ending that ties everything together and says, ‘My grief journey is done.’ It asks instead, ‘Where next?’</p>
+<p>&nbsp;</p>
+<p><strong>Steph</strong></p>
+<p>Yeah. And that&#8217;s something that applies to writing, and it absolutely applies to the relationship that you have with that person, doesn&#8217;t it? I always try and think of my relationship with my mother as a next chapter, and it&#8217;s a chapter that looks different to what I expected, but it&#8217;s not an ending because she&#8217;s not no longer my mother, just like he&#8217;s not no longer your brother. It&#8217;s just that your relationship is taking a different form in the next chapter going forward.</p>
+<p>&nbsp;</p>
+<p><strong>Sam</strong></p>
+<p>Exactly, yeah.</p>
+<p>&nbsp;</p>
+<p><strong>Steph</strong></p>
+<p>To finish, I&#8217;d love to return to the word wonder, which is in the title of the book. And again, for me personally, grief is, yes, the most painful aspects of being alive, but I have experienced more moments of sort of magic and wonder, creatively or just in my day-to-day life, or with my relationships to other people in the past couple of years since losing my mum than I ever have before. There&#8217;s a whole new chapter in my life of sort of discovery, really. Having written this book and having shaped some of your grief into a story, as it were, what sense of wonder has been left with you?</p>
+<p>&nbsp;</p>
+<p><strong>Sam</strong></p>
+<p>Well, I think what you just said perfectly resonates with me. This sense that my experiences, even with my brother, that go on, that I think about him and I remember him, there is a wonder to that, to thinking about our times together and to keeping that alive in me. And exactly the same as with you, my experiences with other people change, especially when I&#8217;ve been able to push past all my reservations and all my deeply embedded fears of opening up and being vulnerable and sharing stories about grief. And all the people I&#8217;ve talked to on this book tour and the readings I&#8217;ve done, there is a sense of wonder, of magic, as you mentioned.</p>
+<p>Everyone who is interested in grief memoir will know and sing the praises of the wonderful book by Joan Didion, <em>The Year of Magical Thinking</em>. And the sense that you think about reality, about time, about our place in the world, about our relationship with each other differently. And I don&#8217;t mean that in a kind of traditional ghostly type way, but I mean it in a new kind of appreciation, but also a sense of, like we talked about with endings, maybe not having to tie everything together, not having to know or be certain about everything, not having to be fine all the time, not having to be only presenting the positives as we are encouraged to do on Instagram and LinkedIn and everywhere else.</p>
+<p>But just the sheer wonder of the things we get to experience with the people we care about and just those central magical joys, absolutely.</p>
+<p>&nbsp;</p>
+<p><strong>Steph</strong></p>
+<p>And has writing this book and writing about your brother shaped that next chapter of your relationship with him? Has that had an impact on you?</p>
+<p>&nbsp;</p>
+<p><strong>Sam</strong></p>
+<p>Absolutely. I&#8217;m not afraid of those memories that used to creep up on me in the months after he died, when I feared I would spiral if I thought about all that I’d lost or all the things I never said. Partly, the book has given me a chance to say them, and it keeps that communication alive, albeit one-sided to a certain extent, but it keeps the connection going. It keeps evolving. I think about my brother and myself in different ways as time passes.</p>
+<p>Writing about him, writing about my life, and thinking about him has, I think, strengthened that connection. The experience of writing the book, in particular, has made a difference because I go out and talk to people about my brother all the time, instead of being afraid to mention him for fear of breaking down in tears or embarrassing myself.</p>
+<p>He’s here with me in that way. He’s still being talked about, still being remembered, still beside me.</p>
+<p>&nbsp;</p>
+<p><strong>Steph</strong></p>
+<p>Thank you, Sam. I hope everyone, if they haven&#8217;t already, reads <em>Wonder and Lost</em>, because I really do think it&#8217;s remarkable. Whether you&#8217;re a writer, not necessarily a memoir writer, I think there&#8217;s so much in there that can be applied to other forms of writing, or just for anyone interested in reading about the experience of grief and shaping it into storytelling. I think it’s a truly wonderful book.</p>
+<p>What’s next for you? Do you have any other projects on the horizon at the moment?</p>
+<p>&nbsp;</p>
+<p><strong>Sam</strong></p>
+<p>Yes, I’ve turned back to fiction, but I’m trying to do the same thing, which is to bridge what I’m interested in from a scholarly point of view with what I’m interested in creatively. I’ve been doing a lot of research recently with a neuropsychologist, thinking about how trauma impacts the way we think and talk about our lives. Trauma shapes our storytelling and the stories we tell. At the moment, I’m in the process of turning that research into a novel that explores how damage to the brain can affect the stories we tell and how those stories impact the people around us.</p>
+<p>&nbsp;</p>
+<p><strong>Steph</strong></p>
+<p>That sounds fascinating. I will certainly be reading that. Thank you so much for your time, Sam.</p>
+        </div>
+       <!-- / Text Content -->
+
+    
+     <!-- / Button Repeater -->
+
+    
+  </div> <!-- / Column Text Block -->
+</div> <!-- / Full Content -->  
+
+
+        
+  <div class="full_content dark_bg pt_md pb_lrg"> <!-- Full Content -->
+    <div class="feature_row_feed dark_bg"> <!-- Feature Row Feed -->
+
+      <div class="main_title"> <!-- Main Title -->
+        <h2>You may also like...</h2>
+      </div> <!-- / Main Title -->
+
+      
+        <div class="feed_container"> <!-- Feed Container -->
+
+          
+            <div class="feed_item"> <!-- Feed Item -->
+
+              <div class="image_container"> <!-- Image Container -->
+
+                 <!-- Image -->
+                                  <a href="https://nationalcentreforwriting.org.uk/writing-hub/the-craft-of-life-writing-with-fiona-mason/">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/uploads/2023/10/Fiona-Mason-C-Andrew-Reynolds-500x250.png" alt="" />
+                  </a>
+                 <!-- / Image -->
+
+              </div> <!-- / Image Container -->
+
+              <div class="text_content"> <!-- Text Content -->
+
+                <p class="title">The craft of life writing with Fiona Mason</p> <!-- Title -->
+
+                 <!-- Excerpt -->
+                  <p>In this episode of The Writing Life podcast, author Fiona Mason discusses her memoir &#8217;36 Hours&#8217; and the craft of life writing.</p>
+                 <!-- / Excerpt -->
+
+                <div class="date_container"> <!-- Date Container -->
+
+                  <div class="icon"> <!-- Icon -->
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/calendar.svg" alt="Calendar">
+                  </div> <!-- / Icon -->
+
+                  <p class="date">23rd October 2023</p> <!-- Date -->
+
+                </div> <!-- / Date Container -->
+
+                <div class="tags"> <!-- Tags -->
+                                      <div class="tag">Masters of the Craft</div>
+                                      <div class="tag">Memoir</div>
+                                      <div class="tag">The Writing Life</div>
+                                      <div class="tag">Tips and Advice</div>
+                                  </div> <!-- / Tags -->
+
+                
+                <a href="https://nationalcentreforwriting.org.uk/writing-hub/the-craft-of-life-writing-with-fiona-mason/" class="btn btn_sm">Listen</a> <!-- Button -->
+
+              </div> <!-- / Text Content -->
+
+            </div> <!-- / Feed Item -->
+
+          
+            <div class="feed_item"> <!-- Feed Item -->
+
+              <div class="image_container"> <!-- Image Container -->
+
+                 <!-- Image -->
+                                  <a href="https://nationalcentreforwriting.org.uk/writing-hub/writing-real-people-in-memoir-with-katy-massey/">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/uploads/2023/07/Katy-Massey-500x250.jpg" alt="" />
+                  </a>
+                 <!-- / Image -->
+
+              </div> <!-- / Image Container -->
+
+              <div class="text_content"> <!-- Text Content -->
+
+                <p class="title">Writing Real People in Memoir with Katy Massey</p> <!-- Title -->
+
+                 <!-- Excerpt -->
+                  <p>In this episode of The Writing Life, NCW Programme Officer Vicki Maitland speaks with writer, editor and workshop leader Katy Massey about the process of writing real people in memoir.</p>
+                 <!-- / Excerpt -->
+
+                <div class="date_container"> <!-- Date Container -->
+
+                  <div class="icon"> <!-- Icon -->
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/calendar.svg" alt="Calendar">
+                  </div> <!-- / Icon -->
+
+                  <p class="date">14th August 2023</p> <!-- Date -->
+
+                </div> <!-- / Date Container -->
+
+                <div class="tags"> <!-- Tags -->
+                                      <div class="tag">Masters of the Craft</div>
+                                      <div class="tag">Memoir</div>
+                                      <div class="tag">The Writing Life</div>
+                                  </div> <!-- / Tags -->
+
+                
+                <a href="https://nationalcentreforwriting.org.uk/writing-hub/writing-real-people-in-memoir-with-katy-massey/" class="btn btn_sm">Listen</a> <!-- Button -->
+
+              </div> <!-- / Text Content -->
+
+            </div> <!-- / Feed Item -->
+
+          
+            <div class="feed_item"> <!-- Feed Item -->
+
+              <div class="image_container"> <!-- Image Container -->
+
+                 <!-- Image -->
+                                  <a href="https://nationalcentreforwriting.org.uk/writing-hub/carl-gorham-on-grief-and-hope/">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/uploads/2023/07/Carl-Gorham-no-logo-pod-500x250.jpg" alt="" />
+                  </a>
+                 <!-- / Image -->
+
+              </div> <!-- / Image Container -->
+
+              <div class="text_content"> <!-- Text Content -->
+
+                <p class="title">Carl Gorham on grief and hope</p> <!-- Title -->
+
+                 <!-- Excerpt -->
+                  <p>Hannah Garrard talks to Carl about The Owl at the Window</p>
+                 <!-- / Excerpt -->
+
+                <div class="date_container"> <!-- Date Container -->
+
+                  <div class="icon"> <!-- Icon -->
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/calendar.svg" alt="Calendar">
+                  </div> <!-- / Icon -->
+
+                  <p class="date">7th June 2019</p> <!-- Date -->
+
+                </div> <!-- / Date Container -->
+
+                <div class="tags"> <!-- Tags -->
+                                      <div class="tag">Interview</div>
+                                      <div class="tag">Non-fiction</div>
+                                      <div class="tag">The Writing Life</div>
+                                  </div> <!-- / Tags -->
+
+                
+                <a href="https://nationalcentreforwriting.org.uk/writing-hub/carl-gorham-on-grief-and-hope/" class="btn btn_sm">Listen</a> <!-- Button -->
+
+              </div> <!-- / Text Content -->
+
+            </div> <!-- / Feed Item -->
+
+          
+        </div> <!-- / Feed Container -->
+
+      
+    </div> <!-- / Full Content -->
+  </div> <!-- / Feature Row Feed -->
+
+  </main><!-- #main -->
+</div><!-- #primary -->
+
+
+	</div><!-- #content -->
+
+	<footer id="colophon" class="site-footer">
+
+		<div class="footer_content"> <!-- Footer Content -->
+
+      <div class="top_panel"> <!-- Top Panel -->
+
+        <div class="navigation_container"> <!-- Navigation Container -->
+
+          <p class="h6 title">Navigation</p> <!-- Title -->
+
+          <div class="navigation"> <!-- Navigation -->
+
+            <div class="col_1"> <!-- Column One -->
+
+               <!-- Column One Links -->
+                <div class="links">
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/support-us/" target="_self">Support us</a> <!-- / Link -->
+
+                       <!-- Child Links -->
+                        <div class="child_links">
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/support-us/donate/" target="_self">Donate</a> <!-- / Link -->
+
+                            
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/support-us/ways-to-support-us/" target="_self">More Ways to Support</a> <!-- / Link -->
+
+                            
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/support-us/ways-to-support-us/our-supporters/" target="_self">Our Supporters</a> <!-- / Link -->
+
+                            
+                                                  </div>
+                       <!-- / Child Links -->
+
+                    
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/about-us/environmental-impact/" target="_self">Environmental Impact</a> <!-- / Link -->
+
+                       <!-- / Child Links -->
+
+                    
+                                  </div>
+               <!-- / Column One Links -->
+
+            </div> <!-- / Column One -->
+
+            <div class="col_2"> <!-- Column Two -->
+
+               <!-- Column Two Links -->
+                <div class="links">
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/about-us/" target="_self">About us</a> <!-- / Link -->
+
+                       <!-- Child Links -->
+                        <div class="child_links">
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/about-us/our-team/" target="_self">Our team</a> <!-- / Link -->
+
+                            
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/about-us/board/" target="_self">Our Board</a> <!-- / Link -->
+
+                            
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/vacancies/" target="_self">Jobs &amp; Volunteering</a> <!-- / Link -->
+
+                            
+                                                  </div>
+                       <!-- / Child Links -->
+
+                    
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/visit-us/" target="_self">Visit us</a> <!-- / Link -->
+
+                       <!-- Child Links -->
+                        <div class="child_links">
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/visit-us/the-literature-house/accessibility/" target="_self">Accessibility</a> <!-- / Link -->
+
+                            
+                                                  </div>
+                       <!-- / Child Links -->
+
+                    
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/hire/" target="_self">Hire Dragon Hall</a> <!-- / Link -->
+
+                       <!-- / Child Links -->
+
+                    
+                                  </div>
+               <!-- / Column Two Links -->
+
+            </div> <!-- / Column Two -->
+
+            <div class="col_3"> <!-- Column Three -->
+
+               <!-- Column Three Links -->
+                <div class="links">
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/contact/" target="_self">Contact us</a> <!-- / Link -->
+
+                    
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/terms-conditions/" target="_self">Terms &amp; Conditions</a> <!-- / Link -->
+
+                    
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/privacy-policy/" target="_self">Privacy Policy</a> <!-- / Link -->
+
+                    
+                                  </div>
+               <!-- / Column Three Links -->
+
+              <div class="social_links"> <!-- Social Links -->
+
+                 <!-- Social Link -->
+                  <div class="social_link">
+                    <a href="https://www.facebook.com/NationalCentreforWriting/" target="_blank">
+                      <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/facebook.png" alt="Twitter Logo" />
+                    </a>
+                  </div>
+                 <!-- / Social Link -->
+
+                 <!-- Social Link -->
+                  <div class="social_link">
+                    <a href="https://bsky.app/profile/writerscentre.bsky.social" target="_blank">
+                      <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/twitter.png" alt="Twitter Logo" />
+                    </a>
+                  </div>
+                 <!-- / Social Link -->
+
+                 <!-- Social Link -->
+                  <div class="social_link">
+                  <a href="https://www.linkedin.com/company/writerscentre/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=uk" target="_blank">
+                      <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/linkedin.png" alt="Linkedin Logo" />
+                    </a>
+                  </div>
+                 <!-- / Social Link -->
+
+                 <!-- Social Link -->
+                  <div class="social_link">
+                  <a href="https://www.youtube.com/user/WCNonline" target="_blank">
+                      <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/youtube.png" alt="Youtube Logo" />
+                    </a>
+                  </div>
+                 <!-- / Social Link -->
+
+                 <!-- Social Link -->
+                  <div class="social_link">
+                    <a href="https://www.instagram.com/writerscentre/?hl=en" target="_blank">
+                      <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/instagram.png" alt="Instagram Logo" />
+                    </a>
+                  </div>
+                 <!-- / Social Link -->
+
+              </div> <!-- / Social Links -->
+
+              <a href="https://www.splitpixel.co.uk/huddersfield-digital-agency/web-design/" target="_blank">Website designed by Splitpixel</a>
+
+            </div> <!-- / Column Three -->
+
+          </div> <!-- / Navigation -->
+
+        </div> <!-- / Navigation Container -->
+
+        <div class="newsletter_container"> <!-- Newsletter Container -->
+          <div class="newsletter"> <!-- Newsletter -->
+
+            <p class="h6 title">Newsletter Signup</p> <!-- Title -->
+
+            
+                <div class='gf_browser_chrome gform_wrapper gravity-theme gform-theme--no-framework' data-form-theme='gravity-theme' data-form-index='0' id='gform_wrapper_6' ><div id='gf_6' class='gform_anchor' tabindex='-1'></div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_6' id='gform_6'  action='/writing-hub/wonder-and-loss-writing-grief-and-memoir-with-sam-meekings/#gf_6' data-formid='6' novalidate>
+                        <div class='gform-body gform_body'><div id='gform_fields_6' class='gform_fields top_label form_sublabel_below description_below validation_below'><div id="field_6_9" class="gfield gfield--type-honeypot gform_validation_container field_sublabel_below gfield--has-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_6_9'><span class='gform-field-label__text'>Instagram</span></label><div class='ginput_container'><input name='input_9' id='input_6_9' type='text' value='' autocomplete='new-password'/></div><div class='gfield_description' id='gfield_description_6_9'>This field is for validation purposes and should be left unchanged.</div></div><div id="field_6_7" class="gfield gfield--type-html gfield--input-type-html gfield--width-full gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><div style="font-size:13px;">Sign up to receive newsletters about our work, including events, workshops, writer and translator opportunities, resources and ways to support us.</div></div><div id="field_6_1" class="gfield gfield--type-text gfield--input-type-text gfield--width-half gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_6_1'><span class='gform-field-label__text'>First Name</span><span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></label><div class='ginput_container ginput_container_text'><input name='input_1' id='input_6_1' type='text' value='' class='large'     aria-required="true" aria-invalid="false"   /></div></div><div id="field_6_3" class="gfield gfield--type-text gfield--input-type-text gfield--width-half gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_6_3'><span class='gform-field-label__text'>Last Name</span><span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></label><div class='ginput_container ginput_container_text'><input name='input_3' id='input_6_3' type='text' value='' class='large'     aria-required="true" aria-invalid="false"   /></div></div><div id="field_6_4" class="gfield gfield--type-email gfield--input-type-email gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_6_4'><span class='gform-field-label__text'>Email Address</span><span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></label><div class='ginput_container ginput_container_email'>
+                            <input name='input_4' id='input_6_4' type='email' value='' class='large'    aria-required="true" aria-invalid="false"  />
+                        </div></div><fieldset id="field_6_6" class="gfield gfield--type-checkbox gfield--type-choice gfield--input-type-checkbox gfield--width-full field_sublabel_below gfield--has-description field_description_above field_validation_below gfield_visibility_visible gfield--choice-align-vertical"  ><legend class='gfield_label gform-field-label gfield_label_before_complex' ><span class='gform-field-label__text'>Additional Interests</span></legend><div class='gfield_description' id='gfield_description_6_6'><div style="font-size:13px;">I am also interested in....</div></div><div class='ginput_container ginput_container_checkbox'><div class='gfield_checkbox ' id='input_6_6'><div class='gchoice gchoice_6_6_1'>
+								<input class='gfield-choice-input' name='input_6.1' type='checkbox'  value='601APNNMRMBJQQPBSCNQGQHGKKCRPSSGN'  id='choice_6_6_1'   aria-describedby="gfield_description_6_6"/>
+								<label for='choice_6_6_1' id='label_6_6_1' class='gform-field-label gform-field-label--type-inline'>Literary Translation</label>
+							</div><div class='gchoice gchoice_6_6_2'>
+								<input class='gfield-choice-input' name='input_6.2' type='checkbox'  value='401ANPJQJQPQMRSBDNMVNLSPGTRBVQVRH'  id='choice_6_6_2'   />
+								<label for='choice_6_6_2' id='label_6_6_2' class='gform-field-label gform-field-label--type-inline'>Young People &amp; Families</label>
+							</div><div class='gchoice gchoice_6_6_3'>
+								<input class='gfield-choice-input' name='input_6.3' type='checkbox'  value='802AJGBTDPGVCVMGPKHTKDLNBHRQNQDQG'  id='choice_6_6_3'   />
+								<label for='choice_6_6_3' id='label_6_6_3' class='gform-field-label gform-field-label--type-inline'>NCW Academy</label>
+							</div><div class='gchoice gchoice_6_6_4'>
+								<input class='gfield-choice-input' name='input_6.4' type='checkbox'  value='1805ALLBRLTKSTCLTLPMMNKTTNHVPCSDJ'  id='choice_6_6_4'   />
+								<label for='choice_6_6_4' id='label_6_6_4' class='gform-field-label gform-field-label--type-inline'>Norwich City of Literature</label>
+							</div></div></div></fieldset><div id="field_6_8" class="gfield gfield--type-text gfield--input-type-text gfield--width-full field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_hidden"  ><div class="admin-hidden-markup"><i class="gform-icon gform-icon--hidden" aria-hidden="true" title="This field is hidden when viewing the form"></i><span>This field is hidden when viewing the form</span></div><label class='gfield_label gform-field-label' for='input_6_8'><span class='gform-field-label__text'>Newsletter Contact Pref</span></label><div class='ginput_container ginput_container_text'><input name='input_8' id='input_6_8' type='text' value='201AGBHDRLQHNHPHKKMPKLGPMDRDTDMVL' class='large'      aria-invalid="false"   /></div></div><fieldset id="field_6_5" class="gfield gfield--type-consent gfield--type-choice gfield--input-type-consent gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below hidden_label field_validation_below gfield_visibility_visible gfield--choice-align-vertical"  ><legend class='gfield_label gform-field-label gfield_label_before_complex' ><span class='gform-field-label__text'>Privacy Policy</span><span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></legend><div class='ginput_container ginput_container_consent'><input name='input_5.1' id='input_6_5_1' type='checkbox' value='1'   aria-required="true" aria-invalid="false"   /> <label class="gform-field-label gform-field-label--type-inline gfield_consent_label" for='input_6_5_1' ><span class='gform-field-label__text'>I have read and agree to the <a href="https://nationalcentreforwriting.org.uk/privacy-policy/" target="_blank" class="text_link">privacy and terms.</a></span><span class="gfield_required gfield_required_text">(Required)</span></label><input type='hidden' name='input_5.2' value='I have read and agree to the &lt;a href=&quot;https://nationalcentreforwriting.org.uk/privacy-policy/&quot; target=&quot;_blank&quot; class=&quot;text_link&quot;&gt;privacy and terms.&lt;/a&gt;' class='gform_hidden' /><input type='hidden' name='input_5.3' value='6' class='gform_hidden' /></div></fieldset></div></div>
+        <div class='gform-footer gform_footer top_label'> <button type='submit' id='gform_submit_button_6' class='gform_button button' onclick='gform.submission.handleButtonClick(this);' data-submission-type='submit' >Go</button> <input type='hidden' name='gform_ajax' value='form_id=6&amp;title=&amp;description=&amp;tabindex=0&amp;theme=gravity-theme&amp;styles=[]&amp;hash=bca65a3dacc449f29fd73b19ba12290c' />
+            <input type='hidden' class='gform_hidden' name='gform_submission_method' data-js='gform_submission_method_6' value='iframe' />
+            <input type='hidden' class='gform_hidden' name='gform_theme' data-js='gform_theme_6' id='gform_theme_6' value='gravity-theme' />
+            <input type='hidden' class='gform_hidden' name='gform_style_settings' data-js='gform_style_settings_6' id='gform_style_settings_6' value='[]' />
+            <input type='hidden' class='gform_hidden' name='is_submit_6' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='6' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_currency' data-currency='GBP' value='vJz+o+w6lO41KaYs2WCD1d9B1uMrwmQwgItyqHZ05sGKTr6FkZXwvMS0eDLLjYwpBUloHmPPsuYlbjcy31iWTqcn2J8jWhcmeGeBlWaP7/suqmM=' />
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_6' value='WyJ7XCI2LjFcIjpcImM5NWU4Y2Q5NmMxYWFkY2YyZWRhODJiZTdlOWQyMGM5XCIsXCI2LjJcIjpcImIyNTdkMGY2OWJkNzA0NGU1YmY3Y2M4NTQ2MTZlOWJlXCIsXCI2LjNcIjpcImU1NmVkYzQxNzkyMTBhMjZmMTMyYmRmMTllNzI2ZTJkXCIsXCI2LjRcIjpcImZhNzM3ZWFiN2M4ZTYzYjFmMmQ3ODMzMzIwNzU0Nzk2XCIsXCI1LjFcIjpcImNkMDg5OWY3OTIzZGMxYjViZjQwMDI0YWZlNGU3YjJjXCIsXCI1LjJcIjpcIjg0YmJlYWIxNjE0NWY4NjQ2YTAwOGQ3MDA4NWU2ZDVmXCIsXCI1LjNcIjpcImVhNTZiNGNhYmY1MjBiZjViOTRkZjk3MzhiZGJkNmE1XCIsXCJnZm9ybV9zdWJtaXNzaW9uX21ldGhvZFwiOltcImVkYWQ0YTMzYzlmNDU4YTRlZjllZDg1M2UyNTkwOGE0XCIsXCJhNjZjZTUwYjUyOTk2YmY5ZDI3MDc1NmRiMjlkYTMxNFwiLFwiZGMwMGZhM2JjMjVlNDc0Y2YyZmE3NWI1ODVkNjBmMzlcIl0sXCJnZm9ybV90aGVtZVwiOlwiZjU3MTU1ZmRhM2I0NjFiODE1MzZjYTM3YzIwZDgxNThcIixcImdmb3JtX3N0eWxlX3NldHRpbmdzXCI6XCIxZmJhYTJlNjAyMDRiYjBlYmM1NzQwN2NhODg3M2QzZlwiLFwiZm9ybV9pZFwiOlwiZWE1NmI0Y2FiZjUyMGJmNWI5NGRmOTczOGJkYmQ2YTVcIixcInVybFwiOlwiOWQ3MzFiZmM5M2Q2Yjg2OGNhMzNhNTkzYzI1NzBmODBcIixcInN0YXRlX3RpbWVzdGFtcFwiOlwiMWYxYTU4MWU1N2RkZWFhNjlkYmY0MzhjNThlMzlkNzFcIn0iLCJiMWRjNzE1YzA5NWE0NmY1NGU4MTM3YTcwZGVmOTljNiIsMTc4NzgxMDM3OV0=' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_target_page_number_6' id='gform_target_page_number_6' value='0' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_source_page_number_6' id='gform_source_page_number_6' value='1' />
+            <input type='hidden' name='gform_field_values' value='check=First+Choice%2CSecond+Choice' />
+            
+        </div>
+                        </form>
+                        </div>
+		                <iframe style='display:none;width:0px;height:0px;' src='about:blank' name='gform_ajax_frame_6' id='gform_ajax_frame_6' title='This iframe contains the logic required to handle Ajax powered Gravity Forms.'></iframe>
+		                <script>
+gform.initializeOnLoaded( function() {jQuery('#gform_ajax_frame_6').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_6');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_6').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_6').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_6').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_6').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_6').offset().top - mt); }, 50 );var current_page = jQuery('#gform_source_page_number_6').val();jQuery(document).trigger('gform_page_loaded', [6, current_page]);window['gf_submitting_6'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}jQuery('#gform_wrapper_6').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_6').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [6]);window['gf_submitting_6'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_6').text());}else{jQuery('#gform_6').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger("gform_pre_post_render", [{ formId: "6", currentPage: "current_page", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_6" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_6";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_6" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 6, current_page );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );} );
+</script>
+
+          </div> <!-- / Newsletter -->
+        </div> <!-- / Newsletter Container -->
+
+      </div> <!-- / Top Panel -->
+
+      <div class="bottom_panel">
+
+        <div class="partners_container"> <!-- Partners Container -->
+
+          <div class="partners"> <!-- Partners -->
+
+            <p class="h6 title">Our Partners</p> <!-- Title -->
+
+            <div class="partners_flex_container"> <!-- Partners Flex Container -->
+
+              <div class="col_1"> <!-- Column One -->
+
+                <div class="partner_logo">
+                  <a href="https://www.artscouncil.org.uk/" target="_blank">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/ace_logo.png" alt="Arts Council England Logo" />
+                  </a>
+                </div> <!-- Partner Logo -->
+                <div class="partner_logo city_of_literature">
+                  <a href="/norwich-unesco-city-of-literature/">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/city-of-literature.png" alt="Norwich City of Literature Logo" />
+                  </a>
+                </div> <!-- Partner Logo -->
+
+              </div> <!-- / Column One -->
+
+              <div class="col_2"> <!-- Column Two -->
+
+                <div class="partner_logo">
+                  <a href="https://www.norwich.gov.uk/site/" target="_blank">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/ncc_logo.png" alt="Norwich City Council Logo" />
+                  </a>
+                </div> <!-- Partner Logo -->
+                <div class="partner_logo">
+                  <a href="https://ec.europa.eu/regional_policy/funding/erdf_en" target="_blank">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/sgs_logo.jpg" alt="Small Grant Scheme Logo" />
+                  </a>
+                </div> <!-- Partner Logo -->
+                <div class="partner_logo">
+                  <a href="https://www.uea.ac.uk/" target="_blank">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/uea_logo.png" alt="University of East Anglia Logo" />
+                  </a>
+                </div> <!-- Partner Logo -->
+
+              </div> <!-- / Column Two -->
+
+            </div> <!-- / Partners Flex Container -->
+
+          </div> <!-- / Partners -->
+
+        </div> <!-- / Partners Container -->
+
+        <div class="company_info_container"> <!-- Company Information Container -->
+
+          <p class="h6 title">Company Information</p> <!-- Title -->
+
+          <div class="company_info"> <!-- Company Information -->
+
+             <!-- Address -->
+              <p>© National Centre for Writing, Dragon Hall, 115-123 King Street, Norwich, NR1 1QE</p>
+             <!-- / Address -->
+
+            <p>Company Number: 05242876</p> <!-- Company Number -->
+
+            <p>National Centre for Writing is a registered charity. Our charity number is 1110725</p> <!-- Charity Number -->
+
+             <!-- Number -->
+                            <a href="mailto:info@nationalcentreforwriting.org.uk?subject=Website%20Enquiry">info@nationalcentreforwriting.org.uk</a>
+             <!-- / Number -->
+
+          </div> <!-- / Company Information -->
+
+        </div> <!-- / Company Information Container -->
+
+      </div> <!-- / Bottom Panel -->
+
+		</div> <!-- / Footer Content -->
+
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+	<nav id="mobile-navigation">
+		<ul>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-109"><a href="https://nationalcentreforwriting.org.uk/whats-on/">What’s On</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16582"><a href="https://nationalcentreforwriting.org.uk/whats-on/">All Events</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51505"><a href="https://nationalcentreforwriting.org.uk/darkest-chapter/">Darkest Chapter</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48417"><a href="https://nationalcentreforwriting.org.uk/whats-on/summer/">Summer at the National Centre for Writing</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43339"><a href="https://nationalcentreforwriting.org.uk/programmes/browse-our-season-brochure/">Season Brochure</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33130"><a href="https://nationalcentreforwriting.org.uk/the-global-page-2/">The Global Page  </a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-63"><a href="https://nationalcentreforwriting.org.uk/get-involved/">Get involved</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="https://nationalcentreforwriting.org.uk/get-involved/writers/">For writers</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="https://nationalcentreforwriting.org.uk/get-involved/translators/">For translators</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="https://nationalcentreforwriting.org.uk/get-involved/communities/">For communities</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-825"><a href="https://nationalcentreforwriting.org.uk/get-involved/young-people/">For young people</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-826"><a href="https://nationalcentreforwriting.org.uk/get-involved/families/">For families</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-827"><a href="https://nationalcentreforwriting.org.uk/get-involved/schools/">For teachers</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-828"><a href="https://nationalcentreforwriting.org.uk/norwich-unesco-city-of-literature/">Norwich UNESCO City of Literature</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-55"><a href="https://nationalcentreforwriting.org.uk/academy/">Academy</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44919"><a href="https://nationalcentreforwriting.org.uk/the-writing-life-challenge/">The Writing Life Challenge</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-830"><a href="https://nationalcentreforwriting.org.uk/academy/tutored-courses/">Online tutored courses</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-832"><a href="https://nationalcentreforwriting.org.uk/academy/workshops/">Workshops</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65"><a href="https://nationalcentreforwriting.org.uk/academy/mentoring/">Mentoring</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-831"><a href="https://nationalcentreforwriting.org.uk/academy/live-evening-courses/">Evening courses</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-829"><a href="https://nationalcentreforwriting.org.uk/academy/self-paced-courses/">Self-paced online courses</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8145"><a href="https://nationalcentreforwriting.org.uk/get-involved/writers/resources/">Free resources</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="https://nationalcentreforwriting.org.uk/writing-hub/">Writing Hub</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10937"><a href="https://nationalcentreforwriting.org.uk/visit-us/">Visit</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27672"><a href="https://nationalcentreforwriting.org.uk/plan-your-visit/">Plan your visit</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26050"><a href="https://nationalcentreforwriting.org.uk/writers-room/">Writers’ Room</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="https://nationalcentreforwriting.org.uk/visit-us/the-literature-house/accessibility/">Accessibility</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10938"><a href="https://nationalcentreforwriting.org.uk/about-us/">About us</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10731"><a href="https://nationalcentreforwriting.org.uk/support-us/">Join and support</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14985"><a href="https://nationalcentreforwriting.org.uk/vacancies/">Join the team</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14344"><a href="https://nationalcentreforwriting.org.uk/shop/">Shop</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"><a href="https://nationalcentreforwriting.org.uk/hire/">Hire Dragon Hall</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38328"><a href="https://nationalcentreforwriting.org.uk/press/">Press</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8326"><a href="https://nationalcentreforwriting.org.uk/in-the-region/">In the region</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8094"><a href="https://nationalcentreforwriting.org.uk/contact/">Contact us</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-838"><a href="https://nationalcentreforwriting.org.uk/norwich-unesco-city-of-literature/">Norwich UNESCO City of Literature</a></li>
+<li class="mobile_only menu-item menu-item-type-custom menu-item-object-custom menu-item-9085"><a href="https://ncw-online.teachable.com/l/products">Academy Portal</a></li>
+      <li>
+        <form role="search" method="get" class="search-form mobile_search_form" action="https://nationalcentreforwriting.org.uk">
+
+          <div class="mobile_search_form_holder"> <!-- Search Form Holder -->
+              <div class="label_input">
+                <label for="mobile_site_search">Search our site:</label>
+                <input type="search" id="mobile_site_search" class="search-field" value="" name="s" title="Search for:" />
+              </div>
+              <input type="submit" class="search-submit" value="Search" />
+          </div> <!-- / Search Form Holder -->
+
+        </form>
+      </li>
+		</ul>
+	</nav> <!-- #site-navigation -->
+
+	<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/ncw/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+	<!--copyscapeskip-->
+	<aside id="moove_gdpr_cookie_info_bar" class="moove-gdpr-info-bar-hidden moove-gdpr-align-center moove-gdpr-dark-scheme gdpr_infobar_postion_bottom" aria-label="GDPR Cookie Banner" style="display: none;">
+	<div class="moove-gdpr-info-bar-container">
+		<div class="moove-gdpr-info-bar-content">
+		
+<div class="moove-gdpr-cookie-notice">
+  <p><span style="font-size: 11pt">We use cookies to give you the best experience on our website. If you're ok with this, click 'accept' to allow all cookies. Click 'reject' to restrict tracking cookies and only use required cookies. You can find out more about which cookies we are using or switch them off in <button  aria-haspopup="true" data-href="#moove_gdpr_cookie_modal" class="change-settings-button gdpr-settings-btn-style-2">settings</button>.</span></p>
+</div>
+<!--  .moove-gdpr-cookie-notice -->
+		
+<div class="moove-gdpr-button-holder">
+			<button class="mgbutton moove-gdpr-infobar-allow-all gdpr-fbo-0" aria-label="Accept" >Accept</button>
+						<button class="mgbutton moove-gdpr-infobar-reject-btn gdpr-fbo-1 "  aria-label="Reject">Reject</button>
+			</div>
+<!--  .button-container -->
+		</div>
+		<!-- moove-gdpr-info-bar-content -->
+	</div>
+	<!-- moove-gdpr-info-bar-container -->
+	</aside>
+	<!-- #moove_gdpr_cookie_info_bar -->
+	<!--/copyscapeskip-->
+<script id="jquery-ui-core-js-before">
+jQuery.uiBackCompat = true;
+//# sourceURL=jquery-ui-core-js-before
+</script>
+<script id="jquery-ui-core-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/jquery/ui/core.min.js?ver=1.14.2"></script>
+<script id="jquery-ui-datepicker-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.14.2"></script>
+<script id="jquery-ui-datepicker-js-after">
+jQuery(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+//# sourceURL=jquery-ui-datepicker-js-after
+</script>
+<script id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+//# sourceURL=rocket-browser-checker-js-after
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"/whats-on/|/events/|/events/|/writing-hub/|/writing-hub/|/showcase/|/showcase/|/resources/|/resources/|/courses/|/courses/|/programmes/|/programmes/|/login/|/logout/|/basket/|/checkout/|/(?:.+/)?feed(?:/(?:.+/?)?)?$|/(?:.+/)?embed/|/(index.php/)?(.*)wp-json(/.*|$)|/refer/|/go/|/recommend/|/recommends/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https://nationalcentreforwriting.org.uk","onHoverDelay":"100","rateThrottle":"3"};
+//# sourceURL=rocket-preload-links-js-extra
+</script>
+<script id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+
+//# sourceURL=rocket-preload-links-js-after
+</script>
+<script id="ncw-navigation-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/js/navigation.js?ver=20151215"></script>
+<script id="ncw-skip-link-focus-fix-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/js/skip-link-focus-fix.js?ver=20151215"></script>
+<script id="ncw-mmenu-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/lib/mobile-navigation/mmenu.js?ver=20171102"></script>
+<script id="ncw-mobile-nav-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/lib/mobile-navigation/mobile-navigation.js?ver=20171102"></script>
+<script id="ncw-mobile-polyfills-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/lib/mobile-navigation/mmenu.polyfills.js?ver=20171102"></script>
+<script id="ncw-slick-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/js/slick.min.js?ver=20171012"></script>
+<script id="ncw-custom-scripts-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/js/custom-scripts.js?ver=20171012"></script>
+<script id="moove_gdpr_frontend-js-extra">
+var moove_frontend_gdpr_scripts = {"ajaxurl":"https://nationalcentreforwriting.org.uk/wp-admin/admin-ajax.php","post_id":"46967","plugin_dir":"https://nationalcentreforwriting.org.uk/wp-content/plugins/gdpr-cookie-compliance","show_icons":"all","is_page":"","ajax_cookie_removal":"false","strict_init":"2","enabled_default":{"strict":1,"third_party":0,"advanced":0,"performance":0,"preference":0},"geo_location":"false","force_reload":"false","is_single":"1","hide_save_btn":"false","current_user":"0","cookie_expiration":"365","script_delay":"2000","close_btn_action":"1","close_btn_rdr":"","scripts_defined":"{\"cache\":true,\"header\":\"\",\"body\":\"\",\"footer\":\"\",\"thirdparty\":{\"header\":\"\\t\\t\\t\\t\\t\\t\\t\\t\u003C!-- Google Tag Manager --\u003E\\n\\t\\t\\t\\t\u003Cscript data-gdpr data-type=\\\"gdpr-integration\\\"\u003E(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\\n\\t\\t\\t\\tnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\\n\\t\\t\\t\\tj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\\n\\t\\t\\t\\t'https:\\/\\/www.googletagmanager.com\\/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\\n\\t\\t\\t\\t})(window,document,'script','dataLayer','GTM-T7QPRS3');\u003C\\/script\u003E\\n\\t\\t\\t\\t\u003C!-- End Google Tag Manager --\u003E\\n\\t\\t\\t\\t\",\"body\":\"\\t\\t\\t\\t\u003C!-- Google Tag Manager (noscript) --\u003E\\n\\t\\t\\t\\t\u003Cnoscript data-type=\\\"gdpr-integration\\\"\u003E\u003Ciframe src=\\\"https:\\/\\/www.googletagmanager.com\\/ns.html?id=GTM-T7QPRS3\\\"\\n\\t\\t\\t\\theight=\\\"0\\\" width=\\\"0\\\" style=\\\"display:none;visibility:hidden\\\"\u003E\u003C\\/iframe\u003E\u003C\\/noscript\u003E\\n\\t\\t\\t\\t\u003C!-- End Google Tag Manager (noscript) --\u003E\\n\\t\\t\\t\\t\\t\\t\\t\\t\",\"footer\":\"\"},\"strict\":{\"header\":\"\",\"body\":\"\",\"footer\":\"\"},\"advanced\":{\"header\":\"\",\"body\":\"\",\"footer\":\"\"}}","gdpr_scor":"true","wp_lang":"","wp_consent_api":"false","gdpr_nonce":"41c80a2cbb"};
+//# sourceURL=moove_gdpr_frontend-js-extra
+</script>
+<script id="moove_gdpr_frontend-js" src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gdpr-cookie-compliance/dist/scripts/main.js?ver=5.1.0"></script>
+<script id="moove_gdpr_frontend-js-after">
+var gdpr_c=document.cookie.match(/(?:^|;\s*)moove_gdpr_popup=([^;]*)/);var gdpr_d=gdpr_c?JSON.parse(decodeURIComponent(gdpr_c[1])):{};var gdpr_consent__strict=gdpr_d.strict==="1"?"true":"false";var gdpr_consent__thirdparty=gdpr_d.thirdparty==="1"?"true":"false";var gdpr_consent__advanced=gdpr_d.advanced==="1"?"true":"false";var gdpr_consent__performance=gdpr_d.performance==="1"?"true":"false";var gdpr_consent__preference=gdpr_d.preference==="1"?"true":"false";var _cc=[];if(gdpr_d.strict==="1")_cc.push("strict");if(gdpr_d.thirdparty==="1")_cc.push("thirdparty");if(gdpr_d.advanced==="1")_cc.push("advanced");if(gdpr_d.performance==="1")_cc.push("performance");if(gdpr_d.preference==="1")_cc.push("preference");var gdpr_consent__cookies=_cc.join("|");
+//# sourceURL=moove_gdpr_frontend-js-after
+</script>
+<script id="wp-dom-ready-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/dist/dom-ready.min.js?ver=3fe927cab37bf38d6a23"></script>
+<script id="wp-hooks-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/dist/hooks.min.js?ver=f0f188028580e8dc1255"></script>
+<script id="wp-i18n-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/dist/i18n.min.js?ver=1dfe7db3940c23ea9216"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script id="wp-a11y-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/dist/a11y.min.js?ver=31c6cec5a4ff7aff483d"></script>
+<script id="gform_json-js" defer='defer' src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=3.0.3"></script>
+<script id="gform_gravityforms-js-extra">
+var gform_i18n = {"datepicker":{"wdOffset":1,"helpTextShort":"Press F1 for help","helpText":"Press the arrow keys to navigate by day, PageUp and PageDown to navigate by month, Alt+PageUp and Alt+PageDown to navigate by year, or Escape to cancel.","openOnFocusHelpText":"Press Down arrow to browse the calendar, or Escape to close.","tooltipTxt":"Press Escape to cancel","disabledTxt":"Disabled","markedTxt":"Selected","prevTxt":"Previous","nextTxt":"Next","monthTxt":"Month","yearTxt":"Year","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"days":[{"s":"S","l":"Sunday"},{"s":"M","l":"Monday"},{"s":"T","l":"Tuesday"},{"s":"W","l":"Wednesday"},{"s":"T","l":"Thursday"},{"s":"F","l":"Friday"},{"s":"S","l":"Saturday"}]}};
+var gf_legacy_multi = [];
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","file_uploaded":"File uploaded","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled","error":"Error","message":"Message"},"vars":{"images_url":"https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/images"}};
+var gf_global = {"gf_currency_config":{"name":"Pound Sterling","symbol_left":"&#163;","symbol_right":"","symbol_padding":" ","thousand_separator":",","decimal_separator":".","decimals":2,"code":"GBP"},"base_url":"https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms","number_formats":[],"version_hash":"c20fb5453cebeae694df2545a989fe68","countries":{"AF":"Afghanistan","AX":"\u00c5land Islands","AL":"Albania","DZ":"Algeria","AS":"American Samoa","AD":"Andorra","AO":"Angola","AI":"Anguilla","AQ":"Antarctica","AG":"Antigua and Barbuda","AR":"Argentina","AM":"Armenia","AW":"Aruba","AU":"Australia","AT":"Austria","AZ":"Azerbaijan","BS":"Bahamas","BH":"Bahrain","BD":"Bangladesh","BB":"Barbados","BY":"Belarus","BE":"Belgium","BZ":"Belize","BJ":"Benin","BM":"Bermuda","BT":"Bhutan","BO":"Bolivia","BQ":"Bonaire, Sint Eustatius and Saba","BA":"Bosnia and Herzegovina","BW":"Botswana","BV":"Bouvet Island","BR":"Brazil","IO":"British Indian Ocean Territory","BN":"Brunei Darussalam","BG":"Bulgaria","BF":"Burkina Faso","BI":"Burundi","CV":"Cabo Verde","KH":"Cambodia","CM":"Cameroon","CA":"Canada","KY":"Cayman Islands","CF":"Central African Republic","TD":"Chad","CL":"Chile","CN":"China","CX":"Christmas Island","CC":"Cocos Islands","CO":"Colombia","KM":"Comoros","CD":"Congo, Democratic Republic of the","CG":"Congo","CK":"Cook Islands","CR":"Costa Rica","CI":"C\u00f4te d'Ivoire","HR":"Croatia","CU":"Cuba","CW":"Cura\u00e7ao","CY":"Cyprus","CZ":"Czechia","DK":"Denmark","DJ":"Djibouti","DM":"Dominica","DO":"Dominican Republic","EC":"Ecuador","EG":"Egypt","SV":"El Salvador","GQ":"Equatorial Guinea","ER":"Eritrea","EE":"Estonia","SZ":"Eswatini","ET":"Ethiopia","FK":"Falkland Islands","FO":"Faroe Islands","FJ":"Fiji","FI":"Finland","FR":"France","GF":"French Guiana","PF":"French Polynesia","TF":"French Southern Territories","GA":"Gabon","GM":"Gambia","GE":"Georgia","DE":"Germany","GH":"Ghana","GI":"Gibraltar","GR":"Greece","GL":"Greenland","GD":"Grenada","GP":"Guadeloupe","GU":"Guam","GT":"Guatemala","GG":"Guernsey","GN":"Guinea","GW":"Guinea-Bissau","GY":"Guyana","HT":"Haiti","HM":"Heard Island and McDonald Islands","VA":"Holy See","HN":"Honduras","HK":"Hong Kong","HU":"Hungary","IS":"Iceland","IN":"India","ID":"Indonesia","IR":"Iran","IQ":"Iraq","IE":"Ireland","IM":"Isle of Man","IL":"Israel","IT":"Italy","JM":"Jamaica","JP":"Japan","JE":"Jersey","JO":"Jordan","KZ":"Kazakhstan","KE":"Kenya","KI":"Kiribati","KP":"Korea, Democratic People's Republic of","KR":"Korea, Republic of","KW":"Kuwait","KG":"Kyrgyzstan","LA":"Lao People's Democratic Republic","LV":"Latvia","LB":"Lebanon","LS":"Lesotho","LR":"Liberia","LY":"Libya","LI":"Liechtenstein","LT":"Lithuania","LU":"Luxembourg","MO":"Macao","MG":"Madagascar","MW":"Malawi","MY":"Malaysia","MV":"Maldives","ML":"Mali","MT":"Malta","MH":"Marshall Islands","MQ":"Martinique","MR":"Mauritania","MU":"Mauritius","YT":"Mayotte","MX":"Mexico","FM":"Micronesia","MD":"Moldova","MC":"Monaco","MN":"Mongolia","ME":"Montenegro","MS":"Montserrat","MA":"Morocco","MZ":"Mozambique","MM":"Myanmar","NA":"Namibia","NR":"Nauru","NP":"Nepal","NL":"Netherlands","NC":"New Caledonia","NZ":"New Zealand","NI":"Nicaragua","NE":"Niger","NG":"Nigeria","NU":"Niue","NF":"Norfolk Island","MK":"North Macedonia","MP":"Northern Mariana Islands","NO":"Norway","OM":"Oman","PK":"Pakistan","PW":"Palau","PS":"Palestine, State of","PA":"Panama","PG":"Papua New Guinea","PY":"Paraguay","PE":"Peru","PH":"Philippines","PN":"Pitcairn","PL":"Poland","PT":"Portugal","PR":"Puerto Rico","QA":"Qatar","RE":"R\u00e9union","RO":"Romania","RU":"Russian Federation","RW":"Rwanda","BL":"Saint Barth\u00e9lemy","SH":"Saint Helena, Ascension and Tristan da Cunha","KN":"Saint Kitts and Nevis","LC":"Saint Lucia","MF":"Saint Martin","PM":"Saint Pierre and Miquelon","VC":"Saint Vincent and the Grenadines","WS":"Samoa","SM":"San Marino","ST":"Sao Tome and Principe","SA":"Saudi Arabia","SN":"Senegal","RS":"Serbia","SC":"Seychelles","SL":"Sierra Leone","SG":"Singapore","SX":"Sint Maarten","SK":"Slovakia","SI":"Slovenia","SB":"Solomon Islands","SO":"Somalia","ZA":"South Africa","GS":"South Georgia and the South Sandwich Islands","SS":"South Sudan","ES":"Spain","LK":"Sri Lanka","SD":"Sudan","SR":"Suriname","SJ":"Svalbard and Jan Mayen","SE":"Sweden","CH":"Switzerland","SY":"Syria Arab Republic","TW":"Taiwan","TJ":"Tajikistan","TZ":"Tanzania, the United Republic of","TH":"Thailand","TL":"Timor-Leste","TG":"Togo","TK":"Tokelau","TO":"Tonga","TT":"Trinidad and Tobago","TN":"Tunisia","TR":"T\u00fcrkiye","TM":"Turkmenistan","TC":"Turks and Caicos Islands","TV":"Tuvalu","UG":"Uganda","UA":"Ukraine","AE":"United Arab Emirates","GB":"United Kingdom","US":"United States","UY":"Uruguay","UM":"US Minor Outlying Islands","UZ":"Uzbekistan","VU":"Vanuatu","VE":"Venezuela","VN":"Viet Nam","VG":"Virgin Islands, British","VI":"Virgin Islands, U.S.","WF":"Wallis and Futuna","EH":"Western Sahara","YE":"Yemen","ZM":"Zambia","ZW":"Zimbabwe"},"strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+//# sourceURL=gform_gravityforms-js-extra
+</script>
+<script id="gform_gravityforms-js" defer='defer' src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=3.0.3"></script>
+<script id="gform_gravityforms_utils-js" defer='defer' src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/js/dist/utils.min.js?ver=69a9db57304a9f86c3d1a0bea5fd2cf9"></script>
+<script id="gform_gravityforms_theme_vendors-js" defer='defer' src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/js/dist/vendor-theme.min.js?ver=0c901cb641ce64b99c20ea1a4d208cc9"></script>
+<script id="gform_gravityforms_theme-js-extra">
+var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"c20fb5453cebeae694df2545a989fe68"},"ajax":{"ajaxurl":"https://nationalcentreforwriting.org.uk/wp-admin/admin-ajax.php","ajax_submission_nonce":"32df38e956","i18n":{"step_announcement":"Step %1$s of %2$s, %3$s","unknown_error":"There was an unknown error processing your request. Please try again.","error_403":"The request was blocked (403 error) for unknown security reasons. Remove any code-like text (scripts or DB queries) and try again."}}}},"hmr_dev":"","public_path":"https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/js/dist/","config_nonce":"40397dcefe"};
+//# sourceURL=gform_gravityforms_theme-js-extra
+</script>
+<script id="gform_gravityforms_theme-js" defer='defer' src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/js/dist/scripts-theme.min.js?ver=75b66edcf00dc5031d1c38e899136fda"></script>
+
+    
+	<!--copyscapeskip-->
+	<!-- V1 -->
+		<dialog id="moove_gdpr_cookie_modal" class="gdpr_lightbox-hide" open aria-modal="true" aria-label="GDPR Settings Screen">
+	<div class="moove-gdpr-modal-content moove-clearfix logo-position-left moove_gdpr_modal_theme_v1">
+		    
+		<button class="moove-gdpr-modal-close" autofocus aria-label="Close GDPR Cookie Settings">
+			<span class="gdpr-sr-only">Close GDPR Cookie Settings</span>
+			<span class="gdpr-icon moovegdpr-arrow-close"></span>
+		</button>
+				<div class="moove-gdpr-modal-left-content">
+		
+<div class="moove-gdpr-company-logo-holder">
+	<img src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gdpr-cookie-compliance/dist/images/gdpr-logo.png" alt="National Centre for Writing | NCW"   width="350"  height="233"  class="img-responsive" />
+</div>
+<!--  .moove-gdpr-company-logo-holder -->
+		<ul id="moove-gdpr-menu">
+			
+<li class="menu-item-on menu-item-privacy_overview menu-item-selected">
+	<button data-href="#privacy_overview" class="moove-gdpr-tab-nav" aria-label="Privacy Overview">
+	<span class="gdpr-nav-tab-title">Privacy Overview</span>
+	</button>
+</li>
+
+	<li class="menu-item-strict-necessary-cookies menu-item-off">
+	<button data-href="#strict-necessary-cookies" class="moove-gdpr-tab-nav" aria-label="Strictly Necessary Cookies">
+		<span class="gdpr-nav-tab-title">Strictly Necessary Cookies</span>
+	</button>
+	</li>
+
+
+	<li class="menu-item-off menu-item-third_party_cookies">
+	<button data-href="#third_party_cookies" class="moove-gdpr-tab-nav" aria-label="3rd Party Cookies">
+		<span class="gdpr-nav-tab-title">3rd Party Cookies</span>
+	</button>
+	</li>
+
+
+
+		</ul>
+		
+<div class="moove-gdpr-branding-cnt">
+			<a href="https://wordpress.org/plugins/gdpr-cookie-compliance/" rel="noopener noreferrer" target="_blank" class='moove-gdpr-branding'>Powered by&nbsp; <span>GDPR Cookie Compliance</span></a>
+		</div>
+<!--  .moove-gdpr-branding -->
+		</div>
+		<!--  .moove-gdpr-modal-left-content -->
+		<div class="moove-gdpr-modal-right-content">
+		<div class="moove-gdpr-modal-title">
+			 
+		</div>
+		<!-- .moove-gdpr-modal-ritle -->
+		<div class="main-modal-content">
+
+			<div class="moove-gdpr-tab-content">
+			
+<div id="privacy_overview" class="moove-gdpr-tab-main">
+		<span class="tab-title">Privacy Overview</span>
+		<div class="moove-gdpr-tab-main-content">
+	<p>This website uses cookies so that we can provide you with the best user experience possible. Cookie information is stored in your browser and performs functions such as recognising you when you return to our website and helping our team to understand which sections of the website you find most interesting and useful.</p>
+		</div>
+	<!--  .moove-gdpr-tab-main-content -->
+
+</div>
+<!-- #privacy_overview -->
+			
+  <div id="strict-necessary-cookies" class="moove-gdpr-tab-main" style="display:none">
+    <span class="tab-title">Strictly Necessary Cookies</span>
+    <div class="moove-gdpr-tab-main-content">
+      <p>Strictly Necessary Cookie should be enabled at all times so that we can save your preferences for cookie settings.</p>
+      <div class="moove-gdpr-status-bar ">
+        <div class="gdpr-cc-form-wrap">
+          <div class="gdpr-cc-form-fieldset">
+            <label class="cookie-switch" for="moove_gdpr_strict_cookies">    
+              <span class="gdpr-sr-only">Enable or Disable Cookies</span>        
+              <input type="checkbox" aria-label="Strictly Necessary Cookies"  value="check" name="moove_gdpr_strict_cookies" id="moove_gdpr_strict_cookies">
+              <span class="cookie-slider cookie-round gdpr-sr" data-text-enable="Enabled" data-text-disabled="Disabled">
+                <span class="gdpr-sr-label">
+                  <span class="gdpr-sr-enable">Enabled</span>
+                  <span class="gdpr-sr-disable">Disabled</span>
+                </span>
+              </span>
+            </label>
+          </div>
+          <!-- .gdpr-cc-form-fieldset -->
+        </div>
+        <!-- .gdpr-cc-form-wrap -->
+      </div>
+      <!-- .moove-gdpr-status-bar -->
+                                              
+    </div>
+    <!--  .moove-gdpr-tab-main-content -->
+  </div>
+  <!-- #strict-necesarry-cookies -->
+			
+  <div id="third_party_cookies" class="moove-gdpr-tab-main" style="display:none">
+    <span class="tab-title">3rd Party Cookies</span>
+    <div class="moove-gdpr-tab-main-content">
+      <p>This website uses Google Analytics to collect anonymous information such as the number of visitors to the site, and the most popular pages. It also uses Facebook Pixel to help us recommend events to our audiences.</p>
+<p>Keeping this cookie enabled helps us to improve our website.</p>
+      <div class="moove-gdpr-status-bar">
+        <div class="gdpr-cc-form-wrap">
+          <div class="gdpr-cc-form-fieldset">
+            <label class="cookie-switch" for="moove_gdpr_performance_cookies">    
+              <span class="gdpr-sr-only">Enable or Disable Cookies</span>     
+              <input type="checkbox" aria-label="3rd Party Cookies" value="check" name="moove_gdpr_performance_cookies" id="moove_gdpr_performance_cookies" disabled>
+              <span class="cookie-slider cookie-round gdpr-sr" data-text-enable="Enabled" data-text-disabled="Disabled">
+                <span class="gdpr-sr-label">
+                  <span class="gdpr-sr-enable">Enabled</span>
+                  <span class="gdpr-sr-disable">Disabled</span>
+                </span>
+              </span>
+            </label>
+          </div>
+          <!-- .gdpr-cc-form-fieldset -->
+        </div>
+        <!-- .gdpr-cc-form-wrap -->
+      </div>
+      <!-- .moove-gdpr-status-bar -->
+             
+    </div>
+    <!--  .moove-gdpr-tab-main-content -->
+  </div>
+  <!-- #third_party_cookies -->
+			
+									
+			</div>
+			<!--  .moove-gdpr-tab-content -->
+		</div>
+		<!--  .main-modal-content -->
+		<div class="moove-gdpr-modal-footer-content">
+			<div class="moove-gdpr-button-holder">
+						<button class="mgbutton moove-gdpr-modal-allow-all button-visible" aria-label="Enable All">Enable All</button>
+								<button class="mgbutton moove-gdpr-modal-save-settings button-visible" aria-label="Save Settings">Save Settings</button>
+				</div>
+<!--  .moove-gdpr-button-holder -->
+		</div>
+		<!--  .moove-gdpr-modal-footer-content -->
+		</div>
+		<!--  .moove-gdpr-modal-right-content -->
+
+		<div class="moove-clearfix"></div>
+
+	</div>
+	<!--  .moove-gdpr-modal-content -->
+	</dialog>
+	<!-- #moove_gdpr_cookie_modal -->
+	<!--/copyscapeskip-->
+<script>
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 6) {} } );jQuery(document).on('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+</script>
+<script>
+gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_render", [{ formId: "6", currentPage: "1", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_6" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_6";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_6" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 6, 1 );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );
+</script>
+
+</div> <!-- / Site Wrapper -->
+
+</body>
+</html>

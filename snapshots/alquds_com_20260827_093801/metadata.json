@@ -1,0 +1,141 @@
+{
+  "website": "alquds",
+  "snapshot_date": "2026-08-27T09:42:21",
+  "pagination_type": "infinite scroll",
+  "scroll_mode": "scroll",
+  "scroll_rounds_requested": 2,
+  "load_more_selector": null,
+  "listing_url": "https://alquds.com/ar/categories/arab-and-world",
+  "input_urls": [
+    "https://alquds.com/ar/categories/arab-and-world"
+  ],
+  "pagination_pattern": null,
+  "requirements": "title, date, article body text",
+  "run_dir": "orch_runs/run_20260827_093801",
+  "link_extraction_code_file": null,
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://alquds.com/ar/categories/arab-and-world",
+      "file": "listing_page_001.html",
+      "bytes": 63789,
+      "sha1": "47408b1636373185393080ba2b64522d8510064a"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://alquds.com/ar/posts/255596-qatar-pm-visits-tehran-hormuz-deescalation",
+      "title": "رئيس الوزراء القطري في طهران: وساطة مكثفة لخفض التصعيد وأمن مضيق هرمز",
+      "page_num": 1,
+      "bytes": 86592,
+      "sha1": "58a56c237e3c857750e6a4f41e5a08ef159f3553"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://alquds.com/ar/posts/255585-syria-sdf-integration-agreement-details",
+      "title": "تفاهمات دمشق و\"قسد\": دمج الوحدات النسائية بالداخلية ومراسيم مرتقبة لعبدي وأحمد",
+      "page_num": 1,
+      "bytes": 86842,
+      "sha1": "e3d673b80f0010e7325013091563c91691b12ba0"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://alquds.com/ar/posts/255516-yemen-military-escalation-taiz-presidential-council",
+      "title": "تصعيد عسكري في اليمن: مواجهات عنيفة في تعز والساحل الغربي وتحركات للمجلس الرئاسي",
+      "page_num": 1,
+      "bytes": 85459,
+      "sha1": "d2b569de1dd598289ce82c2ac083fbac3bac083d"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://alquds.com/ar/posts/255483-morocco-endowments-minister-ceuta-sovereignty-history",
+      "title": "في حضور العاهل المغربي.. وزير الأوقاف يستحضر تاريخ سبتة ورموز المقاومة ضد الاستعمار",
+      "page_num": 1,
+      "bytes": 85391,
+      "sha1": "06b25e33da8b98a360c8523ee8827903b54e7a3f"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://alquds.com/ar/posts/255388-syria-removed-us-terrorism-list-al-sharaa",
+      "title": "الشرع: سوريا تطوي حقبة العقوبات وتفتح أبواب الإعمار بعد الشطب الأمريكي من قائمة الإرهاب",
+      "page_num": 1,
+      "bytes": 86769,
+      "sha1": "bc74f303deced5b51d4f093489d46d78056b523e"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://alquds.com/ar/posts/255382-pakistan-iran-talks-hormuz-strait-tensions",
+      "title": "باكستان تعلن تحقيق 'تقدم كبير' في محادثات طهران لخفض التصعيد الإقليمي",
+      "page_num": 1,
+      "bytes": 86452,
+      "sha1": "03ca290a27d8be5ca64a75002418347c130a4d0e"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://alquds.com/ar/posts/255348-saudi-oil-tanker-amzan-attacked-red-sea",
+      "title": "نجاة طاقم ناقلة نفط سعودية عملاقة بعد استهدافها بمقذوف في البحر الأحمر",
+      "page_num": 1,
+      "bytes": 85885,
+      "sha1": "e6f0327519a7f94d0565c5630022640fb6357bf9"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://alquds.com/ar/posts/255329-marj-dabiq-battle-ottoman-mamluk-history",
+      "title": "مرج دابق.. المعركة التي أعادت رسم خارطة المشرق العربي قبل 5 قرون",
+      "page_num": 1,
+      "bytes": 86482,
+      "sha1": "f7458f321bd34bf7292a7526e0b3b24bdb7a5616"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://alquds.com/ar/posts/255274-tom-barrack-retracts-golan-statements-lebanon-policy",
+      "title": "المبعوث الأمريكي توم باراك يتراجع عن تصريحاته بشأن الجولان ويوضح موقفه من لبنان",
+      "page_num": 1,
+      "bytes": 85042,
+      "sha1": "e64e250d24c777c62cb40737b002e39e4636aa21"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://alquds.com/ar/posts/255273-palmyra-explosion-casualties-homs-syria",
+      "title": "قتيل وجريحان في انفجار غامض بمدينة تدمر السورية",
+      "page_num": 1,
+      "bytes": 83830,
+      "sha1": "d7e2a89a88e743395b652c580e3ca1602bbf531c"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://alquds.com/ar/posts/255221-iran-diplomatic-moves-us-economic-sanctions-hormuz",
+      "title": "حراك دبلوماسي في طهران لمواجهة 'أشد' عقوبات أمريكية وتلويح بإغلاق شريان النفط",
+      "page_num": 1,
+      "bytes": 86663,
+      "sha1": "33910cfafd118ed7e673ce31073be1db156db2eb"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://alquds.com/ar/posts/255200-us-democrats-progressive-surge-republican-reaction",
+      "title": "انقسام ديمقراطي وترقب جمهوري: صعود الجناح التقدمي يشعل الساحة السياسية الأمريكية",
+      "page_num": 1,
+      "bytes": 85578,
+      "sha1": "c0893f37bd543392430a992f22faa66234f71ff6"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 1,
+    "articles": 12,
+    "article_fetch_failures": 0
+  }
+}

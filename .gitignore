@@ -28,7 +28,6 @@ swde_pred/
 *.pyc
 .env
 
-/*snapshots*
 
 
 

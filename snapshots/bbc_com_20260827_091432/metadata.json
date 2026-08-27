@@ -1,0 +1,696 @@
+{
+  "website": "bbc",
+  "snapshot_date": "2026-08-27T09:27:28",
+  "pagination_type": "numbered pagination",
+  "scroll_mode": null,
+  "scroll_rounds_requested": null,
+  "load_more_selector": null,
+  "listing_url": "https://www.bbc.com/arabic/topics/cqywj97d487t",
+  "input_urls": [
+    "https://www.bbc.com/arabic/topics/cqywj97d487t",
+    "https://www.bbc.com/arabic/topics/cqywj97d487t?page=2"
+  ],
+  "pagination_pattern": "https://www.bbc.com/arabic/topics/cqywj97d487t?page={page}",
+  "requirements": "title, date, article body text",
+  "run_dir": "orch_runs/run_20260827_091432",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://www.bbc.com/arabic/topics/cqywj97d487t",
+      "file": "listing_page_001.html",
+      "bytes": 300196,
+      "sha1": "6cb008a350a0572dae9d24085eac2c0faa58126f"
+    },
+    {
+      "page_num": 2,
+      "url": "https://www.bbc.com/arabic/topics/cqywj97d487t?page=2",
+      "file": "listing_page_002.html",
+      "bytes": 299665,
+      "sha1": "3d27010e1c9088bb342f0e5c8cb2768b9fdd92a1"
+    },
+    {
+      "page_num": 3,
+      "url": "https://www.bbc.com/arabic/topics/cqywj97d487t?page=3",
+      "file": "listing_page_003.html",
+      "bytes": 302081,
+      "sha1": "328a8f4f9d75add01f95e54325699be12798fa98"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://www.bbc.com/arabic/articles/c4gv5xkvkzyo",
+      "title": "ترامب يأمل أن تؤدي العقوبات إلى إسقاط النظام الإيراني، وطهران تتحدى",
+      "page_num": 1,
+      "bytes": 364761,
+      "sha1": "ffa3e2c487313faa4ed9d3b9c943d81c0bf700d6"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://www.bbc.com/arabic/articles/c1dl7n1rq5lo",
+      "title": "\"سيختفي نصف عملي\": شركات في كندا والولايات المتحدة تخشى حرباً تجارية",
+      "page_num": 1,
+      "bytes": 376688,
+      "sha1": "7776c34891221786b7fd1b8ed8b5359acf912b66"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://www.bbc.com/arabic/articles/c87vgy7q1d3o",
+      "title": "الصين تؤكد دفاعها عن مصالحها \"بكل حزم\" رداً على خطط الولايات المتحدة لـ\"خنق\" إيران وشركائها التجاريين",
+      "page_num": 1,
+      "bytes": 366605,
+      "sha1": "f6285eae99a89c0be55c6a21962e0bdbf1154783"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://www.bbc.com/arabic/articles/cwyz45n95v8o",
+      "title": "واشنطن تفرض عقوبات جديدة ضد إيران تستهدف 60 شخصاً وكياناً و\"خمسة شرايين حيوية\"، وطهران تحذر من المشاركة فيها",
+      "page_num": 1,
+      "bytes": 377848,
+      "sha1": "d27fe0cf6f86ab4c41dc0c9488ea0a6d670808dc"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://www.bbc.com/arabic/articles/ckg4dpzdn2eo",
+      "title": "لماذا يدق الاقتصاد الأمريكي ناقوس الخطر؟",
+      "page_num": 1,
+      "bytes": 364947,
+      "sha1": "d815e72513119586e6c372802d8a39e93222c66d"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://www.bbc.com/arabic/articles/crmrg2xg1yeo",
+      "title": "قاليباف: لا بد لإيران أن تخطط للتغلب على \"العقوبات الأمريكية الجائرة\"، والصين تقول إن العقوبات ليست الحل",
+      "page_num": 1,
+      "bytes": 372345,
+      "sha1": "a327a90cad36014efb20fce1c73d87cb00b53bb6"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://www.bbc.com/arabic/articles/c998dr450kko",
+      "title": "الحزب الجمهوري قلق من حرب إيران - في جولة الصحف",
+      "page_num": 1,
+      "bytes": 369538,
+      "sha1": "d7eb63ad35f8369109fbe108b1567537ffddd1bf"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://www.bbc.com/arabic/articles/cr5918vq5zgo",
+      "title": "مقتل رئيس الاستخبارات العسكرية للجيش الوطني الليبي، وخامس هجوم على أكبر منشأة للنفط في ليبيا",
+      "page_num": 1,
+      "bytes": 364637,
+      "sha1": "444d26783651ffea490a9713cbb15bc705cc0a5e"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://www.bbc.com/arabic/articles/c2k747g2zelo",
+      "title": "\"اضطررت إلى حقن سيرتي الذاتية بالبوتوكس\": هل تؤثر أدوات توظيف بالذكاء الاصطناعي على فرص عمل النساء؟",
+      "page_num": 1,
+      "bytes": 400949,
+      "sha1": "594583b8a8f23b66e7827579abb2af52f23953eb"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://www.bbc.com/arabic/articles/ce8kn4724mxo",
+      "title": "سوريا تودع ليرتها القديمة لكن تطبيق \"حذف الصفرين\" يتعثّر في الشارع",
+      "page_num": 1,
+      "bytes": 361597,
+      "sha1": "6dc944ca9932abb8bfc67a47708d38dc3985756a"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://www.bbc.com/arabic/articles/cwylxnrz14jo",
+      "title": "هل تستفيد السعودية من حرب إيران؟",
+      "page_num": 1,
+      "bytes": 368071,
+      "sha1": "d7e802044b5b59e313815b9c873b4f47768597b2"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://www.bbc.com/arabic/articles/c62vl24gejzo",
+      "title": "الإظلام التام يخيم على مدن كبرى: كيف يُجابه السودانيون انقطاع الكهرباء؟",
+      "page_num": 1,
+      "bytes": 364497,
+      "sha1": "81aaec2b9e2868bab79d501bcd52ac7ef2cf72b6"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://www.bbc.com/arabic/articles/cr7k91lr7dvo",
+      "title": "هل تنجح باكستان في تحويل نفوذها الدبلوماسي إلى مكاسب اقتصادية؟",
+      "page_num": 1,
+      "bytes": 369785,
+      "sha1": "32407b06ff90ab8bcf2f0463511b84c92179d701"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://www.bbc.com/arabic/articles/c62vw14099po",
+      "title": "تعطُّل إمدادات البلاستيك ينعش عمل جامعي القمامة بالقاهرة",
+      "page_num": 1,
+      "bytes": 351284,
+      "sha1": "1e9dbed8170718021be808fb6956dcb15075104d"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://www.bbc.com/arabic/articles/cjwxq9z9e50o",
+      "title": "جونسون آند جونسون تعرض 5.5 مليار دولار لتسوية دعاوى بودرة الأطفال",
+      "page_num": 1,
+      "bytes": 341703,
+      "sha1": "90d274040dd67f6bc71459e92a41799bb3ab03b8"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://www.bbc.com/arabic/articles/c4g6exymd3vo",
+      "title": "ترامب يعلن \"حرباً\" تجارية جديدة على 60 دولة ويصدم الحلفاء بموجة رسوم جمركية",
+      "page_num": 1,
+      "bytes": 388070,
+      "sha1": "c7cc255be60150921cb01b27b1060e61fc3113f7"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://www.bbc.com/arabic/articles/cgje2ey70w3o",
+      "title": "أسعار النفط تبلغ 100 دولار للبرميل للمرة الأولى منذ مايو/أيار",
+      "page_num": 1,
+      "bytes": 349083,
+      "sha1": "557083c03d6108d24466bb8b3e70725396f83587"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://www.bbc.com/arabic/articles/ce970k37k98o",
+      "title": "\"من سينتصر في الحرب التجارية الجديدة؟\" - مقال في فايننشال تايمز",
+      "page_num": 1,
+      "bytes": 356382,
+      "sha1": "29d1d3ad53da619aeb2e90841f326cf6d6d96c47"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://www.bbc.com/arabic/articles/cn0n8y81xqlo",
+      "title": "ترامب يفرض رسوماً جديدة بنسبة 50 في المئة على صادرات كندية",
+      "page_num": 1,
+      "bytes": 333878,
+      "sha1": "47bf370e879fb7e668c2f35fd7df13c321c7ef22"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://www.bbc.com/arabic/articles/cvgepgv7plxo",
+      "title": "ما أهمية مضيق باب المندب بعد إعلان الحوثيين فرض \"حصار بحري\" على السعودية؟",
+      "page_num": 1,
+      "bytes": 387338,
+      "sha1": "7f8d68c8c26c790ac1cb2f973a25cc3fb2470b35"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://www.bbc.com/arabic/articles/cj9dj40gyxpo",
+      "title": "إعلانات غامضة وأسعار خيالية: ما حقيقة مزاعم الاتجار بالأطفال عبر \"فينتد\"؟",
+      "page_num": 1,
+      "bytes": 384843,
+      "sha1": "b622317fdfc3aaf0dfb15d8778d6e3d8ef0be0ce"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://www.bbc.com/arabic/articles/c980ydj7p61o",
+      "title": "جهاز مستقبل مصر: انسحاب الدولة من الاقتصاد أم إعادة تشكيل لدورها؟",
+      "page_num": 1,
+      "bytes": 370571,
+      "sha1": "0088ec6f5b76cb3124ddc88cb77bce3e616fd9d1"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://www.bbc.com/arabic/articles/c3wywgy9gwxo",
+      "title": "غيّرت وظيفتي عشر مرات خلال 10 سنوات حتى وجدت المهنة التي أريدها",
+      "page_num": 1,
+      "bytes": 363557,
+      "sha1": "0070dc8b987401e6c4b6bbd53a59084edabf0694"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://www.bbc.com/arabic/articles/c1dydzq4ygro",
+      "title": "هل يواصل الذهب الارتفاع وسط تفاقم الصراع بين واشنطن وطهران؟",
+      "page_num": 1,
+      "bytes": 366461,
+      "sha1": "361d8645071e16616be8d2afec2fe1d22344f062"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://www.bbc.com/arabic/articles/cpv39ex0dwwo",
+      "title": "هل يستمر النفط في الصعود بعد القفزة الحالية؟",
+      "page_num": 2,
+      "bytes": 376501,
+      "sha1": "e09cf8b4543a07b51a5e6fa92c2e61b40ba749c8"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://www.bbc.com/arabic/articles/c1ly07m9e1zo",
+      "title": "بين \"عطايا\" ترامب وحكمة الرومي، من يمتلك مفاتيح الثروة والعمل في العصر الرقمي؟ - جولة الصحف",
+      "page_num": 2,
+      "bytes": 368619,
+      "sha1": "5ca5e97d0a57074693458137a05fc6d0f8e00a5e"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://www.bbc.com/arabic/articles/cq81l7dnnd0o",
+      "title": "موريتانيا: ماذا تكشف رحلة لواحدة من أقل دول العالم زيارة؟",
+      "page_num": 2,
+      "bytes": 372049,
+      "sha1": "21a6fdf68b82e3c922fd20f5411550b378b81ece"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://www.bbc.com/arabic/articles/czde70ny147o",
+      "title": "انتخابات الجزائر: ماذا ينتظر الجزائريون من البرلمان القادم؟",
+      "page_num": 2,
+      "bytes": 339388,
+      "sha1": "a8f167480728739a9015e1e12502bd40af47b3d0"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://www.bbc.com/arabic/articles/cyv01eeqyj5o",
+      "title": "\"هدية ستارمر الوداعية لبريطانيا: صفقة أدوية أمريكية قد تكون أكثر فتكاً من كوفيد\" - مقال في الغارديان",
+      "page_num": 2,
+      "bytes": 383705,
+      "sha1": "fe4e7d8a9f009c6fa0769af2f1f36a5721a31f4d"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://www.bbc.com/arabic/articles/cj9g8xl37ygo",
+      "title": "فيديو,كيف جنى ترامب ثروة من العملات الرقمية؟, المدة 2,27",
+      "page_num": 2,
+      "bytes": 171311,
+      "sha1": "66961d23ae5cd7e3e42ae632b19a25d7406a493a"
+    },
+    {
+      "id": 31,
+      "file": "article_0031.html",
+      "url": "https://www.bbc.com/arabic/articles/c0kyej1evzro",
+      "title": "ما هي حملة \"صولة الفجر\" التي بدأتها الحكومة العراقية؟",
+      "page_num": 2,
+      "bytes": 366305,
+      "sha1": "3dd2a23126db251e44efa2f737bbf0b66d6a73c4"
+    },
+    {
+      "id": 32,
+      "file": "article_0032.html",
+      "url": "https://www.bbc.com/arabic/articles/ckg0lrwwne0o",
+      "title": "كم ينبغي أن ندفع مقابل طعامنا؟",
+      "page_num": 2,
+      "bytes": 385755,
+      "sha1": "e32ea4d29f6b57c90f48e099fd676611bde3b127"
+    },
+    {
+      "id": 33,
+      "file": "article_0033.html",
+      "url": "https://www.bbc.com/arabic/articles/cnv9en5yrpjo",
+      "title": "أشياء لا تفعلها في الفنادق: خبير إتيكيت يحذّر من هذه الأخطاء",
+      "page_num": 2,
+      "bytes": 368393,
+      "sha1": "b03e364600ad20099d3f3b3f73dc58651d1e6f8e"
+    },
+    {
+      "id": 34,
+      "file": "article_0034.html",
+      "url": "https://www.bbc.com/arabic/articles/c3vy5p3yw99o",
+      "title": "فيديو,إيلون ماسك ولقب أول تريليونير.. تعرّف على تفاصيل رحلته المثيرة, المدة 4,14",
+      "page_num": 2,
+      "bytes": 172223,
+      "sha1": "3e37ae4d1afe556068922dca83e195263693e8fe"
+    },
+    {
+      "id": 35,
+      "file": "article_0035.html",
+      "url": "https://www.bbc.com/arabic/articles/cly7qg951xno",
+      "title": "\"الإقامة الذهبية\" في لبنان: لماذا أثار مشروع لجذب المستثمرين موجة سخرية؟",
+      "page_num": 2,
+      "bytes": 393493,
+      "sha1": "5c28ef0c5679850699fa426bb4b0e06ff59bfdfc"
+    },
+    {
+      "id": 36,
+      "file": "article_0036.html",
+      "url": "https://www.bbc.com/arabic/articles/c8j2p43l2gwo",
+      "title": "ماذا نعرف عن منشأة برزان القطرية التي شهدت انفجاراً قتل وأصاب العشرات؟",
+      "page_num": 2,
+      "bytes": 346129,
+      "sha1": "19b14cd35cbd27bd66bb1df4508b1eda0bf15a3e"
+    },
+    {
+      "id": 37,
+      "file": "article_0037.html",
+      "url": "https://www.bbc.com/arabic/articles/cp8l66g51lno",
+      "title": "ترامب يكشف عن طائرة رئاسية بقدرات خارقة للمهام المستحيلة، ما دور قطر فيها؟",
+      "page_num": 2,
+      "bytes": 409524,
+      "sha1": "a7773d3f042a192e318bf7fe306f0e7d17dae0b7"
+    },
+    {
+      "id": 38,
+      "file": "article_0038.html",
+      "url": "https://www.bbc.com/arabic/articles/cx2kee2kn87o",
+      "title": "ما الذي نعرفه عن أموال إيران المجمدة؟",
+      "page_num": 2,
+      "bytes": 392663,
+      "sha1": "c201d30bb9cde7c555a09d1818d989251cbc9d14"
+    },
+    {
+      "id": 39,
+      "file": "article_0039.html",
+      "url": "https://www.bbc.com/arabic/articles/c862j5l047eo",
+      "title": "هل يمنع حظر \"تلغرام\" تسريب امتحانات الطب في الهند؟",
+      "page_num": 2,
+      "bytes": 378716,
+      "sha1": "8fad5cded3122c6e202d8b73ef22aeb2f99aae8b"
+    },
+    {
+      "id": 40,
+      "file": "article_0040.html",
+      "url": "https://www.bbc.com/arabic/articles/c04y5g5qr6qo",
+      "title": "تحت حرارة تصل إلى 50 درجة...  رحلة تهريب الوقود الإيراني إلى باكستان",
+      "page_num": 2,
+      "bytes": 384548,
+      "sha1": "1a12e577039ce0875b4832ef2ae458fc0905c1ee"
+    },
+    {
+      "id": 41,
+      "file": "article_0041.html",
+      "url": "https://www.bbc.com/arabic/articles/cwyej383rzeo",
+      "title": "لماذا يتجه المزيد من النساء في الصين إلى ارتداء ملابس الرجال؟",
+      "page_num": 2,
+      "bytes": 372676,
+      "sha1": "9833f2f85bbd6d00532385eebec47b760a0aab86"
+    },
+    {
+      "id": 42,
+      "file": "article_0042.html",
+      "url": "https://www.bbc.com/arabic/articles/czdel0j24e3o",
+      "title": "تحقيق لبي بي سي يكشف استغلال وكالات تعليمية \"وسيطة\" لأحلام الشباب الطامحين إلى حياة أفضل",
+      "page_num": 2,
+      "bytes": 396771,
+      "sha1": "3be6543088c50ab7f417fd3342f09351a018f218"
+    },
+    {
+      "id": 43,
+      "file": "article_0043.html",
+      "url": "https://www.bbc.com/arabic/articles/c8e9n08l98go",
+      "title": "كيف يمكنني تسلية طفلي في الإجازة بدون أعباء مالية إضافية؟",
+      "page_num": 2,
+      "bytes": 382778,
+      "sha1": "ba132160565e1627c26ec3410dbe9c842eb2933f"
+    },
+    {
+      "id": 44,
+      "file": "article_0044.html",
+      "url": "https://www.bbc.com/arabic/articles/ckg78md85m3o",
+      "title": "إيلون ماسك أول تريليونير في العالم بعد بيع أسهم سبيس إكس، ماذا سيفعل بثروته؟",
+      "page_num": 2,
+      "bytes": 353268,
+      "sha1": "9b37c0ff00cb9bb6506451c3582a361edb5afa6a"
+    },
+    {
+      "id": 45,
+      "file": "article_0045.html",
+      "url": "https://www.bbc.com/arabic/articles/c9w2rw5qqqeo",
+      "title": "أسرع ارتفاع للأسعار في الولايات المتحدة منذ ثلاث سنوات، وترامب يقول: \"أحبّ التضخم\"",
+      "page_num": 2,
+      "bytes": 363549,
+      "sha1": "a46a072c336521139a6971b2556d5839f8ef769c"
+    },
+    {
+      "id": 46,
+      "file": "article_0046.html",
+      "url": "https://www.bbc.com/arabic/articles/c9363y15v60o",
+      "title": "لماذا تزداد الشكاوى من التمويل الاستهلاكي في مصر ؟",
+      "page_num": 2,
+      "bytes": 376625,
+      "sha1": "5d1dad95ad46ba1ce3ffde224b9ab8d6b368a859"
+    },
+    {
+      "id": 47,
+      "file": "article_0047.html",
+      "url": "https://www.bbc.com/arabic/articles/ce8p53rxv71o",
+      "title": "لماذا تخضع \"طيران الشرق الأوسط\" للتدقيق؟ وهل يتأثر مطار بيروت؟",
+      "page_num": 2,
+      "bytes": 400701,
+      "sha1": "d8eb6e6752f79bf06371fd1969483bab2fb0b360"
+    },
+    {
+      "id": 48,
+      "file": "article_0048.html",
+      "url": "https://www.bbc.com/arabic/articles/cx211329l42o",
+      "title": "فاكهة القشطة.. من محصول محلي إلى قصة نجاح في الهند",
+      "page_num": 2,
+      "bytes": 361783,
+      "sha1": "c146907965c50af02a9a04dc42684b6da896a559"
+    },
+    {
+      "id": 49,
+      "file": "article_0049.html",
+      "url": "https://www.bbc.com/arabic/articles/c4g8y2e2nezo",
+      "title": "إجازة عيد الأضحى بلا \"كاش\" في مصر.. ما السبب؟",
+      "page_num": 3,
+      "bytes": 368894,
+      "sha1": "6731c1ce0ec39e144b385097e3c42a46112a516c"
+    },
+    {
+      "id": 50,
+      "file": "article_0050.html",
+      "url": "https://www.bbc.com/arabic/articles/cy7221zrnnmo",
+      "title": "كيف كشفت حرب إيران هشاشة الاقتصاد العراقي؟",
+      "page_num": 3,
+      "bytes": 370191,
+      "sha1": "f199c92dd7cdddbdf6444a4cafb6d9d7c5dc38fd"
+    },
+    {
+      "id": 51,
+      "file": "article_0051.html",
+      "url": "https://www.bbc.com/arabic/articles/c74dd7zlnvdo",
+      "title": "الرابحون والخاسرون: كيف تهزّ الحرب مع إيران العملات العالمية؟",
+      "page_num": 3,
+      "bytes": 371966,
+      "sha1": "5b22bc21d847e7b6c23c3d24b849ad9c4da2c4db"
+    },
+    {
+      "id": 52,
+      "file": "article_0052.html",
+      "url": "https://www.bbc.com/arabic/articles/cm2pr6428ego",
+      "title": "لماذا ينجذب الشباب إلى أسواق الرهانات والتداول؟",
+      "page_num": 3,
+      "bytes": 432723,
+      "sha1": "91080bf3af39cc16966e77b04c2a98002a8f8608"
+    },
+    {
+      "id": 53,
+      "file": "article_0053.html",
+      "url": "https://www.bbc.com/arabic/articles/cgepx9lypq4o",
+      "title": "مشروع الدلتا الجديدة في مصر: لماذا قد لا يحقق الاكتفاء الذاتي الزراعي؟",
+      "page_num": 3,
+      "bytes": 366630,
+      "sha1": "c2be13ac594bd715d8f8896cc0781763e845f56b"
+    },
+    {
+      "id": 54,
+      "file": "article_0054.html",
+      "url": "https://www.bbc.com/arabic/articles/ce8p7p6p0nlo",
+      "title": "لماذا يُطلب من الهنود عدم شراء الذهب لمدة عام؟",
+      "page_num": 3,
+      "bytes": 382233,
+      "sha1": "557bb16d47a3eb47d261888c1de2bd0e5630a5e5"
+    },
+    {
+      "id": 55,
+      "file": "article_0055.html",
+      "url": "https://www.bbc.com/arabic/articles/c4g89m9yy8ko",
+      "title": "جدل برلماني وشعبي في مصر بعد زيادة أسعار باقات الإنترنت",
+      "page_num": 3,
+      "bytes": 375624,
+      "sha1": "b1f794843869674b656e25d98fa5c7a738faf5ee"
+    },
+    {
+      "id": 56,
+      "file": "article_0056.html",
+      "url": "https://www.bbc.com/arabic/articles/clyp4j937zwo",
+      "title": "وزير ألماني: حرب ترامب \"غير المسؤولة\" وراء التباطؤ الاقتصادي",
+      "page_num": 3,
+      "bytes": 354908,
+      "sha1": "673dedd3691fd56f51ac62783775e52195ac2f63"
+    },
+    {
+      "id": 57,
+      "file": "article_0057.html",
+      "url": "https://www.bbc.com/arabic/articles/c3v2p3zpq4ko",
+      "title": "هل تصبح سوريا ممراً للطاقة بديلاً عن مضيق هرمز؟",
+      "page_num": 3,
+      "bytes": 365475,
+      "sha1": "3076619026b38a26b22e738c85f137e89edce43a"
+    },
+    {
+      "id": 58,
+      "file": "article_0058.html",
+      "url": "https://www.bbc.com/arabic/articles/c74dlvl9y51o",
+      "title": "\"نحن أمام مشهد أشبه بفيلم رعب اقتصادي\" - مقال في الإندبندنت",
+      "page_num": 3,
+      "bytes": 357252,
+      "sha1": "cc558e512e1ced0a503a859dafc071e59fa565ed"
+    },
+    {
+      "id": 59,
+      "file": "article_0059.html",
+      "url": "https://www.bbc.com/arabic/articles/c9wekj2lynzo",
+      "title": "حرائق المصانع في مصر: حين تتحول بيئة العمل إلى خطر قاتل",
+      "page_num": 3,
+      "bytes": 366189,
+      "sha1": "2d8f46142ca0c855c55eae3228334bf2162c4b18"
+    },
+    {
+      "id": 60,
+      "file": "article_0060.html",
+      "url": "https://www.bbc.com/arabic/articles/c70vzjp01p4o",
+      "title": "فيديو,ماذا نعرف عن أوبك وأوبك+ التي أعلنت الإمارات انسحابها منها؟, المدة 4,03",
+      "page_num": 3,
+      "bytes": 182461,
+      "sha1": "f9e5aa0357c2afa2d9b26a09acaac4790612d826"
+    },
+    {
+      "id": 61,
+      "file": "article_0061.html",
+      "url": "https://www.bbc.com/arabic/articles/cp9prgm5vyno",
+      "title": "\"بطء النظام الجديد\" يعطل صرف معاشات المصريين وسط غضب برلماني",
+      "page_num": 3,
+      "bytes": 349986,
+      "sha1": "fff2ca8cf320768fb4155a3eea918e9673eb468e"
+    },
+    {
+      "id": 62,
+      "file": "article_0062.html",
+      "url": "https://www.bbc.com/arabic/articles/cx2ez3e8183o",
+      "title": "كيف تسببت حرب إيران في رفع أسعار \"الواقيات الذكرية\"؟",
+      "page_num": 3,
+      "bytes": 343655,
+      "sha1": "357706147de09c3eed15fab62814e4ba444ac9e0"
+    },
+    {
+      "id": 63,
+      "file": "article_0063.html",
+      "url": "https://www.bbc.com/arabic/articles/cn0w7wpqk0vo",
+      "title": "إيران تشهد موجة تسريح أعداد كبيرة من الموظفين بسبب الحرب مع الولايات المتحدة وإسرائيل",
+      "page_num": 3,
+      "bytes": 357518,
+      "sha1": "6e40d2c181edf69bdeace691e5ff1e4057cecb6e"
+    },
+    {
+      "id": 64,
+      "file": "article_0064.html",
+      "url": "https://www.bbc.com/arabic/articles/cwyjz8e2e9jo",
+      "title": "\"صُنع في الصين\": موجة جديدة من الصادرات تجتاح العالم",
+      "page_num": 3,
+      "bytes": 368347,
+      "sha1": "1b73f18a0942296da4c87caef87e78d28d8e1233"
+    },
+    {
+      "id": 65,
+      "file": "article_0065.html",
+      "url": "https://www.bbc.com/arabic/articles/cm2kjn35vvpo",
+      "title": "ارتفاع أسعار الوقود يرفع التضخم في الولايات المتحدة إلى أعلى مستوياته منذ نحو عامين",
+      "page_num": 3,
+      "bytes": 357573,
+      "sha1": "d3333c310bb936907112d22950ae43e84315e81b"
+    },
+    {
+      "id": 66,
+      "file": "article_0066.html",
+      "url": "https://www.bbc.com/arabic/articles/c74v0k1j535o",
+      "title": "هبوط أسعار النفط وصعود الأسهم بعد اتفاق وقف إطلاق النار بين الولايات المتحدة وإيران",
+      "page_num": 3,
+      "bytes": 376187,
+      "sha1": "12d0492d62ff7a958ced79e7c60e5512d7e2e4df"
+    },
+    {
+      "id": 67,
+      "file": "article_0067.html",
+      "url": "https://www.bbc.com/arabic/articles/c0krz3z3gymo",
+      "title": "في مواجهة صدمة طاقة جديدة: هل إحياء الطاقة النووية في أوروبا هو الحل؟",
+      "page_num": 3,
+      "bytes": 380059,
+      "sha1": "3ec2ae3d6332813d0ab78de73d55fcd0cc85fd09"
+    },
+    {
+      "id": 68,
+      "file": "article_0068.html",
+      "url": "https://www.bbc.com/arabic/articles/cj6017909wlo",
+      "title": "كيف يخطط ترامب لإنهاء حرب إيران؟ مقال في الإندبندنت يحاول الإجابة",
+      "page_num": 3,
+      "bytes": 366599,
+      "sha1": "75256efc7a37b630adffc7c504996b41b9d5ef5e"
+    },
+    {
+      "id": 69,
+      "file": "article_0069.html",
+      "url": "https://www.bbc.com/arabic/articles/cge0gvwp4eqo",
+      "title": "كيف يمكن لدول الخليج تفادي الآثار السلبية للحرب على اقتصادها؟",
+      "page_num": 3,
+      "bytes": 386324,
+      "sha1": "15a7fa210310a47340214a4c8e2556a135e50bea"
+    },
+    {
+      "id": 70,
+      "file": "article_0070.html",
+      "url": "https://www.bbc.com/arabic/articles/c8dl19r50lro",
+      "title": "ظلام يسود عند التاسعة: ما تأثير الإغلاق المبكر في مصر؟",
+      "page_num": 3,
+      "bytes": 367040,
+      "sha1": "4119b3cbba2747fa10bced2a62aeb78789b53d59"
+    },
+    {
+      "id": 71,
+      "file": "article_0071.html",
+      "url": "https://www.bbc.com/arabic/articles/cjr97rqqqjgo",
+      "title": "فيديو,ما هو تأثير تطبيق الإغلاق المبكر على الحياة اليومية في مصر؟, المدة 3,23",
+      "page_num": 3,
+      "bytes": 182393,
+      "sha1": "99f3e95d443fb73381c201a313a0bfce080080ed"
+    },
+    {
+      "id": 72,
+      "file": "article_0072.html",
+      "url": "https://www.bbc.com/arabic/articles/cyv142q9p14o",
+      "title": "ترامب يوقّع على الدولار الأمريكي في سابقة هي الأولى لرئيس أمريكي",
+      "page_num": 3,
+      "bytes": 343968,
+      "sha1": "cec2396ef3a1e904254f0d9ac677e672fca78b8e"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 3,
+    "articles": 72,
+    "article_fetch_failures": 0
+  }
+}

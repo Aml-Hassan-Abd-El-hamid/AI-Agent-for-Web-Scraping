@@ -1,0 +1,708 @@
+{
+  "website": "arabic.cnn",
+  "snapshot_date": "2026-08-27T13:37:30",
+  "pagination_type": "infinite scroll",
+  "scroll_mode": "scroll",
+  "scroll_rounds_requested": 10,
+  "load_more_selector": null,
+  "listing_url": "https://arabic.cnn.com/tag/gaza_strip",
+  "input_urls": [
+    "https://arabic.cnn.com/tag/gaza_strip"
+  ],
+  "pagination_pattern": null,
+  "requirements": "title, date, article body text",
+  "run_dir": "orch_runs/run_20260827_133116",
+  "link_extraction_code_file": null,
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://arabic.cnn.com/tag/gaza_strip",
+      "file": "listing_page_001.html",
+      "bytes": 537159,
+      "sha1": "16b7ef3156bee29f179e3090da2888044059fa81"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://arabic.cnn.com/middle-east/video/2026/08/23/v200568-ben-gvir-digvid",
+      "title": "شاهد.. بن غفير يتباهى ببناء مشنقة للفلسطينيين ويكشف عن منصة لمشاهدة الإعدامات",
+      "page_num": 1,
+      "bytes": 202496,
+      "sha1": "ff6c146c6150356c9686edc84b266fd85b2d260e"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/08/22/alaa-mubarak-comments-disarming-hamas-gaza",
+      "title": "\"هزيمة غير مسبوقة\".. علاء مبارك يعلق على منشور حول موافقة حماس على نزع سلاحها",
+      "page_num": 1,
+      "bytes": 277763,
+      "sha1": "4ca4ee5d49a22dbe46b31e96355be59ab6aa687d"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://arabic.cnn.com/middle-east/video/2026/08/19/v200351-admits-firing-on-car-carrying-5-year-old-hind-rajab",
+      "title": "الجيش الإسرائيلي يعترف لأول مرة بإطلاق النار على سيارة الطفلة هند رجب",
+      "page_num": 1,
+      "bytes": 204380,
+      "sha1": "017be81f688f9a791e240ab9e871f6fea205d57b"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/08/19/khalil-al-hayya-meets-qatari-fm-talks-jared-kushner",
+      "title": "خليل الحية يلتقي وزير خارجية قطر بعد مباحثاته مع جاريد كوشنر",
+      "page_num": 1,
+      "bytes": 276536,
+      "sha1": "1148bccc05ced8ffd9efc092814a661a3a2efde8"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/08/19/israeli-military-admits-for-first-time-to-firing-on-car-carrying-5-year-old-hind-rajab",
+      "title": "الجيش الإسرائيلي يقرّ لأول مرة بإطلاق النار على سيارة كانت تقل الطفلة هند رجب.. ويفتح تحقيقًا جنائيًّا",
+      "page_num": 1,
+      "bytes": 262974,
+      "sha1": "a2135e2e7e1f90f7cad115b6a228f4b92d319900"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/08/19/israels-gaza-airstrike-undermines-stalled-peace-plan-hamas-says",
+      "title": "أول تعليق من \"حماس\" و\"الجهاد الإسلامي\" بعد قصف إسرائيلي جديد لغزة",
+      "page_num": 1,
+      "bytes": 229445,
+      "sha1": "4b59be0f1311b3f7fc9c770bf45ee7a297edb54e"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://arabic.cnn.com/middle-east/video/2026/08/17/v200228-why-is-mamdani-on-an-israeli-election-ad",
+      "title": "إلى جانب أردوغان وخامنئي.. لماذا يضع نتنياهو ممداني في قلب معركته الانتخابية؟",
+      "page_num": 1,
+      "bytes": 206919,
+      "sha1": "a96b5d4f609862161ecfe4574505e0fa8496b9d6"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/08/17/netanyahu-tells-kushner-no-withdrawal-until-full-hamas-disarmament",
+      "title": "بعد لقاء كوشنر.. مصدر إسرائيلي يكشف لـCNN شرط نتنياهو للانسحاب من غزة",
+      "page_num": 1,
+      "bytes": 251511,
+      "sha1": "3d69651bf8418fd2e9442d4ed6b08a34d0cf21ac"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/08/17/kushner-meets-netanyahu-after-talks-with-hamas-on-stalled-gaza-peace-plan",
+      "title": "كوشنر يلتقي نتنياهو بعد محادثات مع \"حماس\" حول خطة السلام المتعثرة في غزة",
+      "page_num": 1,
+      "bytes": 275153,
+      "sha1": "6f4885f1411fe67138834cf878c53d2ae7470f41"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://arabic.cnn.com/middle-east/video/2026/08/17/v200190-mideast-kushner-meets-hamas-leader",
+      "title": "كوشنر يلتقي قيادياً في حماس.. ويسعى لإحياء مبادرة ترامب المتعثرة في غزة",
+      "page_num": 1,
+      "bytes": 207606,
+      "sha1": "4a1d819a4aec505bd45e7bb2707f6778359dc06e"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/08/16/kushner-in-the-middle-east-for-meetings-with-hamas-leader-and-egypts-president",
+      "title": "مصادر مطلعة: كوشنر عقد اجتماعًا نادرًا مع خليل الحية في محاولة لإطلاق خطة ترامب لغزة",
+      "page_num": 1,
+      "bytes": 268119,
+      "sha1": "176ec68d0bf52e99fa6f570e90b9ec04753534f9"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/08/16/jared-kushner-sisi-emphasizes-gaza-agreement",
+      "title": "خلال لقائه كوشنر.. السيسي يؤكد ضرورة وفاء أطراف \"اتفاق غزة\" بالتزاماتها",
+      "page_num": 1,
+      "bytes": 253675,
+      "sha1": "896493adaf7e4633681136b8a28ba569a23f1901"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/08/11/palestinian-foreign-minister-warns-israeli-escalation",
+      "title": "وزيرة الخارجية الفلسطينية تحذر من التصعيد الإسرائيلي مع قرب الانتخابات",
+      "page_num": 1,
+      "bytes": 291081,
+      "sha1": "2376a815a109cfddccfcabc98709b7a3a2fd1083"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://arabic.cnn.com/middle-east/video/2026/08/10/v199809-palestinian-fm-warns-israeli-escalation",
+      "title": "وزيرة الخارجية الفلسطينية: التصعيد الإسرائيلي يتسارع وسط إفلات مستمر من العقاب",
+      "page_num": 1,
+      "bytes": 202680,
+      "sha1": "245e6012bed8d6359cec4cad1d683840e853d759"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/08/10/netanyahu-decision-trump-gaza-plan-analysis-latam-intl",
+      "title": "تحليل..نتنياهو يعتقد أن إغضاب ترامب هو خياره الأقل سوءًا",
+      "page_num": 1,
+      "bytes": 289648,
+      "sha1": "1663b562dc1c3d54e8e894d908d30106510039a2"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/08/09/hamas-netanyahu-trumps-plan-for-gaza",
+      "title": "أول تعليق من \"حماس\" بعد رفض نتنياهو خطة ترامب بشأن غزة",
+      "page_num": 1,
+      "bytes": 270815,
+      "sha1": "7713353558dc53a8030c2e816afa00014affb1cf"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/08/09/israel-rejects-trumps-gaza-peace-plan-saying-no-withdrawal-until-hamas-disarms",
+      "title": "نتنياهو يعلن عن موقف إسرائيل من خطة ترامب الأخيرة بشأن نزع سلاح حماس",
+      "page_num": 1,
+      "bytes": 277441,
+      "sha1": "1e661216ad1d2d5fa6253bc9a439028f3c7c0157"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/08/06/statement-gaza-8-muslim-countries-israel",
+      "title": "\"بيان إدانة بأشد العبارات\" لـ8 دول إسلامية ضد انتهاكات إسرائيل في غزة",
+      "page_num": 1,
+      "bytes": 260519,
+      "sha1": "0895e42d324fb7732767a296241bdfd1d1d08d57"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/08/05/qatar-hamad-bin-jassem-post-gaza-regional-war-x-post",
+      "title": "قطر.. حمد بن جاسم يذكّر بغزّة ودور اللجان التي شُكِّلَتْ من أجل وقف الحرب",
+      "page_num": 1,
+      "bytes": 252778,
+      "sha1": "1e379730ef4e0c9d85d437adb9c33a1c0ec81241"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/08/05/netanyahu-breaks-silence-says-nothing-on-iran-instead-seeks-to-calm-voters-hes-made-no-concessions",
+      "title": "أول تصريح لنتنياهو بعد إلغاء ترامب الهجوم على إيران والإعلان عن اتفاق غزة",
+      "page_num": 1,
+      "bytes": 262446,
+      "sha1": "fed736b969542d17fa4ea022481e7265392a3846"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://arabic.cnn.com/middle-east/video/2026/08/04/v199473-israeli-strikes-after-trump-gaza-deal",
+      "title": "غزة بين وعود التهدئة وواقع القصف.. غارات إسرائيلية تُبدد آمال الاتفاق الجديد",
+      "page_num": 1,
+      "bytes": 209459,
+      "sha1": "0cdbef304e30fd9797b092daf299226cb2e4eb49"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/08/04/israels-response-to-trumps-gaza-peace-plan-silence-from-netanyahu-and-a-weekend-of-deadly-strikes",
+      "title": "رد إسرائيل على خطة ترامب لـ\"السلام\" في غزة: \"صمت\" من جانب نتنياهو.. و شن غارات",
+      "page_num": 1,
+      "bytes": 246909,
+      "sha1": "2fa73a5f28a37d09c08a3af32079df1d51cc59df"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/08/03/israeli-official-israel-will-not-withdraw-from-territories-in-gaza",
+      "title": "مع زيارة ملادينوف.. مسؤول إسرائيلي: لن ننسحب من الأراضي التي سيطرنا عليها في غزة",
+      "page_num": 1,
+      "bytes": 258389,
+      "sha1": "e8dc0c22f582a6ac2ec9daac7e074182e26bb5f1"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/08/03/board-of-peace-chief-to-arrive-in-israel-hamas-disarmament-sources",
+      "title": "مصادر: رئيس \"مجلس السلام\" يصل إلى إسرائيل لبحث نزع سلاح حماس",
+      "page_num": 1,
+      "bytes": 229097,
+      "sha1": "195c8160ba116b698d4234a29677d1c031299d9f"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/08/02/trumps-iran-announcement-presents-a-fresh-challenge-for-netanyahu",
+      "title": "تحليل: لماذا يمثل إعلان ترامب بشأن إيران تحدياً جديداً لنتنياهو؟",
+      "page_num": 1,
+      "bytes": 273505,
+      "sha1": "97cb8329586e67e2d7df051394e13a1f6955c862"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/08/01/israeli-strike-gaza-hospital-amid-uncertainty-over-trump-plan",
+      "title": "الصحة الفلسطينية: ضربات إسرائيلية على مستشفى بغزة تدمر مستلزمات طبية حيوية",
+      "page_num": 1,
+      "bytes": 276796,
+      "sha1": "4ead42b5e1b0b53fcb63b3b9d7887d0fbdc2562e"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/08/01/catch-up-us-plans-to-strike-iran-and-the-latest-on-the-gaza-agreement",
+      "title": "صباح السبت.. أين تقف الأمور بخطط أمريكا لضرب إيران ومستجدات اتفاق غزة",
+      "page_num": 1,
+      "bytes": 263906,
+      "sha1": "1c700c56d25085bb6909da4af8ad2e131feea2f4"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/08/01/someone-will-die-incitement-against-journalists-alarms-israel-as-elections-near",
+      "title": "\"أحدهم سيلقى حتفه\".. \"التحريض\" ضد الصحفيين يثير القلق في إسرائيل مع اقتراب موعد الانتخابات",
+      "page_num": 1,
+      "bytes": 279378,
+      "sha1": "3a3f491ea4a0816915fc40c3d7d942e8dfc11766"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/07/31/trump-says-he-has-understanding-with-israel-to-implement-new-gaza-plan",
+      "title": "ترامب يعلق على اتفاق نزع سلاح حماس في غزة وموقف إسرائيل منه",
+      "page_num": 1,
+      "bytes": 265439,
+      "sha1": "1efa8c8ffb67a846d6941db23ce74a6a899b058d"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/07/31/hamas-agreeing-to-disarm-is-a-major-breakthrough-obstacles",
+      "title": "تحليل: موافقة حماس على نزع السلاح تمثل انفراجة كبيرة.. ما هي العقبات؟",
+      "page_num": 1,
+      "bytes": 274023,
+      "sha1": "82d74d21a2c128e05bb70a17dded84be5d5bb23e"
+    },
+    {
+      "id": 31,
+      "file": "article_0031.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/07/31/netanyahu-silent-on-hamas-disarmament-announcement",
+      "title": "نتنياهو يلتزم الصمت عقب إعلان ترامب اتفاق نزع سلاح حماس",
+      "page_num": 1,
+      "bytes": 273670,
+      "sha1": "17d364e56362fba1a6d8af6a2aa0eca559216bf5"
+    },
+    {
+      "id": 32,
+      "file": "article_0032.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/07/31/hamas-agrees-to-disarm-depending-on-israeli-steps-senior-hamas-official-tells-cnn",
+      "title": "مسؤول رفيع في حماس لـCNN: الحركة توافق على نزع سلاحها رهناً بخطوات إسرائيلية",
+      "page_num": 1,
+      "bytes": 257418,
+      "sha1": "da4b87d6a0582a71be17a8deff35516b6632a6c8"
+    },
+    {
+      "id": 33,
+      "file": "article_0033.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/07/31/trump-says-board-of-peace-reached-agreement-for-complete-disarmament-of-hamas-and-all-other-armed",
+      "title": "ترامب يعلن عن توصل \"مجلس السلام\" إلى \"اتفاق تاريخي\" بشأن سلاح \"حماس\"",
+      "page_num": 1,
+      "bytes": 262447,
+      "sha1": "1c104ad9ff2664c9abaf3190c795a90803b03c4c"
+    },
+    {
+      "id": 34,
+      "file": "article_0034.html",
+      "url": "https://arabic.cnn.com/world/article/2026/07/25/icc-member-states-vote-to-dismiss-chief-prosecutor-khan",
+      "title": "كريم خان.. أعضاء المحكمة الجنائية الدولية يُقيلون المدعي العام في تصويت \"غير مسبوق\"",
+      "page_num": 1,
+      "bytes": 264937,
+      "sha1": "7de252521287679b0f3ddd8775f3427d23232dc7"
+    },
+    {
+      "id": 35,
+      "file": "article_0035.html",
+      "url": "https://arabic.cnn.com/middle-east/video/2026/07/24/v198829-yemen-houthi-saudi-arabia-red-sea",
+      "title": "من هم الحوثيون؟ وكيف تؤثر هجماتهم في الصراع بين إيران والولايات المتحدة؟",
+      "page_num": 1,
+      "bytes": 211081,
+      "sha1": "655bc9a6371af2f23a8df790a9a9f4ea74552f36"
+    },
+    {
+      "id": 36,
+      "file": "article_0036.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/07/22/in-new-video-mamdani-acknowledges-he-doesnt-have-authority-to-arrest-netanyahu",
+      "title": "في فيديو جديد.. زهران ممداني يقر بأنه \"لا يملك السلطة القانونية لاعتقال نتنياهو\".. وإسرائيل تعلق",
+      "page_num": 1,
+      "bytes": 265599,
+      "sha1": "a3a1db3d9184d80eb41098751c0f0559b67d1e78"
+    },
+    {
+      "id": 37,
+      "file": "article_0037.html",
+      "url": "https://arabic.cnn.com/middle-east/video/2026/07/21/v198638-mamdanis-threats-to-arrest-netanyahu-nyc",
+      "title": "هل يستطيع ممداني اعتقال نتنياهو في نيويورك؟ 3 حقائق قانونية تحسم الجدل",
+      "page_num": 1,
+      "bytes": 204970,
+      "sha1": "52c4738eb39a1e448758f9f857a642b60ec01566"
+    },
+    {
+      "id": 38,
+      "file": "article_0038.html",
+      "url": "https://arabic.cnn.com/world/video/2026/07/20/v198594-mamdani-weighing-netanyahu-arrest-nyc",
+      "title": "شاهد.. عمدة نيويورك ممداني يدرس اعتقال نتنياهو خلال زيارته للأمم المتحدة",
+      "page_num": 1,
+      "bytes": 202594,
+      "sha1": "1d6454231f56c18e439f1f92473101c8cb335a90"
+    },
+    {
+      "id": 39,
+      "file": "article_0039.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/07/20/israel-far-right-settlements-gaza",
+      "title": "اليمين الإسرائيلي يروج لإعادة استيطان غزة مع اقتراب الانتخابات",
+      "page_num": 1,
+      "bytes": 274127,
+      "sha1": "3cf8feca0fbe3a5cbeb242560f9bdab035d638df"
+    },
+    {
+      "id": 40,
+      "file": "article_0040.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/07/19/mamdani-says-hes-still-looking-into-arresting-netanyahu-if-israeli-leader-visits-new-york",
+      "title": "ممداني يهدد مجددا بدراسة اعتقال نتنياهو إذا زار نيويورك",
+      "page_num": 1,
+      "bytes": 280550,
+      "sha1": "2f3f0842babf5a76f6af066ea7fef5c1dfb6f22b"
+    },
+    {
+      "id": 41,
+      "file": "article_0041.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/07/09/man-behind-gazas-world-cup-watch-party-killed-israeli-strike",
+      "title": "غزة.. مقتل رجل نظم فعالية مشاهدة مباريات كأس العالم بغارة إسرائيلية",
+      "page_num": 1,
+      "bytes": 228981,
+      "sha1": "8acc8bbfd9e5512680322b931a042ceac7c9fae6"
+    },
+    {
+      "id": 42,
+      "file": "article_0042.html",
+      "url": "https://arabic.cnn.com/sport/video/2026/07/08/v197772-palestinians-cheer-for-egypt-in-gaza-world-cup-digvid",
+      "title": "من بين المباني المدمرة.. فلسطينيون يهتفون لمصر أثناء المواجهة مع الأرجنتين",
+      "page_num": 1,
+      "bytes": 201262,
+      "sha1": "a0d0023d8e79e445fc2d6e425e041b294916b4a0"
+    },
+    {
+      "id": 43,
+      "file": "article_0043.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/07/06/gaza-casualties-israel-ceasefire-deal-infographic",
+      "title": "غارات إسرائيلية على غزة ترفع حصيلة الضحايا رغم اتفاق وقف إطلاق النار",
+      "page_num": 1,
+      "bytes": 227461,
+      "sha1": "2032dfd8c876f55bb17204cbe3bd751b495dc4cb"
+    },
+    {
+      "id": 44,
+      "file": "article_0044.html",
+      "url": "https://arabic.cnn.com/middle-east/video/2026/07/06/v197550-detained-gaza-doctor-hussam-abu-safia-digvid",
+      "title": "\"أحضروني هنا لقتلي\".. الطبيب حسام أبو صفية يقول إنه يواجه الموت خلال احتجازه بإسرائيل",
+      "page_num": 1,
+      "bytes": 206126,
+      "sha1": "ee8205df05e7e956f118e0dd096a53b1cbb61ebb"
+    },
+    {
+      "id": 45,
+      "file": "article_0045.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/07/02/elbaradei-comments-following-the-peace-councils-decision",
+      "title": "\"لا مكان للأونروا في غزة\".. البرادعي يعلق بعد قرار مجلس السلام",
+      "page_num": 1,
+      "bytes": 226542,
+      "sha1": "f1f5333acb70ef28f871c7febf4e16e43dd889a4"
+    },
+    {
+      "id": 46,
+      "file": "article_0046.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/06/30/board-of-peace-meetings-cyprus-stalled-gaza-ceasefire-plan",
+      "title": "مجلس السلام بشأن غزة يعقد اجتماعاته في قبرص وسط تعثر وقف إطلاق النار",
+      "page_num": 1,
+      "bytes": 281963,
+      "sha1": "cfd753a48339bc5b136ae7db449fa633ba6e2167"
+    },
+    {
+      "id": 47,
+      "file": "article_0047.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/06/25/gaza-surf-claub-war-israel-ldn-digvid",
+      "title": "راكبو الأمواج يعودون الى البحر في غزة.. شاهد ما حدث لمصورنا أثناء إعداد التقرير",
+      "page_num": 1,
+      "bytes": 218972,
+      "sha1": "bbf8c5c0b3119c90e0465ed90e142699fac7f008"
+    },
+    {
+      "id": 48,
+      "file": "article_0048.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/06/24/israel-deliberately-targeting-children-in-ongoing-genocide-against-palestinians-un-commission-finds",
+      "title": "سجال بين إسرائيل ولجنة أممية اتهمتها بـ\"استهداف الأطفال الفلسطينيين عمداً في إطار الإبادة الجماعية\"",
+      "page_num": 1,
+      "bytes": 262438,
+      "sha1": "4225633fd01e9989c2ef645fa5d64c8c58230541"
+    },
+    {
+      "id": 49,
+      "file": "article_0049.html",
+      "url": "https://arabic.cnn.com/entertainment/article/2026/06/13/gwyneth-paltrows-israeli-real-estate-advertisement",
+      "title": "غوينيث بالترو تواجه انتقادات بعد ظهورها في إعلان عقاري فاخر بإسرائيل",
+      "page_num": 1,
+      "bytes": 241260,
+      "sha1": "6d871d2e4c6f43748ba22320dfbd53c812c6a1cf"
+    },
+    {
+      "id": 50,
+      "file": "article_0050.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/06/06/sawiris-post-anniversary-june-5-1967-war-egypt-syria-israel",
+      "title": "\"غرور وإهمال وديكتاتورية\".. تدوينة لنجيب ساويرس عن ذكرى \"نكسة\" 5 يونيو 1967 وسبب وقوعها",
+      "page_num": 1,
+      "bytes": 237096,
+      "sha1": "3d5cef478a00731b0070d0dbb64a938bcd356038"
+    },
+    {
+      "id": 51,
+      "file": "article_0051.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/06/05/us-state-dept-alert-reminds-americans-in-middle-east-of-continued-need-for-caution",
+      "title": "دول عربية مقسمة لفئتين بدرجة خطورة السفر بتحذير الخارجية الأمريكية لرعاياها",
+      "page_num": 1,
+      "bytes": 257229,
+      "sha1": "2cfc93477a0b5e3fc7564091fc6ebcbfc017b38f"
+    },
+    {
+      "id": 52,
+      "file": "article_0052.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/05/31/nyc-mayor-zohran-mamdani-skip-annual-parade-celebrating-israel",
+      "title": "زهران ممداني يقاطع مسيرة إسرائيل في نيويورك دعمًا للفلسطينيين.. ويثير جدلاً بفيديو \"النكبة\"",
+      "page_num": 1,
+      "bytes": 266755,
+      "sha1": "5a3153375aeeb4e1685a946bf666d2a479ef94d7"
+    },
+    {
+      "id": 53,
+      "file": "article_0053.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/05/31/oman-grand-mufti-video-israel-gaza-flotilla",
+      "title": "فيديو مفتي عُمان وما قاله عن أحداث أسطول غزة خلال لقاء مشاركين عُمانيين",
+      "page_num": 1,
+      "bytes": 253332,
+      "sha1": "041fde91b8dd5ca8a1028e7deca62c810f39dcf9"
+    },
+    {
+      "id": 54,
+      "file": "article_0054.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/05/29/emerging-iran-deal-risks-shattering-netanyahus-legacy",
+      "title": "كيف يهدد اتفاق أمريكا مع إيران إرث نتنياهو السياسي؟.. مسؤولون إسرائيليون يكشفون لـCNN",
+      "page_num": 1,
+      "bytes": 321616,
+      "sha1": "cf240915a4358777a28dab4ec6d9da0cd28482b6"
+    },
+    {
+      "id": 55,
+      "file": "article_0055.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/05/26/amanpour-ahmadian-iran-israel-normalization-of-relations-sot",
+      "title": "هل تنضم إيران لاتفاقيات أبراهام؟ شاهد رد حسن أحمديان على سؤال مذيعة CNN",
+      "page_num": 1,
+      "bytes": 222541,
+      "sha1": "2824f22c514077d33256484fb23d55b666346b0c"
+    },
+    {
+      "id": 56,
+      "file": "article_0056.html",
+      "url": "https://arabic.cnn.com/world/video/2026/05/26/v194830-protesters-carry-cloth-with-names-palestinian-children-killed-gaza-digvid",
+      "title": "بمظاهرة في نابولي.. لافتة بطول 82 قدمًا تحمل أسماء 18 ألف طفل فلسطيني قُتل في غزة",
+      "page_num": 1,
+      "bytes": 204102,
+      "sha1": "0bc42a6ecf8e0aed15d094d7e60795d3e2fcd083"
+    },
+    {
+      "id": 57,
+      "file": "article_0057.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/05/23/freed-gaza-flotilla-activists-accuse-israeli-forces-of-sexual-violence-and-abuse-while-in-custody",
+      "title": "ناشطون بأسطول غزة أطلق سراحهم يتهمون القوات الإسرائيلية بأعمال عنف وانتهاكات جنسية",
+      "page_num": 1,
+      "bytes": 270501,
+      "sha1": "9decb3a07c21f823b48b9dae759a70b78a06dd18"
+    },
+    {
+      "id": 58,
+      "file": "article_0058.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/05/23/spains-foreign-minister-clarifies-to-cnn-whether-israel-has-apologized",
+      "title": "هل اعتذرت إسرائيل عما فعله بن غفير بحق ناشطي \"أسطول الصمود\"؟ وزير خارجية إسبانيا يوضح لـCNN",
+      "page_num": 1,
+      "bytes": 223973,
+      "sha1": "0ef33ac645c70538f76dccfd57ced880fdbe6b69"
+    },
+    {
+      "id": 59,
+      "file": "article_0059.html",
+      "url": "https://arabic.cnn.com/middle-east/video/2026/05/19/v194451-gaza-scabies-outbreak-ward",
+      "title": "قوارض وآفات منتشرة.. أزمة صحية متفاقمة تلاحق أطفال غزة وسط تفشي الأمراض الجلدية",
+      "page_num": 1,
+      "bytes": 206879,
+      "sha1": "ccc91d1325e00a6ead6a0359a11bd1f4b724a58e"
+    },
+    {
+      "id": 60,
+      "file": "article_0060.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/05/18/jordan-tkiyet-um-ali-begins-supporting-education-of-3000-children-gaza",
+      "title": "الأردن.. \"تكية أم علي\" تبدأ تنفيذ تعهّد لدعم تعليم 3 آلاف طفل في قطاع غزة",
+      "page_num": 1,
+      "bytes": 238616,
+      "sha1": "e6b7131b2aa2a54e60f09a5ce7bc9cd7a475cf39"
+    },
+    {
+      "id": 61,
+      "file": "article_0061.html",
+      "url": "https://arabic.cnn.com/miscellaneous/video/2026/08/27/v200762-man-struggles-to-throw-package-of-drugs-over-prison-wall",
+      "title": "كاميرا توثق لحظة محاولة تهريب مخدرات إلى سجن بطريقة غير معتادة",
+      "page_num": 1,
+      "bytes": 207047,
+      "sha1": "39af8ca2876998ca49fad7e7a0ed7fe80e33f055"
+    },
+    {
+      "id": 62,
+      "file": "article_0062.html",
+      "url": "https://arabic.cnn.com/world/article/2026/08/27/what-caused-the-nepal-flooding-heres-what-we-know",
+      "title": "ماذا يقول العلماء عمّا سبب الفيضانات بين نيبال والصين؟",
+      "page_num": 1,
+      "bytes": 249122,
+      "sha1": "48b42387cfe9399c91840cf29cb5b923570d7474"
+    },
+    {
+      "id": 63,
+      "file": "article_0063.html",
+      "url": "https://arabic.cnn.com/travel/video/2026/08/27/v200757-delta-pilot-diverts-flight-detroit-hospital-vrtc",
+      "title": "\"أنا المريض\".. وعكة صحية تُجبر طيار \"دلتا\" على الهبوط بالطائرة قبل موعدها",
+      "page_num": 1,
+      "bytes": 204769,
+      "sha1": "48d9963c35078388a8388643b3e303a60eb48ac6"
+    },
+    {
+      "id": 64,
+      "file": "article_0064.html",
+      "url": "https://arabic.cnn.com/sport/article/2026/08/27/sports-ministry-egypt-raises-two-wrestlers-escape-prosecution",
+      "title": "بعد هروب مصارعين.. وزارة الشباب والرياضة في مصر تتحرك",
+      "page_num": 1,
+      "bytes": 220128,
+      "sha1": "6664ba9c9de1ae630e0ebb59313504475463fd8c"
+    },
+    {
+      "id": 65,
+      "file": "article_0065.html",
+      "url": "https://arabic.cnn.com/world/video/2026/08/27/v200759-why-trump-wants-to-rename-lake-ontario-to-lake-america",
+      "title": "ترامب يريد تغيير اسم بحيرة أونتاريو إلى \"بحيرة أمريكا\".. هل يستطيع ذلك؟",
+      "page_num": 1,
+      "bytes": 200726,
+      "sha1": "b0fecca0d90f771e9cb836407ccc4a4e3f663c24"
+    },
+    {
+      "id": 66,
+      "file": "article_0066.html",
+      "url": "https://arabic.cnn.com/sport/article/2026/08/27/best-arab-players-who-played-for-tottenham",
+      "title": "مع قرب انتقال مرموش.. أبرز النجوم العرب الذي لعبوا لتوتنهام",
+      "page_num": 1,
+      "bytes": 222681,
+      "sha1": "5bcdc7e8f83a06718f2f264b13988b0b041b0c0c"
+    },
+    {
+      "id": 67,
+      "file": "article_0067.html",
+      "url": "https://arabic.cnn.com/world/article/2026/08/27/satellite-images-offer-first-look-at-heavily-damaged-areas",
+      "title": "صور أقمار صناعية تظهر فداحة الفيضان بين نيبال والصين",
+      "page_num": 1,
+      "bytes": 256599,
+      "sha1": "f948619eb702a9d85a515870df7bc64b7b4324da"
+    },
+    {
+      "id": 68,
+      "file": "article_0068.html",
+      "url": "https://arabic.cnn.com/world/video/2026/08/27/v200756-rescues-underway-along-nepal-china-border",
+      "title": "أكثر من 1300 مفقود.. مروحيات تسابق الزمن لإنقاذ عالقين بعد كارثة نيبال والصين",
+      "page_num": 1,
+      "bytes": 204067,
+      "sha1": "15705adb5f262ec5bf28eaac6bf78c2804d2c14b"
+    },
+    {
+      "id": 69,
+      "file": "article_0069.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/08/27/we-will-retaliate-like-an-earthquake-iran-could-respond-to-trumps-economic-d-day",
+      "title": "4 سيناريوهات يمكن لإيران الرد فيها على \"يوم الإنزال\" الاقتصادي",
+      "page_num": 1,
+      "bytes": 301161,
+      "sha1": "2428e1f974c1a6bc1c7c450538d77f9075bead9e"
+    },
+    {
+      "id": 70,
+      "file": "article_0070.html",
+      "url": "https://arabic.cnn.com/science-and-health/video/2026/08/27/v200733-she-woke-up-with-a-bat-on-her-mouth",
+      "title": "استيقظت لتجد خفاشاً يحاول الدخول إلى فمها.. طبيبة تروي لحظات مرعبة",
+      "page_num": 1,
+      "bytes": 199937,
+      "sha1": "885ae167a48d79b5b0ca4e2223f6fd334495cc32"
+    },
+    {
+      "id": 71,
+      "file": "article_0071.html",
+      "url": "https://arabic.cnn.com/world/video/2026/08/27/v200749-a-visual-analysis-into-how-the-nepal-flash-flooding-unfolded",
+      "title": "كيف بدأت الكارثة؟.. تحليل بصري يكشف لحظة تشكل الفيضان المدمر بين نيبال والصين",
+      "page_num": 1,
+      "bytes": 200625,
+      "sha1": "d9e0b5157d86ba1191b6177711ebc5d3b69b03e7"
+    },
+    {
+      "id": 72,
+      "file": "article_0072.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/08/27/uss-theodore-roosevelt-to-be-deployed-to-middle-east-for-at-least-7-months-officials",
+      "title": "مسؤولون: حاملة الطائرات الأمريكية \"روزفلت\" ستتوجه للشرق الأوسط",
+      "page_num": 1,
+      "bytes": 258312,
+      "sha1": "a5ec6dca74ef2b5e95bc90059f6418a00d629677"
+    },
+    {
+      "id": 73,
+      "file": "article_0073.html",
+      "url": "https://arabic.cnn.com/world/video/2026/08/27/v200747-harrowing-details-after-devastating-flood-hits-nepal-china-border",
+      "title": "فرار جماعي ولحظات رعب.. فيضان كارثي يجرف كل ما في طريقه بين نيبال والصين",
+      "page_num": 1,
+      "bytes": 200099,
+      "sha1": "5e14a23807456812e7dbaf8973411557c30a13d6"
+    },
+    {
+      "id": 74,
+      "file": "article_0074.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/08/27/iran-spokesman-quran-verse-14-hashir-social-reactions",
+      "title": "متحدث خارجية إيران ينشر الآية 14 من سورة الحشر بتدوينة",
+      "page_num": 1,
+      "bytes": 255109,
+      "sha1": "7cbc5df8d038f7ebc144ebf78c88d9abfc6300c2"
+    },
+    {
+      "id": 75,
+      "file": "article_0075.html",
+      "url": "https://arabic.cnn.com/middle-east/article/2026/08/27/egypt-alaa-mubarak-old-media-presenters-viral-post",
+      "title": "علاء مبارك ينتقد الاعتماد على بعض الوجوه الإعلامية القديمة",
+      "page_num": 1,
+      "bytes": 225311,
+      "sha1": "93043a16cdf65180a0647e0ce3ccd7cd02937afd"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 1,
+    "articles": 75,
+    "article_fetch_failures": 0
+  }
+}

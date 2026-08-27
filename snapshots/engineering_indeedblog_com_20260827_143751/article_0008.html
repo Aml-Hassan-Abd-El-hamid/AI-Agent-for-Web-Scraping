@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Being Just Reliable Enough - Indeed Engineering Blog</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://engineering.indeedblog.com/xmlrpc.php">
+<link rel="shortcut icon" href="https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/favicon.ico" />
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/dist/js/html5shiv.js"></script>
+<script src="https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/dist/js/respond.min.js"></script>
+<![endif]-->
+<!--[if lt IE 8]>
+    <link href="https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/dist/css/bootstrap-ie7.css" rel="stylesheet">
+<![endif]-->
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<link rel="alternate" hreflang="en-us" href="https://engineering.indeedblog.com/blog/2019/10/being-just-reliable-enough/" />
+<link rel="alternate" hreflang="ja" href="https://jp.engineering.indeedblog.com/blog/2019/10/being-just-reliable-enough/" />
+<link rel="alternate" hreflang="x-default" href="https://engineering.indeedblog.com/blog/2019/10/being-just-reliable-enough/" />
+         <!-- Start Google Analytics tracking code here -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-K8RKLN');
+        </script>
+          <!-- END Google Analytics tracking code here -->
+    
+	<!-- This site is optimized with the Yoast SEO plugin v28.1 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<meta name="description" content="When our SLOs describe what our users care about, we avoid unnecessary effort. We use that saved effort to deploy more features faster." />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Being Just Reliable Enough - Indeed Engineering Blog" />
+	<meta property="og:description" content="When our SLOs describe what our users care about, we avoid unnecessary effort. We use that saved effort to deploy more features faster." />
+	<meta property="og:url" content="https://engineering.indeedblog.com/blog/2019/10/being-just-reliable-enough/" />
+	<meta property="og:site_name" content="Indeed Engineering Blog" />
+	<meta property="article:publisher" content="https://www.facebook.com/Indeed" />
+	<meta property="article:published_time" content="2019-10-28T22:06:58+00:00" />
+	<meta property="article:modified_time" content="2021-02-09T20:23:42+00:00" />
+	<meta property="og:image" content="https://engineering.indeedblog.com/wp-content/uploads/2019/10/fall-leaves-1024x683.jpg" />
+	<meta name="author" content="Andrew Ford" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@IndeedEng" />
+	<meta name="twitter:site" content="@IndeedEng" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Andrew Ford" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="5 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"https:\/\/engineering.indeedblog.com\/blog\/2019\/10\/being-just-reliable-enough\/#article","isPartOf":{"@id":"https:\/\/engineering.indeedblog.com\/blog\/2019\/10\/being-just-reliable-enough\/"},"author":[{"@id":"https:\/\/engineering.indeedblog.com\/#\/schema\/person\/66d92584495864afd00c19db77763776"}],"headline":"Being Just Reliable Enough","datePublished":"2019-10-28T22:06:58+00:00","dateModified":"2021-02-09T20:23:42+00:00","mainEntityOfPage":{"@id":"https:\/\/engineering.indeedblog.com\/blog\/2019\/10\/being-just-reliable-enough\/"},"wordCount":981,"publisher":{"@id":"https:\/\/engineering.indeedblog.com\/#organization"},"image":{"@id":"https:\/\/engineering.indeedblog.com\/blog\/2019\/10\/being-just-reliable-enough\/#primaryimage"},"thumbnailUrl":"https:\/\/engineering.indeedblog.com\/wp-content\/uploads\/2019\/10\/fall-leaves-1024x683.jpg","articleSection":["Engineering"],"inLanguage":"en-us"},{"@type":"WebPage","@id":"https:\/\/engineering.indeedblog.com\/blog\/2019\/10\/being-just-reliable-enough\/","url":"https:\/\/engineering.indeedblog.com\/blog\/2019\/10\/being-just-reliable-enough\/","name":"Being Just Reliable Enough - Indeed Engineering Blog","isPartOf":{"@id":"https:\/\/engineering.indeedblog.com\/#website"},"primaryImageOfPage":{"@id":"https:\/\/engineering.indeedblog.com\/blog\/2019\/10\/being-just-reliable-enough\/#primaryimage"},"image":{"@id":"https:\/\/engineering.indeedblog.com\/blog\/2019\/10\/being-just-reliable-enough\/#primaryimage"},"thumbnailUrl":"https:\/\/engineering.indeedblog.com\/wp-content\/uploads\/2019\/10\/fall-leaves-1024x683.jpg","datePublished":"2019-10-28T22:06:58+00:00","dateModified":"2021-02-09T20:23:42+00:00","description":"When our SLOs describe what our users care about, we avoid unnecessary effort. We use that saved effort to deploy more features faster.","breadcrumb":{"@id":"https:\/\/engineering.indeedblog.com\/blog\/2019\/10\/being-just-reliable-enough\/#breadcrumb"},"inLanguage":"en-us","potentialAction":[{"@type":"ReadAction","target":["https:\/\/engineering.indeedblog.com\/blog\/2019\/10\/being-just-reliable-enough\/"]}]},{"@type":"ImageObject","inLanguage":"en-us","@id":"https:\/\/engineering.indeedblog.com\/blog\/2019\/10\/being-just-reliable-enough\/#primaryimage","url":"https:\/\/engineering.indeedblog.com\/wp-content\/uploads\/2019\/10\/fall-leaves.jpg","contentUrl":"https:\/\/engineering.indeedblog.com\/wp-content\/uploads\/2019\/10\/fall-leaves.jpg","width":1600,"height":1067,"caption":"fall leaves"},{"@type":"BreadcrumbList","@id":"https:\/\/engineering.indeedblog.com\/blog\/2019\/10\/being-just-reliable-enough\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/engineering.indeedblog.com\/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https:\/\/engineering.indeedblog.com\/blog\/"},{"@type":"ListItem","position":3,"name":"Being Just Reliable Enough"}]},{"@type":"WebSite","@id":"https:\/\/engineering.indeedblog.com\/#website","url":"https:\/\/engineering.indeedblog.com\/","name":"Indeed Engineering Blog","description":"We help people get jobs.","publisher":{"@id":"https:\/\/engineering.indeedblog.com\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/engineering.indeedblog.com\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-us"},{"@type":"Organization","@id":"https:\/\/engineering.indeedblog.com\/#organization","name":"Indeed.com","url":"https:\/\/engineering.indeedblog.com\/","logo":{"@type":"ImageObject","inLanguage":"en-us","@id":"https:\/\/engineering.indeedblog.com\/#\/schema\/logo\/image\/","url":"https:\/\/engineering.indeedblog.com\/wp-content\/uploads\/2015\/04\/1024x1024-553d53a6v1_site_icon.png","contentUrl":"https:\/\/engineering.indeedblog.com\/wp-content\/uploads\/2015\/04\/1024x1024-553d53a6v1_site_icon.png","width":512,"height":512,"caption":"Indeed.com"},"image":{"@id":"https:\/\/engineering.indeedblog.com\/#\/schema\/logo\/image\/"},"sameAs":["https:\/\/www.facebook.com\/Indeed","https:\/\/x.com\/IndeedEng","https:\/\/www.youtube.com\/user\/IndeedEng"]},{"@type":"Person","@id":"https:\/\/engineering.indeedblog.com\/#\/schema\/person\/66d92584495864afd00c19db77763776","name":"Andrew Ford","image":{"@type":"ImageObject","inLanguage":"en-us","@id":"https:\/\/secure.gravatar.com\/avatar\/50021dca06a84513bd9a41465bcc479331b13a03164b2c5d699974e049982927?s=96&d=identicon&r=gad3dda81bc70a8bb30ce1dcfdc8659cb","url":"https:\/\/secure.gravatar.com\/avatar\/50021dca06a84513bd9a41465bcc479331b13a03164b2c5d699974e049982927?s=96&d=identicon&r=g","contentUrl":"https:\/\/secure.gravatar.com\/avatar\/50021dca06a84513bd9a41465bcc479331b13a03164b2c5d699974e049982927?s=96&d=identicon&r=g","caption":"Andrew Ford"},"url":"https:\/\/engineering.indeedblog.com\/blog\/author\/aford\/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//cpwebassets.codepen.io' />
+<link rel='dns-prefetch' href='//www.youtube.com' />
+<link rel="alternate" type="application/rss+xml" title="Indeed Engineering Blog &raquo; Feed" href="https://engineering.indeedblog.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Indeed Engineering Blog &raquo; Comments Feed" href="https://engineering.indeedblog.com/comments/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://engineering.indeedblog.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fengineering.indeedblog.com%2Fblog%2F2019%2F10%2Fbeing-just-reliable-enough%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://engineering.indeedblog.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fengineering.indeedblog.com%2Fblog%2F2019%2F10%2Fbeing-just-reliable-enough%2F&#038;format=xml" />
+<style id='wp-img-auto-sizes-contain-inline-css' type='text/css'>
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://engblogs.wpenginepowered.com/wp-includes/css/dist/block-library/style.min.css?ver=6.9.7' type='text/css' media='all' />
+
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='style.css-css' href='https://engblogs.wpenginepowered.com/wp-content/plugins/indeed-sidebar-widgets/style.css?ver=6.9.7' type='text/css' media='all' />
+<link rel='stylesheet' id='wpml-legacy-dropdown-click-0-css' href='https://engblogs.wpenginepowered.com/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/legacy-dropdown-click/style.min.css?ver=1' type='text/css' media='all' />
+<style id='wpml-legacy-dropdown-click-0-inline-css' type='text/css'>
+.wpml-ls-statics-shortcode_actions, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu, .wpml-ls-statics-shortcode_actions a {border-color:#cdcdcd;}.wpml-ls-statics-shortcode_actions a, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:link, .wpml-ls-statics-shortcode_actions li:not(.wpml-ls-current-language) .wpml-ls-link, .wpml-ls-statics-shortcode_actions li:not(.wpml-ls-current-language) .wpml-ls-link:link {color:#444444;background-color:#ffffff;}.wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:hover,.wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:focus, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:link:hover, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:link:focus {color:#000000;background-color:#eeeeee;}.wpml-ls-statics-shortcode_actions .wpml-ls-current-language > a {color:#444444;background-color:#ffffff;}.wpml-ls-statics-shortcode_actions .wpml-ls-current-language:hover>a, .wpml-ls-statics-shortcode_actions .wpml-ls-current-language>a:focus {color:#000000;background-color:#eeeeee;}
+/*# sourceURL=wpml-legacy-dropdown-click-0-inline-css */
+</style>
+<link rel='stylesheet' id='cms-navigation-style-base-css' href='https://engblogs.wpenginepowered.com/wp-content/plugins/wpml-cms-nav/res/css/cms-navigation-base.css?ver=1.5.6' type='text/css' media='screen' />
+<link rel='stylesheet' id='cms-navigation-style-css' href='https://engblogs.wpenginepowered.com/wp-content/plugins/wpml-cms-nav/res/css/cms-navigation.css?ver=1.5.6' type='text/css' media='screen' />
+<link rel='stylesheet' id='parent-style-css' href='https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/style.css?ver=1.5.6' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-style-css' href='https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/dist/css/bootstrap.min.css?ver=2.6.0' type='text/css' media='all' />
+<link rel='stylesheet' id='indeedblog-style-css' href='https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/style.min.css?ver=2.6.0' type='text/css' media='all' />
+<link rel='stylesheet' id='style_login_widget-css' href='https://engblogs.wpenginepowered.com/wp-content/plugins/miniorange-oauth-oidc-single-sign-on/resources/css/style_login_widget.css?ver=6.9.7' type='text/css' media='all' />
+<script type="text/javascript" src="https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/dist/js/jquery-1-11-1.min.js?ver=2.6.0" id="jquery-js"></script>
+<script type="text/javascript" src="https://engblogs.wpenginepowered.com/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/legacy-dropdown-click/script.min.js?ver=1" id="wpml-legacy-dropdown-click-0-js"></script>
+<script type="text/javascript" src="https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/dist/js/scripts.js?ver=2.6.0" id="scripts-js-js"></script>
+<script type="text/javascript" src="https://www.youtube.com/iframe_api?ver=20210524" id="youtube_iframe_api-js"></script>
+<script type="text/javascript" id="wpml-xdomain-data-js-extra">
+/* <![CDATA[ */
+var wpml_xdomain_data = {"css_selector":"wpml-ls-item","ajax_url":"https://engineering.indeedblog.com/wp-admin/admin-ajax.php","current_lang":"en","_nonce":"f6fb9b3f4e"};
+//# sourceURL=wpml-xdomain-data-js-extra
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://engblogs.wpenginepowered.com/wp-content/plugins/sitepress-multilingual-cms/res/js/xdomain-data.js?ver=496000" id="wpml-xdomain-data-js" defer="defer" data-wp-strategy="defer"></script>
+<link rel="https://api.w.org/" href="https://engineering.indeedblog.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://engineering.indeedblog.com/wp-json/wp/v2/posts/3327" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://engineering.indeedblog.com/xmlrpc.php?rsd" />
+<link rel='shortlink' href='https://engineering.indeedblog.com/?p=3327' />
+<meta name="generator" content="WPML ver:4.9.6 stt:1,28;" />
+<link rel="icon" href="https://engblogs.wpenginepowered.com/wp-content/uploads/2015/04/1024x1024-553d53a6v1_site_icon-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://engblogs.wpenginepowered.com/wp-content/uploads/2015/04/1024x1024-553d53a6v1_site_icon-256x256.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://engblogs.wpenginepowered.com/wp-content/uploads/2015/04/1024x1024-553d53a6v1_site_icon-256x256.png" />
+<meta name="msapplication-TileImage" content="https://engineering.indeedblog.com/wp-content/uploads/2015/04/1024x1024-553d53a6v1_site_icon.png" />
+		<style type="text/css" id="wp-custom-css">
+			/*
+Welcome to Custom CSS!
+
+CSS (Cascading Style Sheets) is a kind of code that tells the browser how
+to render a web page. You may delete these comments and get started with
+your customizations.
+
+By default, your stylesheet will be loaded after the theme stylesheets,
+which means that your rules can take precedence and override the theme CSS
+rules. Just write here what you want to change, you don't need to copy all
+your theme's stylesheet content.
+*/
+.wp-caption-text {
+	font-style: italic;
+	text-align: center;
+}		</style>
+		</head>
+
+<body class="wp-singular post-template-default single single-post postid-3327 single-format-standard wp-theme-indeedblog wp-child-theme-indeedblog-us group-blog">
+      <!-- Start Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8RKLN"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+      <a href="#mainContent" class="skip-link">Skip to Main Content</a>
+  <div id="blogHeader" class="full-width-wrapper">
+    <div class="container">
+      <div class="row">
+        <nav class="navbar navbar-default navbar-static-top">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#headerNavLinks">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="https://engineering.indeedblog.com" class="navbar-brand">
+	          	         	 <img src="https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/images/ind-eng-logo.png" alt="Indeed Engineering" width="300">
+	           
+
+	          </a>
+	    </div>
+        <div id="headerNavLinks" class="collapse navbar-collapse"><ul class=""><li id="menu-item-1211" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1211"><a href="/talks">Tech Talks</a></li>
+<li id="menu-item-1212" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1212"><a href="http://indeed.jobs">Work at Indeed</a></li>
+</ul></div>        </nav>
+
+      </div>
+    </div>
+  </div><!-- end #blogHeader -->
+
+  <main id="mainContent" class="container">
+    <div class="row">
+
+
+		
+			<article id="post-3327" class="col-xs-12 col-sm-8 post-container">
+
+	<header class="entry-header">
+
+		<h1 class="entry-title">Being Just Reliable Enough</h1>
+
+		<p class="date entry-meta">
+			<span class="posted-on">Posted on <time class="entry-date published" datetime="2019-10-28T17:06:58-05:00">October 28, 2019</time></span><span class="byline"> by Andrew Ford</span>		</p><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<div class="post-banner-image">
+					</div>
+
+		<div class="post-body">
+
+			<p><span style="font-weight: 400;">One Saturday morning, as I settled in on the couch for a nice do-nothing day of watching college football, my wife reminded me that I had agreed to rake the leaves after putting it off for the last two weekends. Being a good neighbor and not wanting another </span><a href="https://en.wikipedia.org/wiki/Homeowner_association" target="_blank" rel="noopener noreferrer"><span style="font-weight: 400;">homeowners’ association</span></a><span style="font-weight: 400;"> (HOA) violation (and it being a </span><a href="https://dictionary.cambridge.org/us/dictionary/english/bye-week" target="_blank" rel="noopener noreferrer"><span style="font-weight: 400;">bye week</span></a><span style="font-weight: 400;"> for the </span><a href="https://en.wikipedia.org/wiki/Texas_Longhorns_football" target="_blank" rel="noopener noreferrer"><span style="font-weight: 400;">Longhorns</span></a><span style="font-weight: 400;">), I grabbed my rake and went outside to work.</span></p>
+<p><a href="https://engblogs.wpenginepowered.com/wp-content/uploads/2019/10/fall-leaves.jpg"><img fetchpriority="high" decoding="async" class="alignnone size-large wp-image-3328" src="https://engblogs.wpenginepowered.com/wp-content/uploads/2019/10/fall-leaves-1024x683.jpg" alt="fall leaves" width="1024" height="683" srcset="https://engblogs.wpenginepowered.com/wp-content/uploads/2019/10/fall-leaves-1024x683.jpg 1024w, https://engblogs.wpenginepowered.com/wp-content/uploads/2019/10/fall-leaves-300x200.jpg 300w, https://engblogs.wpenginepowered.com/wp-content/uploads/2019/10/fall-leaves-768x512.jpg 768w, https://engblogs.wpenginepowered.com/wp-content/uploads/2019/10/fall-leaves-630x420.jpg 630w, https://engblogs.wpenginepowered.com/wp-content/uploads/2019/10/fall-leaves.jpg 1600w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></p>
+<p><span style="font-weight: 400;">There were a lot of leaves. I would say my yard was 100% covered in leaves. I began to rake the leaves and with a modest effort I was able to collect about 90% of the leaves into five piles, which I then transferred into those bags you buy at Home Depot or Costco.</span></p>
+<p><span style="font-weight: 400;">The yard looked infinitely better, but there were still plenty of leaves in the yard. I had the rake, I had the bags, I was already outside, and I was already dirty, so I went to work raking the entire yard again to get the remaining 10% I had missed in the first pass. This took about the same amount of time, but wasn’t nearly as fulfilling. My piles weren’t as impressive, and I was only able to get 90% of the remaining leaves into piles and then into bags, but I had cleared 99% of the leaves.</span></p>
+<p><span style="font-weight: 400;">Still having plenty of daylight and knowing I could do better, I went to work on that last 1%. Now, I don’t know if you know this about leaves, but single leaves can be slippery and evasive. When you don’t have a lot of leaves to clump together to get stuck in the rake it may take two, three, sometimes four passes over the same area to get any good leaf accumulation into your pile. This third pass over the yard was considerably more time consuming, but I was able to get 90% of that remaining 1%. I had now cleared 99.9% of the leaves in my yard.</span></p>
+<p><span style="font-weight: 400;">As I sat back and admired my now mostly leaf-free yard, I could see some individual leaves that had escaped my rake and even some new leaves that had just fallen from the trees. There weren’t too many, but they were there. Wanting to do a good job, I started canvassing the yard on my hands and knees, picking up individual leaves one by one. As you can imagine, this was very tedious and it took much longer to do the whole yard, but I was able to pick up 90% of the remaining 0.1%. I had now cleared 99.99% of the leaves in my yard.</span></p>
+<p><span style="font-weight: 400;">The sun was starting to set and all that was left were mostly little leaf fragments that could only really be picked up by tweezers.</span></p>
+<p><span style="font-weight: 400;">I went inside and asked my wife, &#8220;Where are the tweezers?&#8221; &#8220;Why do you need tweezers to paint the fence?&#8221; she asked. &#8220;Paint the fence?&#8221; I thought. Oh, yeah. I had also agreed to paint the fence today. I told her I hadn’t started on the fence yet and wouldn’t be able to do that this weekend because it was getting late and the Cowboys were playing the next day. She was not happy.</span></p>
+<p><span style="font-weight: 400;">Yes, this story is ridiculous and contrived, but it demonstrates some good points that we apply to how we manage system reliability and new feature velocity at Indeed.</span></p>
+<h3><span style="font-weight: 400;">Where did I go wrong? </span></h3>
+<p><span style="font-weight: 400;">It was way before I thought about getting the tweezers. </span><span style="font-weight: 400;">When I started raking, my definition of a successfully raked yard was too vague.</span><span style="font-weight: 400;"> I did not have a </span><a href="https://en.wikipedia.org/wiki/Service-level_objective" target="_blank" rel="noopener noreferrer"><span style="font-weight: 400;">service level objective</span></a><span style="font-weight: 400;"> (SLO) specifying the percentage of my yard that could be covered in leaves and still be considered well-raked by my clients.</span></p>
+<h3><span style="font-weight: 400;">Should I have defined the SLO?</span></h3>
+<p><span style="font-weight: 400;">I could have defined the SLO, but I might have based it on what I was capable of achieving. I was capable of picking up bits and pieces of leaves with tweezers until I had a 99.999% leaf-free yard. I could have also gone in the other direction (if it wasn&#8217;t a bye week) and determined that raking 90% of the leaves would be sufficient. </span></p>
+<h3><span style="font-weight: 400;">SLOs should be driven by the clients who care about them </span></h3>
+<p><span style="font-weight: 400;">The clients in my story are my HOA and my wife. My HOA cites me when my yard is only 50% raked for an extended period of time. My wife says she is happy when I rake 99% of the leaves once a year. For the SLO, we would take the higher of the two. I could have quit raking leaves after the second pass when I reached 99% and had time to paint the fence (depending on the SLO for the number of coats of paint).</span></p>
+<h3><span style="font-weight: 400;">But, I still did a good job, right?</span></h3>
+<p><span style="font-weight: 400;">I did, but I far exceeded my undefined SLO of 99% by two 9s, and yet I was not rewarded. Sadly, I was punished, because my wife didn’t care about the work I did on that remaining 1% and was upset that I didn’t have the time to meet my other obligation of painting the fence.</span></p>
+<p><span style="font-weight: 400;">This brings us to the moral of the story:</span></p>
+<p><b>We need to have the right SLOs and work to exceed them, but not by much. </b></p>
+<p><span style="font-weight: 400;">At Indeed, when our SLOs describe what our users care about, we avoid the effort of adding unnecessary 9s. We then use that saved effort to deploy more features faster, achieving a balance between reliability and velocity.</span></p>
+<hr />
+<h3><span style="font-weight: 400;">About the author</span></h3>
+<p><span style="font-weight: 400;">Andrew Ford is a site reliability engineer (SRE) at Indeed, who enjoys solving database reliability and scalability problems. He can be found on the couch from the start of College Gameday to the end of the East Coast game most Saturdays from September to December.</span></p>
+<p><span style="font-weight: 400;">Do you enjoy defining SLOs that your clients care about? </span><a href="https://www.indeed.jobs/career/JobListEngineering/site%20reliability%20engineer?jobId=11" target="_blank" rel="noopener noreferrer"><span style="font-weight: 400;">Check out SRE openings at Indeed</span></a><span style="font-weight: 400;">!</span></p>
+<hr />
+<p><a href="https://medium.com/indeed-engineering/being-just-reliable-enough-4d182b0f52b1" target="_blank" rel="noopener noreferrer">Being Just Reliable Enough&#8212;cross-posted on Medium</a>.</p>
+		</div>
+		
+
+
+	</div><!-- .entry-content -->
+
+
+	<footer class="entry-meta row">
+			<div id="post-links" class="col-xs-12">
+			<div class="post-links-container">
+								<a href="https://engineering.indeedblog.com/blog/2019/11/foss-fund-adopters/" class="newer-post split">
+					<span class="link-group">
+						<span class="link-chevron">&#171;</span>
+						<span class="link-text">The FOSS Contributor Fund: Forming a Community of Adopters</span>
+					</span>
+				</a>
+								<a href="https://engineering.indeedblog.com/blog/2019/10/indeed-open-source-ato-2019/" class="older-post split">
+					<span class="link-group">
+						<span class="link-text">Indeed Open Source: All Things Open 2019 Speakers</span>
+						<span class="link-chevron">&#187;</span>
+					</span>
+				</a>
+							</div><!-- .post-links-container -->
+		</div><!-- .post-links -->
+	</footer>
+</article>
+				
+			
+
+
+		
+
+
+
+      <div id="sidebar" class="col-xs-12 col-sm-4 en">
+		<div id="text-4" class="widget widget_text">			<div class="textwidget"><div class="sidebar-item sidebar-link-box"><a class="" href="/talks"><span class="sidebar-link-text">@IndeedEng Talks</span><span class="sidebar-link-arrow">»</span></a></div>
+</div>
+		</div><div id="text-5" class="widget widget_text">			<div class="textwidget"><div class="sidebar-item sidebar-link-box"><a class="" href="https://opensource.indeedeng.io/"><span class="sidebar-link-text">Indeed Open Source</span><span class="sidebar-link-arrow">»</span></a></div>
+</div>
+		</div><div id="text-6" class="widget widget_text">			<div class="textwidget"><div class="sidebar-item sidebar-link-box"><a class="" href="https://engineering.indeedblog.com/indeed-university/"><span class="sidebar-link-text">Indeed University</span><span class="sidebar-link-arrow">»</span></a></div>
+</div>
+		</div><div id="text-7" class="widget widget_text">			<div class="textwidget"><div class="textwidget">
+<div id="searchBox" class="sidebar-item">
+<form id="searchform" class="searchform" role="search" method="get">
+<div class="input-group"><label id="blogSearchFieldLabel" hidden="">Search</label><br />
+<input id="blogSearchField" class="form-control input-sm" name="s" type="text" placeholder="" aria-labelledby="blogSearchFieldLabel" /><br />
+<span class="searchsubmit-container"><br />
+<input id="searchsubmit" class="btn btn-default search-btn" type="submit" value="Search" /><br />
+</span></div>
+</form>
+</div>
+</div>
+</div>
+		</div><div id="custom_categories_widget-2" class="widget custom-categories-widget grey-sidebar-box merge-with-top">		<style>
+			.expand-link.collapsed:before,
+			.expand-link:before {
+				display: inline;
+			}
+		</style>
+					<div id="browseHeader_category">
+				<h4 class="widgettitle">Categories</h4>			</div>
+			<!-- #browseHeader_category -->
+				<div id="browseDate_category" class="browse-list-container">
+						<ul id="CategoryList1" class="list-unstyled link-list">
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/a-b-testing/" aria-label="View all posts in A/B Testing">
+							A/B Testing						</a>
+						6					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/security/agentic-iam/" aria-label="View all posts in Agentic IAM">
+							Agentic IAM						</a>
+						1					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/analytics/" aria-label="View all posts in Analytics">
+							Analytics						</a>
+						7					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/big-data/" aria-label="View all posts in Big Data">
+							Big Data						</a>
+						8					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/coaching/" aria-label="View all posts in Coaching">
+							Coaching						</a>
+						3					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/conference-participation/" aria-label="View all posts in Conference Participation">
+							Conference Participation						</a>
+						3					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/cpu-throttling/" aria-label="View all posts in CPU Throttling">
+							CPU Throttling						</a>
+						2					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/data-science/" aria-label="View all posts in Data Science">
+							Data Science						</a>
+						17					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/engineering/" aria-label="View all posts in Engineering">
+							Engineering						</a>
+						36					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/engineering-culture/" aria-label="View all posts in Engineering Culture">
+							Engineering Culture						</a>
+						30					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/machine-learning/" aria-label="View all posts in Machine Learning">
+							Machine Learning						</a>
+						7					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/open-source/" aria-label="View all posts in Open Source">
+							Open Source						</a>
+						35					</li>
+							</ul>
+			<!-- #CategoryList1 -->
+										<ul id="CategoryList2" class="list-unstyled link-list collapse">
+											<li>
+							<a href="https://engineering.indeedblog.com/blog/category/performance/" aria-label="View all posts in Performance">
+								Performance							</a>
+							2						</li>
+											<li>
+							<a href="https://engineering.indeedblog.com/blog/category/process-improvement/" aria-label="View all posts in Process Improvement">
+								Process Improvement							</a>
+							8						</li>
+											<li>
+							<a href="https://engineering.indeedblog.com/blog/category/security/" aria-label="View all posts in Security">
+								Security							</a>
+							5						</li>
+											<li>
+							<a href="https://engineering.indeedblog.com/blog/category/unsorted/" aria-label="View all posts in Unsorted">
+								Unsorted							</a>
+							8						</li>
+									</ul>
+				<!-- #CategoryList2 -->
+				<a data-toggle="collapse" href="#CategoryList2" class="expand-link light-link collapsed">Toggle More</a>
+					</div>
+		<!-- #browseDate_category -->
+		</div><div id="browse-2" class="widget grey-sidebar-box merge-with-top">		<style>
+			.expand-link.collapsed:before,
+			.expand-link:before {
+				display: inline;
+			}
+		</style>
+					<div id="browseHeader_archive">
+				<h4 class="widgettitle">Archives</h4>			</div>
+			<!-- #browseHeader_archive -->
+				<div id="browseDate_archive" class="browse-list-container">
+							<ul id="browseDateList1" class="list-unstyled link-list">
+											<li>	<li><a href='https://engineering.indeedblog.com/blog/2026/08/'>August 2026</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2026/07/'>July 2026</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2026/06/'>June 2026</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2026/03/'>March 2026</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2025/11/'>November 2025</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2025/06/'>June 2025</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2024/08/'>August 2024</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2024/07/'>July 2024</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2024/01/'>January 2024</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2022/04/'>April 2022</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2022/01/'>January 2022</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2021/06/'>June 2021</a>&nbsp;(1)</li>
+									</ul>
+				<!-- #browseDateList1 -->
+										<ul id="browseDateList2" class="list-unstyled link-list collapse">
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2021/03/'>March 2021</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2021/02/'>February 2021</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2020/12/'>December 2020</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2020/11/'>November 2020</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2020/10/'>October 2020</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2020/09/'>September 2020</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2020/08/'>August 2020</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2020/07/'>July 2020</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2020/03/'>March 2020</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2020/01/'>January 2020</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2019/12/'>December 2019</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2019/11/'>November 2019</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2019/10/'>October 2019</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2019/09/'>September 2019</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2019/08/'>August 2019</a>&nbsp;(4)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2019/07/'>July 2019</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2019/03/'>March 2019</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2019/02/'>February 2019</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/12/'>December 2018</a>&nbsp;(6)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/11/'>November 2018</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/10/'>October 2018</a>&nbsp;(5)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/09/'>September 2018</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/07/'>July 2018</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/06/'>June 2018</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/05/'>May 2018</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/04/'>April 2018</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/03/'>March 2018</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/02/'>February 2018</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/01/'>January 2018</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2017/12/'>December 2017</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2017/11/'>November 2017</a>&nbsp;(5)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2017/10/'>October 2017</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2017/08/'>August 2017</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2017/07/'>July 2017</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2017/06/'>June 2017</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2017/03/'>March 2017</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2017/01/'>January 2017</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2016/12/'>December 2016</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2016/10/'>October 2016</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2016/09/'>September 2016</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2016/04/'>April 2016</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2016/03/'>March 2016</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2016/02/'>February 2016</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2015/12/'>December 2015</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2015/09/'>September 2015</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2015/07/'>July 2015</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2015/03/'>March 2015</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2015/02/'>February 2015</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2015/01/'>January 2015</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2014/12/'>December 2014</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2014/11/'>November 2014</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2014/10/'>October 2014</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2014/09/'>September 2014</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2014/08/'>August 2014</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2014/06/'>June 2014</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2014/04/'>April 2014</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2014/02/'>February 2014</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2013/12/'>December 2013</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2013/10/'>October 2013</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2013/09/'>September 2013</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2013/08/'>August 2013</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2013/03/'>March 2013</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2013/02/'>February 2013</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2012/12/'>December 2012</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2012/11/'>November 2012</a>&nbsp;(2)</li>
+											<li>
+</li>
+									</ul>
+				<!-- #browseDateList2 -->
+				<a data-toggle="collapse" href="#browseDateList2" class="expand-link light-link collapsed">Toggle More</a>
+					</div>
+		<!-- #browseDate_archive -->
+		</div>        <div id="backToTop" class="visible-xs">
+          <a href="#" class="btn btn-default scroll-up">Back to top</a>
+        </div>
+      </div><!-- end sidebar -->
+
+		</div><!-- #row -->
+  </main><!-- #main -->
+    <!-- MORE POSTS -->
+
+
+<!-- 
+
+    <div id="morePosts" class="full-width-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h4>Recent articles</h4>
+          </div>
+        </div> 
+        <div id="morePostsSet1" class="row">
+          
+  			
+          <div class="col-xs-12 col-sm-6 col-md-3 post-ad">
+                      <div class="post-ad-text">
+              <a href="https://engineering.indeedblog.com/blog/2026/08/calibrating-llm-based-population-estimates-with-human-validation/">Calibrating LLM-Based Population Estimates with Human Validation</a>
+              <p class="date">August 11, 2026</p>
+            </div>
+          </div>
+
+  			
+          <div class="col-xs-12 col-sm-6 col-md-3 post-ad">
+                      <div class="post-ad-text">
+              <a href="https://engineering.indeedblog.com/blog/2026/07/bootstrap-confidence-intervals-for-llm-evaluation/">Bootstrap Confidence Intervals for LLM Evaluation</a>
+              <p class="date">July 8, 2026</p>
+            </div>
+          </div>
+
+  			
+          <div class="col-xs-12 col-sm-6 col-md-3 post-ad">
+                      <div class="post-ad-text">
+              <a href="https://engineering.indeedblog.com/blog/2026/06/distilling-long-tail-user-behavior-into-scalable-embeddings-for-job-search/">Distilling Long-Tail User Behavior into Scalable Embeddings for Job Search</a>
+              <p class="date">June 3, 2026</p>
+            </div>
+          </div>
+
+  			
+          <div class="col-xs-12 col-sm-6 col-md-3 post-ad">
+                      <div class="post-ad-text">
+              <a href="https://engineering.indeedblog.com/blog/2026/03/become-builders-not-coders/">Become Builders, Not Coders</a>
+              <p class="date">March 6, 2026</p>
+            </div>
+          </div>
+
+  
+        </div>
+         
+        
+        <div id="morePostsSet2" class="row collapse">
+
+  
+    
+          <div class="col-xs-12 col-sm-6 col-md-3 post-ad">
+
+                      <div class="post-ad-text">
+              <a href="https://engineering.indeedblog.com/blog/2026/03/bringing-lighthouse-to-the-app-building-performance-metrics-for-react-native/">Bringing Lighthouse to the App: Building Performance Metrics for React Native</a>
+              <p class="date">March 3, 2026</p>            </div>
+          </div>
+    
+  
+    
+          <div class="col-xs-12 col-sm-6 col-md-3 post-ad">
+
+                      <div class="post-ad-text">
+              <a href="https://engineering.indeedblog.com/blog/2025/11/normalized-entropy-or-apply-rate-evaluation-metrics-for-online-modeling-experiments/">Normalized Entropy or Apply Rate? Evaluation Metrics for Online Modeling Experiments</a>
+              <p class="date">November 11, 2025</p>            </div>
+          </div>
+    
+  
+    
+          <div class="col-xs-12 col-sm-6 col-md-3 post-ad">
+
+                      <div class="post-ad-text">
+              <a href="https://engineering.indeedblog.com/blog/2025/06/the-agentic-identity-journey/">The Agentic Identity Journey</a>
+              <p class="date">June 3, 2025</p>            </div>
+          </div>
+    
+  
+    
+          <div class="col-xs-12 col-sm-6 col-md-3 post-ad">
+
+                      <div class="post-ad-text">
+              <a href="https://engineering.indeedblog.com/blog/2024/08/indeed-gitlab-ci-migration/">How Indeed Replaced Its CI Platform with Gitlab CI</a>
+              <p class="date">August 6, 2024</p>            </div>
+          </div>
+    
+    	        </div>
+
+        <div class="row">
+          <div class="col-xs-12 show-more-container">
+            <button id="showMoreBtn" type="button" class="btn btn-default" data-toggle="collapse" data-target="#morePostsSet2">Show More</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+<div id="blogFooter" class="full-width-wrapper">
+	<div class="container">
+		<div class="row">
+			<div id="footerLinks" class="list-inline text-center col-xs-12">
+				<ul class="list-inline text-center"><li id="menu-item-1213" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1213"><a href="http://www.indeed.com/about">About Indeed</a></li>
+<li id="menu-item-1214" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1214"><a href="http://www.indeed.com/?utm_source=publisher&#038;utm_medium=organic_listings&#038;utm_campaign=affiliate">Find Jobs</a></li>
+<li id="menu-item-1215" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1215"><a href="http://www.indeed.com/support?utm_source=publisher&#038;utm_medium=organic_listings&#038;utm_campaign=affiliate">Contact Indeed</a></li>
+</ul>				<p class="text-center copyright-footer">&copy;2026 <a
+						href="http://www.indeed.com/">Indeed</a> - <a
+						href="http://www.indeed.com/legal">Cookies, Privacy and Terms of Service</a>
+				</p>
+				<p class="text-center ccpa-footer">
+											<a href="https://www.indeed.com/legal/ccpa-dns">Do Not Sell My Personal Information</a> -
+																<a href="https://www.indeed.com/accessibility?hl=en">Accessibility at Indeed</a>
+									</p>
+			</div>
+		</div>
+	</div>
+</div><!-- end blogFooter -->
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/indeedblog-us/*","/wp-content/themes/indeedblog/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+			<script>
+				function convert_to_url(obj) {
+					return Object
+					.keys(obj)
+					.map(k => `${encodeURIComponent(k)}=${encodeURIComponent(obj[k])}`)
+					.join('&');
+				}
+
+				function pass_to_backend() {
+					if(window.location.hash) {
+						var hash = window.location.hash;
+						var elements = {};
+						hash.split("#")[1].split("&").forEach(element => {
+							var vars = element.split("=");
+							elements[vars[0]] = vars[1];
+						});
+						if(("access_token" in elements) || ("id_token" in elements) || ("token" in elements)) {
+							if(window.location.href.indexOf("?") !== -1) {
+								window.location = (window.location.href.split("?")[0] + window.location.hash).split('#')[0] + "?" + convert_to_url(elements);
+							} else {
+								window.location = window.location.href.split('#')[0] + "?" + convert_to_url(elements);
+							}
+						}
+					}
+				}
+
+				pass_to_backend();
+			</script>
+
+		<script type="text/javascript" src="https://cpwebassets.codepen.io/assets/embed/ei.js?ver=1.0.1" id="codepen-embed-script-js"></script>
+<script type="text/javascript" src="https://engblogs.wpenginepowered.com/wp-content/plugins/simple-share-buttons-adder/js/ssba.js?ver=1694104566" id="simple-share-buttons-adder-ssba-js"></script>
+<script type="text/javascript" id="simple-share-buttons-adder-ssba-js-after">
+/* <![CDATA[ */
+Main.boot( [] );
+//# sourceURL=simple-share-buttons-adder-ssba-js-after
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/dist/js/bootstrap.min.js?ver=2.6.0" id="bootstrap-script-js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=Accessible&amp;ver=1.3.13" id="mathjax-js"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://engineering.indeedblog.com/wp-includes/js/wp-emoji-release.min.js?ver=6.9.7"}}
+</script>
+<script type="module">
+/* <![CDATA[ */
+/*! This file is auto-generated */
+var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
+//# sourceURL=https://engineering.indeedblog.com/wp-includes/js/wp-emoji-loader.min.js
+/* ]]> */
+</script>
+
+</body>
+</html>

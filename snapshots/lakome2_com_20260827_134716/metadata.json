@@ -1,0 +1,545 @@
+{
+  "website": "lakome2",
+  "snapshot_date": "2026-08-27T13:54:22",
+  "pagination_type": "load more button",
+  "scroll_mode": "load_more",
+  "scroll_rounds_requested": 2,
+  "load_more_selector": null,
+  "listing_url": "https://lakome2.com/category/art/",
+  "input_urls": [
+    "https://lakome2.com/category/art/"
+  ],
+  "pagination_pattern": null,
+  "requirements": "title, date, article body text",
+  "run_dir": "orch_runs/run_20260827_134716",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://lakome2.com/category/art/",
+      "file": "listing_page_001.html",
+      "bytes": 222237,
+      "sha1": "ec023217e200c44eeff6edc772c41712fc0382a8"
+    },
+    {
+      "page_num": 1,
+      "url": "https://lakome2.com/category/art/",
+      "file": "listing_page_001_expanded.html",
+      "bytes": 788040,
+      "sha1": "36bfd37b612a966b6e6b1a2b59b5798156e46b50",
+      "expanded": true
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://lakome2.com/lakome-tv/427813/",
+      "title": "حتى لا ننساهم! 10 سنوات.. والمعاناة ما تزال مستمرة! أسر معتقلي قادة «حراك الريف» تحكي 10 سنوات من المعاناة",
+      "page_num": 1,
+      "bytes": 77653,
+      "sha1": "09d754c0e2bf624dbd2582991ad41cde24d58f89"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://lakome2.com/lakome-tv/427129/",
+      "title": "\"عائلات بالحنشة تواجه شبح الهدم والتشرد",
+      "page_num": 1,
+      "bytes": 77271,
+      "sha1": "2f4bd9947403b645ab12e5b57bab7b61690dfd9c"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://lakome2.com/lakome-tv/427126/",
+      "title": "ساكنة الحنشة تواجه السلطات لمنع اقتلاع أشجار الأفوكادو",
+      "page_num": 1,
+      "bytes": 77276,
+      "sha1": "1d85a1a791d96689b8183e5b221ba77c8d766182"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://lakome2.com/lakome-tv/427123/",
+      "title": "مع اقتراب الانتخابات.. كيف يقيم المغاربة أداء الحكومة الحالية؟",
+      "page_num": 1,
+      "bytes": 77318,
+      "sha1": "6829e58ed7a7c35d06f5b096f6bc6a4ace8842f9"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://lakome2.com/lakome-tv/426665/",
+      "title": "بعد أحداث سبتة.. ماذا يقول المغاربة عن أسباب هجرة الشباب؟",
+      "page_num": 1,
+      "bytes": 77483,
+      "sha1": "846e8db0f96254e67f22517cee83a492c32b73b1"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://lakome2.com/lakome-tv/426662/",
+      "title": "عائلات معتقلي \"جيل زد\" تروي معاناتها",
+      "page_num": 1,
+      "bytes": 77445,
+      "sha1": "909ef702df3f504290d5b34cc3a2e73411bd72c0"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://lakome2.com/lakome-tv/426659/",
+      "title": "بعد مأساة سبتة.. حقوقيون يطالبون بكشف الحقيقة ومصير المختفين",
+      "page_num": 1,
+      "bytes": 77507,
+      "sha1": "8838b69ca038d9700a4bc70a876507e92310b1b2"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://lakome2.com/lakome-tv/426129/",
+      "title": "عائدون من سبتة يروون معاناتهم: \"تكرفسنا وتعذبنا.\"",
+      "page_num": 1,
+      "bytes": 77519,
+      "sha1": "8341a1ea94dd8aa832eacb8e94e6949fdc6fc2dd"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://lakome2.com/lakome-tv/425849/",
+      "title": "ها علاش بْغِينا نْحَرّݣو... تْقَهْرنا فْبلادنا!",
+      "page_num": 1,
+      "bytes": 77434,
+      "sha1": "ce0bc4f6c95b8f4d9a681867aebd3d7a68105e81"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://lakome2.com/lakome-tv/425730/",
+      "title": "أسعار اللحوم الحمراء تواصل الارتفاع",
+      "page_num": 1,
+      "bytes": 77340,
+      "sha1": "ae763d2819ee94ccd7fa073710224ad7c3c50243"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://lakome2.com/analyse/427902/",
+      "title": "التوفيق يستحضر تجربة التعبئة المغربية ضد \"المدن المحتلة\" أمام الملك.. هل يتعلق الأمر برسالة سياسية بشأن أحداث سبتة؟",
+      "page_num": 1,
+      "bytes": 69919,
+      "sha1": "4f160a63d950322450c4f53f866d21e9a75a18f7"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://lakome2.com/decryptage/427854/",
+      "title": "تقرير: المغرب يحتل المرتبة 22 في مؤشر الأمن الصحي الإفريقي",
+      "page_num": 1,
+      "bytes": 89362,
+      "sha1": "a85ca734fcd9b045f75fbbcefcca3c126de36364"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://lakome2.com/decryptage/427804/",
+      "title": "مرشّح جمهوري مؤيّد لإسرائيل يطلب من «أيباك» عدم دعمه علناً خشية ردّة فعل الناخبين",
+      "page_num": 1,
+      "bytes": 81322,
+      "sha1": "86c3838c876a0c12e759535309ff2ee9276991ac"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://lakome2.com/decryptage/427760/",
+      "title": "عودة ظاهرة \"إل نينيو\" يضع أمطار المغرب وموسمه الزراعي المقبل أمام مخاطر جديدة",
+      "page_num": 1,
+      "bytes": 83194,
+      "sha1": "bc256b85f21613f0ff2db2fdddc23e97a54a8738"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://lakome2.com/decryptage/427753/",
+      "title": "من دون إطلاق طلب عروض.. مجلس جماعة الدار البيضاء يفوّت استغلال مركب \"ليدو\" إلى شركة مرتبطة بالهولدينغ الملكي",
+      "page_num": 1,
+      "bytes": 83739,
+      "sha1": "5994d7ccfc4ab3cdfd41f4e82ebef39f773084ba"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://lakome2.com/decryptage/427701/",
+      "title": "\"فورين أفيرز\": نهاية الشرق الأوسط الأميركي",
+      "page_num": 1,
+      "bytes": 83657,
+      "sha1": "65dd76a608a6126d5fe3cd0e5387b4856e25ba8f"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://lakome2.com/decryptage/427520/",
+      "title": "يونيسف المغرب تدعو الأحزاب إلى إدراج قضايا الطفولة في برامج انتخابات 2026",
+      "page_num": 1,
+      "bytes": 84311,
+      "sha1": "0d1f1c8f6eb0d1030b93d1739dc8c3442f3a2680"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://lakome2.com/decryptage/427445/",
+      "title": "تقرير: المغرب ضمن 7 دول أفريقية فقط ارتفع فيها الطلب على الديمقراطية منذ 2014",
+      "page_num": 1,
+      "bytes": 83695,
+      "sha1": "8056711e8a02cebddcdaf403743180000c6b4616"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://lakome2.com/decryptage/427401/",
+      "title": "تعيين قائد جديد للقوة العسكرية لـ«مينورسو» يأتي وسط ضغوط مالية ونقاش حول مستقبل البعثة",
+      "page_num": 1,
+      "bytes": 86137,
+      "sha1": "e81825863e000d2e6d33201d0fd92d7998952253"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://lakome2.com/decryptage/427385/",
+      "title": "\"دي ستاندارد\": مشاريع مونديال 2030 تسرّع عمليات هدم أحياء سكنية في المغرب",
+      "page_num": 1,
+      "bytes": 84365,
+      "sha1": "9faa332903fa232a7f1276a6f18c768c9dcdddc7"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://lakome2.com/politique/427981/",
+      "title": "الطالبي العلمي يتهم لقجع بـ \"ترهيب وترغيب\" مرشحين للالتحاق بـ \"الأصالة والمعاصر\" (تسريب صوتي)اتهم رشيد الطالبي العلمي، رئيس مجلس النواب والقيادي في حزب التجمع الوطني للأحرار، عضواً في المكتب السياسي لحزب…",
+      "page_num": 1,
+      "bytes": 88155,
+      "sha1": "f81b3445c64a77dc8bf24e27a7cfe8220e4a912c"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://lakome2.com/politique/427952/",
+      "title": "مجلس الأمن القومي الإسباني يعلن حالة \"طوارئ\" في سبتة والحكومة تنشئ قيادة موحدة لإدارة الأزمةأعلن رئيس الحكومة الإسباني، بيدرو سانشيز، اليوم الثلاثاء، عن تفعيل حالة طوارئ تتعلق بالأمن القومي في سبتة المحتلة،…",
+      "page_num": 1,
+      "bytes": 82392,
+      "sha1": "a82be2c561b28124c710485b29c760b243f0c97f"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://lakome2.com/societe/427950/",
+      "title": "توقيف خطيب مسجد ببركان على خلفية مضامين خطبة حول الهجرة والمواطنةأقدمت مصالح وزارة الأوقاف والشؤون الإسلامية على توقيف سعيد الطاهري، خطيب مسجد الغفران بمدينة بركان، عن ممارسة مهام…",
+      "page_num": 1,
+      "bytes": 80589,
+      "sha1": "0a5dd221fca597791a336516af4ff2576c40c02d"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://lakome2.com/economie/427951/",
+      "title": "واردات المغرب من إسرائيل تتراجع بـ113 مليون دولار في سنة واحدة وتستقر عند 380 مليون خلال 2025بلغت قيمة واردات المغرب من إسرائيل 380.75 مليون دولار خلال سنة 2025، بحسب بيانات صادرة عن منصة \"ترادينغ…",
+      "page_num": 1,
+      "bytes": 83217,
+      "sha1": "a7a4d563a65a113dbd827a0167d12ec5f7fafe69"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://lakome2.com/international/427946/",
+      "title": "دعوات في إسبانيا لتنظيم وقفات في عدة مدن يوم 2 شتنبر تحت شعار \"سبتة ليست وحدها\"تتداول شبكات التواصل الاجتماعي في إسبانيا دعوات لتنظيم تجمعات ووقفات في عدد من المدن الإسبانية، في الثاني من…",
+      "page_num": 1,
+      "bytes": 82603,
+      "sha1": "dbf2d06eb347ea71f285bfc52b953003635d5eeb"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://lakome2.com/societe/427938/",
+      "title": "جمعية حقوقية تحذر من إسناد مهام طبية لمساعدي العلاج خارج اختصاصاتهم بالعيوناستنكرت الجمعية المغربية لحقوق الإنسان والبيئة، تفويت وإسناد مهام التقطيب والتجبيس، باعتبارها مهاماً طبية، لمساعدي العلاج خارج نطاق…",
+      "page_num": 1,
+      "bytes": 80518,
+      "sha1": "06b1af44aac7e7d840efe6fd4549a303a4c552f4"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://lakome2.com/sport/427884/",
+      "title": "المغرب يبدأ تصفيات كأس أمم إفريقيا 2027 بمواجهة الغابون وليسوتواقتناءالخرائط والأطلس الجغرافي",
+      "page_num": 1,
+      "bytes": 80181,
+      "sha1": "910dcc58043ab6b67fcdd40913525933d4988da3"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://lakome2.com/flash-infos/427783/",
+      "title": "الدولي المغربي أيوب بوعدي يغادر ليل صوب مانشستر سيتي",
+      "page_num": 1,
+      "bytes": 84079,
+      "sha1": "a82327caa811dace923704dcb31df9fb896cfa5f"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://lakome2.com/sport/427618/",
+      "title": "رشيد بنمزيان.. مغربي في قيادة أبرز سباقات الماراطون العالمية",
+      "page_num": 1,
+      "bytes": 83610,
+      "sha1": "29a15fe63b10d866065d79326f1f503955d44249"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://lakome2.com/flash-infos/427379/",
+      "title": "الكاميرون تتوج بكأس أمم إفريقيا للسيدات 2026 على حساب مالاوي",
+      "page_num": 1,
+      "bytes": 83571,
+      "sha1": "0245a5cff502543e152251ab5673fdc9ca009c4f"
+    },
+    {
+      "id": 31,
+      "file": "article_0031.html",
+      "url": "https://lakome2.com/sport/427307/",
+      "title": "المنتخب المغربي للسيدات ينهي كأس أمم إفريقيا في المركز الرابع بعد خسارته أمام الجزائر",
+      "page_num": 1,
+      "bytes": 80668,
+      "sha1": "d1fe16d5e85efb9a0b7fe23b06c6de4613b96c0c"
+    },
+    {
+      "id": 32,
+      "file": "article_0032.html",
+      "url": "https://lakome2.com/sport/427089/",
+      "title": "المغرب يودع كأس أمم إفريقيا للسيدات من نصف النهائي أمام الكاميرون",
+      "page_num": 1,
+      "bytes": 81701,
+      "sha1": "8b84d6127e83591ff2ce0684e1ef76a92514718c"
+    },
+    {
+      "id": 33,
+      "file": "article_0033.html",
+      "url": "https://lakome2.com/2026_mon/424855/",
+      "title": "أجهزة استشعار الزلازل ترصد احتفالات الإسبان بلقب المونديال",
+      "page_num": 1,
+      "bytes": 80960,
+      "sha1": "642141e2381937990565005cb4f229efb9d0d0df"
+    },
+    {
+      "id": 34,
+      "file": "article_0034.html",
+      "url": "https://lakome2.com/flash-infos/424817/",
+      "title": "أرقام خلف تتويج إسبانيا بالمونديال",
+      "page_num": 1,
+      "bytes": 86674,
+      "sha1": "70200a702c731a32831b5ef42c6acd34eab98061"
+    },
+    {
+      "id": 35,
+      "file": "article_0035.html",
+      "url": "https://lakome2.com/2026_mon/424814/",
+      "title": "وفاء لدعمها لفلسطين.. غزة تحتفي بتتويج إسبانيا بالمونديال",
+      "page_num": 1,
+      "bytes": 84079,
+      "sha1": "3c9ddf1f383656155f09aff0c399cb2b38814693"
+    },
+    {
+      "id": 36,
+      "file": "article_0036.html",
+      "url": "https://lakome2.com/2026_mon/424802/",
+      "title": "إسبانيا تتوج بلقب كأس العالم للمرة الثانية",
+      "page_num": 1,
+      "bytes": 80418,
+      "sha1": "57f987df7951e3b165966fbaada918224fff583c"
+    },
+    {
+      "id": 37,
+      "file": "article_0037.html",
+      "url": "https://lakome2.com/2026_mon/424742/",
+      "title": "إنكلترا ثالثة كأس العالم بعد مباراة مجنونة من 10 أهداف أمام فرنسا",
+      "page_num": 1,
+      "bytes": 81657,
+      "sha1": "ef3407fc832bf7fd98cb3b44de755f7dba92325f"
+    },
+    {
+      "id": 38,
+      "file": "article_0038.html",
+      "url": "https://lakome2.com/decryptage/428084/",
+      "title": "إمسوان.. قرية الصيد الصغيرة شمال أكادير التي حوّلتها أمواج الأطلسي إلى أشهر وجهة لركوب الأمواج في المغرب",
+      "page_num": 1,
+      "bytes": 82044,
+      "sha1": "02ee9debddae7b867c565522cd60406161125fda"
+    },
+    {
+      "id": 39,
+      "file": "article_0039.html",
+      "url": "https://lakome2.com/%d8%a7%d9%86%d8%aa%d8%ae%d8%a7%d8%a8%d8%a7%d8%aa_%d8%b4%d8%aa%d9%86%d8%a8%d8%b1_2026/420856/",
+      "title": "الصحافة الدولية تسلط الضوء على مواجهة المغرب والبرازيل في مونديال 2026",
+      "page_num": 1,
+      "bytes": 84816,
+      "sha1": "4f88cf8f76f82869c7606939ab15ef035c123763"
+    },
+    {
+      "id": 40,
+      "file": "article_0040.html",
+      "url": "https://lakome2.com/politique/420854/",
+      "title": "انتهاء آجال التسجيل في اللوائح الانتخابية العامة استعداداً لانتخابات شتنبر 2026",
+      "page_num": 1,
+      "bytes": 84677,
+      "sha1": "8ac59dca771ba339edcd754ee7f538b6af1c4e49"
+    },
+    {
+      "id": 41,
+      "file": "article_0041.html",
+      "url": "https://lakome2.com/politique/420118/",
+      "title": "اعتزال منتخبين بينهم عمدة الرباط ورئيس مقاطعة السويسي العمل السياسي من \"الأحرار\" يثير تساؤلات قانونية وسياسية",
+      "page_num": 1,
+      "bytes": 86204,
+      "sha1": "af3a7dafdd790b5bdc1ea2c836a4753039139821"
+    },
+    {
+      "id": 42,
+      "file": "article_0042.html",
+      "url": "https://lakome2.com/politique/420077/",
+      "title": "رئيس النيابة العامة يدعو إلى التصدي الصارم للخروقات والمخالفات في القيد باللوائح الانتخابية",
+      "page_num": 1,
+      "bytes": 83818,
+      "sha1": "fcb49be1acbcc61451ae6e9834d9f2e17aa61e71"
+    },
+    {
+      "id": 43,
+      "file": "article_0043.html",
+      "url": "https://lakome2.com/politique/419901/",
+      "title": "البوحسيني: دعوات المقاطعة لا تحتاج لجهد كبير لأن حكومة \"الأوليغارشية\" نفرت الناس من السياسة وصناديق الاقتراع",
+      "page_num": 1,
+      "bytes": 85501,
+      "sha1": "b08e3b6cdd556366682bb4f53960f1e4fded717c"
+    },
+    {
+      "id": 44,
+      "file": "article_0044.html",
+      "url": "https://lakome2.com/societe/427652/",
+      "title": "مناهضو التطبيع بمراكش يستنكرون استئناف رحلات جوية من إسرائيل ويرفضون…",
+      "page_num": 1,
+      "bytes": 83542,
+      "sha1": "11d4434365e7af03e24609b6e507e8926b1a52f9"
+    },
+    {
+      "id": 45,
+      "file": "article_0045.html",
+      "url": "https://lakome2.com/normalization/412200/",
+      "title": "في ظل التوترات الإقليمية المغرب ماض في التطبيع مع إسرائيل…",
+      "page_num": 1,
+      "bytes": 81750,
+      "sha1": "c3922d261ae85893a0b2b9b63cb5f83a9250e502"
+    },
+    {
+      "id": 46,
+      "file": "article_0046.html",
+      "url": "https://lakome2.com/liberte/418140/",
+      "title": "تأجيل محاكمة الناشطة زينب الخروبي إلى يونيو المقبل",
+      "page_num": 1,
+      "bytes": 82832,
+      "sha1": "94c1f021786810adec7d43b96a5d572ddb0c9d6b"
+    },
+    {
+      "id": 47,
+      "file": "article_0047.html",
+      "url": "https://lakome2.com/generationz/410090/",
+      "title": "\"لوموند\": متابعات قضائية واسعة تطال محتجين من حركة \"جيل زد\"…",
+      "page_num": 1,
+      "bytes": 82170,
+      "sha1": "3e66b02a9ff4d344554e96b39338ac12fdd4749d"
+    },
+    {
+      "id": 48,
+      "file": "article_0048.html",
+      "url": "https://lakome2.com/education/428002/",
+      "title": "نقابة تعليمية تطالب بإلغاء العمل يوم السبت واحترام 18 ساعة…",
+      "page_num": 1,
+      "bytes": 81640,
+      "sha1": "286c0e36d438df90ec75b7e021033d7569715d30"
+    },
+    {
+      "id": 49,
+      "file": "article_0049.html",
+      "url": "https://lakome2.com/education/427840/",
+      "title": "قطاع التعليم \"بالعدل والإحسان\": الجامعة المغربية تعرف تحولا خطيرا يمس…",
+      "page_num": 1,
+      "bytes": 81158,
+      "sha1": "5cad69c81309ab87db0a261f664a2865ad03997a"
+    },
+    {
+      "id": 50,
+      "file": "article_0050.html",
+      "url": "https://lakome2.com/sport/426758/",
+      "title": "المغرب يبلغ نصف نهائي كأس أمم إفريقيا للسيدات ويتأهل إلى مونديال 2027",
+      "page_num": 1,
+      "bytes": 82743,
+      "sha1": "430bcaa914128a2f7517931b5bbdc5a20d087d94"
+    },
+    {
+      "id": 51,
+      "file": "article_0051.html",
+      "url": "https://lakome2.com/sport/426342/",
+      "title": "المغرب يبلغ ربع نهائي كأس أمم إفريقيا للسيدات متصدراً مجموعته بعد تعادل سلبي مع السنغال",
+      "page_num": 1,
+      "bytes": 82687,
+      "sha1": "db4c65d92ac019261de3f42fbef243942f7367f2"
+    },
+    {
+      "id": 52,
+      "file": "article_0052.html",
+      "url": "https://lakome2.com/sport/426209/",
+      "title": "المغرب يواجه السنغال لحسم صدارة المجموعة الأولى في كأس أمم إفريقيا للسيدات",
+      "page_num": 1,
+      "bytes": 83447,
+      "sha1": "0c2d8a7d5fc1062191a6ee33078f7bf557e263b7"
+    },
+    {
+      "id": 53,
+      "file": "article_0053.html",
+      "url": "https://lakome2.com/sport/426119/",
+      "title": "\"الفيفا\" تتخلى عن خطة بيع حصة من حقوقها التجارية بعد اعتراضات واسعة",
+      "page_num": 1,
+      "bytes": 80311,
+      "sha1": "0e3efd8b0fb5dad957b9fa349d6b8b4a043f74c5"
+    },
+    {
+      "id": 54,
+      "file": "article_0054.html",
+      "url": "https://lakome2.com/flash-infos/426456/",
+      "title": "أنفوغرافيك | مراتب متأخرة.. المغرب في مؤشر \"ليغاتوم\" للازدهار 2026",
+      "page_num": 1,
+      "bytes": 84018,
+      "sha1": "947953d6dd0c08fce1fe2a12b3afc4330b979c84"
+    },
+    {
+      "id": 55,
+      "file": "article_0055.html",
+      "url": "https://lakome2.com/flash-infos/424682/",
+      "title": "أنفوجرافيك | ⁨مطارات المغرب.. استقبلت أكثر من 18,8 مليون مسافر⁩",
+      "page_num": 1,
+      "bytes": 84513,
+      "sha1": "cac66043aef9ac5c5c621e7b88c4ec37cbc1a351"
+    },
+    {
+      "id": 56,
+      "file": "article_0056.html",
+      "url": "https://lakome2.com/flash-infos/424107/",
+      "title": "أنفوجوافيك | ‎⁨أكثر من 337 ألف تلميذ حصلوا على شهادة البكالوريا ونسبة نجاج الإناث بلغت 84.5%⁩",
+      "page_num": 1,
+      "bytes": 84585,
+      "sha1": "a932412dae57351a153c321f67ff4d024285eedd"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 2,
+    "articles": 56,
+    "article_fetch_failures": 0
+  }
+}

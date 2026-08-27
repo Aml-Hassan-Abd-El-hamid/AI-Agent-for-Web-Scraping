@@ -1,0 +1,554 @@
+{
+  "website": "rogerebert",
+  "snapshot_date": "2026-08-27T03:52:26",
+  "pagination_type": "infinite scroll",
+  "scroll_mode": "scroll",
+  "scroll_rounds_requested": 2,
+  "load_more_selector": null,
+  "listing_url": "https://www.rogerebert.com/reviews",
+  "input_urls": [
+    "https://www.rogerebert.com/reviews"
+  ],
+  "pagination_pattern": null,
+  "requirements": "title, article body text",
+  "run_dir": "orch_runs/run_20260827_034104",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://www.rogerebert.com/reviews",
+      "file": "listing_page_001.html",
+      "bytes": 209147,
+      "sha1": "818d68d8bfba74885bf4800f938c43f5f07f5d33"
+    },
+    {
+      "page_num": 1,
+      "url": "https://www.rogerebert.com/reviews",
+      "file": "listing_page_001_expanded.html",
+      "bytes": 247490,
+      "sha1": "ed12021fb03c033d437fb910d637a108718ed066",
+      "expanded": true
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://www.rogerebert.com/reviews/death-of-the-pastors-wife-netflix-documentary-tv-review-2026",
+      "title": "Death of the Pastor’s Wife",
+      "page_num": 1,
+      "bytes": 94435,
+      "sha1": "3c5d70a97a012dc19ac2852c44de4e616331fed2"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://www.rogerebert.com/reviews/the-dog-stars-jacob-elordi-josh-brolin-margaret-qualley-ridley-scott-film-review-2026",
+      "title": "The Dog Stars",
+      "page_num": 1,
+      "bytes": 227593,
+      "sha1": "a91473135055bf004f51ea84425fb648926c66c4"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://www.rogerebert.com/reviews/franz-kafka-agnieszka-holland-movie-review-2026",
+      "title": "Franz",
+      "page_num": 1,
+      "bytes": 224455,
+      "sha1": "3733fbca4f49fe3f863f4b5931f2adbeefb9ad74"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://www.rogerebert.com/reviews/how-to-divorce-during-the-war-film-review-2026",
+      "title": "How to Divorce During the War",
+      "page_num": 1,
+      "bytes": 224866,
+      "sha1": "b23938b523057d7dd0f2d03a8156d708889cb65b"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://www.rogerebert.com/reviews/it-ends-alex-ullom-horror-movie-review-2026",
+      "title": "It Ends",
+      "page_num": 1,
+      "bytes": 224117,
+      "sha1": "9a05566059b45360cff3d11d946c613bbe86fac0"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://www.rogerebert.com/reviews/the-magic-faraway-tree-andrew-garfield-rebecca-ferguson-fantasy-movie-review-2026",
+      "title": "The Magic Faraway Tree",
+      "page_num": 1,
+      "bytes": 224095,
+      "sha1": "b15566d1f1b5bf08a693a9ed911fff1806b64f85"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://www.rogerebert.com/reviews/the-marching-band-movie-review-2026",
+      "title": "The Marching Band",
+      "page_num": 1,
+      "bytes": 222469,
+      "sha1": "a4825fe682d02504e4fbbfc14b691650036f6357"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://www.rogerebert.com/reviews/the-fence-claire-denis-matt-dillon-movie-review-2026",
+      "title": "The Fence",
+      "page_num": 1,
+      "bytes": 96144,
+      "sha1": "d54233742a2600074d89edcf3210b7f1d8fc7b7d"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://www.rogerebert.com/reviews/rosebush-pruning-callum-turner-mubi-movie-review-2026",
+      "title": "Rosebush Pruning",
+      "page_num": 1,
+      "bytes": 222136,
+      "sha1": "7ba9871cd49e27ac245efdbec9231a7ba6d85757"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://www.rogerebert.com/reviews/dreams-in-nightmares-movie-review-2026",
+      "title": "Dreams in Nightmares",
+      "page_num": 1,
+      "bytes": 221889,
+      "sha1": "1a616d0a2ff5af1916501cd7027634e809d58ab7"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://www.rogerebert.com/reviews/insidious-4-out-of-the-further-horror-movie-review-2026",
+      "title": "Insidious: Out of the Further",
+      "page_num": 1,
+      "bytes": 226610,
+      "sha1": "4d4ac58a2e51cddff209c49d6e933467adb9df35"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://www.rogerebert.com/reviews/mutiny-jason-statham-movie-review-2026",
+      "title": "Mutiny",
+      "page_num": 1,
+      "bytes": 93036,
+      "sha1": "8ab5f070fa43dc9c0c0da113e824c047e67cdd5a"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://www.rogerebert.com/reviews/freefall-a-reckoning-for-boeing-film-review-2026",
+      "title": "Freefall: A Reckoning for Boeing",
+      "page_num": 1,
+      "bytes": 221030,
+      "sha1": "ff1868d0f91b1071974f7d193261849e08f02d19"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://www.rogerebert.com/reviews/the-birthday-party-willem-dafoe-film-review-2026",
+      "title": "The Birthday Party (2026)",
+      "page_num": 1,
+      "bytes": 92757,
+      "sha1": "2b5ddb64dfec02158198d6fc3db053285f2f0ec0"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://www.rogerebert.com/reviews/the-brink-of-war-jeff-daniels-angel-studios-film-review-2026",
+      "title": "The Brink of War",
+      "page_num": 1,
+      "bytes": 227262,
+      "sha1": "1cd620956144f32bb19bc4e8377070a08d3e017b"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://www.rogerebert.com/reviews/nimrods-green-day-movie-review-2026",
+      "title": "Nimrods",
+      "page_num": 1,
+      "bytes": 94979,
+      "sha1": "55ea6894973b10aaffec89f51ab716d0b9c1bcf7"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://www.rogerebert.com/reviews/paw-patrol-the-dino-movie-animated-film-review-2026",
+      "title": "PAW Patrol: The Dino Movie",
+      "page_num": 1,
+      "bytes": 219109,
+      "sha1": "f54e7b57d392326134e9a01a48b5dcf790e60598"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://www.rogerebert.com/reviews/union-county-will-poulter-film-review-2026",
+      "title": "Union County",
+      "page_num": 1,
+      "bytes": 227842,
+      "sha1": "b1c00d17ffec2429c55c1cc097846c0971684a90"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://www.rogerebert.com/reviews/the-wrong-girls-kristen-stewart-alia-shawkat-movie-review-2026",
+      "title": "The Wrong Girls",
+      "page_num": 1,
+      "bytes": 225666,
+      "sha1": "fa724181e6ba55b626e547c4ed5acc383f7721d6"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://www.rogerebert.com/reviews/the-x-files-i-want-to-believe-david-duchovny-gillian-anderson-directors-cut-hulu-film-review-2026",
+      "title": "The X-Files: I Want to Believe – Vrach Frankenshteyn",
+      "page_num": 1,
+      "bytes": 98889,
+      "sha1": "5683383b93f4bc25722b737013af13a19c92b506"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://www.rogerebert.com/reviews/american-doctor-palestine-documentary-film-review-2026",
+      "title": "American Doctor",
+      "page_num": 1,
+      "bytes": 223101,
+      "sha1": "fcec4593627d64bf5e0292eb89c3ff6e238a2538"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://www.rogerebert.com/reviews/the-rivals-of-amziah-king-matthew-mcconaughey-film-review-2026",
+      "title": "The Rivals of Amziah King",
+      "page_num": 1,
+      "bytes": 107799,
+      "sha1": "66e8f922c49d4a06590c20b68a00f2d0075dac39"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://www.rogerebert.com/reviews/dont-say-good-luck-sunny-sandler-netflix-movie-review-2026",
+      "title": "Don’t Say Good Luck",
+      "page_num": 1,
+      "bytes": 95558,
+      "sha1": "45c536d62728f05be90754c8a1cb5356140f11c2"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://www.rogerebert.com/reviews/the-end-of-oak-street-anne-hathaway-ewan-mcgregor-film-review-2026",
+      "title": "The End of Oak Street",
+      "page_num": 1,
+      "bytes": 226312,
+      "sha1": "ac932f52618c1fde3dba30498721debba8ac2f0f"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://www.rogerebert.com/reviews/coyote-vs-acme-looney-tunes-will-forte-john-cena-film-review-2026",
+      "title": "Coyote vs. Acme",
+      "page_num": 1,
+      "bytes": 225413,
+      "sha1": "b114687424295b86862453ac29b16c6ce579a437"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://www.rogerebert.com/reviews/the-last-house-netflix-movie-review-2026",
+      "title": "The Last House",
+      "page_num": 1,
+      "bytes": 94061,
+      "sha1": "97073bf1ebb77a95d809d39eae645c5c813c007f"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://www.rogerebert.com/reviews/late-fame-film-review-2026",
+      "title": "Late Fame",
+      "page_num": 1,
+      "bytes": 105202,
+      "sha1": "3f23bd5276b5e0b29db98fd881135e76eb78639d"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://www.rogerebert.com/reviews/cookie-queens-movie-review-2026",
+      "title": "Cookie Queens",
+      "page_num": 1,
+      "bytes": 223227,
+      "sha1": "364103b26c5c7dba13b3cd326d07ef8e4e6d0b56"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://www.rogerebert.com/reviews/olmo-film-review-2026",
+      "title": "Olmo",
+      "page_num": 1,
+      "bytes": 221085,
+      "sha1": "416fffdbb70923ef39be988669f8ab5a17e86948"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://www.rogerebert.com/reviews/super-troopers-3-broken-lizard-movie-review-2026",
+      "title": "Super Troopers 3",
+      "page_num": 1,
+      "bytes": 225152,
+      "sha1": "fe5a5b7f79d906f191b0536bc9465afba6079ea0"
+    },
+    {
+      "id": 31,
+      "file": "article_0031.html",
+      "url": "https://www.rogerebert.com/reviews/the-last-picture-shows-film-review-2026",
+      "title": "The Last Picture Shows",
+      "page_num": 1,
+      "bytes": 96487,
+      "sha1": "84f660453f0919e0a7f47351814522d19b7867e3"
+    },
+    {
+      "id": 32,
+      "file": "article_0032.html",
+      "url": "https://www.rogerebert.com/reviews/teenage-sex-and-death-at-camp-miasma-jane-schoenbrun-film-review-2026",
+      "title": "Teenage Sex and Death at Camp Miasma",
+      "page_num": 1,
+      "bytes": 224641,
+      "sha1": "efebfc3dd8ecbaac9fb1e9e5dd306af7c53615f3"
+    },
+    {
+      "id": 33,
+      "file": "article_0033.html",
+      "url": "https://www.rogerebert.com/reviews/one-night-only-monica-barbaro-callum-turner-film-review-2026",
+      "title": "One Night Only",
+      "page_num": 1,
+      "bytes": 110907,
+      "sha1": "e7c69905ba220a373b235d616bbc2ecd46edd23b"
+    },
+    {
+      "id": 34,
+      "file": "article_0034.html",
+      "url": "https://www.rogerebert.com/reviews/wild-inside-documentary-review-2026",
+      "title": "Wild Inside",
+      "page_num": 1,
+      "bytes": 95417,
+      "sha1": "9bb4a62fb8d135e55a846f66da3fbbd0f91dc168"
+    },
+    {
+      "id": 35,
+      "file": "article_0035.html",
+      "url": "https://www.rogerebert.com/reviews/nightborn-shudder-movie-review",
+      "title": "Nightborn",
+      "page_num": 1,
+      "bytes": 237423,
+      "sha1": "ad4797fc06fec98f42f709756cf7ecacf8a74a4a"
+    },
+    {
+      "id": 36,
+      "file": "article_0036.html",
+      "url": "https://www.rogerebert.com/reviews/the-samurai-and-the-prisoner-film-review-2026",
+      "title": "The Samurai and the Prisoner",
+      "page_num": 1,
+      "bytes": 225872,
+      "sha1": "1a3223fc6d6210b5d6804d913f4fcc0ad505e582"
+    },
+    {
+      "id": 37,
+      "file": "article_0037.html",
+      "url": "https://www.rogerebert.com/reviews/colony-korean-zombie-film-review-2026",
+      "title": "Colony",
+      "page_num": 1,
+      "bytes": 225510,
+      "sha1": "42bccfeb64ac1e7969ca2cf0ee4c0f95de37cf7f"
+    },
+    {
+      "id": 38,
+      "file": "article_0038.html",
+      "url": "https://www.rogerebert.com/reviews/the-devils-mouth-movie-review-2026",
+      "title": "The Devil’s Mouth",
+      "page_num": 1,
+      "bytes": 222298,
+      "sha1": "0061dc0976be754bd733e5f609bb4eb9bd355987"
+    },
+    {
+      "id": 39,
+      "file": "article_0039.html",
+      "url": "https://www.rogerebert.com/reviews/spider-man-brand-new-day-2026-movie-review",
+      "title": "Spider-Man: Brand New Day",
+      "page_num": 1,
+      "bytes": 226195,
+      "sha1": "74d3e76063dc85b7f458441672537f7634659989"
+    },
+    {
+      "id": 40,
+      "file": "article_0040.html",
+      "url": "https://www.rogerebert.com/reviews/hot-spot-noomi-rapace-film-review-2026",
+      "title": "Hot Spot",
+      "page_num": 1,
+      "bytes": 225296,
+      "sha1": "56e75284954a99c272b0130870e3964d859bbf57"
+    },
+    {
+      "id": 41,
+      "file": "article_0041.html",
+      "url": "https://www.rogerebert.com/reviews/jana-nayagan-movie-review-2026",
+      "title": "Jana Nayagan",
+      "page_num": 1,
+      "bytes": 225268,
+      "sha1": "4d0a293954ae7354a2e4caf0eb25c7a5b999686f"
+    },
+    {
+      "id": 42,
+      "file": "article_0042.html",
+      "url": "https://www.rogerebert.com/reviews/motor-city-action-movie-review-2026",
+      "title": "Motor City",
+      "page_num": 1,
+      "bytes": 229730,
+      "sha1": "435cb35877486c924be48855219e7a784a737ff6"
+    },
+    {
+      "id": 43,
+      "file": "article_0043.html",
+      "url": "https://www.rogerebert.com/reviews/72-hours-netflix-movie-review-2026",
+      "title": "72 HOURS",
+      "page_num": 1,
+      "bytes": 222465,
+      "sha1": "6d482d04d3a856c2743682238c676f2d8820bce8"
+    },
+    {
+      "id": 44,
+      "file": "article_0044.html",
+      "url": "https://www.rogerebert.com/reviews/american-pachuco-the-legend-of-luis-valdez-documentary-review",
+      "title": "American Pachuco: The Legend of Luis Valdez",
+      "page_num": 1,
+      "bytes": 92947,
+      "sha1": "8582f7a2049d06b8b58c0b7cd3a125b4bf04e237"
+    },
+    {
+      "id": 45,
+      "file": "article_0045.html",
+      "url": "https://www.rogerebert.com/reviews/the-truthers-netflix-film-review",
+      "title": "The Truthers",
+      "page_num": 1,
+      "bytes": 97178,
+      "sha1": "cfe43ae5c02b439eff42515706b6fc74f814f674"
+    },
+    {
+      "id": 46,
+      "file": "article_0046.html",
+      "url": "https://www.rogerebert.com/reviews/avatar-aang-the-last-airbender-paramount-movie-review-2026",
+      "title": "Avatar Aang: The Last Airbender",
+      "page_num": 1,
+      "bytes": 100057,
+      "sha1": "40edb3a8676073c19d28e508d686e783563299ff"
+    },
+    {
+      "id": 47,
+      "file": "article_0047.html",
+      "url": "https://www.rogerebert.com/reviews/sheep-in-the-box-film-review-2026",
+      "title": "Sheep in the Box",
+      "page_num": 1,
+      "bytes": 96899,
+      "sha1": "8b7a16ae5dcb7dae399fb22caab505a1792b6fa0"
+    },
+    {
+      "id": 48,
+      "file": "article_0048.html",
+      "url": "https://www.rogerebert.com/reviews/a-sad-and-beautiful-world-film-review-2026",
+      "title": "A Sad and Beautiful World",
+      "page_num": 1,
+      "bytes": 93646,
+      "sha1": "7c811533da679d20b4e101ff9c4d01e935556333"
+    },
+    {
+      "id": 49,
+      "file": "article_0049.html",
+      "url": "https://www.rogerebert.com/reviews/a-life-illuminated-film-review-2026",
+      "title": "A Life Illuminated",
+      "page_num": 1,
+      "bytes": 222330,
+      "sha1": "d6a8a8be9a5990a4dc572dec2c12ec3510c37a7e"
+    },
+    {
+      "id": 50,
+      "file": "article_0050.html",
+      "url": "https://www.rogerebert.com/reviews/brunello-the-gracious-visionary-movie-review-2026",
+      "title": "Brunello: The Gracious Visionary",
+      "page_num": 1,
+      "bytes": 225602,
+      "sha1": "62ed551d8c1ef8e864925f84733ea097d6db202c"
+    },
+    {
+      "id": 51,
+      "file": "article_0051.html",
+      "url": "https://www.rogerebert.com/reviews/her-private-hell-nicolas-winding-refn-movie-review-2026",
+      "title": "Her Private Hell",
+      "page_num": 1,
+      "bytes": 229180,
+      "sha1": "705469befa83f9cacb00cb88069ebb0817703c32"
+    },
+    {
+      "id": 52,
+      "file": "article_0052.html",
+      "url": "https://www.rogerebert.com/reviews/furious-hulu-tv-review-2026",
+      "title": "Furious",
+      "page_num": 1,
+      "bytes": 93841,
+      "sha1": "9c9bca62016d911e7d0553cde2cb67e7ee7e3872"
+    },
+    {
+      "id": 53,
+      "file": "article_0053.html",
+      "url": "https://www.rogerebert.com/reviews/a-toxic-love-story-netflix-true-crime-review",
+      "title": "A Toxic Love Story",
+      "page_num": 1,
+      "bytes": 221306,
+      "sha1": "4a2eba05636a933da6f93284bb685d25574a4d17"
+    }
+  ],
+  "article_fetch_failures": [
+    {
+      "url": "https://www.rogerebert.com/reviews/the-ribbon-hero-anime-netflix-movie-review-2026",
+      "title": "The Ribbon Hero",
+      "reason": "Empty response"
+    },
+    {
+      "url": "https://www.rogerebert.com/reviews/the-shards-ryan-murphy-fx-tv-review-2026",
+      "title": "The Shards",
+      "reason": "Empty response"
+    },
+    {
+      "url": "https://www.rogerebert.com/reviews/ice-cream-man-movie-review-2026",
+      "title": "Ice Cream Man",
+      "reason": "Empty response"
+    },
+    {
+      "url": "https://www.rogerebert.com/reviews/soulm8te-m3gan-spinoff-movie-review-2026",
+      "title": "Soulm8te",
+      "reason": "Empty response"
+    },
+    {
+      "url": "https://www.rogerebert.com/reviews/tony-film-review-2026",
+      "title": "Tony",
+      "reason": "Empty response"
+    },
+    {
+      "url": "https://www.rogerebert.com/reviews/the-gas-station-attendant-movie-review-2026",
+      "title": "The Gas Station Attendant",
+      "reason": "Empty response"
+    },
+    {
+      "url": "https://www.rogerebert.com/reviews/i-want-your-sex-gregg-araki-olivia-wilde-film-review-2026",
+      "title": "I Want Your Sex",
+      "reason": "Empty response"
+    }
+  ],
+  "counts": {
+    "listing_pages": 2,
+    "articles": 53,
+    "article_fetch_failures": 7
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "website": "ida2at",
+  "snapshot_date": "2026-08-27T13:47:16",
+  "pagination_type": "numbered pagination",
+  "scroll_mode": null,
+  "scroll_rounds_requested": null,
+  "load_more_selector": null,
+  "listing_url": "https://www.ida2at.com/category/art-literature/",
+  "input_urls": [
+    "https://www.ida2at.com/category/art-literature/",
+    "https://www.ida2at.com/category/art-literature/page/2/"
+  ],
+  "pagination_pattern": "https://www.ida2at.com/category/art-literature/page/{page}/",
+  "requirements": "title, date, author, article body text",
+  "run_dir": "orch_runs/run_20260827_134332",
+  "link_extraction_code_file": null,
+  "listing_pages": [],
+  "articles": [],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 0,
+    "articles": 0,
+    "article_fetch_failures": 0
+  }
+}

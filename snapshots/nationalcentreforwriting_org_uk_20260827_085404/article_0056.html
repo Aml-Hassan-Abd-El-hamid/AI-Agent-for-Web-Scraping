@@ -1,0 +1,1648 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+<script>
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}});
+</script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <script src="https://webcomponents.spektrix.com/stable/webcomponents-loader.js"></script>
+	<script src="https://webcomponents.spektrix.com/stable/spektrix-component-loader.js" data-components="spektrix-donate,spektrix-merchandise,spektrix-basket-summary,spektrix-memberships,spektrix-gift-vouchers" async></script>
+  <script type="text/javascript" src="https://tickets.nationalcentreforwriting.org.uk/writerscentre/website/scripts/integrate.js"></script>
+
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v28.3 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>Storytelling in graphic novels: Anna Trench on Florrie | National Centre for Writing | NCW</title>
+	<meta name="description" content="In this episode of The Writing Life Podcast, Anna Trench shares the process of writing and illustrating her debut graphic novel, Florrie." />
+	<link rel="canonical" href="https://nationalcentreforwriting.org.uk/writing-hub/graphic-novels-anna-trench-podcast/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Storytelling in graphic novels: Anna Trench on Florrie" />
+	<meta property="og:description" content="In this episode of The Writing Life Podcast, Anna Trench shares the process of writing and illustrating her debut graphic novel, Florrie." />
+	<meta property="og:url" content="https://nationalcentreforwriting.org.uk/writing-hub/graphic-novels-anna-trench-podcast/" />
+	<meta property="og:site_name" content="National Centre for Writing | NCW" />
+	<meta property="og:image" content="https://nationalcentreforwriting.org.uk/wp-content/uploads/2026/04/Anna-Trench-podcast-FBBluesky.png" />
+	<meta property="og:image:width" content="1600" />
+	<meta property="og:image:height" content="900" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="31 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/graphic-novels-anna-trench-podcast\/","url":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/graphic-novels-anna-trench-podcast\/","name":"Storytelling in graphic novels: Anna Trench on Florrie | National Centre for Writing | NCW","isPartOf":{"@id":"https:\/\/nationalcentreforwriting.org.uk\/#website"},"primaryImageOfPage":{"@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/graphic-novels-anna-trench-podcast\/#primaryimage"},"image":{"@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/graphic-novels-anna-trench-podcast\/#primaryimage"},"thumbnailUrl":"https:\/\/nationalcentreforwriting.org.uk\/wp-content\/uploads\/2026\/04\/Graphic-novels-podcast-with-Anna-Trench.png","datePublished":"2026-04-20T04:05:00+00:00","description":"In this episode of The Writing Life Podcast, Anna Trench shares the process of writing and illustrating her debut graphic novel, Florrie.","breadcrumb":{"@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/graphic-novels-anna-trench-podcast\/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/graphic-novels-anna-trench-podcast\/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/graphic-novels-anna-trench-podcast\/#primaryimage","url":"https:\/\/nationalcentreforwriting.org.uk\/wp-content\/uploads\/2026\/04\/Graphic-novels-podcast-with-Anna-Trench.png","contentUrl":"https:\/\/nationalcentreforwriting.org.uk\/wp-content\/uploads\/2026\/04\/Graphic-novels-podcast-with-Anna-Trench.png","width":900,"height":900},{"@type":"BreadcrumbList","@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/graphic-novels-anna-trench-podcast\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/nationalcentreforwriting.org.uk\/"},{"@type":"ListItem","position":2,"name":"Storytelling in graphic novels: Anna Trench on Florrie"}]},{"@type":"WebSite","@id":"https:\/\/nationalcentreforwriting.org.uk\/#website","url":"https:\/\/nationalcentreforwriting.org.uk\/","name":"National Centre for Writing | NCW","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/nationalcentreforwriting.org.uk\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="National Centre for Writing | NCW &raquo; Feed" href="https://nationalcentreforwriting.org.uk/feed/" />
+<link rel="alternate" type="application/rss+xml" title="National Centre for Writing | NCW &raquo; Comments Feed" href="https://nationalcentreforwriting.org.uk/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="National Centre for Writing | NCW &raquo; Storytelling in graphic novels: Anna Trench on Florrie Comments Feed" href="https://nationalcentreforwriting.org.uk/writing-hub/graphic-novels-anna-trench-podcast/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://nationalcentreforwriting.org.uk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnationalcentreforwriting.org.uk%2Fwriting-hub%2Fgraphic-novels-anna-trench-podcast%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://nationalcentreforwriting.org.uk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnationalcentreforwriting.org.uk%2Fwriting-hub%2Fgraphic-novels-anna-trench-podcast%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='search-filter-plugin-styles-css' href='https://nationalcentreforwriting.org.uk/wp-content/plugins/search-filter-pro/public/assets/css/search-filter.min.css?ver=2.5.21' media='all' />
+<link rel='stylesheet' id='ncw-style-css' href='https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/style.css?ver=1771947514' media='all' />
+<link rel='stylesheet' id='mobile-nav-css' href='https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/lib/mobile-navigation/mmenu.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='ncw-slick-style-css' href='https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/css/slick.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='ncw-slick-theme-css' href='https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/css/slick-theme.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='moove_gdpr_frontend-css' href='https://nationalcentreforwriting.org.uk/wp-content/plugins/gdpr-cookie-compliance/dist/styles/gdpr-main-nf.css?ver=5.1.0' media='all' />
+<style id="moove_gdpr_frontend-inline-css">
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.moove-gdpr-infobar-settings-btn,
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-settings-btn {
+					background-color: transparent;
+					box-shadow: inset 0 0 0 1px currentColor;
+					opacity: .7;
+					color: #202020;
+				}
+
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.moove-gdpr-infobar-settings-btn:hover,
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-settings-btn:hover {
+					background-color: #202020;
+					box-shadow: none;
+					color: #fff;
+					opacity: 1;
+				}
+
+				#moove_gdpr_cookie_info_bar:not(.gdpr-full-screen-infobar).moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.moove-gdpr-infobar-settings-btn, #moove_gdpr_cookie_info_bar:not(.gdpr-full-screen-infobar).moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-settings-btn {
+					background-color: transparent;
+					box-shadow: inset 0 0 0 1px currentColor;
+					opacity: .7;
+					color: #fff;
+				}
+
+				#moove_gdpr_cookie_info_bar:not(.gdpr-full-screen-infobar).moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.moove-gdpr-infobar-settings-btn:hover, #moove_gdpr_cookie_info_bar:not(.gdpr-full-screen-infobar).moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-settings-btn:hover {
+					box-shadow: none;
+					opacity: 1;
+					color: #202020;
+					background-color: #fff;
+				}
+							#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main h3.tab-title, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main span.tab-title,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content .moove-gdpr-branding-cnt a,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton,
+				#moove_gdpr_cookie_modal .cookie-switch .cookie-slider:after, 
+				#moove_gdpr_cookie_modal .cookie-switch .slider:after, 
+				#moove_gdpr_cookie_modal .switch .cookie-slider:after, 
+				#moove_gdpr_cookie_modal .switch .slider:after,
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content p, 
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content p a,
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton, 
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h1, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h2, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h3, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h4, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h5, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h6,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-modal-title .tab-title,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-tab-main h3.tab-title, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-tab-main span.tab-title,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-branding-cnt a {
+					font-weight: inherit				}
+			#moove_gdpr_cookie_modal,#moove_gdpr_cookie_info_bar,.gdpr_cookie_settings_shortcode_content{font-family:inherit}#moove_gdpr_save_popup_settings_button{background-color:#373737;color:#fff}#moove_gdpr_save_popup_settings_button:hover{background-color:#000}#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton,#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton{background-color:#f6a000}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton,.gdpr_cookie_settings_shortcode_content .gdpr-shr-button.button-green,.gdpr-blocked-recaptcha .gdpr-shr-button.button-green{background-color:#f6a000;border-color:#f6a000}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton:hover,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton:hover,.gdpr_cookie_settings_shortcode_content .gdpr-shr-button.button-green:hover,.gdpr-blocked-recaptcha .gdpr-shr-button.button-green:hover{background-color:#fff;color:#f6a000}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close span.gdpr-icon{background-color:#f6a000;border:1px solid #f6a000}#moove_gdpr_cookie_info_bar span.moove-gdpr-infobar-allow-all.focus-g,#moove_gdpr_cookie_info_bar span.moove-gdpr-infobar-allow-all:focus,#moove_gdpr_cookie_info_bar button.moove-gdpr-infobar-allow-all.focus-g,#moove_gdpr_cookie_info_bar button.moove-gdpr-infobar-allow-all:focus,#moove_gdpr_cookie_info_bar span.moove-gdpr-infobar-reject-btn.focus-g,#moove_gdpr_cookie_info_bar span.moove-gdpr-infobar-reject-btn:focus,#moove_gdpr_cookie_info_bar button.moove-gdpr-infobar-reject-btn.focus-g,#moove_gdpr_cookie_info_bar button.moove-gdpr-infobar-reject-btn:focus,#moove_gdpr_cookie_info_bar span.change-settings-button.focus-g,#moove_gdpr_cookie_info_bar span.change-settings-button:focus,#moove_gdpr_cookie_info_bar button.change-settings-button.focus-g,#moove_gdpr_cookie_info_bar button.change-settings-button:focus{-webkit-box-shadow:0 0 1px 3px #f6a000;-moz-box-shadow:0 0 1px 3px #f6a000;box-shadow:0 0 1px 3px #f6a000}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close i:hover,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close span.gdpr-icon:hover,#moove_gdpr_cookie_info_bar span[data-href]>u.change-settings-button{color:#f6a000}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li.menu-item-selected a span.gdpr-icon,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li.menu-item-selected button span.gdpr-icon{color:inherit}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a span.gdpr-icon,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button span.gdpr-icon{color:inherit}#moove_gdpr_cookie_modal .gdpr-acc-link{line-height:0;font-size:0;color:transparent;position:absolute}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close:hover i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content a:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content span.change-settings-button:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.change-settings-button:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content u.change-settings-button:hover,#moove_gdpr_cookie_info_bar span[data-href]>u.change-settings-button,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content span.change-settings-button.focus-g,span.change-settings-button:focus,button.change-settings-button.focus-g,button.change-settings-button:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content u.change-settings-button.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content u.change-settings-button:focus{color:#f6a000}#moove_gdpr_cookie_modal .moove-gdpr-branding.focus-g span,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main a.focus-g,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .gdpr-cd-details-toggle.focus-g{color:#f6a000}#moove_gdpr_cookie_modal.gdpr_lightbox-hide{display:none}#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton,#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton,.gdpr-shr-button,#moove_gdpr_cookie_info_bar .moove-gdpr-infobar-close-btn{border-radius:0}
+/*# sourceURL=moove_gdpr_frontend-inline-css */
+</style>
+<script id="jquery-js" src="//ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js?ver=20171012"></script>
+<script id="search-filter-plugin-build-js-extra">
+var SF_LDATA = {"ajax_url":"https://nationalcentreforwriting.org.uk/wp-admin/admin-ajax.php","home_url":"https://nationalcentreforwriting.org.uk/","extensions":[]};
+//# sourceURL=search-filter-plugin-build-js-extra
+</script>
+<script id="search-filter-plugin-build-js" src="https://nationalcentreforwriting.org.uk/wp-content/plugins/search-filter-pro/public/assets/js/search-filter-build.min.js?ver=2.5.21"></script>
+<script id="search-filter-plugin-chosen-js" src="https://nationalcentreforwriting.org.uk/wp-content/plugins/search-filter-pro/public/assets/js/chosen.jquery.min.js?ver=2.5.21"></script>
+<link rel="https://api.w.org/" href="https://nationalcentreforwriting.org.uk/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://nationalcentreforwriting.org.uk/wp-json/wp/v2/writing_hub/48014" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://nationalcentreforwriting.org.uk/xmlrpc.php?rsd" />
+<link rel='shortlink' href='https://nationalcentreforwriting.org.uk/?p=48014' />
+<meta name="cdp-version" content="1.5.6" /><link rel="pingback" href="https://nationalcentreforwriting.org.uk/xmlrpc.php">      	<style>
+		.internal_hero{
+			background-image: url("https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/default-header.png");
+      background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/default-header.png");
+      background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/default-header.png");
+      background-position: 0px 0px, 50% 50%;
+      background-size: auto, cover;
+      background-repeat: repeat, no-repeat;
+		}
+	</style>
+  <link rel='stylesheet' id='gform_basic-css' href='https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/css/dist/basic.min.css?ver=3.0.3' media='all' />
+<link rel='stylesheet' id='gform_theme_components-css' href='https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/css/dist/theme-components.min.css?ver=3.0.3' media='all' />
+<link rel='stylesheet' id='gform_theme-css' href='https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/css/dist/theme.min.css?ver=3.0.3' media='all' />
+
+</head>
+
+<body class="wp-singular writing_hub-template-default single single-writing_hub postid-48014 wp-theme-ncw">
+
+<div class="site_wrapper"> <!-- Site Wrapper -->
+
+	<div id="page" class="site">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+    
+    
+      <header id="masthead" class="site-header">
+
+        
+        <div class="logo_nav_holder"> <!-- Logo Nav Holder -->
+
+          <div class="logo"> <!-- Logo -->
+            <a href="https://nationalcentreforwriting.org.uk/" rel="home">
+              <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/ncw-logo.svg" alt="NCW Logo" />
+            </a>
+          </div> <!-- / Logo -->
+
+          <div class="nav_icon"><!-- Nav Icon -->
+            <a href="#mobile-navigation">
+              <div id="nav_icon" class="hamburger hamburger--squeeze">
+                <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+                </div>
+              </div>
+            </a>
+          </div> <!-- / Nav Icon -->
+
+          <div class="main_nav"> <!-- Main Nav -->
+
+            <nav id="site-navigation" class="main-navigation">
+              <div class="menu-menu-1-container"><ul id="primary-menu" class="menu"><li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-109"><a href="https://nationalcentreforwriting.org.uk/whats-on/">What’s On</a>
+<ul class="sub-menu">
+	<li id="menu-item-16582" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16582"><a href="https://nationalcentreforwriting.org.uk/whats-on/">All Events</a></li>
+	<li id="menu-item-51505" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51505"><a href="https://nationalcentreforwriting.org.uk/darkest-chapter/">Darkest Chapter</a></li>
+	<li id="menu-item-48417" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48417"><a href="https://nationalcentreforwriting.org.uk/whats-on/summer/">Summer at the National Centre for Writing</a></li>
+	<li id="menu-item-43339" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43339"><a href="https://nationalcentreforwriting.org.uk/programmes/browse-our-season-brochure/">Season Brochure</a></li>
+	<li id="menu-item-33130" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33130"><a href="https://nationalcentreforwriting.org.uk/the-global-page-2/">The Global Page  </a></li>
+</ul>
+</li>
+<li id="menu-item-63" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-63"><a href="https://nationalcentreforwriting.org.uk/get-involved/">Get involved</a>
+<ul class="sub-menu">
+	<li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="https://nationalcentreforwriting.org.uk/get-involved/writers/">For writers</a></li>
+	<li id="menu-item-61" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="https://nationalcentreforwriting.org.uk/get-involved/translators/">For translators</a></li>
+	<li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="https://nationalcentreforwriting.org.uk/get-involved/communities/">For communities</a></li>
+	<li id="menu-item-825" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-825"><a href="https://nationalcentreforwriting.org.uk/get-involved/young-people/">For young people</a></li>
+	<li id="menu-item-826" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-826"><a href="https://nationalcentreforwriting.org.uk/get-involved/families/">For families</a></li>
+	<li id="menu-item-827" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-827"><a href="https://nationalcentreforwriting.org.uk/get-involved/schools/">For teachers</a></li>
+	<li id="menu-item-828" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-828"><a href="https://nationalcentreforwriting.org.uk/norwich-unesco-city-of-literature/">Norwich UNESCO City of Literature</a></li>
+</ul>
+</li>
+<li id="menu-item-55" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-55"><a href="https://nationalcentreforwriting.org.uk/academy/">Academy</a>
+<ul class="sub-menu">
+	<li id="menu-item-44919" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44919"><a href="https://nationalcentreforwriting.org.uk/the-writing-life-challenge/">The Writing Life Challenge</a></li>
+	<li id="menu-item-830" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-830"><a href="https://nationalcentreforwriting.org.uk/academy/tutored-courses/">Online tutored courses</a></li>
+	<li id="menu-item-832" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-832"><a href="https://nationalcentreforwriting.org.uk/academy/workshops/">Workshops</a></li>
+	<li id="menu-item-65" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65"><a href="https://nationalcentreforwriting.org.uk/academy/mentoring/">Mentoring</a></li>
+	<li id="menu-item-831" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-831"><a href="https://nationalcentreforwriting.org.uk/academy/live-evening-courses/">Evening courses</a></li>
+	<li id="menu-item-829" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-829"><a href="https://nationalcentreforwriting.org.uk/academy/self-paced-courses/">Self-paced online courses</a></li>
+	<li id="menu-item-8145" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8145"><a href="https://nationalcentreforwriting.org.uk/get-involved/writers/resources/">Free resources</a></li>
+</ul>
+</li>
+<li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="https://nationalcentreforwriting.org.uk/writing-hub/">Writing Hub</a></li>
+<li id="menu-item-10937" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10937"><a href="https://nationalcentreforwriting.org.uk/visit-us/">Visit</a>
+<ul class="sub-menu">
+	<li id="menu-item-27672" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27672"><a href="https://nationalcentreforwriting.org.uk/plan-your-visit/">Plan your visit</a></li>
+	<li id="menu-item-26050" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26050"><a href="https://nationalcentreforwriting.org.uk/writers-room/">Writers’ Room</a></li>
+	<li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="https://nationalcentreforwriting.org.uk/visit-us/the-literature-house/accessibility/">Accessibility</a></li>
+</ul>
+</li>
+<li id="menu-item-10938" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10938"><a href="https://nationalcentreforwriting.org.uk/about-us/">About us</a>
+<ul class="sub-menu">
+	<li id="menu-item-10731" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10731"><a href="https://nationalcentreforwriting.org.uk/support-us/">Join and support</a></li>
+	<li id="menu-item-14985" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14985"><a href="https://nationalcentreforwriting.org.uk/vacancies/">Join the team</a></li>
+	<li id="menu-item-14344" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14344"><a href="https://nationalcentreforwriting.org.uk/shop/">Shop</a></li>
+	<li id="menu-item-64" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"><a href="https://nationalcentreforwriting.org.uk/hire/">Hire Dragon Hall</a></li>
+	<li id="menu-item-38328" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38328"><a href="https://nationalcentreforwriting.org.uk/press/">Press</a></li>
+	<li id="menu-item-8326" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8326"><a href="https://nationalcentreforwriting.org.uk/in-the-region/">In the region</a></li>
+	<li id="menu-item-8094" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8094"><a href="https://nationalcentreforwriting.org.uk/contact/">Contact us</a></li>
+</ul>
+</li>
+<li id="menu-item-838" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-838"><a href="https://nationalcentreforwriting.org.uk/norwich-unesco-city-of-literature/">Norwich UNESCO City of Literature</a></li>
+<li id="menu-item-9085" class="mobile_only menu-item menu-item-type-custom menu-item-object-custom menu-item-9085"><a href="https://ncw-online.teachable.com/l/products">Academy Portal</a></li>
+</ul></div>            </nav><!-- #site-navigation -->
+
+            <div class="top_icons"> <!-- Top Icons -->
+
+              <a href="/my-account/"><img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/login-white.svg" width="32" height="32" alt="Profile Icon" /></a>
+              <spektrix-basket-summary client-name="writerscentre" custom-domain="tickets.nationalcentreforwriting.org.uk">
+                <a href="https://nationalcentreforwriting.org.uk/basket/" class="account_basket">
+                <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/basket-white.svg" width="32" height="32" alt="Basket Icon" />
+                <span class="basket_item_count" data-basket-item-count></span>
+                </a>
+              </spektrix-basket-summary>
+            </div> <!-- / Top Icons -->
+
+            <div class="top_link">
+              <a href="https://sso.teachable.com/secure/231323/identity/login/password" target="_blank">Academy Portal</a>
+            </div>
+
+          </div> <!-- / Main Nav -->
+
+          <div class="flyout-container" >
+
+            <div class="support_us_flyout flyout-button pink_bg" id="flyout-1-button" ><a href="#">SUPPORT NCW<img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/support_us_arrow.svg" alt="Arrow"/></a></div> <!-- Support Us Flyout -->
+
+            <div class="donation_form flyout flyout-1 pink_bg" id="donation_flyout"> <!-- Donation Form -->
+
+              <div class="donation_slider_holder"> <!-- Donation Slider Holder -->
+
+                <p class="donation_flyout_text">Every donation spreads the lifelong benefits of reading, writing and stories.</p>
+
+                <div class="donation_close"><a href="#close_search"><img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/close-white.svg" alt="X Close Icon" /></a></div>
+
+                
+                  <spektrix-donate id="steps-2801AQDNLVMHMKCPBDVJNRVPGGRHGRKHB" client-name="writerscentre" custom-domain="tickets.nationalcentreforwriting.org.uk" fund-id="2801AQDNLVMHMKCPBDVJNRVPGGRHGRKHB" forward-to="https://nationalcentreforwriting.org.uk/basket/">
+
+                      <p class="h5">Choose an amount: £<span data-display-donation-amount>0</span></p>
+                      <div class="donate_buttons">
+                        <button data-donate-amount="5">£5</button>
+                        <button data-donate-amount="10">£10</button>
+                        <button data-donate-amount="25">£25</button>
+                        <button data-donate-amount="50">£50</button>
+                        <label for="other" class="screen-reader-text">Other Amount:</label>
+                        <input class="donation_other" type="text" data-custom-donation-input placeholder="£ Other" name="other" id="other">
+                        <button class="donation_submit" data-submit-donation>add donation to basket</button>
+                      </div>
+
+                      <div data-success-container style="display: none;">Thank you. Your donation has been added to your basket.</div>
+                      <div data-fail-container style="display: none;">Sorry there was an issue with your donation. Please try again. If the problem persists please contact us.</div>
+
+                  </spektrix-donate>
+
+                
+              </div> <!-- / Donation Slider Holder -->
+
+                              <p class="h5">Donate, join us as a member, advertise your business and more...</p>
+              
+                                                                <a href="https://www.nationalcentreforwriting.org.uk/support-us" class="btn btn_sm ">More ways to get involved</a>
+                                              
+            </div> <!-- / Donation Form -->
+
+            
+            <div class="search_icon"><a href="#"><img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/icon-search-black.svg" width="32" height="32" alt="Magnifying Glass Search Icon" /></a></div>
+
+          </div>
+
+        </div> <!-- / Logo Nav Holder -->
+
+        <div class="search_full yellow_bg"> <!-- Search Full -->
+
+          <div class="search_form_content" id="search_form_content" tabindex="-1"> <!-- Search Form Holder-->
+
+              <form role="search" method="get" class="search-form" action="https://nationalcentreforwriting.org.uk">
+
+                  <div class="search_form_holder"> <!-- Search Form Holder -->
+                      <div class="label_input">
+                        <label for="site_search">Enter Search Terms:</label>
+                        <input type="search" id="site_search" class="search-field" value="" name="s" title="Search for:" />
+                      </div>
+                      <input type="submit" class="search-submit" value="Search" />
+                  </div> <!-- / Search Form Holder -->
+
+              </form>
+
+              <div class="search_close"> <!-- Search Close -->
+                <a href="#close_search"><img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/icon-close.svg" alt="X Close Icon" /></a>
+              </div> <!-- / Search Close -->
+
+          </div> <!-- / Search Form Holder -->
+
+        </div> <!-- / Search Full -->
+
+      </header><!-- #masthead -->
+
+    
+		<div id="content" class="site-content">
+
+		
+      <div class="writing_hub_hero"> <!-- Writing Hub Hero -->
+
+        <div class="writing_hub_hero_content"> <!-- Writing Hub Hero Content -->
+
+          <div class="title">Storytelling in graphic novels: Anna Trench on Florrie</div> <!-- Title -->
+
+          
+        </div> <!-- / Writing Hub Hero Content -->
+                  <div class="button_container"> <!-- Button Container -->
+            <a href="https://nationalcentreforwriting.org.uk/writing-hub/" class="btn_text">BACK TO THE HUB</a>
+          </div> <!-- / Button Container -->
+        
+      </div> <!-- / Writing Hub Hero -->
+
+    
+<div id="primary" class="content-area">
+  <main id="main" class="site-main">
+
+  
+      
+
+
+
+<div class="full_content dark_bg pt_sm pb_md"> <!-- Full Content -->
+  <div class="media_contained_block image_left"> <!-- Media Contained Block -->
+
+     <!-- Content Block -->
+      
+        <div class="content_container"> <!-- Content Container -->
+
+          <div class="text_col"> <!-- Text Column -->
+
+            
+             <!-- / Title & SEO -->
+
+             <!-- Introduction -->
+              <p class="intro_text">In this episode of <strong>The Writing Life Podcast</strong>, illustrator and writer Anna Trench shares the process of writing and illustrating her debut graphic novel, </span><i>Florrie</i> – a warm-hearted story about football, friendship and falling in love.</p>
+             <!-- / Introduction -->
+
+             <!-- / Text Content -->
+
+             <!-- / Button Repeater -->
+
+          </div> <!-- / Text Column -->
+
+          <div class="image"> <!-- Image -->
+                        <img decoding="async" src="https://nationalcentreforwriting.org.uk/wp-content/uploads/2026/04/Graphic-novels-podcast-with-Anna-Trench.png" alt="">
+          </div> <!-- / Image -->
+
+        </div> <!-- / Content Container -->
+
+           <!-- / Content Block -->
+
+  </div> <!-- / Media Contained Block -->
+</div> <!-- / Full Content -->
+
+
+
+
+
+<div class="full_content light_bg pt_md pb_md "> <!-- Full Content -->
+  <div class="column_text_block mw_960 "> <!-- Column Text Block -->
+
+    
+     <!-- / Title & SEO -->
+
+    
+       <!-- Introduction -->
+        <p class="intro_text">She sat down with NCW’s Peggy Hughes to reflect on the inspiration and research behind the graphic novel, which explores self-discovery and queer love, alongside huge (and little known) historical moments for women’s football. They also touch on her analogue approach to graphic storytelling, her relationship with Norfolk, and her love for the women’s game.</p>
+       <!-- / Introduction -->
+
+       <!-- Text Content -->
+        <div class="text_block">
+          <p><span style="font-weight: 400;">Anna Trench is an illustrator, cartoonist, writer and teacher based in London. </span><i><span style="font-weight: 400;">Florrie</span></i><span style="font-weight: 400;"> is her first book. It won the Book of the Year Award at the <a href="https://nationalcentreforwriting.org.uk/get-involved/writers/eaba/">East Anglian Book Awards</a> 2025 and was previously shortlisted for the First Graphic Novel Award and the LDComics Award.</span></p>
+        </div>
+       <!-- / Text Content -->
+
+    
+     <!-- / Button Repeater -->
+
+    
+  </div> <!-- / Column Text Block -->
+</div> <!-- / Full Content -->
+
+
+
+
+
+<div class="full_content dark_bg pt_md pb_md animated"> <!-- Full Content -->
+  <div class="column_text_block  animated"> <!-- Column Text Block -->
+
+          <div class="mw_720"> <!-- Max Width 720px -->
+    
+    
+      <div class="title_container"> <!-- Title Container -->
+
+        <p class="h2">Listen now</p> <!-- Title & SEO -->
+
+         <!-- / Subtitle & SEO -->
+
+      </div> <!-- / Title Container -->
+
+     <!-- / Title & SEO -->
+
+    
+       <!-- / Featured Text -->
+
+       <!-- / Introduction -->
+
+       <!-- Text Content -->
+        <div class="text_block">
+          <p><iframe style="border: none; min-width: min(100%, 430px); height: 150px;" title="Storytelling in graphic novels: Anna Trench on Florrie" src="https://www.podbean.com/player-v2/?i=2hnhf-1a9f493-pb&amp;from=pb6admin&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Arial&amp;skin=1&amp;font-color=&amp;logo_link=episode_page&amp;btn-skin=fb0584" width="100%" height="150" scrolling="no" data-name="pb-iframe-player"></iframe></p>
+<p>Edited by Omni Mix</p>
+        </div>
+       <!-- / Text Content -->
+
+    
+     <!-- / Button Repeater -->
+
+          </div> <!-- Max Width 720px -->
+    
+  </div> <!-- / Column Text Block -->
+</div> <!-- / Full Content -->
+
+
+
+
+
+<div class="full_content light_bg pt_md pb_md"> <!-- Full Content -->
+  <div class="media_contained_block image_left"> <!-- Media Contained Block -->
+
+     <!-- Content Block -->
+      
+        <div class="content_container"> <!-- Content Container -->
+
+          <div class="text_col"> <!-- Text Column -->
+
+            
+             <!-- Title & SEO -->
+              <p class="h2"><em>Florrie</em></p>             <!-- / Title & SEO -->
+
+             <!-- Introduction -->
+              <p class="intro_text">When Florrie’s great-niece discovers Florrie was a footballer in the early twentieth century, she unearths a secret history both on and off the pitch.</p>
+             <!-- / Introduction -->
+
+             <!-- Text Content -->
+              <div class="text_block">
+                <p>Boxes from the attic contain photos, objects and letters, revealing football games and love affairs in Norfolk, London and Paris. Florrie’s adventures touch on both invented and real events: huge crowds at matches in London and Preston, international fixtures, dances at lesbian club Le Monocle in Paris, and the devastating consequences of the FA&#8217;s 1921 ban on women&#8217;s football.</p>
+<p>This is a story of self-discovery, friendship and queer love, alongside huge (and little known) historical moments for the women’s game. In <em>Florrie</em>, Anna Trench brings readers a beautifully drawn, evocative and warm-hearted love-song to an unforgettable woman and sport.</p>
+              </div>
+             <!-- / Text Content -->
+
+             <!-- / Button Repeater -->
+
+          </div> <!-- / Text Column -->
+
+          <div class="image"> <!-- Image -->
+                        <img decoding="async" src="https://nationalcentreforwriting.org.uk/wp-content/uploads/2026/04/Florrie-Anna-Trench-1.png" alt="">
+          </div> <!-- / Image -->
+
+        </div> <!-- / Content Container -->
+
+           <!-- / Content Block -->
+
+  </div> <!-- / Media Contained Block -->
+</div> <!-- / Full Content -->
+
+
+
+
+
+<div class="full_content dark_bg pt_md pb_sm animated"> <!-- Full Content -->
+  <div class="column_text_block  animated"> <!-- Column Text Block -->
+
+          <div class="mw_720"> <!-- Max Width 720px -->
+    
+    
+      <div class="title_container"> <!-- Title Container -->
+
+        <p class="h2">Transcript</p> <!-- Title & SEO -->
+
+         <!-- / Subtitle & SEO -->
+
+      </div> <!-- / Title Container -->
+
+     <!-- / Title & SEO -->
+
+    
+       <!-- / Featured Text -->
+
+       <!-- / Introduction -->
+
+       <!-- / Text Content -->
+
+    
+     <!-- / Button Repeater -->
+
+          </div> <!-- Max Width 720px -->
+    
+  </div> <!-- / Column Text Block -->
+</div> <!-- / Full Content -->
+
+
+
+
+
+<div class="full_content light_bg pt_md pb_md "> <!-- Full Content -->
+  <div class="column_text_block mw_960 "> <!-- Column Text Block -->
+
+    
+     <!-- / Title & SEO -->
+
+    
+       <!-- / Introduction -->
+
+       <!-- Text Content -->
+        <div class="text_block">
+          <p><strong>Peggy</strong></p>
+<p>Thank you for coming on to the podcast.</p>
+<p>&nbsp;</p>
+<p><strong>Anna </strong></p>
+<p>Thank you for asking me. It’s a pleasure to be here.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>I think you were on Radio Norfolk, were you? Did I see this as well?</p>
+<p>&nbsp;</p>
+<p><strong>Anna </strong></p>
+<p>I was earlier this week. It was really nice.</p>
+<p>I had a really nice conversation and really fun to be chatting to Radio Norfolk about bits of Norfolk, or about other bits of <em>Florrie</em>.</p>
+<p>They’ve got this great scheme called Page Turners, so they’re also sort of weaving into a general celebration of reading. Then obviously you had World Book Day yesterday, so it feels like a lot going on with everyone trying to get people to read the most, and we’ve got this national drive as well this year, haven’t we?</p>
+<p>So yeah, very celebratory of books, it’s feeling.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>Good. We love that. We’re biased, but we do love that here at the National Centre for Writing.</p>
+<p>That’s an interesting point to me, Anna, and not the question I’d planned to ask, but how does it feel now to be talking about the book? You must spend so long conceiving of the book, in your case, drawing it, creating it.</p>
+<p>And now you’re in the world talking about it, and I wonder how those two things are for you.</p>
+<p>&nbsp;</p>
+<p><strong>Anna </strong></p>
+<p>Yeah, I actually, when <em>Florrie</em> came out and in the lead up to it coming out, there was quite, it felt to me that there was quite a lot of publicity, with doing interviews and doing events.</p>
+<p>And because we’d timed it with the Euros, it really needed, it had such a short period of Flory being commissioned, finished and then being published, like a few months, so really short compared to most books and graphic novels usually take a lot longer.</p>
+<p>So I kind of just went straight into almost finishing it to then doing publicity and talking about it, and this is really nice right now because it’s been a while actually, I feel, since I have talked about <em>Florrie</em>.</p>
+<p>There’s been bits here and there, but it’s so lovely to be talking about it again and reflecting on it, and yeah it’s been really nice, thank you.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>Yeah, does the distance, I mean, we’re getting ahead of ourselves here in a sense because we’ve not actually talked about what the book’s about and everything, but does a sense of distance or timing give you a different perspective on the book, do you think?</p>
+<p>&nbsp;</p>
+<p><strong>Anna </strong></p>
+<p>Yeah, it must do, it must do. And it’s interesting what sort of sticks in your head, and when I flick through it, kind of what I’m newly more interested in.</p>
+<p>But yeah, it’s also, if I can say it, a kind of fondness. I am very fond of it, so it’s nice to spend some time with it again.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>Nice. Good, good. I think we should explain to our listeners just what exactly we are talking about. I’m holding a copy, not that the listeners can see it. This beautiful book, as you are, I think.</p>
+<p>Yes. Absolutely stunning. So I wonder if you could sort of take us under the covers of it, really, and just set the scene. To begin with, what are we dealing with in <em>Florrie</em>?</p>
+<p>&nbsp;</p>
+<p><strong>Anna </strong></p>
+<p>So <em>Florrie</em> begins with someone discovering that their great aunt, Florrie, was secretly a footballer in the early 20th century.</p>
+<p>In the attic, after her great aunt has passed, there are these boxes with her football boots and shirts and scarves and letters and match reports and photographs, and it reveals this incredible story of Florrie that no one really knew about.</p>
+<p>Then very quickly we go back in time to 1919. Florrie is 19 years old, and we follow her story of how she is in Norfolk and she works with her antiquarian book-dealing father in a house that’s quite sad and quite cold. Her brother died recently in the war and her mother’s dead.</p>
+<p>She goes for these runs, secretly goes on these runs, and she sees these women playing football. She’s intrigued and she’s drawn to them, but she doesn’t think it’s for her. And of course, she gets drawn in further and she joins them.</p>
+<p>She’s very good at running and she teaches them to run faster, and they teach her so many things, not least how it feels to belong, to be part of a team and the exhilaration of playing. She scores her first goal and there’s nothing like it, and she’s totally wrapped up in this world of football.</p>
+<p>They go on a little trip to Dieppe. She meets another female footballer. I’m going to stop giving too much away.</p>
+<p>But then, as many people will know and some people will not know, in 1921 the FA banned women from playing on FA-affiliated pitches, which essentially meant women were banned from playing football.</p>
+<p>A large part of the novel, really the second half, is dealing with the devastating consequences of that on Florrie and also gesturing to wider implications of that.</p>
+<p>Her friendships and love affair also continue, but there are pressures on them, and there’s lots that Florrie experiences that is liberating. There’s also lots that is constraining.</p>
+<p>We end, I think it’s okay for me to say, with a jump forward to the incredible Lionesses’ success, which I hope shows how far we’ve come.</p>
+<p>And yeah, I hope that hasn’t given too much away, but given a bit of flavour. I’ve probably missed out some bits.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>I think that gives us the key, the shape, the arc, if you like. I’m trying to think where best to go, because there’s such a lot in there.</p>
+<p>But I suppose I want to come back to the box in the attic and press that a little bit. Was there a real box in the attic, or was that simply a useful starting engine? How did the desire to write this begin, I suppose?</p>
+<p>&nbsp;</p>
+<p><strong>Anna </strong></p>
+<p>I think there’s a box in everyone’s attic. I don’t even have an attic, but everyone’s got something that reveals something about someone who’s gone, and they can’t ask those questions. They only knew there were questions to ask when it’s too late.</p>
+<p>I suppose I was thinking about all these stories that we don’t know, and all these stories that it would have been incredible to know if only we’d been able to ask, or the stories that we don’t realise are worth telling as well.</p>
+<p>So I do not have a great aunt. I certainly do not have a great aunt who was a footballer. But I looked at these pictures of all these women and girls playing at the time, hundreds and hundreds of them, and I thought, well, that is someone’s mother or aunt or daughter or great-great cousin. And where did that legacy go? Because it seems to me so much of it was shut down and silenced.</p>
+<p>So that’s kind of what got me thinking about it.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>Yeah. Yeah. Lovely. Everybody is someone’s someone.</p>
+<p>Yeah, we haven’t really talked about football much yet, Anna, but I think both of us played football, I believe. I know you did, and I did.</p>
+<p>But it’s a deeply painful story, how this all came about, and yet not a story I think many people know enough about, that there was this enormous ban. I wonder if you could first of all just say a little bit about that, about the scale of it, and also then why you wanted to reclaim that, I suppose.</p>
+<p>&nbsp;</p>
+<p><strong>Anna </strong></p>
+<p>So it was absolutely massive. I think some people do know that in World War I there were the munitions factories and a lot of women were working in them, and they were having independence and doing physical work for the first time. A lot of football teams were formed.</p>
+<p>Together, these football teams often would play each other and create mini leagues, and that really, really snowballed into, by 1920, there being 150 women’s teams across the country.</p>
+<p>There was a famous match between Dick, Kerr Ladies and St Helens on Boxing Day 1920 that had 59,000 people in the stands, with 15,000 more trying to get in. It was huge. There were a lot of men watching these games as well. It was really, really massive and popular all over.</p>
+<p>And I should say also that these games and these leagues mainly took place in the north of England, so Dick, Kerr Ladies, who I’ve mentioned, were based in Preston and they were absolutely massive. There were some teams in the south, and I found a couple of munitions factories in England, like Kingston and somewhere else nearby. So I think technically that could have happened.</p>
+<p>A lot of Florrie is based on absolute fact, and a lot of it is me thinking, “Well, why not? Why didn’t that happen?” We’ve got so little documentation of this really, so what happened to all those people’s experiences? Some of those players maybe didn’t write them down, couldn’t write them down.</p>
+<p>So I did use some licence there, but I don’t think I did much that I couldn’t think might have happened.</p>
+<p>So in 1921 the FA banned it, and there are theories about why that happened. There were some false claims spread that some of the money at the gates of these matches was being misused. I think that was an excuse.</p>
+<p>I think the reason the ban came in was jealousy, that the women’s game was becoming more popular than the men’s game. I think it’s also about men’s control over women’s bodies and fear surrounding that.</p>
+<p>There were medical professionals who said that playing football would severely damage women’s bodies and mean they were unable to have children because their wombs would be damaged. Kicking it was too forceful an act for a female frame.</p>
+<p>These are things we’ve heard since and before and will continue to be said. I think those are the reasons: jealousy over the popularity of the game, fear that it was becoming uncontrollable, and wanting to regain control over what women can do, especially with their bodies, especially post the liberation of World War I. But I’m not a historian.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>I mean, even hearing all that again, it just makes me so angry. And this is not an angry book. And I wonder then, was that a negotiation for you between this stuff that’s so enraging and unjust, but then such a light, beautiful, well-told story? So I just wonder how you negotiate between those things.</p>
+<p>&nbsp;</p>
+<p><strong>Anna </strong></p>
+<p>Thank you. I think I spent a lot of time looking at newspaper archives in the National Archives and found these articles. If you can present something to someone that is so clearly unfair and so factually straightforward, that’s probably going to have more of an impact than shouting and screaming and stamping your feet. I guess there are two ways to do it, but for me I just sort of presented it and let the reader see.</p>
+<p>There’s a page, well there are a couple of pages, with the newspaper stories where I literally verbatim put down the words that were in there. And they are shocking reading them today.</p>
+<p>But I also have a page that’s just Florrie-ish. When she realises that she can’t play football anymore, and she realises that her lover in France isn’t coming over to play this match with them anymore, and that this whole world that she discovered is going to fall apart, she just runs to the sea and cries.</p>
+<p>And I guess that shows quite a lot of emotion without having to say a thing. There are no words on that page.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>Yeah, yeah, let’s talk a bit about that actually, just the storytelling and how it’s different in a graphic novel, and what you choose to leave in, and how do you make those decisions? Like how that piece is going to be framed, do you know what I mean?</p>
+<p>&nbsp;</p>
+<p><strong>Anna </strong></p>
+<p>Yeah. I think everyone does it really differently. For me, I would sometimes know exactly how the page would work. Sometimes I’d know that there was an image I really wanted and then work out the text around it that I’d pre-written.</p>
+<p>But what I also found so interesting is that once you get on the page, you can cut some of that text or change it and it takes a life of its own. I wrote some of it before, most of it, but not in a fully formed way at all, and I didn’t write it all before I started drawing. I kind of started drawing it at the same time as I was writing it.</p>
+<p>Then I would go ahead and do a lot of the writing, but sometimes I’d be like, no, I don’t know where that’s going, I’m just going to go back and do this page that I really want to do. So I kind of did it chronologically.</p>
+<p>I don’t think I did it in a very efficient way, or even in the way other graphic novelists I’ve spoken to have done theirs. A lot of them do the writing first. And I’m not even sure if I’ll do this the same way next time.</p>
+<p>But for this book, seeing those images and the text side by side in my head was really important. I’d sometimes also just describe what images I wanted in words, but they wouldn’t become the words of the book at all. It was just, ‘Here I’m going to have this flower that Florrie’s going to send to Vivian.’</p>
+<p>And then because I also handwrote everything without making a font or using Photoshop very well, everything was handwritten and hand-drawn. And if I needed to change it, I did have to redo some pages. I’ve learned a lot.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>Okay, because I did want to ask you about that. I just, is it an analogue process for you? I imagine it’s just different for different artists, but for you is it absolutely big bits of paper everywhere?</p>
+<p>&nbsp;</p>
+<p><strong>Anna </strong></p>
+<p>No, very neat. All in one book. I mean, several books, all of exactly the same size, with the same pen, with the same size page.</p>
+<p>Very small changes on Photoshop, taking out a misspelling, moving something around, because the pages are pretty simple. They’re all white; there’s rarely a whole background on one page.</p>
+<p>But yeah, I think in some ways it probably is quite old-fashioned, the way I did it. And it’s all pen and ink on paper and then sort of scanned, and not many changes made at all.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>And is that, how do you evolve into that style? Is that just what feels correct for you? You mentioned comparing notes with other graphic novelists, but is that just the style that came to you?</p>
+<p>&nbsp;</p>
+<p><strong>Anna </strong></p>
+<p>Yeah, I guess it’s just the clearest and simplest for me. I’m sure there’s so much I want to learn and so many things I want to experiment with, but also, if you kept on trying to learn forever and experiment forever, you’d never get anything down.</p>
+<p>So I kind of felt like I’ve just got to do this the way that feels most natural to me right now. And that’s what I did.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>Yeah, well, lucky us, I say. I mean, that’s fine, it worked.</p>
+<p>Of all of that then, I just wonder how you sort of decide what Florrie’s journey is going to be, more of a plot point really. Did that come from the very beginning? Was that something that surprised even you? Or how do you know where she’s going to end up?</p>
+<p>&nbsp;</p>
+<p><strong>Anna </strong></p>
+<p>So I knew I needed this character, obviously, to tell this story, and she was going to be really integral. And I think that paused me for a while, partly because there was a moment when I thought I needed to set it in the north of England, as I was saying previously about there being so many teams there.</p>
+<p>It was Norfolk, actually, that unlocked a bit of this for me, because I realised it needs to be somewhere that I have an emotional connection to. The fact that my grandmother lived there gave me a link to someone from previous generations, and to the idea I was talking about before—someone’s history you’re not really close to at all, but you are, and yet there’s so much you don’t know.</p>
+<p>So although a lot, like everything, was imagined, I think locating it there helped things begin to work for me, and thinking about the sea, and Florrie going to the sea. She just became a character.</p>
+<p>A lot of it was to do with setting, but also probably to do with my experiences. She’s not based on me, obviously, but there are elements of her experience that mirror mine or my friends’. I play football. I’m six months pregnant, so I haven’t played football for a while and I won’t for a while, but football has been a really important part of my life. I met my partner playing football. We have a lot of friends who are in a similar position. It’s a very queer-friendly space, women’s football.</p>
+<p>I remember when I did an art foundation at Falmouth and I joined a team there, and it changed my life. We used to play these matches on cliff tops above the sea, and we lost almost every single game, but it was so enjoyable.</p>
+<p>I guess I was also tapping into them being 19 and thinking about that experience as well. And she just kind of evolved from that.</p>
+<p>Then there comes a point when they’re just their own character. I remember that moment so vividly when I didn’t even have to wonder what Lily, Alice, Vivian, and Florrie would do, because it felt like they would just tell me. That was so exciting.</p>
+<p>And then very soon I was very upset because I knew I’d never be with them again because I was coming to the end. But that was incredible—when the characters become something you don’t have to ask about, you just know what they’re going to do.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>Yeah, yeah, yeah, how amazing. Hilary Mantel, I think, said that in order to get into her character’s mind, she did this exercise with The Giant O’Brien, where she invited the giant to sit on a chair, and the giant had to sort of press on the chair to make sure it wouldn’t break when he sat down.</p>
+<p>And after that, she was like, I knew the giant then, you know, I knew exactly how he would be. He was a fully-fledged concept then.</p>
+<p>&nbsp;</p>
+<p><strong>Anna </strong></p>
+<p>Yeah, and there were moments with Florrie when I think she’s quite quiet. She doesn’t say things, and it was thinking about when is she going to speak, when is she going to say things. That was really helpful for working her out.</p>
+<p>I guess I haven’t really expressed that or thought about that much, but just sort of going back to it—when does she speak to the people in the group? When does she write a letter? When does she say something to her father and her brother? She’s very close to her brother, but so much is unsaid.</p>
+<p>And I guess also in a graphic novel, you can show character like you would in a novel through description, but through a look, through posture, that kind of thing.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>Yeah, wonderful. Sticking with football for a little minute, what got you into football?</p>
+<p>&nbsp;</p>
+<p><strong>Anna </strong></p>
+<p>I come from a family where no one is into football. I think the simplicity of just kicking a ball, running around, but also I was what is still sort of called a tomboy, so I wanted to be doing that kind of thing and being outside.</p>
+<p>Manchester United have recently won the treble, so that was really exciting. I was, sadly in retrospect, a Manchester United fan, and I had all their kit. Every day of the week in primary school I was wearing a different kit. I saved all my money, and I got family friends, 15-year-olds’ sons, old past hand-me-downs. And I absolutely loved it. I really, really loved playing.</p>
+<p>I also grew up not far from Arsenal. Arsenal Women were formed in like ’89, and there was a new kind of interest, but also respect for women’s football that was very gradual, very subtle, but definitely happening in the 90s with Arsenal Women. You can see how far they’ve come, how much that investment, financial investment, but also that seriousness, taking it seriously, pushing their games, publicity, matches.</p>
+<p>So even though I used to joke that maybe I’d join Arsenal girls, and my mum also used to say that, because I don’t think she understood they were actually really, really good. But knowing that they weren’t professional at all, still, they were becoming semi-professional, that was really exciting.</p>
+<p>Like a lot of women who played as girls in primary school and secondary school, I didn’t get the chance to play. It was just netball really, or hockey. Then in sixth form I started to play again.</p>
+<p>When I did my art foundation in Falmouth, like I said, I joined that team and absolutely loved it. Then I went to Cambridge, read English at Cambridge, and football was a really great part of my time there as well. I was in my college team and the university seconds team, and it was such a wonderful release from everything. It also meant I was playing with people I never would have hung out with otherwise, really different groups.</p>
+<p>Since then I’ve been in several London teams, and my current one, where I’ve been nearly 10 years, is Gold Diggers, which is really lovely, really big, very queer-friendly, and it’s all about being available to play. It’s not about how ‘good’ you are, anyone can sign up. And that’s been really lovely. There are lots of opportunities to play 11-a-side, 5-a-side, or just go to training.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>Fabulous. Yeah, the sheer joy of football really comes across in the book, which is one reason why I loved it.</p>
+<p>And you mentioned already the moment where she scores her first goal. It’s just like sheer, you know.</p>
+<p>Who was the player that you loved most in terms of that Man U side? Was it Eric Cantona?</p>
+<p>&nbsp;</p>
+<p><strong>Anna </strong></p>
+<p>I think you chose a better player in Cantona because I think he’s very interesting. I’ve still got my Beckham shirt and my room was filled with Beckham. He was the golden boy, he was so great, but Beckham, you could have done so much. You could have done so much to make the world a better place.</p>
+<p>And I think about the Men’s World Cup in Qatar and just think, oof, so disappointing.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>Yeah. I mean, it’s thinking of us as girls and the game not being accessible, or not having the same visibility. I mean, what do you hope the book will do in that space?</p>
+<p>You said it launched alongside the Lionesses and the campaign. I mean, how would you, what do you hope it would do in the world now with football and women, a story like this?</p>
+<p>&nbsp;</p>
+<p><strong>Anna</strong></p>
+<p>I’d be, I’d be honoured if it did anything. But I think I am surprised still by how many people don’t know that women’s football was really big and that there was a ban. And it is wonderful then for people to read it and to discover that.</p>
+<p>I also think there’s a discovery of this sort of still secret, hidden history of women’s football, and the more widely known that is, the better. That’s brilliant.</p>
+<p>I also guess it’s a story about a girl who wants to play football and gets to play football and has a brilliant time doing that. And the whole country, the whole world has seen that on their screens. A lot of those players are quite young, and you can see how much they love playing and what they give to it.</p>
+<p>So in some ways, maybe it’s about saying, isn’t it brilliant this is happening now, but let’s not forget it happened 100 years ago too. Then it was shut down, and it’s being shut down in other parts of the world.</p>
+<p>I mentioned Qatar, but I’m also thinking about Afghanistan and women not being allowed to play sport there. Many places in the world where those freedoms are not given. And I guess it’s also about women’s rights in general, really, because it’s a book about sport, it’s a book about football, but it’s hopefully a book about a lot more as well.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>Yeah, absolutely. I wonder if I could return briefly to Norfolk and what Norfolk means to you, and of course this book, and congratulations, has recently just won Book of the Year at the East Anglian Book Awards.</p>
+<p>Yeah, what’s your relationship with Norfolk? You mentioned your grandmother.</p>
+<p>&nbsp;</p>
+<p><strong>Anna </strong></p>
+<p>Yeah, so my grandma lived there, and when I was a child and a teenager I would visit Norfolk, and it has always meant a lot to me. The landscape, particularly North Norfolk, and a nice place by the sea called Cley and Blakeney Point, and just the space.</p>
+<p>I think also coming from London and not having that space, being able to run, to swim in the freezing sea, to just feel the salt air, I’ve always found it very freeing and very calming. I love it, I just love looking out to the sea there.</p>
+<p>You can look so far in Norfolk, and see so much, but there’s also a coldness to it. That flatness is quite stark, and I think some people find that quite eerie. I love it, but it’s almost that you can’t hide sometimes. There are no hills to hide behind, no pretty little bucolic hills. There are a few, but mainly it’s that unrelenting flatness, which I find incredible.</p>
+<p>It was thinking about that. And I suppose also because it’s a place I used to go to but don’t go to anymore in the same way, it allowed me to be quite nostalgic and sentimental and emotional, because I was tapping into my teenage and childhood feelings.</p>
+<p>I think that worked well with this book because that feeling is something Florrie has. She might not express it, but she does have it. She returns to Norfolk and she does love it, but it’s a complicated feeling because it’s also tied up with a sense of responsibility as well as love.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>Yes, and losses and difficulty and all of those things. And obviously the book, she’s rooted in Norfolk, so it’s present in that sense. But I wonder, are there other aspects of Norfolkness that sneak into the work, or into this work, or into your attitude as an artist? You know what I mean?</p>
+<p>&nbsp;</p>
+<p><strong>Anna </strong></p>
+<p>The aspects of nature are really important. So Florrie finds a hagstone on the beach and she sends that to Vivian. Hagstones are the stones with the holes in, and they have these magical powers, supposedly.</p>
+<p>There were these bluebells, which I remember being in a bluebell wood once when I was very little. Or snowdrops, or the birds that you can find around there. I think all of those were important as well.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>I want to zoom out a little bit from <em>Florrie</em> and just talk about your artistic register more generally. And I just wonder if you could say which artists inspired you, or brought you along this path, I guess.</p>
+<p>&nbsp;</p>
+<p><strong>Anna </strong></p>
+<p>So the graphic novelists who’ve had a big impact on me are probably Alison Bechdel, who wrote <em>Fun Home</em>. That was her graphic memoir that came out first, and that is like a world-changing book. It is absolutely incredible. I recommend everyone to read <em>Fun Home</em>.</p>
+<p>It’s about her growing up in a family with a half-time funeral parlour, and then it’s a sort of coming-of-age and queer awakening. It’s incredible. The ways that she used words and images I found really liberating, because she doesn’t hold back with the language she uses. It’s often beautiful, it’s often complex. She has a vast vocabulary and she wants to use it all. There are metaphors and analogies, and there’s a real almost self-conscious literariness in it that I hadn’t really come across before.</p>
+<p>So <em>Fun Home</em> was a big influence on me. I love all of Posy Simmonds’ work. I love the way she uses words in pictures. The way she draws is just exquisite, the way she can get expressions, so witty. And again, she had what felt to me like quite a pioneering literariness of using words and images together in a way that maybe in France had been done before with the <em>bande dessinée</em>, but in England hadn’t really been done in comics in that way. So she kind of brought graphic novels to the public more, I think.</p>
+<p>Then Raymond Briggs wrote a graphic novel called <em>Ethel and Ernest</em>, which is also an absolutely lovely book. It’s a memoir about his parents in the earlier part of the 20th century, and I also love the way he uses words and images together.</p>
+<p>More recently, I guess, Lizzy Stewart wrote and drew a graphic novel called <em>Alison</em>, which also had a lot of words in it as well as really beautiful images, so well-drawn, so well written. Thinking about her use of text, I’d already started <em>Florrie</em> by the time I read <em>Alison</em>, but it gave me that boost to think, okay, someone else is doing this as well, it doesn’t all have to be in speech bubbles.</p>
+<p>So I do use speech bubbles, but I also use a narrator. Some cartoonists, even graphic novelists, might see that as not the true graphic novel or comic style, but there came a point when I just thought I’m going to do whatever I want, actually, and this feels right to me. So I also have letters in it, postcards, newspapers, lots of different forms of writing.</p>
+<p>I think the notion of having a narrator, which the previous graphic novelists I’ve mentioned all used, gave me confidence to do what I wanted to do, which was to have a narrator as well.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>It seems like a pleasingly stretchy form or genre, or however you’d describe it. You can break the rules within that quite easily, would you say?</p>
+<p>&nbsp;</p>
+<p><strong>Anna </strong></p>
+<p>Yeah, and there’s a big thing that I did, which I felt was one of the most liberating things I did, I think that gave me such confidence to keep going.</p>
+<p>I don’t use any panels, so I don’t have any boxes around my images. And when people think about comics and cartoons and graphic novels, they might think about a page that’s laid out in a grid, with boxes and all the images and speech bubbles contained within that.</p>
+<p>I don’t have any of that. And it meant, practically, that I could move the images around retrospectively, like I said earlier, on Photoshop if I needed to, but it also gave me breathing space, I felt, and I could create that sense of movement that I wanted, also for football and for her running and swimming.</p>
+<p>And you can still, compositionally and with a wash, create a sense of claustrophobia or enclosure if you need to. But I didn’t want to be restrained, I didn’t want to be restricted by having those boxes.</p>
+<p>So yes, I think there is loads of room for the graphic novel form to be changed and shaped however you like. And for me, not having any panels was something that once I realised I could do that and was happy to do that, I felt really good going forward.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>What are you working on now then? What’s coming next? Is there a project forming, or are you taking a bit of time post-<em>Florrie</em>?</p>
+<p>&nbsp;</p>
+<p><strong>Anna </strong></p>
+<p>I have a few ideas for a few different things. I definitely want to do another graphic novel that’s aimed at adults, or adults and young adults.</p>
+<p>I have two ideas that I want to explore. But I also quite want to do a picture book for younger readers. I’ve got a toddler and I’ve got another one on the way, and I’m obviously reading a lot of them at the moment, but I have always wanted to do one myself. I draw and I write, and that does seem, I think, a style that suits that.</p>
+<p>So I’ve got a couple of ideas for that that I’m working on as well. But yes, I have a few things that I want to work on, I just want a bit more time to do it.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>Yeah, fair, fair. I mean, I think that must be surely the highest art, to create a book that captures the attention of a toddler and can be reread every single night for months on end and still hold them. I mean, that must be so hard. No?</p>
+<p>&nbsp;</p>
+<p><strong>Anna </strong></p>
+<p>I don’t know, I think there are some amazing books that capture his attention. I think there are some that I would be happy never to read again.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>Lovely. Well, listen, we’re nearly there. I want to just ask you then, you know, people listening in are writers, they’re readers. I wonder what your writing and drawing life looks like. Where does it take place? What would you be doing right now if I wasn’t distracting you with this podcast conversation?</p>
+<p>&nbsp;</p>
+<p><strong>Anna</strong></p>
+<p>I’d like to be writing down some ideas, I’d like to be drawing in my sketchbook, I could be doing both those things.</p>
+<p>The boring practical answer is that I’m also a teacher four days a week, and I’ve got several exam classes this year and a lot of marking to do. So sometimes that encroaches on my day that I have to do my drawing and writing. And that’s just how it is.</p>
+<p>But also, there are times when you can still do a bit of both, and you can be thinking about them both. So I have one day a week for my drawing and writing. There have been times when I’ve been very strict that nothing else can come into this day, but at the moment I’ve got to be a bit flexible because I want my students to do their best.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>Sure, sure. Well, lucky them also. I suppose that sort of discipline can be really helpful, productivity speaking, when you’ve got one day to do that. That can have its own benefits, I guess.</p>
+<p>&nbsp;</p>
+<p><strong>Anna </strong></p>
+<p>Yeah, I also, it’s just sort of funny how it all works out.<em> Florrie</em> was maybe a third done before I gave birth to my son.</p>
+<p>Then a third, or a bit less than a third, maybe when I was on maternity leave. And then the other section when I was back at work. But I would also make it clear that my partner took him for a day during my maternity leave so that I could work on it. And I already had it commissioned, so I knew I had my deadline, which was fantastic.</p>
+<p>But we can have all the time in the world, but if we have other things going on and encroaching on our headspace, it makes it a lot more difficult.</p>
+<p>So I actually found that whole period I’ve just described really helpful for creating Florrie, because I could think about it a lot. I had a lot of time to think. There were times of complete and utter sleep deprivation, but I still wanted to think about something different.</p>
+<p>It’s like, going for a walk is so lovely for thinking, or just having that space. It isn’t always about time, is it? It’s about headspace, I guess.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>Definitely.</p>
+<p>&nbsp;</p>
+<p><strong>Anna </strong></p>
+<p>So, yeah, <em>Florrie</em> was quite interesting in that actually a lot of the thinking, and some of the making of it, and the forming of it and the developing of it, happened in this time when I was looking after my son but not yet back at work.</p>
+<p>I didn’t necessarily have time to sit down and draw and write, but I did have thinking time to form things.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>It’s as fundamental a part of the process, to be fair, as just being at the desk, isn’t it? The thinking time.</p>
+<p>&nbsp;</p>
+<p><strong>Anna </strong></p>
+<p>Totally. Yeah. And I guess if you’re drawing and writing, you do feel like you, I think drawing more than writing, writing you can do in other places, fortunately. But drawing, you sort of do need to be in a certain location, which I am finding a little bit tricky. But I’ll get there.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>You’ll get there. Final, final question. Just mindful again of those writers out there who might need a word of wisdom from someone who’s now published their first book, an award-winning book. Do you have any top tips, be it for graphic novelists or not graphic novelists? What do you wish you’d known at the start of this that you know now?</p>
+<p>&nbsp;</p>
+<p><strong>Anna </strong></p>
+<p>I think to keep going, just to keep writing and drawing the thing that you want to read and the thing that you want to write. If you’re not into it, there’s no point really. You’ve got to be really into it. If you’re not into that section, move on to another bit and then come back to it.</p>
+<p>Just keep going with what you’re into. Write about and research things that you’re interested in. I got really into the 1920s lesbian scene in Paris with Gertrude Stein and that literary scene. It only appears fleetingly, barely even fleetingly, in Florrie, but I really enjoyed researching that.</p>
+<p>All of that background really helped me form some of it. So go down those paths that you’re interested in. But essentially, just keep doing it.</p>
+<p>It doesn’t have to be really long or complex. Lots of it won’t even come into it in the end, lots of the ideas. But if you don’t keep doing it, it will never get done. And if there are bits you’re not into, skip it, go somewhere else, come back to it.</p>
+<p>&nbsp;</p>
+<p><strong>Peggy</strong></p>
+<p>Brilliant. Thank you.</p>
+        </div>
+       <!-- / Text Content -->
+
+    
+     <!-- / Button Repeater -->
+
+    
+  </div> <!-- / Column Text Block -->
+</div> <!-- / Full Content -->  
+
+
+        
+  <div class="full_content dark_bg pt_md pb_lrg"> <!-- Full Content -->
+    <div class="feature_row_feed dark_bg"> <!-- Feature Row Feed -->
+
+      <div class="main_title"> <!-- Main Title -->
+        <h2>You may also like...</h2>
+      </div> <!-- / Main Title -->
+
+      
+        <div class="feed_container"> <!-- Feed Container -->
+
+          
+            <div class="feed_item"> <!-- Feed Item -->
+
+              <div class="image_container"> <!-- Image Container -->
+
+                 <!-- Image -->
+                                  <a href="https://nationalcentreforwriting.org.uk/writing-hub/writing-goals-with-julia-crouch/">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/uploads/2025/12/Writing-goals-with-Julia-Crouch-podcast-500x250.png" alt="" />
+                  </a>
+                 <!-- / Image -->
+
+              </div> <!-- / Image Container -->
+
+              <div class="text_content"> <!-- Text Content -->
+
+                <p class="title">New year, new writing goals: Julia Crouch on getting started, finding inspiration, and writing what excites</p> <!-- Title -->
+
+                 <!-- Excerpt -->
+                  <p>In this episode of The Writing Life Podcast, Julia Crouch shares her advice and encouragement for the writing year ahead.</p>
+                 <!-- / Excerpt -->
+
+                <div class="date_container"> <!-- Date Container -->
+
+                  <div class="icon"> <!-- Icon -->
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/calendar.svg" alt="Calendar">
+                  </div> <!-- / Icon -->
+
+                  <p class="date">29th December 2025</p> <!-- Date -->
+
+                </div> <!-- / Date Container -->
+
+                <div class="tags"> <!-- Tags -->
+                                      <div class="tag">The Writing Life</div>
+                                      <div class="tag">Tips and Advice</div>
+                                  </div> <!-- / Tags -->
+
+                
+                <a href="https://nationalcentreforwriting.org.uk/writing-hub/writing-goals-with-julia-crouch/" class="btn btn_sm">Listen</a> <!-- Button -->
+
+              </div> <!-- / Text Content -->
+
+            </div> <!-- / Feed Item -->
+
+          
+            <div class="feed_item"> <!-- Feed Item -->
+
+              <div class="image_container"> <!-- Image Container -->
+
+                 <!-- Image -->
+                                  <a href="https://nationalcentreforwriting.org.uk/writing-hub/representation-in-childrens-literature-hayley-wells-on-the-spectacular-suit/">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/uploads/2025/09/Representation-in-childrens-book-on-The-Writing-Life-podcast-500x250.png" alt="" />
+                  </a>
+                 <!-- / Image -->
+
+              </div> <!-- / Image Container -->
+
+              <div class="text_content"> <!-- Text Content -->
+
+                <p class="title">Representation in children’s literature: Hayley Wells on The Spectacular Suit</p> <!-- Title -->
+
+                 <!-- Excerpt -->
+                  <p>In this episode of The Writing Life Podcast, illustrator Hayley Wells delves into the importance of representation in children’s books.</p>
+                 <!-- / Excerpt -->
+
+                <div class="date_container"> <!-- Date Container -->
+
+                  <div class="icon"> <!-- Icon -->
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/calendar.svg" alt="Calendar">
+                  </div> <!-- / Icon -->
+
+                  <p class="date">8th September 2025</p> <!-- Date -->
+
+                </div> <!-- / Date Container -->
+
+                <div class="tags"> <!-- Tags -->
+                                      <div class="tag">Interview</div>
+                                      <div class="tag">The Writing Life</div>
+                                      <div class="tag">Tips and Advice</div>
+                                      <div class="tag">YA &amp; Children</div>
+                                  </div> <!-- / Tags -->
+
+                
+                <a href="https://nationalcentreforwriting.org.uk/writing-hub/representation-in-childrens-literature-hayley-wells-on-the-spectacular-suit/" class="btn btn_sm">Listen</a> <!-- Button -->
+
+              </div> <!-- / Text Content -->
+
+            </div> <!-- / Feed Item -->
+
+          
+            <div class="feed_item"> <!-- Feed Item -->
+
+              <div class="image_container"> <!-- Image Container -->
+
+                 <!-- Image -->
+                                  <a href="https://nationalcentreforwriting.org.uk/writing-hub/developing-your-creative-practice-with-julia-bird/">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/uploads/2025/02/How-to-develop-your-creative-practice-podcast-500x250.png" alt="How to develop your creative practice podcast" />
+                  </a>
+                 <!-- / Image -->
+
+              </div> <!-- / Image Container -->
+
+              <div class="text_content"> <!-- Text Content -->
+
+                <p class="title">Developing your creative practice with Julia Bird</p> <!-- Title -->
+
+                 <!-- Excerpt -->
+                  <p>In this episode of The Writing Life, writer and NCW Academy mentor Julia Bird shares her insights into developing your creative practice.</p>
+                 <!-- / Excerpt -->
+
+                <div class="date_container"> <!-- Date Container -->
+
+                  <div class="icon"> <!-- Icon -->
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/calendar.svg" alt="Calendar">
+                  </div> <!-- / Icon -->
+
+                  <p class="date">10th February 2025</p> <!-- Date -->
+
+                </div> <!-- / Date Container -->
+
+                <div class="tags"> <!-- Tags -->
+                                      <div class="tag">Professional Insights</div>
+                                      <div class="tag">The Writing Life</div>
+                                      <div class="tag">Tips and Advice</div>
+                                  </div> <!-- / Tags -->
+
+                
+                <a href="https://nationalcentreforwriting.org.uk/writing-hub/developing-your-creative-practice-with-julia-bird/" class="btn btn_sm">Listen</a> <!-- Button -->
+
+              </div> <!-- / Text Content -->
+
+            </div> <!-- / Feed Item -->
+
+          
+        </div> <!-- / Feed Container -->
+
+      
+    </div> <!-- / Full Content -->
+  </div> <!-- / Feature Row Feed -->
+
+  </main><!-- #main -->
+</div><!-- #primary -->
+
+
+	</div><!-- #content -->
+
+	<footer id="colophon" class="site-footer">
+
+		<div class="footer_content"> <!-- Footer Content -->
+
+      <div class="top_panel"> <!-- Top Panel -->
+
+        <div class="navigation_container"> <!-- Navigation Container -->
+
+          <p class="h6 title">Navigation</p> <!-- Title -->
+
+          <div class="navigation"> <!-- Navigation -->
+
+            <div class="col_1"> <!-- Column One -->
+
+               <!-- Column One Links -->
+                <div class="links">
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/support-us/" target="_self">Support us</a> <!-- / Link -->
+
+                       <!-- Child Links -->
+                        <div class="child_links">
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/support-us/donate/" target="_self">Donate</a> <!-- / Link -->
+
+                            
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/support-us/ways-to-support-us/" target="_self">More Ways to Support</a> <!-- / Link -->
+
+                            
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/support-us/ways-to-support-us/our-supporters/" target="_self">Our Supporters</a> <!-- / Link -->
+
+                            
+                                                  </div>
+                       <!-- / Child Links -->
+
+                    
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/about-us/environmental-impact/" target="_self">Environmental Impact</a> <!-- / Link -->
+
+                       <!-- / Child Links -->
+
+                    
+                                  </div>
+               <!-- / Column One Links -->
+
+            </div> <!-- / Column One -->
+
+            <div class="col_2"> <!-- Column Two -->
+
+               <!-- Column Two Links -->
+                <div class="links">
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/about-us/" target="_self">About us</a> <!-- / Link -->
+
+                       <!-- Child Links -->
+                        <div class="child_links">
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/about-us/our-team/" target="_self">Our team</a> <!-- / Link -->
+
+                            
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/about-us/board/" target="_self">Our Board</a> <!-- / Link -->
+
+                            
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/vacancies/" target="_self">Jobs &amp; Volunteering</a> <!-- / Link -->
+
+                            
+                                                  </div>
+                       <!-- / Child Links -->
+
+                    
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/visit-us/" target="_self">Visit us</a> <!-- / Link -->
+
+                       <!-- Child Links -->
+                        <div class="child_links">
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/visit-us/the-literature-house/accessibility/" target="_self">Accessibility</a> <!-- / Link -->
+
+                            
+                                                  </div>
+                       <!-- / Child Links -->
+
+                    
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/hire/" target="_self">Hire Dragon Hall</a> <!-- / Link -->
+
+                       <!-- / Child Links -->
+
+                    
+                                  </div>
+               <!-- / Column Two Links -->
+
+            </div> <!-- / Column Two -->
+
+            <div class="col_3"> <!-- Column Three -->
+
+               <!-- Column Three Links -->
+                <div class="links">
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/contact/" target="_self">Contact us</a> <!-- / Link -->
+
+                    
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/terms-conditions/" target="_self">Terms &amp; Conditions</a> <!-- / Link -->
+
+                    
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/privacy-policy/" target="_self">Privacy Policy</a> <!-- / Link -->
+
+                    
+                                  </div>
+               <!-- / Column Three Links -->
+
+              <div class="social_links"> <!-- Social Links -->
+
+                 <!-- Social Link -->
+                  <div class="social_link">
+                    <a href="https://www.facebook.com/NationalCentreforWriting/" target="_blank">
+                      <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/facebook.png" alt="Twitter Logo" />
+                    </a>
+                  </div>
+                 <!-- / Social Link -->
+
+                 <!-- Social Link -->
+                  <div class="social_link">
+                    <a href="https://bsky.app/profile/writerscentre.bsky.social" target="_blank">
+                      <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/twitter.png" alt="Twitter Logo" />
+                    </a>
+                  </div>
+                 <!-- / Social Link -->
+
+                 <!-- Social Link -->
+                  <div class="social_link">
+                  <a href="https://www.linkedin.com/company/writerscentre/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=uk" target="_blank">
+                      <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/linkedin.png" alt="Linkedin Logo" />
+                    </a>
+                  </div>
+                 <!-- / Social Link -->
+
+                 <!-- Social Link -->
+                  <div class="social_link">
+                  <a href="https://www.youtube.com/user/WCNonline" target="_blank">
+                      <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/youtube.png" alt="Youtube Logo" />
+                    </a>
+                  </div>
+                 <!-- / Social Link -->
+
+                 <!-- Social Link -->
+                  <div class="social_link">
+                    <a href="https://www.instagram.com/writerscentre/?hl=en" target="_blank">
+                      <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/instagram.png" alt="Instagram Logo" />
+                    </a>
+                  </div>
+                 <!-- / Social Link -->
+
+              </div> <!-- / Social Links -->
+
+              <a href="https://www.splitpixel.co.uk/huddersfield-digital-agency/web-design/" target="_blank">Website designed by Splitpixel</a>
+
+            </div> <!-- / Column Three -->
+
+          </div> <!-- / Navigation -->
+
+        </div> <!-- / Navigation Container -->
+
+        <div class="newsletter_container"> <!-- Newsletter Container -->
+          <div class="newsletter"> <!-- Newsletter -->
+
+            <p class="h6 title">Newsletter Signup</p> <!-- Title -->
+
+            
+                <div class='gf_browser_chrome gform_wrapper gravity-theme gform-theme--no-framework' data-form-theme='gravity-theme' data-form-index='0' id='gform_wrapper_6' ><div id='gf_6' class='gform_anchor' tabindex='-1'></div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_6' id='gform_6'  action='/writing-hub/graphic-novels-anna-trench-podcast/#gf_6' data-formid='6' novalidate>
+                        <div class='gform-body gform_body'><div id='gform_fields_6' class='gform_fields top_label form_sublabel_below description_below validation_below'><div id="field_6_9" class="gfield gfield--type-honeypot gform_validation_container field_sublabel_below gfield--has-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_6_9'><span class='gform-field-label__text'>URL</span></label><div class='ginput_container'><input name='input_9' id='input_6_9' type='text' value='' autocomplete='new-password'/></div><div class='gfield_description' id='gfield_description_6_9'>This field is for validation purposes and should be left unchanged.</div></div><div id="field_6_7" class="gfield gfield--type-html gfield--input-type-html gfield--width-full gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><div style="font-size:13px;">Sign up to receive newsletters about our work, including events, workshops, writer and translator opportunities, resources and ways to support us.</div></div><div id="field_6_1" class="gfield gfield--type-text gfield--input-type-text gfield--width-half gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_6_1'><span class='gform-field-label__text'>First Name</span><span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></label><div class='ginput_container ginput_container_text'><input name='input_1' id='input_6_1' type='text' value='' class='large'     aria-required="true" aria-invalid="false"   /></div></div><div id="field_6_3" class="gfield gfield--type-text gfield--input-type-text gfield--width-half gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_6_3'><span class='gform-field-label__text'>Last Name</span><span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></label><div class='ginput_container ginput_container_text'><input name='input_3' id='input_6_3' type='text' value='' class='large'     aria-required="true" aria-invalid="false"   /></div></div><div id="field_6_4" class="gfield gfield--type-email gfield--input-type-email gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_6_4'><span class='gform-field-label__text'>Email Address</span><span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></label><div class='ginput_container ginput_container_email'>
+                            <input name='input_4' id='input_6_4' type='email' value='' class='large'    aria-required="true" aria-invalid="false"  />
+                        </div></div><fieldset id="field_6_6" class="gfield gfield--type-checkbox gfield--type-choice gfield--input-type-checkbox gfield--width-full field_sublabel_below gfield--has-description field_description_above field_validation_below gfield_visibility_visible gfield--choice-align-vertical"  ><legend class='gfield_label gform-field-label gfield_label_before_complex' ><span class='gform-field-label__text'>Additional Interests</span></legend><div class='gfield_description' id='gfield_description_6_6'><div style="font-size:13px;">I am also interested in....</div></div><div class='ginput_container ginput_container_checkbox'><div class='gfield_checkbox ' id='input_6_6'><div class='gchoice gchoice_6_6_1'>
+								<input class='gfield-choice-input' name='input_6.1' type='checkbox'  value='601APNNMRMBJQQPBSCNQGQHGKKCRPSSGN'  id='choice_6_6_1'   aria-describedby="gfield_description_6_6"/>
+								<label for='choice_6_6_1' id='label_6_6_1' class='gform-field-label gform-field-label--type-inline'>Literary Translation</label>
+							</div><div class='gchoice gchoice_6_6_2'>
+								<input class='gfield-choice-input' name='input_6.2' type='checkbox'  value='401ANPJQJQPQMRSBDNMVNLSPGTRBVQVRH'  id='choice_6_6_2'   />
+								<label for='choice_6_6_2' id='label_6_6_2' class='gform-field-label gform-field-label--type-inline'>Young People &amp; Families</label>
+							</div><div class='gchoice gchoice_6_6_3'>
+								<input class='gfield-choice-input' name='input_6.3' type='checkbox'  value='802AJGBTDPGVCVMGPKHTKDLNBHRQNQDQG'  id='choice_6_6_3'   />
+								<label for='choice_6_6_3' id='label_6_6_3' class='gform-field-label gform-field-label--type-inline'>NCW Academy</label>
+							</div><div class='gchoice gchoice_6_6_4'>
+								<input class='gfield-choice-input' name='input_6.4' type='checkbox'  value='1805ALLBRLTKSTCLTLPMMNKTTNHVPCSDJ'  id='choice_6_6_4'   />
+								<label for='choice_6_6_4' id='label_6_6_4' class='gform-field-label gform-field-label--type-inline'>Norwich City of Literature</label>
+							</div></div></div></fieldset><div id="field_6_8" class="gfield gfield--type-text gfield--input-type-text gfield--width-full field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_hidden"  ><div class="admin-hidden-markup"><i class="gform-icon gform-icon--hidden" aria-hidden="true" title="This field is hidden when viewing the form"></i><span>This field is hidden when viewing the form</span></div><label class='gfield_label gform-field-label' for='input_6_8'><span class='gform-field-label__text'>Newsletter Contact Pref</span></label><div class='ginput_container ginput_container_text'><input name='input_8' id='input_6_8' type='text' value='201AGBHDRLQHNHPHKKMPKLGPMDRDTDMVL' class='large'      aria-invalid="false"   /></div></div><fieldset id="field_6_5" class="gfield gfield--type-consent gfield--type-choice gfield--input-type-consent gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below hidden_label field_validation_below gfield_visibility_visible gfield--choice-align-vertical"  ><legend class='gfield_label gform-field-label gfield_label_before_complex' ><span class='gform-field-label__text'>Privacy Policy</span><span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></legend><div class='ginput_container ginput_container_consent'><input name='input_5.1' id='input_6_5_1' type='checkbox' value='1'   aria-required="true" aria-invalid="false"   /> <label class="gform-field-label gform-field-label--type-inline gfield_consent_label" for='input_6_5_1' ><span class='gform-field-label__text'>I have read and agree to the <a href="https://nationalcentreforwriting.org.uk/privacy-policy/" target="_blank" class="text_link">privacy and terms.</a></span><span class="gfield_required gfield_required_text">(Required)</span></label><input type='hidden' name='input_5.2' value='I have read and agree to the &lt;a href=&quot;https://nationalcentreforwriting.org.uk/privacy-policy/&quot; target=&quot;_blank&quot; class=&quot;text_link&quot;&gt;privacy and terms.&lt;/a&gt;' class='gform_hidden' /><input type='hidden' name='input_5.3' value='6' class='gform_hidden' /></div></fieldset></div></div>
+        <div class='gform-footer gform_footer top_label'> <button type='submit' id='gform_submit_button_6' class='gform_button button' onclick='gform.submission.handleButtonClick(this);' data-submission-type='submit' >Go</button> <input type='hidden' name='gform_ajax' value='form_id=6&amp;title=&amp;description=&amp;tabindex=0&amp;theme=gravity-theme&amp;styles=[]&amp;hash=bca65a3dacc449f29fd73b19ba12290c' />
+            <input type='hidden' class='gform_hidden' name='gform_submission_method' data-js='gform_submission_method_6' value='iframe' />
+            <input type='hidden' class='gform_hidden' name='gform_theme' data-js='gform_theme_6' id='gform_theme_6' value='gravity-theme' />
+            <input type='hidden' class='gform_hidden' name='gform_style_settings' data-js='gform_style_settings_6' id='gform_style_settings_6' value='[]' />
+            <input type='hidden' class='gform_hidden' name='is_submit_6' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='6' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_currency' data-currency='GBP' value='om5mrdIVdj7cRBTKt1yypTgA28RpP401MS1Wu/FHqghYiQElJjUtCOyoXrP4+TQiwIHPwIySjfYjI7GJ26YJAh/Evd+yBWF15FtVKRUcEBQxSXQ=' />
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_6' value='WyJ7XCI2LjFcIjpcImM5NWU4Y2Q5NmMxYWFkY2YyZWRhODJiZTdlOWQyMGM5XCIsXCI2LjJcIjpcImIyNTdkMGY2OWJkNzA0NGU1YmY3Y2M4NTQ2MTZlOWJlXCIsXCI2LjNcIjpcImU1NmVkYzQxNzkyMTBhMjZmMTMyYmRmMTllNzI2ZTJkXCIsXCI2LjRcIjpcImZhNzM3ZWFiN2M4ZTYzYjFmMmQ3ODMzMzIwNzU0Nzk2XCIsXCI1LjFcIjpcImNkMDg5OWY3OTIzZGMxYjViZjQwMDI0YWZlNGU3YjJjXCIsXCI1LjJcIjpcIjg0YmJlYWIxNjE0NWY4NjQ2YTAwOGQ3MDA4NWU2ZDVmXCIsXCI1LjNcIjpcImVhNTZiNGNhYmY1MjBiZjViOTRkZjk3MzhiZGJkNmE1XCIsXCJnZm9ybV9zdWJtaXNzaW9uX21ldGhvZFwiOltcImVkYWQ0YTMzYzlmNDU4YTRlZjllZDg1M2UyNTkwOGE0XCIsXCJhNjZjZTUwYjUyOTk2YmY5ZDI3MDc1NmRiMjlkYTMxNFwiLFwiZGMwMGZhM2JjMjVlNDc0Y2YyZmE3NWI1ODVkNjBmMzlcIl0sXCJnZm9ybV90aGVtZVwiOlwiZjU3MTU1ZmRhM2I0NjFiODE1MzZjYTM3YzIwZDgxNThcIixcImdmb3JtX3N0eWxlX3NldHRpbmdzXCI6XCIxZmJhYTJlNjAyMDRiYjBlYmM1NzQwN2NhODg3M2QzZlwiLFwiZm9ybV9pZFwiOlwiZWE1NmI0Y2FiZjUyMGJmNWI5NGRmOTczOGJkYmQ2YTVcIixcInVybFwiOlwiZGY0ZWU2MjY5NTU0ZWE4N2UyNGFhNWFlYWRiMTE2MjhcIixcInN0YXRlX3RpbWVzdGFtcFwiOlwiZmUxNzc2MDI2MjU1MjBhYjVkYWM3MDczZGNjMjJjOTFcIn0iLCI2YzVhMWZkNTYyYjQ3ZjlkYjBiN2ZjN2RlNDBmMTY5MiIsMTc4NzgxMDM2Nl0=' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_target_page_number_6' id='gform_target_page_number_6' value='0' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_source_page_number_6' id='gform_source_page_number_6' value='1' />
+            <input type='hidden' name='gform_field_values' value='check=First+Choice%2CSecond+Choice' />
+            
+        </div>
+                        </form>
+                        </div>
+		                <iframe style='display:none;width:0px;height:0px;' src='about:blank' name='gform_ajax_frame_6' id='gform_ajax_frame_6' title='This iframe contains the logic required to handle Ajax powered Gravity Forms.'></iframe>
+		                <script>
+gform.initializeOnLoaded( function() {jQuery('#gform_ajax_frame_6').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_6');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_6').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_6').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_6').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_6').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_6').offset().top - mt); }, 50 );var current_page = jQuery('#gform_source_page_number_6').val();jQuery(document).trigger('gform_page_loaded', [6, current_page]);window['gf_submitting_6'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}jQuery('#gform_wrapper_6').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_6').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [6]);window['gf_submitting_6'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_6').text());}else{jQuery('#gform_6').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger("gform_pre_post_render", [{ formId: "6", currentPage: "current_page", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_6" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_6";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_6" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 6, current_page );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );} );
+</script>
+
+          </div> <!-- / Newsletter -->
+        </div> <!-- / Newsletter Container -->
+
+      </div> <!-- / Top Panel -->
+
+      <div class="bottom_panel">
+
+        <div class="partners_container"> <!-- Partners Container -->
+
+          <div class="partners"> <!-- Partners -->
+
+            <p class="h6 title">Our Partners</p> <!-- Title -->
+
+            <div class="partners_flex_container"> <!-- Partners Flex Container -->
+
+              <div class="col_1"> <!-- Column One -->
+
+                <div class="partner_logo">
+                  <a href="https://www.artscouncil.org.uk/" target="_blank">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/ace_logo.png" alt="Arts Council England Logo" />
+                  </a>
+                </div> <!-- Partner Logo -->
+                <div class="partner_logo city_of_literature">
+                  <a href="/norwich-unesco-city-of-literature/">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/city-of-literature.png" alt="Norwich City of Literature Logo" />
+                  </a>
+                </div> <!-- Partner Logo -->
+
+              </div> <!-- / Column One -->
+
+              <div class="col_2"> <!-- Column Two -->
+
+                <div class="partner_logo">
+                  <a href="https://www.norwich.gov.uk/site/" target="_blank">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/ncc_logo.png" alt="Norwich City Council Logo" />
+                  </a>
+                </div> <!-- Partner Logo -->
+                <div class="partner_logo">
+                  <a href="https://ec.europa.eu/regional_policy/funding/erdf_en" target="_blank">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/sgs_logo.jpg" alt="Small Grant Scheme Logo" />
+                  </a>
+                </div> <!-- Partner Logo -->
+                <div class="partner_logo">
+                  <a href="https://www.uea.ac.uk/" target="_blank">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/uea_logo.png" alt="University of East Anglia Logo" />
+                  </a>
+                </div> <!-- Partner Logo -->
+
+              </div> <!-- / Column Two -->
+
+            </div> <!-- / Partners Flex Container -->
+
+          </div> <!-- / Partners -->
+
+        </div> <!-- / Partners Container -->
+
+        <div class="company_info_container"> <!-- Company Information Container -->
+
+          <p class="h6 title">Company Information</p> <!-- Title -->
+
+          <div class="company_info"> <!-- Company Information -->
+
+             <!-- Address -->
+              <p>© National Centre for Writing, Dragon Hall, 115-123 King Street, Norwich, NR1 1QE</p>
+             <!-- / Address -->
+
+            <p>Company Number: 05242876</p> <!-- Company Number -->
+
+            <p>National Centre for Writing is a registered charity. Our charity number is 1110725</p> <!-- Charity Number -->
+
+             <!-- Number -->
+                            <a href="mailto:info@nationalcentreforwriting.org.uk?subject=Website%20Enquiry">info@nationalcentreforwriting.org.uk</a>
+             <!-- / Number -->
+
+          </div> <!-- / Company Information -->
+
+        </div> <!-- / Company Information Container -->
+
+      </div> <!-- / Bottom Panel -->
+
+		</div> <!-- / Footer Content -->
+
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+	<nav id="mobile-navigation">
+		<ul>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-109"><a href="https://nationalcentreforwriting.org.uk/whats-on/">What’s On</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16582"><a href="https://nationalcentreforwriting.org.uk/whats-on/">All Events</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51505"><a href="https://nationalcentreforwriting.org.uk/darkest-chapter/">Darkest Chapter</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48417"><a href="https://nationalcentreforwriting.org.uk/whats-on/summer/">Summer at the National Centre for Writing</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43339"><a href="https://nationalcentreforwriting.org.uk/programmes/browse-our-season-brochure/">Season Brochure</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33130"><a href="https://nationalcentreforwriting.org.uk/the-global-page-2/">The Global Page  </a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-63"><a href="https://nationalcentreforwriting.org.uk/get-involved/">Get involved</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="https://nationalcentreforwriting.org.uk/get-involved/writers/">For writers</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="https://nationalcentreforwriting.org.uk/get-involved/translators/">For translators</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="https://nationalcentreforwriting.org.uk/get-involved/communities/">For communities</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-825"><a href="https://nationalcentreforwriting.org.uk/get-involved/young-people/">For young people</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-826"><a href="https://nationalcentreforwriting.org.uk/get-involved/families/">For families</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-827"><a href="https://nationalcentreforwriting.org.uk/get-involved/schools/">For teachers</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-828"><a href="https://nationalcentreforwriting.org.uk/norwich-unesco-city-of-literature/">Norwich UNESCO City of Literature</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-55"><a href="https://nationalcentreforwriting.org.uk/academy/">Academy</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44919"><a href="https://nationalcentreforwriting.org.uk/the-writing-life-challenge/">The Writing Life Challenge</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-830"><a href="https://nationalcentreforwriting.org.uk/academy/tutored-courses/">Online tutored courses</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-832"><a href="https://nationalcentreforwriting.org.uk/academy/workshops/">Workshops</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65"><a href="https://nationalcentreforwriting.org.uk/academy/mentoring/">Mentoring</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-831"><a href="https://nationalcentreforwriting.org.uk/academy/live-evening-courses/">Evening courses</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-829"><a href="https://nationalcentreforwriting.org.uk/academy/self-paced-courses/">Self-paced online courses</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8145"><a href="https://nationalcentreforwriting.org.uk/get-involved/writers/resources/">Free resources</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="https://nationalcentreforwriting.org.uk/writing-hub/">Writing Hub</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10937"><a href="https://nationalcentreforwriting.org.uk/visit-us/">Visit</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27672"><a href="https://nationalcentreforwriting.org.uk/plan-your-visit/">Plan your visit</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26050"><a href="https://nationalcentreforwriting.org.uk/writers-room/">Writers’ Room</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="https://nationalcentreforwriting.org.uk/visit-us/the-literature-house/accessibility/">Accessibility</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10938"><a href="https://nationalcentreforwriting.org.uk/about-us/">About us</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10731"><a href="https://nationalcentreforwriting.org.uk/support-us/">Join and support</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14985"><a href="https://nationalcentreforwriting.org.uk/vacancies/">Join the team</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14344"><a href="https://nationalcentreforwriting.org.uk/shop/">Shop</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"><a href="https://nationalcentreforwriting.org.uk/hire/">Hire Dragon Hall</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38328"><a href="https://nationalcentreforwriting.org.uk/press/">Press</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8326"><a href="https://nationalcentreforwriting.org.uk/in-the-region/">In the region</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8094"><a href="https://nationalcentreforwriting.org.uk/contact/">Contact us</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-838"><a href="https://nationalcentreforwriting.org.uk/norwich-unesco-city-of-literature/">Norwich UNESCO City of Literature</a></li>
+<li class="mobile_only menu-item menu-item-type-custom menu-item-object-custom menu-item-9085"><a href="https://ncw-online.teachable.com/l/products">Academy Portal</a></li>
+      <li>
+        <form role="search" method="get" class="search-form mobile_search_form" action="https://nationalcentreforwriting.org.uk">
+
+          <div class="mobile_search_form_holder"> <!-- Search Form Holder -->
+              <div class="label_input">
+                <label for="mobile_site_search">Search our site:</label>
+                <input type="search" id="mobile_site_search" class="search-field" value="" name="s" title="Search for:" />
+              </div>
+              <input type="submit" class="search-submit" value="Search" />
+          </div> <!-- / Search Form Holder -->
+
+        </form>
+      </li>
+		</ul>
+	</nav> <!-- #site-navigation -->
+
+	<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/ncw/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+	<!--copyscapeskip-->
+	<aside id="moove_gdpr_cookie_info_bar" class="moove-gdpr-info-bar-hidden moove-gdpr-align-center moove-gdpr-dark-scheme gdpr_infobar_postion_bottom" aria-label="GDPR Cookie Banner" style="display: none;">
+	<div class="moove-gdpr-info-bar-container">
+		<div class="moove-gdpr-info-bar-content">
+		
+<div class="moove-gdpr-cookie-notice">
+  <p><span style="font-size: 11pt">We use cookies to give you the best experience on our website. If you're ok with this, click 'accept' to allow all cookies. Click 'reject' to restrict tracking cookies and only use required cookies. You can find out more about which cookies we are using or switch them off in <button  aria-haspopup="true" data-href="#moove_gdpr_cookie_modal" class="change-settings-button gdpr-settings-btn-style-2">settings</button>.</span></p>
+</div>
+<!--  .moove-gdpr-cookie-notice -->
+		
+<div class="moove-gdpr-button-holder">
+			<button class="mgbutton moove-gdpr-infobar-allow-all gdpr-fbo-0" aria-label="Accept" >Accept</button>
+						<button class="mgbutton moove-gdpr-infobar-reject-btn gdpr-fbo-1 "  aria-label="Reject">Reject</button>
+			</div>
+<!--  .button-container -->
+		</div>
+		<!-- moove-gdpr-info-bar-content -->
+	</div>
+	<!-- moove-gdpr-info-bar-container -->
+	</aside>
+	<!-- #moove_gdpr_cookie_info_bar -->
+	<!--/copyscapeskip-->
+<script id="jquery-ui-core-js-before">
+jQuery.uiBackCompat = true;
+//# sourceURL=jquery-ui-core-js-before
+</script>
+<script id="jquery-ui-core-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/jquery/ui/core.min.js?ver=1.14.2"></script>
+<script id="jquery-ui-datepicker-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.14.2"></script>
+<script id="jquery-ui-datepicker-js-after">
+jQuery(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+//# sourceURL=jquery-ui-datepicker-js-after
+</script>
+<script id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+//# sourceURL=rocket-browser-checker-js-after
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"/whats-on/|/events/|/events/|/writing-hub/|/writing-hub/|/showcase/|/showcase/|/resources/|/resources/|/courses/|/courses/|/programmes/|/programmes/|/login/|/logout/|/basket/|/checkout/|/(?:.+/)?feed(?:/(?:.+/?)?)?$|/(?:.+/)?embed/|/(index.php/)?(.*)wp-json(/.*|$)|/refer/|/go/|/recommend/|/recommends/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https://nationalcentreforwriting.org.uk","onHoverDelay":"100","rateThrottle":"3"};
+//# sourceURL=rocket-preload-links-js-extra
+</script>
+<script id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+
+//# sourceURL=rocket-preload-links-js-after
+</script>
+<script id="ncw-navigation-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/js/navigation.js?ver=20151215"></script>
+<script id="ncw-skip-link-focus-fix-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/js/skip-link-focus-fix.js?ver=20151215"></script>
+<script id="ncw-mmenu-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/lib/mobile-navigation/mmenu.js?ver=20171102"></script>
+<script id="ncw-mobile-nav-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/lib/mobile-navigation/mobile-navigation.js?ver=20171102"></script>
+<script id="ncw-mobile-polyfills-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/lib/mobile-navigation/mmenu.polyfills.js?ver=20171102"></script>
+<script id="ncw-slick-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/js/slick.min.js?ver=20171012"></script>
+<script id="ncw-custom-scripts-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/js/custom-scripts.js?ver=20171012"></script>
+<script id="moove_gdpr_frontend-js-extra">
+var moove_frontend_gdpr_scripts = {"ajaxurl":"https://nationalcentreforwriting.org.uk/wp-admin/admin-ajax.php","post_id":"48014","plugin_dir":"https://nationalcentreforwriting.org.uk/wp-content/plugins/gdpr-cookie-compliance","show_icons":"all","is_page":"","ajax_cookie_removal":"false","strict_init":"2","enabled_default":{"strict":1,"third_party":0,"advanced":0,"performance":0,"preference":0},"geo_location":"false","force_reload":"false","is_single":"1","hide_save_btn":"false","current_user":"0","cookie_expiration":"365","script_delay":"2000","close_btn_action":"1","close_btn_rdr":"","scripts_defined":"{\"cache\":true,\"header\":\"\",\"body\":\"\",\"footer\":\"\",\"thirdparty\":{\"header\":\"\\t\\t\\t\\t\\t\\t\\t\\t\u003C!-- Google Tag Manager --\u003E\\n\\t\\t\\t\\t\u003Cscript data-gdpr data-type=\\\"gdpr-integration\\\"\u003E(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\\n\\t\\t\\t\\tnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\\n\\t\\t\\t\\tj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\\n\\t\\t\\t\\t'https:\\/\\/www.googletagmanager.com\\/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\\n\\t\\t\\t\\t})(window,document,'script','dataLayer','GTM-T7QPRS3');\u003C\\/script\u003E\\n\\t\\t\\t\\t\u003C!-- End Google Tag Manager --\u003E\\n\\t\\t\\t\\t\",\"body\":\"\\t\\t\\t\\t\u003C!-- Google Tag Manager (noscript) --\u003E\\n\\t\\t\\t\\t\u003Cnoscript data-type=\\\"gdpr-integration\\\"\u003E\u003Ciframe src=\\\"https:\\/\\/www.googletagmanager.com\\/ns.html?id=GTM-T7QPRS3\\\"\\n\\t\\t\\t\\theight=\\\"0\\\" width=\\\"0\\\" style=\\\"display:none;visibility:hidden\\\"\u003E\u003C\\/iframe\u003E\u003C\\/noscript\u003E\\n\\t\\t\\t\\t\u003C!-- End Google Tag Manager (noscript) --\u003E\\n\\t\\t\\t\\t\\t\\t\\t\\t\",\"footer\":\"\"},\"strict\":{\"header\":\"\",\"body\":\"\",\"footer\":\"\"},\"advanced\":{\"header\":\"\",\"body\":\"\",\"footer\":\"\"}}","gdpr_scor":"true","wp_lang":"","wp_consent_api":"false","gdpr_nonce":"41c80a2cbb"};
+//# sourceURL=moove_gdpr_frontend-js-extra
+</script>
+<script id="moove_gdpr_frontend-js" src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gdpr-cookie-compliance/dist/scripts/main.js?ver=5.1.0"></script>
+<script id="moove_gdpr_frontend-js-after">
+var gdpr_c=document.cookie.match(/(?:^|;\s*)moove_gdpr_popup=([^;]*)/);var gdpr_d=gdpr_c?JSON.parse(decodeURIComponent(gdpr_c[1])):{};var gdpr_consent__strict=gdpr_d.strict==="1"?"true":"false";var gdpr_consent__thirdparty=gdpr_d.thirdparty==="1"?"true":"false";var gdpr_consent__advanced=gdpr_d.advanced==="1"?"true":"false";var gdpr_consent__performance=gdpr_d.performance==="1"?"true":"false";var gdpr_consent__preference=gdpr_d.preference==="1"?"true":"false";var _cc=[];if(gdpr_d.strict==="1")_cc.push("strict");if(gdpr_d.thirdparty==="1")_cc.push("thirdparty");if(gdpr_d.advanced==="1")_cc.push("advanced");if(gdpr_d.performance==="1")_cc.push("performance");if(gdpr_d.preference==="1")_cc.push("preference");var gdpr_consent__cookies=_cc.join("|");
+//# sourceURL=moove_gdpr_frontend-js-after
+</script>
+<script id="wp-dom-ready-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/dist/dom-ready.min.js?ver=3fe927cab37bf38d6a23"></script>
+<script id="wp-hooks-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/dist/hooks.min.js?ver=f0f188028580e8dc1255"></script>
+<script id="wp-i18n-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/dist/i18n.min.js?ver=1dfe7db3940c23ea9216"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script id="wp-a11y-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/dist/a11y.min.js?ver=31c6cec5a4ff7aff483d"></script>
+<script id="gform_json-js" defer='defer' src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=3.0.3"></script>
+<script id="gform_gravityforms-js-extra">
+var gform_i18n = {"datepicker":{"wdOffset":1,"helpTextShort":"Press F1 for help","helpText":"Press the arrow keys to navigate by day, PageUp and PageDown to navigate by month, Alt+PageUp and Alt+PageDown to navigate by year, or Escape to cancel.","openOnFocusHelpText":"Press Down arrow to browse the calendar, or Escape to close.","tooltipTxt":"Press Escape to cancel","disabledTxt":"Disabled","markedTxt":"Selected","prevTxt":"Previous","nextTxt":"Next","monthTxt":"Month","yearTxt":"Year","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"days":[{"s":"S","l":"Sunday"},{"s":"M","l":"Monday"},{"s":"T","l":"Tuesday"},{"s":"W","l":"Wednesday"},{"s":"T","l":"Thursday"},{"s":"F","l":"Friday"},{"s":"S","l":"Saturday"}]}};
+var gf_legacy_multi = [];
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","file_uploaded":"File uploaded","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled","error":"Error","message":"Message"},"vars":{"images_url":"https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/images"}};
+var gf_global = {"gf_currency_config":{"name":"Pound Sterling","symbol_left":"&#163;","symbol_right":"","symbol_padding":" ","thousand_separator":",","decimal_separator":".","decimals":2,"code":"GBP"},"base_url":"https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms","number_formats":[],"version_hash":"c20fb5453cebeae694df2545a989fe68","countries":{"AF":"Afghanistan","AX":"\u00c5land Islands","AL":"Albania","DZ":"Algeria","AS":"American Samoa","AD":"Andorra","AO":"Angola","AI":"Anguilla","AQ":"Antarctica","AG":"Antigua and Barbuda","AR":"Argentina","AM":"Armenia","AW":"Aruba","AU":"Australia","AT":"Austria","AZ":"Azerbaijan","BS":"Bahamas","BH":"Bahrain","BD":"Bangladesh","BB":"Barbados","BY":"Belarus","BE":"Belgium","BZ":"Belize","BJ":"Benin","BM":"Bermuda","BT":"Bhutan","BO":"Bolivia","BQ":"Bonaire, Sint Eustatius and Saba","BA":"Bosnia and Herzegovina","BW":"Botswana","BV":"Bouvet Island","BR":"Brazil","IO":"British Indian Ocean Territory","BN":"Brunei Darussalam","BG":"Bulgaria","BF":"Burkina Faso","BI":"Burundi","CV":"Cabo Verde","KH":"Cambodia","CM":"Cameroon","CA":"Canada","KY":"Cayman Islands","CF":"Central African Republic","TD":"Chad","CL":"Chile","CN":"China","CX":"Christmas Island","CC":"Cocos Islands","CO":"Colombia","KM":"Comoros","CD":"Congo, Democratic Republic of the","CG":"Congo","CK":"Cook Islands","CR":"Costa Rica","CI":"C\u00f4te d'Ivoire","HR":"Croatia","CU":"Cuba","CW":"Cura\u00e7ao","CY":"Cyprus","CZ":"Czechia","DK":"Denmark","DJ":"Djibouti","DM":"Dominica","DO":"Dominican Republic","EC":"Ecuador","EG":"Egypt","SV":"El Salvador","GQ":"Equatorial Guinea","ER":"Eritrea","EE":"Estonia","SZ":"Eswatini","ET":"Ethiopia","FK":"Falkland Islands","FO":"Faroe Islands","FJ":"Fiji","FI":"Finland","FR":"France","GF":"French Guiana","PF":"French Polynesia","TF":"French Southern Territories","GA":"Gabon","GM":"Gambia","GE":"Georgia","DE":"Germany","GH":"Ghana","GI":"Gibraltar","GR":"Greece","GL":"Greenland","GD":"Grenada","GP":"Guadeloupe","GU":"Guam","GT":"Guatemala","GG":"Guernsey","GN":"Guinea","GW":"Guinea-Bissau","GY":"Guyana","HT":"Haiti","HM":"Heard Island and McDonald Islands","VA":"Holy See","HN":"Honduras","HK":"Hong Kong","HU":"Hungary","IS":"Iceland","IN":"India","ID":"Indonesia","IR":"Iran","IQ":"Iraq","IE":"Ireland","IM":"Isle of Man","IL":"Israel","IT":"Italy","JM":"Jamaica","JP":"Japan","JE":"Jersey","JO":"Jordan","KZ":"Kazakhstan","KE":"Kenya","KI":"Kiribati","KP":"Korea, Democratic People's Republic of","KR":"Korea, Republic of","KW":"Kuwait","KG":"Kyrgyzstan","LA":"Lao People's Democratic Republic","LV":"Latvia","LB":"Lebanon","LS":"Lesotho","LR":"Liberia","LY":"Libya","LI":"Liechtenstein","LT":"Lithuania","LU":"Luxembourg","MO":"Macao","MG":"Madagascar","MW":"Malawi","MY":"Malaysia","MV":"Maldives","ML":"Mali","MT":"Malta","MH":"Marshall Islands","MQ":"Martinique","MR":"Mauritania","MU":"Mauritius","YT":"Mayotte","MX":"Mexico","FM":"Micronesia","MD":"Moldova","MC":"Monaco","MN":"Mongolia","ME":"Montenegro","MS":"Montserrat","MA":"Morocco","MZ":"Mozambique","MM":"Myanmar","NA":"Namibia","NR":"Nauru","NP":"Nepal","NL":"Netherlands","NC":"New Caledonia","NZ":"New Zealand","NI":"Nicaragua","NE":"Niger","NG":"Nigeria","NU":"Niue","NF":"Norfolk Island","MK":"North Macedonia","MP":"Northern Mariana Islands","NO":"Norway","OM":"Oman","PK":"Pakistan","PW":"Palau","PS":"Palestine, State of","PA":"Panama","PG":"Papua New Guinea","PY":"Paraguay","PE":"Peru","PH":"Philippines","PN":"Pitcairn","PL":"Poland","PT":"Portugal","PR":"Puerto Rico","QA":"Qatar","RE":"R\u00e9union","RO":"Romania","RU":"Russian Federation","RW":"Rwanda","BL":"Saint Barth\u00e9lemy","SH":"Saint Helena, Ascension and Tristan da Cunha","KN":"Saint Kitts and Nevis","LC":"Saint Lucia","MF":"Saint Martin","PM":"Saint Pierre and Miquelon","VC":"Saint Vincent and the Grenadines","WS":"Samoa","SM":"San Marino","ST":"Sao Tome and Principe","SA":"Saudi Arabia","SN":"Senegal","RS":"Serbia","SC":"Seychelles","SL":"Sierra Leone","SG":"Singapore","SX":"Sint Maarten","SK":"Slovakia","SI":"Slovenia","SB":"Solomon Islands","SO":"Somalia","ZA":"South Africa","GS":"South Georgia and the South Sandwich Islands","SS":"South Sudan","ES":"Spain","LK":"Sri Lanka","SD":"Sudan","SR":"Suriname","SJ":"Svalbard and Jan Mayen","SE":"Sweden","CH":"Switzerland","SY":"Syria Arab Republic","TW":"Taiwan","TJ":"Tajikistan","TZ":"Tanzania, the United Republic of","TH":"Thailand","TL":"Timor-Leste","TG":"Togo","TK":"Tokelau","TO":"Tonga","TT":"Trinidad and Tobago","TN":"Tunisia","TR":"T\u00fcrkiye","TM":"Turkmenistan","TC":"Turks and Caicos Islands","TV":"Tuvalu","UG":"Uganda","UA":"Ukraine","AE":"United Arab Emirates","GB":"United Kingdom","US":"United States","UY":"Uruguay","UM":"US Minor Outlying Islands","UZ":"Uzbekistan","VU":"Vanuatu","VE":"Venezuela","VN":"Viet Nam","VG":"Virgin Islands, British","VI":"Virgin Islands, U.S.","WF":"Wallis and Futuna","EH":"Western Sahara","YE":"Yemen","ZM":"Zambia","ZW":"Zimbabwe"},"strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+//# sourceURL=gform_gravityforms-js-extra
+</script>
+<script id="gform_gravityforms-js" defer='defer' src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=3.0.3"></script>
+<script id="gform_gravityforms_utils-js" defer='defer' src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/js/dist/utils.min.js?ver=69a9db57304a9f86c3d1a0bea5fd2cf9"></script>
+<script id="gform_gravityforms_theme_vendors-js" defer='defer' src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/js/dist/vendor-theme.min.js?ver=0c901cb641ce64b99c20ea1a4d208cc9"></script>
+<script id="gform_gravityforms_theme-js-extra">
+var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"c20fb5453cebeae694df2545a989fe68"},"ajax":{"ajaxurl":"https://nationalcentreforwriting.org.uk/wp-admin/admin-ajax.php","ajax_submission_nonce":"32df38e956","i18n":{"step_announcement":"Step %1$s of %2$s, %3$s","unknown_error":"There was an unknown error processing your request. Please try again.","error_403":"The request was blocked (403 error) for unknown security reasons. Remove any code-like text (scripts or DB queries) and try again."}}}},"hmr_dev":"","public_path":"https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/js/dist/","config_nonce":"40397dcefe"};
+//# sourceURL=gform_gravityforms_theme-js-extra
+</script>
+<script id="gform_gravityforms_theme-js" defer='defer' src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/js/dist/scripts-theme.min.js?ver=75b66edcf00dc5031d1c38e899136fda"></script>
+
+    
+	<!--copyscapeskip-->
+	<!-- V1 -->
+		<dialog id="moove_gdpr_cookie_modal" class="gdpr_lightbox-hide" open aria-modal="true" aria-label="GDPR Settings Screen">
+	<div class="moove-gdpr-modal-content moove-clearfix logo-position-left moove_gdpr_modal_theme_v1">
+		    
+		<button class="moove-gdpr-modal-close" autofocus aria-label="Close GDPR Cookie Settings">
+			<span class="gdpr-sr-only">Close GDPR Cookie Settings</span>
+			<span class="gdpr-icon moovegdpr-arrow-close"></span>
+		</button>
+				<div class="moove-gdpr-modal-left-content">
+		
+<div class="moove-gdpr-company-logo-holder">
+	<img src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gdpr-cookie-compliance/dist/images/gdpr-logo.png" alt="National Centre for Writing | NCW"   width="350"  height="233"  class="img-responsive" />
+</div>
+<!--  .moove-gdpr-company-logo-holder -->
+		<ul id="moove-gdpr-menu">
+			
+<li class="menu-item-on menu-item-privacy_overview menu-item-selected">
+	<button data-href="#privacy_overview" class="moove-gdpr-tab-nav" aria-label="Privacy Overview">
+	<span class="gdpr-nav-tab-title">Privacy Overview</span>
+	</button>
+</li>
+
+	<li class="menu-item-strict-necessary-cookies menu-item-off">
+	<button data-href="#strict-necessary-cookies" class="moove-gdpr-tab-nav" aria-label="Strictly Necessary Cookies">
+		<span class="gdpr-nav-tab-title">Strictly Necessary Cookies</span>
+	</button>
+	</li>
+
+
+	<li class="menu-item-off menu-item-third_party_cookies">
+	<button data-href="#third_party_cookies" class="moove-gdpr-tab-nav" aria-label="3rd Party Cookies">
+		<span class="gdpr-nav-tab-title">3rd Party Cookies</span>
+	</button>
+	</li>
+
+
+
+		</ul>
+		
+<div class="moove-gdpr-branding-cnt">
+			<a href="https://wordpress.org/plugins/gdpr-cookie-compliance/" rel="noopener noreferrer" target="_blank" class='moove-gdpr-branding'>Powered by&nbsp; <span>GDPR Cookie Compliance</span></a>
+		</div>
+<!--  .moove-gdpr-branding -->
+		</div>
+		<!--  .moove-gdpr-modal-left-content -->
+		<div class="moove-gdpr-modal-right-content">
+		<div class="moove-gdpr-modal-title">
+			 
+		</div>
+		<!-- .moove-gdpr-modal-ritle -->
+		<div class="main-modal-content">
+
+			<div class="moove-gdpr-tab-content">
+			
+<div id="privacy_overview" class="moove-gdpr-tab-main">
+		<span class="tab-title">Privacy Overview</span>
+		<div class="moove-gdpr-tab-main-content">
+	<p>This website uses cookies so that we can provide you with the best user experience possible. Cookie information is stored in your browser and performs functions such as recognising you when you return to our website and helping our team to understand which sections of the website you find most interesting and useful.</p>
+		</div>
+	<!--  .moove-gdpr-tab-main-content -->
+
+</div>
+<!-- #privacy_overview -->
+			
+  <div id="strict-necessary-cookies" class="moove-gdpr-tab-main" style="display:none">
+    <span class="tab-title">Strictly Necessary Cookies</span>
+    <div class="moove-gdpr-tab-main-content">
+      <p>Strictly Necessary Cookie should be enabled at all times so that we can save your preferences for cookie settings.</p>
+      <div class="moove-gdpr-status-bar ">
+        <div class="gdpr-cc-form-wrap">
+          <div class="gdpr-cc-form-fieldset">
+            <label class="cookie-switch" for="moove_gdpr_strict_cookies">    
+              <span class="gdpr-sr-only">Enable or Disable Cookies</span>        
+              <input type="checkbox" aria-label="Strictly Necessary Cookies"  value="check" name="moove_gdpr_strict_cookies" id="moove_gdpr_strict_cookies">
+              <span class="cookie-slider cookie-round gdpr-sr" data-text-enable="Enabled" data-text-disabled="Disabled">
+                <span class="gdpr-sr-label">
+                  <span class="gdpr-sr-enable">Enabled</span>
+                  <span class="gdpr-sr-disable">Disabled</span>
+                </span>
+              </span>
+            </label>
+          </div>
+          <!-- .gdpr-cc-form-fieldset -->
+        </div>
+        <!-- .gdpr-cc-form-wrap -->
+      </div>
+      <!-- .moove-gdpr-status-bar -->
+                                              
+    </div>
+    <!--  .moove-gdpr-tab-main-content -->
+  </div>
+  <!-- #strict-necesarry-cookies -->
+			
+  <div id="third_party_cookies" class="moove-gdpr-tab-main" style="display:none">
+    <span class="tab-title">3rd Party Cookies</span>
+    <div class="moove-gdpr-tab-main-content">
+      <p>This website uses Google Analytics to collect anonymous information such as the number of visitors to the site, and the most popular pages. It also uses Facebook Pixel to help us recommend events to our audiences.</p>
+<p>Keeping this cookie enabled helps us to improve our website.</p>
+      <div class="moove-gdpr-status-bar">
+        <div class="gdpr-cc-form-wrap">
+          <div class="gdpr-cc-form-fieldset">
+            <label class="cookie-switch" for="moove_gdpr_performance_cookies">    
+              <span class="gdpr-sr-only">Enable or Disable Cookies</span>     
+              <input type="checkbox" aria-label="3rd Party Cookies" value="check" name="moove_gdpr_performance_cookies" id="moove_gdpr_performance_cookies" disabled>
+              <span class="cookie-slider cookie-round gdpr-sr" data-text-enable="Enabled" data-text-disabled="Disabled">
+                <span class="gdpr-sr-label">
+                  <span class="gdpr-sr-enable">Enabled</span>
+                  <span class="gdpr-sr-disable">Disabled</span>
+                </span>
+              </span>
+            </label>
+          </div>
+          <!-- .gdpr-cc-form-fieldset -->
+        </div>
+        <!-- .gdpr-cc-form-wrap -->
+      </div>
+      <!-- .moove-gdpr-status-bar -->
+             
+    </div>
+    <!--  .moove-gdpr-tab-main-content -->
+  </div>
+  <!-- #third_party_cookies -->
+			
+									
+			</div>
+			<!--  .moove-gdpr-tab-content -->
+		</div>
+		<!--  .main-modal-content -->
+		<div class="moove-gdpr-modal-footer-content">
+			<div class="moove-gdpr-button-holder">
+						<button class="mgbutton moove-gdpr-modal-allow-all button-visible" aria-label="Enable All">Enable All</button>
+								<button class="mgbutton moove-gdpr-modal-save-settings button-visible" aria-label="Save Settings">Save Settings</button>
+				</div>
+<!--  .moove-gdpr-button-holder -->
+		</div>
+		<!--  .moove-gdpr-modal-footer-content -->
+		</div>
+		<!--  .moove-gdpr-modal-right-content -->
+
+		<div class="moove-clearfix"></div>
+
+	</div>
+	<!--  .moove-gdpr-modal-content -->
+	</dialog>
+	<!-- #moove_gdpr_cookie_modal -->
+	<!--/copyscapeskip-->
+<script>
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 6) {} } );jQuery(document).on('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+</script>
+<script>
+gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_render", [{ formId: "6", currentPage: "1", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_6" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_6";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_6" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 6, 1 );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );
+</script>
+
+</div> <!-- / Site Wrapper -->
+
+</body>
+</html>

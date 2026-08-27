@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Distilling Long-Tail User Behavior into Scalable Embeddings for Job Search - Indeed Engineering Blog</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://engineering.indeedblog.com/xmlrpc.php">
+<link rel="shortcut icon" href="https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/favicon.ico" />
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/dist/js/html5shiv.js"></script>
+<script src="https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/dist/js/respond.min.js"></script>
+<![endif]-->
+<!--[if lt IE 8]>
+    <link href="https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/dist/css/bootstrap-ie7.css" rel="stylesheet">
+<![endif]-->
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<link rel="alternate" hreflang="en-us" href="https://engineering.indeedblog.com/blog/2026/06/distilling-long-tail-user-behavior-into-scalable-embeddings-for-job-search/" />
+<link rel="alternate" hreflang="x-default" href="https://engineering.indeedblog.com/blog/2026/06/distilling-long-tail-user-behavior-into-scalable-embeddings-for-job-search/" />
+         <!-- Start Google Analytics tracking code here -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-K8RKLN');
+        </script>
+          <!-- END Google Analytics tracking code here -->
+    
+	<!-- This site is optimized with the Yoast SEO plugin v28.1 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<meta name="description" content="Learn how Indeed distills long-tail user behavior into scalable embeddings for job search ranking, recommendations, and production machine learning systems." />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Distilling Long-Tail User Behavior into Scalable Embeddings for Job Search - Indeed Engineering Blog" />
+	<meta property="og:description" content="Learn how Indeed distills long-tail user behavior into scalable embeddings for job search ranking, recommendations, and production machine learning systems." />
+	<meta property="og:url" content="https://engineering.indeedblog.com/blog/2026/06/distilling-long-tail-user-behavior-into-scalable-embeddings-for-job-search/" />
+	<meta property="og:site_name" content="Indeed Engineering Blog" />
+	<meta property="article:publisher" content="https://www.facebook.com/Indeed" />
+	<meta property="article:published_time" content="2026-06-03T23:28:10+00:00" />
+	<meta property="article:modified_time" content="2026-07-10T14:37:12+00:00" />
+	<meta property="og:image" content="https://engineering.indeedblog.com/wp-content/uploads/2026/06/image3.png" />
+	<meta name="author" content="Marsan Ma" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@IndeedEng" />
+	<meta name="twitter:site" content="@IndeedEng" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Marsan Ma" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="14 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"https:\/\/engineering.indeedblog.com\/blog\/2026\/06\/distilling-long-tail-user-behavior-into-scalable-embeddings-for-job-search\/#article","isPartOf":{"@id":"https:\/\/engineering.indeedblog.com\/blog\/2026\/06\/distilling-long-tail-user-behavior-into-scalable-embeddings-for-job-search\/"},"author":[{"@id":"https:\/\/engineering.indeedblog.com\/#\/schema\/person\/409e2f4f81576b291b682d3b50d73391"}],"headline":"Distilling Long-Tail User Behavior into Scalable Embeddings for Job Search","datePublished":"2026-06-03T23:28:10+00:00","dateModified":"2026-07-10T14:37:12+00:00","mainEntityOfPage":{"@id":"https:\/\/engineering.indeedblog.com\/blog\/2026\/06\/distilling-long-tail-user-behavior-into-scalable-embeddings-for-job-search\/"},"wordCount":2311,"publisher":{"@id":"https:\/\/engineering.indeedblog.com\/#organization"},"image":{"@id":"https:\/\/engineering.indeedblog.com\/blog\/2026\/06\/distilling-long-tail-user-behavior-into-scalable-embeddings-for-job-search\/#primaryimage"},"thumbnailUrl":"https:\/\/engineering.indeedblog.com\/wp-content\/uploads\/2026\/06\/image3.png","articleSection":["Big Data","Data Science","Engineering","Machine Learning","Performance"],"inLanguage":"en-us"},{"@type":"WebPage","@id":"https:\/\/engineering.indeedblog.com\/blog\/2026\/06\/distilling-long-tail-user-behavior-into-scalable-embeddings-for-job-search\/","url":"https:\/\/engineering.indeedblog.com\/blog\/2026\/06\/distilling-long-tail-user-behavior-into-scalable-embeddings-for-job-search\/","name":"Distilling Long-Tail User Behavior into Scalable Embeddings for Job Search - Indeed Engineering Blog","isPartOf":{"@id":"https:\/\/engineering.indeedblog.com\/#website"},"primaryImageOfPage":{"@id":"https:\/\/engineering.indeedblog.com\/blog\/2026\/06\/distilling-long-tail-user-behavior-into-scalable-embeddings-for-job-search\/#primaryimage"},"image":{"@id":"https:\/\/engineering.indeedblog.com\/blog\/2026\/06\/distilling-long-tail-user-behavior-into-scalable-embeddings-for-job-search\/#primaryimage"},"thumbnailUrl":"https:\/\/engineering.indeedblog.com\/wp-content\/uploads\/2026\/06\/image3.png","datePublished":"2026-06-03T23:28:10+00:00","dateModified":"2026-07-10T14:37:12+00:00","description":"Learn how Indeed distills long-tail user behavior into scalable embeddings for job search ranking, recommendations, and production machine learning systems.","breadcrumb":{"@id":"https:\/\/engineering.indeedblog.com\/blog\/2026\/06\/distilling-long-tail-user-behavior-into-scalable-embeddings-for-job-search\/#breadcrumb"},"inLanguage":"en-us","potentialAction":[{"@type":"ReadAction","target":["https:\/\/engineering.indeedblog.com\/blog\/2026\/06\/distilling-long-tail-user-behavior-into-scalable-embeddings-for-job-search\/"]}]},{"@type":"ImageObject","inLanguage":"en-us","@id":"https:\/\/engineering.indeedblog.com\/blog\/2026\/06\/distilling-long-tail-user-behavior-into-scalable-embeddings-for-job-search\/#primaryimage","url":"https:\/\/d341ezm4iqaae0.cloudfront.net\/engblogs\/2026\/06\/02182137\/image3.png","contentUrl":"https:\/\/d341ezm4iqaae0.cloudfront.net\/engblogs\/2026\/06\/02182137\/image3.png","width":1600,"height":900,"caption":"Figure 1. Behavior modeling as a two-layer system"},{"@type":"BreadcrumbList","@id":"https:\/\/engineering.indeedblog.com\/blog\/2026\/06\/distilling-long-tail-user-behavior-into-scalable-embeddings-for-job-search\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/engineering.indeedblog.com\/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https:\/\/engineering.indeedblog.com\/blog\/"},{"@type":"ListItem","position":3,"name":"Distilling Long-Tail User Behavior into Scalable Embeddings for Job Search"}]},{"@type":"WebSite","@id":"https:\/\/engineering.indeedblog.com\/#website","url":"https:\/\/engineering.indeedblog.com\/","name":"Indeed Engineering Blog","description":"We help people get jobs.","publisher":{"@id":"https:\/\/engineering.indeedblog.com\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/engineering.indeedblog.com\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-us"},{"@type":"Organization","@id":"https:\/\/engineering.indeedblog.com\/#organization","name":"Indeed.com","url":"https:\/\/engineering.indeedblog.com\/","logo":{"@type":"ImageObject","inLanguage":"en-us","@id":"https:\/\/engineering.indeedblog.com\/#\/schema\/logo\/image\/","url":"https:\/\/engineering.indeedblog.com\/wp-content\/uploads\/2015\/04\/1024x1024-553d53a6v1_site_icon.png","contentUrl":"https:\/\/engineering.indeedblog.com\/wp-content\/uploads\/2015\/04\/1024x1024-553d53a6v1_site_icon.png","width":512,"height":512,"caption":"Indeed.com"},"image":{"@id":"https:\/\/engineering.indeedblog.com\/#\/schema\/logo\/image\/"},"sameAs":["https:\/\/www.facebook.com\/Indeed","https:\/\/x.com\/IndeedEng","https:\/\/www.youtube.com\/user\/IndeedEng"]},{"@type":"Person","@id":"https:\/\/engineering.indeedblog.com\/#\/schema\/person\/409e2f4f81576b291b682d3b50d73391","name":"Marsan Ma","image":{"@type":"ImageObject","inLanguage":"en-us","@id":"https:\/\/secure.gravatar.com\/avatar\/20367ffd010e067bf6ca1e8ff83c303e61e105a6f60636e7c79ce3bc7979281b?s=96&d=identicon&r=gf6a9b1a15b7d88c6eb179be6275799e5","url":"https:\/\/secure.gravatar.com\/avatar\/20367ffd010e067bf6ca1e8ff83c303e61e105a6f60636e7c79ce3bc7979281b?s=96&d=identicon&r=g","contentUrl":"https:\/\/secure.gravatar.com\/avatar\/20367ffd010e067bf6ca1e8ff83c303e61e105a6f60636e7c79ce3bc7979281b?s=96&d=identicon&r=g","caption":"Marsan Ma"},"url":"https:\/\/engineering.indeedblog.com\/blog\/author\/marsan\/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//cpwebassets.codepen.io' />
+<link rel='dns-prefetch' href='//www.youtube.com' />
+<link rel="alternate" type="application/rss+xml" title="Indeed Engineering Blog &raquo; Feed" href="https://engineering.indeedblog.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Indeed Engineering Blog &raquo; Comments Feed" href="https://engineering.indeedblog.com/comments/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://engineering.indeedblog.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fengineering.indeedblog.com%2Fblog%2F2026%2F06%2Fdistilling-long-tail-user-behavior-into-scalable-embeddings-for-job-search%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://engineering.indeedblog.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fengineering.indeedblog.com%2Fblog%2F2026%2F06%2Fdistilling-long-tail-user-behavior-into-scalable-embeddings-for-job-search%2F&#038;format=xml" />
+<style id='wp-img-auto-sizes-contain-inline-css' type='text/css'>
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://engblogs.wpenginepowered.com/wp-includes/css/dist/block-library/style.min.css?ver=6.9.7' type='text/css' media='all' />
+
+<style id='wp-block-heading-inline-css' type='text/css'>
+h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-background,h3:where(.wp-block-heading).has-background,h4:where(.wp-block-heading).has-background,h5:where(.wp-block-heading).has-background,h6:where(.wp-block-heading).has-background{padding:1.25em 2.375em}h1.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h1.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h2.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h2.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h3.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h3.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h4.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h4.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h5.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h5.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h6.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h6.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]){rotate:180deg}
+/*# sourceURL=https://engineering.indeedblog.com/wp-includes/blocks/heading/style.min.css */
+</style>
+<style id='wp-block-image-inline-css' type='text/css'>
+.wp-block-image>a,.wp-block-image>figure>a{display:inline-block}.wp-block-image img{box-sizing:border-box;height:auto;max-width:100%;vertical-align:bottom}@media not (prefers-reduced-motion){.wp-block-image img.hide{visibility:hidden}.wp-block-image img.show{animation:show-content-image .4s}}.wp-block-image[style*=border-radius] img,.wp-block-image[style*=border-radius]>a{border-radius:inherit}.wp-block-image.has-custom-border img{box-sizing:border-box}.wp-block-image.aligncenter{text-align:center}.wp-block-image.alignfull>a,.wp-block-image.alignwide>a{width:100%}.wp-block-image.alignfull img,.wp-block-image.alignwide img{height:auto;width:100%}.wp-block-image .aligncenter,.wp-block-image .alignleft,.wp-block-image .alignright,.wp-block-image.aligncenter,.wp-block-image.alignleft,.wp-block-image.alignright{display:table}.wp-block-image .aligncenter>figcaption,.wp-block-image .alignleft>figcaption,.wp-block-image .alignright>figcaption,.wp-block-image.aligncenter>figcaption,.wp-block-image.alignleft>figcaption,.wp-block-image.alignright>figcaption{caption-side:bottom;display:table-caption}.wp-block-image .alignleft{float:left;margin:.5em 1em .5em 0}.wp-block-image .alignright{float:right;margin:.5em 0 .5em 1em}.wp-block-image .aligncenter{margin-left:auto;margin-right:auto}.wp-block-image :where(figcaption){margin-bottom:1em;margin-top:.5em}.wp-block-image.is-style-circle-mask img{border-radius:9999px}@supports ((-webkit-mask-image:none) or (mask-image:none)) or (-webkit-mask-image:none){.wp-block-image.is-style-circle-mask img{border-radius:0;-webkit-mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-mode:alpha;-webkit-mask-position:center;mask-position:center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain}}:root :where(.wp-block-image.is-style-rounded img,.wp-block-image .is-style-rounded img){border-radius:9999px}.wp-block-image figure{margin:0}.wp-lightbox-container{display:flex;flex-direction:column;position:relative}.wp-lightbox-container img{cursor:zoom-in}.wp-lightbox-container img:hover+button{opacity:1}.wp-lightbox-container button{align-items:center;backdrop-filter:blur(16px) saturate(180%);background-color:#5a5a5a40;border:none;border-radius:4px;cursor:zoom-in;display:flex;height:20px;justify-content:center;opacity:0;padding:0;position:absolute;right:16px;text-align:center;top:16px;width:20px;z-index:100}@media not (prefers-reduced-motion){.wp-lightbox-container button{transition:opacity .2s ease}}.wp-lightbox-container button:focus-visible{outline:3px auto #5a5a5a40;outline:3px auto -webkit-focus-ring-color;outline-offset:3px}.wp-lightbox-container button:hover{cursor:pointer;opacity:1}.wp-lightbox-container button:focus{opacity:1}.wp-lightbox-container button:focus,.wp-lightbox-container button:hover,.wp-lightbox-container button:not(:hover):not(:active):not(.has-background){background-color:#5a5a5a40;border:none}.wp-lightbox-overlay{box-sizing:border-box;cursor:zoom-out;height:100vh;left:0;overflow:hidden;position:fixed;top:0;visibility:hidden;width:100%;z-index:100000}.wp-lightbox-overlay .close-button{align-items:center;cursor:pointer;display:flex;justify-content:center;min-height:40px;min-width:40px;padding:0;position:absolute;right:calc(env(safe-area-inset-right) + 16px);top:calc(env(safe-area-inset-top) + 16px);z-index:5000000}.wp-lightbox-overlay .close-button:focus,.wp-lightbox-overlay .close-button:hover,.wp-lightbox-overlay .close-button:not(:hover):not(:active):not(.has-background){background:none;border:none}.wp-lightbox-overlay .lightbox-image-container{height:var(--wp--lightbox-container-height);left:50%;overflow:hidden;position:absolute;top:50%;transform:translate(-50%,-50%);transform-origin:top left;width:var(--wp--lightbox-container-width);z-index:9999999999}.wp-lightbox-overlay .wp-block-image{align-items:center;box-sizing:border-box;display:flex;height:100%;justify-content:center;margin:0;position:relative;transform-origin:0 0;width:100%;z-index:3000000}.wp-lightbox-overlay .wp-block-image img{height:var(--wp--lightbox-image-height);min-height:var(--wp--lightbox-image-height);min-width:var(--wp--lightbox-image-width);width:var(--wp--lightbox-image-width)}.wp-lightbox-overlay .wp-block-image figcaption{display:none}.wp-lightbox-overlay button{background:none;border:none}.wp-lightbox-overlay .scrim{background-color:#fff;height:100%;opacity:.9;position:absolute;width:100%;z-index:2000000}.wp-lightbox-overlay.active{visibility:visible}@media not (prefers-reduced-motion){.wp-lightbox-overlay.active{animation:turn-on-visibility .25s both}.wp-lightbox-overlay.active img{animation:turn-on-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active){animation:turn-off-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active) img{animation:turn-off-visibility .25s both}.wp-lightbox-overlay.zoom.active{animation:none;opacity:1;visibility:visible}.wp-lightbox-overlay.zoom.active .lightbox-image-container{animation:lightbox-zoom-in .4s}.wp-lightbox-overlay.zoom.active .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.active .scrim{animation:turn-on-visibility .4s forwards}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active){animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container{animation:lightbox-zoom-out .4s}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .scrim{animation:turn-off-visibility .4s forwards}}@keyframes show-content-image{0%{visibility:hidden}99%{visibility:hidden}to{visibility:visible}}@keyframes turn-on-visibility{0%{opacity:0}to{opacity:1}}@keyframes turn-off-visibility{0%{opacity:1;visibility:visible}99%{opacity:0;visibility:visible}to{opacity:0;visibility:hidden}}@keyframes lightbox-zoom-in{0%{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale))}to{transform:translate(-50%,-50%) scale(1)}}@keyframes lightbox-zoom-out{0%{transform:translate(-50%,-50%) scale(1);visibility:visible}99%{visibility:visible}to{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale));visibility:hidden}}
+/*# sourceURL=https://engineering.indeedblog.com/wp-includes/blocks/image/style.min.css */
+</style>
+<style id='wp-block-list-inline-css' type='text/css'>
+ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:1.25em 2.375em}
+/*# sourceURL=https://engineering.indeedblog.com/wp-includes/blocks/list/style.min.css */
+</style>
+<style id='wp-block-table-inline-css' type='text/css'>
+.wp-block-table{overflow-x:auto}.wp-block-table table{border-collapse:collapse;width:100%}.wp-block-table thead{border-bottom:3px solid}.wp-block-table tfoot{border-top:3px solid}.wp-block-table td,.wp-block-table th{border:1px solid;padding:.5em}.wp-block-table .has-fixed-layout{table-layout:fixed;width:100%}.wp-block-table .has-fixed-layout td,.wp-block-table .has-fixed-layout th{word-break:break-word}.wp-block-table.aligncenter,.wp-block-table.alignleft,.wp-block-table.alignright{display:table;width:auto}.wp-block-table.aligncenter td,.wp-block-table.aligncenter th,.wp-block-table.alignleft td,.wp-block-table.alignleft th,.wp-block-table.alignright td,.wp-block-table.alignright th{word-break:break-word}.wp-block-table .has-subtle-light-gray-background-color{background-color:#f3f4f5}.wp-block-table .has-subtle-pale-green-background-color{background-color:#e9fbe5}.wp-block-table .has-subtle-pale-blue-background-color{background-color:#e7f5fe}.wp-block-table .has-subtle-pale-pink-background-color{background-color:#fcf0ef}.wp-block-table.is-style-stripes{background-color:initial;border-collapse:inherit;border-spacing:0}.wp-block-table.is-style-stripes tbody tr:nth-child(odd){background-color:#f0f0f0}.wp-block-table.is-style-stripes.has-subtle-light-gray-background-color tbody tr:nth-child(odd){background-color:#f3f4f5}.wp-block-table.is-style-stripes.has-subtle-pale-green-background-color tbody tr:nth-child(odd){background-color:#e9fbe5}.wp-block-table.is-style-stripes.has-subtle-pale-blue-background-color tbody tr:nth-child(odd){background-color:#e7f5fe}.wp-block-table.is-style-stripes.has-subtle-pale-pink-background-color tbody tr:nth-child(odd){background-color:#fcf0ef}.wp-block-table.is-style-stripes td,.wp-block-table.is-style-stripes th{border-color:#0000}.wp-block-table.is-style-stripes{border-bottom:1px solid #f0f0f0}.wp-block-table .has-border-color td,.wp-block-table .has-border-color th,.wp-block-table .has-border-color tr,.wp-block-table .has-border-color>*{border-color:inherit}.wp-block-table table[style*=border-top-color] tr:first-child,.wp-block-table table[style*=border-top-color] tr:first-child td,.wp-block-table table[style*=border-top-color] tr:first-child th,.wp-block-table table[style*=border-top-color]>*,.wp-block-table table[style*=border-top-color]>* td,.wp-block-table table[style*=border-top-color]>* th{border-top-color:inherit}.wp-block-table table[style*=border-top-color] tr:not(:first-child){border-top-color:initial}.wp-block-table table[style*=border-right-color] td:last-child,.wp-block-table table[style*=border-right-color] th,.wp-block-table table[style*=border-right-color] tr,.wp-block-table table[style*=border-right-color]>*{border-right-color:inherit}.wp-block-table table[style*=border-bottom-color] tr:last-child,.wp-block-table table[style*=border-bottom-color] tr:last-child td,.wp-block-table table[style*=border-bottom-color] tr:last-child th,.wp-block-table table[style*=border-bottom-color]>*,.wp-block-table table[style*=border-bottom-color]>* td,.wp-block-table table[style*=border-bottom-color]>* th{border-bottom-color:inherit}.wp-block-table table[style*=border-bottom-color] tr:not(:last-child){border-bottom-color:initial}.wp-block-table table[style*=border-left-color] td:first-child,.wp-block-table table[style*=border-left-color] th,.wp-block-table table[style*=border-left-color] tr,.wp-block-table table[style*=border-left-color]>*{border-left-color:inherit}.wp-block-table table[style*=border-style] td,.wp-block-table table[style*=border-style] th,.wp-block-table table[style*=border-style] tr,.wp-block-table table[style*=border-style]>*{border-style:inherit}.wp-block-table table[style*=border-width] td,.wp-block-table table[style*=border-width] th,.wp-block-table table[style*=border-width] tr,.wp-block-table table[style*=border-width]>*{border-style:inherit;border-width:inherit}
+/*# sourceURL=https://engineering.indeedblog.com/wp-includes/blocks/table/style.min.css */
+</style>
+
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='style.css-css' href='https://engblogs.wpenginepowered.com/wp-content/plugins/indeed-sidebar-widgets/style.css?ver=6.9.7' type='text/css' media='all' />
+<link rel='stylesheet' id='wpml-legacy-dropdown-click-0-css' href='https://engblogs.wpenginepowered.com/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/legacy-dropdown-click/style.min.css?ver=1' type='text/css' media='all' />
+<style id='wpml-legacy-dropdown-click-0-inline-css' type='text/css'>
+.wpml-ls-statics-shortcode_actions, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu, .wpml-ls-statics-shortcode_actions a {border-color:#cdcdcd;}.wpml-ls-statics-shortcode_actions a, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:link, .wpml-ls-statics-shortcode_actions li:not(.wpml-ls-current-language) .wpml-ls-link, .wpml-ls-statics-shortcode_actions li:not(.wpml-ls-current-language) .wpml-ls-link:link {color:#444444;background-color:#ffffff;}.wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:hover,.wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:focus, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:link:hover, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:link:focus {color:#000000;background-color:#eeeeee;}.wpml-ls-statics-shortcode_actions .wpml-ls-current-language > a {color:#444444;background-color:#ffffff;}.wpml-ls-statics-shortcode_actions .wpml-ls-current-language:hover>a, .wpml-ls-statics-shortcode_actions .wpml-ls-current-language>a:focus {color:#000000;background-color:#eeeeee;}
+/*# sourceURL=wpml-legacy-dropdown-click-0-inline-css */
+</style>
+<link rel='stylesheet' id='cms-navigation-style-base-css' href='https://engblogs.wpenginepowered.com/wp-content/plugins/wpml-cms-nav/res/css/cms-navigation-base.css?ver=1.5.6' type='text/css' media='screen' />
+<link rel='stylesheet' id='cms-navigation-style-css' href='https://engblogs.wpenginepowered.com/wp-content/plugins/wpml-cms-nav/res/css/cms-navigation.css?ver=1.5.6' type='text/css' media='screen' />
+<link rel='stylesheet' id='parent-style-css' href='https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/style.css?ver=1.5.6' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-style-css' href='https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/dist/css/bootstrap.min.css?ver=2.6.0' type='text/css' media='all' />
+<link rel='stylesheet' id='indeedblog-style-css' href='https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/style.min.css?ver=2.6.0' type='text/css' media='all' />
+<link rel='stylesheet' id='style_login_widget-css' href='https://engblogs.wpenginepowered.com/wp-content/plugins/miniorange-oauth-oidc-single-sign-on/resources/css/style_login_widget.css?ver=6.9.7' type='text/css' media='all' />
+<script type="text/javascript" src="https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/dist/js/jquery-1-11-1.min.js?ver=2.6.0" id="jquery-js"></script>
+<script type="text/javascript" src="https://engblogs.wpenginepowered.com/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/legacy-dropdown-click/script.min.js?ver=1" id="wpml-legacy-dropdown-click-0-js"></script>
+<script type="text/javascript" src="https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/dist/js/scripts.js?ver=2.6.0" id="scripts-js-js"></script>
+<script type="text/javascript" src="https://www.youtube.com/iframe_api?ver=20210524" id="youtube_iframe_api-js"></script>
+<script type="text/javascript" id="wpml-xdomain-data-js-extra">
+/* <![CDATA[ */
+var wpml_xdomain_data = {"css_selector":"wpml-ls-item","ajax_url":"https://engineering.indeedblog.com/wp-admin/admin-ajax.php","current_lang":"en","_nonce":"f6fb9b3f4e"};
+//# sourceURL=wpml-xdomain-data-js-extra
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://engblogs.wpenginepowered.com/wp-content/plugins/sitepress-multilingual-cms/res/js/xdomain-data.js?ver=496000" id="wpml-xdomain-data-js" defer="defer" data-wp-strategy="defer"></script>
+<link rel="https://api.w.org/" href="https://engineering.indeedblog.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://engineering.indeedblog.com/wp-json/wp/v2/posts/4779" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://engineering.indeedblog.com/xmlrpc.php?rsd" />
+<link rel='shortlink' href='https://engineering.indeedblog.com/?p=4779' />
+<meta name="generator" content="WPML ver:4.9.6 stt:1,28;" />
+<link rel="icon" href="https://engblogs.wpenginepowered.com/wp-content/uploads/2015/04/1024x1024-553d53a6v1_site_icon-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://engblogs.wpenginepowered.com/wp-content/uploads/2015/04/1024x1024-553d53a6v1_site_icon-256x256.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://engblogs.wpenginepowered.com/wp-content/uploads/2015/04/1024x1024-553d53a6v1_site_icon-256x256.png" />
+<meta name="msapplication-TileImage" content="https://engineering.indeedblog.com/wp-content/uploads/2015/04/1024x1024-553d53a6v1_site_icon.png" />
+		<style type="text/css" id="wp-custom-css">
+			/*
+Welcome to Custom CSS!
+
+CSS (Cascading Style Sheets) is a kind of code that tells the browser how
+to render a web page. You may delete these comments and get started with
+your customizations.
+
+By default, your stylesheet will be loaded after the theme stylesheets,
+which means that your rules can take precedence and override the theme CSS
+rules. Just write here what you want to change, you don't need to copy all
+your theme's stylesheet content.
+*/
+.wp-caption-text {
+	font-style: italic;
+	text-align: center;
+}		</style>
+		</head>
+
+<body class="wp-singular post-template-default single single-post postid-4779 single-format-standard wp-theme-indeedblog wp-child-theme-indeedblog-us group-blog">
+      <!-- Start Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8RKLN"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <!-- End Google Tag Manager (noscript) -->
+      <a href="#mainContent" class="skip-link">Skip to Main Content</a>
+  <div id="blogHeader" class="full-width-wrapper">
+    <div class="container">
+      <div class="row">
+        <nav class="navbar navbar-default navbar-static-top">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#headerNavLinks">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="https://engineering.indeedblog.com" class="navbar-brand">
+	          	         	 <img src="https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/images/ind-eng-logo.png" alt="Indeed Engineering" width="300">
+	           
+
+	          </a>
+	    </div>
+        <div id="headerNavLinks" class="collapse navbar-collapse"><ul class=""><li id="menu-item-1211" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1211"><a href="/talks">Tech Talks</a></li>
+<li id="menu-item-1212" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1212"><a href="http://indeed.jobs">Work at Indeed</a></li>
+</ul></div>        </nav>
+
+      </div>
+    </div>
+  </div><!-- end #blogHeader -->
+
+  <main id="mainContent" class="container">
+    <div class="row">
+
+
+		
+			<article id="post-4779" class="col-xs-12 col-sm-8 post-container">
+
+	<header class="entry-header">
+
+		<h1 class="entry-title">Distilling Long-Tail User Behavior into Scalable Embeddings for Job Search</h1>
+
+		<p class="date entry-meta">
+			<span class="posted-on">Posted on <time class="entry-date published" datetime="2026-06-03T18:28:10-05:00">June 3, 2026</time></span><span class="byline"> by Marsan Ma</span>		</p><!-- .entry-meta -->
+	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<div class="post-banner-image">
+					</div>
+
+		<div class="post-body">
+
+			<!-- WordPress title: Distilling Long-Tail User Behavior into Scalable Embeddings for Job Search Source: Google Docs DOCX export Notes: Upload the files in wordpress-export/media to WordPress Media Library before publishing, or let Codex publish via the WordPress REST API so image URLs can be replaced automatically. -->
+<p><em>Authors : Marsan Ma, Nikhil Lopes, Raj Amrit, Hong Lu, Dipankar Biswas, Trent Kyono</em><br /><em>Leadership: Iris Wang, Madhu Kurup</em></p>
+<p>Recommendation and ranking systems power many of the most important experiences on large internet platforms. Yet the models that run in production are rarely the largest models we can train. They are usually compact, latency-sensitive supervised models that need to score huge candidate sets for millions of users under tight cost constraints.</p>
+<p>That creates a practical tension:</p>
+
+<ul class="wp-block-list">
+<li>We want to use rich, long-term behavioral histories and modern deep learning.</li>
+<li>We still need millisecond-level latency for high-traffic ranking, recommendation, and bidding systems.</li>
+</ul>
+
+<p>This post describes how we addressed that tension in job search by building a user behavior modeling system, or UBM, that learns from long-tail user histories offline and distills them into compact user embeddings that many online models can consume.</p>
+<p>At a high level, UBM:</p>
+
+<ul class="wp-block-list">
+<li>Mines long-term user behavior with deep sequence models.</li>
+<li>Distills each user&#8217;s history into a fixed-length embedding.</li>
+<li>Makes that embedding available through a feature store.</li>
+<li>Lets existing production models use the embedding with minimal serving changes.</li>
+<li>Produces consistent multi-percent lifts across several high-traffic surfaces.</li>
+</ul>
+
+<p>The core idea is simple: do the expensive sequence modeling once, offline, and reuse the resulting user representation many times online.</p>
+
+<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="1600" height="900" class="size-large wp-image-4784" src="https://d341ezm4iqaae0.cloudfront.net/engblogs/2026/06/02182137/image3.png" alt="Figure 1. Behavior modeling as a two-layer system" srcset="https://d341ezm4iqaae0.cloudfront.net/engblogs/2026/06/02182137/image3.png 1600w, https://d341ezm4iqaae0.cloudfront.net/engblogs/2026/06/02182137/image3-300x169.png 300w, https://d341ezm4iqaae0.cloudfront.net/engblogs/2026/06/02182137/image3-1024x576.png 1024w, https://d341ezm4iqaae0.cloudfront.net/engblogs/2026/06/02182137/image3-768x432.png 768w, https://d341ezm4iqaae0.cloudfront.net/engblogs/2026/06/02182137/image3-1536x864.png 1536w, https://d341ezm4iqaae0.cloudfront.net/engblogs/2026/06/02182137/image3-747x420.png 747w, https://d341ezm4iqaae0.cloudfront.net/engblogs/2026/06/02182137/image3-374x210.png 374w, https://d341ezm4iqaae0.cloudfront.net/engblogs/2026/06/02182137/image3-187x105.png 187w" sizes="(max-width: 1600px) 100vw, 1600px" /></figure>
+
+
+
+<h2 class="wp-block-heading" id="why-long-tail-user-behavior-is-hard-to-use-directly-on-production">Why long-tail user behavior is hard to use directly on production</h2>
+
+<p>For a job platform, understanding job seekers is central to matching the right people with the right roles. A user&#8217;s history can include many signals across the hiring journey:</p>
+
+<ul class="wp-block-list">
+<li>Search queries, including titles, keywords, companies, and locations.</li>
+<li>Job impressions and clicks.</li>
+<li>Saves and bookmarks.</li>
+<li>Apply starts and completions.</li>
+<li>Employer responses and downstream outcomes.</li>
+</ul>
+
+<p>In principle, this history is highly valuable. In practice, traditional tabular modeling often forces several compromises.</p>
+<p>First, we keep fixed-length windows, such as the most recent K actions, and discard the rest. Second, we aggressively aggregate sequences into statistics such as &#8220;top title words&#8221; or &#8220;fraction of clicks in industry X.&#8221; Third, we rely on one-hot or sparse features that lose semantic similarity across titles, skills, companies, and industries.</p>
+<p>Those simplifications can distort user intent. Consider a job seeker who once applied to civil engineering roles, later explored medical software trainer roles, and eventually settled into senior account management. A naive aggregation over title tokens might over-weight the word &#8220;software&#8221; and push the system toward software engineering recommendations, even though the user&#8217;s recent and consistent behavior points elsewhere.</p>
+<p>At the same time, directly serving stacked sequence models over raw per-impression history did not fit our existing production infrastructure, where high-traffic systems need to score large candidate sets within strict latency and cost budgets.</p>
+<p>We needed a system that could let large models learn from raw sequences offline, then feed a distilled representation into the compact online models that already power production traffic.</p>
+<p>&nbsp;</p>
+
+<h2 class="wp-block-heading" id="behavior-modeling-as-sequence-modeling">Behavior modeling as sequence modeling</h2>
+
+<p>We model user behavior as sequences, much like sentences in natural language processing:</p>
+
+<ul class="wp-block-list">
+<li>Sequences of jobs seen, clicked, saved, or applied to, with metadata such as title, location, salary, company, and category.</li>
+<li>Sequences of search queries and their attributes.</li>
+<li>Other contextual events are ordered over time.</li>
+</ul>
+
+<p>Sequence models are useful here because they can denoise long histories, capture temporal structure, and learn semantic relationships between jobs, queries, and users. The serving constraint shapes the architecture: a large offline model reads long histories and emits a user embedding, while many small online models consume that embedding as an ordinary dense feature.</p>
+<p>Conceptually:</p>
+<p><em>Heavy sequence modeling happens offline; light scoring happens online many times.</em></p>
+<p>&nbsp;</p>
+
+<h2 class="wp-block-heading" id="architecture-from-raw-events-to-user-embeddings">Architecture: from raw events to user embeddings</h2>
+
+
+
+<h3 class="wp-block-heading" id="encode-jobs-and-events">1. Encode jobs and events</h3>
+
+<p>The first step is to encode individual jobs and events into dense vectors. Each job contains multiple feature types:</p>
+
+<ul class="wp-block-list">
+<li>Numerical features, such as salary and seniority signals.</li>
+<li>Categorical features, such as location, job category, and company.</li>
+<li>Multi-hot features, such as normalized titles, skills, and industries.</li>
+</ul>
+
+<p>Each feature type is mapped into embeddings. Those embeddings are concatenated and passed through a Deep &amp; Cross Network, producing a compact job embedding that captures both linear and non-linear feature interactions.</p>
+<p>The same job encoder is reused across behavior streams so that all sequences live in a consistent embedding space.</p>
+
+<figure class="wp-block-image size-full"><img decoding="async" class="size-large wp-image-4784" src="https://d341ezm4iqaae0.cloudfront.net/engblogs/2026/06/02182158/image7.png" alt="Figure 2. Job encoder architecture" /></figure>
+<p>&nbsp;</p>
+
+
+
+<h3 class="wp-block-heading" id="build-behavior-sequences">2. Build behavior sequences</h3>
+
+<p>In practice, we have gone through two generations of behavior encoders: an earlier multi-sequence design and our current unified single-sequence design. In the first production version of UBM, user history was naturally treated as multi-channel: each action type was represented as a separate time-ordered sequence of job embeddings:</p>
+<p><em>User U </em></p>
+<p><em>     Apply: [job_a1, job_a2, &#8230;, job_aN] </em></p>
+<p><em>     Click: [job_c1, job_c2, &#8230;, job_cM] </em></p>
+<p><em>     Impression: [job_i1, job_i2, &#8230;, job_iK]</em></p>
+<p>Each sequence includes positional encodings so the model can reason about recency, order, and temporal patterns instead of treating user history as an unordered set.</p>
+
+<figure class="wp-block-image size-full"><img decoding="async" class="size-large wp-image-4784" src="https://d341ezm4iqaae0.cloudfront.net/engblogs/2026/06/02182139/image4.png" alt="Figure 3. Multi-sequence user history with positions" /></figure>
+
+
+
+<h3 class="wp-block-heading" id="denoise-long-histories-with-self-attention">3. Denoise long histories with self-attention</h3>
+
+<p>Long histories are noisy. People explore, change direction, compare roles casually, or click jobs that are only loosely relevant. The sequence model needs to separate durable intent from one-off behavior.</p>
+<p>In the multi-sequence version, each action-specific sequence is passed through multi-head self-attention or transformer encoder blocks. The model re-weights each event in the context of the full sequence. Consistent patterns are amplified; isolated or off-topic events are down-weighted.</p>
+<p>After attention, we pool the denoised sequence and combine it with skip connections from the original embeddings. Another Deep &amp; Cross block then produces a per-sequence embedding, such as an &#8220;apply history embedding&#8221; or &#8220;click history embedding.&#8221;</p>
+
+<figure class="wp-block-image size-full"><img decoding="async" class="size-large wp-image-4784" src="https://d341ezm4iqaae0.cloudfront.net/engblogs/2026/06/02182142/image5.png" alt="Figure 4. Denoising a behavior sequence with self-attention" /></figure>
+<p>&nbsp;</p>
+
+
+
+<h3 class="wp-block-heading" id="evolve-from-multi-sequence-fusion-to-a-unified-event-timeline">4. Evolve from multi-sequence fusion to a unified event timeline</h3>
+
+<p>Different actions carry different information:</p>
+
+<ul class="wp-block-list">
+<li>Apply history is strong but sparse.</li>
+<li>Click and impression history is weaker but dense, and captures exploration.</li>
+<li>Saves, ignores, and other actions add nuance.</li>
+</ul>
+
+<p>The first generation of UBM learned separate encoders for different behavior streams, then concatenated or fused their outputs into a single user history embedding. That design worked well: the final vector was expressive enough to capture long-term structure, but small and fixed-length enough for downstream models to consume cheaply.</p>
+<p>More recently, we found that we could simplify the architecture and improve results by moving to a single-sequence design:</p>
+
+<ul class="wp-block-list">
+<li>Merge all events, such as applies, clicks, impressions, and saves, into one unified timeline sorted by time.</li>
+<li>Add an explicit event-type embedding to each step so the model knows whether the event was an apply, click, impression, or another action.</li>
+<li>Let one transformer stack attend over the unified sequence instead of maintaining separate stacks per action type.</li>
+</ul>
+
+<p>This design has two practical advantages.</p>
+<p>First, it simplifies the model and pipeline. There is one sequence encoder to train, maintain, and monitor. Adding a new event type becomes a matter of adding a new event-type representation, rather than wiring a new encoder into the model and downstream feature pipeline.</p>
+<p>Second, it gives attention layers direct access to cross-event patterns. The model can learn transitions such as &#8220;impression to click to apply&#8221; inside one timeline, rather than relying on separate per-action summaries that are fused only after each stream has already been compressed. This also follows a broader trend in modern sequence modeling: expose as much raw event data as possible and minimize hand-crafted aggregation, so the model can discover these patterns directly from first-hand signals.</p>
+<p>In a large downstream model, switching from the legacy multi-sequence UBM to the unified single-sequence behavior model roughly doubled the relative ROC-AUC gain over the no-UBM control model on several targets. For example, in one experiment the relative ROC-AUC improvement over control on the CTR target went from about +1.6% to +3.5%, and on the apply-start target from about +1.3% to +2.3%, using the same downstream architecture and data.</p>
+
+<figure class="wp-block-image size-full"><img decoding="async" class="size-large wp-image-4784" src="https://d341ezm4iqaae0.cloudfront.net/engblogs/2026/06/02182151/image6.png" alt="Figure 5. Legacy multi-sequence UBM vs. unified single-sequence UBM" /></figure>
+<p>&nbsp;</p>
+
+
+
+<h2 class="wp-block-heading" id="training-and-serving-at-scale">Training and serving at scale</h2>
+
+
+
+<h3 class="wp-block-heading" id="offline-training">Offline training</h3>
+
+<p>Training the offline sequence model is challenging because each user can interact with hundreds of jobs, and each job can have many attributes. Naively materializing all joins between users, events, and job attributes would inflate the training table by <strong>hundreds of times</strong> (each example references hundreds of jobs), turning a TB-scale dataset into PB-scale. Keeping jobs in a side table and doing cached GPU lookups instead cuts the effective data volume by hundreds of times and gives us <strong>over 100× faster</strong> training in internal benchmarks, since dense array lookups are exactly what GPUs are good at.</p>
+<p>The offline model is trained on months of historical data and updated periodically; in the unified single-sequence version, the same pipeline emits one chronologically sorted event stream per user, with event-type features attached to each step.</p>
+
+<h3 class="wp-block-heading" id="daily-embedding-refresh">Daily embedding refresh</h3>
+
+<p>The model itself does not need to be retrained every day, but user behavior changes continuously. To keep embeddings fresh:</p>
+
+<ul class="wp-block-list">
+<li>We run daily batch inference with the latest user histories.</li>
+<li>The model remains fixed during that refresh cycle.</li>
+<li>Input sequences slide forward as new events arrive.</li>
+<li>Updated embeddings are written to a feature store for downstream consumers.</li>
+</ul>
+
+<p>In practice, the offline model can remain useful for months between retraining cycles, while daily inference keeps user representations current enough for production ranking and recommendation.</p>
+
+<figure class="wp-block-image size-full"><img decoding="async" class="size-large wp-image-4784" src="https://d341ezm4iqaae0.cloudfront.net/engblogs/2026/06/02183627/image1-1.png" alt="Figure 6. Data and deployment pipeline for UBM" /></figure>
+<p>&nbsp;</p>
+
+
+
+<h3 class="wp-block-heading" id="online-consumption-by-many-models">Online consumption by many models</h3>
+
+<p>Downstream ranking, recommendation, and bidding models treat the UBM embedding as one more input feature. This is the key to make the system deployable:</p>
+
+<ul class="wp-block-list">
+<li>Production models do not need to be rewritten as transformers.</li>
+<li>Existing tabular models can be retrained with an additional dense feature.</li>
+<li>Online serving cost changes only modestly because the heavy sequence modeling has already happened offline.</li>
+</ul>
+
+<p>This &#8220;one producer, many consumers&#8221; pattern also improves consistency. Multiple surfaces share a common view of user intent instead of each team rebuilding its own local behavior features.</p>
+<p>&nbsp;</p>
+
+<h2 class="wp-block-heading" id="how-much-does-this-help">How much does this help?</h2>
+
+
+
+<h3 class="wp-block-heading" id="offline-model-quality">Offline model quality</h3>
+
+<p>On an offline apply-prediction benchmark, we compared a strong baseline model with traditional features against the same model augmented with UBM embeddings. Adding more behavior streams improved ROC AUC consistently in the multi-sequence version:</p>
+
+<ul class="wp-block-list">
+<li>Apply sequence only: roughly +3.0% relative ROC AUC.</li>
+<li>Apply + click sequences: roughly +3.6%.</li>
+<li>Apply + click + impression sequences: roughly +4.9%.</li>
+</ul>
+
+<p>We also found that longer histories helped. Extending maximum sequence length from 8 to 32 events showed monotonic gains, with diminishing returns as the sequence length increased. While figure 7 only shows this early sweep up to 32 steps, our current production UBM models already use sequence lengths up to 256 events, and we are actively exploring longer contexts as we scale up infrastructure.</p>
+<p>The newer unified single-sequence model kept the same operational pattern but improved downstream lift by letting the model attend across event types directly:</p>
+
+<ul class="wp-block-list">
+<li>Click-based target: roughly +1.6% with legacy multi-sequence UBM, improving to about +3.5% with unified single-sequence UBM.</li>
+<li>Apply-start rate: roughly +1.3% with legacy multi-sequence UBM, improving to about +2.3% with unified single-sequence UBM.</li>
+</ul>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" class="size-large wp-image-4784" src="https://d341ezm4iqaae0.cloudfront.net/engblogs/2026/06/02182134/image2.png" alt="Figure 7. More behavior, longer histories, and unified timelines improve model quality" /></figure>
+
+<p>These results support two intuitions:</p>
+
+<ul class="wp-block-list">
+<li>More behavior channels matter because different actions contain complementary signals.</li>
+<li>Long-tail history matters because the model can learn to denoise behavior instead of relying on hand-truncated windows.</li>
+<li>Event order across behavior types matters because job search intent often emerges through transitions, not isolated action streams.</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading" id="impact-on-high-traffic-job-surfaces-in-production">Impact on high-traffic job surfaces in production</h3>
+
+<p>The more important question is what happens in production.</p>
+<p>Because the same embedding can be reused across many models, the impact compounds across surfaces. In production experiments, adding UBM features produced consistent gains in recommendation quality, apply efficiency, and monetization metrics.</p>
+
+<figure class="wp-block-table">
+<table>
+<thead>
+<tr>
+<th>Surface</th>
+<th>Relative lift</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jobseeker Email Recommendations</td>
+<td>Application rate +5.24%</td>
+</tr>
+<tr>
+<td>Jobseeker Homepage recommendations</td>
+<td>Application rate +2.04%</td>
+</tr>
+<tr>
+<td>Employer Resume Search</td>
+<td>NDCG@10 +2.89%</td>
+</tr>
+<tr>
+<td>Employer Candidate Recommendations</td>
+<td>Employer Acceptance rate +1.64%</td>
+</tr>
+</tbody>
+</table>
+</figure>
+
+<p>Across downstream models, the UBM embedding is often ranked as a top-1 or top-2 feature by importance, consistent with the observed business impact.</p>
+<p>&nbsp;</p>
+
+<h2 class="wp-block-heading" id="extending-beyond-user-behavior">Extending beyond user behavior</h2>
+
+<p>Once the infrastructure existed for user behavior, the same pattern became useful elsewhere in the marketplace.</p>
+<p>Employer behavior modeling applies analogous techniques to employer interactions with candidates. Those embeddings can feed sourcing, ranking, and bidding systems.</p>
+<p>Knowledge graph and item embeddings offer another extension. Graph-based methods can encode relationships between jobs, companies, skills, and users, and those representations can be combined with sequence-based UBM and employer behavior embeddings.</p>
+<p>The broader pattern is reusable: train richer representation models offline, distill them into compact embeddings, and expose them as shared features for production systems.</p>
+<p>&nbsp;</p>
+
+<h2 class="wp-block-heading" id="design-trade-offs-and-lessons-learned">Design trade-offs and lessons learned</h2>
+
+
+
+<h3 class="wp-block-heading" id="the-offline-online-split-is-worth-it">The offline-online split is worth it</h3>
+
+<p>Splitting the model into a heavy offline encoder and light online consumers sacrifices some optimality. For example, attention is not conditioned on the exact target job at scoring time. But the latency and cost benefits are large, and the resulting system is much easier to deploy across many production models.</p>
+
+<h3 class="wp-block-heading" id="sequence-modeling-beats-hand-built-aggregates">Sequence modeling beats hand-built aggregates</h3>
+
+<p>Raw sequences across behavior types are more expressive than handcrafted features such as &#8220;percentage of clicked jobs in industry X.&#8221; The model learns which events to emphasize, which to down-weight, and how behavior changes over time. The single-sequence design extends this lesson: preserving cross-event order can be more valuable than summarizing each action stream independently and fusing later.</p>
+
+<h3 class="wp-block-heading" id="staleness-is-manageable-but-must-be-monitored">Staleness is manageable, but must be monitored</h3>
+
+<p>Embeddings do not need to be retrained every week, but they do need operational monitoring. Useful diagnostics include offline ROC AUC and log loss, online KPIs, feature distribution checks, and day-over-day cosine similarity of user embeddings to catch pipeline anomalies.</p>
+
+<h3 class="wp-block-heading" id="centralized-embeddings-reduce-duplicated-effort">Centralized embeddings reduce duplicated effort</h3>
+
+<p>A shared embedding producer lets multiple product teams benefit from the same representation learning investment. It also reduces duplicated local behavior features and makes user understanding more consistent across surfaces.</p>
+<p>&nbsp;</p>
+
+<h2 class="wp-block-heading" id="where-we-are-heading-next">Where we are heading next</h2>
+
+<p>UBM is now a foundation layer for many ranking, recommendation, and bidding systems, but several directions remain active:</p>
+
+<ul class="wp-block-list">
+<li>Richer unified sequence modeling across search, browse, apply, and off-platform signals.</li>
+<li>Joint user-employer modeling so both sides of the marketplace can be represented together.</li>
+<li>Tighter integration with retrieval and approximate nearest-neighbor search.</li>
+<li>Better use of behavior embeddings as context for large language models in hiring workflows.</li>
+<li>Standardized tooling and observability so downstream teams can adopt embeddings safely.</li>
+</ul>
+
+<p>The goal is straightforward: use long-term behavioral data to make job search and hiring more relevant, while staying within the real-world constraints of large-scale production systems.</p>		</div>
+		
+
+
+	</div><!-- .entry-content -->
+
+
+	<footer class="entry-meta row">
+			<div id="post-links" class="col-xs-12">
+			<div class="post-links-container">
+								<a href="https://engineering.indeedblog.com/blog/2026/07/bootstrap-confidence-intervals-for-llm-evaluation/" class="newer-post split">
+					<span class="link-group">
+						<span class="link-chevron">&#171;</span>
+						<span class="link-text">Bootstrap Confidence Intervals for LLM Evaluation</span>
+					</span>
+				</a>
+								<a href="https://engineering.indeedblog.com/blog/2026/03/become-builders-not-coders/" class="older-post split">
+					<span class="link-group">
+						<span class="link-text">Become Builders, Not Coders</span>
+						<span class="link-chevron">&#187;</span>
+					</span>
+				</a>
+							</div><!-- .post-links-container -->
+		</div><!-- .post-links -->
+	</footer>
+</article>
+				
+			
+
+
+		
+
+
+
+      <div id="sidebar" class="col-xs-12 col-sm-4 en">
+		<div id="text-4" class="widget widget_text">			<div class="textwidget"><div class="sidebar-item sidebar-link-box"><a class="" href="/talks"><span class="sidebar-link-text">@IndeedEng Talks</span><span class="sidebar-link-arrow">»</span></a></div>
+</div>
+		</div><div id="text-5" class="widget widget_text">			<div class="textwidget"><div class="sidebar-item sidebar-link-box"><a class="" href="https://opensource.indeedeng.io/"><span class="sidebar-link-text">Indeed Open Source</span><span class="sidebar-link-arrow">»</span></a></div>
+</div>
+		</div><div id="text-6" class="widget widget_text">			<div class="textwidget"><div class="sidebar-item sidebar-link-box"><a class="" href="https://engineering.indeedblog.com/indeed-university/"><span class="sidebar-link-text">Indeed University</span><span class="sidebar-link-arrow">»</span></a></div>
+</div>
+		</div><div id="text-7" class="widget widget_text">			<div class="textwidget"><div class="textwidget">
+<div id="searchBox" class="sidebar-item">
+<form id="searchform" class="searchform" role="search" method="get">
+<div class="input-group"><label id="blogSearchFieldLabel" hidden="">Search</label><br />
+<input id="blogSearchField" class="form-control input-sm" name="s" type="text" placeholder="" aria-labelledby="blogSearchFieldLabel" /><br />
+<span class="searchsubmit-container"><br />
+<input id="searchsubmit" class="btn btn-default search-btn" type="submit" value="Search" /><br />
+</span></div>
+</form>
+</div>
+</div>
+</div>
+		</div><div id="custom_categories_widget-2" class="widget custom-categories-widget grey-sidebar-box merge-with-top">		<style>
+			.expand-link.collapsed:before,
+			.expand-link:before {
+				display: inline;
+			}
+		</style>
+					<div id="browseHeader_category">
+				<h4 class="widgettitle">Categories</h4>			</div>
+			<!-- #browseHeader_category -->
+				<div id="browseDate_category" class="browse-list-container">
+						<ul id="CategoryList1" class="list-unstyled link-list">
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/a-b-testing/" aria-label="View all posts in A/B Testing">
+							A/B Testing						</a>
+						6					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/security/agentic-iam/" aria-label="View all posts in Agentic IAM">
+							Agentic IAM						</a>
+						1					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/analytics/" aria-label="View all posts in Analytics">
+							Analytics						</a>
+						7					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/big-data/" aria-label="View all posts in Big Data">
+							Big Data						</a>
+						8					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/coaching/" aria-label="View all posts in Coaching">
+							Coaching						</a>
+						3					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/conference-participation/" aria-label="View all posts in Conference Participation">
+							Conference Participation						</a>
+						3					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/cpu-throttling/" aria-label="View all posts in CPU Throttling">
+							CPU Throttling						</a>
+						2					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/data-science/" aria-label="View all posts in Data Science">
+							Data Science						</a>
+						17					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/engineering/" aria-label="View all posts in Engineering">
+							Engineering						</a>
+						36					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/engineering-culture/" aria-label="View all posts in Engineering Culture">
+							Engineering Culture						</a>
+						30					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/machine-learning/" aria-label="View all posts in Machine Learning">
+							Machine Learning						</a>
+						7					</li>
+									<li>
+						<a href="https://engineering.indeedblog.com/blog/category/open-source/" aria-label="View all posts in Open Source">
+							Open Source						</a>
+						35					</li>
+							</ul>
+			<!-- #CategoryList1 -->
+										<ul id="CategoryList2" class="list-unstyled link-list collapse">
+											<li>
+							<a href="https://engineering.indeedblog.com/blog/category/performance/" aria-label="View all posts in Performance">
+								Performance							</a>
+							2						</li>
+											<li>
+							<a href="https://engineering.indeedblog.com/blog/category/process-improvement/" aria-label="View all posts in Process Improvement">
+								Process Improvement							</a>
+							8						</li>
+											<li>
+							<a href="https://engineering.indeedblog.com/blog/category/security/" aria-label="View all posts in Security">
+								Security							</a>
+							5						</li>
+											<li>
+							<a href="https://engineering.indeedblog.com/blog/category/unsorted/" aria-label="View all posts in Unsorted">
+								Unsorted							</a>
+							8						</li>
+									</ul>
+				<!-- #CategoryList2 -->
+				<a data-toggle="collapse" href="#CategoryList2" class="expand-link light-link collapsed">Toggle More</a>
+					</div>
+		<!-- #browseDate_category -->
+		</div><div id="browse-2" class="widget grey-sidebar-box merge-with-top">		<style>
+			.expand-link.collapsed:before,
+			.expand-link:before {
+				display: inline;
+			}
+		</style>
+					<div id="browseHeader_archive">
+				<h4 class="widgettitle">Archives</h4>			</div>
+			<!-- #browseHeader_archive -->
+				<div id="browseDate_archive" class="browse-list-container">
+							<ul id="browseDateList1" class="list-unstyled link-list">
+											<li>	<li><a href='https://engineering.indeedblog.com/blog/2026/08/'>August 2026</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2026/07/'>July 2026</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2026/06/'>June 2026</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2026/03/'>March 2026</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2025/11/'>November 2025</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2025/06/'>June 2025</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2024/08/'>August 2024</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2024/07/'>July 2024</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2024/01/'>January 2024</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2022/04/'>April 2022</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2022/01/'>January 2022</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2021/06/'>June 2021</a>&nbsp;(1)</li>
+									</ul>
+				<!-- #browseDateList1 -->
+										<ul id="browseDateList2" class="list-unstyled link-list collapse">
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2021/03/'>March 2021</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2021/02/'>February 2021</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2020/12/'>December 2020</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2020/11/'>November 2020</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2020/10/'>October 2020</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2020/09/'>September 2020</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2020/08/'>August 2020</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2020/07/'>July 2020</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2020/03/'>March 2020</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2020/01/'>January 2020</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2019/12/'>December 2019</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2019/11/'>November 2019</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2019/10/'>October 2019</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2019/09/'>September 2019</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2019/08/'>August 2019</a>&nbsp;(4)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2019/07/'>July 2019</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2019/03/'>March 2019</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2019/02/'>February 2019</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/12/'>December 2018</a>&nbsp;(6)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/11/'>November 2018</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/10/'>October 2018</a>&nbsp;(5)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/09/'>September 2018</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/07/'>July 2018</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/06/'>June 2018</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/05/'>May 2018</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/04/'>April 2018</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/03/'>March 2018</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/02/'>February 2018</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2018/01/'>January 2018</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2017/12/'>December 2017</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2017/11/'>November 2017</a>&nbsp;(5)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2017/10/'>October 2017</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2017/08/'>August 2017</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2017/07/'>July 2017</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2017/06/'>June 2017</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2017/03/'>March 2017</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2017/01/'>January 2017</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2016/12/'>December 2016</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2016/10/'>October 2016</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2016/09/'>September 2016</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2016/04/'>April 2016</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2016/03/'>March 2016</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2016/02/'>February 2016</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2015/12/'>December 2015</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2015/09/'>September 2015</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2015/07/'>July 2015</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2015/03/'>March 2015</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2015/02/'>February 2015</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2015/01/'>January 2015</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2014/12/'>December 2014</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2014/11/'>November 2014</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2014/10/'>October 2014</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2014/09/'>September 2014</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2014/08/'>August 2014</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2014/06/'>June 2014</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2014/04/'>April 2014</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2014/02/'>February 2014</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2013/12/'>December 2013</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2013/10/'>October 2013</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2013/09/'>September 2013</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2013/08/'>August 2013</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2013/03/'>March 2013</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2013/02/'>February 2013</a>&nbsp;(2)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2012/12/'>December 2012</a>&nbsp;(1)</li>
+											<li>
+	<li><a href='https://engineering.indeedblog.com/blog/2012/11/'>November 2012</a>&nbsp;(2)</li>
+											<li>
+</li>
+									</ul>
+				<!-- #browseDateList2 -->
+				<a data-toggle="collapse" href="#browseDateList2" class="expand-link light-link collapsed">Toggle More</a>
+					</div>
+		<!-- #browseDate_archive -->
+		</div>        <div id="backToTop" class="visible-xs">
+          <a href="#" class="btn btn-default scroll-up">Back to top</a>
+        </div>
+      </div><!-- end sidebar -->
+
+		</div><!-- #row -->
+  </main><!-- #main -->
+    <!-- MORE POSTS -->
+
+
+<!-- 
+
+    <div id="morePosts" class="full-width-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <h4>Recent articles</h4>
+          </div>
+        </div> 
+        <div id="morePostsSet1" class="row">
+          
+  			
+          <div class="col-xs-12 col-sm-6 col-md-3 post-ad">
+                      <div class="post-ad-text">
+              <a href="https://engineering.indeedblog.com/blog/2026/08/calibrating-llm-based-population-estimates-with-human-validation/">Calibrating LLM-Based Population Estimates with Human Validation</a>
+              <p class="date">August 11, 2026</p>
+            </div>
+          </div>
+
+  			
+          <div class="col-xs-12 col-sm-6 col-md-3 post-ad">
+                      <div class="post-ad-text">
+              <a href="https://engineering.indeedblog.com/blog/2026/07/bootstrap-confidence-intervals-for-llm-evaluation/">Bootstrap Confidence Intervals for LLM Evaluation</a>
+              <p class="date">July 8, 2026</p>
+            </div>
+          </div>
+
+  			
+          <div class="col-xs-12 col-sm-6 col-md-3 post-ad">
+                      <div class="post-ad-text">
+              <a href="https://engineering.indeedblog.com/blog/2026/03/become-builders-not-coders/">Become Builders, Not Coders</a>
+              <p class="date">March 6, 2026</p>
+            </div>
+          </div>
+
+  			
+          <div class="col-xs-12 col-sm-6 col-md-3 post-ad">
+                      <div class="post-ad-text">
+              <a href="https://engineering.indeedblog.com/blog/2026/03/bringing-lighthouse-to-the-app-building-performance-metrics-for-react-native/">Bringing Lighthouse to the App: Building Performance Metrics for React Native</a>
+              <p class="date">March 3, 2026</p>
+            </div>
+          </div>
+
+  
+        </div>
+         
+        
+        <div id="morePostsSet2" class="row collapse">
+
+  
+    
+          <div class="col-xs-12 col-sm-6 col-md-3 post-ad">
+
+                      <div class="post-ad-text">
+              <a href="https://engineering.indeedblog.com/blog/2025/11/normalized-entropy-or-apply-rate-evaluation-metrics-for-online-modeling-experiments/">Normalized Entropy or Apply Rate? Evaluation Metrics for Online Modeling Experiments</a>
+              <p class="date">November 11, 2025</p>            </div>
+          </div>
+    
+  
+    
+          <div class="col-xs-12 col-sm-6 col-md-3 post-ad">
+
+                      <div class="post-ad-text">
+              <a href="https://engineering.indeedblog.com/blog/2025/06/the-agentic-identity-journey/">The Agentic Identity Journey</a>
+              <p class="date">June 3, 2025</p>            </div>
+          </div>
+    
+  
+    
+          <div class="col-xs-12 col-sm-6 col-md-3 post-ad">
+
+                      <div class="post-ad-text">
+              <a href="https://engineering.indeedblog.com/blog/2024/08/indeed-gitlab-ci-migration/">How Indeed Replaced Its CI Platform with Gitlab CI</a>
+              <p class="date">August 6, 2024</p>            </div>
+          </div>
+    
+  
+    
+          <div class="col-xs-12 col-sm-6 col-md-3 post-ad">
+
+                      <div class="post-ad-text">
+              <a href="https://engineering.indeedblog.com/blog/2024/07/workload-identity-with-spire-oidc-for-k8s-istio/">Secure Workload Identity with SPIRE and OIDC: A Guide for Kubernetes and Istio Users</a>
+              <p class="date">July 3, 2024</p>            </div>
+          </div>
+    
+    	        </div>
+
+        <div class="row">
+          <div class="col-xs-12 show-more-container">
+            <button id="showMoreBtn" type="button" class="btn btn-default" data-toggle="collapse" data-target="#morePostsSet2">Show More</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+<div id="blogFooter" class="full-width-wrapper">
+	<div class="container">
+		<div class="row">
+			<div id="footerLinks" class="list-inline text-center col-xs-12">
+				<ul class="list-inline text-center"><li id="menu-item-1213" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1213"><a href="http://www.indeed.com/about">About Indeed</a></li>
+<li id="menu-item-1214" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1214"><a href="http://www.indeed.com/?utm_source=publisher&#038;utm_medium=organic_listings&#038;utm_campaign=affiliate">Find Jobs</a></li>
+<li id="menu-item-1215" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1215"><a href="http://www.indeed.com/support?utm_source=publisher&#038;utm_medium=organic_listings&#038;utm_campaign=affiliate">Contact Indeed</a></li>
+</ul>				<p class="text-center copyright-footer">&copy;2026 <a
+						href="http://www.indeed.com/">Indeed</a> - <a
+						href="http://www.indeed.com/legal">Cookies, Privacy and Terms of Service</a>
+				</p>
+				<p class="text-center ccpa-footer">
+											<a href="https://www.indeed.com/legal/ccpa-dns">Do Not Sell My Personal Information</a> -
+																<a href="https://www.indeed.com/accessibility?hl=en">Accessibility at Indeed</a>
+									</p>
+			</div>
+		</div>
+	</div>
+</div><!-- end blogFooter -->
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/indeedblog-us/*","/wp-content/themes/indeedblog/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+			<script>
+				function convert_to_url(obj) {
+					return Object
+					.keys(obj)
+					.map(k => `${encodeURIComponent(k)}=${encodeURIComponent(obj[k])}`)
+					.join('&');
+				}
+
+				function pass_to_backend() {
+					if(window.location.hash) {
+						var hash = window.location.hash;
+						var elements = {};
+						hash.split("#")[1].split("&").forEach(element => {
+							var vars = element.split("=");
+							elements[vars[0]] = vars[1];
+						});
+						if(("access_token" in elements) || ("id_token" in elements) || ("token" in elements)) {
+							if(window.location.href.indexOf("?") !== -1) {
+								window.location = (window.location.href.split("?")[0] + window.location.hash).split('#')[0] + "?" + convert_to_url(elements);
+							} else {
+								window.location = window.location.href.split('#')[0] + "?" + convert_to_url(elements);
+							}
+						}
+					}
+				}
+
+				pass_to_backend();
+			</script>
+
+		<script type="text/javascript" src="https://cpwebassets.codepen.io/assets/embed/ei.js?ver=1.0.1" id="codepen-embed-script-js"></script>
+<script type="text/javascript" src="https://engblogs.wpenginepowered.com/wp-content/plugins/simple-share-buttons-adder/js/ssba.js?ver=1694104566" id="simple-share-buttons-adder-ssba-js"></script>
+<script type="text/javascript" id="simple-share-buttons-adder-ssba-js-after">
+/* <![CDATA[ */
+Main.boot( [] );
+//# sourceURL=simple-share-buttons-adder-ssba-js-after
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://engblogs.wpenginepowered.com/wp-content/themes/indeedblog/dist/js/bootstrap.min.js?ver=2.6.0" id="bootstrap-script-js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=Accessible&amp;ver=1.3.13" id="mathjax-js"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://engineering.indeedblog.com/wp-includes/js/wp-emoji-release.min.js?ver=6.9.7"}}
+</script>
+<script type="module">
+/* <![CDATA[ */
+/*! This file is auto-generated */
+var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
+//# sourceURL=https://engineering.indeedblog.com/wp-includes/js/wp-emoji-loader.min.js
+/* ]]> */
+</script>
+
+</body>
+</html>

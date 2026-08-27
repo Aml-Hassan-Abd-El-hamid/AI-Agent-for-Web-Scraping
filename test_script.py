@@ -353,7 +353,7 @@ domains = [
         pagination_type="infinite_scroll",
         first_link="https://aawsat.com/%D8%A7%D9%84%D8%B1%D8%A3%D9%8A",
         second_link=None,
-        count=2,
+        count=100,
         required_fields=DEFAULT_REQUIREMENTS
     ),
     DomainConfig(
@@ -401,7 +401,7 @@ domains = [
         pagination_type="infinite_scroll",
         first_link="https://arabic.cnn.com/tag/gaza_strip",
         second_link=None,
-        count=2,
+        count=10,
         required_fields="title, date, article body text"
     ),
     DomainConfig(

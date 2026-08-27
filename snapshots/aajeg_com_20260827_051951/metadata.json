@@ -1,0 +1,113 @@
+{
+  "website": "aajeg",
+  "snapshot_date": "2026-08-27T05:26:09",
+  "pagination_type": "load more button",
+  "scroll_mode": "load_more",
+  "scroll_rounds_requested": 2,
+  "load_more_selector": null,
+  "listing_url": "https://www.aajeg.com/news/palestine",
+  "input_urls": [
+    "https://www.aajeg.com/news/palestine"
+  ],
+  "pagination_pattern": null,
+  "requirements": "title, date, article body text",
+  "run_dir": "orch_runs/run_20260827_051951",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://www.aajeg.com/news/palestine",
+      "file": "listing_page_001.html",
+      "bytes": 120733,
+      "sha1": "cd95959db6402187ba31d0ad821fb632f1c85bae"
+    },
+    {
+      "page_num": 1,
+      "url": "https://www.aajeg.com/news/palestine",
+      "file": "listing_page_001_expanded.html",
+      "bytes": 120823,
+      "sha1": "bfe557100c9e0242aa0cfd327b09a451baf86c7e",
+      "expanded": true
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://www.aajeg.com/politics/%D8%AD%D9%82-%D9%88%D8%AF%D8%A7%D8%B9-%D9%85%D8%A4%D8%AC%D9%91%D9%84-%D8%B9%D8%A7%D8%A6%D9%84%D8%A7%D8%AA-%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A%D8%A9-%D8%AA%D9%86%D8%AA%D8%B8%D8%B1-%D8%A7%D8%B3%D8%AA%D8%B1%D8%AF%D8%A7%D8%AF-%D8%AC%D8%AB%D8%A7%D9%85%D9%8A%D9%86-%D8%A3%D8%A8%D9%86%D8%A7%D8%A6%D9%87%D8%A7",
+      "title": "حق وداع مؤجّل.. عائلات فلسطينية تنتظر استرداد جثامين أبنائها",
+      "page_num": 1,
+      "bytes": 171788,
+      "sha1": "54837147e0cddcaab71bee3991f916933674095f"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://www.aajeg.com/society/%D8%BA%D8%B2%D9%8A%D9%91%D9%88%D9%86-%D9%8A%D8%B3%D8%AA%D8%B9%D9%8A%D8%AF%D9%88%D9%86-%D8%A7%D9%84%D8%B3%D9%85%D8%B9-%D8%A8%D8%B9%D8%AF-%D9%85%D8%B9%D8%A7%D9%86%D8%A7%D8%A9-%D9%82%D8%A7%D8%B3%D9%8A%D8%A9-%D8%AE%D9%84%D8%A7%D9%84-%D8%AD%D8%B1%D8%A8-%D8%A7%D9%84%D8%A5%D8%A8%D8%A7%D8%AF%D8%A9",
+      "title": "غزيّون يستعيدون السمع بعد معاناة قاسية خلال حرب الإبادة",
+      "page_num": 1,
+      "bytes": 214122,
+      "sha1": "73e0b713d01d2ff82a4f392f17e9d0259e0c7535"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://www.aajeg.com/politics/42-%D8%B3%D9%8A%D9%86%D8%A7%D8%AA%D9%88%D8%B1%D8%A7%D9%8B-%D8%AF%D9%8A%D9%85%D9%82%D8%B1%D8%A7%D8%B7%D9%8A%D8%A7%D9%8B-%D9%8A%D8%B7%D8%A7%D9%84%D8%A8%D9%88%D9%86-%D9%86%D8%AA%D9%86%D9%8A%D8%A7%D9%87%D9%88-%D8%A8%D9%83%D8%A8%D8%AD-%D8%B9%D9%86%D9%81-%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%88%D8%B7%D9%86%D9%8A%D9%86",
+      "title": "42 سيناتوراً ديمقراطياً يطالبون نتنياهو بكبح عنف المستوطنين",
+      "page_num": 1,
+      "bytes": 309977,
+      "sha1": "fc1d2375a469a489a7e59c7313f5c87a01b4796b"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://www.aajeg.com/politics/%D9%83%D9%86%D8%AF%D8%A7-%D8%AA%D9%85%D9%86%D8%B9-%D8%AF%D8%AE%D9%88%D9%84-%D9%85%D8%B3%D8%A4%D9%88%D9%84-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84%D9%8A-%D8%A8%D8%B9%D8%AF-%D8%B4%D9%83%D8%A7%D9%88%D9%89-%D8%A8%D8%AC%D8%B1%D8%A7%D8%A6%D9%85-%D8%B6%D8%AF-%D8%A7%D9%84%D8%A5%D9%86%D8%B3%D8%A7%D9%86%D9%8A%D8%A9",
+      "title": "كندا تمنع دخول مسؤول إسرائيلي بعد شكاوى بجرائم ضد الإنسانية",
+      "page_num": 1,
+      "bytes": 267540,
+      "sha1": "a4d97292970820a7e4b935a2fd817933c78244fd"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://www.aajeg.com/politics/%D8%BA%D8%B2%D8%A9-%D8%B4%D9%87%D9%8A%D8%AF-%D9%81%D9%8A-%D9%82%D8%B5%D9%81-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84%D9%8A-%D9%84%D8%AE%D9%8A%D9%85%D8%A9-%D9%86%D8%B2%D9%88%D8%AD-%D9%81%D9%8A-%D9%85%D9%88%D8%A7%D8%B5%D9%8A-%D8%AE%D8%A7%D9%86%D9%8A%D9%88%D9%86%D8%B3",
+      "title": "غزة |شهيد في قصف إسرائيلي لخيمة نزوح في مواصي خانيونس",
+      "page_num": 1,
+      "bytes": 250889,
+      "sha1": "44a824a8fb7b537e4cb22a798f669003aff04a0b"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://www.aajeg.com/society/%D9%86%D8%B6%D8%A7%D9%84-%D8%AF%D8%B1%D9%8A%D9%86%D9%8A-%D9%85%D8%B5%D8%A7%D8%A8%D9%8C-%D9%8A%D9%86%D8%AA%D8%B8%D8%B1-%D8%A7%D9%84%D8%B3%D9%81%D8%B1-%D8%AE%D8%A7%D8%B1%D8%AC-%D8%BA%D8%B2%D8%A9-%D9%84%D8%B9%D9%84%D8%A7%D8%AC-%D9%82%D8%AF%D9%85%D9%87-%D9%82%D8%A8%D9%84-%D8%A8%D8%AA%D8%B1%D9%87%D8%A7",
+      "title": "نضال دريني... مصابٌ ينتظر السفر خارج غزة لعلاج قدمه قبل بترها",
+      "page_num": 1,
+      "bytes": 210898,
+      "sha1": "5c5df323143d0cd7f31f4d1feec890954b2f964c"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://www.aajeg.com/politics/%D8%A7%D9%84%D8%B6%D9%81%D8%A9-%D8%A7%D9%84%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9-%D8%A7%D9%84%D8%A7%D8%AD%D8%AA%D9%84%D8%A7%D9%84-%D9%8A%D9%88%D8%A7%D8%B5%D9%84-%D8%B9%D8%AF%D9%88%D8%A7%D9%86%D9%87-%D8%B9%D9%84%D9%89-%D9%85%D8%B9%D9%87%D8%AF-%D9%82%D9%84%D9%86%D8%AF%D9%8A%D8%A7-%D9%88%D8%A8%D9%84%D8%AF%D8%A9-%D9%82%D8%B5%D8%B1%D8%A9",
+      "title": "الضفة الغربية |الاحتلال يواصل عدوانه على معهد قلنديا وبلدة قصرة",
+      "page_num": 1,
+      "bytes": 267520,
+      "sha1": "be2d6f0010b50b6b1e1c232032b562914925c748"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://www.aajeg.com/entertainment_media/%D9%85%D8%B3%D8%AA%D9%88%D8%B7%D9%86%D9%88%D9%86-%D9%8A%D9%87%D8%A7%D8%AC%D9%85%D9%88%D9%86-%D8%B5%D8%AD%D8%A7%D9%81%D9%8A%D9%8A-%D9%88%D9%83%D8%A7%D9%84%D8%A9-%D9%81%D8%B1%D8%A7%D9%86%D8%B3-%D8%A8%D8%B1%D8%B3-%D9%81%D9%8A-%D8%A7%D9%84%D8%B6%D9%81%D8%A9-%D8%A7%D9%84%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9",
+      "title": "مستوطنون يهاجمون صحافيي وكالة فرانس برس في الضفة الغربية",
+      "page_num": 1,
+      "bytes": 197923,
+      "sha1": "3a8e669ede8f46ad3f98f985baf595b05c0628c7"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 2,
+    "articles": 8,
+    "article_fetch_failures": 0
+  }
+}

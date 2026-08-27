@@ -1,0 +1,392 @@
+{
+  "website": "libraryofshortstories",
+  "snapshot_date": "2026-08-27T08:31:03",
+  "pagination_type": "infinite scroll",
+  "scroll_mode": "scroll",
+  "scroll_rounds_requested": 2,
+  "load_more_selector": null,
+  "listing_url": "https://www.libraryofshortstories.com/stories",
+  "input_urls": [
+    "https://www.libraryofshortstories.com/stories"
+  ],
+  "pagination_pattern": null,
+  "requirements": "title, author, article body text",
+  "run_dir": "orch_runs/run_20260827_080946",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://www.libraryofshortstories.com/stories",
+      "file": "listing_page_001.html",
+      "bytes": 219139,
+      "sha1": "4fa459a41118d0f296649aef30e31b7b819a56fd"
+    },
+    {
+      "page_num": 1,
+      "url": "https://www.libraryofshortstories.com/stories",
+      "file": "listing_page_001_expanded.html",
+      "bytes": 219139,
+      "sha1": "4fa459a41118d0f296649aef30e31b7b819a56fd",
+      "expanded": true
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-1000000-bank-note",
+      "title": "The £1,000,000 Bank-Note",
+      "page_num": 1,
+      "bytes": 64466,
+      "sha1": "d1f498c83dc6b764ccf52c38bbf59fa8517745c2"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-25000-jaw",
+      "title": "The $25,000 Jaw",
+      "page_num": 1,
+      "bytes": 59837,
+      "sha1": "603d96bd3d9fdd8553dc96d337fe1720de54501c"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/2br02b",
+      "title": "2BR02B",
+      "page_num": 1,
+      "bytes": 35865,
+      "sha1": "7540c4231ceac4d72869bd9e56ec6bf50139bdd4"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/abel-and-his-great-adventure",
+      "title": "Abel and His Great Adventure",
+      "page_num": 1,
+      "bytes": 49797,
+      "sha1": "b0449b67797f12a42488cc539c6d861f26e6b9db"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/about-barbers",
+      "title": "About Barbers",
+      "page_num": 1,
+      "bytes": 28272,
+      "sha1": "819c3e9f9646c5f843c94b71836760ef6008760a"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/about-love",
+      "title": "About Love",
+      "page_num": 1,
+      "bytes": 40940,
+      "sha1": "21c8636107a6e2b2e3a0486847b0be7901693834"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/accessory-before-the-fact",
+      "title": "Accessory Before the Fact",
+      "page_num": 1,
+      "bytes": 34659,
+      "sha1": "3adae43833efc42b7218ec98a6c24a9dd6b2b22a"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/according-to-their-lights",
+      "title": "According to Their Lights",
+      "page_num": 1,
+      "bytes": 32947,
+      "sha1": "32a1d4896b18102cea73bb92ad6701a05f87e7c9"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/across-the-straits",
+      "title": "Across the Straits",
+      "page_num": 1,
+      "bytes": 31540,
+      "sha1": "363f57ed3a17f6f7d685ba976d42a1bbb4204e97"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/an-adventure-in-futurity",
+      "title": "An Adventure in Futurity",
+      "page_num": 1,
+      "bytes": 104755,
+      "sha1": "04e1cd5a56c35340977649e5fbc4567453898e99"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-black-peter",
+      "title": "The Adventure of Black Peter",
+      "page_num": 1,
+      "bytes": 65852,
+      "sha1": "e47347e2fd8b9fd544a13c54dd9d5da1c505da55"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-charles-augustus-milverton",
+      "title": "The Adventure of Charles Augustus Milverton",
+      "page_num": 1,
+      "bytes": 58721,
+      "sha1": "5ddb0e6d3e9042ce593f42b5bf8a4112a6cee90c"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-shoscombe-old-place",
+      "title": "The Adventure of Shoscombe Old Place",
+      "page_num": 1,
+      "bytes": 55519,
+      "sha1": "6a86997a960de0faa55f9e17ae8526e62ddc7535"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-the-abbey-grange",
+      "title": "The Adventure of the Abbey Grange",
+      "page_num": 1,
+      "bytes": 70884,
+      "sha1": "a6fd3fce2c4911438919d6f7d93fc542ee1449cf"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-the-beryl-coronet",
+      "title": "The Adventure of the Beryl Coronet",
+      "page_num": 1,
+      "bytes": 73640,
+      "sha1": "015a562aded5fa7303c86ef3b3cff60bcb337016"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-the-blue-carbuncle",
+      "title": "The Adventure of the Blue Carbuncle",
+      "page_num": 1,
+      "bytes": 64664,
+      "sha1": "aa7a68ce14df1fd5449937cc62a247acbebb9ed2"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-the-bruce-partington-plans",
+      "title": "The Adventure of the Bruce-Partington Plans",
+      "page_num": 1,
+      "bytes": 82427,
+      "sha1": "681f88bd904e22a780c2774c19b0155642e1e9ed"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-the-cardboard-box",
+      "title": "The Adventure of the Cardboard Box",
+      "page_num": 1,
+      "bytes": 68041,
+      "sha1": "626a1ae14ad5d59c7931bf2d2692176c74a2995d"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-the-cheap-flat",
+      "title": "The Adventure of the Cheap Flat",
+      "page_num": 1,
+      "bytes": 47827,
+      "sha1": "a0e1b19bc0b95d6b6b19d827e9f84e0c690d9da0"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-the-copper-beeches",
+      "title": "The Adventure of the Copper Beeches",
+      "page_num": 1,
+      "bytes": 75590,
+      "sha1": "e437d9dd6c2dcc0d6e1a79348e0df3099d35ffa7"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-the-creeping-man",
+      "title": "The Adventure of the Creeping Man",
+      "page_num": 1,
+      "bytes": 64435,
+      "sha1": "5557abefc00722f78135d2af22a6cc4df90afe0b"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-the-dancing-men",
+      "title": "The Adventure of the Dancing Men",
+      "page_num": 1,
+      "bytes": 75188,
+      "sha1": "0c4abe14248408519026d823af278df8fe436572"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-the-devils-foot",
+      "title": "The Adventure of the Devil’s Foot",
+      "page_num": 1,
+      "bytes": 77158,
+      "sha1": "4714229c9049ef73a775d00b438a68e410595f54"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-the-dying-detective",
+      "title": "The Adventure of the Dying Detective",
+      "page_num": 1,
+      "bytes": 53720,
+      "sha1": "4bf8bbc1b42b2fca785e08c889e06c57e0ad14aa"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-the-egyptian-tomb",
+      "title": "The Adventure of the Egyptian Tomb",
+      "page_num": 1,
+      "bytes": 49760,
+      "sha1": "71d5705dec3131ada858242dac09b09350931341"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-the-empty-house",
+      "title": "The Adventure of the Empty House",
+      "page_num": 1,
+      "bytes": 69181,
+      "sha1": "e6e16684c5c5afdb5cf8cbb0c91510136d231685"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-the-engineers-thumb",
+      "title": "The Adventure of the Engineer’s Thumb",
+      "page_num": 1,
+      "bytes": 67041,
+      "sha1": "5de1b826c9c40a50c9c319fa92081adaa0a306ee"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-the-german-student",
+      "title": "The Adventure of the German Student",
+      "page_num": 1,
+      "bytes": 32424,
+      "sha1": "809b7ae6741cd19532172488990d2d1abc77a86d"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-the-golden-pince-nez",
+      "title": "The Adventure of the Golden Pince-Nez",
+      "page_num": 1,
+      "bytes": 70512,
+      "sha1": "a0211ecebb25f592d6b76db42b3fe259f6a59111"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-the-italian-nobleman",
+      "title": "The Adventure of the Italian Nobleman",
+      "page_num": 1,
+      "bytes": 42208,
+      "sha1": "ff37341c76a657c8f2569e3ca1d1e093daf531d9"
+    },
+    {
+      "id": 31,
+      "file": "article_0031.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-the-lions-mane",
+      "title": "The Adventure of the Lion’s Mane",
+      "page_num": 1,
+      "bytes": 61086,
+      "sha1": "1c6786046f9a80eb24f0dc3e62c1d4faf5d88edf"
+    },
+    {
+      "id": 32,
+      "file": "article_0032.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-the-mazarin-stone",
+      "title": "The Adventure of the Mazarin Stone",
+      "page_num": 1,
+      "bytes": 53563,
+      "sha1": "6fd3dae854217500fa99b741057d0333bde0a933"
+    },
+    {
+      "id": 33,
+      "file": "article_0033.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-the-missing-three-quarter",
+      "title": "The Adventure of the Missing Three-Quarter",
+      "page_num": 1,
+      "bytes": 66698,
+      "sha1": "505b5da14e874b2e6da7c61f0f2e22b3a7c44671"
+    },
+    {
+      "id": 34,
+      "file": "article_0034.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-the-noble-bachelor",
+      "title": "The Adventure of the Noble Bachelor",
+      "page_num": 1,
+      "bytes": 67247,
+      "sha1": "ada769b4616dfb352a942dca551b57c24c6ea5c2"
+    },
+    {
+      "id": 35,
+      "file": "article_0035.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-the-norwood-builder",
+      "title": "The Adventure of the Norwood Builder",
+      "page_num": 1,
+      "bytes": 72729,
+      "sha1": "191851fd11e65a51d29cbfaccc899a12b2b28d2e"
+    },
+    {
+      "id": 36,
+      "file": "article_0036.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-the-priory-school",
+      "title": "The Adventure of the Priory School",
+      "page_num": 1,
+      "bytes": 85230,
+      "sha1": "fb009172f3902ab93f1aee78ee270dc83d6874bb"
+    },
+    {
+      "id": 37,
+      "file": "article_0037.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-the-red-circle",
+      "title": "The Adventure of the Red Circle",
+      "page_num": 1,
+      "bytes": 61913,
+      "sha1": "ce40101cfae5718f0736c18e75d88585300e3f51"
+    },
+    {
+      "id": 38,
+      "file": "article_0038.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-the-retired-colourman",
+      "title": "The Adventure of the Retired Colourman",
+      "page_num": 1,
+      "bytes": 51990,
+      "sha1": "d6bd629a2b0d57248688a8a88fa432a878c1d670"
+    },
+    {
+      "id": 39,
+      "file": "article_0039.html",
+      "url": "https://www.libraryofshortstories.com/onlinereader/the-adventure-of-the-second-stain",
+      "title": "The Adventure of the Second Stain",
+      "page_num": 1,
+      "bytes": 76514,
+      "sha1": "936d9c6dad9033051e4ea1e207a0e12c38383d52"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 2,
+    "articles": 39,
+    "article_fetch_failures": 0
+  }
+}

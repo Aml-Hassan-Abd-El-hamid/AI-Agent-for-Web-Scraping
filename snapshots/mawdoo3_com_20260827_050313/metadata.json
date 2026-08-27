@@ -1,0 +1,3612 @@
+{
+  "website": "mawdoo3",
+  "snapshot_date": "2026-08-27T05:12:38",
+  "pagination_type": "numbered pagination",
+  "scroll_mode": null,
+  "scroll_rounds_requested": null,
+  "load_more_selector": null,
+  "listing_url": "https://mawdoo3.com/%D8%AA%D8%B5%D9%86%D9%8A%D9%81:%D8%A7%D9%84%D8%A2%D8%AF%D8%A7%D8%A8",
+  "input_urls": [
+    "https://mawdoo3.com/%D8%AA%D8%B5%D9%86%D9%8A%D9%81:%D8%A7%D9%84%D8%A2%D8%AF%D8%A7%D8%A8",
+    "https://mawdoo3.com/%D8%AA%D8%B5%D9%86%D9%8A%D9%81:%D8%A7%D9%84%D8%A2%D8%AF%D8%A7%D8%A8?page=2"
+  ],
+  "pagination_pattern": "https://mawdoo3.com/%D8%AA%D8%B5%D9%86%D9%8A%D9%81:%D8%A7%D9%84%D8%A2%D8%AF%D8%A7%D8%A8?page={page}",
+  "requirements": "title, date, author, article body text",
+  "run_dir": "orch_runs/run_20260827_050313",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://mawdoo3.com/%D8%AA%D8%B5%D9%86%D9%8A%D9%81:%D8%A7%D9%84%D8%A2%D8%AF%D8%A7%D8%A8",
+      "file": "listing_page_001.html",
+      "bytes": 234165,
+      "sha1": "ad8718ab334ec1905a577b6525832cf4aeb1febf"
+    },
+    {
+      "page_num": 2,
+      "url": "https://mawdoo3.com/%D8%AA%D8%B5%D9%86%D9%8A%D9%81:%D8%A7%D9%84%D8%A2%D8%AF%D8%A7%D8%A8?page=2",
+      "file": "listing_page_002.html",
+      "bytes": 233834,
+      "sha1": "8a6aa58ba4e272ec9a2687998e5e3250a957718a"
+    },
+    {
+      "page_num": 3,
+      "url": "https://mawdoo3.com/%D8%AA%D8%B5%D9%86%D9%8A%D9%81:%D8%A7%D9%84%D8%A2%D8%AF%D8%A7%D8%A8?page=3",
+      "file": "listing_page_003.html",
+      "bytes": 235313,
+      "sha1": "480ec5080160db34f93466e27d7807df19dd5f43"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_الوطن",
+      "title": "موضوع تعبير عن الوطن",
+      "page_num": 1,
+      "bytes": 196189,
+      "sha1": "46db8be10d1e33cae3160592e346ea51c71c6a61"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_العلم",
+      "title": "موضوع تعبير عن العلم",
+      "page_num": 1,
+      "bytes": 196468,
+      "sha1": "a36b2307a2435527538af28958a8e2726aeee469"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://mawdoo3.com/تعبير_عن_الأم",
+      "title": "تعبير عن الأم",
+      "page_num": 1,
+      "bytes": 202918,
+      "sha1": "29f23ff1d3081573e79cd5c8b78d5bda85ac9eb9"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_الأخلاق",
+      "title": "موضوع تعبير عن الأخلاق",
+      "page_num": 1,
+      "bytes": 198564,
+      "sha1": "b29afafb8783def17011cf7098300b8027b7f500"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://mawdoo3.com/تعبير_بر_الوالدين",
+      "title": "تعبير بر الوالدين",
+      "page_num": 1,
+      "bytes": 201996,
+      "sha1": "d599acda2805d9e08c796b01d7aa90be3eec06cc"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_الصداقة",
+      "title": "موضوع تعبير عن الصداقة",
+      "page_num": 1,
+      "bytes": 202944,
+      "sha1": "87a94ad6b10f0890a2dd02df6b744a65b48fa67a"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_التعاون",
+      "title": "موضوع تعبير عن التعاون",
+      "page_num": 1,
+      "bytes": 200637,
+      "sha1": "950d59866d6b0d78c121e5095647f4aa6698df17"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_بر_الوالدين",
+      "title": "موضوع تعبير عن بر الوالدين",
+      "page_num": 1,
+      "bytes": 199084,
+      "sha1": "04f181a329790f98cce46ed2e351cb70f22910c2"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://mawdoo3.com/تعبير_حول_التسامح",
+      "title": "تعبير حول التسامح",
+      "page_num": 1,
+      "bytes": 200036,
+      "sha1": "55c33ccf6b82d06708ab575ddcf1fc42ed9e70bb"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_تلوث_البيئة",
+      "title": "موضوع تعبير عن تلوث البيئة",
+      "page_num": 1,
+      "bytes": 197224,
+      "sha1": "c3b16e20d7d1cd1113897dfd9a6f755d274e823e"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_حب_الوطن",
+      "title": "موضوع تعبير عن حب الوطن",
+      "page_num": 1,
+      "bytes": 195222,
+      "sha1": "bce6e1e74180bdba2fd42f3b414ab09ca262451c"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_النظافة",
+      "title": "موضوع تعبير عن النظافة",
+      "page_num": 1,
+      "bytes": 205591,
+      "sha1": "5fe0a55a36ba72907b2ae9b584a774250d0473b9"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_العمل",
+      "title": "موضوع تعبير عن العمل",
+      "page_num": 1,
+      "bytes": 201233,
+      "sha1": "0d13264e03be1cb092cef2f249fb94d03ae2b9aa"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://mawdoo3.com/تعبير_عن_الصديق",
+      "title": "تعبير عن الصديق",
+      "page_num": 1,
+      "bytes": 200170,
+      "sha1": "f0a496178fac833ee0f4fba25f1cc04f0d46370e"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://mawdoo3.com/تعبير_عن_فصل_الربيع",
+      "title": "تعبير عن فصل الربيع",
+      "page_num": 1,
+      "bytes": 199261,
+      "sha1": "bb5d2b66a141ea4fd5d4b4708f2a8f5f07f8347d"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://mawdoo3.com/تعبير_كتابي_عن_الوطن",
+      "title": "تعبير كتابي عن الوطن",
+      "page_num": 1,
+      "bytes": 196889,
+      "sha1": "f21a220b5ed71e22e1ee80b90ac4e3e5425a95f4"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_الصحة",
+      "title": "موضوع تعبير عن الصحة",
+      "page_num": 1,
+      "bytes": 204961,
+      "sha1": "640d9edbd511bc631575eccec073d404704100cc"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_الام",
+      "title": "موضوع تعبير عن الام",
+      "page_num": 1,
+      "bytes": 198275,
+      "sha1": "c56cc137f499196cc599f8fe43813ac33e761202"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://mawdoo3.com/تعبير_عن_العلم_وأهميته",
+      "title": "تعبير عن العلم وأهميته",
+      "page_num": 1,
+      "bytes": 203663,
+      "sha1": "5245d123a05fbbc0fd47ef7cc3b1831abd07d8dd"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://mawdoo3.com/شعر_عن_حب_الوطن",
+      "title": "شعر عن حب الوطن",
+      "page_num": 1,
+      "bytes": 198799,
+      "sha1": "4d6fb357eea8466e162f5f19efdd7a5ff312f420"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://mawdoo3.com/تعبير_عن_أهمية_القراءة",
+      "title": "تعبير عن أهمية القراءة",
+      "page_num": 1,
+      "bytes": 205945,
+      "sha1": "9a75f844143b08ca1ef449ac251842197b1a34fe"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://mawdoo3.com/أبيات_شعر_عن_الشوق_والحنين",
+      "title": "أبيات شعر عن الشوق والحنين",
+      "page_num": 1,
+      "bytes": 2419713,
+      "sha1": "0162332a1eb443e411490bb50715efa1925f476c"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://mawdoo3.com/تعبير_عن_الإيثار",
+      "title": "تعبير عن الإيثار",
+      "page_num": 1,
+      "bytes": 209522,
+      "sha1": "95d7f63c79267a36167d9b24f8ed4af335417cf4"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_القراءة",
+      "title": "موضوع تعبير عن القراءة",
+      "page_num": 1,
+      "bytes": 197662,
+      "sha1": "a0119f6e97e5e8b19a546fb56e428dc3e2ed4eba"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_الحرية",
+      "title": "موضوع تعبير عن الحرية",
+      "page_num": 1,
+      "bytes": 2396321,
+      "sha1": "d260f7b76584e98247cea05e24db79c118bae558"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://mawdoo3.com/شعر_عراقي_غزل",
+      "title": "شعر عراقي غزل",
+      "page_num": 1,
+      "bytes": 195816,
+      "sha1": "1663189412da31cd2e89745e1bfe8563658670e9"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://mawdoo3.com/اجمل_شعر_الغزل",
+      "title": "اجمل شعر الغزل",
+      "page_num": 1,
+      "bytes": 205173,
+      "sha1": "b1872c04f0f3e28506ee7c7e53d77522082e0d6f"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_الصدق",
+      "title": "موضوع تعبير عن الصدق",
+      "page_num": 1,
+      "bytes": 202512,
+      "sha1": "926728f936c27b1a020e081ce168e74d73e7028e"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_أهمية_العمل",
+      "title": "موضوع تعبير عن أهمية العمل",
+      "page_num": 1,
+      "bytes": 203555,
+      "sha1": "af9062df9ea4ac35680b598f99e1dd82eb74a928"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://mawdoo3.com/تعبير_عن_النظافة",
+      "title": "تعبير عن النظافة",
+      "page_num": 1,
+      "bytes": 200812,
+      "sha1": "fd72932e08f82453f56092268117a9b474e6f62a"
+    },
+    {
+      "id": 31,
+      "file": "article_0031.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_حسن_الخلق",
+      "title": "موضوع تعبير عن حسن الخلق",
+      "page_num": 1,
+      "bytes": 200482,
+      "sha1": "fd5bbc9b03b216e4c847ecf1997d6fce7da98c0c"
+    },
+    {
+      "id": 32,
+      "file": "article_0032.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_المولد_النبوي_الشريف",
+      "title": "موضوع تعبير عن المولد النبوي الشريف",
+      "page_num": 1,
+      "bytes": 203888,
+      "sha1": "ff104468ff5aea14cea2d4261f753a1112d2d7d2"
+    },
+    {
+      "id": 33,
+      "file": "article_0033.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_فضل_المعلم",
+      "title": "موضوع تعبير عن فضل المعلم",
+      "page_num": 1,
+      "bytes": 203865,
+      "sha1": "f9c203fbbb4984be4616a01e0f50508a08bbe511"
+    },
+    {
+      "id": 34,
+      "file": "article_0034.html",
+      "url": "https://mawdoo3.com/قصيدة_البردة_للإمام_البوصيري",
+      "title": "قصيدة البردة للإمام البوصيري",
+      "page_num": 1,
+      "bytes": 264183,
+      "sha1": "35e4c2044f017c2425ead30a209f8a0c20dc799c"
+    },
+    {
+      "id": 35,
+      "file": "article_0035.html",
+      "url": "https://mawdoo3.com/احلى_شعر_حب",
+      "title": "احلى شعر حب",
+      "page_num": 1,
+      "bytes": 192276,
+      "sha1": "b60a92eed87f276f7e0c21dda5fe42cc9e1f1a99"
+    },
+    {
+      "id": 36,
+      "file": "article_0036.html",
+      "url": "https://mawdoo3.com/تعبير_عن_النجاح",
+      "title": "تعبير عن النجاح",
+      "page_num": 1,
+      "bytes": 198639,
+      "sha1": "c16347a15578872cc1c45e1f3d4c63e32a09129a"
+    },
+    {
+      "id": 37,
+      "file": "article_0037.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_الماء",
+      "title": "موضوع تعبير عن الماء",
+      "page_num": 1,
+      "bytes": 196797,
+      "sha1": "35eb9b4e9bb707a7c9b4e86fe01fc0b55a1b3f03"
+    },
+    {
+      "id": 38,
+      "file": "article_0038.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_البيئة",
+      "title": "موضوع تعبير عن البيئة",
+      "page_num": 1,
+      "bytes": 195540,
+      "sha1": "7361f07daecb4cdc6ab891600f4a296068cfce82"
+    },
+    {
+      "id": 39,
+      "file": "article_0039.html",
+      "url": "https://mawdoo3.com/شعر_عراقي_حب",
+      "title": "شعر عراقي حب",
+      "page_num": 1,
+      "bytes": 198299,
+      "sha1": "b7e2b4ec72e9618cf49d0b36387b3a2e88e8ba53"
+    },
+    {
+      "id": 40,
+      "file": "article_0040.html",
+      "url": "https://mawdoo3.com/شعر_عن_المعلم",
+      "title": "شعر عن المعلم",
+      "page_num": 1,
+      "bytes": 247708,
+      "sha1": "c81da5d09025ceae4dee7ae9dddfd70895e8f984"
+    },
+    {
+      "id": 41,
+      "file": "article_0041.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_التنمر",
+      "title": "موضوع تعبير عن التنمر",
+      "page_num": 1,
+      "bytes": 211014,
+      "sha1": "a90bbbc62db51a8f326d0d7dc6831b09580e8ad2"
+    },
+    {
+      "id": 42,
+      "file": "article_0042.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_مهنة_الطبيب",
+      "title": "موضوع تعبير عن مهنة الطبيب",
+      "page_num": 1,
+      "bytes": 196782,
+      "sha1": "871738013d7c11ff398c4cddc9d082b0ae5c75d4"
+    },
+    {
+      "id": 43,
+      "file": "article_0043.html",
+      "url": "https://mawdoo3.com/تعبير_عن_المعلم",
+      "title": "تعبير عن المعلم",
+      "page_num": 1,
+      "bytes": 205846,
+      "sha1": "3c08bcb2cb559cf95de8079560cf0e5ba28e4003"
+    },
+    {
+      "id": 44,
+      "file": "article_0044.html",
+      "url": "https://mawdoo3.com/شعر_بدوي_عن_الرجولة",
+      "title": "شعر بدوي عن الرجولة",
+      "page_num": 1,
+      "bytes": 234081,
+      "sha1": "f411d63a0e6676ef5b775b7b08dc038b1b8b5962"
+    },
+    {
+      "id": 45,
+      "file": "article_0045.html",
+      "url": "https://mawdoo3.com/أشهر_قصائد_المتنبي",
+      "title": "أشهر قصائد المتنبي",
+      "page_num": 1,
+      "bytes": 440027,
+      "sha1": "b66ecfc730570cf6fdb59ef75345141d5dd7a4d7"
+    },
+    {
+      "id": 46,
+      "file": "article_0046.html",
+      "url": "https://mawdoo3.com/أشعار_عن_الوطن",
+      "title": "أشعار عن الوطن",
+      "page_num": 1,
+      "bytes": 253279,
+      "sha1": "e96d1740df76b6f0be41321d181e74dff2d4e5ed"
+    },
+    {
+      "id": 47,
+      "file": "article_0047.html",
+      "url": "https://mawdoo3.com/أجمل_قصائد_محمود_درويش",
+      "title": "أجمل قصائد محمود درويش",
+      "page_num": 1,
+      "bytes": 215758,
+      "sha1": "5a5c8f653968e100e515040f7639da89350a4559"
+    },
+    {
+      "id": 48,
+      "file": "article_0048.html",
+      "url": "https://mawdoo3.com/تعبير_قصير_عن_الوطن",
+      "title": "تعبير قصير عن الوطن",
+      "page_num": 1,
+      "bytes": 198460,
+      "sha1": "84795a7a7d78f1c154fa5aedb0e31c2addfe5ed2"
+    },
+    {
+      "id": 49,
+      "file": "article_0049.html",
+      "url": "https://mawdoo3.com/تعبير_عن_الصداقة",
+      "title": "تعبير عن الصداقة",
+      "page_num": 1,
+      "bytes": 197229,
+      "sha1": "cf7f8cae90dbb87d30bc85113627dc68b94b6982"
+    },
+    {
+      "id": 50,
+      "file": "article_0050.html",
+      "url": "https://mawdoo3.com/ابيات_شعر_مشهورة",
+      "title": "ابيات شعر مشهورة",
+      "page_num": 1,
+      "bytes": 250882,
+      "sha1": "b497546d0ed2226fdb1f9a089be5538ab148a92f"
+    },
+    {
+      "id": 51,
+      "file": "article_0051.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_أهمية_الماء",
+      "title": "موضوع تعبير عن أهمية الماء",
+      "page_num": 1,
+      "bytes": 209204,
+      "sha1": "d084d4e76c9cbb61251c65014007a3915d7319d3"
+    },
+    {
+      "id": 52,
+      "file": "article_0052.html",
+      "url": "https://mawdoo3.com/تعبير_عن_الأخوة",
+      "title": "تعبير عن الأخوة",
+      "page_num": 1,
+      "bytes": 207342,
+      "sha1": "6b1c2c8492533ef509c3160eaa37138b6194d41e"
+    },
+    {
+      "id": 53,
+      "file": "article_0053.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_السلام",
+      "title": "موضوع تعبير عن السلام",
+      "page_num": 1,
+      "bytes": 197018,
+      "sha1": "f840098f93eb85421db3ea6f1d902eb3f961b08b"
+    },
+    {
+      "id": 54,
+      "file": "article_0054.html",
+      "url": "https://mawdoo3.com/شعر_عن_العلم",
+      "title": "شعر عن العلم",
+      "page_num": 1,
+      "bytes": 208165,
+      "sha1": "851df35576f16bd6e031b292a91b05b2809d75ed"
+    },
+    {
+      "id": 55,
+      "file": "article_0055.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_صلة_الرحم",
+      "title": "موضوع تعبير عن صلة الرحم",
+      "page_num": 1,
+      "bytes": 198618,
+      "sha1": "a437d82644d80695490ad41283a5feff7fc70a66"
+    },
+    {
+      "id": 56,
+      "file": "article_0056.html",
+      "url": "https://mawdoo3.com/شعر_حزين_عن_الفراق",
+      "title": "شعر حزين عن الفراق",
+      "page_num": 1,
+      "bytes": 203907,
+      "sha1": "44bed73997dfd73a63a643f2682ba925667c2773"
+    },
+    {
+      "id": 57,
+      "file": "article_0057.html",
+      "url": "https://mawdoo3.com/أجمل_أبيات_الحب",
+      "title": "أجمل أبيات الحب",
+      "page_num": 1,
+      "bytes": 217895,
+      "sha1": "5ac831d375940c9b3817582934dbbd22b1fa31c3"
+    },
+    {
+      "id": 58,
+      "file": "article_0058.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_الرياضة",
+      "title": "موضوع تعبير عن الرياضة",
+      "page_num": 1,
+      "bytes": 197483,
+      "sha1": "81f1798b94e591400f7c5b0f5d87e5df00ab64d5"
+    },
+    {
+      "id": 59,
+      "file": "article_0059.html",
+      "url": "https://mawdoo3.com/تعبير_عن_الأخ",
+      "title": "تعبير عن الأخ",
+      "page_num": 1,
+      "bytes": 227582,
+      "sha1": "ec366b97c3a4184b6af53d0fe4ee4d3e6acaf26e"
+    },
+    {
+      "id": 60,
+      "file": "article_0060.html",
+      "url": "https://mawdoo3.com/تعبير_عن_الهاتف_النقال",
+      "title": "تعبير عن الهاتف النقال",
+      "page_num": 1,
+      "bytes": 225040,
+      "sha1": "5a8f0d2684db237871bc99bce577fbd0a4ad85ea"
+    },
+    {
+      "id": 61,
+      "file": "article_0061.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_الشباب",
+      "title": "موضوع تعبير عن الشباب",
+      "page_num": 1,
+      "bytes": 196313,
+      "sha1": "c99d1f23a48d2ea1f2f857d07ccce10a47f14bec"
+    },
+    {
+      "id": 62,
+      "file": "article_0062.html",
+      "url": "https://mawdoo3.com/تعبير_عن_وسائل_الاعلام",
+      "title": "تعبير عن وسائل الاعلام",
+      "page_num": 1,
+      "bytes": 197131,
+      "sha1": "38f1ef41a5633ab2659f9f7d5a6c6216b3026da2"
+    },
+    {
+      "id": 63,
+      "file": "article_0063.html",
+      "url": "https://mawdoo3.com/أجمل_بيت_شعر_في_الحب",
+      "title": "أجمل بيت شعر في الحب",
+      "page_num": 1,
+      "bytes": 291488,
+      "sha1": "d961770ec95676f782f715406c8c9a0781dc0aa8"
+    },
+    {
+      "id": 64,
+      "file": "article_0064.html",
+      "url": "https://mawdoo3.com/أجمل_بيت_شعر_غزل",
+      "title": "أجمل بيت شعر غزل",
+      "page_num": 1,
+      "bytes": 234073,
+      "sha1": "51ee3894e40aea58f91837ffce3f6523a84a6696"
+    },
+    {
+      "id": 65,
+      "file": "article_0065.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_الصديق",
+      "title": "موضوع تعبير عن الصديق",
+      "page_num": 1,
+      "bytes": 195943,
+      "sha1": "79ac4b25460c8e47838b291537fa744001cfe64c"
+    },
+    {
+      "id": 66,
+      "file": "article_0066.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_العائلة",
+      "title": "موضوع تعبير عن العائلة",
+      "page_num": 1,
+      "bytes": 196462,
+      "sha1": "7df77088cbb148547e52e59e2f2d3f8dc8b269b9"
+    },
+    {
+      "id": 67,
+      "file": "article_0067.html",
+      "url": "https://mawdoo3.com/تعبير_حول_العلم",
+      "title": "تعبير حول العلم",
+      "page_num": 1,
+      "bytes": 196214,
+      "sha1": "f16d8dd317638f50a13d03f876e01b5550674044"
+    },
+    {
+      "id": 68,
+      "file": "article_0068.html",
+      "url": "https://mawdoo3.com/أجمل_قصائد_المتنبي",
+      "title": "أجمل قصائد المتنبي",
+      "page_num": 1,
+      "bytes": 215421,
+      "sha1": "8bc27ddd5daa103083b5c5a089aa50efb1784e19"
+    },
+    {
+      "id": 69,
+      "file": "article_0069.html",
+      "url": "https://mawdoo3.com/تعبير_كتابي_عن_عادات_وتقاليد_الجزائر",
+      "title": "تعبير كتابي عن عادات وتقاليد الجزائر",
+      "page_num": 1,
+      "bytes": 212031,
+      "sha1": "38c31771804cd10b1b904e70a55923b9d04155c3"
+    },
+    {
+      "id": 70,
+      "file": "article_0070.html",
+      "url": "https://mawdoo3.com/تعبير_عن_العيد",
+      "title": "تعبير عن العيد",
+      "page_num": 1,
+      "bytes": 201803,
+      "sha1": "f5e48cf1ec496f49c5e8aee7a1b596b3f3fddc0f"
+    },
+    {
+      "id": 71,
+      "file": "article_0071.html",
+      "url": "https://mawdoo3.com/شعر_اعتذار_للحبيب",
+      "title": "شعر اعتذار للحبيب",
+      "page_num": 1,
+      "bytes": 193435,
+      "sha1": "f071cb25b1354cd0893113c16f182b26e57540cd"
+    },
+    {
+      "id": 72,
+      "file": "article_0072.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_الوفاء",
+      "title": "موضوع تعبير عن الوفاء",
+      "page_num": 1,
+      "bytes": 211810,
+      "sha1": "c48f9039b387d4a4ef2e533aea62d7f963065a84"
+    },
+    {
+      "id": 73,
+      "file": "article_0073.html",
+      "url": "https://mawdoo3.com/شعر_لعيد_الميلاد",
+      "title": "شعر لعيد الميلاد",
+      "page_num": 1,
+      "bytes": 201282,
+      "sha1": "e1c5224e328dc5e00ec1ab3ffb7f446cc206d84f"
+    },
+    {
+      "id": 74,
+      "file": "article_0074.html",
+      "url": "https://mawdoo3.com/أبو_الطيب_المتنبي_الشاعر_العباسي",
+      "title": "أبو الطيب المتنبي الشاعر العباسي",
+      "page_num": 1,
+      "bytes": 362964,
+      "sha1": "ef8446998cca0f7cd45314d47154711b185e237f"
+    },
+    {
+      "id": 75,
+      "file": "article_0075.html",
+      "url": "https://mawdoo3.com/تعبير_عن_التضامن",
+      "title": "تعبير عن التضامن",
+      "page_num": 1,
+      "bytes": 222781,
+      "sha1": "7229e9abac9a17f73aba81c40a388a742fcfaf28"
+    },
+    {
+      "id": 76,
+      "file": "article_0076.html",
+      "url": "https://mawdoo3.com/موضوع_قصير_عن_الأم",
+      "title": "موضوع قصير عن الأم",
+      "page_num": 1,
+      "bytes": 215034,
+      "sha1": "5e48989d8c260f3fe198287f353c760386cbecf7"
+    },
+    {
+      "id": 77,
+      "file": "article_0077.html",
+      "url": "https://mawdoo3.com/شعر_قصير_حزين",
+      "title": "شعر قصير حزين",
+      "page_num": 1,
+      "bytes": 202704,
+      "sha1": "c05b02f8ebb2944817ded69ce4dbd24b83da3142"
+    },
+    {
+      "id": 78,
+      "file": "article_0078.html",
+      "url": "https://mawdoo3.com/تعبير_عن_جمال_الطبيعة",
+      "title": "تعبير عن جمال الطبيعة",
+      "page_num": 1,
+      "bytes": 195927,
+      "sha1": "34848805ceda963af25f84a1c819dc5dd3c4f7cd"
+    },
+    {
+      "id": 79,
+      "file": "article_0079.html",
+      "url": "https://mawdoo3.com/تعبير_عن_المدينة_والريف",
+      "title": "تعبير عن المدينة والريف",
+      "page_num": 1,
+      "bytes": 202073,
+      "sha1": "5c89e877e241e2a9d348b1faf42576528f4e3657"
+    },
+    {
+      "id": 80,
+      "file": "article_0080.html",
+      "url": "https://mawdoo3.com/شعر_حسان_بن_ثابت",
+      "title": "شعر حسان بن ثابت",
+      "page_num": 1,
+      "bytes": 229172,
+      "sha1": "59663551f6d38788765d9344c042d2a387b5709a"
+    },
+    {
+      "id": 81,
+      "file": "article_0081.html",
+      "url": "https://mawdoo3.com/شعر_عن_الخيانه",
+      "title": "شعر عن الخيانه",
+      "page_num": 1,
+      "bytes": 217518,
+      "sha1": "13b16c3459d0c94501a1e2d0642d1ed868c4666d"
+    },
+    {
+      "id": 82,
+      "file": "article_0082.html",
+      "url": "https://mawdoo3.com/تعبير_عن_فضل_العلم",
+      "title": "تعبير عن فضل العلم",
+      "page_num": 1,
+      "bytes": 195967,
+      "sha1": "48abb73871977639c35bf270aca6760e32a496ec"
+    },
+    {
+      "id": 83,
+      "file": "article_0083.html",
+      "url": "https://mawdoo3.com/شعر_عن_الأخت",
+      "title": "شعر عن الأخت",
+      "page_num": 1,
+      "bytes": 2386044,
+      "sha1": "ab61d19957489f64d49002715b16a8729f2fb88e"
+    },
+    {
+      "id": 84,
+      "file": "article_0084.html",
+      "url": "https://mawdoo3.com/إنشاء_عن_التعاون",
+      "title": "إنشاء عن التعاون",
+      "page_num": 1,
+      "bytes": 204308,
+      "sha1": "cdb04668a6c8d3b925be97d5af37405bf8a198b9"
+    },
+    {
+      "id": 85,
+      "file": "article_0085.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_الرفق_بالحيوان",
+      "title": "موضوع تعبير عن الرفق بالحيوان",
+      "page_num": 1,
+      "bytes": 210462,
+      "sha1": "a600964e7bebd1b3063815b0d23309a034ea248a"
+    },
+    {
+      "id": 86,
+      "file": "article_0086.html",
+      "url": "https://mawdoo3.com/تعريف_المقال",
+      "title": "تعريف المقال",
+      "page_num": 1,
+      "bytes": 196461,
+      "sha1": "ff695b1dcff4b46ba020fa34104f577171a39b43"
+    },
+    {
+      "id": 87,
+      "file": "article_0087.html",
+      "url": "https://mawdoo3.com/قصيدة_نهج_البردة_لأحمد_شوقي",
+      "title": "قصيدة نهج البردة لأحمد شوقي",
+      "page_num": 1,
+      "bytes": 300717,
+      "sha1": "31725540f3540b207a55963509cedb9894217c97"
+    },
+    {
+      "id": 88,
+      "file": "article_0088.html",
+      "url": "https://mawdoo3.com/تلخيص_رجوع_الى_الطفولة",
+      "title": "تلخيص رجوع الى الطفولة",
+      "page_num": 1,
+      "bytes": 195181,
+      "sha1": "6356ae2458635ab19a3c2246987fd32a3fa0a118"
+    },
+    {
+      "id": 89,
+      "file": "article_0089.html",
+      "url": "https://mawdoo3.com/شعر_عن_سيدنا_محمد",
+      "title": "شعر عن سيدنا محمد",
+      "page_num": 1,
+      "bytes": 280814,
+      "sha1": "ec475e62deae424fa474183357e3a2d01fddfef9"
+    },
+    {
+      "id": 90,
+      "file": "article_0090.html",
+      "url": "https://mawdoo3.com/ابيات_ترحيب_بالضيوف",
+      "title": "ابيات ترحيب بالضيوف",
+      "page_num": 1,
+      "bytes": 200246,
+      "sha1": "015041e01077a873f12a0ba2589c83dccb2ed644"
+    },
+    {
+      "id": 91,
+      "file": "article_0091.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_فرحة_العيد",
+      "title": "موضوع تعبير عن فرحة العيد",
+      "page_num": 1,
+      "bytes": 195239,
+      "sha1": "5170970744402d2aefbfc23f9ab09172a17bbf55"
+    },
+    {
+      "id": 92,
+      "file": "article_0092.html",
+      "url": "https://mawdoo3.com/شعر_عن_الرسول",
+      "title": "شعر عن الرسول",
+      "page_num": 1,
+      "bytes": 224336,
+      "sha1": "c47ba300f1339929fc6723fb48d71e068b5f55b5"
+    },
+    {
+      "id": 93,
+      "file": "article_0093.html",
+      "url": "https://mawdoo3.com/قصيدة_البوصيري_في_مدح_الرسول",
+      "title": "قصيدة البوصيري في مدح الرسول",
+      "page_num": 1,
+      "bytes": 362052,
+      "sha1": "98968f1ca444ad1d7634883606f27a234401fc16"
+    },
+    {
+      "id": 94,
+      "file": "article_0094.html",
+      "url": "https://mawdoo3.com/قصائد_سعد_بن_جدلان",
+      "title": "قصائد سعد بن جدلان",
+      "page_num": 1,
+      "bytes": 206401,
+      "sha1": "d27b421990d38b6a6cb57fd0787162156b8eddc2"
+    },
+    {
+      "id": 95,
+      "file": "article_0095.html",
+      "url": "https://mawdoo3.com/ابيات_شعر_غزليه",
+      "title": "ابيات شعر غزليه",
+      "page_num": 1,
+      "bytes": 211934,
+      "sha1": "1c4af0d7b23005112747c11d555aa428af809b9f"
+    },
+    {
+      "id": 96,
+      "file": "article_0096.html",
+      "url": "https://mawdoo3.com/تعبير_عن_التضامن_للسنة_الرابعة_متوسط",
+      "title": "تعبير عن التضامن للسنة الرابعة متوسط",
+      "page_num": 1,
+      "bytes": 209274,
+      "sha1": "d5e7324e7adc693668625dd735a7c15d0b4775b3"
+    },
+    {
+      "id": 97,
+      "file": "article_0097.html",
+      "url": "https://mawdoo3.com/ابيات_في_عزة_النفس",
+      "title": "ابيات في عزة النفس",
+      "page_num": 1,
+      "bytes": 244324,
+      "sha1": "202716d4676addf5c47fae7f20f0e109663762ed"
+    },
+    {
+      "id": 98,
+      "file": "article_0098.html",
+      "url": "https://mawdoo3.com/شعر_حزين",
+      "title": "شعر حزين",
+      "page_num": 1,
+      "bytes": 210155,
+      "sha1": "ba8871975e08045f389c22a8158b0f5ca2d95c0f"
+    },
+    {
+      "id": 99,
+      "file": "article_0099.html",
+      "url": "https://mawdoo3.com/شعر_مدح_الرجال",
+      "title": "شعر مدح الرجال",
+      "page_num": 1,
+      "bytes": 197646,
+      "sha1": "83fc3dd340a37ec82c3b90c4a0c39aecc33589d7"
+    },
+    {
+      "id": 100,
+      "file": "article_0100.html",
+      "url": "https://mawdoo3.com/موضوع_عن_السفر",
+      "title": "موضوع عن السفر",
+      "page_num": 1,
+      "bytes": 220809,
+      "sha1": "342873b2759d7aaf898d6809a1dd5bbde236420c"
+    },
+    {
+      "id": 101,
+      "file": "article_0101.html",
+      "url": "https://mawdoo3.com/تعبير_عن_التواضع",
+      "title": "تعبير عن التواضع",
+      "page_num": 1,
+      "bytes": 223327,
+      "sha1": "065d1da48847c647ec24f939c7fc8e967ecbf9f3"
+    },
+    {
+      "id": 102,
+      "file": "article_0102.html",
+      "url": "https://mawdoo3.com/شعر_قصير_عن_الفراق",
+      "title": "شعر قصير عن الفراق",
+      "page_num": 1,
+      "bytes": 214029,
+      "sha1": "892e37a33e22f7bbfc3f6488c0259b97fcdc347d"
+    },
+    {
+      "id": 103,
+      "file": "article_0103.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_المرأة",
+      "title": "موضوع تعبير عن المرأة",
+      "page_num": 1,
+      "bytes": 241350,
+      "sha1": "99e28120d83ab53ec5501ad3c569b758ac39ffa5"
+    },
+    {
+      "id": 104,
+      "file": "article_0104.html",
+      "url": "https://mawdoo3.com/تعبير_عن_الهجرة",
+      "title": "تعبير عن الهجرة",
+      "page_num": 1,
+      "bytes": 211496,
+      "sha1": "e7d7b6419fdb0902d59bf6ddcd9443a5cb32cbb5"
+    },
+    {
+      "id": 105,
+      "file": "article_0105.html",
+      "url": "https://mawdoo3.com/شعر_لصديقتي",
+      "title": "شعر لصديقتي",
+      "page_num": 1,
+      "bytes": 198654,
+      "sha1": "d441d3497a6a953488ac4e8607c985d18b906953"
+    },
+    {
+      "id": 106,
+      "file": "article_0106.html",
+      "url": "https://mawdoo3.com/تعبير_عن_الكتاب",
+      "title": "تعبير عن الكتاب",
+      "page_num": 1,
+      "bytes": 208140,
+      "sha1": "86d4d0a9eb2f31dd7fa4a298f3dd3dce18373751"
+    },
+    {
+      "id": 107,
+      "file": "article_0107.html",
+      "url": "https://mawdoo3.com/تعبير_عن_مصر",
+      "title": "تعبير عن مصر",
+      "page_num": 1,
+      "bytes": 195458,
+      "sha1": "5e0dd5d71be9f2567d8ff9720385a9bf2ad0df4a"
+    },
+    {
+      "id": 108,
+      "file": "article_0108.html",
+      "url": "https://mawdoo3.com/مقدمة_إنشاء_عن_العلم",
+      "title": "مقدمة إنشاء عن العلم",
+      "page_num": 1,
+      "bytes": 196934,
+      "sha1": "1cf977b4c31fb4b8e0f5d292f8cbce801f9da66c"
+    },
+    {
+      "id": 109,
+      "file": "article_0109.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_الطفولة",
+      "title": "موضوع تعبير عن الطفولة",
+      "page_num": 1,
+      "bytes": 224483,
+      "sha1": "9c00b50c342b13bea2ae0a71a80d5002fe8b2229"
+    },
+    {
+      "id": 110,
+      "file": "article_0110.html",
+      "url": "https://mawdoo3.com/تعبير_عن_الحوار",
+      "title": "تعبير عن الحوار",
+      "page_num": 1,
+      "bytes": 208134,
+      "sha1": "7322540b5e0f8f3088f275da9ac4837c022fb25f"
+    },
+    {
+      "id": 111,
+      "file": "article_0111.html",
+      "url": "https://mawdoo3.com/قصائد_حب_نزار_قباني",
+      "title": "قصائد حب نزار قباني",
+      "page_num": 1,
+      "bytes": 218797,
+      "sha1": "7f0ee0624eb9412ec889887287d83673286090c3"
+    },
+    {
+      "id": 112,
+      "file": "article_0112.html",
+      "url": "https://mawdoo3.com/شعر_عن_الذكريات",
+      "title": "شعر عن الذكريات",
+      "page_num": 1,
+      "bytes": 200048,
+      "sha1": "ba21645734858aee3edc6132ec93eac02f87d9d3"
+    },
+    {
+      "id": 113,
+      "file": "article_0113.html",
+      "url": "https://mawdoo3.com/شعر_اعتذار",
+      "title": "شعر اعتذار",
+      "page_num": 1,
+      "bytes": 234186,
+      "sha1": "39f44d8aad9ce15f399c0c279fe6772c7aacf15d"
+    },
+    {
+      "id": 114,
+      "file": "article_0114.html",
+      "url": "https://mawdoo3.com/إذاعة_مدرسية_كاملة_عن_العلم",
+      "title": "إذاعة مدرسية كاملة عن العلم",
+      "page_num": 1,
+      "bytes": 213813,
+      "sha1": "f3ec50fb118d144728e07488f21751aae88ada02"
+    },
+    {
+      "id": 115,
+      "file": "article_0115.html",
+      "url": "https://mawdoo3.com/تعبير_عن_الآفات_الاجتماعية_للسنة_الثالثة_متوسط",
+      "title": "تعبير عن الآفات الاجتماعية للسنة الثالثة متوسط",
+      "page_num": 1,
+      "bytes": 212704,
+      "sha1": "3e7741b3540ee1d693d77d24d716c188a444bb44"
+    },
+    {
+      "id": 116,
+      "file": "article_0116.html",
+      "url": "https://mawdoo3.com/اشعار_حب_قصيرة",
+      "title": "اشعار حب قصيرة",
+      "page_num": 1,
+      "bytes": 244803,
+      "sha1": "f1c26c28f11c0ae09eab6eadf0e996218ae1abf5"
+    },
+    {
+      "id": 117,
+      "file": "article_0117.html",
+      "url": "https://mawdoo3.com/ابيات_بدر_بن_عبدالمحسن",
+      "title": "ابيات بدر بن عبدالمحسن",
+      "page_num": 1,
+      "bytes": 197649,
+      "sha1": "d1d909c0016f3153dfc9d34e37734f3db0e8125a"
+    },
+    {
+      "id": 118,
+      "file": "article_0118.html",
+      "url": "https://mawdoo3.com/شعر_حب_خليجي",
+      "title": "شعر حب خليجي",
+      "page_num": 1,
+      "bytes": 212030,
+      "sha1": "434b83ebd7e41f29e161525c1f220b0447b423b5"
+    },
+    {
+      "id": 119,
+      "file": "article_0119.html",
+      "url": "https://mawdoo3.com/شعر_عن_العيد",
+      "title": "شعر عن العيد",
+      "page_num": 1,
+      "bytes": 272161,
+      "sha1": "bcda169c7526f7b3f66ed081eaa8eb2955645a67"
+    },
+    {
+      "id": 120,
+      "file": "article_0120.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_الوحدة_الوطنية",
+      "title": "موضوع تعبير عن الوحدة الوطنية",
+      "page_num": 1,
+      "bytes": 214348,
+      "sha1": "1fb83c39e22d5d86e2fb4c99bde2b5859aaafe7f"
+    },
+    {
+      "id": 121,
+      "file": "article_0121.html",
+      "url": "https://mawdoo3.com/شعر_علي_بن_ابي_طالب",
+      "title": "شعر علي بن ابي طالب",
+      "page_num": 1,
+      "bytes": 202420,
+      "sha1": "2b8de843cb00ed122b3d188006d1245c67aa727c"
+    },
+    {
+      "id": 122,
+      "file": "article_0122.html",
+      "url": "https://mawdoo3.com/شعر_عن_الصديق",
+      "title": "شعر عن الصديق",
+      "page_num": 1,
+      "bytes": 202723,
+      "sha1": "8ed1901633a87ab2fbbcbe00f1d3799b00835fcf"
+    },
+    {
+      "id": 123,
+      "file": "article_0123.html",
+      "url": "https://mawdoo3.com/شعر_حزين_عن_الحب",
+      "title": "شعر حزين عن الحب",
+      "page_num": 1,
+      "bytes": 196776,
+      "sha1": "5db66811424706762f1a5613390c016ebfd0405b"
+    },
+    {
+      "id": 124,
+      "file": "article_0124.html",
+      "url": "https://mawdoo3.com/شعر_عن_الشتاء",
+      "title": "شعر عن الشتاء",
+      "page_num": 1,
+      "bytes": 235725,
+      "sha1": "fa9d4858380f1b300d6ed3f72d033ba52e9fb802"
+    },
+    {
+      "id": 125,
+      "file": "article_0125.html",
+      "url": "https://mawdoo3.com/خاتمة_قصيرة_عن_الوطن",
+      "title": "خاتمة قصيرة عن الوطن",
+      "page_num": 1,
+      "bytes": 196736,
+      "sha1": "40c94c0c07e21a5e54c9ca279f6d720d1333e54f"
+    },
+    {
+      "id": 126,
+      "file": "article_0126.html",
+      "url": "https://mawdoo3.com/شعر_عن_الاردن",
+      "title": "شعر عن الاردن",
+      "page_num": 1,
+      "bytes": 192805,
+      "sha1": "f671b4f1ecf177840d102dd190cc5cf3920a0343"
+    },
+    {
+      "id": 127,
+      "file": "article_0127.html",
+      "url": "https://mawdoo3.com/شعر_الى_حبيبي",
+      "title": "شعر الى حبيبي",
+      "page_num": 1,
+      "bytes": 201634,
+      "sha1": "f71c136bfe82909e38bce7c9921ecc542ee5ad6a"
+    },
+    {
+      "id": 128,
+      "file": "article_0128.html",
+      "url": "https://mawdoo3.com/ما_هو_السرد",
+      "title": "ما هو السرد",
+      "page_num": 1,
+      "bytes": 242775,
+      "sha1": "4f7f1d6437ea7b874070df267851b0ddafc4da99"
+    },
+    {
+      "id": 129,
+      "file": "article_0129.html",
+      "url": "https://mawdoo3.com/تعبير_عن_الكرم",
+      "title": "تعبير عن الكرم",
+      "page_num": 1,
+      "bytes": 231138,
+      "sha1": "2e6aefcd266fd72b98e2ded8f339bb624b5dab25"
+    },
+    {
+      "id": 130,
+      "file": "article_0130.html",
+      "url": "https://mawdoo3.com/أجمل_بيوت_شعر",
+      "title": "أجمل بيوت شعر",
+      "page_num": 1,
+      "bytes": 225113,
+      "sha1": "4067652a3557598c6e0f76291a7cbcf9d0fb8f73"
+    },
+    {
+      "id": 131,
+      "file": "article_0131.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_التعليم",
+      "title": "موضوع تعبير عن التعليم",
+      "page_num": 1,
+      "bytes": 231098,
+      "sha1": "e05950321c536fe82fdd2380b9b86554f1b1d371"
+    },
+    {
+      "id": 132,
+      "file": "article_0132.html",
+      "url": "https://mawdoo3.com/كلمات_هشام_الجخ_متزعليش",
+      "title": "كلمات هشام الجخ متزعليش",
+      "page_num": 1,
+      "bytes": 195625,
+      "sha1": "c2fcdbf92a30c323aa0946eb278ec7fa37195d93"
+    },
+    {
+      "id": 133,
+      "file": "article_0133.html",
+      "url": "https://mawdoo3.com/خير_الكلام_ما_قل_ودل",
+      "title": "خير الكلام ما قل ودل",
+      "page_num": 2,
+      "bytes": 195028,
+      "sha1": "3394ebbf7c2671796717d734a65c275bb91f9a5d"
+    },
+    {
+      "id": 134,
+      "file": "article_0134.html",
+      "url": "https://mawdoo3.com/شعر_عن_التواضع",
+      "title": "شعر عن التواضع",
+      "page_num": 2,
+      "bytes": 200344,
+      "sha1": "98b983b27bcc2eab5eb6675cd23ddf3a6ceaf617"
+    },
+    {
+      "id": 135,
+      "file": "article_0135.html",
+      "url": "https://mawdoo3.com/تلخيص_قصة_قميص_الصوف",
+      "title": "تلخيص قصة قميص الصوف",
+      "page_num": 2,
+      "bytes": 202875,
+      "sha1": "aba8abe222138062f21be0daf790c07eaa615889"
+    },
+    {
+      "id": 136,
+      "file": "article_0136.html",
+      "url": "https://mawdoo3.com/شعر_بدوي_غزل",
+      "title": "شعر بدوي غزل",
+      "page_num": 2,
+      "bytes": 206251,
+      "sha1": "e57df0a3e7e9dd4a50acf08c1130761a4c7e9114"
+    },
+    {
+      "id": 137,
+      "file": "article_0137.html",
+      "url": "https://mawdoo3.com/من_اول_من_وضع_النحو",
+      "title": "من اول من وضع النحو",
+      "page_num": 2,
+      "bytes": 193579,
+      "sha1": "4996011230745e3e5bc6d6ddb16a40eb143cfe6c"
+    },
+    {
+      "id": 138,
+      "file": "article_0138.html",
+      "url": "https://mawdoo3.com/شعر_عن_الماء",
+      "title": "شعر عن الماء",
+      "page_num": 2,
+      "bytes": 221435,
+      "sha1": "f0b0faaf1ba5b03b00ba0541d4fbb1759de71e71"
+    },
+    {
+      "id": 139,
+      "file": "article_0139.html",
+      "url": "https://mawdoo3.com/شعر_رومانسي_عراقي",
+      "title": "شعر رومانسي عراقي",
+      "page_num": 2,
+      "bytes": 207515,
+      "sha1": "614f185f796054bd0a9a238f9fb5cba0b94179ae"
+    },
+    {
+      "id": 140,
+      "file": "article_0140.html",
+      "url": "https://mawdoo3.com/إني_تذكرت_والذكرى_مؤرقة",
+      "title": "إني تذكرت والذكرى مؤرقة",
+      "page_num": 2,
+      "bytes": 246181,
+      "sha1": "d876e7a8f6a36e46c22539f23b008cbee757e1fe"
+    },
+    {
+      "id": 141,
+      "file": "article_0141.html",
+      "url": "https://mawdoo3.com/الأدب_العربي",
+      "title": "الأدب العربي",
+      "page_num": 2,
+      "bytes": 194489,
+      "sha1": "1c6df314e4d480d83d2ee4fe57ae460ee29089e1"
+    },
+    {
+      "id": 142,
+      "file": "article_0142.html",
+      "url": "https://mawdoo3.com/شعر_الزير_سالم",
+      "title": "شعر الزير سالم",
+      "page_num": 2,
+      "bytes": 206815,
+      "sha1": "c33cb368da4377d6f1099d5cb2d8d203de0b00ac"
+    },
+    {
+      "id": 143,
+      "file": "article_0143.html",
+      "url": "https://mawdoo3.com/من_هم_شعراء_المهجر",
+      "title": "من هم شعراء المهجر",
+      "page_num": 2,
+      "bytes": 204731,
+      "sha1": "79bc26a0964b9ddbdd9e47748b68b3af729474ab"
+    },
+    {
+      "id": 144,
+      "file": "article_0144.html",
+      "url": "https://mawdoo3.com/شعر_عن_الصديقة",
+      "title": "شعر عن الصديقة",
+      "page_num": 2,
+      "bytes": 227982,
+      "sha1": "9779657416964af19e04df7e5aad9e532b4724da"
+    },
+    {
+      "id": 145,
+      "file": "article_0145.html",
+      "url": "https://mawdoo3.com/حامد_زيد_الحلم",
+      "title": "حامد زيد الحلم",
+      "page_num": 2,
+      "bytes": 221663,
+      "sha1": "ff05ca73828eaf35918359829e28e15a897621f8"
+    },
+    {
+      "id": 146,
+      "file": "article_0146.html",
+      "url": "https://mawdoo3.com/تعبير_عن_المدينة",
+      "title": "تعبير عن المدينة",
+      "page_num": 2,
+      "bytes": 209261,
+      "sha1": "e5c24196191ef64b2677e6fc3d743a89fb0a006d"
+    },
+    {
+      "id": 147,
+      "file": "article_0147.html",
+      "url": "https://mawdoo3.com/كيف_تكتب_برقية",
+      "title": "كيف تكتب برقية",
+      "page_num": 2,
+      "bytes": 202569,
+      "sha1": "58171544e11dc5ab0ea916817899ad16caf53275"
+    },
+    {
+      "id": 148,
+      "file": "article_0148.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_مفتاح_النجاح",
+      "title": "موضوع تعبير عن مفتاح النجاح",
+      "page_num": 2,
+      "bytes": 207413,
+      "sha1": "15556c37410d49473a409b8a36ecf23af31bf1e7"
+    },
+    {
+      "id": 149,
+      "file": "article_0149.html",
+      "url": "https://mawdoo3.com/شعر_ابن_فطيس",
+      "title": "شعر ابن فطيس",
+      "page_num": 2,
+      "bytes": 203049,
+      "sha1": "c8395c898eef006df34f2b16ddc518c874663df8"
+    },
+    {
+      "id": 150,
+      "file": "article_0150.html",
+      "url": "https://mawdoo3.com/امثال_شعبية",
+      "title": "امثال شعبية",
+      "page_num": 2,
+      "bytes": 188333,
+      "sha1": "b56e69300ee957c0d6801aba1fe1d0b73dcd01f1"
+    },
+    {
+      "id": 151,
+      "file": "article_0151.html",
+      "url": "https://mawdoo3.com/شعر_عن_الصداقة_والأخوة",
+      "title": "شعر عن الصداقة والأخوة",
+      "page_num": 2,
+      "bytes": 233700,
+      "sha1": "b87377e604b5985ec7bbfc99f29f9b32fa972011"
+    },
+    {
+      "id": 152,
+      "file": "article_0152.html",
+      "url": "https://mawdoo3.com/نونية_ابن_زيدون",
+      "title": "نونية ابن زيدون",
+      "page_num": 2,
+      "bytes": 285368,
+      "sha1": "41e5bfe6d0649277d727918a5d9112d4e234133f"
+    },
+    {
+      "id": 153,
+      "file": "article_0153.html",
+      "url": "https://mawdoo3.com/تعبير_عن_المعلمة",
+      "title": "تعبير عن المعلمة",
+      "page_num": 2,
+      "bytes": 211186,
+      "sha1": "aaf24f0c4b0b74cbaabc4c3bc0c3fbbba1bfd02c"
+    },
+    {
+      "id": 154,
+      "file": "article_0154.html",
+      "url": "https://mawdoo3.com/تعبير_عن_العربي_بن_مهيدي",
+      "title": "تعبير عن العربي بن مهيدي",
+      "page_num": 2,
+      "bytes": 202577,
+      "sha1": "3753a22b9e8628f6640510fdf918b8bca41fd472"
+    },
+    {
+      "id": 155,
+      "file": "article_0155.html",
+      "url": "https://mawdoo3.com/تلخيص_رواية_الحي_اللاتيني",
+      "title": "تلخيص رواية الحي اللاتيني",
+      "page_num": 2,
+      "bytes": 206671,
+      "sha1": "51f16797f989f9c84118220375a0101bb3e59993"
+    },
+    {
+      "id": 156,
+      "file": "article_0156.html",
+      "url": "https://mawdoo3.com/تعبير_عن_شعوب_العالم",
+      "title": "تعبير عن شعوب العالم",
+      "page_num": 2,
+      "bytes": 210239,
+      "sha1": "6ffa8ff57096c69e451950cf7fa4b5b02b05b421"
+    },
+    {
+      "id": 157,
+      "file": "article_0157.html",
+      "url": "https://mawdoo3.com/شعر_حب_حزين",
+      "title": "شعر حب حزين",
+      "page_num": 2,
+      "bytes": 214383,
+      "sha1": "2bd4afb703dcabcbbd644415b106aabae8fe6d42"
+    },
+    {
+      "id": 158,
+      "file": "article_0158.html",
+      "url": "https://mawdoo3.com/تعبير_كتابي_عن_المعلم",
+      "title": "تعبير كتابي عن المعلم",
+      "page_num": 2,
+      "bytes": 196662,
+      "sha1": "5e8cb8cd1a676dfe34aa34b1b55c5a88a56302a2"
+    },
+    {
+      "id": 159,
+      "file": "article_0159.html",
+      "url": "https://mawdoo3.com/شعر_عن_السيف",
+      "title": "شعر عن السيف",
+      "page_num": 2,
+      "bytes": 242939,
+      "sha1": "1efda8eee7ce1fb296467525e7232b94210d4728"
+    },
+    {
+      "id": 160,
+      "file": "article_0160.html",
+      "url": "https://mawdoo3.com/تعبير_عن_جميلة_بوحيرد",
+      "title": "تعبير عن جميلة بوحيرد",
+      "page_num": 2,
+      "bytes": 208045,
+      "sha1": "044a6a74eab8f99c58429799842cd341477673cd"
+    },
+    {
+      "id": 161,
+      "file": "article_0161.html",
+      "url": "https://mawdoo3.com/ابيات_عن_الام",
+      "title": "ابيات عن الام",
+      "page_num": 2,
+      "bytes": 200571,
+      "sha1": "0cdfd18932c1a68af6a0b9c2b59324dd654fff62"
+    },
+    {
+      "id": 162,
+      "file": "article_0162.html",
+      "url": "https://mawdoo3.com/تعبير_عن_طلب_العلم",
+      "title": "تعبير عن طلب العلم",
+      "page_num": 2,
+      "bytes": 207349,
+      "sha1": "2bfc4e31185c1e3e3705b61f8ea0fedc1933208c"
+    },
+    {
+      "id": 163,
+      "file": "article_0163.html",
+      "url": "https://mawdoo3.com/تعبير_عن_العمل",
+      "title": "تعبير عن العمل",
+      "page_num": 2,
+      "bytes": 195659,
+      "sha1": "ebf746428713afc8a8c2309f7290a06ecf2e3989"
+    },
+    {
+      "id": 164,
+      "file": "article_0164.html",
+      "url": "https://mawdoo3.com/اجمل_شعر_غزل",
+      "title": "اجمل شعر غزل",
+      "page_num": 2,
+      "bytes": 202635,
+      "sha1": "cf53f2d901cc6f1d188bb8d0dbce7aa8663fb487"
+    },
+    {
+      "id": 165,
+      "file": "article_0165.html",
+      "url": "https://mawdoo3.com/شعر_نبطي_عن_الحب",
+      "title": "شعر نبطي عن الحب",
+      "page_num": 2,
+      "bytes": 226998,
+      "sha1": "9948514e6e81d6d94606210fc16e5244a2967574"
+    },
+    {
+      "id": 166,
+      "file": "article_0166.html",
+      "url": "https://mawdoo3.com/تعبير_عن_الطاقة_الشمسية",
+      "title": "تعبير عن الطاقة الشمسية",
+      "page_num": 2,
+      "bytes": 211815,
+      "sha1": "7bc49a453060462bf209d7ac315e8bca11a97d43"
+    },
+    {
+      "id": 167,
+      "file": "article_0167.html",
+      "url": "https://mawdoo3.com/تحب_الصالحين_وأنت_منهم",
+      "title": "تحب الصالحين وأنت منهم",
+      "page_num": 2,
+      "bytes": 210021,
+      "sha1": "3e3871b34fa2505b2c48c725c4f21e0fa41d53df"
+    },
+    {
+      "id": 168,
+      "file": "article_0168.html",
+      "url": "https://mawdoo3.com/شعر_غزل",
+      "title": "شعر غزل",
+      "page_num": 2,
+      "bytes": 2429062,
+      "sha1": "1567055543965a896daf37b65e1f69855dff3250"
+    },
+    {
+      "id": 169,
+      "file": "article_0169.html",
+      "url": "https://mawdoo3.com/خاتمة_عن_بر_الوالدين",
+      "title": "خاتمة عن بر الوالدين",
+      "page_num": 2,
+      "bytes": 195825,
+      "sha1": "25eacd10f07153f0c757f29ebdb9a2e684525106"
+    },
+    {
+      "id": 170,
+      "file": "article_0170.html",
+      "url": "https://mawdoo3.com/أجمل_اشعار_نزار_قباني",
+      "title": "أجمل اشعار نزار قباني",
+      "page_num": 2,
+      "bytes": 197075,
+      "sha1": "461d9904fac4d222989c88b2020d8cf5bc8df16d"
+    },
+    {
+      "id": 171,
+      "file": "article_0171.html",
+      "url": "https://mawdoo3.com/ابن_زريق_البغدادي_لا_تعذليه",
+      "title": "ابن زريق البغدادي لا تعذليه",
+      "page_num": 2,
+      "bytes": 282084,
+      "sha1": "78d21a4de3ce944525f05ad3b99077ce3050bde1"
+    },
+    {
+      "id": 172,
+      "file": "article_0172.html",
+      "url": "https://mawdoo3.com/أتحبني_وأنا_ضريرة",
+      "title": "أتحبني وأنا ضريرة",
+      "page_num": 2,
+      "bytes": 230332,
+      "sha1": "b1d0192cfaf98124feda4257009c2599e99ae5c8"
+    },
+    {
+      "id": 173,
+      "file": "article_0173.html",
+      "url": "https://mawdoo3.com/قصائد_على_البحر_البسيط",
+      "title": "قصائد على البحر البسيط",
+      "page_num": 2,
+      "bytes": 254122,
+      "sha1": "bd77ba7975d0fffc467d9fff5d39fb9365acb1d8"
+    },
+    {
+      "id": 174,
+      "file": "article_0174.html",
+      "url": "https://mawdoo3.com/شعر_عن_الاشتياق",
+      "title": "شعر عن الاشتياق",
+      "page_num": 2,
+      "bytes": 202563,
+      "sha1": "4413c7f88dcb0690c9f354d3bfadd2ce93f4ec66"
+    },
+    {
+      "id": 175,
+      "file": "article_0175.html",
+      "url": "https://mawdoo3.com/شعر_ابو_نواس",
+      "title": "شعر ابو نواس",
+      "page_num": 2,
+      "bytes": 199279,
+      "sha1": "862213a0e35b4efac25341c3c2fafba9c5b74386"
+    },
+    {
+      "id": 176,
+      "file": "article_0176.html",
+      "url": "https://mawdoo3.com/حكم_ابن_عطاء_الله_السكندري",
+      "title": "حكم ابن عطاء الله السكندري",
+      "page_num": 2,
+      "bytes": 197241,
+      "sha1": "e743513935dc75b491e1d52e3087319d94c3b3cf"
+    },
+    {
+      "id": 177,
+      "file": "article_0177.html",
+      "url": "https://mawdoo3.com/شعر_عن_أهل_البيت",
+      "title": "شعر عن أهل البيت",
+      "page_num": 2,
+      "bytes": 266732,
+      "sha1": "e2e100e0ccd6b470a841542aec0b702a424da2e4"
+    },
+    {
+      "id": 178,
+      "file": "article_0178.html",
+      "url": "https://mawdoo3.com/تعريف_الحكمة_في_العصر_العباسي",
+      "title": "تعريف الحكمة في العصر العباسي",
+      "page_num": 2,
+      "bytes": 249643,
+      "sha1": "85a9f79813d3c0efe92381829f64d26655f7571a"
+    },
+    {
+      "id": 179,
+      "file": "article_0179.html",
+      "url": "https://mawdoo3.com/تعبير_عن_المهن",
+      "title": "تعبير عن المهن",
+      "page_num": 2,
+      "bytes": 205893,
+      "sha1": "354dddee71c065404cd39f0a54f869ffc4235ef9"
+    },
+    {
+      "id": 180,
+      "file": "article_0180.html",
+      "url": "https://mawdoo3.com/شعر_عن_الوصل_بين_الأحباب",
+      "title": "شعر عن الوصل بين الأحباب",
+      "page_num": 2,
+      "bytes": 256707,
+      "sha1": "1f60f276b5cccc2e64c6e15f9bb12f4a4d043bb3"
+    },
+    {
+      "id": 181,
+      "file": "article_0181.html",
+      "url": "https://mawdoo3.com/تلخيص_قصة_دعاء_الكروان",
+      "title": "تلخيص قصة دعاء الكروان",
+      "page_num": 2,
+      "bytes": 205261,
+      "sha1": "8036869841166bef92dae50391fa445bac1d346c"
+    },
+    {
+      "id": 182,
+      "file": "article_0182.html",
+      "url": "https://mawdoo3.com/علم_الأصوات_في_اللغة_العربية",
+      "title": "علم الأصوات في اللغة العربية",
+      "page_num": 2,
+      "bytes": 263952,
+      "sha1": "ba482c72b080a49a2d05925d2b88730f1ae07698"
+    },
+    {
+      "id": 183,
+      "file": "article_0183.html",
+      "url": "https://mawdoo3.com/شعر_جميل_عن_الحب",
+      "title": "شعر جميل عن الحب",
+      "page_num": 2,
+      "bytes": 193470,
+      "sha1": "9f29b9c3154bac12450ccde7329c60d9f21438be"
+    },
+    {
+      "id": 184,
+      "file": "article_0184.html",
+      "url": "https://mawdoo3.com/شعر_ياسر_التويجري",
+      "title": "شعر ياسر التويجري",
+      "page_num": 2,
+      "bytes": 261885,
+      "sha1": "a2ba0468d6234353106591d1ab66da9db7ad3d53"
+    },
+    {
+      "id": 185,
+      "file": "article_0185.html",
+      "url": "https://mawdoo3.com/شعر_المتنبي",
+      "title": "شعر المتنبي",
+      "page_num": 2,
+      "bytes": 233501,
+      "sha1": "ab919de1b98a3dee821f1cbabbe2f709e82e9d4b"
+    },
+    {
+      "id": 186,
+      "file": "article_0186.html",
+      "url": "https://mawdoo3.com/شعر_وداع_الحبيب",
+      "title": "شعر وداع الحبيب",
+      "page_num": 2,
+      "bytes": 212630,
+      "sha1": "3fc6180f4c91138fa58031e88b3834b8e9c0dae5"
+    },
+    {
+      "id": 187,
+      "file": "article_0187.html",
+      "url": "https://mawdoo3.com/تعبير_عن_القط",
+      "title": "تعبير عن القط",
+      "page_num": 2,
+      "bytes": 208780,
+      "sha1": "107735ded87e871788d564ac7a3e6730c95ffe64"
+    },
+    {
+      "id": 188,
+      "file": "article_0188.html",
+      "url": "https://mawdoo3.com/اجمل_ابيات_الحب",
+      "title": "اجمل ابيات الحب",
+      "page_num": 2,
+      "bytes": 201308,
+      "sha1": "5c8354e933fe59e01081fefd86399a29f652692d"
+    },
+    {
+      "id": 189,
+      "file": "article_0189.html",
+      "url": "https://mawdoo3.com/قصيدة_عن_الحج",
+      "title": "قصيدة عن الحج",
+      "page_num": 2,
+      "bytes": 217609,
+      "sha1": "923d5315620e3a4f74aa3277751fc7754bd0a31f"
+    },
+    {
+      "id": 190,
+      "file": "article_0190.html",
+      "url": "https://mawdoo3.com/خير_جليس_في_الأنام_كتاب",
+      "title": "خير جليس في الأنام كتاب",
+      "page_num": 2,
+      "bytes": 195375,
+      "sha1": "52e37eaf5e15427e4a8f3cca7b4c3203211cf9ca"
+    },
+    {
+      "id": 191,
+      "file": "article_0191.html",
+      "url": "https://mawdoo3.com/شعر_بدوي_عن_الشوق",
+      "title": "شعر بدوي عن الشوق",
+      "page_num": 2,
+      "bytes": 231512,
+      "sha1": "b0f46f337bc44f02dfd741208f9325a7735c4f25"
+    },
+    {
+      "id": 192,
+      "file": "article_0192.html",
+      "url": "https://mawdoo3.com/مدارس_الأدب_المقارن",
+      "title": "مدارس الأدب المقارن",
+      "page_num": 2,
+      "bytes": 227870,
+      "sha1": "c74488918180fb0c6c93833bab534d1a27e48121"
+    },
+    {
+      "id": 193,
+      "file": "article_0193.html",
+      "url": "https://mawdoo3.com/علاقات_المجاز_المرسل",
+      "title": "علاقات المجاز المرسل",
+      "page_num": 2,
+      "bytes": 255295,
+      "sha1": "7de6e775d5576d428324444d8e359595da95002d"
+    },
+    {
+      "id": 194,
+      "file": "article_0194.html",
+      "url": "https://mawdoo3.com/الشعر_السياسي_في_العصر_الأموي",
+      "title": "الشعر السياسي في العصر الأموي",
+      "page_num": 2,
+      "bytes": 239803,
+      "sha1": "97ae9435eef5d5090815933ec1708b8098086662"
+    },
+    {
+      "id": 195,
+      "file": "article_0195.html",
+      "url": "https://mawdoo3.com/شرح_قصيدة_(دع_الأيام_تفعل_ما_تشاء)",
+      "title": "شرح قصيدة (دع الأيام تفعل ما تشاء)",
+      "page_num": 2,
+      "bytes": 218365,
+      "sha1": "a1281e304a84e2158d087b4db462b107c4c53a91"
+    },
+    {
+      "id": 196,
+      "file": "article_0196.html",
+      "url": "https://mawdoo3.com/شعر_فهد_المساعد",
+      "title": "شعر فهد المساعد",
+      "page_num": 2,
+      "bytes": 221347,
+      "sha1": "7ef0363914bce38ffd4793ea1fa21eda36b6e2ab"
+    },
+    {
+      "id": 197,
+      "file": "article_0197.html",
+      "url": "https://mawdoo3.com/قصة_قصيدة_صوت_صفير_البلبل",
+      "title": "قصة قصيدة صوت صفير البلبل",
+      "page_num": 2,
+      "bytes": 215518,
+      "sha1": "d40028ccae2fc5d80fbcbd36673fa51012e7d1cb"
+    },
+    {
+      "id": 198,
+      "file": "article_0198.html",
+      "url": "https://mawdoo3.com/شعر_عن_الأصدقاء",
+      "title": "شعر عن الأصدقاء",
+      "page_num": 2,
+      "bytes": 199523,
+      "sha1": "cc41d1f90ee870a174e13e9ce330f41b6fd3b7a1"
+    },
+    {
+      "id": 199,
+      "file": "article_0199.html",
+      "url": "https://mawdoo3.com/شعر_ابو_تمام",
+      "title": "شعر ابو تمام",
+      "page_num": 2,
+      "bytes": 251431,
+      "sha1": "becce34b36d0d293fb0ad79548fb5ddceec343b8"
+    },
+    {
+      "id": 200,
+      "file": "article_0200.html",
+      "url": "https://mawdoo3.com/تعبير_عن_الاختراعات_العلمية",
+      "title": "تعبير عن الاختراعات العلمية",
+      "page_num": 2,
+      "bytes": 210095,
+      "sha1": "0d76d0aa68ab8b02693f94c9aeda55e161c10902"
+    },
+    {
+      "id": 201,
+      "file": "article_0201.html",
+      "url": "https://mawdoo3.com/تعبير_عن_عبد_الحميد_بن_باديس",
+      "title": "تعبير عن عبد الحميد بن باديس",
+      "page_num": 2,
+      "bytes": 203498,
+      "sha1": "7281bbc08f1b3eaead7433b4594b533bba5aa3ca"
+    },
+    {
+      "id": 202,
+      "file": "article_0202.html",
+      "url": "https://mawdoo3.com/أسماء_الأسد_في_اللغة_العربية",
+      "title": "أسماء الأسد في اللغة العربية",
+      "page_num": 2,
+      "bytes": 197879,
+      "sha1": "febe1a73844abfa2fedacf5476883dfd5540746a"
+    },
+    {
+      "id": 203,
+      "file": "article_0203.html",
+      "url": "https://mawdoo3.com/من_حفر_حفرة_لأخيه",
+      "title": "من حفر حفرة لأخيه",
+      "page_num": 2,
+      "bytes": 186439,
+      "sha1": "a7e8c01d2d81fa8b6534d5e0baf1cee58d07c331"
+    },
+    {
+      "id": 204,
+      "file": "article_0204.html",
+      "url": "https://mawdoo3.com/تعبير_عن_الصحة_والرياضة",
+      "title": "تعبير عن الصحة والرياضة",
+      "page_num": 2,
+      "bytes": 209445,
+      "sha1": "0eccb915569ae3cfc7ac0648911a791e5c8725df"
+    },
+    {
+      "id": 205,
+      "file": "article_0205.html",
+      "url": "https://mawdoo3.com/شعر_انتظار",
+      "title": "شعر انتظار",
+      "page_num": 2,
+      "bytes": 220564,
+      "sha1": "d13be30d81addf90d45cf626f873b23c3829a862"
+    },
+    {
+      "id": 206,
+      "file": "article_0206.html",
+      "url": "https://mawdoo3.com/اجمل_اشعار_المتنبي",
+      "title": "اجمل اشعار المتنبي",
+      "page_num": 2,
+      "bytes": 426192,
+      "sha1": "a119768d3396ca18a05e192b0519c3a0c4837564"
+    },
+    {
+      "id": 207,
+      "file": "article_0207.html",
+      "url": "https://mawdoo3.com/تعبير_عن_التسول",
+      "title": "تعبير عن التسول",
+      "page_num": 2,
+      "bytes": 235241,
+      "sha1": "5af8b472c26d3b8cd87becd1f921a7a87250637d"
+    },
+    {
+      "id": 208,
+      "file": "article_0208.html",
+      "url": "https://mawdoo3.com/تحليل_قصيدة_أنشودة_المطر",
+      "title": "تحليل قصيدة أنشودة المطر",
+      "page_num": 2,
+      "bytes": 242819,
+      "sha1": "d2c394d95baa972c0c7a31734affeeb118c35cad"
+    },
+    {
+      "id": 209,
+      "file": "article_0209.html",
+      "url": "https://mawdoo3.com/تطور_اللغة_العربية",
+      "title": "تطور اللغة العربية",
+      "page_num": 2,
+      "bytes": 202370,
+      "sha1": "1dae5285bbfedd163155c6f2fc00630c8d8ea34c"
+    },
+    {
+      "id": 210,
+      "file": "article_0210.html",
+      "url": "https://mawdoo3.com/تعبير_عن_مصطفى_بن_بولعيد",
+      "title": "تعبير عن مصطفى بن بولعيد",
+      "page_num": 2,
+      "bytes": 200653,
+      "sha1": "e3c6ca65a5d384c07738f9d9628822fa3547acb4"
+    },
+    {
+      "id": 211,
+      "file": "article_0211.html",
+      "url": "https://mawdoo3.com/شعر_عن_الصداقة",
+      "title": "شعر عن الصداقة",
+      "page_num": 2,
+      "bytes": 204795,
+      "sha1": "d3d83fe91ecdc56b1869e4b83bdee2ca9a5732a3"
+    },
+    {
+      "id": 212,
+      "file": "article_0212.html",
+      "url": "https://mawdoo3.com/أجمل_بيت_شعري",
+      "title": "أجمل بيت شعري",
+      "page_num": 2,
+      "bytes": 203460,
+      "sha1": "d3eb7fb12c0be3d356d9a238f7bf43c19166bccc"
+    },
+    {
+      "id": 213,
+      "file": "article_0213.html",
+      "url": "https://mawdoo3.com/تفعيلات_البحر_الطويل",
+      "title": "تفعيلات البحر الطويل",
+      "page_num": 2,
+      "bytes": 216818,
+      "sha1": "61a2e9f3101a0d714ed8a4e3262656659bb81621"
+    },
+    {
+      "id": 214,
+      "file": "article_0214.html",
+      "url": "https://mawdoo3.com/كلام_جميل_عن_الأب_وابنته",
+      "title": "كلام جميل عن الأب وابنته",
+      "page_num": 2,
+      "bytes": 2385991,
+      "sha1": "de886669b39482ad54b5213a51ce995f1ab88a2a"
+    },
+    {
+      "id": 215,
+      "file": "article_0215.html",
+      "url": "https://mawdoo3.com/مقدمة_إذاعة_مدرسية_عن_الوطن",
+      "title": "مقدمة إذاعة مدرسية عن الوطن",
+      "page_num": 2,
+      "bytes": 227655,
+      "sha1": "cd771c616c748045c29f9e62b660c98e610ca8e8"
+    },
+    {
+      "id": 216,
+      "file": "article_0216.html",
+      "url": "https://mawdoo3.com/تعبير_عن_التضامن_الإنساني",
+      "title": "تعبير عن التضامن الإنساني",
+      "page_num": 2,
+      "bytes": 209174,
+      "sha1": "9621bcbaaa969ab036307457b2e31fc6fab0835f"
+    },
+    {
+      "id": 217,
+      "file": "article_0217.html",
+      "url": "https://mawdoo3.com/شعر_عن_الجرح",
+      "title": "شعر عن الجرح",
+      "page_num": 2,
+      "bytes": 200024,
+      "sha1": "22030af43536737bcac3cb526e27cda2a6c7b041"
+    },
+    {
+      "id": 218,
+      "file": "article_0218.html",
+      "url": "https://mawdoo3.com/شعر_حب_وشوق",
+      "title": "شعر حب وشوق",
+      "page_num": 2,
+      "bytes": 205935,
+      "sha1": "3fb0c50f2068344685830ed652660f0b4c83471e"
+    },
+    {
+      "id": 219,
+      "file": "article_0219.html",
+      "url": "https://mawdoo3.com/شعر_جبران_خليل_جبران",
+      "title": "شعر جبران خليل جبران",
+      "page_num": 2,
+      "bytes": 210135,
+      "sha1": "35ea6b71d98c52ac5766ca69ff297872f5ef64c3"
+    },
+    {
+      "id": 220,
+      "file": "article_0220.html",
+      "url": "https://mawdoo3.com/مقدمة_حفل_ختامي",
+      "title": "مقدمة حفل ختامي",
+      "page_num": 2,
+      "bytes": 213836,
+      "sha1": "d79ec730c24f1ba056e7509e67f99b6790169ab8"
+    },
+    {
+      "id": 221,
+      "file": "article_0221.html",
+      "url": "https://mawdoo3.com/حامد_زيد_السفينه",
+      "title": "حامد زيد السفينه",
+      "page_num": 2,
+      "bytes": 216745,
+      "sha1": "33ec70da8d9eaff3b7c3317b44143217c8cd18fb"
+    },
+    {
+      "id": 222,
+      "file": "article_0222.html",
+      "url": "https://mawdoo3.com/شعر_حزين_عن_الام",
+      "title": "شعر حزين عن الام",
+      "page_num": 2,
+      "bytes": 237868,
+      "sha1": "a96e8189da3b6e470a8df5333e1530373db73e81"
+    },
+    {
+      "id": 223,
+      "file": "article_0223.html",
+      "url": "https://mawdoo3.com/من_اول_من_قال_الشعر",
+      "title": "من اول من قال الشعر",
+      "page_num": 2,
+      "bytes": 208294,
+      "sha1": "0e31dde45ca0292c7946ef625189fa0a992d682e"
+    },
+    {
+      "id": 224,
+      "file": "article_0224.html",
+      "url": "https://mawdoo3.com/شرح_قصيدة_بركة_المتوكل",
+      "title": "شرح قصيدة بركة المتوكل",
+      "page_num": 2,
+      "bytes": 255057,
+      "sha1": "be3d578e0ce2892535b26859d6f30e003329769a"
+    },
+    {
+      "id": 225,
+      "file": "article_0225.html",
+      "url": "https://mawdoo3.com/تعبير_عن_اليوم_الوطني_السعودي",
+      "title": "تعبير عن اليوم الوطني السعودي",
+      "page_num": 2,
+      "bytes": 211456,
+      "sha1": "d8c01a0c90cf4375f5801c35f2154c6c9f4e2c8e"
+    },
+    {
+      "id": 226,
+      "file": "article_0226.html",
+      "url": "https://mawdoo3.com/نموذج_تحليل_قصة_قصيرة",
+      "title": "نموذج تحليل قصة قصيرة",
+      "page_num": 2,
+      "bytes": 216221,
+      "sha1": "1a1cbc75e8a87f724b6630de4a7cb4e0c7ee6c66"
+    },
+    {
+      "id": 227,
+      "file": "article_0227.html",
+      "url": "https://mawdoo3.com/تعبير_عن_القمر",
+      "title": "تعبير عن القمر",
+      "page_num": 2,
+      "bytes": 235265,
+      "sha1": "fdb6dcbcfc36d21bfc840fe443f2c4319275d23d"
+    },
+    {
+      "id": 228,
+      "file": "article_0228.html",
+      "url": "https://mawdoo3.com/ابيات_شعر_عتاب",
+      "title": "ابيات شعر عتاب",
+      "page_num": 2,
+      "bytes": 206926,
+      "sha1": "79310604b9b35639058b1d9a009ef45b83b90268"
+    },
+    {
+      "id": 229,
+      "file": "article_0229.html",
+      "url": "https://mawdoo3.com/ان_كنت_تعلم_فتلك_مصيبة",
+      "title": "ان كنت تعلم فتلك مصيبة",
+      "page_num": 2,
+      "bytes": 207225,
+      "sha1": "e37523c2cbe9e4ec8fe03b07f57a09affb2ab347"
+    },
+    {
+      "id": 230,
+      "file": "article_0230.html",
+      "url": "https://mawdoo3.com/شعر_فراق_الحبيب",
+      "title": "شعر فراق الحبيب",
+      "page_num": 2,
+      "bytes": 205287,
+      "sha1": "80539d5526c5fff443bbd531b4c24276ae194e0f"
+    },
+    {
+      "id": 231,
+      "file": "article_0231.html",
+      "url": "https://mawdoo3.com/شعر_ليبي_حزين",
+      "title": "شعر ليبي حزين",
+      "page_num": 2,
+      "bytes": 194228,
+      "sha1": "6f771074cc696193f3e317d8e866d5d5ceef815b"
+    },
+    {
+      "id": 232,
+      "file": "article_0232.html",
+      "url": "https://mawdoo3.com/شعر_حزين_جدا",
+      "title": "شعر حزين جدا",
+      "page_num": 2,
+      "bytes": 240173,
+      "sha1": "165441896033b4e1d18b97f7508dd24377492470"
+    },
+    {
+      "id": 233,
+      "file": "article_0233.html",
+      "url": "https://mawdoo3.com/خصائص_شعر_عنترة_بن_شداد",
+      "title": "خصائص شعر عنترة بن شداد",
+      "page_num": 2,
+      "bytes": 232794,
+      "sha1": "8e5c9ffa745cd417a4fbd4ffbd57094b279d1e3c"
+    },
+    {
+      "id": 234,
+      "file": "article_0234.html",
+      "url": "https://mawdoo3.com/شعر_عن_جمال_البحر",
+      "title": "شعر عن جمال البحر",
+      "page_num": 2,
+      "bytes": 203528,
+      "sha1": "bf9e6e9748fe47a1f04b0cd369248ad21ba03abc"
+    },
+    {
+      "id": 235,
+      "file": "article_0235.html",
+      "url": "https://mawdoo3.com/ترى_الرجل_النحيف_فتزدريه",
+      "title": "ترى الرجل النحيف فتزدريه",
+      "page_num": 2,
+      "bytes": 222387,
+      "sha1": "006cfe27a0337aa469354317ed6cc6f7bde517a1"
+    },
+    {
+      "id": 236,
+      "file": "article_0236.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_النظام",
+      "title": "موضوع تعبير عن النظام",
+      "page_num": 2,
+      "bytes": 196398,
+      "sha1": "49d10fc3d8072ea5d7205ebca3c9bd89d56d2303"
+    },
+    {
+      "id": 237,
+      "file": "article_0237.html",
+      "url": "https://mawdoo3.com/تلخيص_قصة_العجوز_والبحر",
+      "title": "تلخيص قصة العجوز والبحر",
+      "page_num": 2,
+      "bytes": 198988,
+      "sha1": "452d2034582a13c2e96f2c816707a05f294f08d2"
+    },
+    {
+      "id": 238,
+      "file": "article_0238.html",
+      "url": "https://mawdoo3.com/شعر_ليبي_عن_الحب",
+      "title": "شعر ليبي عن الحب",
+      "page_num": 2,
+      "bytes": 200357,
+      "sha1": "cf3c4cf4ac20fd81c0170aee669606770714d702"
+    },
+    {
+      "id": 239,
+      "file": "article_0239.html",
+      "url": "https://mawdoo3.com/شرح_قصيدة_أبو_العلاء_المعري_يرثي_فقيها",
+      "title": "شرح قصيدة أبو العلاء المعري يرثي فقيها",
+      "page_num": 2,
+      "bytes": 235686,
+      "sha1": "1bd883aba7cbd50606c210cdd1ca0a54dab40aed"
+    },
+    {
+      "id": 240,
+      "file": "article_0240.html",
+      "url": "https://mawdoo3.com/تعبير_عن_شروق_الشمس",
+      "title": "تعبير عن شروق الشمس",
+      "page_num": 2,
+      "bytes": 207402,
+      "sha1": "5839e398cb53206d08bd4c80770471722245d031"
+    },
+    {
+      "id": 241,
+      "file": "article_0241.html",
+      "url": "https://mawdoo3.com/قصائد_على_البحر_الطويل",
+      "title": "قصائد على البحر الطويل",
+      "page_num": 2,
+      "bytes": 246248,
+      "sha1": "d9e990b3258ef94beb7f03fbf18b0fc79591e101"
+    },
+    {
+      "id": 242,
+      "file": "article_0242.html",
+      "url": "https://mawdoo3.com/تعبير_عن_ليبيا",
+      "title": "تعبير عن ليبيا",
+      "page_num": 2,
+      "bytes": 200137,
+      "sha1": "960fa25a6e88e6dd343a7887f98b2b444a7f818e"
+    },
+    {
+      "id": 243,
+      "file": "article_0243.html",
+      "url": "https://mawdoo3.com/تاريخ_الأدب_العربي",
+      "title": "تاريخ الأدب العربي",
+      "page_num": 2,
+      "bytes": 293672,
+      "sha1": "9bb77b948e8df11805b3976b149fca26c3b10b9d"
+    },
+    {
+      "id": 244,
+      "file": "article_0244.html",
+      "url": "https://mawdoo3.com/تلخيص_قصة_أبو_الهول_يطير",
+      "title": "تلخيص قصة أبو الهول يطير",
+      "page_num": 2,
+      "bytes": 200457,
+      "sha1": "2da818bc246a8ed5ac3108534410ccd9bd8dc429"
+    },
+    {
+      "id": 245,
+      "file": "article_0245.html",
+      "url": "https://mawdoo3.com/محمود_درويش_تنسى_كأنك_لم_تكن",
+      "title": "محمود درويش تنسى كأنك لم تكن",
+      "page_num": 2,
+      "bytes": 227740,
+      "sha1": "3feff53b9ad17378546d2e652f8585cec5d8c257"
+    },
+    {
+      "id": 246,
+      "file": "article_0246.html",
+      "url": "https://mawdoo3.com/شعر_مضحك_عن_الحب",
+      "title": "شعر مضحك عن الحب",
+      "page_num": 2,
+      "bytes": 193556,
+      "sha1": "aee5f93e750868b8ff6d7f0c3adb468dbe4f80a5"
+    },
+    {
+      "id": 247,
+      "file": "article_0247.html",
+      "url": "https://mawdoo3.com/شعر_عن_الغرور",
+      "title": "شعر عن الغرور",
+      "page_num": 2,
+      "bytes": 208309,
+      "sha1": "6f6117501a42d1cd8fb4b2c96b8a6b9cbd8ae771"
+    },
+    {
+      "id": 248,
+      "file": "article_0248.html",
+      "url": "https://mawdoo3.com/شعر_نبطي_حزين",
+      "title": "شعر نبطي حزين",
+      "page_num": 2,
+      "bytes": 205939,
+      "sha1": "5c69c133c95a078053eb4c1e40ef80d7669e3c53"
+    },
+    {
+      "id": 249,
+      "file": "article_0249.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_قناة_السويس",
+      "title": "موضوع تعبير عن قناة السويس",
+      "page_num": 2,
+      "bytes": 197138,
+      "sha1": "69def0bd36335ea82e0079df4aa425d6d620bdff"
+    },
+    {
+      "id": 250,
+      "file": "article_0250.html",
+      "url": "https://mawdoo3.com/تعريف_الأدب_المقارن",
+      "title": "تعريف الأدب المقارن",
+      "page_num": 2,
+      "bytes": 264093,
+      "sha1": "9f9e2fada7f3d6942abf2a7b5dd23e964643e725"
+    },
+    {
+      "id": 251,
+      "file": "article_0251.html",
+      "url": "https://mawdoo3.com/ابيات_شعر_حلوه",
+      "title": "ابيات شعر حلوه",
+      "page_num": 2,
+      "bytes": 214937,
+      "sha1": "4ff10cb659d54fb732dee5cea210e98f5cba04f6"
+    },
+    {
+      "id": 252,
+      "file": "article_0252.html",
+      "url": "https://mawdoo3.com/قصائد_جبران_خليل_جبران",
+      "title": "قصائد جبران خليل جبران",
+      "page_num": 2,
+      "bytes": 212239,
+      "sha1": "1100d93823a11c089b8d5eb392395cc4839c33d7"
+    },
+    {
+      "id": 253,
+      "file": "article_0253.html",
+      "url": "https://mawdoo3.com/موضوع_تعبير_عن_نهر_النيل",
+      "title": "موضوع تعبير عن نهر النيل",
+      "page_num": 2,
+      "bytes": 195818,
+      "sha1": "ea55a2d87e4330741f4c9bf1bcc0a8e53cc57c60"
+    },
+    {
+      "id": 254,
+      "file": "article_0254.html",
+      "url": "https://mawdoo3.com/شرح_لامية_ابن_الوردي",
+      "title": "شرح لامية ابن الوردي",
+      "page_num": 2,
+      "bytes": 208639,
+      "sha1": "f3eb31c8f9a9147864daad3cc7686c092413e7d6"
+    },
+    {
+      "id": 255,
+      "file": "article_0255.html",
+      "url": "https://mawdoo3.com/قصيدة_ثورة_الشك",
+      "title": "قصيدة ثورة الشك",
+      "page_num": 2,
+      "bytes": 204570,
+      "sha1": "e8cc1cb2f8619e48125020d26ba71b246501ee0f"
+    },
+    {
+      "id": 256,
+      "file": "article_0256.html",
+      "url": "https://mawdoo3.com/شعر_فراق",
+      "title": "شعر فراق",
+      "page_num": 2,
+      "bytes": 207606,
+      "sha1": "f062acf436627e27a33f4c06664df31b2241fd28"
+    },
+    {
+      "id": 257,
+      "file": "article_0257.html",
+      "url": "https://mawdoo3.com/شرح_قصيدة_المساء_لخليل_مطران",
+      "title": "شرح قصيدة المساء لخليل مطران",
+      "page_num": 2,
+      "bytes": 243738,
+      "sha1": "a4fc9039571199ee6616b7e3be728ae636029a3e"
+    },
+    {
+      "id": 258,
+      "file": "article_0258.html",
+      "url": "https://mawdoo3.com/تعبير_عن_الأرض",
+      "title": "تعبير عن الأرض",
+      "page_num": 2,
+      "bytes": 221943,
+      "sha1": "fea35b6ba03ce429253c3e60d9d6c00b235ef9d3"
+    },
+    {
+      "id": 259,
+      "file": "article_0259.html",
+      "url": "https://mawdoo3.com/الأدب_في_العصر_الإسلامي",
+      "title": "الأدب في العصر الإسلامي",
+      "page_num": 2,
+      "bytes": 266480,
+      "sha1": "f8225a9c7c7a6adb178c6472832da0605b0505ca"
+    },
+    {
+      "id": 260,
+      "file": "article_0260.html",
+      "url": "https://mawdoo3.com/تعبير_عن_مواقع_التواصل_الاجتماعي",
+      "title": "تعبير عن مواقع التواصل الاجتماعي",
+      "page_num": 2,
+      "bytes": 225647,
+      "sha1": "3d880038207c4351deda1306b1d12049bc9f0aa9"
+    },
+    {
+      "id": 261,
+      "file": "article_0261.html",
+      "url": "https://mawdoo3.com/تعبير_عن_إكرام_الضيف",
+      "title": "تعبير عن إكرام الضيف",
+      "page_num": 2,
+      "bytes": 223103,
+      "sha1": "3f16a930f4d0f5cfb11827e0842695427812a295"
+    },
+    {
+      "id": 262,
+      "file": "article_0262.html",
+      "url": "https://mawdoo3.com/تعبير_عن_الوطن_الجزائر",
+      "title": "تعبير عن الوطن الجزائر",
+      "page_num": 2,
+      "bytes": 208330,
+      "sha1": "5949ebe5e39dc2a2dd2b30fc0a77675342d99620"
+    },
+    {
+      "id": 263,
+      "file": "article_0263.html",
+      "url": "https://mawdoo3.com/شعر_عن_الروح",
+      "title": "شعر عن الروح",
+      "page_num": 2,
+      "bytes": 202270,
+      "sha1": "03efa7164c53bfe1f7b781caa204147ef2b455a1"
+    },
+    {
+      "id": 264,
+      "file": "article_0264.html",
+      "url": "https://mawdoo3.com/شعر_بن_فطيس",
+      "title": "شعر بن فطيس",
+      "page_num": 2,
+      "bytes": 213262,
+      "sha1": "18a9515feeee93cc3eb89596f1ca99a35fd5e2b5"
+    },
+    {
+      "id": 265,
+      "file": "article_0265.html",
+      "url": "https://mawdoo3.com/شعر_في_الحكمة",
+      "title": "شعر في الحكمة",
+      "page_num": 3,
+      "bytes": 200610,
+      "sha1": "3f654a9735b27c72049bb9784031ef71d095a620"
+    },
+    {
+      "id": 266,
+      "file": "article_0266.html",
+      "url": "https://mawdoo3.com/تعبير_عن_مدينة_جيجل",
+      "title": "تعبير عن مدينة جيجل",
+      "page_num": 3,
+      "bytes": 209065,
+      "sha1": "4607646ad608952e9a04de41721c4a4f90eebd48"
+    },
+    {
+      "id": 267,
+      "file": "article_0267.html",
+      "url": "https://mawdoo3.com/شعر_الإمام_الشافعي",
+      "title": "شعر الإمام الشافعي",
+      "page_num": 3,
+      "bytes": 208023,
+      "sha1": "208bd7d4728b3d8767031292c194ae815b45fec3"
+    },
+    {
+      "id": 268,
+      "file": "article_0268.html",
+      "url": "https://mawdoo3.com/من_هو_أمية_بن_خلف؟",
+      "title": "من هو أمية بن خلف؟",
+      "page_num": 3,
+      "bytes": 218222,
+      "sha1": "6e2f67b98f250b4fce706fe0795e4b28702b2951"
+    },
+    {
+      "id": 269,
+      "file": "article_0269.html",
+      "url": "https://mawdoo3.com/اتحبني_بعد_الذي_كان",
+      "title": "اتحبني بعد الذي كان",
+      "page_num": 3,
+      "bytes": 246060,
+      "sha1": "cf96265c2a2b4e5ca379ca1894360899f7e27bcf"
+    },
+    {
+      "id": 270,
+      "file": "article_0270.html",
+      "url": "https://mawdoo3.com/اشعار_حب_عراقية",
+      "title": "اشعار حب عراقية",
+      "page_num": 3,
+      "bytes": 195367,
+      "sha1": "6fb9e68fae4947f198182145da1d46a7d94eb815"
+    },
+    {
+      "id": 271,
+      "file": "article_0271.html",
+      "url": "https://mawdoo3.com/تعبير_عن_العلم_والاكتشافات_العلمية",
+      "title": "تعبير عن العلم والاكتشافات العلمية",
+      "page_num": 3,
+      "bytes": 215039,
+      "sha1": "197de447b9dcf9a8c256fd5cd83e8d79445ca819"
+    },
+    {
+      "id": 272,
+      "file": "article_0272.html",
+      "url": "https://mawdoo3.com/تلخيص_رواية_أرض_زيكولا",
+      "title": "تلخيص رواية أرض زيكولا",
+      "page_num": 3,
+      "bytes": 213316,
+      "sha1": "81d73d41106ec6eef77db85dc131f085dcf757a9"
+    },
+    {
+      "id": 273,
+      "file": "article_0273.html",
+      "url": "https://mawdoo3.com/شعر_عن_الأم",
+      "title": "شعر عن الأم",
+      "page_num": 3,
+      "bytes": 235091,
+      "sha1": "54ba198bb0bc5ea6069f75934d3fde2b4e3530cc"
+    },
+    {
+      "id": 274,
+      "file": "article_0274.html",
+      "url": "https://mawdoo3.com/اشعار_لعيد_ميلاد",
+      "title": "اشعار لعيد ميلاد",
+      "page_num": 3,
+      "bytes": 216337,
+      "sha1": "4802ded32689cb617a86016c1a80fcf5537ce24d"
+    },
+    {
+      "id": 275,
+      "file": "article_0275.html",
+      "url": "https://mawdoo3.com/قصيدة_عن_السفر",
+      "title": "قصيدة عن السفر",
+      "page_num": 3,
+      "bytes": 219658,
+      "sha1": "51b2dbf889b2732c553fb312876410f15acc0451"
+    },
+    {
+      "id": 276,
+      "file": "article_0276.html",
+      "url": "https://mawdoo3.com/شعر_عن_وطني",
+      "title": "شعر عن وطني",
+      "page_num": 3,
+      "bytes": 202008,
+      "sha1": "cc6ec71d4122880cba6ef1ab89c2a7de3215ddff"
+    },
+    {
+      "id": 277,
+      "file": "article_0277.html",
+      "url": "https://mawdoo3.com/اشعار_عن_الحب",
+      "title": "اشعار عن الحب",
+      "page_num": 3,
+      "bytes": 236013,
+      "sha1": "47718d51d6b511c0426a613238e2e98ccb2e50b9"
+    },
+    {
+      "id": 278,
+      "file": "article_0278.html",
+      "url": "https://mawdoo3.com/شرح_قصيدة_البردة_لتميم_البرغوثي",
+      "title": "شرح قصيدة البردة لتميم البرغوثي",
+      "page_num": 3,
+      "bytes": 206810,
+      "sha1": "51cc2985ec0066a88ab7e273b3a95b70f20030ff"
+    },
+    {
+      "id": 279,
+      "file": "article_0279.html",
+      "url": "https://mawdoo3.com/تعبير_عن_رحلة_مع_عائلتي",
+      "title": "تعبير عن رحلة مع عائلتي",
+      "page_num": 3,
+      "bytes": 220781,
+      "sha1": "29eb55b5b7013442f53deccf0baff9824f1fa899"
+    },
+    {
+      "id": 280,
+      "file": "article_0280.html",
+      "url": "https://mawdoo3.com/قصيدة_عن_فراق_الحبيب",
+      "title": "قصيدة عن فراق الحبيب",
+      "page_num": 3,
+      "bytes": 210604,
+      "sha1": "7dec53b2584ddaec425635b8a89c17da5ddfe99d"
+    },
+    {
+      "id": 281,
+      "file": "article_0281.html",
+      "url": "https://mawdoo3.com/الصور_البلاغية_في_معلقة_امرئ_القيس",
+      "title": "الصور البلاغية في معلقة امرئ القيس",
+      "page_num": 3,
+      "bytes": 220602,
+      "sha1": "a4bbfc7f55adde6cc708f15b615ece81ad430ad6"
+    },
+    {
+      "id": 282,
+      "file": "article_0282.html",
+      "url": "https://mawdoo3.com/شعر_نزار_قباني_عن_الحب",
+      "title": "شعر نزار قباني عن الحب",
+      "page_num": 3,
+      "bytes": 234741,
+      "sha1": "b62abf4d28abc81c4ade42dfade12d4869a1327e"
+    },
+    {
+      "id": 283,
+      "file": "article_0283.html",
+      "url": "https://mawdoo3.com/شرح_قصيدة_لامية_العجم",
+      "title": "شرح قصيدة لامية العجم",
+      "page_num": 3,
+      "bytes": 322627,
+      "sha1": "6d8d14e1213a85779a560a90068b59a97d47bfab"
+    },
+    {
+      "id": 284,
+      "file": "article_0284.html",
+      "url": "https://mawdoo3.com/من_هو_لسان_الدين_بن_الخطيب؟",
+      "title": "من هو لسان الدين بن الخطيب؟",
+      "page_num": 3,
+      "bytes": 200020,
+      "sha1": "b7deacb63a0d8b38d0070349f5a0bbb0c72f0754"
+    },
+    {
+      "id": 285,
+      "file": "article_0285.html",
+      "url": "https://mawdoo3.com/لبيد_بن_ربيعة",
+      "title": "لبيد بن ربيعة",
+      "page_num": 3,
+      "bytes": 220086,
+      "sha1": "fe2f6c4a8d1c4ea0021900d0daaae16bff7f31de"
+    },
+    {
+      "id": 286,
+      "file": "article_0286.html",
+      "url": "https://mawdoo3.com/شعر_شعبي_عراقي",
+      "title": "شعر شعبي عراقي",
+      "page_num": 3,
+      "bytes": 203228,
+      "sha1": "08cf2ec973b8a9f7a89a19295f25609e7c828154"
+    },
+    {
+      "id": 287,
+      "file": "article_0287.html",
+      "url": "https://mawdoo3.com/مدح_اللغة_العربية",
+      "title": "مدح اللغة العربية",
+      "page_num": 3,
+      "bytes": 190756,
+      "sha1": "5f7df0ad1d08a5f8f1bcbf69a01eaca7d3e6c6c5"
+    },
+    {
+      "id": 288,
+      "file": "article_0288.html",
+      "url": "https://mawdoo3.com/شعر_النقائض_بين_جرير_والفرزدق",
+      "title": "شعر النقائض بين جرير والفرزدق",
+      "page_num": 3,
+      "bytes": 223860,
+      "sha1": "c9f7445578854cd9f4937c29aa7d56c1f4a0b216"
+    },
+    {
+      "id": 289,
+      "file": "article_0289.html",
+      "url": "https://mawdoo3.com/قصيدة_أبو_تمام_في_فتح_عمورية",
+      "title": "قصيدة أبو تمام في فتح عمورية",
+      "page_num": 3,
+      "bytes": 237274,
+      "sha1": "39876640a45ddc524cdddba5f1c9e4840d9933da"
+    },
+    {
+      "id": 290,
+      "file": "article_0290.html",
+      "url": "https://mawdoo3.com/قصص_كليلة_ودمنة:_القرد_والنجار",
+      "title": "قصص كليلة ودمنة: القرد والنجار",
+      "page_num": 3,
+      "bytes": 198823,
+      "sha1": "f33ae3b543cccf8e716c5eee8b551e3a2c901b7b"
+    },
+    {
+      "id": 291,
+      "file": "article_0291.html",
+      "url": "https://mawdoo3.com/احلى_قصيدة_حب",
+      "title": "احلى قصيدة حب",
+      "page_num": 3,
+      "bytes": 208439,
+      "sha1": "54f28821d41e176a846b2c1bed2c0fc8c430ac63"
+    },
+    {
+      "id": 292,
+      "file": "article_0292.html",
+      "url": "https://mawdoo3.com/شرح_معلقة_امرؤ_القيس",
+      "title": "شرح معلقة امرؤ القيس",
+      "page_num": 3,
+      "bytes": 237595,
+      "sha1": "0087fc52fdac5d8fbfba6545d6242cc385edcd2a"
+    },
+    {
+      "id": 293,
+      "file": "article_0293.html",
+      "url": "https://mawdoo3.com/تلخيص_قصة_كليلة_ودمنة_باب_الحمامة_المطوقة",
+      "title": "تلخيص قصة كليلة ودمنة باب الحمامة المطوقة",
+      "page_num": 3,
+      "bytes": 194944,
+      "sha1": "8cda97846517ef144879028f7e482f2287466d0b"
+    },
+    {
+      "id": 294,
+      "file": "article_0294.html",
+      "url": "https://mawdoo3.com/تعبير_عن_الإحسان_إلى_الجار",
+      "title": "تعبير عن الإحسان إلى الجار",
+      "page_num": 3,
+      "bytes": 205443,
+      "sha1": "a379fb07eed4e96faeb7cfe666d1d5a51a29fb1b"
+    },
+    {
+      "id": 295,
+      "file": "article_0295.html",
+      "url": "https://mawdoo3.com/أين_ولد_شكسبير",
+      "title": "أين ولد شكسبير",
+      "page_num": 3,
+      "bytes": 217773,
+      "sha1": "7e8a5e17be1026955e4de22955f4eab6fe73407f"
+    },
+    {
+      "id": 296,
+      "file": "article_0296.html",
+      "url": "https://mawdoo3.com/نشيد_النيل_العذب_هو_الكوثر",
+      "title": "نشيد النيل العذب هو الكوثر",
+      "page_num": 3,
+      "bytes": 235268,
+      "sha1": "2458b91f47f84e784d7529cfc16761b8d913cfb2"
+    },
+    {
+      "id": 297,
+      "file": "article_0297.html",
+      "url": "https://mawdoo3.com/الفرق_بين_القصة_والحكاية",
+      "title": "الفرق بين القصة والحكاية",
+      "page_num": 3,
+      "bytes": 199737,
+      "sha1": "3f50f58bbb0b3b792b3c525190d5c81824519e8f"
+    },
+    {
+      "id": 298,
+      "file": "article_0298.html",
+      "url": "https://mawdoo3.com/الأدب_في_العصر_الحديث",
+      "title": "الأدب في العصر الحديث",
+      "page_num": 3,
+      "bytes": 210087,
+      "sha1": "63acd0bc184d4fd4d4692ba71d7c457319fe9579"
+    },
+    {
+      "id": 299,
+      "file": "article_0299.html",
+      "url": "https://mawdoo3.com/ملخص_كتاب_جلسات_نفسية",
+      "title": "ملخص كتاب جلسات نفسية",
+      "page_num": 3,
+      "bytes": 262782,
+      "sha1": "56bdd0ea187b104ed882ed84ce1d86b626607513"
+    },
+    {
+      "id": 300,
+      "file": "article_0300.html",
+      "url": "https://mawdoo3.com/تعبير_كتابي_عن_وصف_مدينة_سياحية",
+      "title": "تعبير كتابي عن وصف مدينة سياحية",
+      "page_num": 3,
+      "bytes": 215988,
+      "sha1": "8ed45d2ec52591c6c3b1fb4ac027bb96d6bb3e8b"
+    },
+    {
+      "id": 301,
+      "file": "article_0301.html",
+      "url": "https://mawdoo3.com/أبيات_شعر_حزينة_وقوية",
+      "title": "أبيات شعر حزينة وقوية",
+      "page_num": 3,
+      "bytes": 229980,
+      "sha1": "9c7ab0ea7fa2cac8f3505d80c9f76df814970f7d"
+    },
+    {
+      "id": 302,
+      "file": "article_0302.html",
+      "url": "https://mawdoo3.com/شعر_إيليا_أبو_ماضي",
+      "title": "شعر إيليا أبو ماضي",
+      "page_num": 3,
+      "bytes": 196148,
+      "sha1": "2acfb5c99dad94fa1668f6bffe54e462810afcf2"
+    },
+    {
+      "id": 303,
+      "file": "article_0303.html",
+      "url": "https://mawdoo3.com/شرح_قصيدة_فتح_عمورية",
+      "title": "شرح قصيدة فتح عمورية",
+      "page_num": 3,
+      "bytes": 222115,
+      "sha1": "54627dee32c50228db2c826097e18f0d0046b39b"
+    },
+    {
+      "id": 304,
+      "file": "article_0304.html",
+      "url": "https://mawdoo3.com/شعر_صلاح_جاهين",
+      "title": "شعر صلاح جاهين",
+      "page_num": 3,
+      "bytes": 219072,
+      "sha1": "1c180f591d7a4dab455b8b96ea5ffbdd0ece0f7f"
+    },
+    {
+      "id": 305,
+      "file": "article_0305.html",
+      "url": "https://mawdoo3.com/شعر_عن_الغيرة_في_الحب",
+      "title": "شعر عن الغيرة في الحب",
+      "page_num": 3,
+      "bytes": 203166,
+      "sha1": "d5e37ba5d68d5db4f6870b5262262f1abc2138c6"
+    },
+    {
+      "id": 306,
+      "file": "article_0306.html",
+      "url": "https://mawdoo3.com/إذاعة_مدرسية_عن_اليوم_الوطني_السعودي",
+      "title": "إذاعة مدرسية عن اليوم الوطني السعودي",
+      "page_num": 3,
+      "bytes": 204957,
+      "sha1": "9f2c6c078f1bbe62f82be9c7e5407b12bcd884be"
+    },
+    {
+      "id": 307,
+      "file": "article_0307.html",
+      "url": "https://mawdoo3.com/أفضل_ما_قاله_الشعراء_عن_المملكة_العربية_السعودية",
+      "title": "أفضل ما قاله الشعراء عن المملكة العربية السعودية",
+      "page_num": 3,
+      "bytes": 200791,
+      "sha1": "02b6005781b8a13f05e3aa8ffe17baf8a3a1adfd"
+    },
+    {
+      "id": 308,
+      "file": "article_0308.html",
+      "url": "https://mawdoo3.com/أجمل_كلام_عن_الحياة",
+      "title": "أجمل كلام عن الحياة",
+      "page_num": 3,
+      "bytes": 218849,
+      "sha1": "5a29f1b53872d3ec4de3e84a0c101f02329f0cda"
+    },
+    {
+      "id": 309,
+      "file": "article_0309.html",
+      "url": "https://mawdoo3.com/ما_معنى_الخطبة",
+      "title": "ما معنى الخطبة",
+      "page_num": 3,
+      "bytes": 200406,
+      "sha1": "70dcad0cdaec7f5077cc842d4ae1ce33c0b9aecc"
+    },
+    {
+      "id": 310,
+      "file": "article_0310.html",
+      "url": "https://mawdoo3.com/شرح_قصيدة:_واحر_قلباه",
+      "title": "شرح قصيدة: واحر قلباه",
+      "page_num": 3,
+      "bytes": 212842,
+      "sha1": "ab55584e8c3dfe2615a546a66d19c64961d8d7c5"
+    },
+    {
+      "id": 311,
+      "file": "article_0311.html",
+      "url": "https://mawdoo3.com/تعريف_العشق",
+      "title": "تعريف العشق",
+      "page_num": 3,
+      "bytes": 199277,
+      "sha1": "53c5f72d5eb1ee506d02a3cb926716537c6e4b01"
+    },
+    {
+      "id": 312,
+      "file": "article_0312.html",
+      "url": "https://mawdoo3.com/خاتمة_إذاعة_مدرسية_عن_المعلم",
+      "title": "خاتمة إذاعة مدرسية عن المعلم",
+      "page_num": 3,
+      "bytes": 195140,
+      "sha1": "4a090de9e28a25d14da3fbdc663cf68064240ec5"
+    },
+    {
+      "id": 313,
+      "file": "article_0313.html",
+      "url": "https://mawdoo3.com/ملخص_رواية_عائد_الى_حيفا",
+      "title": "ملخص رواية عائد الى حيفا",
+      "page_num": 3,
+      "bytes": 201869,
+      "sha1": "15d0f343640313b805e64f9db6972d6cdf31f600"
+    },
+    {
+      "id": 314,
+      "file": "article_0314.html",
+      "url": "https://mawdoo3.com/شعر_عن_الكويت",
+      "title": "شعر عن الكويت",
+      "page_num": 3,
+      "bytes": 227870,
+      "sha1": "83314fa8b946b1a2cb807cb4d12e3736123e9b19"
+    },
+    {
+      "id": 315,
+      "file": "article_0315.html",
+      "url": "https://mawdoo3.com/مقاطع_شعرية",
+      "title": "مقاطع شعرية",
+      "page_num": 3,
+      "bytes": 203336,
+      "sha1": "5d8fdc2f86c47db55ba76c6985565d7b0581a611"
+    },
+    {
+      "id": 316,
+      "file": "article_0316.html",
+      "url": "https://mawdoo3.com/تعبير_كتابي_عن_وصف_مدينة_الجزائر",
+      "title": "تعبير كتابي عن وصف مدينة الجزائر",
+      "page_num": 3,
+      "bytes": 210463,
+      "sha1": "7a6386e741e41099cb97cbb9efc5268af3ba0459"
+    },
+    {
+      "id": 317,
+      "file": "article_0317.html",
+      "url": "https://mawdoo3.com/كتاب_النبي_(لجبران_خليل_جبران)",
+      "title": "كتاب النبي (لجبران خليل جبران)",
+      "page_num": 3,
+      "bytes": 204121,
+      "sha1": "40af2eb999a7748f4550150295ece8ba32623862"
+    },
+    {
+      "id": 318,
+      "file": "article_0318.html",
+      "url": "https://mawdoo3.com/أجمل_ما_قال_محمود_درويش",
+      "title": "أجمل ما قال محمود درويش",
+      "page_num": 3,
+      "bytes": 202979,
+      "sha1": "e199ed2cbb8eaf96fc468abfb7d60370a5f3634e"
+    },
+    {
+      "id": 319,
+      "file": "article_0319.html",
+      "url": "https://mawdoo3.com/شعر_عن_الأمل",
+      "title": "شعر عن الأمل",
+      "page_num": 3,
+      "bytes": 192997,
+      "sha1": "f9be78355ec27a6e257d1b7d8e0b44a3b9936935"
+    },
+    {
+      "id": 320,
+      "file": "article_0320.html",
+      "url": "https://mawdoo3.com/تلخيص_نص_باب_الحمامة_والثعلب_ومالك_الحزين",
+      "title": "تلخيص نص باب الحمامة والثعلب ومالك الحزين",
+      "page_num": 3,
+      "bytes": 196195,
+      "sha1": "442ac986ab9331d5fa4d1c5c22feaad478ce6976"
+    },
+    {
+      "id": 321,
+      "file": "article_0321.html",
+      "url": "https://mawdoo3.com/اشعار_شعبية_عراقية",
+      "title": "اشعار شعبية عراقية",
+      "page_num": 3,
+      "bytes": 190336,
+      "sha1": "3a78d774480418edffe416025da9cfb7e1e8e6c9"
+    },
+    {
+      "id": 322,
+      "file": "article_0322.html",
+      "url": "https://mawdoo3.com/شعر_عمرو_بن_كلثوم",
+      "title": "شعر عمرو بن كلثوم",
+      "page_num": 3,
+      "bytes": 250102,
+      "sha1": "5db6c1fa60b2f71ca42b14bdd184e264a2280520"
+    },
+    {
+      "id": 323,
+      "file": "article_0323.html",
+      "url": "https://mawdoo3.com/أشعار_طويلة",
+      "title": "أشعار طويلة",
+      "page_num": 3,
+      "bytes": 277987,
+      "sha1": "cbaebc488acc272c1961386a1a8c3543ca2fe238"
+    },
+    {
+      "id": 324,
+      "file": "article_0324.html",
+      "url": "https://mawdoo3.com/أشعار_الشافعي",
+      "title": "أشعار الشافعي",
+      "page_num": 3,
+      "bytes": 230051,
+      "sha1": "7a824bc990feac85bde3cef762667d4322813d1e"
+    },
+    {
+      "id": 325,
+      "file": "article_0325.html",
+      "url": "https://mawdoo3.com/شعر_قصير",
+      "title": "شعر قصير",
+      "page_num": 3,
+      "bytes": 215264,
+      "sha1": "f256e1473ee95199ecc021d4304c65f8feb3ede2"
+    },
+    {
+      "id": 326,
+      "file": "article_0326.html",
+      "url": "https://mawdoo3.com/أجمل_شعر_طويل",
+      "title": "أجمل شعر طويل",
+      "page_num": 3,
+      "bytes": 236878,
+      "sha1": "c5d1063cff85b83674a632e24e2f8e4ae1aac797"
+    },
+    {
+      "id": 327,
+      "file": "article_0327.html",
+      "url": "https://mawdoo3.com/قصائد_بشار_بن_برد_في_المجون",
+      "title": "قصائد بشار بن برد في المجون",
+      "page_num": 3,
+      "bytes": 231504,
+      "sha1": "dd9ebfc690d8a2534cece4df1c3fbe4c979dd39e"
+    },
+    {
+      "id": 328,
+      "file": "article_0328.html",
+      "url": "https://mawdoo3.com/شعر_سوداني",
+      "title": "شعر سوداني",
+      "page_num": 3,
+      "bytes": 200863,
+      "sha1": "802bd021333c08969568876cf1fff1bce345d879"
+    },
+    {
+      "id": 329,
+      "file": "article_0329.html",
+      "url": "https://mawdoo3.com/شعر_عن_السلام",
+      "title": "شعر عن السلام",
+      "page_num": 3,
+      "bytes": 205001,
+      "sha1": "942e502c28c97961a6754e4692003628eff38b84"
+    },
+    {
+      "id": 330,
+      "file": "article_0330.html",
+      "url": "https://mawdoo3.com/شعر_عيد_ميلاد",
+      "title": "شعر عيد ميلاد",
+      "page_num": 3,
+      "bytes": 197401,
+      "sha1": "9879396f50b6b9f3fdac65319a3d2be63f4a5a82"
+    },
+    {
+      "id": 331,
+      "file": "article_0331.html",
+      "url": "https://mawdoo3.com/تحليل_قصيدة_بانت_سعاد",
+      "title": "تحليل قصيدة بانت سعاد",
+      "page_num": 3,
+      "bytes": 210897,
+      "sha1": "4f60aa8197e08d7a13c6928986f1d1ef87417b0f"
+    },
+    {
+      "id": 332,
+      "file": "article_0332.html",
+      "url": "https://mawdoo3.com/النثر_في_العصر_الأموي",
+      "title": "النثر في العصر الأموي",
+      "page_num": 3,
+      "bytes": 214629,
+      "sha1": "40f285c8a04df970e87ed8341acdf6db989f3ccb"
+    },
+    {
+      "id": 333,
+      "file": "article_0333.html",
+      "url": "https://mawdoo3.com/شعر_أبي_العتاهية_عن_الموت",
+      "title": "شعر أبي العتاهية عن الموت",
+      "page_num": 3,
+      "bytes": 198960,
+      "sha1": "4026deed54ec5340cccdfab598c8b2c0d3c243ce"
+    },
+    {
+      "id": 334,
+      "file": "article_0334.html",
+      "url": "https://mawdoo3.com/شعر_عن_فراق_الأم",
+      "title": "شعر عن فراق الأم",
+      "page_num": 3,
+      "bytes": 251044,
+      "sha1": "11e1002f18140f44d12635ccdf5108b3dd17f51c"
+    },
+    {
+      "id": 335,
+      "file": "article_0335.html",
+      "url": "https://mawdoo3.com/كلام_عن_الشوق",
+      "title": "كلام عن الشوق",
+      "page_num": 3,
+      "bytes": 188980,
+      "sha1": "8544f086a77cabd7f114c1794150bda8c99084b3"
+    },
+    {
+      "id": 336,
+      "file": "article_0336.html",
+      "url": "https://mawdoo3.com/احبك_نزار_قباني",
+      "title": "احبك نزار قباني",
+      "page_num": 3,
+      "bytes": 222009,
+      "sha1": "a7855dbb18e6531258f0779635268fd9438e56a6"
+    },
+    {
+      "id": 337,
+      "file": "article_0337.html",
+      "url": "https://mawdoo3.com/أنواع_الأدب_العربي",
+      "title": "أنواع الأدب العربي",
+      "page_num": 3,
+      "bytes": 212069,
+      "sha1": "b8a498bc4f1920ae7a66f04f8f28b3851109024f"
+    },
+    {
+      "id": 338,
+      "file": "article_0338.html",
+      "url": "https://mawdoo3.com/دور_البارودي_في_إحياء_الشعر_العربي",
+      "title": "دور البارودي في إحياء الشعر العربي",
+      "page_num": 3,
+      "bytes": 215073,
+      "sha1": "0f7497b43d3546417dfa49f1be9458f35c72dc82"
+    },
+    {
+      "id": 339,
+      "file": "article_0339.html",
+      "url": "https://mawdoo3.com/نموذج_تلخيص_نص_سردي",
+      "title": "نموذج تلخيص نص سردي",
+      "page_num": 3,
+      "bytes": 202348,
+      "sha1": "296e246d3f4383a1aaae7faf455e08ab74357639"
+    },
+    {
+      "id": 340,
+      "file": "article_0340.html",
+      "url": "https://mawdoo3.com/اقتباسات_من_رواية_البؤساء",
+      "title": "اقتباسات من رواية البؤساء",
+      "page_num": 3,
+      "bytes": 208986,
+      "sha1": "dc8cd6997b535b9b1e4d5e412cd2162077f15a8e"
+    },
+    {
+      "id": 341,
+      "file": "article_0341.html",
+      "url": "https://mawdoo3.com/قصيدة_عن_الغربة",
+      "title": "قصيدة عن الغربة",
+      "page_num": 3,
+      "bytes": 236627,
+      "sha1": "cd405b9449dea31c94932d67932defd5a01c2922"
+    },
+    {
+      "id": 342,
+      "file": "article_0342.html",
+      "url": "https://mawdoo3.com/تعبير_كتابي_عن_رحلة_سياحية",
+      "title": "تعبير كتابي عن رحلة سياحية",
+      "page_num": 3,
+      "bytes": 213588,
+      "sha1": "c3356948035ca0b91cda803e57247db6a5939290"
+    },
+    {
+      "id": 343,
+      "file": "article_0343.html",
+      "url": "https://mawdoo3.com/قصيدة_عن_المرأة",
+      "title": "قصيدة عن المرأة",
+      "page_num": 3,
+      "bytes": 232350,
+      "sha1": "b3f1481becb1fc8947f06511bcdd51db28e2b856"
+    },
+    {
+      "id": 344,
+      "file": "article_0344.html",
+      "url": "https://mawdoo3.com/شرح_قصيدة:_على_قدر_أهل_العزم",
+      "title": "شرح قصيدة: على قدر أهل العزم",
+      "page_num": 3,
+      "bytes": 224405,
+      "sha1": "a20bd1a80d41588261bcdf01a1b45ef8c89e780f"
+    },
+    {
+      "id": 345,
+      "file": "article_0345.html",
+      "url": "https://mawdoo3.com/ابو_العلاء_المعري_قصائد",
+      "title": "ابو العلاء المعري قصائد",
+      "page_num": 3,
+      "bytes": 226661,
+      "sha1": "33f3797ba881e68ec3e5a1a99e7eec1ecd4e0600"
+    },
+    {
+      "id": 346,
+      "file": "article_0346.html",
+      "url": "https://mawdoo3.com/شعر_عن_الثقة_بالله",
+      "title": "شعر عن الثقة بالله",
+      "page_num": 3,
+      "bytes": 206373,
+      "sha1": "b2ddfa94eeefb3ed85aa46dd877cf7f057ae2f42"
+    },
+    {
+      "id": 347,
+      "file": "article_0347.html",
+      "url": "https://mawdoo3.com/مقدمة_إذاعة_مدرسية_عن_العلم",
+      "title": "مقدمة إذاعة مدرسية عن العلم",
+      "page_num": 3,
+      "bytes": 198979,
+      "sha1": "97a0563d3bc1c9fa21bd03e7dab782574d936b08"
+    },
+    {
+      "id": 348,
+      "file": "article_0348.html",
+      "url": "https://mawdoo3.com/أبو_صخر_الهذلي",
+      "title": "أبو صخر الهذلي",
+      "page_num": 3,
+      "bytes": 215978,
+      "sha1": "85d997ab335bf8111734d20e0f7ab00950175afc"
+    },
+    {
+      "id": 349,
+      "file": "article_0349.html",
+      "url": "https://mawdoo3.com/شعر_غازي_القصيبي",
+      "title": "شعر غازي القصيبي",
+      "page_num": 3,
+      "bytes": 259263,
+      "sha1": "780503deae9e84c58b0d3b2dc3569d44d88b95fe"
+    },
+    {
+      "id": 350,
+      "file": "article_0350.html",
+      "url": "https://mawdoo3.com/أجمل_بيت_غزل",
+      "title": "أجمل بيت غزل",
+      "page_num": 3,
+      "bytes": 2402698,
+      "sha1": "eb5c5b5e458d74621db730e033127ab623ce8065"
+    },
+    {
+      "id": 351,
+      "file": "article_0351.html",
+      "url": "https://mawdoo3.com/مديح_عراقي",
+      "title": "مديح عراقي",
+      "page_num": 3,
+      "bytes": 211080,
+      "sha1": "d784194e0b33316fac9fd1982442de090cd16178"
+    },
+    {
+      "id": 352,
+      "file": "article_0352.html",
+      "url": "https://mawdoo3.com/خصائص_الأدب_في_العصر_العباسي",
+      "title": "خصائص الأدب في العصر العباسي",
+      "page_num": 3,
+      "bytes": 218539,
+      "sha1": "583117f10d7c9ca28191db36d3ceb8d31bd05806"
+    },
+    {
+      "id": 353,
+      "file": "article_0353.html",
+      "url": "https://mawdoo3.com/عبارات_قصيرة_عن_حب_الوطن",
+      "title": "عبارات قصيرة عن حب الوطن",
+      "page_num": 3,
+      "bytes": 203923,
+      "sha1": "da834abf2fc1f7c5476ab1347a657f83b5451aa8"
+    },
+    {
+      "id": 354,
+      "file": "article_0354.html",
+      "url": "https://mawdoo3.com/كلمات_في_حب_الرسول_للأطفال",
+      "title": "كلمات في حب الرسول للأطفال",
+      "page_num": 3,
+      "bytes": 201088,
+      "sha1": "7e0a5eba8dacdad4216db869d4020c26e1e8e192"
+    },
+    {
+      "id": 355,
+      "file": "article_0355.html",
+      "url": "https://mawdoo3.com/ملخص_كتاب_ليطمئن_قلبي",
+      "title": "ملخص كتاب ليطمئن قلبي",
+      "page_num": 3,
+      "bytes": 213915,
+      "sha1": "20952c800ffcba51d23915b21d5e1837faa0b3d2"
+    },
+    {
+      "id": 356,
+      "file": "article_0356.html",
+      "url": "https://mawdoo3.com/أشعار_للزوج",
+      "title": "أشعار للزوج",
+      "page_num": 3,
+      "bytes": 215961,
+      "sha1": "82e90d3b7fb42d58557c2aaf078a34f734a44aea"
+    },
+    {
+      "id": 357,
+      "file": "article_0357.html",
+      "url": "https://mawdoo3.com/قصائد_مفدي_زكريا",
+      "title": "قصائد مفدي زكريا",
+      "page_num": 3,
+      "bytes": 203961,
+      "sha1": "746ac5cff19221db24e11241d1cf232b04c9adb3"
+    },
+    {
+      "id": 358,
+      "file": "article_0358.html",
+      "url": "https://mawdoo3.com/شرح_نونية_القحطاني",
+      "title": "شرح نونية القحطاني",
+      "page_num": 3,
+      "bytes": 368925,
+      "sha1": "c8dc5af30ecca985e405eec03df9ce5635428435"
+    },
+    {
+      "id": 359,
+      "file": "article_0359.html",
+      "url": "https://mawdoo3.com/شعر_عن_الموت",
+      "title": "شعر عن الموت",
+      "page_num": 3,
+      "bytes": 224628,
+      "sha1": "5f06cc752e0165597df48f38a066a18dc594b3b7"
+    },
+    {
+      "id": 360,
+      "file": "article_0360.html",
+      "url": "https://mawdoo3.com/معنى_اسم_رباب",
+      "title": "معنى اسم رباب",
+      "page_num": 3,
+      "bytes": 196563,
+      "sha1": "39ce509ee5aa050064484822bad7a18a95dc889e"
+    },
+    {
+      "id": 361,
+      "file": "article_0361.html",
+      "url": "https://mawdoo3.com/تهنئة_بالعام_الدراسي_الجديد",
+      "title": "تهنئة بالعام الدراسي الجديد",
+      "page_num": 3,
+      "bytes": 199960,
+      "sha1": "91aaedb38de595a286563b919f896c3858868aef"
+    },
+    {
+      "id": 362,
+      "file": "article_0362.html",
+      "url": "https://mawdoo3.com/ابو_نواس_شعر",
+      "title": "ابو نواس شعر",
+      "page_num": 3,
+      "bytes": 194895,
+      "sha1": "425f43d6a697a8885bac406750aaf8ad96c28256"
+    },
+    {
+      "id": 363,
+      "file": "article_0363.html",
+      "url": "https://mawdoo3.com/شعر_معاصر",
+      "title": "شعر معاصر",
+      "page_num": 3,
+      "bytes": 215370,
+      "sha1": "0a4082558e883b3a84ece3b5256868aea7c5a302"
+    },
+    {
+      "id": 364,
+      "file": "article_0364.html",
+      "url": "https://mawdoo3.com/الصور_البلاغية_في_قصيدة_نهج_البردة",
+      "title": "الصور البلاغية في قصيدة نهج البردة",
+      "page_num": 3,
+      "bytes": 211397,
+      "sha1": "15f704aeeafe7b27d0f059f2bab2c04f673da584"
+    },
+    {
+      "id": 365,
+      "file": "article_0365.html",
+      "url": "https://mawdoo3.com/الفرق_بين_التشبيه_الضمني_والتمثيلي",
+      "title": "الفرق بين التشبيه الضمني والتمثيلي",
+      "page_num": 3,
+      "bytes": 206484,
+      "sha1": "cf6258901a99e42ac0974e7876b8259d2ec8b5f6"
+    },
+    {
+      "id": 366,
+      "file": "article_0366.html",
+      "url": "https://mawdoo3.com/شرح_مقامات_الحريري",
+      "title": "شرح مقامات الحريري",
+      "page_num": 3,
+      "bytes": 284595,
+      "sha1": "8bbb3129b3324a219e19bc933366f5134705c305"
+    },
+    {
+      "id": 367,
+      "file": "article_0367.html",
+      "url": "https://mawdoo3.com/شعر_حب_و_غزل",
+      "title": "شعر حب و غزل",
+      "page_num": 3,
+      "bytes": 187381,
+      "sha1": "8e6ed4e8d9eb0e41ceca19a115051bfe4099f3b4"
+    },
+    {
+      "id": 368,
+      "file": "article_0368.html",
+      "url": "https://mawdoo3.com/شرح_قصيدة_زهير_بن_أبي_سلمى_(سئمت_تكاليف_الحياة)",
+      "title": "شرح قصيدة زهير بن أبي سلمى (سئمت تكاليف الحياة)",
+      "page_num": 3,
+      "bytes": 226773,
+      "sha1": "1589bb244f9cbe7990acd82460ebcd4f679f048e"
+    },
+    {
+      "id": 369,
+      "file": "article_0369.html",
+      "url": "https://mawdoo3.com/أجمل_أبيات_الشعر_الفصيح_في_الحكمة",
+      "title": "أجمل أبيات الشعر الفصيح في الحكمة",
+      "page_num": 3,
+      "bytes": 237333,
+      "sha1": "f33f3506d7c4783ac7996f48d383af13f95eeb0f"
+    },
+    {
+      "id": 370,
+      "file": "article_0370.html",
+      "url": "https://mawdoo3.com/الفرق_بين_الاقتباس_والتضمين",
+      "title": "الفرق بين الاقتباس والتضمين",
+      "page_num": 3,
+      "bytes": 207508,
+      "sha1": "011c1a4444dec2cecf4fefd806301dca3d7b935d"
+    },
+    {
+      "id": 371,
+      "file": "article_0371.html",
+      "url": "https://mawdoo3.com/شعر_أحمد_شوقي",
+      "title": "شعر أحمد شوقي",
+      "page_num": 3,
+      "bytes": 201778,
+      "sha1": "f812fdc7b47f61f9f153cefe716116a31610f22d"
+    },
+    {
+      "id": 372,
+      "file": "article_0372.html",
+      "url": "https://mawdoo3.com/شعر_معروف_الرصافي",
+      "title": "شعر معروف الرصافي",
+      "page_num": 3,
+      "bytes": 202190,
+      "sha1": "9b65e035047f2de5fd95cdab33b6f6756ea4c4a2"
+    },
+    {
+      "id": 373,
+      "file": "article_0373.html",
+      "url": "https://mawdoo3.com/الشاعر_عبد_الله_البردوني",
+      "title": "الشاعر عبد الله البردوني",
+      "page_num": 3,
+      "bytes": 230977,
+      "sha1": "33c0a807c03cfcd5c0b43dac695c8862d1e31127"
+    },
+    {
+      "id": 374,
+      "file": "article_0374.html",
+      "url": "https://mawdoo3.com/شعر_ابن_زيدون",
+      "title": "شعر ابن زيدون",
+      "page_num": 3,
+      "bytes": 231785,
+      "sha1": "37b27fc3255dcb89b6b5f3e878354407a1190dd2"
+    },
+    {
+      "id": 375,
+      "file": "article_0375.html",
+      "url": "https://mawdoo3.com/شعر_حامد_زيد",
+      "title": "شعر حامد زيد",
+      "page_num": 3,
+      "bytes": 212922,
+      "sha1": "7094bbed25e8769181f3b08d31dc900f0b3e1cc6"
+    },
+    {
+      "id": 376,
+      "file": "article_0376.html",
+      "url": "https://mawdoo3.com/شعر_حب_قصير",
+      "title": "شعر حب قصير",
+      "page_num": 3,
+      "bytes": 205734,
+      "sha1": "05493f8d7c2539cf438ed16f2d51fd7b504e92ab"
+    },
+    {
+      "id": 377,
+      "file": "article_0377.html",
+      "url": "https://mawdoo3.com/شرح_قصيدة_ثورة_الشك",
+      "title": "شرح قصيدة ثورة الشك",
+      "page_num": 3,
+      "bytes": 210584,
+      "sha1": "f0abe7d391497f2f5eb8cce4fe71e5d3ec7c1361"
+    },
+    {
+      "id": 378,
+      "file": "article_0378.html",
+      "url": "https://mawdoo3.com/أشعار_عتاب",
+      "title": "أشعار عتاب",
+      "page_num": 3,
+      "bytes": 275716,
+      "sha1": "dee8e86ce453774c9f4c354dc957b5c72c1fb1b8"
+    },
+    {
+      "id": 379,
+      "file": "article_0379.html",
+      "url": "https://mawdoo3.com/تعبير_عن_الرياضة",
+      "title": "تعبير عن الرياضة",
+      "page_num": 3,
+      "bytes": 193877,
+      "sha1": "29781fbfadec79033c06d4950cafefc6f820a185"
+    },
+    {
+      "id": 380,
+      "file": "article_0380.html",
+      "url": "https://mawdoo3.com/شعر_غرامي",
+      "title": "شعر غرامي",
+      "page_num": 3,
+      "bytes": 204129,
+      "sha1": "7d78e27370d38d62386362eac547bd55d4f43a19"
+    },
+    {
+      "id": 381,
+      "file": "article_0381.html",
+      "url": "https://mawdoo3.com/المحسنات_البديعية_في_قصيدة_أراك_عصي_الدمع",
+      "title": "المحسنات البديعية في قصيدة أراك عصي الدمع",
+      "page_num": 3,
+      "bytes": 203635,
+      "sha1": "8fc5d61792661c9399823814044c5f847823a880"
+    },
+    {
+      "id": 382,
+      "file": "article_0382.html",
+      "url": "https://mawdoo3.com/شعر_عن_الاخ",
+      "title": "شعر عن الاخ",
+      "page_num": 3,
+      "bytes": 198229,
+      "sha1": "b175feb0f0eff28d81ed42f49a7606485f364909"
+    },
+    {
+      "id": 383,
+      "file": "article_0383.html",
+      "url": "https://mawdoo3.com/تحليل_قصيدة_تموز_جيكور",
+      "title": "تحليل قصيدة تموز جيكور",
+      "page_num": 3,
+      "bytes": 261213,
+      "sha1": "ac61617e250302c43dc2dfb9b5404c9daaf22b5b"
+    },
+    {
+      "id": 384,
+      "file": "article_0384.html",
+      "url": "https://mawdoo3.com/من_هو_الشريف_الرضي؟",
+      "title": "من هو الشريف الرضي؟",
+      "page_num": 3,
+      "bytes": 224585,
+      "sha1": "cff11d10f25b491ed35cc9b53594c7ac49b6a71c"
+    },
+    {
+      "id": 385,
+      "file": "article_0385.html",
+      "url": "https://mawdoo3.com/شعر_للأطفال",
+      "title": "شعر للأطفال",
+      "page_num": 3,
+      "bytes": 199732,
+      "sha1": "fe65d9736203effadae8a8d383c19734af36f085"
+    },
+    {
+      "id": 386,
+      "file": "article_0386.html",
+      "url": "https://mawdoo3.com/تحليل_رواية_الخيميائي",
+      "title": "تحليل رواية الخيميائي",
+      "page_num": 3,
+      "bytes": 224465,
+      "sha1": "346fa144fdc00b83082d39c67a851a75a0f87d35"
+    },
+    {
+      "id": 387,
+      "file": "article_0387.html",
+      "url": "https://mawdoo3.com/شعر_عن_غدر_النساء",
+      "title": "شعر عن غدر النساء",
+      "page_num": 3,
+      "bytes": 215872,
+      "sha1": "e9f4995e458c4a2685af9d587571a9a6d8710d46"
+    },
+    {
+      "id": 388,
+      "file": "article_0388.html",
+      "url": "https://mawdoo3.com/تحليل_قصيدة_سربروس_في_بابل",
+      "title": "تحليل قصيدة سربروس في بابل",
+      "page_num": 3,
+      "bytes": 248638,
+      "sha1": "d480f887e4c0d4966d21382efa311aee3476e422"
+    },
+    {
+      "id": 389,
+      "file": "article_0389.html",
+      "url": "https://mawdoo3.com/شعر_عن_الشهامة",
+      "title": "شعر عن الشهامة",
+      "page_num": 3,
+      "bytes": 222755,
+      "sha1": "99f87028292a6f2ecbf681481a5d6eededac2c2e"
+    },
+    {
+      "id": 390,
+      "file": "article_0390.html",
+      "url": "https://mawdoo3.com/مديح_سوداني",
+      "title": "مديح سوداني",
+      "page_num": 3,
+      "bytes": 213022,
+      "sha1": "cca652a05091e036a5cbe0061c6c10a94931eff1"
+    },
+    {
+      "id": 391,
+      "file": "article_0391.html",
+      "url": "https://mawdoo3.com/رثاء_الرسول",
+      "title": "رثاء الرسول",
+      "page_num": 3,
+      "bytes": 196207,
+      "sha1": "d7bd02171b984b4ab4285dcecb4630e899ff6a08"
+    },
+    {
+      "id": 392,
+      "file": "article_0392.html",
+      "url": "https://mawdoo3.com/شعر_محمود_درويش",
+      "title": "شعر محمود درويش",
+      "page_num": 3,
+      "bytes": 201446,
+      "sha1": "918f76ce059b92f65595a39ae5b145686184f0b7"
+    },
+    {
+      "id": 393,
+      "file": "article_0393.html",
+      "url": "https://mawdoo3.com/شعر_الأم",
+      "title": "شعر الأم",
+      "page_num": 3,
+      "bytes": 205794,
+      "sha1": "7fcbab6173966f240d165cfecd96b677bb7d71ee"
+    },
+    {
+      "id": 394,
+      "file": "article_0394.html",
+      "url": "https://mawdoo3.com/اجمل_كلام_الغزل",
+      "title": "اجمل كلام الغزل",
+      "page_num": 3,
+      "bytes": 264080,
+      "sha1": "bc8c2fe23abf3ab83ac6b94ca70892cfc1c0e90a"
+    },
+    {
+      "id": 395,
+      "file": "article_0395.html",
+      "url": "https://mawdoo3.com/قصيدة_الإمام_الشافعي_في_حب_الله",
+      "title": "قصيدة الإمام الشافعي في حب الله",
+      "page_num": 3,
+      "bytes": 213534,
+      "sha1": "ed1ecb9c95dcc727b570a8b03bfeff8a446d2c7d"
+    },
+    {
+      "id": 396,
+      "file": "article_0396.html",
+      "url": "https://mawdoo3.com/قصيدة_امرؤ_القيس_قبل_موته",
+      "title": "قصيدة امرؤ القيس قبل موته",
+      "page_num": 3,
+      "bytes": 203529,
+      "sha1": "89858c409ba5aaf3a341ce22fa65e9418bc2a75f"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 3,
+    "articles": 396,
+    "article_fetch_failures": 0
+  }
+}

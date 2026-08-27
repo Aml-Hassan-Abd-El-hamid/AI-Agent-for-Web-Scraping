@@ -1,0 +1,450 @@
+{
+  "website": "lithub",
+  "snapshot_date": "2026-08-27T08:54:04",
+  "pagination_type": "numbered pagination",
+  "scroll_mode": null,
+  "scroll_rounds_requested": null,
+  "load_more_selector": null,
+  "listing_url": "https://lithub.com/category/fictionandpoetry/short-story/",
+  "input_urls": [
+    "https://lithub.com/category/fictionandpoetry/short-story/",
+    "https://lithub.com/category/fictionandpoetry/short-story/page/2/"
+  ],
+  "pagination_pattern": "https://lithub.com/category/fictionandpoetry/short-story/page/{page}/",
+  "requirements": "title, author, article body text",
+  "run_dir": "orch_runs/run_20260827_084114",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://lithub.com/category/fictionandpoetry/short-story/",
+      "file": "listing_page_001.html",
+      "bytes": 236323,
+      "sha1": "0d633eeda60bc005fae7820a4b320ed7f11d1a2c"
+    },
+    {
+      "page_num": 2,
+      "url": "https://lithub.com/category/fictionandpoetry/short-story/page/2/",
+      "file": "listing_page_002.html",
+      "bytes": 231794,
+      "sha1": "6e6c1ac9da5239b6319241a6953527bd5504123d"
+    },
+    {
+      "page_num": 3,
+      "url": "https://lithub.com/category/fictionandpoetry/short-story/page/3/",
+      "file": "listing_page_003.html",
+      "bytes": 239102,
+      "sha1": "eb9babd3d8c091d63aacdbe1fb78946c676147e4"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://lithub.com/title-2/",
+      "title": "“Copernicus Is Dying”",
+      "page_num": 1,
+      "bytes": 70393,
+      "sha1": "d167fe0ba92868bdfb7cbee56fcd50d4900ecbbc"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://lithub.com/wild-light/",
+      "title": "“Wild Light”",
+      "page_num": 1,
+      "bytes": 86741,
+      "sha1": "1b82b2b94c2ec82540482b3e5fd8cd3917d0decd"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://lithub.com/july-sun/",
+      "title": "“July Sun”",
+      "page_num": 1,
+      "bytes": 74217,
+      "sha1": "33631c38447bdff7155dd08867a1df7ce091c6dd"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://lithub.com/the-thing-about-you/",
+      "title": "“The Thing About You”",
+      "page_num": 1,
+      "bytes": 86617,
+      "sha1": "6cbc640311ee6142aed1abd03455459a0a0152bb"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://lithub.com/authority/",
+      "title": "“Authority”",
+      "page_num": 1,
+      "bytes": 85611,
+      "sha1": "98ba22f7058fe71f7d682bf128ef5ab8b27a7a2d"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://lithub.com/a-table-for-six/",
+      "title": "“A Table for Six”",
+      "page_num": 1,
+      "bytes": 89263,
+      "sha1": "29342631d954ca2b3a1021bac1cee934eabb2f2d"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://lithub.com/the-shorthand-of-emotion/",
+      "title": "“The Shorthand of Emotion”",
+      "page_num": 1,
+      "bytes": 87124,
+      "sha1": "12561fbf2cab24f72bd8d26b7845cad48bb27ca9"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://lithub.com/stick-season/",
+      "title": "“Stick Season”",
+      "page_num": 1,
+      "bytes": 84007,
+      "sha1": "27e1949a0cf1d44f8f7274704bd427f16e76f818"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://lithub.com/this-time-and-the-next/",
+      "title": "“This Time and the Next”",
+      "page_num": 1,
+      "bytes": 87411,
+      "sha1": "a6589b32c20e384b9fdb368bd1b658c544218e1b"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://lithub.com/waiting-a-quintet/",
+      "title": "“Waiting, a Quintet”",
+      "page_num": 1,
+      "bytes": 90107,
+      "sha1": "b13ec544c49da63f093701cb50e5745e53eef978"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://lithub.com/thats-what-i-did/",
+      "title": "“That’s What I Did”",
+      "page_num": 1,
+      "bytes": 65378,
+      "sha1": "ccd2fcecdd05e0d56cac74b108e26ca6d505fffd"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://lithub.com/wedding-dresses/",
+      "title": "“Wedding Dresses”",
+      "page_num": 1,
+      "bytes": 92113,
+      "sha1": "f5ac5d2c076a61c9e09c1c4209cf539a891bc7db"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://lithub.com/visitations/",
+      "title": "“Visitations”",
+      "page_num": 1,
+      "bytes": 84306,
+      "sha1": "ed96c607711b9f629154ccffa18b1c138086ed4c"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://lithub.com/the-machine/",
+      "title": "“The Machine”",
+      "page_num": 1,
+      "bytes": 80289,
+      "sha1": "d6b900ac9a5998c9ea9d2388b9a6e367005cdc47"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://lithub.com/the-fellow/",
+      "title": "“The Fellow”",
+      "page_num": 1,
+      "bytes": 75891,
+      "sha1": "1279fec22fefed4d2622d8888bf7b976285fab4e"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://lithub.com/slant-six/",
+      "title": "“Slant Six”",
+      "page_num": 2,
+      "bytes": 84151,
+      "sha1": "58b95e677add259a86f07aa074ff7e9f38d9f225"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://lithub.com/babycatcher/",
+      "title": "“Babycatcher”",
+      "page_num": 2,
+      "bytes": 90978,
+      "sha1": "01a2f5cd07aca881ce5d17518d5a24204f454bb0"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://lithub.com/the-funeral/",
+      "title": "“The Funeral”",
+      "page_num": 2,
+      "bytes": 79528,
+      "sha1": "6b3ade56192a7a7c24706d69fc037f09bbaec990"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://lithub.com/i-am-seventy-five/",
+      "title": "“I Am Seventy-Five”",
+      "page_num": 2,
+      "bytes": 100494,
+      "sha1": "539ff4bfc3b8d644625fe3f3f6cbe73f740fff4a"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://lithub.com/ghosts-2/",
+      "title": "“Ghosts“",
+      "page_num": 2,
+      "bytes": 80488,
+      "sha1": "bf617ef8589934f0c72b97d985360d4a78b55761"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://lithub.com/peep-show/",
+      "title": "“Peep Show”",
+      "page_num": 2,
+      "bytes": 92647,
+      "sha1": "271ba314359f6e6fc87fae4819f1e20efcb11698"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://lithub.com/zoo/",
+      "title": "“Zoo”",
+      "page_num": 2,
+      "bytes": 90993,
+      "sha1": "388257a1d41fc6150e06d6aa663c5bca2a03a1bd"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://lithub.com/clear-as-cake/",
+      "title": "“Clear as Cake”",
+      "page_num": 2,
+      "bytes": 106472,
+      "sha1": "0bb9de422381abf3246ecc1b6c1205c412f2c3d3"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://lithub.com/scratching/",
+      "title": "“Scratching”",
+      "page_num": 2,
+      "bytes": 85290,
+      "sha1": "f3058dc133c7fced58c8e3787d31d49bb2623aaf"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://lithub.com/the-day-the-children-left/",
+      "title": "“The Day the Children Left”",
+      "page_num": 2,
+      "bytes": 76110,
+      "sha1": "10148cc2fb6c2198074adde8fdaf2bfc2ca25c66"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://lithub.com/cosmetologist/",
+      "title": "“Cosmetologist”",
+      "page_num": 2,
+      "bytes": 79827,
+      "sha1": "fccd41b7fee155888e310774e8b0a554ca33f2a3"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://lithub.com/every-forest-every-film/",
+      "title": "“Every Forest, Every Film”",
+      "page_num": 2,
+      "bytes": 79813,
+      "sha1": "17a5ae14bd61565c6548820f7754a2d759f8c5ab"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://lithub.com/realistic-fiction/",
+      "title": "“Realistic Fiction”",
+      "page_num": 2,
+      "bytes": 70335,
+      "sha1": "5a7640b9610fdefcc66abd1a52d0f055118690d2"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://lithub.com/i-think-im-going-to-try-trying/",
+      "title": "“I Think I’m Going to Try Trying”",
+      "page_num": 2,
+      "bytes": 65252,
+      "sha1": "2dbc51dc5c0f604fcf8ccba42976175bb133df1a"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://lithub.com/so-long-to-the-rearview/",
+      "title": "“So Long to the Rearview”",
+      "page_num": 2,
+      "bytes": 86843,
+      "sha1": "2bcbac59e0af4081e2cefc7f1d26fba0c7fb047c"
+    },
+    {
+      "id": 31,
+      "file": "article_0031.html",
+      "url": "https://lithub.com/my-success/",
+      "title": "“My Success”",
+      "page_num": 3,
+      "bytes": 76373,
+      "sha1": "15585324ca8f2df90fea2335460d1f6ad225558b"
+    },
+    {
+      "id": 32,
+      "file": "article_0032.html",
+      "url": "https://lithub.com/the-dragon-flute/",
+      "title": "“The Dragon Flute”",
+      "page_num": 3,
+      "bytes": 83408,
+      "sha1": "35bd72a6a66cf8959e20cfe12c8ded88c4141f96"
+    },
+    {
+      "id": 33,
+      "file": "article_0033.html",
+      "url": "https://lithub.com/read-the-winners-of-american-short-fictions-2024-insider-prize-selected-by-peter-orner/",
+      "title": "Read the Winners ofAmerican Short Fiction’s 2024 Insider Prize",
+      "page_num": 3,
+      "bytes": 135993,
+      "sha1": "ab939f03b7acc831615ae0731246026768c80f40"
+    },
+    {
+      "id": 34,
+      "file": "article_0034.html",
+      "url": "https://lithub.com/read-the-1962-short-story-that-inspired-this-years-met-gala-theme/",
+      "title": "Read the 1962 Short Story That Inspired This Year’s Met Gala Theme",
+      "page_num": 3,
+      "bytes": 85412,
+      "sha1": "70036658bf3855edd6db90f8b53024a24184ed71"
+    },
+    {
+      "id": 35,
+      "file": "article_0035.html",
+      "url": "https://lithub.com/all-hail-ambassador-of-gibberish-michael-rosen-who-won-the-pen-pinter-prize/",
+      "title": "All hail \"ambassador of gibberish\" Michael Rosen, who won the PEN Pinter prize.",
+      "page_num": 3,
+      "bytes": 73425,
+      "sha1": "5ce983686c8a0803a4b561b972f6de40ff63fe80"
+    },
+    {
+      "id": 36,
+      "file": "article_0036.html",
+      "url": "https://lithub.com/the-blackhills/",
+      "title": "“The Blackhills”",
+      "page_num": 3,
+      "bytes": 95148,
+      "sha1": "a323a7fe0a2cf226a8d4414ea3701dfdd5653801"
+    },
+    {
+      "id": 37,
+      "file": "article_0037.html",
+      "url": "https://lithub.com/ira-the-whale/",
+      "title": "“Ira & the Whale”",
+      "page_num": 3,
+      "bytes": 88890,
+      "sha1": "02eeafac14162154381cdeadfcc8a3acd84e2728"
+    },
+    {
+      "id": 38,
+      "file": "article_0038.html",
+      "url": "https://lithub.com/happy-is-a-doing-word/",
+      "title": "Happy Is a Doing Word\"\">\"HappyIs a Doing Word\"",
+      "page_num": 3,
+      "bytes": 105714,
+      "sha1": "1ed48923ff5d7d154bf3a1a89d78b6344398cdb7"
+    },
+    {
+      "id": 39,
+      "file": "article_0039.html",
+      "url": "https://lithub.com/on-the-outsize-power-of-the-short-story-aka-the-genre-of-high-genius/",
+      "title": "On the Outsize Power of the Short Story (AKA the Genre of “High Genius”)",
+      "page_num": 3,
+      "bytes": 91312,
+      "sha1": "3e322014d6d8d6fff523caff8867a97218ac6a9b"
+    },
+    {
+      "id": 40,
+      "file": "article_0040.html",
+      "url": "https://lithub.com/the-cat-thief-by-son-bo-mi-translated-by-janet-hong/",
+      "title": "“The Cat Thief” by Son Bo-mi, Translated by Janet Hong",
+      "page_num": 3,
+      "bytes": 90850,
+      "sha1": "c07548b358719818fc228b5937ef06c599636305"
+    },
+    {
+      "id": 41,
+      "file": "article_0041.html",
+      "url": "https://lithub.com/h-b-marriott-watson-devil-of-the-marsh-1893/",
+      "title": "H. B. Marriott-Watson, “Devil of the Marsh” (1893)",
+      "page_num": 3,
+      "bytes": 76037,
+      "sha1": "48562ccd82bb2372b3d040f7e76019235032c0b7"
+    },
+    {
+      "id": 42,
+      "file": "article_0042.html",
+      "url": "https://lithub.com/the-confessions-of-a-very-old-man/",
+      "title": "“The Confessions of a Very Old Man”",
+      "page_num": 3,
+      "bytes": 74613,
+      "sha1": "bc3ee0641ff54b362546dcfe1945d09c52f01ec2"
+    },
+    {
+      "id": 43,
+      "file": "article_0043.html",
+      "url": "https://lithub.com/book-of-extraordinary-tragedies/",
+      "title": "Book of Extraordinary Tragedies",
+      "page_num": 3,
+      "bytes": 83451,
+      "sha1": "47dea4fb3bf8b1ee959f8f5c0f93745b332ada1a"
+    },
+    {
+      "id": 44,
+      "file": "article_0044.html",
+      "url": "https://lithub.com/the-gap/",
+      "title": "“The Gap”",
+      "page_num": 3,
+      "bytes": 73526,
+      "sha1": "d230f782186747b4a0f01c5afd56128dd91a2c55"
+    }
+  ],
+  "article_fetch_failures": [
+    {
+      "url": "https://lithub.com/insert-coin/",
+      "title": "“Insert Coin”",
+      "reason": "Empty response"
+    }
+  ],
+  "counts": {
+    "listing_pages": 3,
+    "articles": 44,
+    "article_fetch_failures": 1
+  }
+}

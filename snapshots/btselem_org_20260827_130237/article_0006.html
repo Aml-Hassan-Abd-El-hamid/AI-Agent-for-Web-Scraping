@@ -1,0 +1,1812 @@
+<!DOCTYPE html>
+<html>
+<head>    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon-180.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Primary Meta Tags -->
+    <title>B'Tselem / The Displacement Journey of Nibal Al-Hisi</title>
+    <meta name="title" content="B'Tselem / The Displacement Journey of Nibal Al-Hisi" />
+    <meta name="description" content="the reality of millions in Gaza, told through the journey of one woman." />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://projects.btselem.org/nibal/" />
+    <meta property="og:title" content="B'Tselem / The Displacement Journey of Nibal Al-Hisi" />
+    <meta property="og:description" content="the reality of millions in Gaza, told through the journey of one woman." />
+    <meta property="og:image" content="https://projects.btselem.org/nibal/img/cover.png">
+
+    <!-- X (Twitter) -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://projects.btselem.org/nibal/" />
+    <meta property="twitter:title" content="B'Tselem / The Displacement Journey of Nibal Al-Hisi" />
+    <meta property="twitter:description" content="the reality of millions in Gaza, told through the journey of one woman." />
+    <meta property="twitter:image" content="https://projects.btselem.org/nibal/img/cover.png" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y7ZFSTEQGS"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-Y7ZFSTEQGS');
+    </script>
+
+    <script src="src/marked.min.js"></script>
+
+    <base href="./">
+
+    <link rel="stylesheet" href="src/base.css">
+    <!-- Extensions (chapters, typewriter, etc.) are loaded dynamically based on frontmatter -->
+    <script src="src/hide-empty-anchors.js" defer></script>
+    <style>
+        /* Layout is controlled by external CSS files: base.css is always loaded.
+           Per-page theme files can be requested from Markdown via a marker; the
+           JS below will detect and load them dynamically. */
+
+        /* Ensure the iframe itself uses a transparent background and fades
+           smoothly without revealing an abrupt color behind it. */
+        #if {
+            background: transparent;
+            transition: opacity 0.4s ease;
+            border: none;
+            display: block;
+            height: 100%;
+            /* Keep original element hierarchy by default */
+            pointer-events: none; /* default: don't grab events */
+        }
+        
+        #if.editing-mode {
+            pointer-events: auto; /* grab mouse events in edit mode */
+        }
+        
+        main {
+            transition: opacity 0.3s ease, pointer-events 0s;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div id="iframe-container">
+    <iframe id="if"></iframe>
+    <iframe id="background-frame"></iframe>
+    <iframe id="foreground-frame"></iframe>
+</div>
+
+<main></main>
+
+<script>
+        // ============================================================================
+        // EXTENSION LOADER SYSTEM
+        // ============================================================================
+        // Dynamically load extension modules based on frontmatter declarations.
+        // Extensions are opt-in: only load what the page explicitly requests.
+        
+        window.__loadedExtensions = window.__loadedExtensions || {};
+        window.__extensionInitQueue = window.__extensionInitQueue || [];
+        
+        // Load an extension by name (loads both .js and companion .css if exists)
+        async function loadExtension(name) {
+            if (window.__loadedExtensions[name]) {
+                return window.__loadedExtensions[name];
+            }
+            
+            const promise = (async () => {
+                const basePath = 'src/extensions/';
+                const jsPath = basePath + name + '.js';
+                const cssPath = basePath + name + '.css';
+                
+                // Only try to load CSS for extensions that have companion stylesheets
+                const extensionsWithCss = ['dual-iframe', 'section-animations', 'chapters'];
+                if (extensionsWithCss.includes(name)) {
+                    try {
+                        const link = document.createElement('link');
+                        link.rel = 'stylesheet';
+                        link.href = cssPath;
+                        link.setAttribute('data-extension', name);
+                        document.head.appendChild(link);
+                    } catch (e) {
+                        // CSS load failed
+                    }
+                }
+                
+                // Load JS module and wait for it to be ready
+                return new Promise((resolve, reject) => {
+                    const script = document.createElement('script');
+                    script.src = jsPath;
+                    script.setAttribute('data-extension', name);
+                    script.onload = () => {
+                        // Give the extension a moment to register itself
+                        setTimeout(() => resolve(name), 10);
+                    };
+                    script.onerror = () => reject(new Error(`Failed to load extension: ${name}`));
+                    document.head.appendChild(script);
+                });
+            })();
+            
+            window.__loadedExtensions[name] = promise;
+            return promise;
+        }
+        
+        // Load extensions from frontmatter config
+        async function loadExtensionsFromConfig(config) {
+            const extensions = [];
+            
+            // Chapters navigation is always loaded (core functionality)
+            extensions.push('chapters');
+            
+            if (!config) {
+                // Load chapters even without config
+                await Promise.all(extensions.map(ext => loadExtension(ext)));
+                return;
+            }
+            
+            // Auto-detect extensions based on frontmatter flags
+            if (config.dualIframe) {
+                extensions.push('dual-iframe');
+            }
+            
+            if (config.snap) {
+                extensions.push('snap-scroll');
+            }
+            
+            if (config.editor) {
+                extensions.push('edit-mode');
+            }
+            
+            // Note: section-animations is built into chapters.js
+            // Controlled by 'animate-sections' body class
+            
+            // Explicit extensions array in frontmatter
+            if (config.extensions && Array.isArray(config.extensions)) {
+                extensions.push(...config.extensions);
+            }
+            
+            console.log('[Extension Loader] Loading extensions:', extensions);
+            
+            // Load all extensions in parallel
+            if (extensions.length > 0) {
+                await Promise.all(extensions.map(ext => loadExtension(ext)));
+            }
+            
+            console.log('[Extension Loader] All extensions loaded, initializing...');
+            
+            // Initialize extensions that were loaded
+            for (const ext of extensions) {
+                const ExtensionAPI = window[ext.split('-').map((w, i) => 
+                    i === 0 ? w.charAt(0).toUpperCase() + w.slice(1) : 
+                    w.charAt(0).toUpperCase() + w.slice(1)
+                ).join('') + 'Extension'];
+                
+                if (ExtensionAPI && typeof ExtensionAPI.init === 'function') {
+                    try {
+                        console.log(`[Extension Loader] Initializing ${ext}...`);
+                        ExtensionAPI.init();
+                    } catch (e) {
+                        console.error(`Failed to initialize ${ext}:`, e);
+                    }
+                } else {
+                    console.log(`[Extension Loader] ${ext} has no init method (utility extension)`);
+                }
+            }
+            
+            console.log('[Extension Loader] Initialization complete');
+        }
+        
+        // ============================================================================
+        // CORE FUNCTIONALITY
+        // ============================================================================
+        // The following functions are core to inflect's basic operation.
+        // Extension-specific code (edit-mode, dual-iframe, snap-scroll, etc.) 
+        // has been moved to src/extensions/ and loaded on-demand.
+        
+        // Initialize typewriter suppression flag (prevents typewriter from starting before iframe updates)
+        window.__typewriterSuppressed = false;
+        
+        // Note: Edit-mode keyboard handlers, dual-iframe management, and related
+        // functionality have been moved to src/extensions/edit-mode.js and 
+        // src/extensions/dual-iframe.js. They load on-demand when editor: true
+        // or dual-iframe: true is set in frontmatter.
+        
+        // Removed functions (now in extensions):
+        // - getIframeType() → edit-mode.js
+        // - toggleEditMode() → edit-mode.js
+        // - toggleForegroundEditMode() → edit-mode.js
+        // - toggleBackgroundEditMode() → edit-mode.js
+        // - syncEditModeBodyClasses() → edit-mode.js / dual-iframe.js
+        // - getActiveLayerFrame() → edit-mode.js
+        // - extractRelativeLayerUrl() → edit-mode.js
+        // - copyTextToClipboard() → edit-mode.js
+        // - copyActiveLayerUrl() → edit-mode.js
+        // - edit-mode postMessage handlers → edit-mode.js
+        
+        // Old keyboard handler removed - now handled by edit-mode.js extension
+        
+        // Old postMessage handlers removed - now handled by edit-mode.js extension
+        
+        // Track last path (excluding hash) for each iframe
+    let lastIframePath = null;
+    let lastBackgroundPath = null;
+    let lastForegroundPath = null;
+    let firstFrame = true;
+    let firstBackgroundFrame = true;
+    let firstForegroundFrame = true;
+    
+    const iframe = document.getElementById('if');
+    const backgroundFrame = document.getElementById('background-frame');
+    const foregroundFrame = document.getElementById('foreground-frame');
+    // (typewriter functionality removed)
+
+    
+
+    // Ensure all iframes prefer a transparent background and allow transparency
+    [iframe, backgroundFrame, foregroundFrame].forEach(frame => {
+        frame.setAttribute('allowtransparency', 'true');
+        frame.setAttribute('frameborder', '0');
+        frame.style.background = 'transparent';
+    });
+
+        foregroundFrame.addEventListener('load', () => {
+            // Remove inactive class to enable pointer events
+            foregroundFrame.classList.remove('inactive');
+        });
+
+    // Function to fetch and render the markdown
+    async function renderMarkdown() {
+        // Prevent concurrent or re-entrant runs which can lead to duplicate
+        // fetches and noisy logs (observed on some hosts / redirects).
+        if (window.__renderMarkdownRunning) {
+            return;
+        }
+        // Short suppression window: if we rendered successfully very recently,
+        // skip to reduce console noise (2s).
+        try {
+            const now = Date.now();
+            if (window.__lastRenderSuccessAt && (now - window.__lastRenderSuccessAt) < 2000) {
+                return;
+            }
+        } catch(e){}
+        window.__renderMarkdownRunning = true;
+        try {
+            const hash = window.location.hash.substring(1); // Remove '#' from hash
+            // Strip :number suffix (e.g., 'draft:36' -> 'draft') for section jumping
+            const file = hash ? hash.replace(/:\d+$/, '') : 'README';
+
+            var title = document.title.split(" · ")[0];
+            document.title = (file === "README") 
+                             ? title
+                             : `${title} · ${file}`;
+
+            // Resolve candidate paths robustly for both GitHub Pages (repo subpath)
+            // and local development. Build absolute URLs using location.origin + basePath
+            // which points to the repository root directory for the current path.
+            const origin = location.origin || ('https://' + location.host);
+            const basePath = (location.pathname.endsWith('/') ? location.pathname : location.pathname.replace(/\/[^/]*$/, '/'));
+            let candidatePaths = [];
+            // Detect GitHub Pages hosting (served from github.io) to prefer HTML README
+            const isGitHubPages = (location.hostname || '').endsWith('github.io') || (origin || '').includes('github.io');
+            if (file === 'README') {
+                // Try absolute paths first (handles GH Pages repo subpath).
+                // On GitHub Pages prefer README.html early to avoid 404 noise when README.html is served.
+                if (isGitHubPages) {
+                    candidatePaths = [
+                        origin + basePath + 'README.html',
+                        origin + basePath + 'readme.md',
+                        origin + basePath + 'README.md',
+                        './README.html',
+                        './readme.md',
+                        './README.md',
+                        'README.html',
+                        'readme.md',
+                        'README.md'
+                    ];
+                } else {
+                    // Local/dev: prefer lowercase readme.md first then README variants and HTML
+                    candidatePaths = [
+                        origin + basePath + 'readme.md',
+                        origin + basePath + 'README.md',
+                        origin + basePath + 'README.html',
+                        './README.html',
+                        './readme.md',
+                        './README.md',
+                        'README.html',
+                        'readme.md',
+                        'README.md'
+                    ];
+                }
+            } else {
+                // For other files, try MD first (most common), then HTML fallback
+                candidatePaths = [
+                    origin + basePath + file + '.md',
+                    origin + basePath + file + '.html',
+                    file + '.md',
+                    './' + file + '.md',
+                    file + '.html',
+                    './' + file + '.html',
+                    origin + basePath + 'README.html',
+                    origin + basePath + 'readme.md',
+                    'README.html',
+                    'README.md'
+                ];
+            }
+            // Deduplicate candidatePaths while preserving order to avoid redundant fetches
+            candidatePaths = candidatePaths.filter((v, i, a) => a.indexOf(v) === i);
+
+            // If we recently rendered successfully with the SAME hash, skip to reduce console noise (2s).
+            // But if the hash has changed, always re-render (even if within 2s window).
+            try {
+                const now = Date.now();
+                const currentHash = window.location.hash.substring(1).replace(/:\d+$/, '') || 'README';
+                const lastHash = window.__lastRenderSuccessHash || null;
+                
+                if (window.__lastRenderSuccessAt && (now - window.__lastRenderSuccessAt) < 2000 && 
+                    window.__lastRenderSuccessCandidate && currentHash === lastHash) {
+                    const last = window.__lastRenderSuccessCandidate;
+                    if (candidatePaths.indexOf(last) !== -1) {
+                        try { window.__renderMarkdownRunning = false; } catch(e){}
+                        return;
+                    }
+                }
+            } catch(e){}
+
+            let response = null;
+            let text = null;
+            let successPath = null;
+            for (const p of candidatePaths) {
+                try {
+                    response = await fetch(p, {cache: 'no-store'});
+                    if (response && response.ok) {
+                        text = await response.text();
+                        successPath = p;
+                        break;
+                    } else {
+                    }
+                } catch (e) {
+                    // ignore and try next
+                }
+            }
+            if (!text) {
+            }
+
+            if (!text) {
+                console.error('[ERROR] Could not fetch markdown for:', file);
+                throw new Error('Could not fetch markdown for: ' + file + ' (checked ' + candidatePaths.join(', ') + ')');
+            }
+
+            // --- Load frontmatter extension and parse config ---
+            // Load frontmatter extension first (always needed for config parsing)
+            await loadExtension('frontmatter');
+            
+            // Parse frontmatter using the extension
+            const FrontmatterExt = window.FrontmatterExtension;
+            const fmConfig = FrontmatterExt ? FrontmatterExt.extractFrontMatter(text) : { text, config: {} };
+            text = fmConfig.text;
+            const config = fmConfig.config || {};
+            
+            // Apply frontmatter settings BEFORE loading extensions
+            // (extensions may check body classes during init)
+            if (FrontmatterExt) {
+                if (config.css) FrontmatterExt.applyPageCss(config.css);
+                if (config.bodyClass) FrontmatterExt.applyBodyClasses(config.bodyClass);
+                if (config.dualIframe) FrontmatterExt.applyDualIframeMode(true);
+            }
+            
+            // Expose frontmatter config globally for extensions to access
+            window.frontmatter = config;
+            
+            // Now load extensions based on frontmatter config
+            // Extensions can now reliably check body classes in their init()
+            await loadExtensionsFromConfig(config);
+            
+            // Keep legacy variables for backwards compatibility
+            const pageCssPath = config.css || null;
+            const fmBodyClass = config.bodyClass || null;
+            const dualIframeMode = config.dualIframe || false;
+            // --- end frontmatter parsing ---
+
+                // On GitHub Pages the repository is often served as generated HTML
+                // which may not include the original `css: src/theme.css` marker.
+                // As a fallback, attempt to load `src/theme.css` from the repo root
+                // (origin + basePath) if it exists — this ensures our fonts and
+                // theme definitions load when the page was built by Jekyll.
+                // NOTE: Do not auto-load theme.css by default. A page/theme stylesheet
+                // will only be loaded if explicitly requested via front-matter or
+                // inline marker and applied through applyPageCss(pageCssPath).
+
+                        // Detect and strip a leading body-class marker from the raw markdown before we wrap sections
+                        // e.g. a file starting with `{.ltr}` should set body classes, not produce an empty section.
+                        // Prefer body-class from YAML front-matter if present, otherwise accept the inline `{.cls}` marker.
+                        // CRITICAL: Only treat as body-class if YAML body-class is present; otherwise let it be a section class.
+                        let pageBodyClasses = fmBodyClass || null;
+                        if (!fmBodyClass) {
+                            // Only strip leading marker as body-class if it's NOT a section-specific class
+                            // Section classes like "title-section", "meta", "lead" etc. should be processed as section classes
+                            const rawBodyMarkerRe = /^\s*\{\.([A-Za-z0-9_\- ]+)\}\s*(?:\r?\n){1,2}/;
+                            const rawBm = text.match(rawBodyMarkerRe);
+                            const markerClass = rawBm ? rawBm[1].trim() : null;
+                            // Only treat as body-class if it looks like a layout/language marker (ltr, rtl, etc.) not a section marker
+                            const isSectionClass = markerClass && (markerClass.includes('section') || markerClass.includes('meta') || markerClass.includes('lead'));
+                            if (rawBm && !isSectionClass) {
+                                pageBodyClasses = markerClass;
+                                text = text.replace(rawBodyMarkerRe, '');
+                            }
+                        }
+
+                        // split sections by two empty lines (existing behavior)
+                        text = text.replace(/\s*\n\s*\n\s*\n\s*/g, '\n\n</section>\n\n<section>\n\n');
+                        text = "<section>\n\n" + text + "\n\n</section>";
+
+                        // Preprocess section class markers: lines like `{.lead}` placed alone
+                        // immediately after a section break will attach that class to the following <section>
+                        function applySectionClasses(t) {
+                            // 1) Marker immediately AFTER an opening <section> (attach class to that opening tag)
+                            t = t.replace(/<section>\s*\n\s*\{\.([A-Za-z0-9_\- ]+)\}\s*\n\s*/g, (m, cls) => {
+                                return `<section class="${cls.trim().replace(/\s+/g,' ')}">\n\n`;
+                            });
+
+                            // 2) Marker that appears right after a section split: close/open pair followed by marker
+                            t = t.replace(/<\/section>\s*\n\s*<section>\s*\n\s*\{\.([A-Za-z0-9_\- ]+)\}\s*\n\s*/g, (m, cls) => {
+                                return `</section>\n\n<section class="${cls.trim().replace(/\s+/g,' ')}">\n\n`;
+                            });
+
+                            // 3) Fallback: marker between paragraphs - create a new section with the class
+                            t = t.replace(/\n\n\s*\{\.([A-Za-z0-9_\- ]+)\}\s*\n\n/g, (m, cls) => {
+                                return `\n\n<section class="${cls.trim().replace(/\s+/g,' ')}">\n\n`;
+                            });
+
+                            return t;
+                        }
+
+                        text = applySectionClasses(text);
+            
+                        // (Previously we injected a `dontinflect` class into anchors. Revert that
+                        // behavior so external links or arbitrary hrefs can be treated as
+                        // inflection links. Leave anchors as authored.)
+
+            // If the fetched resource looks like a full HTML page (GitHub Pages or Jekyll
+            // may serve HTML instead of raw markdown), parse it and extract the
+            // body/main content. Otherwise treat as markdown and render via marked.
+            let html = '';
+            try {
+                const looksLikeHtml = /(^\s*<!doctype)|(<html[\s>])|(<body[\s>])/i.test(text);
+                if (looksLikeHtml) {
+                    const dp = new DOMParser();
+                    const doc = dp.parseFromString(text, 'text/html');
+                    // Prefer an explicit <main> if present in the fetched HTML
+                    const mainEl = doc.querySelector('main');
+                    html = mainEl ? mainEl.innerHTML : (doc.body ? doc.body.innerHTML : text);
+                    // If the fetched HTML carried stylesheet links in its head, import
+                    // them safely (only same-origin or clearly safe relative paths).
+                    try {
+                        const headLinks = Array.from(doc.querySelectorAll('link[rel="stylesheet"]'));
+                        headLinks.forEach(l => {
+                            const href = l.getAttribute('href');
+                            if (href && /^(\/|\.\/|\.\.\/|src\/|css\/)/.test(href)) {
+                                const id = 'page-css-' + btoa(href).replace(/=/g,'');
+                                if (!document.getElementById(id)) {
+                                    const link = document.createElement('link'); link.rel = 'stylesheet'; link.href = href; link.id = id; document.head.appendChild(link);
+                                }
+                            }
+                        });
+                    } catch(e){}
+                } else {
+                    html = marked.parse(text);
+                }
+            } catch(e) {
+                html = marked.parse(text);
+            }
+
+            // Strip any <meta> or <link rel="stylesheet"> tags that may have been
+            // included in the content. Injecting these into the document body
+            // creates warnings and causes browsers to ignore CSP meta tags that
+            // appear outside of <head>. Remove them from the rendered HTML.
+            try {
+                html = html.replace(/<meta[\s\S]*?>/gi, '');
+                html = html.replace(/<link[^>]*rel=["']?stylesheet["']?[^>]*>/gi, '');
+            } catch (e) { /* swallow */ }
+
+            document.querySelector('main').innerHTML = html;
+
+            // Reinitialize chapters navigation after content changes
+            if (window.initChapters && typeof window.initChapters === 'function') {
+                window.initChapters();
+            }
+
+            // Reset scroll position to top when content changes
+                        window.scrollTo(0, 0);
+
+                        // Record successful render so immediate duplicate invocations can be skipped
+                        try { 
+                            window.__lastRenderSuccessAt = Date.now(); 
+                            window.__lastRenderSuccessCandidate = successPath || null;
+                            window.__lastRenderSuccessHash = file;
+                        } catch(e){}
+
+                        // CSS is already applied by frontmatter extension above
+                        // (removed duplicate applyPageCss call)
+
+                        // If the markdown included a leading body-class marker, apply it to <body>
+                        // Remove any previously applied classes from earlier renders (kept in data-body-classes)
+                        try {
+                            if (pageBodyClasses) {
+                                const prev = document.body.getAttribute('data-body-classes');
+                                if (prev) prev.split(' ').forEach(c => document.body.classList.remove(c));
+                                pageBodyClasses.split(' ').forEach(c => document.body.classList.add(c));
+                                document.body.setAttribute('data-body-classes', pageBodyClasses);
+                            }
+                        } catch (e) {
+                                                    }
+
+                        // Apply dual-iframe mode if specified in frontmatter
+                        try {
+                            if (dualIframeMode) {
+                                document.body.classList.add('dual-iframe');
+                            } else {
+                                document.body.classList.remove('dual-iframe');
+                            }
+                            // Also set a global flag so parent page can check
+                            window.__dualIframeMode = dualIframeMode;
+
+                        } catch (e) {
+                                                    }
+
+            // Convert plain images or image links that reference /img/ into
+            // explicit links the parent page can observe. This function used
+            // to exist and was removed during edits; reintroduce a small,
+            // defensive implementation so callers don't throw.
+            try {
+                transformInflectionImages();
+            } catch (e) {
+                // Provide a lightweight fallback implementation inline
+                (function transformInflectionImagesFallback() {
+                    try {
+                        const imgs = Array.from(document.querySelectorAll('img'));
+                        imgs.forEach(img => {
+                            const src = img.getAttribute('src') || '';
+                            if (!src) return;
+                            // If the image src appears to be inside the /img/ folder,
+                            // ensure it's wrapped by an anchor so intersection/click
+                            // handlers can detect it.
+                            if (src.includes('/img/') || src.includes('/map/')) {
+                                const parent = img.parentElement;
+                                if (parent && parent.tagName.toLowerCase() === 'a') return;
+                                const a = document.createElement('a');
+                                a.href = src;
+                                a.appendChild(img.cloneNode(true));
+                                parent.replaceChild(a, img);
+                            }
+                        });
+                    } catch (inner) {
+                        // swallow — best-effort only
+                    }
+                })();
+            }
+
+            // Install a single on-page caption for the currently active
+            // inflection link. Caption text is taken from the link's
+            // markdown title (the "..." part in [text](href "title")).
+            (function setupInflectCaption(){
+                try {
+                    let el = document.getElementById('inflect-caption');
+                    if (!el) {
+                        el = document.createElement('div');
+                        el.id = 'inflect-caption';
+                        el.className = 'inflect-caption';
+                        el.style.display = 'none';
+                        document.body.appendChild(el);
+                    }
+
+                    // Track captions from both layers (background and foreground)
+                    let bgCaption = '';
+                    let fgCaption = '';
+
+                    function updateCombinedCaption() {
+                        try {
+                            // Combine both captions with a separator if both exist
+                            const parts = [bgCaption, fgCaption].filter(c => c.trim().length > 0);
+                            const combined = parts.join(' • ');
+                            
+                            if (!combined) {
+                                el.style.display = 'none';
+                                el.textContent = '';
+                                el.classList.remove('note-caption');
+                                return;
+                            }
+                            
+                            // Check if combined caption starts with !!! for note styling
+                            if (combined.startsWith('!!!')) {
+                                el.classList.add('note-caption');
+                                el.textContent = combined.substring(3).trim(); // Remove !!! prefix
+                            } else {
+                                el.classList.remove('note-caption');
+                                el.textContent = combined;
+                            }
+                            
+                            el.style.display = '';
+                        } catch(e){ /* swallow */ }
+                    }
+
+                    // Update caption by checking ALL currently active inflection links
+                    function updateInflectCaption() {
+                        try {
+                            const isDualMode = document.body.classList.contains('dual-iframe');
+                            
+                            // Find all active inflection links
+                            const activeLinks = Array.from(document.querySelectorAll('a.active[href]'));
+                            const inflectableLinks = activeLinks.filter(link => 
+                                !link.classList.contains('dontinflect') && link.getAttribute('href')
+                            );
+                            
+                            if (isDualMode) {
+                                // Separate links by layer (map vs other)
+                                const bgLinks = inflectableLinks.filter(link => {
+                                    const href = link.getAttribute('href') || '';
+                                    return href.includes('/map/') || href.includes('/map#') || href.match(/\/map$/);
+                                });
+                                const fgLinks = inflectableLinks.filter(link => {
+                                    const href = link.getAttribute('href') || '';
+                                    return !(href.includes('/map/') || href.includes('/map#') || href.match(/\/map$/));
+                                });
+                                
+                                // Get captions and opacities from background links
+                                // Collect ALL non-empty captions, use last link's alpha
+                                let bgAlpha = 1;
+                                const bgCaptions = [];
+                                if (bgLinks.length > 0) {
+                                    bgLinks.forEach(link => {
+                                        const caption = (link.getAttribute('title') || link.getAttribute('data-caption') || '').trim();
+                                        if (caption) {
+                                            bgCaptions.push(caption);
+                                        }
+                                    });
+                                    // Use the last link for alpha regardless of whether it has a caption
+                                    const lastBgLink = bgLinks[bgLinks.length - 1];
+                                    for (const cls of lastBgLink.classList) {
+                                        if (cls.startsWith('alpha_')) {
+                                            const val = parseFloat(cls.replace('alpha_', ''));
+                                            if (!isNaN(val)) bgAlpha = val;
+                                        }
+                                    }
+                                }
+                                // Combine all background captions (use last non-empty, or join if multiple)
+                                bgCaption = bgCaptions.length > 0 ? bgCaptions[bgCaptions.length - 1] : '';
+                                
+                                // Get captions and opacities from foreground links
+                                // Collect ALL non-empty captions, use last link's alpha
+                                let fgAlpha = 1;
+                                const fgCaptions = [];
+                                if (fgLinks.length > 0) {
+                                    fgLinks.forEach(link => {
+                                        const caption = (link.getAttribute('title') || link.getAttribute('data-caption') || '').trim();
+                                        if (caption) {
+                                            fgCaptions.push(caption);
+                                        }
+                                    });
+                                    // Use the last link for alpha regardless of whether it has a caption
+                                    const lastFgLink = fgLinks[fgLinks.length - 1];
+                                    for (const cls of lastFgLink.classList) {
+                                        if (cls.startsWith('alpha_')) {
+                                            const val = parseFloat(cls.replace('alpha_', ''));
+                                            if (!isNaN(val)) fgAlpha = val;
+                                        }
+                                    }
+                                }
+                                // Combine all foreground captions (use last non-empty, or join if multiple)
+                                fgCaption = fgCaptions.length > 0 ? fgCaptions[fgCaptions.length - 1] : '';
+                                
+                                // Update iframe opacities
+                                const bgFrame = document.getElementById('background-frame');
+                                const fgFrame = document.getElementById('foreground-frame');
+                                if (bgFrame) {
+                                    bgFrame.style.transition = 'opacity 400ms cubic-bezier(.22,1,.36,1)';
+                                    bgFrame.style.opacity = bgAlpha;
+                                }
+                                if (fgFrame) {
+                                    fgFrame.style.transition = 'opacity 400ms cubic-bezier(.22,1,.36,1)';
+                                    fgFrame.style.opacity = fgAlpha;
+                                }
+                            } else {
+                                // Single iframe mode - collect all non-empty captions from active links
+                                let alpha = 1;
+                                const allCaptions = [];
+                                
+                                if (inflectableLinks.length > 0) {
+                                    inflectableLinks.forEach(link => {
+                                        const caption = (link.getAttribute('title') || link.getAttribute('data-caption') || '').trim();
+                                        if (caption) {
+                                            allCaptions.push(caption);
+                                        }
+                                    });
+                                    // Use last link for alpha regardless of whether it has a caption
+                                    const lastLink = inflectableLinks[inflectableLinks.length - 1];
+                                    for (const cls of lastLink.classList) {
+                                        if (cls.startsWith('alpha_')) {
+                                            const val = parseFloat(cls.replace('alpha_', ''));
+                                            if (!isNaN(val)) alpha = val;
+                                        }
+                                    }
+                                }
+                                
+                                // Use last non-empty caption
+                                bgCaption = allCaptions.length > 0 ? allCaptions[allCaptions.length - 1] : '';
+                                fgCaption = '';
+                                
+                                // Update iframe opacity
+                                const mainFrame = document.getElementById('if');
+                                if (mainFrame) {
+                                    mainFrame.style.transition = 'opacity 400ms cubic-bezier(.22,1,.36,1)';
+                                    mainFrame.style.opacity = alpha;
+                                }
+                            }
+                            
+                            // Update the combined caption display
+                            updateCombinedCaption();
+                        } catch(e) { 
+                            /* swallow */
+                        }
+                    }
+
+                    // Expose the caption updater globally
+                    window.__updateInflectCaption = updateInflectCaption;
+                } catch(e) { /* swallow */ }
+            })();
+
+            initializeObservers();
+
+                // Pin behavior removed: no automatic scroll-to-`.pin` is performed.
+
+                // (typewriter functionality removed)
+
+            // return to old position (don't override explicit hash navigation)
+            try{
+                const hasExplicitHash = (window.location.hash || '').length > 1;
+                if (location.hostname === 'localhost' && !hasExplicitHash) {
+                    window.scrollTo(0, sessionStorage.getItem('scrollPosition') || 0);
+                }
+            }catch(e){}
+        } catch (error) {
+            console.error('[ERROR] renderMarkdown failed:', error);
+            console.error('[ERROR] Stack:', error.stack);
+        } finally {
+            // Always reset the running flag so subsequent renders can proceed
+            try { window.__renderMarkdownRunning = false; } catch(e){}
+        }
+    }
+
+    // Update markdown when hash changes
+        // Fade in new content only on path change
+        function setIframeIfPathChanged(newHref) {
+            // Check if we're in dual-iframe mode
+            const isDualMode = window.__dualIframeMode === true;
+            
+            // Handle special clear patterns in dual-iframe mode
+            if (isDualMode) {
+                const clearPatterns = ['fg:blank', 'foreground:blank', 'bg:blank', 'background:blank', 'both:blank', 'clear:all'];
+                for (const pattern of clearPatterns) {
+                    if (newHref === pattern || newHref.endsWith('/' + pattern) || newHref.endsWith('#' + pattern)) {
+                        const backgroundFrame = document.getElementById('background-frame');
+                        const foregroundFrame = document.getElementById('foreground-frame');
+                        
+                        if (pattern === 'fg:blank' || pattern === 'foreground:blank') {
+                            foregroundFrame.src = 'about:blank';
+                            foregroundFrame.classList.add('inactive');
+                            lastForegroundPath = ''; // Reset so next link will load
+                            try { if (window.__clearInflectCaption) window.__clearInflectCaption(); } catch(e){}
+                            return;
+                        }
+                        if (pattern === 'bg:blank' || pattern === 'background:blank') {
+                            backgroundFrame.src = 'about:blank';
+                            lastBackgroundPath = ''; // Reset so next link will load
+                            try { if (window.__clearInflectCaption) window.__clearInflectCaption(); } catch(e){}
+                            return;
+                        }
+                        if (pattern === 'both:blank' || pattern === 'clear:all') {
+                            backgroundFrame.src = 'about:blank';
+                            foregroundFrame.src = 'about:blank';
+                            foregroundFrame.classList.add('inactive');
+                            lastForegroundPath = ''; // Reset so next link will load
+                            lastBackgroundPath = ''; // Reset so next link will load
+                            try { if (window.__clearInflectCaption) window.__clearInflectCaption(); } catch(e){}
+                            return;
+                        }
+                    }
+                }
+            }
+            
+            let parsedURL;
+            try {
+                parsedURL = new URL(newHref, window.location.origin);
+            } catch(e) {
+                                return;
+            }
+            const originalHash = parsedURL.hash || '';
+            // compute path-only URL for comparison
+            const pathOnly = new URL(parsedURL.href);
+            pathOnly.hash = '';
+            const newPath = pathOnly.href;
+            
+            if (!isDualMode) {
+                // Single iframe mode (original behavior)
+                if (newPath !== lastIframePath) {
+                    if (firstFrame) {
+                        firstFrame = false;
+                        iframe.src = newHref;
+                    } else {
+                        iframe.src = newHref;
+                    }
+                    lastIframePath = newPath;
+                } else {
+                    iframe.src = newHref;
+                }
+            } else {
+                // Dual iframe mode: route based on URL pattern
+                // map/ → background-frame, everything else (cmp/, img/, vim/, etc.) → foreground-frame
+                const isMapLink = newPath.includes('/map/') || newPath.includes('/map#') || newPath.match(/\/map$/);
+                if (isMapLink) {
+                    // Route to background frame
+                    if (newPath !== lastBackgroundPath) {
+                        if (firstBackgroundFrame) {
+                            firstBackgroundFrame = false;
+                            backgroundFrame.src = newHref;
+                        } else {
+                            backgroundFrame.src = newHref;
+                        }
+                        lastBackgroundPath = newPath;
+                    } else {
+                        // Hash-only change - update src immediately
+                        backgroundFrame.src = newHref;
+                    }
+                } else {
+                    // Route to foreground frame (default for cmp/, img/, vim/, svg/, etc.)
+                    
+                    // MOBILE VIDEO OPTIMIZATION: If fs-video-mobile body class is present,
+                    // on mobile devices, detect SVG links with @vimeo- flags and redirect
+                    // to vim/ with the first video ID instead of loading the full SVG
+                    let finalHref = newHref;
+                    try {
+                        const hasFsVideoMobile = document.body.classList.contains('fs-video-mobile');
+                        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.matchMedia('(max-width: 768px)').matches;
+                        
+                        if (hasFsVideoMobile && isMobile && newPath.includes('/svg/')) {
+                            // Check if the hash contains @vimeo- flags
+                            const hashMatch = originalHash.match(/@vimeo-(\d+)/);
+                            if (hashMatch && hashMatch[1]) {
+                                const videoId = hashMatch[1];
+                                // Redirect to vim/ instead of /svg/
+                                finalHref = `vim/#vimeo.com%2F${videoId}/autoplay,loop,cover`;
+                            }
+                        }
+                    } catch(e) {
+                                            }
+                    
+                    // Update foreground iframe
+                    if (newPath !== lastForegroundPath) {
+                        if (firstForegroundFrame) {
+                            firstForegroundFrame = false;
+                            foregroundFrame.src = finalHref;
+                        } else {
+                            foregroundFrame.src = finalHref;
+                        }
+                        lastForegroundPath = newPath;
+                    } else {
+                        foregroundFrame.src = finalHref;
+                    }
+                    // Ensure foreground is active and update tracking immediately
+                    foregroundFrame.classList.remove('inactive');
+                }
+            }
+        }
+
+        // Schedule iframe updates slightly later to allow DOM mutations (e.g. typewriter)
+        let __iframeNextTimeout = null;
+        function setIframeNext(href, delay = 60, waitForSection = true){
+            try { if (__iframeNextTimeout) clearTimeout(__iframeNextTimeout); } catch(e){}
+            __iframeNextTimeout = setTimeout(() => {
+                // Try to find the anchor in the document and its containing section
+                try {
+                } catch(e) { /* swallow */ }
+                try { setIframeIfPathChanged(href); } catch(e){}
+                __iframeNextTimeout = null;
+            }, delay);
+        }
+        
+        // Expose setIframeNext globally for extensions (chapters navigation)
+        window.__setIframeNext = setIframeNext;
+
+    // (typewriter functionality removed)
+
+    // Track recent direct user input (wheel/touch/keyboard/pointer) so we can
+    // distinguish user gestures from programmatic navigation. This is used by
+    // the section observer to decide whether a section entering view should
+    // trigger a programmatic centering scroll (same function used by navbar).
+    window.__userInputAt = 0;
+    function __markUserInput(e) {
+        // For key events, only treat navigation keys as user gestures
+        if (e && e.type === 'keydown') {
+            if (!['ArrowUp','ArrowDown','PageUp','PageDown',' '].includes(e.key)) return;
+        }
+        try { window.__userInputAt = Date.now(); } catch (err) { /* swallow */ }
+    }
+    ['wheel','touchstart','touchmove','pointerdown','keydown'].forEach(evt => {
+        try { window.addEventListener(evt, __markUserInput, { passive: true }); } catch(e){}
+    });
+
+    // Mark paragraphs that only contain empty inflection links (no text content)
+    // This allows CSS to hide them without breaking IntersectionObserver
+    function markInflectionOnlyParagraphs() {
+        const paragraphs = document.querySelectorAll('p:not(.typewriter p)'); // Skip paragraphs inside typewriter sections
+        paragraphs.forEach(p => {
+            // Skip if parent is a typewriter
+            if (p.closest('.typewriter')) return;
+            
+            // Get all child nodes
+            const children = Array.from(p.childNodes);
+            
+            // Check if paragraph has any text content (excluding whitespace)
+            const hasText = children.some(node => {
+                if (node.nodeType === Node.TEXT_NODE) {
+                    return node.textContent.trim().length > 0;
+                }
+                if (node.nodeType === Node.ELEMENT_NODE && node.tagName !== 'A') {
+                    return true; // has non-link elements
+                }
+                if (node.nodeType === Node.ELEMENT_NODE && node.tagName === 'A') {
+                    return node.textContent.trim().length > 0; // has non-empty link
+                }
+                return false;
+            });
+            
+            // If no text and has at least one empty anchor, mark it
+            const hasEmptyLinks = Array.from(p.querySelectorAll('a')).some(a => !a.textContent.trim());
+            if (!hasText && hasEmptyLinks) {
+                p.classList.add('inflection-only');
+            } else {
+                p.classList.remove('inflection-only');
+            }
+        });
+    }
+    
+    // Run on load
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', markInflectionOnlyParagraphs);
+    } else {
+        markInflectionOnlyParagraphs();
+    }
+    
+    // Re-check when content changes, but debounce to avoid excessive calls
+    let markTimeout = null;
+    const paragraphObserver = new MutationObserver(() => {
+        if (markTimeout) clearTimeout(markTimeout);
+        markTimeout = setTimeout(() => {
+            markInflectionOnlyParagraphs();
+        }, 250); // Debounce: wait 250ms after last mutation
+    });
+    paragraphObserver.observe(document.body, { 
+        childList: true, 
+        subtree: true
+        // Removed characterData to avoid triggering on text changes during typing
+    });
+
+    // with IntersectionObserver we can check what is visible    
+    function initializeObservers() {
+        // Store observers globally so they can be cleaned up on content change
+        const isMobilePortrait = window.matchMedia("(max-width: 1000px) and (orientation: portrait)").matches;
+        let captionUpdateTimeout = null; // Debounce caption updates across all observer callbacks
+        
+        // Mobile layout configuration: In content-top mode, text appears at bottom of viewport.
+        // This value (0-1) represents where to measure section visibility from.
+        // 0.8 = bottom 20% of screen, matching the CSS layout for content-top mode.
+        const MOBILE_CONTENT_Y_RATIO = 0.8;
+        
+        const observer = new IntersectionObserver((entries) => {
+            let captionNeedsUpdate = false;
+            
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add active class only to the visible link
+                    const visibleLink = entry.target;
+                        if (!visibleLink.classList.contains("dontinflect") && visibleLink.getAttribute("href") != "") {
+                        visibleLink.classList.add('active');
+                        
+                        // Desktop: Load iframes immediately when links intersect
+                        // Mobile: Let section observer handle loading to avoid race conditions
+                        // when multiple sections with different links are simultaneously visible
+                        if (!isMobilePortrait) {
+                            // Desktop mode: load iframe from link observer
+                            const rawHref = visibleLink.getAttribute('href');
+                            if (!rawHref) return;
+                            
+                            const isDualMode = window.__dualIframeMode === true;
+                            if (isDualMode) {
+                                try { 
+                                    const full = new URL(rawHref, window.location.href).href; 
+                                    setIframeIfPathChanged(full); 
+                                } catch(e){ 
+                                    try {
+                                        setIframeIfPathChanged(visibleLink.href);
+                                    } catch(e2) { }
+                                }
+                            } else {
+                                try { 
+                                    const full = new URL(rawHref, window.location.href).href; 
+                                    setIframeNext(full); 
+                                } catch(e){ 
+                                    try {
+                                        setIframeNext(visibleLink.href);
+                                    } catch(e2) { }
+                                }
+                            }
+                        }
+                        
+                        // Mark that caption needs update after all entries processed
+                        captionNeedsUpdate = true;
+                    }
+                } else {
+                    // Link is leaving view - remove active class
+                    entry.target.classList.remove("active");
+                    // Mark that caption needs update after all entries processed
+                    captionNeedsUpdate = true;
+                }
+            });
+            
+            // Update caption ONCE after all entries in this batch have been processed
+            // Use setTimeout to ensure all active class changes have been applied
+            if (captionNeedsUpdate) {
+                // Clear any pending update
+                if (captionUpdateTimeout) {
+                    clearTimeout(captionUpdateTimeout);
+                }
+                // Schedule update with debounce - only execute after scrolling settles
+                captionUpdateTimeout = setTimeout(() => {
+                    try {
+                        if (window.__updateInflectCaption) window.__updateInflectCaption();
+                    } catch(e) { /* swallow */ }
+                    captionUpdateTimeout = null;
+                }, 200); // Wait 200ms after last change before updating
+            }
+        },{
+            // In content-top mode, content is at bottom of screen (0-20dvh)
+            // So we need to check the bottom half instead of top half
+            rootMargin: isMobilePortrait 
+                ? (document.body.classList.contains('content-top') ? "0px 0px -50% 0px" : "-50% 0px 0px 0px")
+                : "0px"
+        });
+
+        // Also observe sections: some markdown creates empty anchors inside
+        // section blocks (e.g. `[](vim/#...)` with no link text). Empty anchors
+        // have no layout box and won't trigger the link observer. Observe
+        // sections and when a section enters view, pick its first inflection
+        // link and update the iframe accordingly.
+        const sectionObserver = new IntersectionObserver((entries) => {
+            let captionNeedsUpdate = false;
+            
+            // Mobile-specific fix: When multiple sections intersect simultaneously
+            // (common with low threshold + compact mobile layout), choose only the
+            // section closest to where content is displayed to prevent race conditions.
+            const intersectingEntries = entries.filter(e => e.isIntersecting);
+            let entriesToProcess = intersectingEntries;
+            
+            if (isMobilePortrait && intersectingEntries.length > 1) {
+                // Find section closest to bottom 20% of viewport (where text appears in content-top mode)
+                const viewportHeight = window.innerHeight;
+                const contentY = viewportHeight * MOBILE_CONTENT_Y_RATIO;
+                
+                intersectingEntries.sort((a, b) => {
+                    const aDistance = Math.abs(a.target.getBoundingClientRect().bottom - contentY);
+                    const bDistance = Math.abs(b.target.getBoundingClientRect().bottom - contentY);
+                    return aDistance - bDistance;
+                });
+                
+                entriesToProcess = intersectingEntries.slice(0, 1);
+                
+                // Clear active links from all other sections to prevent old links from reloading
+                const chosenSection = entriesToProcess[0].target;
+                document.querySelectorAll('main > section').forEach(sec => {
+                    if (sec !== chosenSection) {
+                        sec.querySelectorAll('a.active, [data-active="true"]').forEach(link => {
+                            link.classList.remove('active');
+                            link.removeAttribute('data-active');
+                        });
+                    }
+                });
+            }
+            
+            entriesToProcess.forEach(en => {
+                if (en.isIntersecting) {
+                    const sec = en.target;
+                    const sectionText = sec.textContent.substring(0, 50).replace(/\s+/g, ' ');
+                                                            
+                    // Mark this section as having inflection in progress
+                    const inflectionId = 'inflection-' + (sec.id || Date.now());
+                    window.__activeInflectionId = inflectionId;
+                    
+                    // Signal to typewriter that section change is in progress
+                    // This prevents typewriter from starting until iframes are updated
+                    window.__typewriterSuppressed = true;
+                    
+                    // Safety: Always release typewriter suppression after max timeout
+                    const maxSuppressionTimeout = setTimeout(() => {
+                        if (window.__activeInflectionId === inflectionId) {
+                            window.__typewriterSuppressed = false;
+                            sec.dispatchEvent(new CustomEvent('inflection-ready', { bubbles: true }));
+                        }
+                    }, 2000); // Fail-safe: 2 seconds max
+                    
+                    try {
+                        const a = sec.querySelector('a:not(.dontinflect)');
+                        if (!a) {
+                            // No inflection link, release immediately
+                            clearTimeout(maxSuppressionTimeout);
+                            window.__typewriterSuppressed = false;
+                            return;
+                        }
+                        const raw = a.getAttribute('href') || '';
+                        if (!raw) return;
+                        // Determine whether this intersection was likely caused by
+                        // a direct user gesture (scroll/trackpad/keyboard) rather
+                        // than a programmatic navigation (nav click / scripted scroll).
+                        const now = Date.now();
+                        const recentUser = (now - (window.__userInputAt || 0)) < 700; // ms
+                        
+                        // During programmatic scroll to target, suppress inflection until scroll completes
+                        const duringProgrammaticScroll = window.__scrollInflectionPending && sec.id !== window.__scrollTargetId;
+                        const programmaticScrollActive = !!(window.__scrollAnimating || window.__snapAnimationInProgress || (window.__snapSuppressUntil && now < window.__snapSuppressUntil));
+                        
+                        // STRICT: Don't trigger observer-based scroll if ANY snap activity is happening
+                        // This prevents observer from interfering with wheel/keyboard snap
+                        if (window.__snapAnimationInProgress || window.__snapSuppressUntil > now) {
+                            // During active snap: only update iframe, don't scroll
+                            clearTimeout(maxSuppressionTimeout);
+                            try {
+                                const a = sec.querySelector('a:not(.dontinflect)');
+                                if (a) {
+                                    const full = new URL(a.href, window.location.href).href;
+                                    if (window.__setIframeNext) window.__setIframeNext(full);
+                                    if (window.__updateInflectCaption) window.__updateInflectCaption();
+                                }
+                            } catch(e){}
+                            window.__typewriterSuppressed = false;
+                            sec.dispatchEvent(new CustomEvent('inflection-ready', { bubbles: true }));
+                            window.__activeInflectionId = null;
+                            return;
+                        }
+
+                        // If a recent user gesture occurred and no programmatic
+                        // scroll suppression is active, perform the same centering
+                        // calculation used by navbar buttons.
+                        if (recentUser && !programmaticScrollActive && !duringProgrammaticScroll) {
+                            try {
+                                const scroller = document.querySelector('main') || document.scrollingElement || document.documentElement;
+                                const viewportHeight = (scroller && scroller.clientHeight) || window.innerHeight;
+                                const targetTop = sec.getBoundingClientRect().top + (scroller ? scroller.scrollTop : (window.pageYOffset || 0));
+                                const centeredTop = targetTop - (viewportHeight / 2) + (sec.offsetHeight / 2);
+
+                                // Suppress other snap/key handlers while animating
+                                window.__snapSuppressUntil = Date.now() + 700;
+                                window.__chaptersAnimating = true;
+
+                                if (window.__smoothScrollTo) {
+                                    window.__smoothScrollTo(scroller, centeredTop, { source: 'observer' });
+                                } else {
+                                    try {
+                                        if (scroller === document.scrollingElement || scroller === document.documentElement) {
+                                            window.scrollTo({ top: centeredTop, behavior: 'smooth' });
+                                        } else {
+                                            scroller.scrollTo({ top: centeredTop, behavior: 'smooth' });
+                                        }
+                                    } catch(e){}
+                                    setTimeout(() => { window.__chaptersAnimating = false; }, 1000);
+                                }
+                            } catch (e) { /* swallow */ }
+                        }
+
+                        // Load all inflection links in the entering section (dual-iframe mode)
+                        const isDualMode = window.__dualIframeMode === true;
+
+                        if (isDualMode) {
+                                                                                                                
+                            // Find all inflection links in this section
+                            const allLinks = Array.from(sec.querySelectorAll('a:not(.dontinflect)'));
+                            if (allLinks.length === 0) {
+                                                                                                                                                            } else {
+                                                            }
+                            allLinks.forEach((link, idx) => {
+                                                            });
+                            
+                            let loadedCount = 0;
+                            const totalLinks = allLinks.length;
+                            
+                            // Function to complete inflection (called when all loads finish or timeout)
+                            const completeInflection = () => {
+                                if (window.__activeInflectionId === inflectionId) {
+                                    clearTimeout(maxSuppressionTimeout);
+                                    window.__typewriterSuppressed = false;
+                                    sec.dispatchEvent(new CustomEvent('inflection-ready', { bubbles: true }));
+                                    window.__activeInflectionId = null;
+                                }
+                            };
+                            
+                            // Load links sequentially with guaranteed completion tracking
+                            allLinks.forEach((link, index) => {
+                                // Mark link as active since it's in the visible section
+                                link.classList.add('active');
+                                                                
+                                const linkHref = link.getAttribute('href');
+                                if (linkHref) {
+                                    const delay = index * 30; // 30ms stagger for smoother loading
+                                    setTimeout(() => {
+                                        try { 
+                                            const full = new URL(linkHref, window.location.href).href;
+                                            setIframeIfPathChanged(full); 
+                                        } catch(e){ 
+                                                                                        try {
+                                                setIframeIfPathChanged(link.href);
+                                            } catch(e2) {
+                                                                                            }
+                                        } finally {
+                                            loadedCount++;
+                                            // Complete when all links processed
+                                            if (loadedCount >= totalLinks) {
+                                                                                                // Small delay to ensure iframes start loading
+                                                setTimeout(completeInflection, 50);
+                                            }
+                                        }
+                                    }, delay);
+                                } else {
+                                    loadedCount++;
+                                }
+                            });
+                            
+                            // Set captions from all links in dual-iframe mode
+                            if (allLinks.length > 0) {
+                                // Mark that caption needs update after all sections processed
+                                captionNeedsUpdate = true;
+                            }
+                            
+                            // Guaranteed completion after reasonable timeout
+                            setTimeout(completeInflection, Math.max(200, totalLinks * 50));
+                        } else {
+                                                        // Single iframe mode: only load first link
+                            try { 
+                                const full = new URL(raw, window.location.href).href; 
+                                setIframeNext(full); 
+                            } catch(e){ 
+                                try {
+                                    setIframeNext(a.href);
+                                } catch(e2) {
+                                                                    }
+                            }
+                            try { if (window.__updateInflectCaption) window.__updateInflectCaption(); } catch(e){}
+                            
+                            // Release typewriter suppression with guaranteed execution
+                            const completeInflection = () => {
+                                if (window.__activeInflectionId === inflectionId) {
+                                    clearTimeout(maxSuppressionTimeout);
+                                    window.__typewriterSuppressed = false;
+                                    sec.dispatchEvent(new CustomEvent('inflection-ready', { bubbles: true }));
+                                    window.__activeInflectionId = null;
+                                }
+                            };
+                            setTimeout(completeInflection, 100);
+                        }
+                    } catch(e) { /* swallow */ }
+                }
+            });
+            
+            // Also handle exiting sections separately (always remove their links)
+            const exitingEntries = entries.filter(e => !e.isIntersecting);
+            exitingEntries.forEach(en => {
+                // Section is leaving view - remove active class from all its links
+                const sec = en.target;
+                const sectionText = sec.textContent.substring(0, 50).replace(/\s+/g, ' ');
+                                    try {
+                    const allLinks = Array.from(sec.querySelectorAll('a:not(.dontinflect)'));
+                    if (allLinks.length > 0) {
+                                                }
+                    allLinks.forEach(link => link.classList.remove('active'));
+                    // Mark that caption needs update after all sections processed
+                    captionNeedsUpdate = true;
+                } catch(e) { /* swallow */ }
+            });
+            
+            // Update caption ONCE after all section entries have been processed
+            // Use setTimeout to ensure all active class changes have been applied  
+            if (captionNeedsUpdate) {
+                setTimeout(() => {
+                    try {
+                        if (window.__updateInflectCaption) window.__updateInflectCaption();
+                    } catch(e) { /* swallow */ }
+                }, 0);
+            }
+        }, { threshold: 0.25 });
+
+        // Global: Track current section regardless of snap/fs-video-mobile
+        // Applies 'current' to body > main > section, but only when not animating
+        (function(){
+            function updateCurrentSection() {
+                if (window.__scrollAnimating) return;
+                try {
+                    const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const viewportHeight = window.innerHeight;
+                    const viewportCenter = currentScrollTop + (viewportHeight / 2);
+                    const allSections = Array.from(document.querySelectorAll('main > section'))
+                        .filter(el => el && el.offsetParent !== null);
+                    if (!allSections.length) return;
+                    const sectionPositions = allSections.map(section => {
+                        const rect = section.getBoundingClientRect();
+                        return { element: section, top: rect.top + currentScrollTop };
+                    });
+                    let currentSection = null;
+                    let best = null;
+                    sectionPositions.forEach(pos => {
+                        if (pos.top <= viewportCenter) {
+                            if (!best || pos.top > best.top) best = pos;
+                        }
+                    });
+                    currentSection = best ? best.element : (sectionPositions[0] && sectionPositions[0].element);
+                    allSections.forEach(s => s.classList.remove('current'));
+                    if (currentSection) currentSection.classList.add('current');
+                } catch(e) { /* swallow */ }
+            }
+            let scheduled = false;
+            function scheduleUpdate() {
+                if (scheduled) return;
+                scheduled = true;
+                requestAnimationFrame(() => { scheduled = false; updateCurrentSection(); });
+            }
+            // Run once on load and on resize/scroll globally
+            window.addEventListener('load', scheduleUpdate, { passive: true });
+            window.addEventListener('resize', scheduleUpdate, { passive: true });
+            document.addEventListener('scroll', scheduleUpdate, { passive: true });
+            // When programmatic smooth scroll ends, update immediately
+            window.__onSmoothScrollDone = () => { updateCurrentSection(); };
+            // Initial kick
+            scheduleUpdate();
+        })();
+
+        // If the page requests `body.snap`, enable page-centering snap behavior.
+        // This magnetizes sections to the center of the viewport and installs
+        // wheel/keyboard handlers to flip between sections.
+        if (document.body.classList && document.body.classList.contains('snap')) {
+            // Choose the element that actually scrolls. Prefer <main> only if it
+            // is scrollable; fall back to the document scrolling element otherwise.
+            function chooseScroller() {
+                const mainEl = document.querySelector('main');
+                try {
+                    if (mainEl && mainEl.scrollHeight > (mainEl.clientHeight || 0)) return mainEl;
+                } catch(e){}
+                return (document.scrollingElement || document.documentElement);
+            }
+            const scroller = chooseScroller();
+
+            // Helper to compute the index of the section closest to current scroll position
+            // Uses section top position instead of center for better short-section handling
+            function _snapCurrentIndex() {
+                const secs = Array.from(scroller.querySelectorAll('section'));
+                if (!secs.length) return 0;
+                
+                // Use viewport-relative coordinates (getBoundingClientRect) for accuracy
+                const viewportHeight = scroller.clientHeight || window.innerHeight;
+                const viewportMiddle = viewportHeight / 2;
+                
+                let best = 0, bestDist = Infinity;
+                secs.forEach((s, i) => {
+                    // Get viewport-relative position
+                    const rect = s.getBoundingClientRect();
+                    // Find section whose center is closest to viewport center
+                    const secCenter = rect.top + (rect.height / 2);
+                    const d = Math.abs(secCenter - viewportMiddle);
+                    if (d < bestDist) { bestDist = d; best = i; }
+                });
+                return best;
+            }
+
+            function _snapToSection(sec, smooth = true) {
+                try {
+                    // On mobile, snap higher to avoid browser UI cropping text
+                    // Use a smaller vertical offset on mobile devices
+                    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 768;
+                    let top;
+                    
+                    if (isMobile) {
+                        // Different snap positions based on section type and content height
+                        // Pull up MORE to prevent Safari mobile UI from cropping text
+                        const isSubheader = sec.classList.contains('subheader');
+                        
+                        if (isSubheader) {
+                            // Subheaders are 100vh tall with centered content - pull up 10vh to avoid Safari UI
+                            const viewportHeight = scroller.clientHeight;
+                            const pullUp = viewportHeight * 0.1;
+                            top = Math.max(0, sec.offsetTop - pullUp);
+                        } else {
+                            // Regular sections: 80vh tall with justify-content:end (content at bottom)
+                            // Need aggressive pull-up to keep text visible above Safari mobile UI
+                            const viewportHeight = scroller.clientHeight;
+                            
+                            // Detect if section content is short
+                            const secHeight = sec.offsetHeight || viewportHeight * 0.8;
+                            const contentHeight = sec.scrollHeight;
+                            
+                            let pullUpRatio;
+                            if (contentHeight < secHeight * 0.4) {
+                                // Short content - moderate pull-up (20vh)
+                                pullUpRatio = 0.2;
+                            } else {
+                                // Regular/long content - aggressive pull-up (30vh) to avoid Safari UI
+                                pullUpRatio = 0.3;
+                            }
+                            
+                            const pullUp = viewportHeight * pullUpRatio;
+                            top = Math.max(0, sec.offsetTop - pullUp);
+                        }
+                    } else {
+                        // On desktop: center vertically as before
+                        top = Math.max(0, sec.offsetTop - Math.round((scroller.clientHeight - sec.offsetHeight) / 2));
+                    }
+                    
+                    // Mark snap animation as in progress
+                    window.__snapAnimationInProgress = true;
+                    
+                    // If our global helper exists, use it for a softer, velocity-like animation
+                    if (window.__smoothScrollTo && smooth) {
+                        window.__smoothScrollTo(scroller, top, { source: 'snap' });
+                        // smoothScrollTo should manage suppression, but ensure flag clears
+                        setTimeout(() => { window.__snapAnimationInProgress = false; }, 1600);
+                    } else {
+                        // fallback to native smooth behavior
+                        try { window.__snapSuppressUntil = Date.now() + 1000; } catch(e){}
+                        if (scroller === document.scrollingElement || scroller === document.documentElement) {
+                            window.scrollTo({ top, behavior: smooth ? 'smooth' : 'auto' });
+                        } else {
+                            scroller.scrollTo({ top, behavior: smooth ? 'smooth' : 'auto' });
+                        }
+                        // Clear animation flag after scroll completes
+                        setTimeout(() => { window.__snapAnimationInProgress = false; }, 1000);
+                    }
+                } catch (e) { /* swallow */ }
+            }
+
+            // Track last user scroll time
+            let lastUserScrollTime = 0;
+            let scrollEndTimeout = null;
+            let lastScrollTop = 0;
+            window.__programmaticScrollInProgress = false;
+            
+            scroller.addEventListener('scroll', () => {
+                const currentScrollTop = scroller.scrollTop || 0;
+                
+                // Track user scroll time (not during programmatic scrolls)
+                if (!window.__programmaticScrollInProgress) {
+                    lastUserScrollTime = Date.now();
+                }
+                
+                // Note: scroll-end snap verification disabled to prevent conflicts with
+                // programmatic snaps on mobile Safari. The wheel event handlers already
+                // provide complete snap control.
+                
+                lastScrollTop = currentScrollTop;
+            }, { passive: true });
+
+            // Attach snap observer to each section (for stabilization only)
+            try {
+                const _secs = Array.from(scroller.querySelectorAll('section'));
+                
+                // SNAP STABILIZATION: Lock section heights after fonts load and layout settles
+                // Section heights are now handled by CSS
+                function stabilizeSectionHeights() {
+                    // No-op: CSS handles min-height instead of JS
+                }
+                
+                // Wait for fonts and images to load before stabilizing
+                if (document.fonts && document.fonts.ready) {
+                    document.fonts.ready.then(() => {
+                        // Give a small delay for any pending reflows
+                        setTimeout(stabilizeSectionHeights, 100);
+                    });
+                } else {
+                    // Fallback if Fonts API not available
+                    setTimeout(stabilizeSectionHeights, 500);
+                }
+            } catch(e) { /* swallow */ }
+
+            // (Current-section tracking is now global)
+
+            // Complete scroll takeover: ignore all browser scroll behavior and velocity
+            // Only direction matters - one gesture = one section, regardless of speed
+            try {
+                scroller.addEventListener('wheel', (ev) => {
+                    try {
+                        // If event originated inside an element that should not snap (e.g. maps), skip
+                        const path = ev.composedPath && ev.composedPath();
+                        for (const node of (path || [])) {
+                            if (!node || !node.nodeType) continue;
+                            const el = node;
+                            if (el.classList && (el.classList.contains('no-snap') || el.closest && el.closest('.no-snap'))) return;
+                        }
+                        
+                        // ALWAYS prevent default scrolling - complete takeover
+                        try { ev.preventDefault(); ev.stopPropagation(); } catch(e){}
+                        
+                        // Suppress all events during animation - NO velocity effect
+                        // Check both the time-based flag AND the animation-in-progress flag
+                        if (Date.now() < (window.__snapSuppressUntil || 0) || window.__snapAnimationInProgress) return;
+                        
+                        const delta = ev.deltaY || 0;
+                        if (Math.abs(delta) < 1) return; // ignore tiny deltas
+                        
+                        // Get all sections
+                        const secs = Array.from(scroller.querySelectorAll('section'));
+                        if (!secs.length) return;
+                        
+                        const idx = _snapCurrentIndex();
+                        if (delta > 0) {
+                            // Scroll down - move exactly ONE section
+                            const next = Math.min(secs.length - 1, idx + 1);
+                            // Only snap if we're moving to a different section AND not already snapping
+                            if (next !== idx && !window.__snapAnimationInProgress) {
+                                // Block ALL wheel events until animation completes
+                                window.__snapSuppressUntil = Date.now() + 1500;
+                                _snapToSection(secs[next], true);
+                            }
+                        } else {
+                            // Scroll up - move exactly ONE section
+                            const prev = Math.max(0, idx - 1);
+                            // Only snap if we're moving to a different section AND not already snapping
+                            if (prev !== idx && !window.__snapAnimationInProgress) {
+                                // Block ALL wheel events until animation completes
+                                window.__snapSuppressUntil = Date.now() + 1500;
+                                _snapToSection(secs[prev], true);
+                            }
+                        }
+                    } catch(e) { /* swallow */ }
+                }, { passive: false, capture: true });
+            } catch(e) { /* swallow */ }
+
+            // Window-level fallback - complete takeover of all scroll behavior
+            try {
+                window.addEventListener('wheel', (wev) => {
+                    try {
+                        // ALWAYS prevent default - complete takeover
+                        try { wev.preventDefault(); wev.stopPropagation(); } catch(e){}
+                        
+                        // Suppress all events during animation - NO velocity effect
+                        // Check both the time-based flag AND the animation-in-progress flag
+                        if (Date.now() < (window.__snapSuppressUntil || 0) || window.__snapAnimationInProgress) return;
+                        
+                        const delta = wev.deltaY || 0;
+                        if (Math.abs(delta) < 1) return; // ignore tiny deltas
+                        
+                        const secs = Array.from((document.scrollingElement || document.documentElement).querySelectorAll('section'));
+                        if (!secs.length) return;
+                        
+                        const idx = _snapCurrentIndex();
+                        if (delta > 0) {
+                            // Scroll down - move exactly ONE section
+                            const next = Math.min(secs.length - 1, idx + 1);
+                            // Only snap if we're moving to a different section AND not already snapping
+                            if (next !== idx && !window.__snapAnimationInProgress) {
+                                // Block ALL wheel events until animation completes
+                                window.__snapSuppressUntil = Date.now() + 1500;
+                                _snapToSection(secs[next], true);
+                            }
+                        } else {
+                            // Scroll up - move exactly ONE section
+                            const prev = Math.max(0, idx - 1);
+                            // Only snap if we're moving to a different section AND not already snapping
+                            if (prev !== idx && !window.__snapAnimationInProgress) {
+                                // Block ALL wheel events until animation completes
+                                window.__snapSuppressUntil = Date.now() + 1500;
+                                _snapToSection(secs[prev], true);
+                            }
+                        }
+                    } catch(e) { /* swallow */ }
+                }, { passive: false, capture: true });
+            } catch(e) { /* swallow */ }
+
+            // Keyboard navigation for snapping (remain on document)
+            document.addEventListener('keydown', (ev) => {
+                try {
+                    // Skip if animation or snap suppression is active
+                    if (Date.now() < (window.__snapSuppressUntil || 0) || window.__snapAnimationInProgress) return;
+                    if (!['ArrowDown','PageDown',' ','ArrowUp','PageUp'].includes(ev.key)) return;
+                    // Ignore when focus is on an input/textarea/select
+                    const tag = (document.activeElement && document.activeElement.tagName || '').toLowerCase();
+                    if (['input','textarea','select'].includes(tag)) return;
+                    ev.preventDefault();
+                    ev.stopPropagation();
+                    const secs = Array.from(scroller.querySelectorAll('section'));
+                    if (!secs.length) return;
+                    const idx = _snapCurrentIndex();
+                    if (ev.key === 'ArrowDown' || ev.key === 'PageDown' || ev.key === ' ') {
+                        const next = Math.min(secs.length - 1, idx + 1);
+                        if (next !== idx) _snapToSection(secs[next], true);
+                    } else if (ev.key === 'ArrowUp' || ev.key === 'PageUp') {
+                        const prev = Math.max(0, idx - 1);
+                        if (prev !== idx) _snapToSection(secs[prev], true);
+                    }
+                } catch(e) { /* swallow */ }
+            }, true);
+        }
+
+        // Add observer to all links and attach click handlers to inflection links
+        const inflectLinks = document.querySelectorAll('a');
+        inflectLinks.forEach(link => {
+            observer.observe(link);
+            const hrefAttr = (link.getAttribute('href') || '').trim();
+            // Treat any non-empty href as an inflection-link candidate. This allows
+            // external URLs as well as local paths to be handled by the iframe
+            // forwarding logic via IntersectionObserver. Skip empty hrefs or javascript/mailto pseudo-links.
+            const isInflection = hrefAttr && !hrefAttr.toLowerCase().startsWith('javascript:') && !hrefAttr.toLowerCase().startsWith('mailto:');
+            
+            if (!isInflection) {
+                // mark external/non-inflection links so they can be styled differently
+                link.classList.add('dontinflect');
+            }
+            
+            // Links with data-reload attribute will force a page reload when clicked
+            if (link.hasAttribute('data-reload')) {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    window.location.href = link.href;
+                });
+            }
+            // Note: Regular links navigate normally when clicked
+            // The IntersectionObserver handles loading content into iframes when links enter viewport
+        });
+
+        // Initial load: in dual-iframe mode, load all visible links from first section
+        // In single-iframe mode, just load the first link
+        const isDualMode = document.body.classList.contains('dual-iframe');
+        if (isDualMode) {
+            // Find first section and load all its links
+            const firstSection = document.querySelector('main section');
+            if (firstSection) {
+                const allLinks = Array.from(firstSection.querySelectorAll('a:not(.dontinflect)'));
+                allLinks.forEach((link, index) => {
+                    // In dual-iframe mode, mark ALL links as active since we load them all
+                    link.classList.add('active');
+                    const rawHref = link.getAttribute('href');
+                    if (rawHref) {
+                        // In dual-iframe mode, load all links immediately without timeout
+                        // (setIframeNext uses a single global timeout that gets cancelled by subsequent calls)
+                        try { 
+                            const full = new URL(rawHref, window.location.href).href; 
+                            setIframeIfPathChanged(full);
+                        } catch(e){ 
+                            setIframeIfPathChanged(link.href); 
+                        }
+                    }
+                });
+                if (allLinks.length > 0) {
+                    try { 
+                        if (window.__updateInflectCaption) {
+                            // Update caption based on all active links
+                            window.__updateInflectCaption();
+                        }
+                    } catch(e){}
+                }
+            }
+        } else {
+            // Single iframe mode: load first link immediately (avoid initial delay)
+            const firstLink = document.querySelector('main a:not(.dontinflect)');
+            if (firstLink) {
+                firstLink.classList.add('active');
+                const rawHref = firstLink.getAttribute('href');
+                try { const full = new URL(rawHref, window.location.href).href; setIframeIfPathChanged(full); } catch(e){ setIframeIfPathChanged(firstLink.href); }
+                try { if (window.__updateInflectCaption) window.__updateInflectCaption(); } catch(e){}
+            }
+        }
+
+        // Register section observer for sections with inflection links
+        try {
+            const secs = Array.from(document.querySelectorAll('main section'));
+            secs.forEach((s, index) => {
+                try { 
+                    if (s.querySelector('a:not(.dontinflect)')) {
+                        sectionObserver.observe(s);
+                    }
+                } catch(e){
+                                    }
+            });
+        } catch(e){
+                    }
+
+    }
+
+    function scrollToNextSection() {
+        const sections = Array.from(document.querySelectorAll('main section'));
+        const target = sections.find(section => {
+            const rect = section.getBoundingClientRect();
+            return rect.top > 1;
+        });
+        if (target) target.scrollIntoView({ behavior: 'smooth' });            
+    }
+
+    function scrollToPreviousSection() {
+        const sections = Array.from(document.querySelectorAll('main section'));
+        for (let i = sections.length - 1; i >= 0; i--) {
+            const rect = sections[i].getBoundingClientRect();
+            if (rect.bottom < -1) {
+                sections[i].scrollIntoView({ behavior: 'smooth' });
+                break;
+            }
+        }
+    }
+    // scroll up when pressing Escape
+    // scroll to next or previous sections using space bar or arrow keys
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        else if (
+            event.key === 'ArrowDown' ||
+            event.key === 'ArrowUp' ||
+            event.key === ' '  // space key
+        ) {
+            // determine direction
+            const goingDown = (
+                event.key === 'ArrowDown' ||
+                (event.key === ' ' && !event.shiftKey)
+            );
+
+            const goingUp = (
+                event.key === 'ArrowUp' ||
+                (event.key === ' ' && event.shiftKey)
+            );
+
+            event.preventDefault();
+            if (goingDown) scrollToNextSection();
+            else if (goingUp) scrollToPreviousSection();                            
+
+        }
+    });
+
+    // Load, parse, and display markdown on page load (debounced scheduler prevents rapid duplicate runs)
+    (function(){
+        window.__renderMarkdownTimer = null;
+        window.scheduleRenderMarkdown = function(delay){
+            try { if (window.__renderMarkdownTimer) clearTimeout(window.__renderMarkdownTimer); } catch(e){}
+            window.__renderMarkdownTimer = setTimeout(() => { try { renderMarkdown(); } catch(e){}; window.__renderMarkdownTimer = null; }, (typeof delay === 'number' ? delay : 50));
+        };
+    })();
+    window.scheduleRenderMarkdown(0);
+    
+    // Listen for hash changes and reload the page to ensure clean state
+    window.addEventListener('hashchange', () => {
+        // Extract the file name from both old and new hash
+        const currentHash = window.location.hash.substring(1).replace(/:\d+$/, '') || 'README';
+        const lastRendered = window.__lastRenderSuccessHash || 'README';
+        
+        // If switching to a different file, reload the page
+        if (currentHash !== lastRendered) {
+            window.location.reload();
+        }
+    });
+
+        // Load Typed.js library from CDN
+        (function(){
+            const script = document.createElement('script');
+            script.src = 'https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js';
+            script.defer = true;
+            script.onload = function() {
+                // Load our optimized typewriter wrapper after Typed.js loads
+                const wrapper = document.createElement('script');
+                wrapper.src = 'src/typewriter-typed.js';
+                wrapper.defer = true;
+                document.head.appendChild(wrapper);
+            };
+            document.head.appendChild(script);
+        })();
+</script>
+<script src="analytics.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+{
+  "website": "akhbaralaan",
+  "snapshot_date": "2026-08-27T05:39:21",
+  "pagination_type": "infinite scroll",
+  "scroll_mode": "scroll",
+  "scroll_rounds_requested": 2,
+  "load_more_selector": null,
+  "listing_url": "https://akhbaralaan.net/author/wassim",
+  "input_urls": [
+    "https://akhbaralaan.net/author/wassim"
+  ],
+  "pagination_pattern": null,
+  "requirements": "title, date, article body text",
+  "run_dir": "orch_runs/run_20260827_052609",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://akhbaralaan.net/author/wassim",
+      "file": "listing_page_001.html",
+      "bytes": 120909,
+      "sha1": "e7c1dbf2f6d97449da2db60b5d5d37295f045424"
+    },
+    {
+      "page_num": 1,
+      "url": "https://akhbaralaan.net/author/wassim",
+      "file": "listing_page_001_expanded.html",
+      "bytes": 119173,
+      "sha1": "c0c71f93a6c6982a9c3c8b87c8f74d7053d4fd7b",
+      "expanded": true
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://akhbaralaan.net/news/documentaries",
+      "title": "وثائقيات",
+      "page_num": 1,
+      "bytes": 131952,
+      "sha1": "fd16b0a2a530c6f76bebed807e98bdabff792093"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://akhbaralaan.net/news/exclusive",
+      "title": "حصري",
+      "page_num": 1,
+      "bytes": 127093,
+      "sha1": "7baf9a5e067602b79acd0104cd63d31c125b393f"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://akhbaralaan.net/news/special-reports",
+      "title": "ملفات هامة",
+      "page_num": 1,
+      "bytes": 128044,
+      "sha1": "8e5a03de65f939bce80896f101b8420f851ca764"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://akhbaralaan.net/news/documentaries/2024/02/05/%d8%b7%d8%a7%d8%a6%d8%b1%d8%a9-%d8%b5%d8%ba%d9%8a%d8%b1%d8%a9-%d8%aa%d8%b1%d8%a8%d9%83-%d8%a7%d9%84%d8%b1%d9%88%d8%b3-%d9%81%d9%8a-%d8%a3%d9%88%d9%83%d8%b1%d8%a7%d9%86%d9%8a%d8%a7-%d8%a3%d9%83%d8%a8%d8%b1-%d9%85%d9%86%d8%b8%d9%85%d8%a9-%d8%aa%d9%83%d8%b4%d9%81-%d8%af%d9%88%d8%b1-%d8%a5%d9%8a%d8%b1%d8%a7%d9%86-%d9%88%d8%a7%d9%84%d8%b5%d9%8a%d9%86-%d9%81%d9%8a-%d8%a7%d9%84%d8%ad%d8%b1%d8%a8",
+      "title": "طائرة صغيرة تربك الروس في أوكرانيا.. أكبر منظمة تكشف دور إيران والصين في الحرب",
+      "page_num": 1,
+      "bytes": 170531,
+      "sha1": "1d3e3685c4db24dcb1d607ac26de94d7196a25ec"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://akhbaralaan.net/stories/%d8%a5%d9%8a%d8%b1%d8%a7%d9%86-%d8%aa%d8%ba%d8%b1%d9%82-%d8%a7%d9%84%d8%b9%d8%b1%d8%a7%d9%82-%d8%a8%d8%a7%d9%84%d8%a5%d8%b1%d9%87%d8%a7%d8%a8-%d8%a7%d9%84%d8%a3%d8%a8%d9%8a%d8%b6",
+      "title": "إيران تغرق العراق بالإرهاب الأبيض",
+      "page_num": 1,
+      "bytes": 917038,
+      "sha1": "ee9c900ebf6334eb535f45c504f07480f70553e4"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://akhbaralaan.net/news/special-reports/2024/01/25/%d9%85%d8%b1%d8%b6%d9%89-%d8%a7%d9%84%d9%83%d9%84%d9%89-%d9%81%d9%8a-%d8%b1%d9%81%d8%ad-%d9%88%d8%af%d9%8a%d8%b1-%d8%a7%d9%84%d8%a8%d9%84%d8%ad-%d9%8a%d8%aa%d9%85%d9%86%d9%91%d9%88%d9%86-%d8%a7%d9%84%d9%85%d9%88%d8%aa-%d8%a3%d8%ae%d8%a8%d8%a7%d8%b1-%d8%a7%d9%84%d8%a2%d9%86-%d8%aa%d8%b1%d8%b5%d8%af-%d8%a7%d9%84%d9%85%d8%b9%d8%a7%d9%86%d8%a7%d8%a9-%d8%b9%d9%86-%d9%82%d8%b1%d8%a8",
+      "title": "مرضى الكلى في رفح ودير البلح يتمنّون الموت.. أخبار الآن ترصد المعاناة عن قرب",
+      "page_num": 1,
+      "bytes": 157531,
+      "sha1": "e01bdcb0f0f2e836c5bee98b831bbe8315fc4a64"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://akhbaralaan.net/stories/%d8%ae%d9%84%d8%a7%d9%81%d8%a9-%d8%a7%d9%84%d9%88%d8%b1%d9%8a%d8%ab-%d9%82%d9%8a%d8%af-%d8%a7%d9%84%d8%aa%d9%86%d9%81%d9%8a%d8%b0-%d8%a8%d8%b9%d8%af-%d8%b9%d9%84%d9%8a-%d8%ae%d8%a7%d9%85%d9%86%d8%a6%d9%8a-%d9%85%d9%86-%d8%b3%d9%8a%d9%83%d9%88%d9%86-%d8%a7%d9%84%d9%85%d8%b1%d8%b4%d8%af-%d8%a7%d9%84%d8%a3%d8%b9%d9%84%d9%89-%d9%81%d9%8a-%d8%a5%d9%8a%d8%b1%d8%a7%d9%86%d8%9f",
+      "title": "خلافة الوريث قيد التنفيذ.. بعد علي خامنئي من سيكون المرشد الأعلى في إيران؟",
+      "page_num": 1,
+      "bytes": 868735,
+      "sha1": "b03a3151372460e49017027f24cf8dc24767771f"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://akhbaralaan.net/stories/%d9%86%d8%a7%d8%b1%d9%83%d9%88%d8%b3-%d8%a7%d9%84%d8%ad%d8%b1%d8%b3-%d8%a7%d9%84%d8%ab%d9%88%d8%b1%d9%8a-%d8%a5%d9%84%d9%8a%d9%83%d9%85-%d8%a3%d8%b3%d8%b1%d8%a7%d8%b1-%d9%82%d8%a7%d8%af%d8%a9-%d8%aa%d8%ac%d9%91%d8%a7%d8%b1-%d8%a7%d9%84%d9%85%d8%ae%d8%af%d9%91%d8%b1%d8%a7%d8%aa",
+      "title": "ناركوس الحرس الثوري.. إليكم أسرار قادة تجّار المخدّرات",
+      "page_num": 1,
+      "bytes": 857132,
+      "sha1": "f61016bdcd332603a38d680c74d0cf7ff3dc1f5b"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://akhbaralaan.net/news/documentaries/2023/12/14/%d8%b3%d8%ac%d9%86-%d9%84%d9%88%d9%83%d8%a7%d8%b4%d9%83%d8%b3-%d8%a7%d9%84%d8%b1%d9%88%d8%b3%d9%8a-%d8%ad%d9%8a%d8%ab-%d8%a7%d9%84%d8%a3%d8%b1%d9%88%d8%a7%d8%ad-%d8%a7%d9%84%d8%b9%d8%a7%d9%84%d9%82%d8%a9-%d8%ba%d8%a7%d8%af%d8%b1-%d8%a7%d9%84%d8%ac%d9%85%d9%8a%d8%b9-%d9%84%d9%83%d9%86-%d8%a8%d9%82%d9%8a-%d8%b3%d8%ac%d9%8a%d9%86-%d9%88%d8%a7%d8%ad%d8%af",
+      "title": "سجن لوكاشكس الروسي حيث \"الأرواح العالقة\".. غادر الجميع لكن بقي سجين واحد!",
+      "page_num": 1,
+      "bytes": 149927,
+      "sha1": "19a4d54a8bc00ea8228c3ca95619e6323d7686c9"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 2,
+    "articles": 9,
+    "article_fetch_failures": 0
+  }
+}

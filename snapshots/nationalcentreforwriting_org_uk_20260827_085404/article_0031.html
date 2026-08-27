@@ -1,0 +1,2170 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+<script>
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}});
+</script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <script src="https://webcomponents.spektrix.com/stable/webcomponents-loader.js"></script>
+	<script src="https://webcomponents.spektrix.com/stable/spektrix-component-loader.js" data-components="spektrix-donate,spektrix-merchandise,spektrix-basket-summary,spektrix-memberships,spektrix-gift-vouchers" async></script>
+  <script type="text/javascript" src="https://tickets.nationalcentreforwriting.org.uk/writerscentre/website/scripts/integrate.js"></script>
+
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v28.3 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>The world of self-publishing: Pip Landers-Letts on Pyg | National Centre for Writing | NCW</title>
+	<meta name="description" content="In this episode of The Writing Life Podcast, award-winning writer Pip Landers-Letts discusses self-publishing her action-packed novel Pyg." />
+	<link rel="canonical" href="https://nationalcentreforwriting.org.uk/writing-hub/self-publishing-pip-landers-letts-podcast/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="The world of self-publishing: Pip Landers-Letts on Pyg" />
+	<meta property="og:description" content="In this episode of The Writing Life Podcast, award-winning writer Pip Landers-Letts discusses self-publishing her action-packed novel Pyg." />
+	<meta property="og:url" content="https://nationalcentreforwriting.org.uk/writing-hub/self-publishing-pip-landers-letts-podcast/" />
+	<meta property="og:site_name" content="National Centre for Writing | NCW" />
+	<meta property="article:modified_time" content="2026-07-27T09:48:05+00:00" />
+	<meta property="og:image" content="https://nationalcentreforwriting.org.uk/wp-content/uploads/2025/11/Pip-Landers-Letts-.png" />
+	<meta property="og:image:width" content="900" />
+	<meta property="og:image:height" content="900" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="45 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/self-publishing-pip-landers-letts-podcast\/","url":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/self-publishing-pip-landers-letts-podcast\/","name":"The world of self-publishing: Pip Landers-Letts on Pyg | National Centre for Writing | NCW","isPartOf":{"@id":"https:\/\/nationalcentreforwriting.org.uk\/#website"},"primaryImageOfPage":{"@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/self-publishing-pip-landers-letts-podcast\/#primaryimage"},"image":{"@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/self-publishing-pip-landers-letts-podcast\/#primaryimage"},"thumbnailUrl":"https:\/\/nationalcentreforwriting.org.uk\/wp-content\/uploads\/2025\/11\/Pip-Landers-Letts-.png","datePublished":"2026-07-27T04:05:00+00:00","dateModified":"2026-07-27T09:48:05+00:00","description":"In this episode of The Writing Life Podcast, award-winning writer Pip Landers-Letts discusses self-publishing her action-packed novel Pyg.","breadcrumb":{"@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/self-publishing-pip-landers-letts-podcast\/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/self-publishing-pip-landers-letts-podcast\/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/self-publishing-pip-landers-letts-podcast\/#primaryimage","url":"https:\/\/nationalcentreforwriting.org.uk\/wp-content\/uploads\/2025\/11\/Pip-Landers-Letts-.png","contentUrl":"https:\/\/nationalcentreforwriting.org.uk\/wp-content\/uploads\/2025\/11\/Pip-Landers-Letts-.png","width":900,"height":900},{"@type":"BreadcrumbList","@id":"https:\/\/nationalcentreforwriting.org.uk\/writing-hub\/self-publishing-pip-landers-letts-podcast\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/nationalcentreforwriting.org.uk\/"},{"@type":"ListItem","position":2,"name":"The world of self-publishing: Pip Landers-Letts on Pyg"}]},{"@type":"WebSite","@id":"https:\/\/nationalcentreforwriting.org.uk\/#website","url":"https:\/\/nationalcentreforwriting.org.uk\/","name":"National Centre for Writing | NCW","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/nationalcentreforwriting.org.uk\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="National Centre for Writing | NCW &raquo; Feed" href="https://nationalcentreforwriting.org.uk/feed/" />
+<link rel="alternate" type="application/rss+xml" title="National Centre for Writing | NCW &raquo; Comments Feed" href="https://nationalcentreforwriting.org.uk/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="National Centre for Writing | NCW &raquo; The world of self-publishing: Pip Landers-Letts on Pyg Comments Feed" href="https://nationalcentreforwriting.org.uk/writing-hub/self-publishing-pip-landers-letts-podcast/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://nationalcentreforwriting.org.uk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnationalcentreforwriting.org.uk%2Fwriting-hub%2Fself-publishing-pip-landers-letts-podcast%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://nationalcentreforwriting.org.uk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fnationalcentreforwriting.org.uk%2Fwriting-hub%2Fself-publishing-pip-landers-letts-podcast%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='search-filter-plugin-styles-css' href='https://nationalcentreforwriting.org.uk/wp-content/plugins/search-filter-pro/public/assets/css/search-filter.min.css?ver=2.5.21' media='all' />
+<link rel='stylesheet' id='ncw-style-css' href='https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/style.css?ver=1771947514' media='all' />
+<link rel='stylesheet' id='mobile-nav-css' href='https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/lib/mobile-navigation/mmenu.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='ncw-slick-style-css' href='https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/css/slick.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='ncw-slick-theme-css' href='https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/css/slick-theme.css?ver=7.1' media='all' />
+<link rel='stylesheet' id='moove_gdpr_frontend-css' href='https://nationalcentreforwriting.org.uk/wp-content/plugins/gdpr-cookie-compliance/dist/styles/gdpr-main-nf.css?ver=5.1.0' media='all' />
+<style id="moove_gdpr_frontend-inline-css">
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.moove-gdpr-infobar-settings-btn,
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-settings-btn {
+					background-color: transparent;
+					box-shadow: inset 0 0 0 1px currentColor;
+					opacity: .7;
+					color: #202020;
+				}
+
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.moove-gdpr-infobar-settings-btn:hover,
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-settings-btn:hover {
+					background-color: #202020;
+					box-shadow: none;
+					color: #fff;
+					opacity: 1;
+				}
+
+				#moove_gdpr_cookie_info_bar:not(.gdpr-full-screen-infobar).moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.moove-gdpr-infobar-settings-btn, #moove_gdpr_cookie_info_bar:not(.gdpr-full-screen-infobar).moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-settings-btn {
+					background-color: transparent;
+					box-shadow: inset 0 0 0 1px currentColor;
+					opacity: .7;
+					color: #fff;
+				}
+
+				#moove_gdpr_cookie_info_bar:not(.gdpr-full-screen-infobar).moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.moove-gdpr-infobar-settings-btn:hover, #moove_gdpr_cookie_info_bar:not(.gdpr-full-screen-infobar).moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-settings-btn:hover {
+					box-shadow: none;
+					opacity: 1;
+					color: #202020;
+					background-color: #fff;
+				}
+							#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main h3.tab-title, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main span.tab-title,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content .moove-gdpr-branding-cnt a,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton,
+				#moove_gdpr_cookie_modal .cookie-switch .cookie-slider:after, 
+				#moove_gdpr_cookie_modal .cookie-switch .slider:after, 
+				#moove_gdpr_cookie_modal .switch .cookie-slider:after, 
+				#moove_gdpr_cookie_modal .switch .slider:after,
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content p, 
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content p a,
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton, 
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h1, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h2, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h3, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h4, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h5, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content h6,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-modal-title .tab-title,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-tab-main h3.tab-title, 
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-tab-main span.tab-title,
+				#moove_gdpr_cookie_modal .moove-gdpr-modal-content.moove_gdpr_modal_theme_v2 .moove-gdpr-branding-cnt a {
+					font-weight: inherit				}
+			#moove_gdpr_cookie_modal,#moove_gdpr_cookie_info_bar,.gdpr_cookie_settings_shortcode_content{font-family:inherit}#moove_gdpr_save_popup_settings_button{background-color:#373737;color:#fff}#moove_gdpr_save_popup_settings_button:hover{background-color:#000}#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton,#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton{background-color:#f6a000}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton,.gdpr_cookie_settings_shortcode_content .gdpr-shr-button.button-green,.gdpr-blocked-recaptcha .gdpr-shr-button.button-green{background-color:#f6a000;border-color:#f6a000}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton:hover,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton:hover,.gdpr_cookie_settings_shortcode_content .gdpr-shr-button.button-green:hover,.gdpr-blocked-recaptcha .gdpr-shr-button.button-green:hover{background-color:#fff;color:#f6a000}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close span.gdpr-icon{background-color:#f6a000;border:1px solid #f6a000}#moove_gdpr_cookie_info_bar span.moove-gdpr-infobar-allow-all.focus-g,#moove_gdpr_cookie_info_bar span.moove-gdpr-infobar-allow-all:focus,#moove_gdpr_cookie_info_bar button.moove-gdpr-infobar-allow-all.focus-g,#moove_gdpr_cookie_info_bar button.moove-gdpr-infobar-allow-all:focus,#moove_gdpr_cookie_info_bar span.moove-gdpr-infobar-reject-btn.focus-g,#moove_gdpr_cookie_info_bar span.moove-gdpr-infobar-reject-btn:focus,#moove_gdpr_cookie_info_bar button.moove-gdpr-infobar-reject-btn.focus-g,#moove_gdpr_cookie_info_bar button.moove-gdpr-infobar-reject-btn:focus,#moove_gdpr_cookie_info_bar span.change-settings-button.focus-g,#moove_gdpr_cookie_info_bar span.change-settings-button:focus,#moove_gdpr_cookie_info_bar button.change-settings-button.focus-g,#moove_gdpr_cookie_info_bar button.change-settings-button:focus{-webkit-box-shadow:0 0 1px 3px #f6a000;-moz-box-shadow:0 0 1px 3px #f6a000;box-shadow:0 0 1px 3px #f6a000}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close i:hover,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close span.gdpr-icon:hover,#moove_gdpr_cookie_info_bar span[data-href]>u.change-settings-button{color:#f6a000}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li.menu-item-selected a span.gdpr-icon,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li.menu-item-selected button span.gdpr-icon{color:inherit}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a span.gdpr-icon,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button span.gdpr-icon{color:inherit}#moove_gdpr_cookie_modal .gdpr-acc-link{line-height:0;font-size:0;color:transparent;position:absolute}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close:hover i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content a:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content span.change-settings-button:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.change-settings-button:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content u.change-settings-button:hover,#moove_gdpr_cookie_info_bar span[data-href]>u.change-settings-button,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content span.change-settings-button.focus-g,span.change-settings-button:focus,button.change-settings-button.focus-g,button.change-settings-button:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content u.change-settings-button.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content u.change-settings-button:focus{color:#f6a000}#moove_gdpr_cookie_modal .moove-gdpr-branding.focus-g span,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main a.focus-g,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .gdpr-cd-details-toggle.focus-g{color:#f6a000}#moove_gdpr_cookie_modal.gdpr_lightbox-hide{display:none}#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton,#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton,.gdpr-shr-button,#moove_gdpr_cookie_info_bar .moove-gdpr-infobar-close-btn{border-radius:0}
+/*# sourceURL=moove_gdpr_frontend-inline-css */
+</style>
+<script id="jquery-js" src="//ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js?ver=20171012"></script>
+<script id="search-filter-plugin-build-js-extra">
+var SF_LDATA = {"ajax_url":"https://nationalcentreforwriting.org.uk/wp-admin/admin-ajax.php","home_url":"https://nationalcentreforwriting.org.uk/","extensions":[]};
+//# sourceURL=search-filter-plugin-build-js-extra
+</script>
+<script id="search-filter-plugin-build-js" src="https://nationalcentreforwriting.org.uk/wp-content/plugins/search-filter-pro/public/assets/js/search-filter-build.min.js?ver=2.5.21"></script>
+<script id="search-filter-plugin-chosen-js" src="https://nationalcentreforwriting.org.uk/wp-content/plugins/search-filter-pro/public/assets/js/chosen.jquery.min.js?ver=2.5.21"></script>
+<link rel="https://api.w.org/" href="https://nationalcentreforwriting.org.uk/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://nationalcentreforwriting.org.uk/wp-json/wp/v2/writing_hub/50290" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://nationalcentreforwriting.org.uk/xmlrpc.php?rsd" />
+<link rel='shortlink' href='https://nationalcentreforwriting.org.uk/?p=50290' />
+<meta name="cdp-version" content="1.5.6" /><link rel="pingback" href="https://nationalcentreforwriting.org.uk/xmlrpc.php">      	<style>
+		.internal_hero{
+			background-image: url("https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/default-header.png");
+      background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/default-header.png");
+      background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/default-header.png");
+      background-position: 0px 0px, 50% 50%;
+      background-size: auto, cover;
+      background-repeat: repeat, no-repeat;
+		}
+	</style>
+  <link rel='stylesheet' id='gform_basic-css' href='https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/css/dist/basic.min.css?ver=3.0.3' media='all' />
+<link rel='stylesheet' id='gform_theme_components-css' href='https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/css/dist/theme-components.min.css?ver=3.0.3' media='all' />
+<link rel='stylesheet' id='gform_theme-css' href='https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/css/dist/theme.min.css?ver=3.0.3' media='all' />
+
+</head>
+
+<body class="wp-singular writing_hub-template-default single single-writing_hub postid-50290 wp-theme-ncw">
+
+<div class="site_wrapper"> <!-- Site Wrapper -->
+
+	<div id="page" class="site">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+    
+    
+      <header id="masthead" class="site-header">
+
+        
+        <div class="logo_nav_holder"> <!-- Logo Nav Holder -->
+
+          <div class="logo"> <!-- Logo -->
+            <a href="https://nationalcentreforwriting.org.uk/" rel="home">
+              <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/ncw-logo.svg" alt="NCW Logo" />
+            </a>
+          </div> <!-- / Logo -->
+
+          <div class="nav_icon"><!-- Nav Icon -->
+            <a href="#mobile-navigation">
+              <div id="nav_icon" class="hamburger hamburger--squeeze">
+                <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+                </div>
+              </div>
+            </a>
+          </div> <!-- / Nav Icon -->
+
+          <div class="main_nav"> <!-- Main Nav -->
+
+            <nav id="site-navigation" class="main-navigation">
+              <div class="menu-menu-1-container"><ul id="primary-menu" class="menu"><li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-109"><a href="https://nationalcentreforwriting.org.uk/whats-on/">What’s On</a>
+<ul class="sub-menu">
+	<li id="menu-item-16582" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16582"><a href="https://nationalcentreforwriting.org.uk/whats-on/">All Events</a></li>
+	<li id="menu-item-51505" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51505"><a href="https://nationalcentreforwriting.org.uk/darkest-chapter/">Darkest Chapter</a></li>
+	<li id="menu-item-48417" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48417"><a href="https://nationalcentreforwriting.org.uk/whats-on/summer/">Summer at the National Centre for Writing</a></li>
+	<li id="menu-item-43339" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43339"><a href="https://nationalcentreforwriting.org.uk/programmes/browse-our-season-brochure/">Season Brochure</a></li>
+	<li id="menu-item-33130" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33130"><a href="https://nationalcentreforwriting.org.uk/the-global-page-2/">The Global Page  </a></li>
+</ul>
+</li>
+<li id="menu-item-63" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-63"><a href="https://nationalcentreforwriting.org.uk/get-involved/">Get involved</a>
+<ul class="sub-menu">
+	<li id="menu-item-62" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="https://nationalcentreforwriting.org.uk/get-involved/writers/">For writers</a></li>
+	<li id="menu-item-61" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="https://nationalcentreforwriting.org.uk/get-involved/translators/">For translators</a></li>
+	<li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="https://nationalcentreforwriting.org.uk/get-involved/communities/">For communities</a></li>
+	<li id="menu-item-825" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-825"><a href="https://nationalcentreforwriting.org.uk/get-involved/young-people/">For young people</a></li>
+	<li id="menu-item-826" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-826"><a href="https://nationalcentreforwriting.org.uk/get-involved/families/">For families</a></li>
+	<li id="menu-item-827" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-827"><a href="https://nationalcentreforwriting.org.uk/get-involved/schools/">For teachers</a></li>
+	<li id="menu-item-828" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-828"><a href="https://nationalcentreforwriting.org.uk/norwich-unesco-city-of-literature/">Norwich UNESCO City of Literature</a></li>
+</ul>
+</li>
+<li id="menu-item-55" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-55"><a href="https://nationalcentreforwriting.org.uk/academy/">Academy</a>
+<ul class="sub-menu">
+	<li id="menu-item-44919" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44919"><a href="https://nationalcentreforwriting.org.uk/the-writing-life-challenge/">The Writing Life Challenge</a></li>
+	<li id="menu-item-830" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-830"><a href="https://nationalcentreforwriting.org.uk/academy/tutored-courses/">Online tutored courses</a></li>
+	<li id="menu-item-832" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-832"><a href="https://nationalcentreforwriting.org.uk/academy/workshops/">Workshops</a></li>
+	<li id="menu-item-65" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65"><a href="https://nationalcentreforwriting.org.uk/academy/mentoring/">Mentoring</a></li>
+	<li id="menu-item-831" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-831"><a href="https://nationalcentreforwriting.org.uk/academy/live-evening-courses/">Evening courses</a></li>
+	<li id="menu-item-829" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-829"><a href="https://nationalcentreforwriting.org.uk/academy/self-paced-courses/">Self-paced online courses</a></li>
+	<li id="menu-item-8145" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8145"><a href="https://nationalcentreforwriting.org.uk/get-involved/writers/resources/">Free resources</a></li>
+</ul>
+</li>
+<li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="https://nationalcentreforwriting.org.uk/writing-hub/">Writing Hub</a></li>
+<li id="menu-item-10937" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10937"><a href="https://nationalcentreforwriting.org.uk/visit-us/">Visit</a>
+<ul class="sub-menu">
+	<li id="menu-item-27672" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27672"><a href="https://nationalcentreforwriting.org.uk/plan-your-visit/">Plan your visit</a></li>
+	<li id="menu-item-26050" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26050"><a href="https://nationalcentreforwriting.org.uk/writers-room/">Writers’ Room</a></li>
+	<li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="https://nationalcentreforwriting.org.uk/visit-us/the-literature-house/accessibility/">Accessibility</a></li>
+</ul>
+</li>
+<li id="menu-item-10938" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10938"><a href="https://nationalcentreforwriting.org.uk/about-us/">About us</a>
+<ul class="sub-menu">
+	<li id="menu-item-10731" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10731"><a href="https://nationalcentreforwriting.org.uk/support-us/">Join and support</a></li>
+	<li id="menu-item-14985" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14985"><a href="https://nationalcentreforwriting.org.uk/vacancies/">Join the team</a></li>
+	<li id="menu-item-14344" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14344"><a href="https://nationalcentreforwriting.org.uk/shop/">Shop</a></li>
+	<li id="menu-item-64" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"><a href="https://nationalcentreforwriting.org.uk/hire/">Hire Dragon Hall</a></li>
+	<li id="menu-item-38328" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38328"><a href="https://nationalcentreforwriting.org.uk/press/">Press</a></li>
+	<li id="menu-item-8326" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8326"><a href="https://nationalcentreforwriting.org.uk/in-the-region/">In the region</a></li>
+	<li id="menu-item-8094" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8094"><a href="https://nationalcentreforwriting.org.uk/contact/">Contact us</a></li>
+</ul>
+</li>
+<li id="menu-item-838" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-838"><a href="https://nationalcentreforwriting.org.uk/norwich-unesco-city-of-literature/">Norwich UNESCO City of Literature</a></li>
+<li id="menu-item-9085" class="mobile_only menu-item menu-item-type-custom menu-item-object-custom menu-item-9085"><a href="https://ncw-online.teachable.com/l/products">Academy Portal</a></li>
+</ul></div>            </nav><!-- #site-navigation -->
+
+            <div class="top_icons"> <!-- Top Icons -->
+
+              <a href="/my-account/"><img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/login-white.svg" width="32" height="32" alt="Profile Icon" /></a>
+              <spektrix-basket-summary client-name="writerscentre" custom-domain="tickets.nationalcentreforwriting.org.uk">
+                <a href="https://nationalcentreforwriting.org.uk/basket/" class="account_basket">
+                <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/basket-white.svg" width="32" height="32" alt="Basket Icon" />
+                <span class="basket_item_count" data-basket-item-count></span>
+                </a>
+              </spektrix-basket-summary>
+            </div> <!-- / Top Icons -->
+
+            <div class="top_link">
+              <a href="https://sso.teachable.com/secure/231323/identity/login/password" target="_blank">Academy Portal</a>
+            </div>
+
+          </div> <!-- / Main Nav -->
+
+          <div class="flyout-container" >
+
+            <div class="support_us_flyout flyout-button pink_bg" id="flyout-1-button" ><a href="#">SUPPORT NCW<img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/support_us_arrow.svg" alt="Arrow"/></a></div> <!-- Support Us Flyout -->
+
+            <div class="donation_form flyout flyout-1 pink_bg" id="donation_flyout"> <!-- Donation Form -->
+
+              <div class="donation_slider_holder"> <!-- Donation Slider Holder -->
+
+                <p class="donation_flyout_text">Every donation spreads the lifelong benefits of reading, writing and stories.</p>
+
+                <div class="donation_close"><a href="#close_search"><img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/close-white.svg" alt="X Close Icon" /></a></div>
+
+                
+                  <spektrix-donate id="steps-2801AQDNLVMHMKCPBDVJNRVPGGRHGRKHB" client-name="writerscentre" custom-domain="tickets.nationalcentreforwriting.org.uk" fund-id="2801AQDNLVMHMKCPBDVJNRVPGGRHGRKHB" forward-to="https://nationalcentreforwriting.org.uk/basket/">
+
+                      <p class="h5">Choose an amount: £<span data-display-donation-amount>0</span></p>
+                      <div class="donate_buttons">
+                        <button data-donate-amount="5">£5</button>
+                        <button data-donate-amount="10">£10</button>
+                        <button data-donate-amount="25">£25</button>
+                        <button data-donate-amount="50">£50</button>
+                        <label for="other" class="screen-reader-text">Other Amount:</label>
+                        <input class="donation_other" type="text" data-custom-donation-input placeholder="£ Other" name="other" id="other">
+                        <button class="donation_submit" data-submit-donation>add donation to basket</button>
+                      </div>
+
+                      <div data-success-container style="display: none;">Thank you. Your donation has been added to your basket.</div>
+                      <div data-fail-container style="display: none;">Sorry there was an issue with your donation. Please try again. If the problem persists please contact us.</div>
+
+                  </spektrix-donate>
+
+                
+              </div> <!-- / Donation Slider Holder -->
+
+                              <p class="h5">Donate, join us as a member, advertise your business and more...</p>
+              
+                                                                <a href="https://www.nationalcentreforwriting.org.uk/support-us" class="btn btn_sm ">More ways to get involved</a>
+                                              
+            </div> <!-- / Donation Form -->
+
+            
+            <div class="search_icon"><a href="#"><img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/icon-search-black.svg" width="32" height="32" alt="Magnifying Glass Search Icon" /></a></div>
+
+          </div>
+
+        </div> <!-- / Logo Nav Holder -->
+
+        <div class="search_full yellow_bg"> <!-- Search Full -->
+
+          <div class="search_form_content" id="search_form_content" tabindex="-1"> <!-- Search Form Holder-->
+
+              <form role="search" method="get" class="search-form" action="https://nationalcentreforwriting.org.uk">
+
+                  <div class="search_form_holder"> <!-- Search Form Holder -->
+                      <div class="label_input">
+                        <label for="site_search">Enter Search Terms:</label>
+                        <input type="search" id="site_search" class="search-field" value="" name="s" title="Search for:" />
+                      </div>
+                      <input type="submit" class="search-submit" value="Search" />
+                  </div> <!-- / Search Form Holder -->
+
+              </form>
+
+              <div class="search_close"> <!-- Search Close -->
+                <a href="#close_search"><img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/icon-close.svg" alt="X Close Icon" /></a>
+              </div> <!-- / Search Close -->
+
+          </div> <!-- / Search Form Holder -->
+
+        </div> <!-- / Search Full -->
+
+      </header><!-- #masthead -->
+
+    
+		<div id="content" class="site-content">
+
+		
+      <div class="writing_hub_hero"> <!-- Writing Hub Hero -->
+
+        <div class="writing_hub_hero_content"> <!-- Writing Hub Hero Content -->
+
+          <div class="title">The world of self-publishing: Pip Landers-Letts on Pyg</div> <!-- Title -->
+
+          
+        </div> <!-- / Writing Hub Hero Content -->
+                  <div class="button_container"> <!-- Button Container -->
+            <a href="https://nationalcentreforwriting.org.uk/writing-hub/" class="btn_text">BACK TO THE HUB</a>
+          </div> <!-- / Button Container -->
+        
+      </div> <!-- / Writing Hub Hero -->
+
+    
+<div id="primary" class="content-area">
+  <main id="main" class="site-main">
+
+  
+      
+
+
+
+<div class="full_content dark_bg pt_sm pb_md"> <!-- Full Content -->
+  <div class="media_contained_block image_left"> <!-- Media Contained Block -->
+
+     <!-- Content Block -->
+      
+        <div class="content_container"> <!-- Content Container -->
+
+          <div class="text_col"> <!-- Text Column -->
+
+            
+             <!-- / Title & SEO -->
+
+             <!-- Introduction -->
+              <p class="intro_text">In this episode of <strong>The Writing Life Podcast</strong>, award-winning writer Pip Landers-Letts discusses her experience self-publishing her action-packed novel <i>Pyg</i> – a queer retelling of George Bernard Shaw’s play <i>Pygmalion</i>.</p>
+             <!-- / Introduction -->
+
+             <!-- / Text Content -->
+
+             <!-- / Button Repeater -->
+
+          </div> <!-- / Text Column -->
+
+          <div class="image"> <!-- Image -->
+                        <img decoding="async" src="https://nationalcentreforwriting.org.uk/wp-content/uploads/2025/11/Pip-Landers-Letts-.png" alt="">
+          </div> <!-- / Image -->
+
+        </div> <!-- / Content Container -->
+
+           <!-- / Content Block -->
+
+  </div> <!-- / Media Contained Block -->
+</div> <!-- / Full Content -->
+
+
+
+
+
+<div class="full_content light_bg pt_md pb_md "> <!-- Full Content -->
+  <div class="column_text_block mw_960 "> <!-- Column Text Block -->
+
+    
+     <!-- / Title & SEO -->
+
+    
+       <!-- Introduction -->
+        <p class="intro_text">Pip sat down with Grace Murray, author of <em>Blank Canvas</em>, to share her journey through self-publishing, offering advice and insights into the process, and reflecting on how winning the Kindle Storyteller Award helped her feel recognised as a writer. Their conversation also covers working with sensitivity readers, lesbian representation in literature, and the experience of writing multiple books set within the same fictional world.</p>
+       <!-- / Introduction -->
+
+       <!-- Text Content -->
+        <div class="text_block">
+          <p>Pip Landers-Letts is an emerging queer author of contemporary sapphic fiction. Her work explores themes of love, loss and transformation, by blending emotional honesty with warm, character-driven storytelling. Her published titles include <em>The Weight of What Was</em> (2024),<em> Pyg</em> (2025), and <em>Chameleon</em> (2026). In 2025, she won the Kindle Storyteller Award for <em>Pyg</em>.</p>
+        </div>
+       <!-- / Text Content -->
+
+    
+     <!-- / Button Repeater -->
+
+    
+  </div> <!-- / Column Text Block -->
+</div> <!-- / Full Content -->
+
+
+
+
+
+<div class="full_content dark_bg pt_md pb_md animated"> <!-- Full Content -->
+  <div class="column_text_block  animated"> <!-- Column Text Block -->
+
+          <div class="mw_720"> <!-- Max Width 720px -->
+    
+    
+      <div class="title_container"> <!-- Title Container -->
+
+        <p class="h2">Listen now</p> <!-- Title & SEO -->
+
+         <!-- / Subtitle & SEO -->
+
+      </div> <!-- / Title Container -->
+
+     <!-- / Title & SEO -->
+
+    
+       <!-- / Featured Text -->
+
+       <!-- / Introduction -->
+
+       <!-- Text Content -->
+        <div class="text_block">
+          <p><iframe style="border: none; min-width: min(100%, 430px); height: 150px;" title="The world of self-publishing: Pip Landers-Letts on Pyg" src="https://www.podbean.com/player-v2/?i=2iqg2-1b1c1ac-pb&amp;from=pb6admin&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Arial&amp;skin=f6f6f6&amp;font-color=auto&amp;logo_link=episode_page&amp;btn-skin=1b1b1b" width="100%" height="150" scrolling="no" data-name="pb-iframe-player"></iframe></p>
+<p>Edited by Omni Mix</p>
+        </div>
+       <!-- / Text Content -->
+
+    
+     <!-- / Button Repeater -->
+
+          </div> <!-- Max Width 720px -->
+    
+  </div> <!-- / Column Text Block -->
+</div> <!-- / Full Content -->
+
+
+
+
+
+<div class="full_content light_bg pt_md pb_md"> <!-- Full Content -->
+  <div class="media_contained_block image_left"> <!-- Media Contained Block -->
+
+     <!-- Content Block -->
+      
+        <div class="content_container"> <!-- Content Container -->
+
+          <div class="text_col"> <!-- Text Column -->
+
+            
+             <!-- Title & SEO -->
+              <p class="h2"><em>Pyg</em></p>             <!-- / Title & SEO -->
+
+             <!-- Introduction -->
+              <p class="intro_text">Alice French is an emotional wreck. She’s left her toxic lover. She’s probably going to lose her job. She’s even about to ruin her expensive heels when she stumbles upon a barely conscious stranger one night…</p>
+             <!-- / Introduction -->
+
+             <!-- Text Content -->
+              <div class="text_block">
+                <p>All Alice wants to do is go home and lick her wounds, but she’s compelled to help. Who is this strange man? Why is he mumbling about a pig? And why can’t she stop flirting with Ash, the gorgeous A&amp;E doctor? Alice needs to sort her life out, but when it comes to Ash and her disarming smile, things could be about to get a whole lot messier.</p>
+<p>As Alice delves into the mystery, she starts to see her life with newfound clarity, and unexpected possibilities bloom.</p>
+              </div>
+             <!-- / Text Content -->
+
+             <!-- / Button Repeater -->
+
+          </div> <!-- / Text Column -->
+
+          <div class="image"> <!-- Image -->
+                        <img decoding="async" src="https://nationalcentreforwriting.org.uk/wp-content/uploads/2026/07/Pyg-Kip-Landers-Letts.png" alt="">
+          </div> <!-- / Image -->
+
+        </div> <!-- / Content Container -->
+
+           <!-- / Content Block -->
+
+  </div> <!-- / Media Contained Block -->
+</div> <!-- / Full Content -->
+
+
+
+
+
+
+<div class="full_content dark_bg pt_md pb_lrg animated"> <!-- Full Content -->
+  <div class="billboard_block dark_bg "> <!-- Billboard Block -->
+
+    <div class="left_col "> <!-- Left Column -->
+      <div class="mw_760"> <!-- Billboard Style -->
+
+         <!-- Title & SEO -->
+          <p class="h2">Kindle Storyteller Award 2026 is now open for entries</p>         <!-- / Title & SEO -->
+
+         <!-- Introduction -->
+          <p class="intro_text">Celebrating its 10th year, the Kindle Storyteller Award is a £20,000 literary prize open to any genre of self-published work!</p>
+         <!-- / Introduction -->
+
+         <!-- Text Content -->
+          <div class="text_block">
+            <p><span style="font-weight: 400;">To be eligible, simply publish your story via Kindle Direct Publishing by Monday 31 August 2026.</span></p>
+          </div>
+         <!-- / Text Content -->
+
+         <!-- Button Repeater -->
+                                    <a href="https://nationalcentreforwriting.org.uk/kindle-storyteller-award-2026/" class="btn">Find out more</a>
+                               <!-- / Button Repeater -->
+
+      </div> <!-- / Billboard Style -->
+    </div> <!-- / Left Column -->
+
+    <div class="right_col"> <!-- Right Column -->
+
+              
+           <!-- Image -->
+            <div class="image">
+                            <img decoding="async" src="https://nationalcentreforwriting.org.uk/wp-content/uploads/2025/08/Kindle-Storyteller-Award-2025.png" alt="">
+            </div>
+           <!-- / Image -->
+
+              
+    </div> <!-- / Right Column -->
+
+  </div> <!-- / Billboard Block -->
+</div> <!-- / Full Content -->
+
+
+
+
+
+<div class="full_content light_bg pt_md pb_md "> <!-- Full Content -->
+  <div class="column_text_block mw_960 "> <!-- Column Text Block -->
+
+    
+    
+      <div class="title_container"> <!-- Title Container -->
+
+        <p class="h2">Transcript</p> <!-- Title & SEO -->
+
+         <!-- / Subtitle & SEO -->
+
+      </div> <!-- / Title Container -->
+
+     <!-- / Title & SEO -->
+
+    
+       <!-- / Introduction -->
+
+       <!-- Text Content -->
+        <div class="text_block">
+          <p><strong>Grace</strong></p>
+<p>So firstly, can I just say how much fun I had reading this book. I adored it. I just wanted to get my little preamble out of the way because I loved it so much.</p>
+<p>So thank you so much for writing this, firstly.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>That&#8217;s amazing. That&#8217;s lovely feedback. Thank you.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>I was giggling. No, was kicking my feet.</p>
+<p>I also love, again, Alice and Ash. Their dynamic was beautiful. Right from the beginning, you wanted them to get together so much.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Do you know what? I didn&#8217;t. I didn&#8217;t want them to get together.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Really?</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Honestly, that was never my intention. I wanted them to have this chemistry, and I hadn&#8217;t planned for them to get together.</p>
+<p>Right. So when that happened, I&#8217;m like, stop.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>You&#8217;re joking.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>So when that happened, I&#8217;m like, stop. No, you&#8217;re not supposed to. Don&#8217;t do that. You&#8217;re not supposed to be doing that.</p>
+<p>I couldn&#8217;t keep them apart. And that sounds as bonkers as a writer can sound, but that is truly how I felt when I was writing it.</p>
+<p>I didn&#8217;t intend that to happen. Yeah.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>But that&#8217;s perfect. That&#8217;s such a good sign, though. Palpable chemistry drove them towards it.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Completely, yeah. I mean, the most I wanted them to do was have a near kiss.</p>
+<p>I&#8217;d even written the ending of that book before I&#8217;d written the middle. So I wrote the first chapter, the last chapter, then I wrote everything in the middle.</p>
+<p>I had to change the ending because, obviously, they&#8217;d done more than just kiss.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Well, yeah, thank God as well.</p>
+<p>Because that&#8217;s also quite taunting sometimes, when you come across queer novels where they&#8217;re sort of looking at each other and never doing anything. So it&#8217;s really refreshing as well in <em>Pyg</em> to have such active queer joy.</p>
+<p>So thank you.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Thank you for reading it and enjoying it as intended. But yeah, I couldn&#8217;t stop them. They were the unstoppable force, for sure.</p>
+<p>Sometimes, as an author, you just need to get out of your characters&#8217; way. That&#8217;s it.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Just to get back to <em>Pyg</em> and its beginning stages, I was wondering, because it shares with <em>Pygmalion</em>, but I didn&#8217;t actually know much about <em>Pygmalion</em> at all, and so I was wondering if you could sort of explain the relationship between the play and your book?</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Yeah, sure. So I studied <em>Pygmalion</em> at university when I did my bachelor&#8217;s degree. And my degree was in Drama and Theology, so you might see a bit of both of those things coming through in my writing.</p>
+<p>But I studied <em>Pygmalion</em> then, and it obviously just stuck with me. I hadn&#8217;t thought about it for years and years, and then it just popped into my head one day. I can&#8217;t really remember exactly the thought, the train of thought, that got me to it. But I just started thinking about a character called George and this idea of a dog called Pyg, which is obviously quite crucial to one of the stories in the book.</p>
+<p>So I think when I started setting out writing it, I just saw the kind of framework of the original text being like this quiet but important ghost in the room. I didn&#8217;t really set out to retell the story.</p>
+<p>But I was fascinated by the core idea of <em>Pygmalion</em>. So how it&#8217;s the tension between who we are, who we&#8217;re told to be, and what we might become under someone else&#8217;s gaze.</p>
+<p>And how Higgins shapes Eliza, I think Fran tries to mould Alice in the same sort of way. So I just think of it as a deconstructed retelling.</p>
+<p>As you know, <em>Pyg</em> is a story within a story within a story. And it&#8217;s Alice&#8217;s present-day transformation framed by George&#8217;s story, and then all the references to Shaw&#8217;s text as well.</p>
+<p>So that&#8217;s a really convoluted way of saying I didn&#8217;t intend to do a retelling of <em>Pygmalion</em>; it just happened.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>No, that was beautiful. And I like what you said there about Fran&#8217;s sort of dangerous effect on Alice, because you really felt that in the novel.</p>
+<p>And when I was following Fran, the horror and the stress was really palpable. What was that like to write, to really step into that?</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>She was, she&#8217;s absolutely my favourite character to write. She&#8217;s awful, like truly awful.</p>
+<p>And I think first draft, I thought, have I created a caricature? She&#8217;s so awful that she&#8217;s unbelievable. But when I had beta readers, they actually came back and said, no, she&#8217;s great.</p>
+<p>She feels real. Like, you feel the jeopardy when you&#8217;re around her. You feel her potency, you know, people&#8217;s potent attraction to someone like that because she just has this effect on people around her.</p>
+<p>But equally, she&#8217;s awful to everybody. So she picks you up and she drops you right down.</p>
+<p>I think being in her presence was challenging in itself. And I could come away feeling some of the frustration and, I suppose, concern that Alice has for her own wellbeing around someone like that. And like, why does she affect me like this? So I felt it too. I felt it through Alice.</p>
+<p>I&#8217;ve written what I see as the kind of prequel sequel to <em>Pyg</em>. That&#8217;s the book that I published this year, and it set out to be Francesca&#8217;s origin story.</p>
+<p>But I was trying to write it from her perspective and quickly learned I couldn&#8217;t write her perspective at all.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>I mean, it would be taxing, like, mentally, to step into that. Just the sheer hatred she has for other people.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Yeah, I couldn&#8217;t do it.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>No, I completely, completely understand that. And I really loved the way you put Fran in a room with Ash as well.</p>
+<p>We could almost witness Fran from the outside. I love that. And so well done. Top marks is what I&#8217;m saying. It&#8217;s amazing.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Thank you. I think Ash was very triggering for Francesca.</p>
+<p>So, sorry, the story I published this year, <em>Chameleon</em>, is the origin story. So it starts back in the 80s, and it&#8217;s when Francesca was at university. She&#8217;s Francesca, and obviously she becomes Fran in <em>Pyg</em>.</p>
+<p>I kind of now spend more time with her as Francesca, and I knew her as a young woman. She was just as awful then.</p>
+<p>But I think I tried to, in this next story, create, I suppose, to show people more of her vulnerability. So she does have some, believe it or not. And she hides it. She hides it well.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Wow, I&#8217;m really looking forward to reading that, especially if we get some of the sort of context. That&#8217;s really cool, but scary as well, in a good way.</p>
+<p>I was thinking about the time zones of your novel, and we have a period in the 60s and also in the 50s. I was thinking about the contrast between that, and then we get this really modern, vibrant feel.</p>
+<p>So how did you sort of step into those different styles? What were you listening to or reading at the time?</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>I would love to tell you I have reference points for these, but I don&#8217;t. I saw this question and I was thinking, what can I say that&#8217;s going to make me sound really smart, other than I wanted the old story to feel like this kind of sepia-toned version of the present-day story, to give it this quality.</p>
+<p>And so I guess I drew inspiration from things that I&#8217;ve seen and read in the past, but there was nothing specific that I sat down and immersed myself in, other than conversations with my mum, who grew up in the 60s.</p>
+<p>I&#8217;m like, is this accurate? Is this how it felt back then, you know, back when everything was black and white? And then she&#8217;s like, you&#8217;re being cheeky, but yes, you&#8217;ve nailed it.</p>
+<p>I just spent time around her, listening to her storytelling. And my nan was such a great storyteller as well. So I used to spend a lot of time with her, and she&#8217;d always tell me about when she grew up and how things were different.</p>
+<p>So I think just immersing myself in their culture was really important. And yeah, that&#8217;s really how it came to be.</p>
+<p>But I&#8217;m pleased that the two felt so distinctive for you, because that&#8217;s always what I set out to do. And I did the same thing to myself with the follow-up, which is <em>Chameleon</em>. That&#8217;s set between the present day and the 1980s, and I actually did spend a lot of time researching 1988 because I was only five.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>That&#8217;s so cool. I mean, it&#8217;s amazing to hear that you developed that through conversations, but you really get the sense that someone is talking in your ear as you read.</p>
+<p>So, hey, it worked beautifully.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>I changed that as well, I think, to really make the two distinctive. I use third person in the present day, and I use first person in the past, which I think, for George&#8217;s story, I wanted it to sound younger.</p>
+<p>And I think a lot of YA has a younger voice. So I thought in the past, it&#8217;s very much a young man speaking to you. And in the present day, it&#8217;s a story of Alice, which is a bit more, say, sophisticated.</p>
+<p>But yeah, there was a distinction there. And I&#8217;ve done that with <em>Chameleon</em> as well. The past chapters are written in first person and from another character&#8217;s perspective.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>That&#8217;s really cool. Do you write them in sort of chunks? Will you do, okay, first person today, third tomorrow, that sort of thing?</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>I think I would make my life a hell of a lot easier if I did, but I write it as it&#8217;s happening because I&#8217;m a discovery writer.</p>
+<p>And then I do that thing. I don&#8217;t know if you do it, Grace, but where you sit down to write for 20 minutes and then you zone out four hours later. You&#8217;re like, whoa, what just happened?</p>
+<p>But I just go with it. I plot, and they just, as we&#8217;ve already established, take over and do what they want to do. So I don&#8217;t know.</p>
+<p>I&#8217;m just the typist half the time.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>I love that. And also, it really helps with the characters. They feel like organic people.</p>
+<p>And so that makes sense that that&#8217;s your process.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Absolutely, yeah. The voice is in my head, right?</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Amazing. Okay, I also wanted to talk about the Fran versus Ash, like, sort of two sides of a very different spectrum, let&#8217;s just say.</p>
+<p>How important was it for you to have Alice experience this kind of positive kind of love?</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>I think, yeah, I think she needed that to heal.</p>
+<p>So I never pitch <em>Pyg</em> as a romance because, even though it does follow some of the romance arc, I always pitch it as a transformation story with a side of romance.</p>
+<p>But I think for Alice to heal, because of everything she&#8217;s gone through, she needs a dose of healthy love.</p>
+<p>And, you know, Ash has also been through some stuff in her own past that has healed her, and she needs to heal from it. And finally, she&#8217;s coming out of the other side of that.</p>
+<p>And I think they were just the perfect people to come together. They weren&#8217;t each other&#8217;s type. They weren&#8217;t meant to fall for each other, but they found each other at exactly the right time.</p>
+<p>I have had a couple of reviews where people have said they didn&#8217;t feel like it was healthy for them to have got together at the stage they did. It was too soon. They were still healing, but, you know, they were ready for love.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Exactly. There was a joke about that, which I also enjoyed, about like lesbians moving really quick.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Oh yeah, the U-Haul trip.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>So I&#8217;m like, exactly. You were sort of aware of it through the writing.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Yeah. And I didn&#8217;t want that kind of really cheesy, I&#8217;m not going to spoil the end of&#8230; I didn&#8217;t want that really kind of cheesy, like, ‘Oh, we&#8217;ve said I love you. Let&#8217;s move in. Let&#8217;s have four cats.’ It wasn&#8217;t really that.</p>
+<p>I do plan to write a little sequel to it, to be honest, because I think I&#8217;d like to see them six months later.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Me too. That sounds fantastic.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>And I am hoping to do a special edition around the time of the Kindle Storyteller Award this year. So I&#8217;m looking at doing something with cute sprayed edges and some foils, you know, get her a glow-up.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>That&#8217;s so exciting. Oh my days.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>So yeah, I might chuck a few extra chapters at the end.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Yeah, please. I mean, you mentioned the Kindle Storyteller Award just then, and I was wondering if you could talk about the process into winning. Congratulations, firstly.</p>
+<p>And secondly, what was that journey like?</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Thank you. Well, I&#8217;ve just about stopped pinching myself. That it happened.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Hell yeah, it did.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Yeah.</p>
+<p>And I&#8217;m still recovering from the shock. But I think I&#8217;ve settled into feeling like, yeah, I do belong in this space. I have been validated. Happy days.</p>
+<p>But for me, I think because my journey into publishing was one where I chose to open the door myself, I was standing waiting at the door, like literally, like my cat does. She stands there waiting to be let outside, just waiting and waiting and waiting, and then I let her out. I am the one that enables her.</p>
+<p>And I was standing there waiting at a door for someone to let me in, right? Are you going to let me into this room? I really want to publish my book.</p>
+<p>And then I realised I could open the door myself, and I just walked into the room. Oh, okay. And then I needed somebody, which was the Kindle Storyteller Awards, to say, ‘Hey, you&#8217;re welcome here. This is cool.’</p>
+<p>And that&#8217;s what I felt like. It was a huge shot of validation.</p>
+<p>There are occasionally times where I feel like, you know, I&#8217;m not supposed to be in the room without a tray of drinks or a tray of canapés, offering them to the real authors. But no, I&#8217;m here. We all get that, right?</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Oh my God, that feeling is always there.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>I don&#8217;t know if it will go away. I don&#8217;t know. What do we have to win? What do we have to do to prove ourselves? How many publishing deals or whatever?</p>
+<p>But yeah, I think&#8230;</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>And you deserve it, like, massively. The novel was such, such a pleasant experience. Like I had, again, as I said, so much fun.</p>
+<p>So you definitely should be in that room.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Oh, that&#8217;s so good to hear.</p>
+<p>So yeah, I think, just to like, I suppose, a funny aside about when I found out about being a finalist for the award. I got a call from the team at KDP, and they were like, ‘Oh, so we just want to let you know that the Storyteller Award that you entered for, you&#8217;re one of the five finalists.’</p>
+<p>And I&#8217;m like, ‘Yeah, sure, scammer, whatever.’</p>
+<p>She&#8217;s like, ‘No, no, really, really, this is real.’</p>
+<p>And they sent me a follow-up email, and I&#8217;m like, I did not believe it. Like, I wouldn&#8217;t. It was right up until the day of the ceremony. I&#8217;m still going, ‘This is a scam. I have been scammed. I&#8217;m now&#8230; someone is going to have a massive laugh when I walk into Amazon HQ and try to get in for the awards ceremony.’</p>
+<p>No, they let me in. I actually won it.</p>
+<p>So yeah, it&#8217;s definitely something I would strongly urge people publishing through KDP&#8217;s platform to do, is to enter their novel into the award as well, because I&#8217;d forgotten I&#8217;d even done it.</p>
+<p>And there we go. Here I am.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Incredible. It&#8217;s so cool.</p>
+<p>And I read in the acknowledgements that you had a team of beta readers, and you were talking to so many people. I just love that sense of community and that writing community you got.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Oh, 100%. Yeah.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>And so how important was that while you were writing it? Was it mainly afterwards, or was it during?</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>So, <em>Pyg</em> is my second novel. When I wrote my first novel, I had a team of alpha readers. I didn&#8217;t even know what an alpha reader was, but I just had people reading at the time I was writing.</p>
+<p>Like, I&#8217;m literally pulling off a chapter and going, ‘Okay, here&#8217;s another one. Tell me if it&#8217;s any good.’</p>
+<p>So I didn&#8217;t feel the need to do that so much with <em>Pyg</em>. But I also went through a whole critique, nine months&#8217; worth of critique groups with my first novel, just to finesse it and turn it into something worthy of sharing.</p>
+<p>With <em>Pyg</em>, less need, but I did build up a strong team of beta readers. I say team, I had about four beta readers for <em>Pyg</em>. And then I had a team of ARC readers pre-launch as well.</p>
+<p>But yeah, just that sense of community. I&#8217;ve spent, invested way too much time in Instagram, where I&#8217;ve kind of met a lot of like-minded people in the Bookstagram community, and just tried to build a bit of a platform, a bit of enthusiasm for my work.</p>
+<p>And a couple of super fans, I would like to say. I&#8217;m not Taylor Swift, but, you know, that&#8217;s it. That&#8217;s it. I think they&#8217;ll be there.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>You&#8217;re rolling out the world tour. Let&#8217;s go.</p>
+<p>Definitely, that&#8217;s really cool. I like that sense of mutual encouragement, and that everyone is in it together and they want to read good stories. We&#8217;re invested in it, and that&#8217;s really cool.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Definitely. I&#8217;ve got writers who I feel like are author friends now, who feel like we&#8217;re very much on a journey together, people at the same stage as me.</p>
+<p>We share work with each other. I&#8217;ve just got a new critique partner as well, which is cool. We&#8217;ve got somebody where we should be exchanging betas with each other.</p>
+<p>Like, we know, we understand each other&#8217;s voices. We know what we want to achieve. They&#8217;re not trying to change my writing. They just understand me. They understand what I&#8217;m trying to communicate.</p>
+<p>And I think that trust is so important.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Yeah, of course. And when it comes to trusting yourself as a kind of editor before you send it off, how do you know what works?</p>
+<p>Do you have an instinct? Is it sort of an editing brain you step into?</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Yeah, I&#8217;ve definitely changed my process from when I first started.</p>
+<p>So I first started, I must have spent about two months on my first chapters, like the first 10 chapters. You just keep editing and editing. Oh, that&#8217;s not right. You&#8217;re trying to find your voice, I think.</p>
+<p>Whereas now, I just tend to&#8230; I&#8217;ve started recently writing in sprints. And my first edit will be, I&#8217;ve just got to tidy the hell out of this thing. I&#8217;ve got to make sure it&#8217;s following the shape that I&#8217;ve set out for it.</p>
+<p>Like, has it hit those kind of key plot points that I wanted to hit? So I kind of look at the shape first, and then I won&#8217;t get into sort of line-editing stuff later.</p>
+<p>And I usually send it off to betas going, ‘There&#8217;s a load of stuff in here I will have missed. I know. Don&#8217;t worry too much about it. Just tell me if it makes sense generally and do you like the story?’ Then we&#8217;ll get into the nuts and bolts.</p>
+<p>And yeah, my wife as well. My wife should have been like a proofreader in another life. She does a lot of policy work in her job, and she&#8217;s so good at spotting mistakes. So she is like my final, final proof check.</p>
+<p>If it doesn&#8217;t get past her, it&#8217;s not getting out there.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>That&#8217;s such a beautiful title. She&#8217;s like, this is the last quality control check. Let&#8217;s go.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Yeah, right. I don&#8217;t credit her, though.</p>
+<p>I feel really bad. I mean, she gets the acknowledgement at the start. She gets the dedication, but I haven&#8217;t credited her for her proofreading skills.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Oh no, that&#8217;s okay. Hey, I&#8217;m sure she loves reading it.</p>
+<p>And yeah, it&#8217;s incredible. I was thinking about that sort of community-based stuff, and how you really feel like <em>Pyg</em> is beloved by, as you said, fans. People are loving it.</p>
+<p>How do you, when you&#8217;re writing your next project, sort of filter their comments or queries and make it the project you want to do, not what you&#8217;re catering to?</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Of course — I’ve changed the quotation marks to single quotation marks while keeping the wording and formatting the same.</p>
+<p>Yeah, that&#8217;s a really good point, because I very much felt like there was a big difference between my first book and <em>Pyg</em>.</p>
+<p>I did something completely, I suppose, off the wall. And at the beginning, when I was telling my wife and telling my mum what I was writing, they were like, &#8216;What are you writing?&#8217; Because I&#8217;d stopped doing the alpha thing. I&#8217;m like, &#8216;I&#8217;m not sharing it with you at the start,&#8217; because they were so different.</p>
+<p>And then I started telling them what it was going to be. They were like, &#8216;Oh, okay, well, are you sure that&#8217;s what you want to write? You don&#8217;t want to write another love story?&#8217;</p>
+<p>My first was just a normal romance.</p>
+<p>Like, &#8216;No, I don&#8217;t. I want to write this. This book is talking to me.&#8217;</p>
+<p>And they&#8217;re like, &#8216;Well, what&#8217;s this weird thing about a man and a pig?&#8217;</p>
+<p>I&#8217;m like, &#8216;No, just trust me. Just trust me. Okay, I&#8217;ve got something here.&#8217;</p>
+<p>And I think, again, I had to do the same. So, you know, people had an idea of what they wanted when I finished <em>Pyg</em>. They wanted more Ash and Alice.</p>
+<p>And I was like, &#8216;No, you&#8217;re having more Francesca. You are getting more of the psycho.&#8217;</p>
+<p>Because that&#8217;s what I want to write. I want her origin story.</p>
+<p>And so I took a character from <em>Pyg</em> that is basically&#8230; It&#8217;s a story of Catherine Truscott, who was Alice&#8217;s boss. And it&#8217;s her story.</p>
+<p>So it&#8217;s her transformation story. I took her, and people were like, &#8216;Well, why her?&#8217;</p>
+<p>And I&#8217;m like, &#8216;Because she is still speaking to me.&#8217;</p>
+<p>And I just shut out everybody else&#8217;s feedback and said, &#8216;I am actually going to write the story I want to write.&#8217;</p>
+<p>And that&#8217;s what I did. I did it. And I&#8217;m doing it again.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>That&#8217;s so cool.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>I&#8217;m not listening to anybody. They&#8217;re like, &#8216;No, don&#8217;t write that. Write this.&#8217;</p>
+<p>No, I&#8217;m writing what I want to write because I&#8217;m going to have more fun doing that.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>It&#8217;s great, like an instinct to just say, &#8216;No, this is my passion.&#8217;</p>
+<p>Because sometimes you can tell if a writer is being half-hearted or just catering to what they think people want.</p>
+<p>So I think that&#8217;s grand that you&#8217;re following that gut instinct, which tells you this will be interesting.</p>
+<p>And that&#8217;s so cool.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Yeah, and I think there will always be people that don&#8217;t appreciate it for what it is.</p>
+<p>Like, there were people that loved my first book that kind of went, &#8216;Oh, <em>Pyg</em> wasn&#8217;t really for me. I preferred the love story.&#8217;</p>
+<p>And I&#8217;m like, there is a love story in it, but, you know, there&#8217;s other things.</p>
+<p>I think it&#8217;s been misunderstood on a couple of occasions because I&#8217;ve had, like, &#8216;Oh, there was too much about that old man.&#8217;</p>
+<p>I&#8217;m like, yeah, that&#8217;s&#8230; oh, he&#8217;s so important to the story. Alice would not have had her transformation without George. He was absolutely pivotal because it gave her an opportunity to focus on something external to herself.</p>
+<p>She had to care for somebody else, and that was crucial.</p>
+<p>So yeah, I hate it when things are misunderstood.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>It&#8217;s so frustrating. But that&#8217;s why it&#8217;s great that you have that instinct that goes, &#8216;I&#8217;m going to quiet it out and just plough through.&#8217;</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>And now, whenever I get negative feedback, I go, &#8216;Storyteller Award.&#8217;</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Yes. Kindle says No.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Yeah, yeah. It kind of lasts like five minutes, and then I go, &#8216;Oh, maybe I should listen to the feedback.&#8217;</p>
+<p>No, don&#8217;t do that.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>No. Well, I&#8217;m really excited now that you&#8217;ve mentioned Francesca&#8217;s sort of transformation. I can&#8217;t wait, as I said before.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>I had so much fun writing <em>Chameleon</em> because I think I feel like I really found my voice with <em>Pyg</em>. And in <em>Chameleon</em>, I was like, right, now I&#8217;m going to sing.</p>
+<p>This is it. I&#8217;m going to make this story, like, everything I want to say. And it&#8217;s funny, it is sad, it is a performance in words.</p>
+<p>Because the other thing, after the Storyteller Award, I&#8217;d already commissioned it, but the audio of <em>Pyg</em> was released, and I enjoyed my narrator&#8217;s performance of <em>Pyg</em> so much. I felt like I was, in entire parts, writing <em>Chameleon</em> for her narration.</p>
+<p>Like, this book is a performance. And I made it so that the words would be something that were really good to act.</p>
+<p>And I&#8217;m excited to say it has just been recorded last week. So we&#8217;re coming soon in audio.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>No way. That&#8217;s so exciting.</p>
+<p>I&#8217;m glad you mentioned the element of performance because I was thinking this would make a great TV show. I was wondering if you had any actors in mind, or any sort of setting, location, that sort of feel.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Yeah, I mean, I am totally open if anybody wants to get in touch about making a TV show or a film, even a film. Like, yeah, that&#8217;s fine.</p>
+<p>But yeah, from a setting perspective, it has to be Leamington. The books are ingrained in Leamington Spa.</p>
+<p>And I actually, I&#8217;ve never lived in Leamington. I&#8217;ve lived in Warwickshire for fifteen years now, but Leamington was always such a lovely place for us to go and have lunch and just walk around and visit.</p>
+<p>So I thought, let&#8217;s set a book somewhere that&#8217;s nice to go and have lunch. So when I&#8217;m researching it, let&#8217;s go to a nice lunch spot.</p>
+<p>So yeah, I think Leamington for the film location.</p>
+<p>And in terms of who would take those roles, I always in my head sort of had a young Marilyn Monroe for Alice, but obviously that&#8217;s not possible.</p>
+<p>So maybe, like, Sarah Paulson, if she&#8217;s available. But Francesca, to me, has always been Kristen Scott Thomas. I have had no one else in my head other than her.</p>
+<p>She is the perfect Francesca.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>That makes a lot of sense.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>I don&#8217;t know if you&#8217;ve ever seen <em>Slow Horses</em>, the TV show.</p>
+<p>She is Diana Taverner. She&#8217;s perfect, that character.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Oh my God, this makes so much sense now in terms of her coldness, but you&#8217;re like, how are you getting away with this?</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>And yeah, people are so drawn to her as well, though. It&#8217;s like, yeah, she can come into my life and be cold with me anytime she likes. That&#8217;s fine.</p>
+<p>Like, I will take that punishment.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Did you have that in your head while writing?</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Yeah, absolutely.</p>
+<p>Yeah, so I think we might have been watching <em>Slow Horses</em> around the time of writing. I&#8217;m like, I think actually when I started writing already, and then, like, kind of mid-novel construction — that&#8217;s not a word — but yeah, kind of at the midpoint, I started watching <em>Slow Horses</em> and I&#8217;m like, &#8216;Oh, it&#8217;s Francesca.&#8217;</p>
+<p>And then, yeah, it&#8217;s definitely, I think when I was fine-tuning the words, I probably added a few sort of, yeah, Diana Taverner elements to her.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>I love that.</p>
+<p>It&#8217;s also great when you&#8217;re, if you&#8217;re ever stuck or you reach a block, to explore other media forms, like <em>Slow Horses</em>. If you&#8217;re sort of drenched with the books, you&#8217;re like, &#8216;I can&#8217;t take it.&#8217;</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Yeah, completely.</p>
+<p>I find it, yeah, I find it hard to read when I&#8217;m in that kind of&#8230; immersed in my own storytelling. So yeah, I think watching something and music as well.</p>
+<p>I always have a playlist for the book, and it&#8217;s usually things that I&#8217;ve been listening to whilst I&#8217;ve been writing. So yeah, definitely come up with a playlist every time.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>That&#8217;s so cool. Do you have any songs specifically that you associate with the characters, or the certain storylines, or even moments in the novel?</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>I think the main song for <em>Pyg</em> with me was Griff&#8217;s &#8216;Last Night Mascara&#8217;. Because just lyrically, it&#8217;s perfect for Alice.</p>
+<p>It&#8217;s like that first scene, that she&#8217;s running away from something. And yeah, it&#8217;s just this, it&#8217;s very visceral, that feeling at the beginning of the book.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Wow, again, TV show, let&#8217;s go. That&#8217;s incredible.</p>
+<p>And I was thinking about your sort of maybe non-conventional journey into publishing. Was there any point in which you could use some advice that you didn&#8217;t have at the time, that you wish you had?</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>I think I would say, to be honest, like, it&#8217;s so hard to find the time to write a book, especially when you work full time.</p>
+<p>It is so hard to find that time to sit down and go, &#8216;Okay, I&#8217;m going to write this. I feel like I&#8217;ve got a story in me.&#8217;</p>
+<p>So many people say, &#8216;I&#8217;ve got a story in me. I&#8217;ve got a book in me,&#8217; and they never find the time. They&#8217;re waiting for that perfect time to write.</p>
+<p>And my advice would be: there is no perfect time.</p>
+<p>You just carve out time. Fifteen minutes a day, whatever it is, you just start.</p>
+<p>You cannot, they always say, &#8216;Can I edit a blank page?&#8217; And I love that, because I remind myself of that every time I sit down going, &#8216;Yeah, I&#8217;m just going to go and do this instead.&#8217;</p>
+<p>Write, write the thing, because then you can edit the thing and then make it good.</p>
+<p>But yeah, there is no perfect time. Just crack on.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>No, I like that.</p>
+<p>And you&#8217;re right, you can&#8217;t, if the raw material is not there, you can&#8217;t make it perfect anyway, because there&#8217;s nothing to improve.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Yeah. As I said before, I&#8217;ve recently discovered sprints, just trying to do, like, 20 to 30 minutes at a time.</p>
+<p>And I still work full time at the moment, so trying to carve out the time to do that every day is really hard.</p>
+<p>So taking 15 to 30 minutes to sit down and crack out as many words as I can. I haven&#8217;t even read it back yet.</p>
+<p>The manuscript I&#8217;m writing at the moment is probably pure chaos. Like, I have a plot. I have an outline. I&#8217;m just sitting down, and every time I sit down to write, something new happens.</p>
+<p>I&#8217;m like, &#8216;Oh, just fell in a puddle that wasn&#8217;t meant to happen.&#8217;</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>But that&#8217;s great advice for people, especially if you get so in your head, you&#8217;re thinking, ‘There&#8217;s no way I can even start.&#8217;</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>You could do it on a lunch break, like, yeah, just open a blank document, write anywhere, on scraps of paper, like that&#8217;s just it.</p>
+<p>And then the more, when you start, like, the more momentum you start to get.</p>
+<p>And I had a really great piece of advice at a conference I was at, the Self-Publishing Show Live, last month. And there was a really great talk, and the advice was like: set yourself those sprints, right, and write and write and write.</p>
+<p>And as soon as the time is up, just stop, even if you&#8217;re in the middle of a sentence, in the middle of a word. Just stop.</p>
+<p>And then you&#8217;re basically like parking the car on a hill, so when you go to start again, you can just take the brake off. You don&#8217;t have to worry about, like, you know, revving up the engine. You just take the brake off and you just carry on from where you left off.</p>
+<p>And I thought, &#8216;I can&#8217;t. I can&#8217;t do that. What monster would stop in the middle of a word?&#8217;</p>
+<p>But yeah, turns out I can, and it&#8217;s really effective.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Yeah, I like that because you trap the emotion, like, halfway, I can imagine with a lot of scenes.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Yeah. And you think to yourself, like, ‘Why would I finish here? Because, like, I&#8217;m in such&#8230; I&#8217;m in the zone. Like, I&#8217;m just picking up.’</p>
+<p>No, finish because, yeah, right there, right there. It&#8217;s good.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Honestly, I&#8217;m going to get on that.</p>
+<p>But I was thinking about the certain emotional beats of <em>Pyg</em>. Did you know you were going to have to hit them? Did you have a general arc? You know how they say it, the conflict arc.</p>
+<p>But I noticed George was really helpful in that way because he kept sort of bringing Alice into these crazy scenarios, especially with Ash.</p>
+<p>So that was great. But did you have anything in mind?</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>So I did, when I started <em>Pyg</em>, I did a writing course. It was a Curtis Brown writing course, it was the David Nicholls one, because he is my favourite author ever.</p>
+<p>So I did that writing course, and I followed his plot point kind of example. I remember there was, like, a midpoint, the inciting incident, the midpoint, and all of the plot points.</p>
+<p>I mapped them out and I went, &#8216;This is roughly what&#8217;s going to happen here.&#8217;</p>
+<p>Obviously, it just went out the window when the characters took over, but I did revisit it and go, &#8216;Yeah, I hit that. I hit that. I hit that.&#8217;</p>
+<p>And that&#8217;s&#8230; I can&#8217;t, I suppose, feel too inhibited by setting something out too rigidly, because I feel like it traps my own creative process.</p>
+<p>Because I am such, like, a chaos goblin when it comes to sitting down and just letting the characters take over.</p>
+<p>Like, was it&#8230; discovery writer. That&#8217;s the word, not chaos goblin.</p>
+<p>Two different things.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>I mean, both cool.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Sure, I&#8217;ll take them both.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>No, I really like that.</p>
+<p>And also, you do have to have some kind of rule to then break it. Because if you are a discovery writer, to then find your way through it, you can feel a bit cheeky being like, &#8216;I know I&#8217;m supposed to hit the conflict, but I&#8217;m actually going to hit it in a chapter&#8217;s time.&#8217;</p>
+<p>So it&#8217;s fun.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>That&#8217;s another thing that could put someone off sitting down and starting, like thinking, &#8216;Oh, I need to follow the rules. I need to get this right.&#8217;</p>
+<p>Don&#8217;t worry about that till later.</p>
+<p>Like, I have a fantastic editor. She will tell me if I&#8217;ve messed this up. She will tell me if I&#8217;ve missed the beats.</p>
+<p>Like, I trust in the process, and I trust that I have read enough and absorbed enough, you know, different books and shows and whatever else, to understand the emotional beats that I need to land.</p>
+<p>Like, I trust that it&#8217;s in me now.</p>
+<p>I know, I know what I&#8217;m doing. I feel like I know what I&#8217;m doing.</p>
+<p>So, hopefully I know what I&#8217;m doing.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>No, you definitely do.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>If not, I&#8217;ve convinced a lot of people that I that I do.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>You referenced your editor there.</p>
+<p>But in terms of self-publishing, or, you know, non-traditional publishing, how do you find your editor? Do they come out and seek you, or do you get paired separately? What&#8217;s that like?</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>So I have found my editor through the Reedsy platform. Other platforms are available.</p>
+<p>Yeah, Reedsy has been really good for me. So I put a job on Reedsy, and different people bid on that job.</p>
+<p>And yeah, I basically got to hire who I thought I most wanted to work with. And we&#8217;re such a good match. Like, it&#8217;s been brilliant.</p>
+<p>She&#8217;s edited all three books now and will continue to edit my books as long as she wants me.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>That&#8217;s so good.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>We actually met for the first time in person earlier this year, and it was so cool. It was really good.</p>
+<p>But I was a bit shy because I&#8217;m thinking, like, &#8216;You&#8217;ve looked into my soul.&#8217; Like, I feel like, you know, you know, I can&#8217;t spell certain words. You know, I don&#8217;t know how to use commas. Like, you know, things about me that other people don&#8217;t.</p>
+<p>So yeah, it&#8217;s good.</p>
+<p>It&#8217;s a very different, it&#8217;s a strange relationship, isn&#8217;t it, with your editor, I think.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Yeah, no, totally.</p>
+<p>But I love the fact that you can sort of see the options for editing if you&#8217;re sort of self-publishing. Like, as you said, you really went through and chose the best match for you.</p>
+<p>So that&#8217;s lovely.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Yeah, I have chosen. Like, I think of myself actually now as probably a bit of a control freak when it comes to my work, because the beauty of independent publishing is that you choose everything.</p>
+<p>And I also like, even when it comes to the editing process, I choose what advice I take and what advice I don&#8217;t. And it&#8217;s&#8230; I have so much say in the end result.</p>
+<p>Obviously, naturally, I listen to everything my editor says because she&#8217;s right and I&#8217;m not. But, you know, we&#8217;ll have a healthy discussion about things.</p>
+<p>And the same with the cover design as well. Like, my designer, I did originally put the job out on Reedsy and then ended up commissioning someone I&#8217;ve met through another author.</p>
+<p>But yeah, we had lots of discussions around what it was going to look like. We have, like, creative sessions. I give her my manuscript. She works from that, all of my ideas into, like, a Pinterest board.</p>
+<p>So, like, I have a big part in this process. And ultimately I have to say, &#8216;This is what it&#8217;s going to look like.&#8217;</p>
+<p>Same with my audiobook narrator. I just commissioned who I wanted to work with.</p>
+<p>So I built a beautiful cast of people to work with, which is cool.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Oh, love that.</p>
+<p>And you can build such direct, like, sort of relationships and just filter in ideas even. That&#8217;s incredible. I love that.</p>
+<p>Have you got any sort of advice for people who might be a bit afraid of self-publishing, or might be a bit afraid even to start writing?</p>
+<p>Is there any sort of advice you could offer?</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>I think, in terms of starting writing, I think fear is natural in what we do because, like, yeah, it&#8217;s a vulnerable thing to do, putting words on a page, and they are a part of you.</p>
+<p>They will reflect you in some way, even though they&#8217;re clearly, if you&#8217;re writing fiction, clearly not real.</p>
+<p>And no, that character is not me. And no, that did not happen.</p>
+<p>But it is a vulnerable thing to do and a vulnerable thing to share, so it can feel scary.</p>
+<p>But actually, if you want to share your work with the world, just starting off slow is a really good way of doing that.</p>
+<p>Share it with one trusted person, get some feedback. And by trusted person, I mean somebody that, I guess, understands what you&#8217;re trying to achieve and doesn&#8217;t just want to change the story for their own purposes or want it to sound like the sort of things they read.</p>
+<p>So somebody that gets what you&#8217;re trying to do and reads the sort of books that you&#8217;re trying to write.</p>
+<p>So yeah, I think: feel the fear and do it anyway.</p>
+<p>Is it Susan Jeffers who said that? I think it&#8217;s important. Fear is natural.</p>
+<p>And fear, if it&#8217;s worth doing, then it&#8217;s going to be a little bit scary.</p>
+<p>And then, in terms of publishing, I think there are definitely advantages and disadvantages to both traditional and independent. So it&#8217;s really understanding the route that&#8217;s right for you.</p>
+<p>There&#8217;s a lot of misconceptions around independent publishing. Still, I hear them and I&#8217;m like, &#8216;Yeah, okay, fine.&#8217;</p>
+<p>But it&#8217;s a choice. And for a lot of people, it&#8217;s not just a, &#8216;Oh, I didn&#8217;t get that deal. I&#8217;m going to do this.&#8217;</p>
+<p>For a lot of people, it&#8217;s the right route for them. And if you like that control and if you want to have ultimate say over what your work looks like, then cool.</p>
+<p>But you&#8217;re going to have a much harder journey in terms of getting your book distributed, potentially. You know, it&#8217;s harder for me to get into bookstores, for instance.</p>
+<p>But yeah, I think there&#8217;s a lot of similarities in the journeys as well.</p>
+<p>And there&#8217;s lots of people doing hybrid also, that could become an option later on.</p>
+<p>So I&#8217;m, yeah, I&#8217;m not a guru. I don&#8217;t know all the things, but I know what I know.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>You sound very knowledgeable. I&#8217;m learning so much.</p>
+<p>And you mentioned sort of, like, misconceptions or myths. Any sort of particular ones that are really great on you that you want to sort of take apart in terms of independent publishing?</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>I think I did the one you hear over and over again. It&#8217;s like, &#8216;Oh, well, you didn&#8217;t make it, so you did it yourself.&#8217;</p>
+<p>And it&#8217;s like, no, that&#8217;s not true. That certainly wasn&#8217;t true for my journey.</p>
+<p>I said to myself, I was going to query, do 100 queries, get to 100 queries, and then if I didn&#8217;t get a bite from an agent, I would stop.</p>
+<p>What in reality happened is I got to around 40 queries. I had a very promising nibble from an agent, a couple of agents actually.</p>
+<p>But one of them turned into quite a hard bite because they came back and said, &#8216;We already have a queer author.&#8217;</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Wow. One? &#8216;A&#8217;?</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Outraged.</p>
+<p>And it sounds like I&#8217;m making this up. That really happened, but that was it.</p>
+<p>And I was like, &#8216;Oh, okay. I didn&#8217;t realise that was a thing.&#8217; I don&#8217;t know if they meant to tell me, but I just walked away from that and went, &#8216;Okay, well, I&#8217;m not here to tick a box for somebody. I&#8217;d rather just do this and tell my story the way I want to tell it.&#8217;</p>
+<p>And there are plenty of queer voices that want to tell a story. So I&#8217;m just one of them.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>That&#8217;s beautiful. I love that.</p>
+<p>And it&#8217;s such a&#8230; <em>Pyg</em> is such a joyous, wacky, wild, like, ride of a novel. At every point, I was like, &#8216;No way, I love it.&#8217;</p>
+<p>So genuinely, that&#8217;s so cool. And I&#8217;m so pleased that it&#8217;s in print, though. It&#8217;s beautiful.</p>
+<p>I was thinking, in terms of your future novels, you mentioned having a kind of new approach. Is there anything that you&#8217;re trying out, this kind of wild or a departure from <em>Pyg</em>, as you said you&#8217;re doing the past tense and first person?</p>
+<p>Are there any style or themes that you&#8217;re exploring now?</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Yeah, so I&#8217;m doing something with the next book.</p>
+<p>I don&#8217;t want to give spoilers too much because it is quite a&#8230; it&#8217;s going to be a bit of a twist in the story.</p>
+<p>But it&#8217;s another book in that I&#8217;m calling it my Leamington Bloom series.</p>
+<p>So it&#8217;s another book in the Leamington Bloom series because they&#8217;re all transformation stories. They all bloom.</p>
+<p>And this book is a character from <em>Chameleon</em>, and it&#8217;s going to be about her relationship. So she is a lawyer. She&#8217;s picked up a particularly challenging case because of her circumstances.</p>
+<p>So one, I&#8217;ve never written a lawyer before. I don&#8217;t really know what lawyers do apart from lawy stuff.</p>
+<p>So I&#8217;ve got a lot of research to do to make that sound convincing.</p>
+<p>Mind you, to be fair, Ash was a doctor and I had no idea what doctors did.</p>
+<p>So that was also fun.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>It felt convincing.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Excellent.</p>
+<p>I did get some medical people. So I had a paramedic and a former nurse reviewing it to make sure I hadn&#8217;t said anything really stupid.</p>
+<p>Absolutely, I&#8217;m like, &#8216;No, you are my ARC team. Tell me if there&#8217;s anything ridiculous.&#8217;</p>
+<p>So yeah, with this next book, I&#8217;ve got the lawyer element, but then I&#8217;ve also got another element of the story which is exploring a different, let&#8217;s just say, a gender transition that I have no experience of.</p>
+<p>But I know there are people in my community that have, so lean into sensitivity readers to make sure that I get that right.</p>
+<p>But I feel like it&#8217;s a really important story for me to tell.</p>
+<p>So yeah, I&#8217;m looking forward to writing it. I&#8217;m nervous about writing it because I could easily get this wrong.</p>
+<p>But yeah, when I finished <em>Chameleon</em>, I said to my mum, &#8216;I&#8217;ve got three stories that are kind of sitting here now that I&#8217;m thinking about writing. This one, this one, or this one.&#8217;</p>
+<p>And she went with the one that I&#8217;ve picked.</p>
+<p>And I thought it was&#8230; I didn&#8217;t think it was the one she&#8217;d picked, but she picked that one. She&#8217;s like, &#8216;I really want to read that. I really want to understand that better.&#8217;</p>
+<p>I was like, &#8216;So do I. Let&#8217;s do it.&#8217;</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>That&#8217;s so exciting.</p>
+<p>And also, the sort of transgenerational aspect, the fact that your parent is interested in this story, is such a good sign as well.</p>
+<p>So exciting. I can&#8217;t wait to read it.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>I took my mum to a book event with me. We went to Coventry&#8217;s inaugural festival of books on Sunday.</p>
+<p>And it was such a great event. We got to speak to so many people, but me and my mum have such banter between us. It was really funny.</p>
+<p>We had this event and she said, &#8216;I&#8217;m going to make this your bestselling day ever.&#8217;</p>
+<p>And she did. She doubled my sales.</p>
+<p>I was like, unbelievable. Now I can&#8217;t talk to her. I can&#8217;t fit her in a room with her because her head&#8217;s so big.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>That&#8217;s amazing. She should take commission.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>She&#8217;s incredible.</p>
+<p>Yeah, oh absolutely. She wouldn&#8217;t take anything, but I did buy her some flowers to say thank you for her contribution.</p>
+<p>But she&#8217;s never coming to an event again now because she&#8217;s just impossible.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>That&#8217;s so fun.</p>
+<p>And also great to have, like, a champion in the room as well.</p>
+<p>That&#8217;s incredible.</p>
+<p>And also, I was thinking, you said the sort of nervousness of writing a new story that you might not have personal experience with is such a useful thing to have as well, because I imagine it will propel you forward to doing tons of research and interviewing people.</p>
+<p>And yeah, is that something that you find useful, nervousness?</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Yeah, I think so.</p>
+<p>I mean, I had it a bit with <em>Pyg</em> because Ash&#8217;s background is Sikh. So she&#8217;s a South Asian character, or of South Asian descent.</p>
+<p>And I had sensitivity readers. So I was, like, every step of the way.</p>
+<p>I remember she was originally going to send her and Alice to a wedding. It ended up being an engagement party because Sikh weddings are so complicated.</p>
+<p>And I just bottled it. I was like, &#8216;I cannot do this. I cannot get this right.&#8217;</p>
+<p>So I just ended up learning from that experience and dialling it back because, like, my friend was like, &#8216;Yeah, they&#8217;re going to be there for four days.&#8217;</p>
+<p>And I&#8217;m like, &#8216;No, they&#8217;re not. They&#8217;re absolutely not.&#8217;</p>
+<p>Like, &#8216;She&#8217;s going to have to wear this.&#8217;</p>
+<p>I&#8217;m like, &#8216;She&#8217;s not wearing that.&#8217;</p>
+<p>So, for plot reasons, it&#8217;s an engagement party. So I bottled out.</p>
+<p>But I went to my friend&#8217;s house and we had, like, desi tea and she made me food, just trying to live the experience of what my character would have had.</p>
+<p>And I was like, &#8216;Okay, now I need you to tell me stories about your parents.&#8217;</p>
+<p>So I&#8217;m like the weirdest friend now. I ask such strange questions.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>You&#8217;re like, &#8216;I&#8217;m Louis Theroux now.&#8217;</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>So yeah, I&#8217;m looking forward to doing the same with this one.</p>
+<p>But I think it&#8217;s going to be a lot more&#8230; I&#8217;m going to have to handle it a lot more sensitively.</p>
+<p>And I think it probably is going to be a little&#8230; it can be insightful because the whole idea of a trans ideology is challenging at the moment.</p>
+<p>There is no ideology. It&#8217;s somebody&#8217;s identity.</p>
+<p>But, you know, I need to handle that in a way that isn&#8217;t going to incite hate crimes towards me or anybody in the community.</p>
+<p>So, if you don&#8217;t like it, don&#8217;t read it.</p>
+<p>That&#8217;s a point I&#8217;m going to make, but anyway.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>On a T-shirt, maybe.</p>
+<p>Well, I can&#8217;t wait to read it, and I can&#8217;t wait to read <em>Chameleon</em> as well.</p>
+<p>And the characters in this fourth novel, would it be? Are they similar in theme to the others, or are they completely new? Is this a new world?</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>No, same world.</p>
+<p>So third book in the Leamington Bloom series.</p>
+<p>Yeah, so third book in that series. Same world.</p>
+<p>The character is in <em>Chameleon</em>, and she&#8217;s a larger-than-life character in <em>Chameleon</em>. Everyone loves her, or people in reviews have loved her so far.</p>
+<p>So I think she&#8217;ll be a lot of fun to write, a lot of fun to spend time with.</p>
+<p>And I think I need that after <em>Chameleon</em>. There were times writing that where I was like, &#8216;Oh, this is hard,&#8217; because this character has been through a lot.</p>
+<p>So yeah, it&#8217;s going to be good.</p>
+<p>I think the voice and the tone of it will be the same. And yeah, I think you&#8217;ll see her voice coming through.</p>
+<p>So it will feel like, I suppose, spending a bit more time back in a familiar place with an old friend, hopefully.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Love that. That&#8217;s incredible. That&#8217;s beautiful.</p>
+<p>In terms of <em>Pyg</em>, where would you sort of compare it to similar titles right now in the market, just so people have a kind of idea who might be coming new to it, what it&#8217;s like?</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Oh, yeah, that&#8217;s a tough one.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Yeah, sorry, I put you on the spot there.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>I did have some comp titles for it because I don&#8217;t think it&#8217;s anything&#8230; I don&#8217;t think it&#8217;s like anything I&#8217;ve ever read before.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>That&#8217;s what I was thinking.</p>
+<p>I was like, &#8216;Oh my goodness, pitching it in terms of similar ones must be really difficult,&#8217; because you think it&#8217;s going to be magical realism, and then it takes this really cool turn where it&#8217;s more psychological and you&#8217;re in George&#8217;s head.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Yeah, that&#8217;s it.</p>
+<p>I mean, one of the ideas I&#8217;ve got lurking in my head is actually a magical realism story. I love Matt Haig, like, and I love how his stories are so grounded in reality, but then they just take this twist and you&#8217;re like, &#8216;Whoa, what&#8217;s happening?&#8217;</p>
+<p>Like, I want to do that.</p>
+<p>But yeah, what is it? What is it like?</p>
+<p>So my first novel, I had some great comp titles for, but no, I don&#8217;t know.</p>
+<p>That&#8217;s the other beauty of being independent. I don&#8217;t have to worry too much about comp titles.</p>
+<p>But it would be useful to have it. Like, &#8216;If you enjoyed this, you might enjoy this.&#8217;</p>
+<p>I don&#8217;t know.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>No, but honestly, I think they&#8217;ll read the sort of&#8230; they&#8217;ll be in.</p>
+<p>You know, it&#8217;s a standalone. You don&#8217;t need it, as you said.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>I hit my pitch now when I go to book events and I&#8217;m trying to sell it to people who are just walking past.</p>
+<p>I&#8217;ve got a little stand, and I&#8217;ve got, like, &#8216;chaos in heels&#8217; as my headline.</p>
+<p>And I&#8217;ll be like, &#8216;You know, if you can relate to being a hot mess, if you can relate to ever having escaped a toxic ex — a toxic ex — and, you know, you&#8217;re having just a terrible night and you find a man in the road but you have to help him&#8230; does that feel like a bit of you?&#8217;</p>
+<p>And they&#8217;re like, &#8216;Yeah, that&#8217;s exactly what I do. Yeah, that&#8217;s me. That&#8217;s me. Toxic ex, heels. Yeah, cool.&#8217;</p>
+<p>And they&#8217;ll buy it.</p>
+<p>So that just kind of seems to work.</p>
+<p>I also did just randomly shout at somebody — not this book event I was just at, but the one before.</p>
+<p>I was bored at the end of the day and thought, &#8216;I can&#8217;t be bothered to go through the pitch.&#8217;</p>
+<p>He was walking past, looked like he was going to carry on, and I just went, &#8216;Lesbians.&#8217;</p>
+<p>And he came and bought it, and the other two books.</p>
+<p>So I&#8217;m like, excellent.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Sweet.</p>
+<p>That&#8217;s exactly what he wanted.</p>
+<p>He&#8217;s like, &#8216;I&#8217;m here.&#8217;</p>
+<p>Wow, that&#8217;s really fun.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Sure, I&#8217;m here for that.</p>
+<p>Okay, it might not be my target audience, but anyway, have it, enjoy it.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>But that&#8217;s something else I was appreciating.</p>
+<p>Just that, I guess, there are so few lesbian novels out there in general.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Yeah, you&#8217;d be surprised, Grace. You&#8217;d be very surprised.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Well, if it&#8217;s out there, I&#8217;m reading it.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Yeah, I mean, I was surprised.</p>
+<p>So I basically uncovered this whole community. I say I uncovered it — I discovered this community when I started writing sapphic fiction.</p>
+<p>And there is so much, and it&#8217;s beautiful, and it&#8217;s so diverse.</p>
+<p>Like, there&#8217;s a website called iheartsapphic.com, which is like a database. And honestly, you can mood read sapphic fiction now.</p>
+<p>If you fancy some magical realism, if you fancy some sci-fi or some cosy fantasy, it&#8217;s everything.</p>
+<p>Like, yeah, it is this&#8230; loads of independent authors.</p>
+<p>Only very few choose to go traditional, but it&#8217;s becoming more of a prominent genre.</p>
+<p>We have your enemies-to-lovers, your <em>Heated Rivalry</em>. We have those.</p>
+<p>We have books about sport. All of it. Sports romance is the thing.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p><em>Pyg</em> took me to the I Heart Sapphic website, just sort of researching for it.</p>
+<p>And so I found myself surrounded by all these amazing books that I&#8217;d never heard of before. And I&#8217;m so pleased I did.</p>
+<p>So thank you. Thank you. Yeah, it&#8217;s really incredible.</p>
+<p>And again, another asset of independent publishing is that there&#8217;s such a range.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>For sure. Definitely.</p>
+<p>Yeah, it&#8217;s a great community, and I think I&#8217;m very, very humbled and grateful to be a part of it.</p>
+<p>And I&#8217;m actually off to a conference in the States next — no, the week after next — with the Golden Crown Literary Society, which is really cool.</p>
+<p>Again, another awesome society to be a part of.</p>
+<p>And they have this little — well, little, it&#8217;s quite big actually, I say little — awards thing as well.</p>
+<p>So it&#8217;s kind of like the Oscars for sapphic fiction.</p>
+<p><em>Pyg</em>&#8216;s audiobook is up for a Goldie Award, which is really exciting.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Oh my goodness. Congratulations.</p>
+<p>And that must be so fun to be in that community and to witness their reactions live.</p>
+<p>So, so cool.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Yeah, absolutely. It&#8217;s so cool.</p>
+<p>And there&#8217;s panels, and there&#8217;s all sorts of writing workshops and readings.</p>
+<p>And yeah, I&#8217;m up for it all. I&#8217;m there for it all. I&#8217;m involved in everything.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>It&#8217;s amazing. I love that.</p>
+<p>And again, you really got a feel for that in <em>Pyg</em>, just the sort of wealth of community influences, especially even reading your acknowledgements and seeing the beta readers and sensitivity readers mentioned.</p>
+<p>You are sort of really involved, and it&#8217;s so beautiful, and you can tell in the best way.</p>
+<p>Thank you for writing it.</p>
+<p>So your writing routine, is it very entrenched? Do you have a strict set timing? You mentioned the 15-minute thing, or is it kind of relaxed?</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>So up until recently, I only started doing sprints.</p>
+<p>But I work full time, so I try to delineate myself from my workspace. I feel like it&#8217;s really important to get into a different physical space.</p>
+<p>Like, nothing creative comes from somewhere where you&#8217;ve been sitting on conference calls.</p>
+<p>So I move to a different space, a different physical location. I feel like it gets me in a different headspace.</p>
+<p>Make myself a cup of tea, which inevitably I let go cold.</p>
+<p>And yeah, I just get into a different vibe.</p>
+<p>But my process itself is&#8230; I&#8217;ve just started the sprints. Before that, I just used to write for as long as I could until I got hungry, or my limbs went numb, or I needed to pick my wife up from the train station.</p>
+<p>Any of the above.</p>
+<p>&nbsp;</p>
+<p><strong>Grace</strong></p>
+<p>Perfect. That&#8217;s great.</p>
+<p>Thank you so much for answering, and thank you so much for being here.</p>
+<p>&nbsp;</p>
+<p><strong>Pip</strong></p>
+<p>Thank you very much for inviting me along. It&#8217;s been lovely chatting to you.</p>
+        </div>
+       <!-- / Text Content -->
+
+    
+     <!-- / Button Repeater -->
+
+    
+  </div> <!-- / Column Text Block -->
+</div> <!-- / Full Content -->  
+
+
+        
+  <div class="full_content dark_bg pt_md pb_lrg"> <!-- Full Content -->
+    <div class="feature_row_feed dark_bg"> <!-- Feature Row Feed -->
+
+      <div class="main_title"> <!-- Main Title -->
+        <h2>You may also like...</h2>
+      </div> <!-- / Main Title -->
+
+      
+        <div class="feed_container"> <!-- Feed Container -->
+
+          
+            <div class="feed_item"> <!-- Feed Item -->
+
+              <div class="image_container"> <!-- Image Container -->
+
+                 <!-- Image -->
+                                  <a href="https://nationalcentreforwriting.org.uk/writing-hub/the-path-to-publication-grace-murray-podcast/">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/uploads/2026/03/Grace-Murray-Path-to-publication-podcast-500x250.png" alt="" />
+                  </a>
+                 <!-- / Image -->
+
+              </div> <!-- / Image Container -->
+
+              <div class="text_content"> <!-- Text Content -->
+
+                <p class="title">The path to publication: Grace Murray on Blank Canvas</p> <!-- Title -->
+
+                 <!-- Excerpt -->
+                  <p>In this episode of The Writing Life, literary newcomer Grace Murray shares the process from mentorship to the publication of her debut novel <em>Blank Canvas</em>.</p>
+                 <!-- / Excerpt -->
+
+                <div class="date_container"> <!-- Date Container -->
+
+                  <div class="icon"> <!-- Icon -->
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/calendar.svg" alt="Calendar">
+                  </div> <!-- / Icon -->
+
+                  <p class="date">23rd March 2026</p> <!-- Date -->
+
+                </div> <!-- / Date Container -->
+
+                <div class="tags"> <!-- Tags -->
+                                      <div class="tag">Fiction</div>
+                                      <div class="tag">The Writing Life</div>
+                                      <div class="tag">Tips and Advice</div>
+                                  </div> <!-- / Tags -->
+
+                
+                <a href="https://nationalcentreforwriting.org.uk/writing-hub/the-path-to-publication-grace-murray-podcast/" class="btn btn_sm">Listen</a> <!-- Button -->
+
+              </div> <!-- / Text Content -->
+
+            </div> <!-- / Feed Item -->
+
+          
+            <div class="feed_item"> <!-- Feed Item -->
+
+              <div class="image_container"> <!-- Image Container -->
+
+                 <!-- Image -->
+                                  <a href="https://nationalcentreforwriting.org.uk/writing-hub/the-world-of-substack/">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/uploads/2025/06/Substack-The-Writing-Life-podcast-500x250.png" alt="" />
+                  </a>
+                 <!-- / Image -->
+
+              </div> <!-- / Image Container -->
+
+              <div class="text_content"> <!-- Text Content -->
+
+                <p class="title">The world of Substack: Eleanor Anstruther &amp; Simon K Jones on serial fiction</p> <!-- Title -->
+
+                 <!-- Excerpt -->
+                  <p><span style="font-weight: 400;">In this episode of The Writing Life, writers Eleanor Anstruther and Simon K Jones discuss the world of Substack, and how they use the platform to publish and share their work.</span></p>
+                 <!-- / Excerpt -->
+
+                <div class="date_container"> <!-- Date Container -->
+
+                  <div class="icon"> <!-- Icon -->
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/calendar.svg" alt="Calendar">
+                  </div> <!-- / Icon -->
+
+                  <p class="date">16th June 2025</p> <!-- Date -->
+
+                </div> <!-- / Date Container -->
+
+                <div class="tags"> <!-- Tags -->
+                                      <div class="tag">Fiction</div>
+                                      <div class="tag">Professional Insights</div>
+                                      <div class="tag">The Writing Life</div>
+                                      <div class="tag">Tips and Advice</div>
+                                  </div> <!-- / Tags -->
+
+                
+                <a href="https://nationalcentreforwriting.org.uk/writing-hub/the-world-of-substack/" class="btn btn_sm">Listen</a> <!-- Button -->
+
+              </div> <!-- / Text Content -->
+
+            </div> <!-- / Feed Item -->
+
+          
+            <div class="feed_item"> <!-- Feed Item -->
+
+              <div class="image_container"> <!-- Image Container -->
+
+                 <!-- Image -->
+                                  <a href="https://nationalcentreforwriting.org.uk/writing-hub/podcast-writer-insights-with-james-kinsley/">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/uploads/2023/07/james-kinsley-500x250.jpg" alt="James Kinsley" />
+                  </a>
+                 <!-- / Image -->
+
+              </div> <!-- / Image Container -->
+
+              <div class="text_content"> <!-- Text Content -->
+
+                <p class="title">PODCAST: Writer Insights with James Kinsley</p> <!-- Title -->
+
+                 <!-- Excerpt -->
+                  <p>On genre, mental health, and the ability of writing to move beyond the your original intentions with James Kinsley</p>
+                 <!-- / Excerpt -->
+
+                <div class="date_container"> <!-- Date Container -->
+
+                  <div class="icon"> <!-- Icon -->
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/calendar.svg" alt="Calendar">
+                  </div> <!-- / Icon -->
+
+                  <p class="date">22nd February 2023</p> <!-- Date -->
+
+                </div> <!-- / Date Container -->
+
+                <div class="tags"> <!-- Tags -->
+                                      <div class="tag">Interview</div>
+                                      <div class="tag">Publishing</div>
+                                      <div class="tag">The Writing Life</div>
+                                  </div> <!-- / Tags -->
+
+                
+                <a href="https://nationalcentreforwriting.org.uk/writing-hub/podcast-writer-insights-with-james-kinsley/" class="btn btn_sm">Listen</a> <!-- Button -->
+
+              </div> <!-- / Text Content -->
+
+            </div> <!-- / Feed Item -->
+
+          
+        </div> <!-- / Feed Container -->
+
+      
+    </div> <!-- / Full Content -->
+  </div> <!-- / Feature Row Feed -->
+
+  </main><!-- #main -->
+</div><!-- #primary -->
+
+
+	</div><!-- #content -->
+
+	<footer id="colophon" class="site-footer">
+
+		<div class="footer_content"> <!-- Footer Content -->
+
+      <div class="top_panel"> <!-- Top Panel -->
+
+        <div class="navigation_container"> <!-- Navigation Container -->
+
+          <p class="h6 title">Navigation</p> <!-- Title -->
+
+          <div class="navigation"> <!-- Navigation -->
+
+            <div class="col_1"> <!-- Column One -->
+
+               <!-- Column One Links -->
+                <div class="links">
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/support-us/" target="_self">Support us</a> <!-- / Link -->
+
+                       <!-- Child Links -->
+                        <div class="child_links">
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/support-us/donate/" target="_self">Donate</a> <!-- / Link -->
+
+                            
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/support-us/ways-to-support-us/" target="_self">More Ways to Support</a> <!-- / Link -->
+
+                            
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/support-us/ways-to-support-us/our-supporters/" target="_self">Our Supporters</a> <!-- / Link -->
+
+                            
+                                                  </div>
+                       <!-- / Child Links -->
+
+                    
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/about-us/environmental-impact/" target="_self">Environmental Impact</a> <!-- / Link -->
+
+                       <!-- / Child Links -->
+
+                    
+                                  </div>
+               <!-- / Column One Links -->
+
+            </div> <!-- / Column One -->
+
+            <div class="col_2"> <!-- Column Two -->
+
+               <!-- Column Two Links -->
+                <div class="links">
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/about-us/" target="_self">About us</a> <!-- / Link -->
+
+                       <!-- Child Links -->
+                        <div class="child_links">
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/about-us/our-team/" target="_self">Our team</a> <!-- / Link -->
+
+                            
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/about-us/board/" target="_self">Our Board</a> <!-- / Link -->
+
+                            
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/vacancies/" target="_self">Jobs &amp; Volunteering</a> <!-- / Link -->
+
+                            
+                                                  </div>
+                       <!-- / Child Links -->
+
+                    
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/visit-us/" target="_self">Visit us</a> <!-- / Link -->
+
+                       <!-- Child Links -->
+                        <div class="child_links">
+                          
+                                                        
+                              
+                              <a href="https://nationalcentreforwriting.org.uk/visit-us/the-literature-house/accessibility/" target="_self">Accessibility</a> <!-- / Link -->
+
+                            
+                                                  </div>
+                       <!-- / Child Links -->
+
+                    
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/hire/" target="_self">Hire Dragon Hall</a> <!-- / Link -->
+
+                       <!-- / Child Links -->
+
+                    
+                                  </div>
+               <!-- / Column Two Links -->
+
+            </div> <!-- / Column Two -->
+
+            <div class="col_3"> <!-- Column Three -->
+
+               <!-- Column Three Links -->
+                <div class="links">
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/contact/" target="_self">Contact us</a> <!-- / Link -->
+
+                    
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/terms-conditions/" target="_self">Terms &amp; Conditions</a> <!-- / Link -->
+
+                    
+                  
+                                        
+                      
+                      <a href="https://nationalcentreforwriting.org.uk/privacy-policy/" target="_self">Privacy Policy</a> <!-- / Link -->
+
+                    
+                                  </div>
+               <!-- / Column Three Links -->
+
+              <div class="social_links"> <!-- Social Links -->
+
+                 <!-- Social Link -->
+                  <div class="social_link">
+                    <a href="https://www.facebook.com/NationalCentreforWriting/" target="_blank">
+                      <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/facebook.png" alt="Twitter Logo" />
+                    </a>
+                  </div>
+                 <!-- / Social Link -->
+
+                 <!-- Social Link -->
+                  <div class="social_link">
+                    <a href="https://bsky.app/profile/writerscentre.bsky.social" target="_blank">
+                      <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/twitter.png" alt="Twitter Logo" />
+                    </a>
+                  </div>
+                 <!-- / Social Link -->
+
+                 <!-- Social Link -->
+                  <div class="social_link">
+                  <a href="https://www.linkedin.com/company/writerscentre/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=uk" target="_blank">
+                      <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/linkedin.png" alt="Linkedin Logo" />
+                    </a>
+                  </div>
+                 <!-- / Social Link -->
+
+                 <!-- Social Link -->
+                  <div class="social_link">
+                  <a href="https://www.youtube.com/user/WCNonline" target="_blank">
+                      <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/youtube.png" alt="Youtube Logo" />
+                    </a>
+                  </div>
+                 <!-- / Social Link -->
+
+                 <!-- Social Link -->
+                  <div class="social_link">
+                    <a href="https://www.instagram.com/writerscentre/?hl=en" target="_blank">
+                      <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/instagram.png" alt="Instagram Logo" />
+                    </a>
+                  </div>
+                 <!-- / Social Link -->
+
+              </div> <!-- / Social Links -->
+
+              <a href="https://www.splitpixel.co.uk/huddersfield-digital-agency/web-design/" target="_blank">Website designed by Splitpixel</a>
+
+            </div> <!-- / Column Three -->
+
+          </div> <!-- / Navigation -->
+
+        </div> <!-- / Navigation Container -->
+
+        <div class="newsletter_container"> <!-- Newsletter Container -->
+          <div class="newsletter"> <!-- Newsletter -->
+
+            <p class="h6 title">Newsletter Signup</p> <!-- Title -->
+
+            
+                <div class='gf_browser_chrome gform_wrapper gravity-theme gform-theme--no-framework' data-form-theme='gravity-theme' data-form-index='0' id='gform_wrapper_6' ><div id='gf_6' class='gform_anchor' tabindex='-1'></div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_6' id='gform_6'  action='/writing-hub/self-publishing-pip-landers-letts-podcast/#gf_6' data-formid='6' novalidate>
+                        <div class='gform-body gform_body'><div id='gform_fields_6' class='gform_fields top_label form_sublabel_below description_below validation_below'><div id="field_6_9" class="gfield gfield--type-honeypot gform_validation_container field_sublabel_below gfield--has-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_6_9'><span class='gform-field-label__text'>Comments</span></label><div class='ginput_container'><input name='input_9' id='input_6_9' type='text' value='' autocomplete='new-password'/></div><div class='gfield_description' id='gfield_description_6_9'>This field is for validation purposes and should be left unchanged.</div></div><div id="field_6_7" class="gfield gfield--type-html gfield--input-type-html gfield--width-full gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><div style="font-size:13px;">Sign up to receive newsletters about our work, including events, workshops, writer and translator opportunities, resources and ways to support us.</div></div><div id="field_6_1" class="gfield gfield--type-text gfield--input-type-text gfield--width-half gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_6_1'><span class='gform-field-label__text'>First Name</span><span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></label><div class='ginput_container ginput_container_text'><input name='input_1' id='input_6_1' type='text' value='' class='large'     aria-required="true" aria-invalid="false"   /></div></div><div id="field_6_3" class="gfield gfield--type-text gfield--input-type-text gfield--width-half gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_6_3'><span class='gform-field-label__text'>Last Name</span><span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></label><div class='ginput_container ginput_container_text'><input name='input_3' id='input_6_3' type='text' value='' class='large'     aria-required="true" aria-invalid="false"   /></div></div><div id="field_6_4" class="gfield gfield--type-email gfield--input-type-email gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"  ><label class='gfield_label gform-field-label' for='input_6_4'><span class='gform-field-label__text'>Email Address</span><span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></label><div class='ginput_container ginput_container_email'>
+                            <input name='input_4' id='input_6_4' type='email' value='' class='large'    aria-required="true" aria-invalid="false"  />
+                        </div></div><fieldset id="field_6_6" class="gfield gfield--type-checkbox gfield--type-choice gfield--input-type-checkbox gfield--width-full field_sublabel_below gfield--has-description field_description_above field_validation_below gfield_visibility_visible gfield--choice-align-vertical"  ><legend class='gfield_label gform-field-label gfield_label_before_complex' ><span class='gform-field-label__text'>Additional Interests</span></legend><div class='gfield_description' id='gfield_description_6_6'><div style="font-size:13px;">I am also interested in....</div></div><div class='ginput_container ginput_container_checkbox'><div class='gfield_checkbox ' id='input_6_6'><div class='gchoice gchoice_6_6_1'>
+								<input class='gfield-choice-input' name='input_6.1' type='checkbox'  value='601APNNMRMBJQQPBSCNQGQHGKKCRPSSGN'  id='choice_6_6_1'   aria-describedby="gfield_description_6_6"/>
+								<label for='choice_6_6_1' id='label_6_6_1' class='gform-field-label gform-field-label--type-inline'>Literary Translation</label>
+							</div><div class='gchoice gchoice_6_6_2'>
+								<input class='gfield-choice-input' name='input_6.2' type='checkbox'  value='401ANPJQJQPQMRSBDNMVNLSPGTRBVQVRH'  id='choice_6_6_2'   />
+								<label for='choice_6_6_2' id='label_6_6_2' class='gform-field-label gform-field-label--type-inline'>Young People &amp; Families</label>
+							</div><div class='gchoice gchoice_6_6_3'>
+								<input class='gfield-choice-input' name='input_6.3' type='checkbox'  value='802AJGBTDPGVCVMGPKHTKDLNBHRQNQDQG'  id='choice_6_6_3'   />
+								<label for='choice_6_6_3' id='label_6_6_3' class='gform-field-label gform-field-label--type-inline'>NCW Academy</label>
+							</div><div class='gchoice gchoice_6_6_4'>
+								<input class='gfield-choice-input' name='input_6.4' type='checkbox'  value='1805ALLBRLTKSTCLTLPMMNKTTNHVPCSDJ'  id='choice_6_6_4'   />
+								<label for='choice_6_6_4' id='label_6_6_4' class='gform-field-label gform-field-label--type-inline'>Norwich City of Literature</label>
+							</div></div></div></fieldset><div id="field_6_8" class="gfield gfield--type-text gfield--input-type-text gfield--width-full field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_hidden"  ><div class="admin-hidden-markup"><i class="gform-icon gform-icon--hidden" aria-hidden="true" title="This field is hidden when viewing the form"></i><span>This field is hidden when viewing the form</span></div><label class='gfield_label gform-field-label' for='input_6_8'><span class='gform-field-label__text'>Newsletter Contact Pref</span></label><div class='ginput_container ginput_container_text'><input name='input_8' id='input_6_8' type='text' value='201AGBHDRLQHNHPHKKMPKLGPMDRDTDMVL' class='large'      aria-invalid="false"   /></div></div><fieldset id="field_6_5" class="gfield gfield--type-consent gfield--type-choice gfield--input-type-consent gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below hidden_label field_validation_below gfield_visibility_visible gfield--choice-align-vertical"  ><legend class='gfield_label gform-field-label gfield_label_before_complex' ><span class='gform-field-label__text'>Privacy Policy</span><span class="gfield_required"><span class="gfield_required gfield_required_text">(Required)</span></span></legend><div class='ginput_container ginput_container_consent'><input name='input_5.1' id='input_6_5_1' type='checkbox' value='1'   aria-required="true" aria-invalid="false"   /> <label class="gform-field-label gform-field-label--type-inline gfield_consent_label" for='input_6_5_1' ><span class='gform-field-label__text'>I have read and agree to the <a href="https://nationalcentreforwriting.org.uk/privacy-policy/" target="_blank" class="text_link">privacy and terms.</a></span><span class="gfield_required gfield_required_text">(Required)</span></label><input type='hidden' name='input_5.2' value='I have read and agree to the &lt;a href=&quot;https://nationalcentreforwriting.org.uk/privacy-policy/&quot; target=&quot;_blank&quot; class=&quot;text_link&quot;&gt;privacy and terms.&lt;/a&gt;' class='gform_hidden' /><input type='hidden' name='input_5.3' value='6' class='gform_hidden' /></div></fieldset></div></div>
+        <div class='gform-footer gform_footer top_label'> <button type='submit' id='gform_submit_button_6' class='gform_button button' onclick='gform.submission.handleButtonClick(this);' data-submission-type='submit' >Go</button> <input type='hidden' name='gform_ajax' value='form_id=6&amp;title=&amp;description=&amp;tabindex=0&amp;theme=gravity-theme&amp;styles=[]&amp;hash=bca65a3dacc449f29fd73b19ba12290c' />
+            <input type='hidden' class='gform_hidden' name='gform_submission_method' data-js='gform_submission_method_6' value='iframe' />
+            <input type='hidden' class='gform_hidden' name='gform_theme' data-js='gform_theme_6' id='gform_theme_6' value='gravity-theme' />
+            <input type='hidden' class='gform_hidden' name='gform_style_settings' data-js='gform_style_settings_6' id='gform_style_settings_6' value='[]' />
+            <input type='hidden' class='gform_hidden' name='is_submit_6' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='6' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_currency' data-currency='GBP' value='ktdmXSWoEYHVeXIVVbx4+c4Z5vW0wv8buqR3Wlxi65xGeWf4etNnPKEeq2bOybE11PTw2dMLpfuSHlbqWOTM2osiyBfC1/39KTVilAxnf5+MOCE=' />
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_6' value='WyJ7XCI2LjFcIjpcImM5NWU4Y2Q5NmMxYWFkY2YyZWRhODJiZTdlOWQyMGM5XCIsXCI2LjJcIjpcImIyNTdkMGY2OWJkNzA0NGU1YmY3Y2M4NTQ2MTZlOWJlXCIsXCI2LjNcIjpcImU1NmVkYzQxNzkyMTBhMjZmMTMyYmRmMTllNzI2ZTJkXCIsXCI2LjRcIjpcImZhNzM3ZWFiN2M4ZTYzYjFmMmQ3ODMzMzIwNzU0Nzk2XCIsXCI1LjFcIjpcImNkMDg5OWY3OTIzZGMxYjViZjQwMDI0YWZlNGU3YjJjXCIsXCI1LjJcIjpcIjg0YmJlYWIxNjE0NWY4NjQ2YTAwOGQ3MDA4NWU2ZDVmXCIsXCI1LjNcIjpcImVhNTZiNGNhYmY1MjBiZjViOTRkZjk3MzhiZGJkNmE1XCIsXCJnZm9ybV9zdWJtaXNzaW9uX21ldGhvZFwiOltcImVkYWQ0YTMzYzlmNDU4YTRlZjllZDg1M2UyNTkwOGE0XCIsXCJhNjZjZTUwYjUyOTk2YmY5ZDI3MDc1NmRiMjlkYTMxNFwiLFwiZGMwMGZhM2JjMjVlNDc0Y2YyZmE3NWI1ODVkNjBmMzlcIl0sXCJnZm9ybV90aGVtZVwiOlwiZjU3MTU1ZmRhM2I0NjFiODE1MzZjYTM3YzIwZDgxNThcIixcImdmb3JtX3N0eWxlX3NldHRpbmdzXCI6XCIxZmJhYTJlNjAyMDRiYjBlYmM1NzQwN2NhODg3M2QzZlwiLFwiZm9ybV9pZFwiOlwiZWE1NmI0Y2FiZjUyMGJmNWI5NGRmOTczOGJkYmQ2YTVcIixcInVybFwiOlwiZjk1ZmE1NmMzZDNmMTc5MzM1ZjQzZGJlZDUwZDQ4ODlcIixcInN0YXRlX3RpbWVzdGFtcFwiOlwiM2FmY2IwNDgzMzBhMGVhZGEwMzM4NTVlZTY3N2UxZDNcIn0iLCJjZGYxM2E3NGZlNTY2NjQzNWQ0NjdlMjZlMjhiMjE5OSIsMTc4NzgxMDMwN10=' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_target_page_number_6' id='gform_target_page_number_6' value='0' />
+            <input type='hidden' autocomplete='off' class='gform_hidden' name='gform_source_page_number_6' id='gform_source_page_number_6' value='1' />
+            <input type='hidden' name='gform_field_values' value='check=First+Choice%2CSecond+Choice' />
+            
+        </div>
+                        </form>
+                        </div>
+		                <iframe style='display:none;width:0px;height:0px;' src='about:blank' name='gform_ajax_frame_6' id='gform_ajax_frame_6' title='This iframe contains the logic required to handle Ajax powered Gravity Forms.'></iframe>
+		                <script>
+gform.initializeOnLoaded( function() {jQuery('#gform_ajax_frame_6').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_6');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_6').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_6').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_6').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_6').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_6').offset().top - mt); }, 50 );var current_page = jQuery('#gform_source_page_number_6').val();jQuery(document).trigger('gform_page_loaded', [6, current_page]);window['gf_submitting_6'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}jQuery('#gform_wrapper_6').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_6').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [6]);window['gf_submitting_6'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_6').text());}else{jQuery('#gform_6').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger("gform_pre_post_render", [{ formId: "6", currentPage: "current_page", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_6" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_6";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_6" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 6, current_page );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );} );
+</script>
+
+          </div> <!-- / Newsletter -->
+        </div> <!-- / Newsletter Container -->
+
+      </div> <!-- / Top Panel -->
+
+      <div class="bottom_panel">
+
+        <div class="partners_container"> <!-- Partners Container -->
+
+          <div class="partners"> <!-- Partners -->
+
+            <p class="h6 title">Our Partners</p> <!-- Title -->
+
+            <div class="partners_flex_container"> <!-- Partners Flex Container -->
+
+              <div class="col_1"> <!-- Column One -->
+
+                <div class="partner_logo">
+                  <a href="https://www.artscouncil.org.uk/" target="_blank">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/ace_logo.png" alt="Arts Council England Logo" />
+                  </a>
+                </div> <!-- Partner Logo -->
+                <div class="partner_logo city_of_literature">
+                  <a href="/norwich-unesco-city-of-literature/">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/city-of-literature.png" alt="Norwich City of Literature Logo" />
+                  </a>
+                </div> <!-- Partner Logo -->
+
+              </div> <!-- / Column One -->
+
+              <div class="col_2"> <!-- Column Two -->
+
+                <div class="partner_logo">
+                  <a href="https://www.norwich.gov.uk/site/" target="_blank">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/ncc_logo.png" alt="Norwich City Council Logo" />
+                  </a>
+                </div> <!-- Partner Logo -->
+                <div class="partner_logo">
+                  <a href="https://ec.europa.eu/regional_policy/funding/erdf_en" target="_blank">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/sgs_logo.jpg" alt="Small Grant Scheme Logo" />
+                  </a>
+                </div> <!-- Partner Logo -->
+                <div class="partner_logo">
+                  <a href="https://www.uea.ac.uk/" target="_blank">
+                    <img src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/images/uea_logo.png" alt="University of East Anglia Logo" />
+                  </a>
+                </div> <!-- Partner Logo -->
+
+              </div> <!-- / Column Two -->
+
+            </div> <!-- / Partners Flex Container -->
+
+          </div> <!-- / Partners -->
+
+        </div> <!-- / Partners Container -->
+
+        <div class="company_info_container"> <!-- Company Information Container -->
+
+          <p class="h6 title">Company Information</p> <!-- Title -->
+
+          <div class="company_info"> <!-- Company Information -->
+
+             <!-- Address -->
+              <p>© National Centre for Writing, Dragon Hall, 115-123 King Street, Norwich, NR1 1QE</p>
+             <!-- / Address -->
+
+            <p>Company Number: 05242876</p> <!-- Company Number -->
+
+            <p>National Centre for Writing is a registered charity. Our charity number is 1110725</p> <!-- Charity Number -->
+
+             <!-- Number -->
+                            <a href="mailto:info@nationalcentreforwriting.org.uk?subject=Website%20Enquiry">info@nationalcentreforwriting.org.uk</a>
+             <!-- / Number -->
+
+          </div> <!-- / Company Information -->
+
+        </div> <!-- / Company Information Container -->
+
+      </div> <!-- / Bottom Panel -->
+
+		</div> <!-- / Footer Content -->
+
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+	<nav id="mobile-navigation">
+		<ul>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-109"><a href="https://nationalcentreforwriting.org.uk/whats-on/">What’s On</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16582"><a href="https://nationalcentreforwriting.org.uk/whats-on/">All Events</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51505"><a href="https://nationalcentreforwriting.org.uk/darkest-chapter/">Darkest Chapter</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48417"><a href="https://nationalcentreforwriting.org.uk/whats-on/summer/">Summer at the National Centre for Writing</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-43339"><a href="https://nationalcentreforwriting.org.uk/programmes/browse-our-season-brochure/">Season Brochure</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33130"><a href="https://nationalcentreforwriting.org.uk/the-global-page-2/">The Global Page  </a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-63"><a href="https://nationalcentreforwriting.org.uk/get-involved/">Get involved</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-62"><a href="https://nationalcentreforwriting.org.uk/get-involved/writers/">For writers</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="https://nationalcentreforwriting.org.uk/get-involved/translators/">For translators</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="https://nationalcentreforwriting.org.uk/get-involved/communities/">For communities</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-825"><a href="https://nationalcentreforwriting.org.uk/get-involved/young-people/">For young people</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-826"><a href="https://nationalcentreforwriting.org.uk/get-involved/families/">For families</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-827"><a href="https://nationalcentreforwriting.org.uk/get-involved/schools/">For teachers</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-828"><a href="https://nationalcentreforwriting.org.uk/norwich-unesco-city-of-literature/">Norwich UNESCO City of Literature</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-55"><a href="https://nationalcentreforwriting.org.uk/academy/">Academy</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44919"><a href="https://nationalcentreforwriting.org.uk/the-writing-life-challenge/">The Writing Life Challenge</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-830"><a href="https://nationalcentreforwriting.org.uk/academy/tutored-courses/">Online tutored courses</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-832"><a href="https://nationalcentreforwriting.org.uk/academy/workshops/">Workshops</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65"><a href="https://nationalcentreforwriting.org.uk/academy/mentoring/">Mentoring</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-831"><a href="https://nationalcentreforwriting.org.uk/academy/live-evening-courses/">Evening courses</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-829"><a href="https://nationalcentreforwriting.org.uk/academy/self-paced-courses/">Self-paced online courses</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8145"><a href="https://nationalcentreforwriting.org.uk/get-involved/writers/resources/">Free resources</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="https://nationalcentreforwriting.org.uk/writing-hub/">Writing Hub</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10937"><a href="https://nationalcentreforwriting.org.uk/visit-us/">Visit</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27672"><a href="https://nationalcentreforwriting.org.uk/plan-your-visit/">Plan your visit</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26050"><a href="https://nationalcentreforwriting.org.uk/writers-room/">Writers’ Room</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="https://nationalcentreforwriting.org.uk/visit-us/the-literature-house/accessibility/">Accessibility</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10938"><a href="https://nationalcentreforwriting.org.uk/about-us/">About us</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10731"><a href="https://nationalcentreforwriting.org.uk/support-us/">Join and support</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14985"><a href="https://nationalcentreforwriting.org.uk/vacancies/">Join the team</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14344"><a href="https://nationalcentreforwriting.org.uk/shop/">Shop</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"><a href="https://nationalcentreforwriting.org.uk/hire/">Hire Dragon Hall</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38328"><a href="https://nationalcentreforwriting.org.uk/press/">Press</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8326"><a href="https://nationalcentreforwriting.org.uk/in-the-region/">In the region</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8094"><a href="https://nationalcentreforwriting.org.uk/contact/">Contact us</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-838"><a href="https://nationalcentreforwriting.org.uk/norwich-unesco-city-of-literature/">Norwich UNESCO City of Literature</a></li>
+<li class="mobile_only menu-item menu-item-type-custom menu-item-object-custom menu-item-9085"><a href="https://ncw-online.teachable.com/l/products">Academy Portal</a></li>
+      <li>
+        <form role="search" method="get" class="search-form mobile_search_form" action="https://nationalcentreforwriting.org.uk">
+
+          <div class="mobile_search_form_holder"> <!-- Search Form Holder -->
+              <div class="label_input">
+                <label for="mobile_site_search">Search our site:</label>
+                <input type="search" id="mobile_site_search" class="search-field" value="" name="s" title="Search for:" />
+              </div>
+              <input type="submit" class="search-submit" value="Search" />
+          </div> <!-- / Search Form Holder -->
+
+        </form>
+      </li>
+		</ul>
+	</nav> <!-- #site-navigation -->
+
+	<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/ncw/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+	<!--copyscapeskip-->
+	<aside id="moove_gdpr_cookie_info_bar" class="moove-gdpr-info-bar-hidden moove-gdpr-align-center moove-gdpr-dark-scheme gdpr_infobar_postion_bottom" aria-label="GDPR Cookie Banner" style="display: none;">
+	<div class="moove-gdpr-info-bar-container">
+		<div class="moove-gdpr-info-bar-content">
+		
+<div class="moove-gdpr-cookie-notice">
+  <p><span style="font-size: 11pt">We use cookies to give you the best experience on our website. If you're ok with this, click 'accept' to allow all cookies. Click 'reject' to restrict tracking cookies and only use required cookies. You can find out more about which cookies we are using or switch them off in <button  aria-haspopup="true" data-href="#moove_gdpr_cookie_modal" class="change-settings-button gdpr-settings-btn-style-2">settings</button>.</span></p>
+</div>
+<!--  .moove-gdpr-cookie-notice -->
+		
+<div class="moove-gdpr-button-holder">
+			<button class="mgbutton moove-gdpr-infobar-allow-all gdpr-fbo-0" aria-label="Accept" >Accept</button>
+						<button class="mgbutton moove-gdpr-infobar-reject-btn gdpr-fbo-1 "  aria-label="Reject">Reject</button>
+			</div>
+<!--  .button-container -->
+		</div>
+		<!-- moove-gdpr-info-bar-content -->
+	</div>
+	<!-- moove-gdpr-info-bar-container -->
+	</aside>
+	<!-- #moove_gdpr_cookie_info_bar -->
+	<!--/copyscapeskip-->
+<script id="jquery-ui-core-js-before">
+jQuery.uiBackCompat = true;
+//# sourceURL=jquery-ui-core-js-before
+</script>
+<script id="jquery-ui-core-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/jquery/ui/core.min.js?ver=1.14.2"></script>
+<script id="jquery-ui-datepicker-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.14.2"></script>
+<script id="jquery-ui-datepicker-js-after">
+jQuery(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+//# sourceURL=jquery-ui-datepicker-js-after
+</script>
+<script id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+//# sourceURL=rocket-browser-checker-js-after
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"/whats-on/|/events/|/events/|/writing-hub/|/writing-hub/|/showcase/|/showcase/|/resources/|/resources/|/courses/|/courses/|/programmes/|/programmes/|/login/|/logout/|/basket/|/checkout/|/(?:.+/)?feed(?:/(?:.+/?)?)?$|/(?:.+/)?embed/|/(index.php/)?(.*)wp-json(/.*|$)|/refer/|/go/|/recommend/|/recommends/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https://nationalcentreforwriting.org.uk","onHoverDelay":"100","rateThrottle":"3"};
+//# sourceURL=rocket-preload-links-js-extra
+</script>
+<script id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+
+//# sourceURL=rocket-preload-links-js-after
+</script>
+<script id="ncw-navigation-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/js/navigation.js?ver=20151215"></script>
+<script id="ncw-skip-link-focus-fix-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/js/skip-link-focus-fix.js?ver=20151215"></script>
+<script id="ncw-mmenu-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/lib/mobile-navigation/mmenu.js?ver=20171102"></script>
+<script id="ncw-mobile-nav-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/lib/mobile-navigation/mobile-navigation.js?ver=20171102"></script>
+<script id="ncw-mobile-polyfills-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/lib/mobile-navigation/mmenu.polyfills.js?ver=20171102"></script>
+<script id="ncw-slick-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/js/slick.min.js?ver=20171012"></script>
+<script id="ncw-custom-scripts-js" src="https://nationalcentreforwriting.org.uk/wp-content/themes/ncw/js/custom-scripts.js?ver=20171012"></script>
+<script id="moove_gdpr_frontend-js-extra">
+var moove_frontend_gdpr_scripts = {"ajaxurl":"https://nationalcentreforwriting.org.uk/wp-admin/admin-ajax.php","post_id":"50290","plugin_dir":"https://nationalcentreforwriting.org.uk/wp-content/plugins/gdpr-cookie-compliance","show_icons":"all","is_page":"","ajax_cookie_removal":"false","strict_init":"2","enabled_default":{"strict":1,"third_party":0,"advanced":0,"performance":0,"preference":0},"geo_location":"false","force_reload":"false","is_single":"1","hide_save_btn":"false","current_user":"0","cookie_expiration":"365","script_delay":"2000","close_btn_action":"1","close_btn_rdr":"","scripts_defined":"{\"cache\":true,\"header\":\"\",\"body\":\"\",\"footer\":\"\",\"thirdparty\":{\"header\":\"\\t\\t\\t\\t\\t\\t\\t\\t\u003C!-- Google Tag Manager --\u003E\\n\\t\\t\\t\\t\u003Cscript data-gdpr data-type=\\\"gdpr-integration\\\"\u003E(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\\n\\t\\t\\t\\tnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\\n\\t\\t\\t\\tj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\\n\\t\\t\\t\\t'https:\\/\\/www.googletagmanager.com\\/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\\n\\t\\t\\t\\t})(window,document,'script','dataLayer','GTM-T7QPRS3');\u003C\\/script\u003E\\n\\t\\t\\t\\t\u003C!-- End Google Tag Manager --\u003E\\n\\t\\t\\t\\t\",\"body\":\"\\t\\t\\t\\t\u003C!-- Google Tag Manager (noscript) --\u003E\\n\\t\\t\\t\\t\u003Cnoscript data-type=\\\"gdpr-integration\\\"\u003E\u003Ciframe src=\\\"https:\\/\\/www.googletagmanager.com\\/ns.html?id=GTM-T7QPRS3\\\"\\n\\t\\t\\t\\theight=\\\"0\\\" width=\\\"0\\\" style=\\\"display:none;visibility:hidden\\\"\u003E\u003C\\/iframe\u003E\u003C\\/noscript\u003E\\n\\t\\t\\t\\t\u003C!-- End Google Tag Manager (noscript) --\u003E\\n\\t\\t\\t\\t\\t\\t\\t\\t\",\"footer\":\"\"},\"strict\":{\"header\":\"\",\"body\":\"\",\"footer\":\"\"},\"advanced\":{\"header\":\"\",\"body\":\"\",\"footer\":\"\"}}","gdpr_scor":"true","wp_lang":"","wp_consent_api":"false","gdpr_nonce":"41c80a2cbb"};
+//# sourceURL=moove_gdpr_frontend-js-extra
+</script>
+<script id="moove_gdpr_frontend-js" src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gdpr-cookie-compliance/dist/scripts/main.js?ver=5.1.0"></script>
+<script id="moove_gdpr_frontend-js-after">
+var gdpr_c=document.cookie.match(/(?:^|;\s*)moove_gdpr_popup=([^;]*)/);var gdpr_d=gdpr_c?JSON.parse(decodeURIComponent(gdpr_c[1])):{};var gdpr_consent__strict=gdpr_d.strict==="1"?"true":"false";var gdpr_consent__thirdparty=gdpr_d.thirdparty==="1"?"true":"false";var gdpr_consent__advanced=gdpr_d.advanced==="1"?"true":"false";var gdpr_consent__performance=gdpr_d.performance==="1"?"true":"false";var gdpr_consent__preference=gdpr_d.preference==="1"?"true":"false";var _cc=[];if(gdpr_d.strict==="1")_cc.push("strict");if(gdpr_d.thirdparty==="1")_cc.push("thirdparty");if(gdpr_d.advanced==="1")_cc.push("advanced");if(gdpr_d.performance==="1")_cc.push("performance");if(gdpr_d.preference==="1")_cc.push("preference");var gdpr_consent__cookies=_cc.join("|");
+//# sourceURL=moove_gdpr_frontend-js-after
+</script>
+<script id="wp-dom-ready-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/dist/dom-ready.min.js?ver=3fe927cab37bf38d6a23"></script>
+<script id="wp-hooks-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/dist/hooks.min.js?ver=f0f188028580e8dc1255"></script>
+<script id="wp-i18n-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/dist/i18n.min.js?ver=1dfe7db3940c23ea9216"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script id="wp-a11y-js" src="https://nationalcentreforwriting.org.uk/wp-includes/js/dist/a11y.min.js?ver=31c6cec5a4ff7aff483d"></script>
+<script id="gform_json-js" defer='defer' src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=3.0.3"></script>
+<script id="gform_gravityforms-js-extra">
+var gform_i18n = {"datepicker":{"wdOffset":1,"helpTextShort":"Press F1 for help","helpText":"Press the arrow keys to navigate by day, PageUp and PageDown to navigate by month, Alt+PageUp and Alt+PageDown to navigate by year, or Escape to cancel.","openOnFocusHelpText":"Press Down arrow to browse the calendar, or Escape to close.","tooltipTxt":"Press Escape to cancel","disabledTxt":"Disabled","markedTxt":"Selected","prevTxt":"Previous","nextTxt":"Next","monthTxt":"Month","yearTxt":"Year","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"days":[{"s":"S","l":"Sunday"},{"s":"M","l":"Monday"},{"s":"T","l":"Tuesday"},{"s":"W","l":"Wednesday"},{"s":"T","l":"Thursday"},{"s":"F","l":"Friday"},{"s":"S","l":"Saturday"}]}};
+var gf_legacy_multi = [];
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","file_uploaded":"File uploaded","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled","error":"Error","message":"Message"},"vars":{"images_url":"https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/images"}};
+var gf_global = {"gf_currency_config":{"name":"Pound Sterling","symbol_left":"&#163;","symbol_right":"","symbol_padding":" ","thousand_separator":",","decimal_separator":".","decimals":2,"code":"GBP"},"base_url":"https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms","number_formats":[],"version_hash":"c20fb5453cebeae694df2545a989fe68","countries":{"AF":"Afghanistan","AX":"\u00c5land Islands","AL":"Albania","DZ":"Algeria","AS":"American Samoa","AD":"Andorra","AO":"Angola","AI":"Anguilla","AQ":"Antarctica","AG":"Antigua and Barbuda","AR":"Argentina","AM":"Armenia","AW":"Aruba","AU":"Australia","AT":"Austria","AZ":"Azerbaijan","BS":"Bahamas","BH":"Bahrain","BD":"Bangladesh","BB":"Barbados","BY":"Belarus","BE":"Belgium","BZ":"Belize","BJ":"Benin","BM":"Bermuda","BT":"Bhutan","BO":"Bolivia","BQ":"Bonaire, Sint Eustatius and Saba","BA":"Bosnia and Herzegovina","BW":"Botswana","BV":"Bouvet Island","BR":"Brazil","IO":"British Indian Ocean Territory","BN":"Brunei Darussalam","BG":"Bulgaria","BF":"Burkina Faso","BI":"Burundi","CV":"Cabo Verde","KH":"Cambodia","CM":"Cameroon","CA":"Canada","KY":"Cayman Islands","CF":"Central African Republic","TD":"Chad","CL":"Chile","CN":"China","CX":"Christmas Island","CC":"Cocos Islands","CO":"Colombia","KM":"Comoros","CD":"Congo, Democratic Republic of the","CG":"Congo","CK":"Cook Islands","CR":"Costa Rica","CI":"C\u00f4te d'Ivoire","HR":"Croatia","CU":"Cuba","CW":"Cura\u00e7ao","CY":"Cyprus","CZ":"Czechia","DK":"Denmark","DJ":"Djibouti","DM":"Dominica","DO":"Dominican Republic","EC":"Ecuador","EG":"Egypt","SV":"El Salvador","GQ":"Equatorial Guinea","ER":"Eritrea","EE":"Estonia","SZ":"Eswatini","ET":"Ethiopia","FK":"Falkland Islands","FO":"Faroe Islands","FJ":"Fiji","FI":"Finland","FR":"France","GF":"French Guiana","PF":"French Polynesia","TF":"French Southern Territories","GA":"Gabon","GM":"Gambia","GE":"Georgia","DE":"Germany","GH":"Ghana","GI":"Gibraltar","GR":"Greece","GL":"Greenland","GD":"Grenada","GP":"Guadeloupe","GU":"Guam","GT":"Guatemala","GG":"Guernsey","GN":"Guinea","GW":"Guinea-Bissau","GY":"Guyana","HT":"Haiti","HM":"Heard Island and McDonald Islands","VA":"Holy See","HN":"Honduras","HK":"Hong Kong","HU":"Hungary","IS":"Iceland","IN":"India","ID":"Indonesia","IR":"Iran","IQ":"Iraq","IE":"Ireland","IM":"Isle of Man","IL":"Israel","IT":"Italy","JM":"Jamaica","JP":"Japan","JE":"Jersey","JO":"Jordan","KZ":"Kazakhstan","KE":"Kenya","KI":"Kiribati","KP":"Korea, Democratic People's Republic of","KR":"Korea, Republic of","KW":"Kuwait","KG":"Kyrgyzstan","LA":"Lao People's Democratic Republic","LV":"Latvia","LB":"Lebanon","LS":"Lesotho","LR":"Liberia","LY":"Libya","LI":"Liechtenstein","LT":"Lithuania","LU":"Luxembourg","MO":"Macao","MG":"Madagascar","MW":"Malawi","MY":"Malaysia","MV":"Maldives","ML":"Mali","MT":"Malta","MH":"Marshall Islands","MQ":"Martinique","MR":"Mauritania","MU":"Mauritius","YT":"Mayotte","MX":"Mexico","FM":"Micronesia","MD":"Moldova","MC":"Monaco","MN":"Mongolia","ME":"Montenegro","MS":"Montserrat","MA":"Morocco","MZ":"Mozambique","MM":"Myanmar","NA":"Namibia","NR":"Nauru","NP":"Nepal","NL":"Netherlands","NC":"New Caledonia","NZ":"New Zealand","NI":"Nicaragua","NE":"Niger","NG":"Nigeria","NU":"Niue","NF":"Norfolk Island","MK":"North Macedonia","MP":"Northern Mariana Islands","NO":"Norway","OM":"Oman","PK":"Pakistan","PW":"Palau","PS":"Palestine, State of","PA":"Panama","PG":"Papua New Guinea","PY":"Paraguay","PE":"Peru","PH":"Philippines","PN":"Pitcairn","PL":"Poland","PT":"Portugal","PR":"Puerto Rico","QA":"Qatar","RE":"R\u00e9union","RO":"Romania","RU":"Russian Federation","RW":"Rwanda","BL":"Saint Barth\u00e9lemy","SH":"Saint Helena, Ascension and Tristan da Cunha","KN":"Saint Kitts and Nevis","LC":"Saint Lucia","MF":"Saint Martin","PM":"Saint Pierre and Miquelon","VC":"Saint Vincent and the Grenadines","WS":"Samoa","SM":"San Marino","ST":"Sao Tome and Principe","SA":"Saudi Arabia","SN":"Senegal","RS":"Serbia","SC":"Seychelles","SL":"Sierra Leone","SG":"Singapore","SX":"Sint Maarten","SK":"Slovakia","SI":"Slovenia","SB":"Solomon Islands","SO":"Somalia","ZA":"South Africa","GS":"South Georgia and the South Sandwich Islands","SS":"South Sudan","ES":"Spain","LK":"Sri Lanka","SD":"Sudan","SR":"Suriname","SJ":"Svalbard and Jan Mayen","SE":"Sweden","CH":"Switzerland","SY":"Syria Arab Republic","TW":"Taiwan","TJ":"Tajikistan","TZ":"Tanzania, the United Republic of","TH":"Thailand","TL":"Timor-Leste","TG":"Togo","TK":"Tokelau","TO":"Tonga","TT":"Trinidad and Tobago","TN":"Tunisia","TR":"T\u00fcrkiye","TM":"Turkmenistan","TC":"Turks and Caicos Islands","TV":"Tuvalu","UG":"Uganda","UA":"Ukraine","AE":"United Arab Emirates","GB":"United Kingdom","US":"United States","UY":"Uruguay","UM":"US Minor Outlying Islands","UZ":"Uzbekistan","VU":"Vanuatu","VE":"Venezuela","VN":"Viet Nam","VG":"Virgin Islands, British","VI":"Virgin Islands, U.S.","WF":"Wallis and Futuna","EH":"Western Sahara","YE":"Yemen","ZM":"Zambia","ZW":"Zimbabwe"},"strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+//# sourceURL=gform_gravityforms-js-extra
+</script>
+<script id="gform_gravityforms-js" defer='defer' src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=3.0.3"></script>
+<script id="gform_gravityforms_utils-js" defer='defer' src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/js/dist/utils.min.js?ver=69a9db57304a9f86c3d1a0bea5fd2cf9"></script>
+<script id="gform_gravityforms_theme_vendors-js" defer='defer' src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/js/dist/vendor-theme.min.js?ver=0c901cb641ce64b99c20ea1a4d208cc9"></script>
+<script id="gform_gravityforms_theme-js-extra">
+var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"c20fb5453cebeae694df2545a989fe68"},"ajax":{"ajaxurl":"https://nationalcentreforwriting.org.uk/wp-admin/admin-ajax.php","ajax_submission_nonce":"32df38e956","i18n":{"step_announcement":"Step %1$s of %2$s, %3$s","unknown_error":"There was an unknown error processing your request. Please try again.","error_403":"The request was blocked (403 error) for unknown security reasons. Remove any code-like text (scripts or DB queries) and try again."}}}},"hmr_dev":"","public_path":"https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/js/dist/","config_nonce":"40397dcefe"};
+//# sourceURL=gform_gravityforms_theme-js-extra
+</script>
+<script id="gform_gravityforms_theme-js" defer='defer' src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gravityforms/assets/js/dist/scripts-theme.min.js?ver=75b66edcf00dc5031d1c38e899136fda"></script>
+
+    
+	<!--copyscapeskip-->
+	<!-- V1 -->
+		<dialog id="moove_gdpr_cookie_modal" class="gdpr_lightbox-hide" open aria-modal="true" aria-label="GDPR Settings Screen">
+	<div class="moove-gdpr-modal-content moove-clearfix logo-position-left moove_gdpr_modal_theme_v1">
+		    
+		<button class="moove-gdpr-modal-close" autofocus aria-label="Close GDPR Cookie Settings">
+			<span class="gdpr-sr-only">Close GDPR Cookie Settings</span>
+			<span class="gdpr-icon moovegdpr-arrow-close"></span>
+		</button>
+				<div class="moove-gdpr-modal-left-content">
+		
+<div class="moove-gdpr-company-logo-holder">
+	<img src="https://nationalcentreforwriting.org.uk/wp-content/plugins/gdpr-cookie-compliance/dist/images/gdpr-logo.png" alt="National Centre for Writing | NCW"   width="350"  height="233"  class="img-responsive" />
+</div>
+<!--  .moove-gdpr-company-logo-holder -->
+		<ul id="moove-gdpr-menu">
+			
+<li class="menu-item-on menu-item-privacy_overview menu-item-selected">
+	<button data-href="#privacy_overview" class="moove-gdpr-tab-nav" aria-label="Privacy Overview">
+	<span class="gdpr-nav-tab-title">Privacy Overview</span>
+	</button>
+</li>
+
+	<li class="menu-item-strict-necessary-cookies menu-item-off">
+	<button data-href="#strict-necessary-cookies" class="moove-gdpr-tab-nav" aria-label="Strictly Necessary Cookies">
+		<span class="gdpr-nav-tab-title">Strictly Necessary Cookies</span>
+	</button>
+	</li>
+
+
+	<li class="menu-item-off menu-item-third_party_cookies">
+	<button data-href="#third_party_cookies" class="moove-gdpr-tab-nav" aria-label="3rd Party Cookies">
+		<span class="gdpr-nav-tab-title">3rd Party Cookies</span>
+	</button>
+	</li>
+
+
+
+		</ul>
+		
+<div class="moove-gdpr-branding-cnt">
+			<a href="https://wordpress.org/plugins/gdpr-cookie-compliance/" rel="noopener noreferrer" target="_blank" class='moove-gdpr-branding'>Powered by&nbsp; <span>GDPR Cookie Compliance</span></a>
+		</div>
+<!--  .moove-gdpr-branding -->
+		</div>
+		<!--  .moove-gdpr-modal-left-content -->
+		<div class="moove-gdpr-modal-right-content">
+		<div class="moove-gdpr-modal-title">
+			 
+		</div>
+		<!-- .moove-gdpr-modal-ritle -->
+		<div class="main-modal-content">
+
+			<div class="moove-gdpr-tab-content">
+			
+<div id="privacy_overview" class="moove-gdpr-tab-main">
+		<span class="tab-title">Privacy Overview</span>
+		<div class="moove-gdpr-tab-main-content">
+	<p>This website uses cookies so that we can provide you with the best user experience possible. Cookie information is stored in your browser and performs functions such as recognising you when you return to our website and helping our team to understand which sections of the website you find most interesting and useful.</p>
+		</div>
+	<!--  .moove-gdpr-tab-main-content -->
+
+</div>
+<!-- #privacy_overview -->
+			
+  <div id="strict-necessary-cookies" class="moove-gdpr-tab-main" style="display:none">
+    <span class="tab-title">Strictly Necessary Cookies</span>
+    <div class="moove-gdpr-tab-main-content">
+      <p>Strictly Necessary Cookie should be enabled at all times so that we can save your preferences for cookie settings.</p>
+      <div class="moove-gdpr-status-bar ">
+        <div class="gdpr-cc-form-wrap">
+          <div class="gdpr-cc-form-fieldset">
+            <label class="cookie-switch" for="moove_gdpr_strict_cookies">    
+              <span class="gdpr-sr-only">Enable or Disable Cookies</span>        
+              <input type="checkbox" aria-label="Strictly Necessary Cookies"  value="check" name="moove_gdpr_strict_cookies" id="moove_gdpr_strict_cookies">
+              <span class="cookie-slider cookie-round gdpr-sr" data-text-enable="Enabled" data-text-disabled="Disabled">
+                <span class="gdpr-sr-label">
+                  <span class="gdpr-sr-enable">Enabled</span>
+                  <span class="gdpr-sr-disable">Disabled</span>
+                </span>
+              </span>
+            </label>
+          </div>
+          <!-- .gdpr-cc-form-fieldset -->
+        </div>
+        <!-- .gdpr-cc-form-wrap -->
+      </div>
+      <!-- .moove-gdpr-status-bar -->
+                                              
+    </div>
+    <!--  .moove-gdpr-tab-main-content -->
+  </div>
+  <!-- #strict-necesarry-cookies -->
+			
+  <div id="third_party_cookies" class="moove-gdpr-tab-main" style="display:none">
+    <span class="tab-title">3rd Party Cookies</span>
+    <div class="moove-gdpr-tab-main-content">
+      <p>This website uses Google Analytics to collect anonymous information such as the number of visitors to the site, and the most popular pages. It also uses Facebook Pixel to help us recommend events to our audiences.</p>
+<p>Keeping this cookie enabled helps us to improve our website.</p>
+      <div class="moove-gdpr-status-bar">
+        <div class="gdpr-cc-form-wrap">
+          <div class="gdpr-cc-form-fieldset">
+            <label class="cookie-switch" for="moove_gdpr_performance_cookies">    
+              <span class="gdpr-sr-only">Enable or Disable Cookies</span>     
+              <input type="checkbox" aria-label="3rd Party Cookies" value="check" name="moove_gdpr_performance_cookies" id="moove_gdpr_performance_cookies" disabled>
+              <span class="cookie-slider cookie-round gdpr-sr" data-text-enable="Enabled" data-text-disabled="Disabled">
+                <span class="gdpr-sr-label">
+                  <span class="gdpr-sr-enable">Enabled</span>
+                  <span class="gdpr-sr-disable">Disabled</span>
+                </span>
+              </span>
+            </label>
+          </div>
+          <!-- .gdpr-cc-form-fieldset -->
+        </div>
+        <!-- .gdpr-cc-form-wrap -->
+      </div>
+      <!-- .moove-gdpr-status-bar -->
+             
+    </div>
+    <!--  .moove-gdpr-tab-main-content -->
+  </div>
+  <!-- #third_party_cookies -->
+			
+									
+			</div>
+			<!--  .moove-gdpr-tab-content -->
+		</div>
+		<!--  .main-modal-content -->
+		<div class="moove-gdpr-modal-footer-content">
+			<div class="moove-gdpr-button-holder">
+						<button class="mgbutton moove-gdpr-modal-allow-all button-visible" aria-label="Enable All">Enable All</button>
+								<button class="mgbutton moove-gdpr-modal-save-settings button-visible" aria-label="Save Settings">Save Settings</button>
+				</div>
+<!--  .moove-gdpr-button-holder -->
+		</div>
+		<!--  .moove-gdpr-modal-footer-content -->
+		</div>
+		<!--  .moove-gdpr-modal-right-content -->
+
+		<div class="moove-clearfix"></div>
+
+	</div>
+	<!--  .moove-gdpr-modal-content -->
+	</dialog>
+	<!-- #moove_gdpr_cookie_modal -->
+	<!--/copyscapeskip-->
+<script>
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 6) {} } );jQuery(document).on('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+</script>
+<script>
+gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_render", [{ formId: "6", currentPage: "1", abort: function() { this.preventDefault(); } }]);        if (event && event.defaultPrevented) {                return;        }        const gformWrapperDiv = document.getElementById( "gform_wrapper_6" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_6";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_6" );        let postRenderFired = false;        function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            gform.core.triggerPostRenderEvents( 6, 1 );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );
+</script>
+
+</div> <!-- / Site Wrapper -->
+
+</body>
+</html>

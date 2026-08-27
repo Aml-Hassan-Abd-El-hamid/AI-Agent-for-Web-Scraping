@@ -1,0 +1,716 @@
+{
+  "website": "thepennyhoarder",
+  "snapshot_date": "2026-08-27T04:30:53",
+  "pagination_type": "load more button",
+  "scroll_mode": "load_more",
+  "scroll_rounds_requested": 2,
+  "load_more_selector": null,
+  "listing_url": "https://www.thepennyhoarder.com/retirement/",
+  "input_urls": [
+    "https://www.thepennyhoarder.com/retirement/"
+  ],
+  "pagination_pattern": null,
+  "requirements": "title, date, author, article body text",
+  "run_dir": "orch_runs/run_20260827_041821",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://www.thepennyhoarder.com/retirement/",
+      "file": "listing_page_001.html",
+      "bytes": 299302,
+      "sha1": "d210d2f284a9209f16c197313cc45546a86493c7"
+    },
+    {
+      "page_num": 1,
+      "url": "https://www.thepennyhoarder.com/retirement/",
+      "file": "listing_page_001_expanded.html",
+      "bytes": 462635,
+      "sha1": "f8c58ccdb4d96df241c2d972f4b4e4c362b3e487",
+      "expanded": true
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://www.thepennyhoarder.com/retirement/retirement-checklist/",
+      "title": "20% of Americans Cut Retirement Savings in 2026. Get Back on Track With This Checklist",
+      "page_num": 1,
+      "bytes": 245420,
+      "sha1": "7124aa5370f15060d373dbfbe6d3a1ed7fdf2620"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://www.thepennyhoarder.com/retirement/how-to-save-for-retirement-2/",
+      "title": "How to Plan for Retirement From Your 20s to Your 60s",
+      "page_num": 1,
+      "bytes": 261095,
+      "sha1": "78679592f2569d24ba99eb3fe80d34c140e87bb8"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://www.thepennyhoarder.com/retirement/401k-plan-guide/",
+      "title": "A 401(k) Can Help You Live Well in Retirement: Here Are the Details",
+      "page_num": 1,
+      "bytes": 247736,
+      "sha1": "8127afba0092413f9f44c0d34a35fbe00fb74564"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://www.thepennyhoarder.com/retirement/what-is-a-roth-ira/",
+      "title": "What Is a Roth IRA? 8 Reasons to Open One Today",
+      "page_num": 1,
+      "bytes": 235356,
+      "sha1": "8ddbac6d4c27e3a5fca755ed11ff563fd0722db8"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://www.thepennyhoarder.com/retirement/how-to-retire-early/",
+      "title": "8 Moves to Help You Retire Early — Even if You Don’t Make Six Figures",
+      "page_num": 1,
+      "bytes": 259541,
+      "sha1": "8fd4c5c0e81682c1421d7e4ca48eb17d2f6cae5e"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://www.thepennyhoarder.com/retirement/roth-ira-vs-401k/",
+      "title": "Roth IRA vs. 401(k): A Guide for Anyone Who Wants to Retire Someday",
+      "page_num": 1,
+      "bytes": 243217,
+      "sha1": "fc053bc8e7dbf6d672884615a0a7293346076769"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://www.thepennyhoarder.com/retirement/can-you-work-and-collect-social-security/",
+      "title": "Can You Work and Collect Social Security? The Short Answer Is Yes",
+      "page_num": 1,
+      "bytes": 261601,
+      "sha1": "5a9da3ebe56ab6b29969a12a79978f7f0b67e866"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://www.thepennyhoarder.com/retirement/financial-planning-for-elderly-parents/",
+      "title": "3 Tough Money Conversations You Need to Have With Your Parents",
+      "page_num": 1,
+      "bytes": 245020,
+      "sha1": "8f54127097f3fe690051a98a0eecf69f54dbfb0d"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://www.thepennyhoarder.com/make-money/side-gigs/jobs-for-retirees/",
+      "title": "20 Great Part-Time Jobs for Retirees Who Aren’t Ready to Call It Quits",
+      "page_num": 1,
+      "bytes": 248916,
+      "sha1": "a7be0ecd6cf6415b311140dcc4d9529fe7ccb76d"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://www.thepennyhoarder.com/retirement/protect-your-credit-score-in-retirement/",
+      "title": "How to Protect Your Credit Score in Retirement",
+      "page_num": 1,
+      "bytes": 237884,
+      "sha1": "a32e5d5c52a85a54d90330a47a958d68982c9349"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://www.thepennyhoarder.com/retirement/full-retirement-age/",
+      "title": "A Guide to Knowing Your ‘Full Retirement Age’ for Social Security",
+      "page_num": 1,
+      "bytes": 264413,
+      "sha1": "26ce5351b59fb26ae649c217fbe50ad67ad5c520"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://www.thepennyhoarder.com/retirement/dear-penny-my-husband-refuses-to-discuss-his-finances-with-me-is-this-normal/",
+      "title": "Dear Penny: My Husband Refuses To Discuss His Finances With Me. Is This Normal?",
+      "page_num": 1,
+      "bytes": 231461,
+      "sha1": "6ab7b4c0495fc93e27844b83d506299141d033c4"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://www.thepennyhoarder.com/retirement/retirement-vacation/",
+      "title": "Travel on a Dime: Tips for Planning a Dream Retirement Vacation Under $1,000",
+      "page_num": 1,
+      "bytes": 253983,
+      "sha1": "7c888afa246de2f443a57c1fa4ac87c1dc976b1e"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://www.thepennyhoarder.com/retirement/medicare-mistakes/",
+      "title": "How to Avoid Medicare Mistakes That Could Cost You Thousands",
+      "page_num": 1,
+      "bytes": 256762,
+      "sha1": "a9103aa730ced4a2343b25b0664cb7f4a606b444"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://www.thepennyhoarder.com/budgeting/retirement-budget/",
+      "title": "Retirement Budget 101: 9 Ways to Stretch Your Retirement Savings",
+      "page_num": 1,
+      "bytes": 243489,
+      "sha1": "d8ea3b2205d70269f9204f4301ce0e13fdc22ff8"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://www.thepennyhoarder.com/retirement/cons-of-early-retirement/",
+      "title": "Consider These Drawbacks Before You Set a Goal to Retire Early",
+      "page_num": 1,
+      "bytes": 235796,
+      "sha1": "fb5e6686ed66f8ee3810305d3c4ab8b151ea9b47"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://www.thepennyhoarder.com/retirement/dear-penny-my-husband-financially-supports-his-adult-children-that-money-should-go-to-our-retirement-right/",
+      "title": "Dear Penny: My Husband Financially Supports His Adult Children. Shouldn’t That Money Go to Our Retirement?",
+      "page_num": 1,
+      "bytes": 229602,
+      "sha1": "03548d798d08c5a14a79ac7e9c3b237aad70ffc8"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://www.thepennyhoarder.com/retirement/dementia-affecting-finances/",
+      "title": "Watch for These Signs of Dementia in Your Loved One’s Finances",
+      "page_num": 1,
+      "bytes": 232620,
+      "sha1": "a28c24283efe797bc75c53c4d651912a74a72fcb"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://www.thepennyhoarder.com/retirement/social-security-after-divorce/",
+      "title": "Divorced? Here’s How to Claim Your Ex’s Social Security",
+      "page_num": 1,
+      "bytes": 235917,
+      "sha1": "4f026ad9a90d74b8e3aac72e5dbb37a628265942"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://www.thepennyhoarder.com/retirement/can-i-get-dead-exs-social-security/",
+      "title": "Dear Penny: Should I End My Happy Marriage to Get My Dead Ex’s Social Security?",
+      "page_num": 1,
+      "bytes": 229800,
+      "sha1": "9002d42a160e2f86b70e4ed05a435873c36ccaa6"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://www.thepennyhoarder.com/retirement/best-states-for-retirement/",
+      "title": "These Are the Best States to Retire In to Make Your Savings Last",
+      "page_num": 1,
+      "bytes": 245347,
+      "sha1": "263153caf180e8b39efd9ebc801dabc2f94e3d00"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://www.thepennyhoarder.com/retirement/protect-retirement-gold-ira/",
+      "title": "How to Help Protect Your Retirement with a Gold IRA",
+      "page_num": 1,
+      "bytes": 228285,
+      "sha1": "b13012f2bd8487d28524fc6445f2aa8fface5546"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://www.thepennyhoarder.com/retirement/how-does-social-security-work/",
+      "title": "How Does Social Security Work? 12 Things You Can’t Afford Not to Know",
+      "page_num": 1,
+      "bytes": 267740,
+      "sha1": "a8fc972730b25ed134738442106af6c0ca58257e"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://www.thepennyhoarder.com/retirement/retiring-abroad/",
+      "title": "Retiring Abroad: What to Know Before You Go",
+      "page_num": 1,
+      "bytes": 265572,
+      "sha1": "1582c16850a493a205f700f9bb2886ad970a6254"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://www.thepennyhoarder.com/retirement/social-security-abroad-gallery/",
+      "title": "Can You Still Get Social Security If You Move Abroad?",
+      "page_num": 1,
+      "bytes": 267463,
+      "sha1": "cd8a491720d45777bce57fff954a416acafb1bfc"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://www.thepennyhoarder.com/retirement/estate-plan/",
+      "title": "Not Sure Where to Start With Estate Planning? Here Are Some Tips",
+      "page_num": 1,
+      "bytes": 235655,
+      "sha1": "5ecbc481879bdde485de07d9685946fcb190433a"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://www.thepennyhoarder.com/retirement/catch-up-on-retirement-gallery/",
+      "title": "How to Catch up If You’re Way Behind on Saving for Retirement",
+      "page_num": 1,
+      "bytes": 250980,
+      "sha1": "6aab83505b01b0503ff2216be5f94f2d90063eab"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://www.thepennyhoarder.com/retirement/durable-power-of-attorney/",
+      "title": "Planning for the Unexpected: Why You Need a Durable Power of Attorney",
+      "page_num": 1,
+      "bytes": 238154,
+      "sha1": "5801ee9849f25cf4ccf095a6143b4fffc363659a"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://www.thepennyhoarder.com/retirement/401k-stock-market-crash/",
+      "title": "Here’s What to Do With Your 401(k) When the Stock Market Drops",
+      "page_num": 1,
+      "bytes": 252952,
+      "sha1": "15ab74473007bdc3c415668d30f0a5fae8e76204"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://www.thepennyhoarder.com/retirement/alternative-savings-methods-for-retirement/",
+      "title": "Consider These 5 Alternative Savings Methods for Retirement",
+      "page_num": 1,
+      "bytes": 239617,
+      "sha1": "8f961c9a840b87715eee03d6c042efeb7d9c53fc"
+    },
+    {
+      "id": 31,
+      "file": "article_0031.html",
+      "url": "https://www.thepennyhoarder.com/retirement/rules-for-opening-an-ira/",
+      "title": "Dear Penny: What Are the Rules for Opening an IRA?",
+      "page_num": 1,
+      "bytes": 228927,
+      "sha1": "035b0565b2465eb4f8d89d0de2eb85a188bccf40"
+    },
+    {
+      "id": 32,
+      "file": "article_0032.html",
+      "url": "https://www.thepennyhoarder.com/retirement/find-financial-planner-for-retirement/",
+      "title": "Dear Penny: How Can I Find a Fiduciary Certified Financial Planner To Get Us Ready for Retirement?",
+      "page_num": 1,
+      "bytes": 242827,
+      "sha1": "e09843d7605939dd2c660efee90baed3609d6bd2"
+    },
+    {
+      "id": 33,
+      "file": "article_0033.html",
+      "url": "https://www.thepennyhoarder.com/retirement/salary-and-social-security/",
+      "title": "Dear Penny: Will Scaling Back My Workload at 60 Years Old Affect My Social Security?",
+      "page_num": 1,
+      "bytes": 229719,
+      "sha1": "edcf39883104684e4254fb936a6243927e160ca8"
+    },
+    {
+      "id": 34,
+      "file": "article_0034.html",
+      "url": "https://www.thepennyhoarder.com/retirement/find-old-401ks/",
+      "title": "Dear Penny: How Do I Find Current and Past 401(k)s?",
+      "page_num": 1,
+      "bytes": 231996,
+      "sha1": "bc1463f7905c07bfcc7bdc8d0242fa6f84c6c41b"
+    },
+    {
+      "id": 35,
+      "file": "article_0035.html",
+      "url": "https://www.thepennyhoarder.com/retirement/social-security-after-remarrying/",
+      "title": "Dear Penny: If I Remarry, Will I Lose My Late Husband’s Social Security Benefits?",
+      "page_num": 1,
+      "bytes": 228373,
+      "sha1": "772b7dd481162993e114a83365be8dece5387b20"
+    },
+    {
+      "id": 36,
+      "file": "article_0036.html",
+      "url": "https://www.thepennyhoarder.com/retirement/social-security-fairness-act/",
+      "title": "What the Social Security Fairness Act Could Mean for You",
+      "page_num": 1,
+      "bytes": 234534,
+      "sha1": "34bea1b3d8fa9dc3e5f5af621d42e2f553c76c01"
+    },
+    {
+      "id": 37,
+      "file": "article_0037.html",
+      "url": "https://www.thepennyhoarder.com/retirement/taking-social-security-early/",
+      "title": "Dear Penny: Should I Take Social Security Early to Pay for Medicare Part B?",
+      "page_num": 1,
+      "bytes": 227560,
+      "sha1": "acb9be956b586c154f9639af02a94f4b6db01b6f"
+    },
+    {
+      "id": 38,
+      "file": "article_0038.html",
+      "url": "https://www.thepennyhoarder.com/retirement/family-in-charge-of-estate/",
+      "title": "Dear Penny: Should I Keep My Nephew in Charge of My Estate Considering His Recent Behavior?",
+      "page_num": 1,
+      "bytes": 232902,
+      "sha1": "7450b80eb054a7e603ee63143f9ceaa96abe1496"
+    },
+    {
+      "id": 39,
+      "file": "article_0039.html",
+      "url": "https://www.thepennyhoarder.com/retirement/401k-changes-gallery/",
+      "title": "401(k) Rules for 2025: Here’s What You Need to Know",
+      "page_num": 1,
+      "bytes": 270183,
+      "sha1": "31251fc95d84d3b4adf86fa4c4a6b99043d8f852"
+    },
+    {
+      "id": 40,
+      "file": "article_0040.html",
+      "url": "https://www.thepennyhoarder.com/retirement/new-year-retirement-savings-gallery/",
+      "title": "How to Increase Your Retirement Savings in 2025",
+      "page_num": 1,
+      "bytes": 266218,
+      "sha1": "3fc4ecab8041110f5207221f39707fd8315b6cb5"
+    },
+    {
+      "id": 41,
+      "file": "article_0041.html",
+      "url": "https://www.thepennyhoarder.com/retirement/new-year-retirement-savings/",
+      "title": "5 Ways to Increase Your Retirement Savings in the New Year",
+      "page_num": 1,
+      "bytes": 256256,
+      "sha1": "b4d6b1af8b6ea6d92c1d72f3ca0b498a924fb981"
+    },
+    {
+      "id": 42,
+      "file": "article_0042.html",
+      "url": "https://www.thepennyhoarder.com/retirement/401k-changes/",
+      "title": "Here Are Changes to Your 401(k) You Should Know About",
+      "page_num": 1,
+      "bytes": 236950,
+      "sha1": "b2f168d15defc761fdfc8cf9f054285a0b29f95f"
+    },
+    {
+      "id": 43,
+      "file": "article_0043.html",
+      "url": "https://www.thepennyhoarder.com/retirement/late-spouse-pension/",
+      "title": "Dear Penny: I’m Collecting Money From My Late Husband’s Pension. Can I Still Do That if I Remarry?",
+      "page_num": 1,
+      "bytes": 239961,
+      "sha1": "a770ec7b513154c61eabb2ec514f07880af290ea"
+    },
+    {
+      "id": 44,
+      "file": "article_0044.html",
+      "url": "https://www.thepennyhoarder.com/retirement/best-states-to-retire-to-stretch-your-retirement-savings/",
+      "title": "These Are The Five Best States to Retire In",
+      "page_num": 1,
+      "bytes": 245054,
+      "sha1": "c111428d96cda2bf5e7ae6ee6409ad514646e5e1"
+    },
+    {
+      "id": 45,
+      "file": "article_0045.html",
+      "url": "https://www.thepennyhoarder.com/retirement/how-to-retire-early-gallery/",
+      "title": "8 Moves to Help You Retire Early, Even if You Don’t Make Six Figures",
+      "page_num": 1,
+      "bytes": 248339,
+      "sha1": "8713c5b2e02ff1610f376df2f02d092319bf857e"
+    },
+    {
+      "id": 46,
+      "file": "article_0046.html",
+      "url": "https://www.thepennyhoarder.com/retirement/downsize-your-life-for-a-better-retirement-gallery/",
+      "title": "Here’s How to Downsize Your Life for a Better Retirement",
+      "page_num": 1,
+      "bytes": 257550,
+      "sha1": "d82b435197a858ad417b6565dc808d75e8434f7b"
+    },
+    {
+      "id": 47,
+      "file": "article_0047.html",
+      "url": "https://www.thepennyhoarder.com/retirement/budget-travel-in-retirement-gallery/",
+      "title": "7 Tips to Travel in Retirement When You’re on a Budget",
+      "page_num": 1,
+      "bytes": 244553,
+      "sha1": "2bbf3c6fcb1cf6d1657ea767abb0fb12b16a347b"
+    },
+    {
+      "id": 48,
+      "file": "article_0048.html",
+      "url": "https://www.thepennyhoarder.com/insurance/medicare-open-enrollment/",
+      "title": "Your Guide to Navigating Medicare Open Enrollment This Year",
+      "page_num": 1,
+      "bytes": 254231,
+      "sha1": "731640f90d34bbf1a89592e92f445e04311dd6fa"
+    },
+    {
+      "id": 49,
+      "file": "article_0049.html",
+      "url": "https://www.thepennyhoarder.com/retirement/long-term-partner-social-security/",
+      "title": "Dear Penny: My Partner of 21 Years Passed Away. We Weren’t Married. Am I Eligible For His Social Security Benefits?",
+      "page_num": 1,
+      "bytes": 229106,
+      "sha1": "067b217bab3ede271c2d1be7f63b9b83ba430089"
+    },
+    {
+      "id": 50,
+      "file": "article_0050.html",
+      "url": "https://www.thepennyhoarder.com/retirement/401k-withdrawal-rules/",
+      "title": "What You Need to Know Before Taking Money From Your 401(k)",
+      "page_num": 1,
+      "bytes": 239522,
+      "sha1": "1cea494fa74b0cfde2d519a05cbd1e8af235a2b5"
+    },
+    {
+      "id": 51,
+      "file": "article_0051.html",
+      "url": "https://www.thepennyhoarder.com/retirement/how-to-maximize-social-security/",
+      "title": "7 Ways to Squeeze More Money Out of Social Security for Life",
+      "page_num": 1,
+      "bytes": 258439,
+      "sha1": "c43da7ae0b47b451218f24936f1f402bb8ceccb3"
+    },
+    {
+      "id": 52,
+      "file": "article_0052.html",
+      "url": "https://www.thepennyhoarder.com/retirement/retirement-friendly-businesses-gallery/",
+      "title": "Retirement-Friendly Businesses to Start in Your Golden Years",
+      "page_num": 1,
+      "bytes": 253193,
+      "sha1": "26c799b09cdb4a617c922d2b3a5463a92804ed17"
+    },
+    {
+      "id": 53,
+      "file": "article_0053.html",
+      "url": "https://www.thepennyhoarder.com/retirement/maximize-social-security-gallery/",
+      "title": "7 Ways to Squeeze More Money Out of Social Security for Life",
+      "page_num": 1,
+      "bytes": 245159,
+      "sha1": "84d9ef04765140c174f34a28c61922527c72df41"
+    },
+    {
+      "id": 54,
+      "file": "article_0054.html",
+      "url": "https://www.thepennyhoarder.com/retirement/social-security-overseas/",
+      "title": "Dear Penny: My Wife is a U.S. Citizen Who Recently Moved Back to Russia. Can She Still Collect Her Spousal Social Security?",
+      "page_num": 1,
+      "bytes": 240850,
+      "sha1": "97b97ad637a15eb61709d16e35b2911a179a96b0"
+    },
+    {
+      "id": 55,
+      "file": "article_0055.html",
+      "url": "https://www.thepennyhoarder.com/retirement/early-look-social-security-increase/",
+      "title": "How to Find Out What Your 2026 Social Security Increase Will Look Like",
+      "page_num": 1,
+      "bytes": 232996,
+      "sha1": "ebdb72741a64a8ab65e5058a51bc0b71f6c70d16"
+    },
+    {
+      "id": 56,
+      "file": "article_0056.html",
+      "url": "https://www.thepennyhoarder.com/retirement/how-to-start-a-business-in-retirement/",
+      "title": "How to Start a Business in Retirement",
+      "page_num": 1,
+      "bytes": 243131,
+      "sha1": "dae904c879cb7a6730dfe06630b911d4dee37d8f"
+    },
+    {
+      "id": 57,
+      "file": "article_0057.html",
+      "url": "https://www.thepennyhoarder.com/retirement/who-gets-your-social-security-when-you-die/",
+      "title": "Who Gets Your Social Security if You Die Tomorrow?",
+      "page_num": 1,
+      "bytes": 256367,
+      "sha1": "726607d1d122ec3eaa47a8d4c7dc078beabaaf81"
+    },
+    {
+      "id": 58,
+      "file": "article_0058.html",
+      "url": "https://www.thepennyhoarder.com/retirement/what-is-the-4-rule-in-retirement/",
+      "title": "What Is the 4% Rule in Retirement? Myth vs. Fact",
+      "page_num": 1,
+      "bytes": 237716,
+      "sha1": "f4e153f75c33ae1795f1e9e04b5e760cf4c9cd6f"
+    },
+    {
+      "id": 59,
+      "file": "article_0059.html",
+      "url": "https://www.thepennyhoarder.com/retirement/early-retirement-packages/",
+      "title": "Is An Early Retirement Package Actually a Good Deal?",
+      "page_num": 1,
+      "bytes": 252771,
+      "sha1": "2e739e45781ad1b7cd3c70381d2d4c8193bcd40d"
+    },
+    {
+      "id": 60,
+      "file": "article_0060.html",
+      "url": "https://www.thepennyhoarder.com/retirement/will-ssdi-stop-when-you-get-social-security/",
+      "title": "What Happens to Your SSDI When You Reach Social Security Age?",
+      "page_num": 1,
+      "bytes": 252160,
+      "sha1": "ec15228d01313f17440de8a06a3e9c262347fc9b"
+    },
+    {
+      "id": 61,
+      "file": "article_0061.html",
+      "url": "https://www.thepennyhoarder.com/retirement/divorce-and-social-security/",
+      "title": "Dear Penny: My husband plans to divorce me when he retires. Can I request half his Social Security benefits as settlement?",
+      "page_num": 1,
+      "bytes": 242159,
+      "sha1": "d26ccae8295056f0b58d24a798835002d7dad6f0"
+    },
+    {
+      "id": 62,
+      "file": "article_0062.html",
+      "url": "https://www.thepennyhoarder.com/retirement/change-your-estate-plan/",
+      "title": "How to Change Your Estate Plan After Your Spouse Dies",
+      "page_num": 1,
+      "bytes": 251592,
+      "sha1": "403e58604d04df4e451bfcf6b38e7dcf3b65a51d"
+    },
+    {
+      "id": 63,
+      "file": "article_0063.html",
+      "url": "https://www.thepennyhoarder.com/retirement/maximize-social-security/",
+      "title": "Dear Penny: I’m Disabled, Married and Nearing Retirement. How Can I Maximize My Social Security Benefits?",
+      "page_num": 1,
+      "bytes": 243221,
+      "sha1": "431ed64e11f6f21c32dd193edb6f453c1e685cde"
+    },
+    {
+      "id": 64,
+      "file": "article_0064.html",
+      "url": "https://www.thepennyhoarder.com/retirement/does-your-401k-suck/",
+      "title": "Starting a New Job? Here’s How to Tell if Your New 401(k) Plan Sucks",
+      "page_num": 1,
+      "bytes": 244395,
+      "sha1": "5fc5c80c3906b5535ad0acd5c84e67cdb1d6c81e"
+    },
+    {
+      "id": 65,
+      "file": "article_0065.html",
+      "url": "https://www.thepennyhoarder.com/insurance/medicare-grocery-allowance/",
+      "title": "How Does a Medicare Grocery Allowance Work — And Do You Qualify?",
+      "page_num": 1,
+      "bytes": 245430,
+      "sha1": "883d2744f79458da3430d7659b4b4b182ade62a0"
+    },
+    {
+      "id": 66,
+      "file": "article_0066.html",
+      "url": "https://www.thepennyhoarder.com/insurance/life-insurance-for-seniors/",
+      "title": "Life Insurance for Seniors: Is the Coverage Worth the Cost?",
+      "page_num": 1,
+      "bytes": 243707,
+      "sha1": "299a4510963edcab7b807e19e3d1aa696a8bab52"
+    },
+    {
+      "id": 67,
+      "file": "article_0067.html",
+      "url": "https://www.thepennyhoarder.com/retirement/free-cell-phones-for-seniors/",
+      "title": "How to Get Discounted or Free Cell Phones for Seniors",
+      "page_num": 1,
+      "bytes": 256098,
+      "sha1": "a133766c363c8979f348761f9a6da2189bd9b76f"
+    },
+    {
+      "id": 68,
+      "file": "article_0068.html",
+      "url": "https://www.thepennyhoarder.com/retirement/retirement-travel-on-a-budget/",
+      "title": "How to Travel in Retirement When You’re on a Budget",
+      "page_num": 1,
+      "bytes": 238396,
+      "sha1": "20c9718263762cf3cfa33ac64976c7f44430784d"
+    },
+    {
+      "id": 69,
+      "file": "article_0069.html",
+      "url": "https://www.thepennyhoarder.com/retirement/dear-penny-i-started-getting-social-security-early-when-will-i-get-full-benefits/",
+      "title": "Dear Penny: I Started Getting Social Security Early. When Will I Get Full Benefits?",
+      "page_num": 1,
+      "bytes": 242675,
+      "sha1": "04a900faf4f9d27fbd306e346b52480ef3b17ad2"
+    },
+    {
+      "id": 70,
+      "file": "article_0070.html",
+      "url": "https://www.thepennyhoarder.com/retirement/phased-retirement/",
+      "title": "Phased Retirement: What Does It Mean And How Does It Work?",
+      "page_num": 1,
+      "bytes": 237567,
+      "sha1": "c424deb57e908c8096629b838a51ddf3a2d7adb5"
+    },
+    {
+      "id": 71,
+      "file": "article_0071.html",
+      "url": "https://www.thepennyhoarder.com/retirement/retirement-friendly-businesses/",
+      "title": "5 Retirement-Friendly Businesses to Start in Your Golden Years",
+      "page_num": 1,
+      "bytes": 255407,
+      "sha1": "dde4107ee950be2e332b1b63a0f0716a6534fb38"
+    },
+    {
+      "id": 72,
+      "file": "article_0072.html",
+      "url": "https://www.thepennyhoarder.com/retirement/how-to-save-for-retirement/",
+      "title": "How to Plan for Retirement From Your 20s to Your 60s",
+      "page_num": 1,
+      "bytes": 261095,
+      "sha1": "b9fd9ee458b10768fb64168aff4656df466d032f"
+    },
+    {
+      "id": 73,
+      "file": "article_0073.html",
+      "url": "https://www.thepennyhoarder.com/retirement/who-gets-my-dogs-when-i-die/",
+      "title": "Dear Penny: Who Gets My Dogs When I Die if I Have No Close Family?",
+      "page_num": 1,
+      "bytes": 237523,
+      "sha1": "623f05a2b9a31bef795a7c4d0f74b66c55f509a2"
+    },
+    {
+      "id": 74,
+      "file": "article_0074.html",
+      "url": "https://www.thepennyhoarder.com/retirement/dear-penny-can-i-withdraw-a-lump-sum-from-my-late-wifes-ira-and-avoid-taxes/",
+      "title": "Dear Penny: Can I Withdraw a Lump Sum From My Late Wife’s IRA and Avoid Taxes?",
+      "page_num": 1,
+      "bytes": 250220,
+      "sha1": "5a7b6c441675f0188d6b435c2d15820233609181"
+    },
+    {
+      "id": 75,
+      "file": "article_0075.html",
+      "url": "https://www.thepennyhoarder.com/retirement/taking-social-security-at-62/",
+      "title": "Should You Claim Social Security on Your 62nd Birthday?",
+      "page_num": 1,
+      "bytes": 242044,
+      "sha1": "ca8cbc01d80cb8f3224d9b269a5735d39bee671b"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 2,
+    "articles": 75,
+    "article_fetch_failures": 0
+  }
+}

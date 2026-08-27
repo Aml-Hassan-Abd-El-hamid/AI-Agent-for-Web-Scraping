@@ -1,0 +1,671 @@
+{
+  "website": "alqaheranews",
+  "snapshot_date": "2026-08-27T07:43:46",
+  "pagination_type": "load more button",
+  "scroll_mode": "load_more",
+  "scroll_rounds_requested": 2,
+  "load_more_selector": null,
+  "listing_url": "https://alqaheranews.net/category/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1",
+  "input_urls": [
+    "https://alqaheranews.net/category/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1"
+  ],
+  "pagination_pattern": null,
+  "requirements": "title, date, article body text",
+  "run_dir": "orch_runs/run_20260827_073942",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://alqaheranews.net/category/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1",
+      "file": "listing_page_001.html",
+      "bytes": 367446,
+      "sha1": "b0e50d5acd52c9960efddeb5789e3f5d4f53d6a0"
+    },
+    {
+      "page_num": 1,
+      "url": "https://alqaheranews.net/category/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1",
+      "file": "listing_page_001_expanded.html",
+      "bytes": 245121,
+      "sha1": "ed4ee97b16d89d45e23cd0ca70872dfa13eccc8b",
+      "expanded": true
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://alqaheranews.net/news/177148/%D8%AD%D8%A7%D9%85%D9%84%D8%A9-%D8%A7%D9%84%D8%B7%D8%A7%D8%A6%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D9%8A%D8%A9-%D8%AB%D9%8A%D9%88%D8%AF%D9%88%D8%B1-%D8%B1%D9%88%D8%B2%D9%81%D9%84%D8%AA-%D8%AA%D8%B3%D8%AA%D8%B9%D8%AF-%D9%84%D8%A7%D9%86%D8%AA%D8%B4%D8%A7%D8%B1-%D8%B7%D9%88%D9%8A%D9%84-%D8%A8%D8%A7%D9%84%D8%B4%D8%B1%D9%82-%D8%A7%D9%84%D8%A3%D9%88%D8%B3%D8%B7-",
+      "title": "حاملة الطائرات الأمريكية \"ثيودور روزفلت\" تستعد لانتشار طويل بالشرق الأوسط",
+      "page_num": 1,
+      "bytes": 86949,
+      "sha1": "5f3417f237f55aa250234e10f66ace919f4e37c9"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://alqaheranews.net/news/177146/%D9%87%D9%8A%D8%A6%D8%A9-%D8%A8%D8%AD%D8%B1%D9%8A%D8%A9-%D8%A5%D8%B5%D8%A7%D8%A8%D8%A9-%D9%86%D8%A7%D9%82%D9%84%D8%A9-%D8%A8%D9%85%D9%82%D8%B0%D9%88%D9%81-%D9%85%D8%AC%D9%87%D9%88%D9%84-%D9%81%D9%8A-%D9%85%D8%B6%D9%8A%D9%82-%D9%87%D8%B1%D9%85%D8%B2-",
+      "title": "إصابة ناقلة بمقذوف مجهول في مضيق هرمز",
+      "page_num": 1,
+      "bytes": 81708,
+      "sha1": "6ed8a489fba83c3bf1ea9cd2e5147b388ee38af8"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://alqaheranews.net/news/177145/%D9%88%D8%A7%D8%B4%D9%86%D8%B7%D9%86-%D8%AA%D8%B3%D8%AA%D8%B9%D8%AF-%D9%84%D9%85%D9%86%D8%A7%D9%82%D8%B4%D8%A9-%D8%AA%D8%A3%D9%85%D9%8A%D9%86-%D8%A7%D9%84%D9%85%D9%84%D8%A7%D8%AD%D8%A9-%D9%81%D9%8A-%D9%87%D8%B1%D9%85%D8%B2-%D9%85%D8%B9-%D8%AD%D9%84%D9%81%D8%A7%D8%A1-%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A%D9%8A%D9%86",
+      "title": "واشنطن تستعد لمناقشة تأمين الملاحة في هرمز مع حلفاء أوروبيين",
+      "page_num": 1,
+      "bytes": 89630,
+      "sha1": "daec198f5c036e2886856c0103134bff75df8958"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://alqaheranews.net/news/177139/%D8%A7%D9%84%D8%B9%D8%AF%D8%A7%D9%84%D8%A9-%D8%B3%D8%AA%D9%86%D8%AA%D8%B5%D8%B1-%D8%B1%D8%A6%D9%8A%D8%B3%D8%A9-%D8%A7%D9%84%D8%AC%D9%86%D8%A7%D8%A6%D9%8A%D8%A9-%D8%A7%D9%84%D8%AF%D9%88%D9%84%D9%8A%D8%A9-%D8%AA%D8%AA%D8%AD%D8%AF%D9%89-%D8%B9%D9%82%D9%88%D8%A8%D8%A7%D8%AA-%D8%AA%D8%B1%D8%A7%D9%85%D8%A8",
+      "title": "\"العدالة ستنتصر\".. رئيسة \"الجنائية الدولية\" تتحدى عقوبات ترامب",
+      "page_num": 1,
+      "bytes": 87312,
+      "sha1": "19fa76605b13d2c26fc551a2eae7e8475805f085"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://alqaheranews.net/news/177125/%D8%B9%D8%A8%D8%AF-%D8%A7%D9%84%D8%B9%D8%A7%D8%B7%D9%8A-%D9%88%D9%84%D8%A7%D9%81%D8%B1%D9%88%D9%81-%D9%8A%D8%A8%D8%AD%D8%AB%D8%A7%D9%86-%D8%AA%D8%B7%D9%88%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D8%B4%D8%B1%D9%82-%D8%A7%D9%84%D8%A3%D9%88%D8%B3%D8%B7-%D9%88%D8%A7%D9%84%D8%A3%D8%B2%D9%85%D8%A9-%D8%A7%D9%84%D8%A3%D9%88%D9%83%D8%B1%D8%A7%D9%86%D9%8A%D8%A9",
+      "title": "عبد العاطي ولافروف يبحثان تطورات الشرق الأوسط والأزمة الأوكرانية",
+      "page_num": 1,
+      "bytes": 83811,
+      "sha1": "80f8ec12d62f96b489142a8d054655cd96bf92d0"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://alqaheranews.net/news/177123/%D9%85%D9%86%D8%B8%D9%85%D8%A9-%D8%A7%D9%84%D8%B5%D8%AD%D8%A9-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85%D9%8A%D8%A9-%D8%AA%D8%B9%D9%84%D9%86-%D8%A7%D9%86%D8%AA%D9%87%D8%A7%D8%A1-%D8%AA%D9%81%D8%B4%D9%8A-%D9%81%D9%8A%D8%B1%D9%88%D8%B3-%D8%A5%D9%8A%D8%A8%D9%88%D9%84%D8%A7-%D9%81%D9%8A-%D8%A3%D9%88%D8%BA%D9%86%D8%AF%D8%A7-",
+      "title": "منظمة الصحة العالمية تعلن انتهاء تفشي فيروس إيبولا في أوغندا",
+      "page_num": 1,
+      "bytes": 85599,
+      "sha1": "513e8999ab07ac6d1a4ab4239afb76abb8e2d037"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://alqaheranews.net/news/177119/%D9%88%D8%B2%D9%8A%D8%B1-%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A-%D9%86%D8%B1%D9%81%D8%B6-%D8%B3%D9%8A%D8%A7%D8%B3%D8%A7%D8%AA-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84-%D8%A7%D9%84%D8%AA%D9%8A-%D8%AA%D8%B4%D8%B9%D9%84-%D8%A7%D9%84%D9%85%D9%86%D8%B7%D9%82%D8%A9",
+      "title": "وزير الخارجية المصري: نرفض سياسات إسرائيل التي تشعل المنطقة",
+      "page_num": 1,
+      "bytes": 70027,
+      "sha1": "ca7f0cdc9d44140739a83eea6ba1ff3528196914"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://alqaheranews.net/news/177097/%D9%85%D8%AF%D8%A8%D9%88%D9%84%D9%8A-%D9%86%D8%AA%D8%A7%D8%A8%D8%B9-%D8%AA%D8%AD%D8%B1%D9%83%D8%A7%D8%AA-%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1-%D8%A7%D9%84%D9%86%D9%81%D8%B7-%D9%88%D8%B3%D9%84%D8%A7%D8%B3%D9%84-%D8%A7%D9%84%D8%A5%D9%85%D8%AF%D8%A7%D8%AF-%D9%81%D9%8A-%D8%B8%D9%84-%D8%A7%D9%84%D8%B9%D9%82%D9%88%D8%A8%D8%A7%D8%AA-%D8%B9%D9%84%D9%89-%D8%A5%D9%8A%D8%B1%D8%A7%D9%86",
+      "title": "مدبولي: نتابع تحركات أسعار النفط وسلاسل الإمداد في ظل العقوبات على إيران",
+      "page_num": 1,
+      "bytes": 63909,
+      "sha1": "d027a062be90e3c174ba239b8515d1783c0f9e1a"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://alqaheranews.net/news/177092/%D9%85%D9%84%D8%A7%D8%AF%D9%8A%D9%86%D9%88%D9%81-%D9%85%D8%AD%D8%B0%D8%B1%D8%A7-%D9%85%D9%86-%D9%86%D9%82%D8%B7%D8%A9-%D8%A7%D9%84%D9%84%D8%A7%D8%B9%D9%88%D8%AF%D8%A9-%D8%AA%D9%86%D9%81%D9%8A%D8%B0-%D8%AE%D8%A7%D8%B1%D8%B7%D8%A9-%D8%A7%D9%84%D8%B7%D8%B1%D9%8A%D9%82-%D8%A8%D8%BA%D8%B2%D8%A9-%D9%84%D9%8A%D8%B3-%D8%B3%D9%87%D9%84%D8%A7",
+      "title": "ملادينوف محذرا من \"نقطة اللاعودة\": تنفيذ خارطة الطريق بغزة ليس سهلا",
+      "page_num": 1,
+      "bytes": 82375,
+      "sha1": "ec44032b91be0bec2ebdf1e93002aba1ffc4d307"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://alqaheranews.net/news/177081/%D8%AA%D8%B1%D8%A7%D9%85%D8%A8-%D9%8A%D9%83%D8%B4%D9%81-%D8%A5%D8%B5%D8%A7%D8%A8%D8%A9-%D8%A7%D9%84%D9%85%D8%B1%D8%B4%D8%AF-%D8%A7%D9%84%D8%A5%D9%8A%D8%B1%D8%A7%D9%86%D9%8A-%D9%88%D9%8A%D8%A4%D9%83%D8%AF-%D8%A7%D8%B3%D8%AA%D9%85%D8%B1%D8%A7%D8%B1-%D8%A7%D9%84%D8%B3%D9%8A%D8%B7%D8%B1%D8%A9-%D8%B9%D9%84%D9%89-%D9%87%D8%B1%D9%85%D8%B2",
+      "title": "ترامب يكشف إصابة المرشد الإيراني ويؤكد استمرار السيطرة على هرمز",
+      "page_num": 1,
+      "bytes": 76898,
+      "sha1": "d664721a9153550f1a986603169d0b8fcea353c6"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://alqaheranews.net/news/177066/%D8%A8%D9%88%D8%AA%D9%8A%D9%86-%D9%8A%D8%AC%D8%AF%D8%AF-%D9%84%D9%84%D8%B4%D8%B1%D8%B9-%D9%85%D9%88%D9%82%D9%81-%D8%B1%D9%88%D8%B3%D9%8A%D8%A7-%D8%A7%D9%84%D8%AF%D8%A7%D8%B9%D9%85-%D9%84%D9%88%D8%AD%D8%AF%D8%A9-%D9%88%D8%B3%D9%8A%D8%A7%D8%AF%D8%A9-%D8%B3%D9%88%D8%B1%D9%8A%D8%A7",
+      "title": "بوتين يجدد للشرع موقف روسيا الداعم لوحدة وسيادة سوريا",
+      "page_num": 1,
+      "bytes": 71814,
+      "sha1": "acac21a381bab6321a3fc3ae41a461bcf72487bd"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://alqaheranews.net/news/177064/%D8%A7%D9%84%D8%AC%D8%A7%D9%85%D8%B9%D8%A9-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9-%D8%AA%D8%B1%D8%AD%D8%A8-%D8%A8%D9%82%D8%B1%D8%A7%D8%B1-%D8%B1%D9%81%D8%B9-%D8%B3%D9%88%D8%B1%D9%8A%D8%A7-%D9%85%D9%86-%D9%82%D8%A7%D8%A6%D9%85%D8%A9-%D8%A7%D9%84%D8%AF%D9%88%D9%84-%D8%A7%D9%84%D8%B1%D8%A7%D8%B9%D9%8A%D8%A9-%D9%84%D9%84%D8%A5%D8%B1%D9%87%D8%A7%D8%A8",
+      "title": "الجامعة العربية ترحب بقرار رفع سوريا من قائمة الدول الراعية للإرهاب",
+      "page_num": 1,
+      "bytes": 79037,
+      "sha1": "e9385bd9f5a0f84521ed1729dceef8fa827ea105"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://alqaheranews.net/news/177065/%D9%86%D8%AA%D9%86%D9%8A%D8%A7%D9%87%D9%88-%D9%84%D8%A7-%D9%8A%D9%85%D9%83%D9%86-%D8%A7%D9%84%D8%AA%D9%88%D8%B5%D9%84-%D8%A5%D9%84%D9%89-%D8%A7%D8%AA%D9%81%D8%A7%D9%82-%D9%85%D8%B9-%D8%A5%D9%8A%D8%B1%D8%A7%D9%86",
+      "title": "نتنياهو: لا يمكن التوصل إلى اتفاق مع إيران",
+      "page_num": 1,
+      "bytes": 74090,
+      "sha1": "901472890dd81748bf03d351666f29364dbaf9ca"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://alqaheranews.net/news/177053/%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3-%D8%A7%D9%84%D8%B5%D9%8A%D9%86%D9%8A-%D9%8A%D8%B2%D9%88%D8%B1-%D9%85%D8%B5%D8%B1-%D8%AE%D9%84%D8%A7%D9%84-%D8%A7%D9%84%D8%A3%D9%8A%D8%A7%D9%85-%D8%A7%D9%84%D9%82%D9%84%D9%8A%D9%84%D8%A9-%D8%A7%D9%84%D9%85%D9%82%D8%A8%D9%84%D8%A9",
+      "title": "الرئيس الصيني يزور مصر خلال الأيام القليلة المقبلة",
+      "page_num": 1,
+      "bytes": 65098,
+      "sha1": "0491e9f6095dde1ede46a7e7fb6196578ffbb6a4"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://alqaheranews.net/news/177046/%D9%88%D8%B5%D9%84%D8%AA-%D8%A5%D9%84%D9%89-%D9%82%D9%84%D9%86%D8%AF%D9%8A%D8%A7-%D8%AA%D8%B9%D8%B2%D9%8A%D8%B2%D8%A7%D8%AA-%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84%D9%8A%D8%A9-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D9%82%D8%AF%D8%B3-",
+      "title": "وصلت إلى قلنديا.. تعزيزات عسكرية إسرائيلية جديدة في القدس",
+      "page_num": 1,
+      "bytes": 78385,
+      "sha1": "2e66c459ad3e184446781e0b15f5d7fec9f041da"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://alqaheranews.net/news/177048/%D8%A8%D8%A7%D9%83%D8%B3%D8%AA%D8%A7%D9%86-%D9%88%D9%81%D8%A7%D8%A9-%D8%B7%D9%81%D9%84%D8%A7-%D9%81%D9%8A-%D8%AD%D8%B1%D9%8A%D9%82-%D8%A8%D8%A3%D8%AD%D8%AF-%D9%85%D8%B3%D8%AA%D8%B4%D9%81%D9%8A%D8%A7%D8%AA-%D8%A8%D8%A5%D8%B3%D9%84%D8%A7%D9%85-%D8%A2%D8%A8%D8%A7%D8%AF",
+      "title": "باكستان.. وفاة 15 طفلا في حريق بأحد مستشفيات بإسلام آباد",
+      "page_num": 1,
+      "bytes": 69324,
+      "sha1": "2d7696b19a425c91b02d7fe013c6f1a6eacec8d5"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://alqaheranews.net/news/177043/%D8%A7%D9%84%D8%AC%D9%8A%D8%B4-%D8%A7%D9%84%D9%8A%D9%85%D9%86%D9%8A-%D9%85%D9%82%D8%AA%D9%84-%D8%AD%D9%88%D8%AB%D9%8A%D9%8A%D9%86-%D9%88%D8%A5%D8%B5%D8%A7%D8%A8%D8%A9-%D8%A2%D8%AE%D8%B1%D9%8A%D9%86-%D8%B4%D9%85%D8%A7%D9%84-%D8%B4%D8%B1%D9%82-%D8%AA%D8%B9%D8%B2",
+      "title": "الجيش اليمني: مقتل 8 حوثيين وإصابة 15 آخرين شمال شرق تعز",
+      "page_num": 1,
+      "bytes": 76947,
+      "sha1": "d685562df6ce376eaedb98658f23fea55eae84e0"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://alqaheranews.net/news/177040/%D8%B1%D9%88%D8%A8%D9%8A%D9%88-%D9%8A%D8%B3%D8%AA%D8%A8%D8%B9%D8%AF-%D8%B4%D9%86-%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D8%A7-%D8%B6%D8%B1%D8%A8%D8%A7%D8%AA-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D8%B9%D9%84%D9%89-%D8%A5%D9%8A%D8%B1%D8%A7%D9%86-%D9%81%D9%8A-%D8%A7%D9%84%D9%88%D9%82%D8%AA-%D8%A7%D9%84%D8%B1%D8%A7%D9%87%D9%86",
+      "title": "روبيو يستبعد شن أمريكا ضربات جديدة على إيران في الوقت الراهن",
+      "page_num": 1,
+      "bytes": 81955,
+      "sha1": "180f0b7f8c1ce2eda432b448d578f67d1f687a80"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://alqaheranews.net/news/177031/%D8%A8%D8%B1%D9%8A%D8%B7%D8%A7%D9%86%D9%8A%D8%A7-%D8%AA%D8%AF%D8%B9%D9%85-%D8%A7%D9%84%D8%AC%D9%87%D9%88%D8%AF-%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D9%8A%D8%A9-%D9%84%D9%84%D8%AA%D9%88%D8%B5%D9%84-%D8%A5%D9%84%D9%89-%D8%AD%D9%84-%D8%AF%D8%A8%D9%84%D9%88%D9%85%D8%A7%D8%B3%D9%8A-%D8%A8%D8%B4%D8%A3%D9%86-%D8%A5%D9%8A%D8%B1%D8%A7%D9%86",
+      "title": "بريطانيا تدعم الجهود الأمريكية للتوصل إلى حل دبلوماسي بشأن إيران",
+      "page_num": 1,
+      "bytes": 121494,
+      "sha1": "16ca1f9b6bdfe5fe9679cb481ee5322ed1bfbd86"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://alqaheranews.net/news/177019/%D8%A3%D9%83%D8%B3%D9%8A%D9%88%D8%B3-%D8%A7%D9%84%D8%A8%D8%AD%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D9%8A%D8%A9-%D8%A3%D8%AE%D9%84%D8%AA-%D8%A7%D9%84%D9%85%D9%85%D8%B1-%D8%A7%D9%84%D8%A3%D9%88%D8%B3%D8%B7-%D9%81%D9%8A-%D9%85%D8%B6%D9%8A%D9%82-%D9%87%D8%B1%D9%85%D8%B2-%D9%85%D9%86-%D8%A7%D9%84%D8%A3%D9%84%D8%BA%D8%A7%D9%85",
+      "title": "أكسيوس: البحرية الأمريكية أخلت الممر الأوسط في مضيق هرمز من الألغام",
+      "page_num": 1,
+      "bytes": 74704,
+      "sha1": "6b43a092918789355751efcad99c5a7f2f2bd1de"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://alqaheranews.net/news/170914/%D9%84%D8%A8%D9%86%D8%A7%D9%86-%D9%88%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84-%D8%AC%D9%88%D9%84%D8%A9-%D8%AA%D9%81%D8%A7%D9%88%D8%B6%D9%8A%D8%A9-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D9%88%D8%AD%D8%A7%D8%B3%D9%85%D8%A9-%D9%81%D9%8A-%D9%88%D8%A7%D8%B4%D9%86%D8%B7%D9%86",
+      "title": "لبنان وإسرائيل.. جولة تفاوضية جديدة وحاسمة في واشنطن",
+      "page_num": 1,
+      "bytes": 100566,
+      "sha1": "152c02475b445741fe2969869700807681e24053"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://alqaheranews.net/news/170917/%D8%A8%D9%84%D8%A7-%D9%86%D9%82%D9%88%D8%AF-%D9%88%D9%84%D8%A7-%D8%A8%D8%B7%D8%A7%D9%82%D8%A7%D8%AA-%D9%87%D8%AC%D9%85%D8%A7%D8%AA-%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%D8%A9-%D8%AA%D8%B4%D9%84-%D8%A8%D9%86%D9%88%D9%83-%D8%A5%D9%8A%D8%B1%D8%A7%D9%86%D9%8A%D8%A9",
+      "title": "بلا نقود ولا بطاقات.. هجمات إلكترونية تشل 3 بنوك إيرانية",
+      "page_num": 1,
+      "bytes": 67566,
+      "sha1": "5d2b6fda33d4b41855d58ed99a93a2ffd076784e"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://alqaheranews.net/news/171463/%D8%B2%D9%84%D8%B2%D8%A7%D9%84-%D9%81%D9%86%D8%B2%D9%88%D9%8A%D9%84%D8%A7-%D9%85%D8%AE%D8%A7%D9%88%D9%81-%D9%85%D9%86-%D9%82%D9%81%D8%B2%D8%A9-%D9%81%D9%8A-%D8%B2%D9%8A%D8%A7%D8%AF%D8%A9-%D8%A3%D8%B9%D8%AF%D8%A7%D8%AF-%D8%A7%D9%84%D8%B6%D8%AD%D8%A7%D9%8A%D8%A7",
+      "title": "زلزال فنزويلا.. مخاوف من قفزة في زيادة أعداد الضحايا",
+      "page_num": 1,
+      "bytes": 48056,
+      "sha1": "178eaf14f0bdaf48ca47fb9b6d362c0662621478"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://alqaheranews.net/news/171614/%D8%B5%D9%81%D8%B9%D8%A9-%D9%84%D8%AA%D8%B1%D8%A7%D9%85%D8%A8-%D8%A7%D9%84%D9%82%D8%B6%D8%A7%D8%A1-%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D9%8A-%D9%8A%D9%86%D8%AA%D8%B5%D8%B1-%D9%84%D8%AD%D9%82-%D8%A7%D9%84%D9%85%D9%88%D8%A7%D8%B7%D9%86%D8%A9-%D8%A8%D8%A7%D9%84%D9%88%D9%84%D8%A7%D8%AF%D8%A9",
+      "title": "صفعة لترامب.. القضاء الأمريكي ينتصر لحق المواطنة بالولادة",
+      "page_num": 1,
+      "bytes": 69782,
+      "sha1": "8631550f2610fa0e7f6188a56de5411e53062c90"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://alqaheranews.net/news/172166/%D8%A7%D9%84%D9%88%D8%B1%D9%8A%D8%AB-%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%B8%D8%B1-%D9%81%D8%A7%D9%86%D8%B3-%D9%8A%D8%B9%D8%B2%D8%B2-%D9%85%D9%88%D9%82%D8%B9%D9%87-%D9%84%D8%AE%D9%84%D8%A7%D9%81%D8%A9-%D8%AA%D8%B1%D8%A7%D9%85%D8%A8",
+      "title": "الوريث المنتظر.. فانس يعزز موقعه لخلافة ترامب",
+      "page_num": 1,
+      "bytes": 67643,
+      "sha1": "c872672883fc3551dfe9952f35e41b061b94820f"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://alqaheranews.net/news/173074/%D8%A8%D8%B1%D9%8A%D8%B7%D8%A7%D9%86%D9%8A%D8%A7-%D8%AA%D8%AD%D8%B8%D8%B1-%D8%A7%D9%84%D8%AD%D8%B1%D8%B3-%D8%A7%D9%84%D8%AB%D9%88%D8%B1%D9%8A-%D9%88%D8%AA%D8%AA%D9%88%D8%B9%D8%AF-%D8%AF%D8%A7%D8%B9%D9%85%D9%8A%D9%87-%D8%A8%D8%A7%D9%84%D8%B3%D8%AC%D9%86-",
+      "title": "بريطانيا تحظر الحرس الثوري وتتوعد داعميه بالسجن",
+      "page_num": 1,
+      "bytes": 55084,
+      "sha1": "cb57ce12b05681821074047becac11e7db53ef79"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://alqaheranews.net/news/173396/%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D8%A7-%D9%88%D8%A5%D9%8A%D8%B1%D8%A7%D9%86-%D8%A7%D9%84%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9-%D8%A7%D9%84%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D8%A3%D9%88%D8%B3%D8%B9-%D8%AA%D9%82%D8%AA%D8%B1%D8%A8",
+      "title": "أمريكا وإيران.. المواجهة العسكرية الأوسع تقترب",
+      "page_num": 1,
+      "bytes": 81086,
+      "sha1": "0ca059c41ee27c13763b9c4d229d0b012fee9c2e"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://alqaheranews.net/news/174201/%D9%82%D9%85%D8%A9-%D8%AA%D8%B1%D8%A7%D9%85%D8%A8-%D9%88%D9%86%D8%AA%D9%86%D9%8A%D8%A7%D9%87%D9%88-%D8%A7%D9%84%D9%85%D8%B1%D8%AA%D9%82%D8%A8%D8%A9-%D8%A5%D9%8A%D8%B1%D8%A7%D9%86-%D8%AA%D8%AA%D8%B5%D8%AF%D8%B1-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%AD%D8%AB%D8%A7%D8%AA",
+      "title": "قمة ترامب ونتنياهو المرتقبة.. إيران تتصدر المباحثات",
+      "page_num": 1,
+      "bytes": 55820,
+      "sha1": "8d7ef04c4fa4aeb688cce148658902428b99f1a2"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://alqaheranews.net/news/174360/%D8%A8%D8%B1%D8%B3%D9%88%D9%85-%D8%A7%D8%AE%D8%AA%D9%8A%D8%A7%D8%B1%D9%8A%D8%A9-%D9%85%D9%82%D8%AA%D8%B1%D8%AD-%D8%B9%D9%85%D8%A7%D9%86%D9%8A-%D8%AC%D8%AF%D9%8A%D8%AF-%D9%84%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D9%85%D8%B6%D9%8A%D9%82-%D9%87%D8%B1%D9%85%D8%B2",
+      "title": "برسوم اختيارية.. مقترح عُماني جديد لإدارة مضيق هرمز",
+      "page_num": 1,
+      "bytes": 105312,
+      "sha1": "724129b7605e1b096070fc1154dec39155033116"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://alqaheranews.net/news/174880/%D9%88%D8%A7%D8%B4%D9%86%D8%B7%D9%86-%D8%AA%D8%B7%D8%A7%D9%84%D8%A8-%D8%A8%D8%A3%D9%81%D9%83%D8%A7%D8%B1-%D8%BA%D9%8A%D8%B1-%D9%85%D8%A3%D9%84%D9%88%D9%81%D8%A9-%D9%84%D8%B9%D9%82%D8%A7%D8%A8-%D8%A5%D9%8A%D8%B1%D8%A7%D9%86",
+      "title": "واشنطن تطالب بأفكار غير مألوفة لعقاب إيران",
+      "page_num": 1,
+      "bytes": 67425,
+      "sha1": "7a42d0bf8d232036e752e8663572eebed514e2e1"
+    },
+    {
+      "id": 31,
+      "file": "article_0031.html",
+      "url": "https://alqaheranews.net/news/174990/-%D8%B3%D9%86%D9%88%D8%A7%D8%AA-%D8%B9%D9%84%D9%89-%D8%A7%D9%86%D9%81%D8%AC%D8%A7%D8%B1-%D9%85%D8%B1%D9%81%D8%A3-%D8%A8%D9%8A%D8%B1%D9%88%D8%AA-%D8%B9%D8%AF%D8%A7%D9%84%D8%A9-%D9%85%D8%B9%D8%B7%D9%84%D8%A9-%D9%88%D8%AD%D9%82%D9%8A%D9%82%D8%A9-%D9%84%D8%A7-%D8%AA%D8%B2%D8%A7%D9%84-%D8%BA%D8%A7%D8%A6%D8%A8%D8%A9",
+      "title": "6 سنوات على انفجار مرفأ بيروت.. عدالة معطلة وحقيقة لا تزال غائبة",
+      "page_num": 1,
+      "bytes": 87542,
+      "sha1": "fb8375c749bd168c004566a9082cc4b3d1c1133e"
+    },
+    {
+      "id": 32,
+      "file": "article_0032.html",
+      "url": "https://alqaheranews.net/news/175631/%D9%85%D8%AA%D9%88%D8%B9%D8%AF%D8%A7-%D8%A8%D9%82%D9%88%D8%A9-%D8%B4%D8%AF%D9%8A%D8%AF%D8%A9-%D8%AA%D8%B1%D8%A7%D9%85%D8%A8-%D9%8A%D8%AA%D8%AD%D8%AF%D8%AB-%D8%B9%D9%86-%D8%A7%D9%84%D9%85%D8%B1%D8%A7%D9%88%D8%BA%D8%A9-%D8%A7%D9%84%D8%A5%D9%8A%D8%B1%D8%A7%D9%86%D9%8A%D8%A9",
+      "title": "متوعدا بقوة شديدة..  ترامب يتحدث عن \"المراوغة\" الإيرانية",
+      "page_num": 1,
+      "bytes": 48716,
+      "sha1": "b212ce98a9ca854db5e25b02b730701b60f6710f"
+    },
+    {
+      "id": 33,
+      "file": "article_0033.html",
+      "url": "https://alqaheranews.net/news/176116/%D9%8A%D9%88-%D8%A3%D8%B3-%D8%A3%D8%B3-%D8%A3%D8%A8%D8%B1%D8%A7%D9%87%D8%A7%D9%85-%D9%84%D9%8A%D9%86%D9%83%D9%88%D9%84%D9%86-%D8%A7%D9%84%D9%88%D8%AC%D9%87-%D8%A7%D9%84%D8%A2%D8%AE%D8%B1-%D9%84%D9%84%D8%AD%D9%8A%D8%A7%D8%A9-%D9%81%D9%88%D9%82-%D8%A3%D8%B4%D9%87%D8%B1-%D8%AD%D8%A7%D9%85%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D8%B7%D8%A7%D8%A6%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D9%8A%D8%A9",
+      "title": "يو أس أس أبراهام لينكولن..  الوجه الآخر للحياة فوق أشهر حاملات الطائرات الأمريكية",
+      "page_num": 1,
+      "bytes": 68495,
+      "sha1": "2d4b7514656fcafcb36b1956b69f249f810d18a4"
+    },
+    {
+      "id": 34,
+      "file": "article_0034.html",
+      "url": "https://alqaheranews.net/news/176222/%D8%A8%D8%B5%D9%81%D9%82%D8%A9-%D8%B6%D8%AE%D9%85%D8%A9-%D9%85%D8%B9-%D8%B1%D8%A7%D9%8A%D8%AB%D9%8A%D9%88%D9%86-%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D8%A7-%D8%AA%D8%B1%D9%81%D8%B9-%D8%A5%D9%86%D8%AA%D8%A7%D8%AC-%D8%B5%D9%88%D8%A7%D8%B1%D9%8A%D8%AE-%D8%AA%D9%88%D9%85%D8%A7%D9%87%D9%88%D9%83",
+      "title": "بصفقة ضخمة مع رايثيون أمريكا ترفع إنتاج صواريخ \"توماهوك\"",
+      "page_num": 1,
+      "bytes": 54653,
+      "sha1": "83bb382d709c3efe588a845455451bd7bef1f392"
+    },
+    {
+      "id": 35,
+      "file": "article_0035.html",
+      "url": "https://alqaheranews.net/news/176227/%D8%A7%D9%84%D9%82%D9%86%D9%88%D8%A7%D8%AA-%D8%A7%D9%84%D8%B3%D8%B1%D9%8A%D8%A9-%D8%AA%D8%B1%D8%A7%D9%85%D8%A8-%D9%8A%D8%AA%D9%88%D8%A7%D8%B5%D9%84-%D9%85%D8%B9-%D8%A7%D9%84%D8%AD%D8%B1%D8%B3-%D8%A7%D9%84%D8%AB%D9%88%D8%B1%D9%8A-%D9%88%D8%B7%D9%87%D8%B1%D8%A7%D9%86-%D8%AA%D9%83%D8%B0%D8%A8%D9%87",
+      "title": "\"القنوات السرية\".. ترامب يتواصل مع الحرس الثوري وطهران تكذبه",
+      "page_num": 1,
+      "bytes": 61317,
+      "sha1": "2d1f30b33e9b912f326cafda694f56da5a143060"
+    },
+    {
+      "id": 36,
+      "file": "article_0036.html",
+      "url": "https://alqaheranews.net/news/177021/%D8%AC%D9%88%D8%AA%D9%8A%D8%B1%D9%8A%D8%B4-%D9%82%D9%84%D9%82-%D9%85%D9%86-%D8%A7%D8%B3%D8%AA%D9%8A%D9%84%D8%A7%D8%A1-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84-%D8%B9%D9%84%D9%89-%D9%85%D8%B1%D9%83%D8%B2-%D8%A7%D9%84%D8%A3%D9%88%D9%86%D8%B1%D9%88%D8%A7-%D9%81%D9%8A-%D8%A7%D9%84%D9%82%D8%AF%D8%B3-%D8%A7%D9%84%D9%85%D8%AD%D8%AA%D9%84%D8%A9",
+      "title": "جوتيريش قلق من استيلاء إسرائيل على مركز \"الأونروا\" في القدس المحتلة",
+      "page_num": 1,
+      "bytes": 100687,
+      "sha1": "68d394bd567b410eec33f8216163f56f06c22e66"
+    },
+    {
+      "id": 37,
+      "file": "article_0037.html",
+      "url": "https://alqaheranews.net/news/177015/%D8%A5%D9%8A%D8%B1%D8%A7%D9%86-%D8%A7%D9%84%D8%B9%D9%82%D9%88%D8%A8%D8%A7%D8%AA-%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D9%8A%D8%A9-%D8%AA%D9%87%D8%AF%D9%8A%D8%AF-%D8%B5%D8%B1%D9%8A%D8%AD-%D9%84%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86-%D8%A7%D9%84%D8%AF%D9%88%D9%84%D9%8A-%D9%88%D9%85%D9%8A%D8%AB%D8%A7%D9%82-%D8%A7%D9%84%D8%A3%D9%85%D9%85-%D8%A7%D9%84%D9%85%D8%AA%D8%AD%D8%AF%D8%A9",
+      "title": "إيران: العقوبات الأمريكية تهديد صريح للقانون الدولي وميثاق الأمم المتحدة",
+      "page_num": 1,
+      "bytes": 80959,
+      "sha1": "3aecbf93d3ee538e5213a5532238b0ba387f01c6"
+    },
+    {
+      "id": 38,
+      "file": "article_0038.html",
+      "url": "https://alqaheranews.net/news/177007/%D8%A5%D9%8A%D8%B1%D8%A7%D9%86-%D9%88%D8%B9%D9%85%D8%A7%D9%86-%D8%AA%D8%A8%D8%AD%D8%AB%D8%A7%D9%86-%D8%A5%D8%B7%D8%A7%D8%B1%D8%A7-%D9%85%D8%B1%D8%AD%D9%84%D9%8A%D8%A7-%D9%84%D8%A5%D9%86%D8%B4%D8%A7%D8%A1-%D9%85%D9%85%D8%B1-%D9%85%D8%A4%D9%82%D8%AA-%D9%81%D9%8A-%D9%87%D8%B1%D9%85%D8%B2",
+      "title": "إيران وعمان تبحثان إطارا مرحليا لإنشاء ممر مؤقت في هرمز",
+      "page_num": 1,
+      "bytes": 100621,
+      "sha1": "5a816751332db749a9a7727ab559cc57b100a4f9"
+    },
+    {
+      "id": 39,
+      "file": "article_0039.html",
+      "url": "https://alqaheranews.net/news/176992/%D8%AA%D8%B1%D8%A7%D9%85%D8%A8-%D9%82%D9%88%D8%A9-%D8%A7%D9%84%D9%81%D8%B6%D8%A7%D8%A1-%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D9%8A%D8%A9-%D8%AA%D8%B1%D8%A7%D9%82%D8%A8-%D9%83%D9%84-%D8%B4%D8%A8%D8%B1-%D9%85%D9%86-%D9%85%D8%B6%D9%8A%D9%82-%D9%87%D8%B1%D9%85%D8%B2",
+      "title": "ترامب: قوة الفضاء الأمريكية تراقب كل شبر من مضيق هرمز",
+      "page_num": 1,
+      "bytes": 98971,
+      "sha1": "775ab7d038e8a42806a4dcf18bca80b2a1550643"
+    },
+    {
+      "id": 40,
+      "file": "article_0040.html",
+      "url": "https://alqaheranews.net/news/176983/%D9%85%D8%B5%D8%B1-%D8%AA%D8%AF%D9%8A%D9%86-%D8%A7%D9%84%D9%87%D8%AC%D9%88%D9%85-%D8%B9%D9%84%D9%89-%D8%AF%D9%88%D8%B1%D9%8A%D8%A9-%D8%AA%D8%A7%D8%A8%D8%B9%D8%A9-%D9%84%D9%84%D8%A3%D9%85%D9%85-%D8%A7%D9%84%D9%85%D8%AA%D8%AD%D8%AF%D8%A9-%D8%A8%D8%AC%D9%86%D9%88%D8%A8-%D8%A7%D9%84%D8%B3%D9%88%D8%AF%D8%A7%D9%86",
+      "title": "مصر تدين الهجوم على دورية تابعة للأمم المتحدة بجنوب السودان",
+      "page_num": 1,
+      "bytes": 72905,
+      "sha1": "b951e80401dac7d07f210f1f2647cc156d74290b"
+    },
+    {
+      "id": 41,
+      "file": "article_0041.html",
+      "url": "https://alqaheranews.net/news/176981/%D9%86%D8%AA%D9%86%D9%8A%D8%A7%D9%87%D9%88-%D8%A8%D8%AF%D8%A3%D9%86%D8%A7-%D8%B9%D9%85%D9%84%D9%8A%D8%A9-%D8%A5%D8%AE%D9%84%D8%A7%D8%A1-%D9%85%D8%AC%D9%85%D8%B9-%D8%A7%D9%84%D8%A3%D9%88%D9%86%D8%B1%D9%88%D8%A7-%D9%81%D9%8A-%D9%83%D9%81%D8%B1-%D8%B9%D9%82%D8%A8-%D8%A8%D8%A7%D9%84%D9%82%D8%AF%D8%B3",
+      "title": "نتنياهو: بدأنا عملية إخلاء مجمع الأونروا في كفر عقب بالقدس",
+      "page_num": 1,
+      "bytes": 65682,
+      "sha1": "6d31de362ac4c1509561fb7fda7bc8b0a1f3557a"
+    },
+    {
+      "id": 42,
+      "file": "article_0042.html",
+      "url": "https://alqaheranews.net/news/176973/%D8%A7%D9%84%D8%A3%D9%88%D9%86%D8%B1%D9%88%D8%A7-%D8%A7%D9%84%D8%A7%D8%AD%D8%AA%D9%84%D8%A7%D9%84-%D8%A3%D8%BA%D9%84%D9%82-%D9%85%D8%AF%D8%A7%D8%B1%D8%B3-%D9%81%D9%8A-%D9%85%D8%AE%D9%8A%D9%85%D8%A7%D8%AA-%D9%88%D9%85%D9%82%D8%B1%D8%A7%D8%AA-%D8%AA%D8%A7%D8%A8%D8%B9%D8%A9-%D9%84%D9%86%D8%A7-%D8%A8%D8%A7%D9%84%D9%82%D8%AF%D8%B3",
+      "title": "الاحتلال يغلق 6 مدارس للأونروا في مخيمات ومقرات القدس",
+      "page_num": 1,
+      "bytes": 72143,
+      "sha1": "4b337c4285b7c2def35de5bde9215fa22f86de1e"
+    },
+    {
+      "id": 43,
+      "file": "article_0043.html",
+      "url": "https://alqaheranews.net/news/176974/%D8%A7%D9%84%D8%AE%D8%A7%D8%B1%D8%AC%D9%8A%D8%A9-%D8%A7%D9%84%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A%D8%A9-%D8%AA%D8%B7%D8%A7%D9%84%D8%A8-%D8%A8%D9%85%D9%88%D9%82%D9%81-%D8%AF%D9%88%D9%84%D9%8A-%D8%AD%D8%A7%D8%B2%D9%85-%D9%84%D8%AD%D9%85%D8%A7%D9%8A%D8%A9-%D9%85%D9%86%D8%B4%D8%A2%D8%AA-%D8%A3%D9%88%D9%86%D8%B1%D9%88%D8%A7",
+      "title": "الخارجية الفلسطينية تطالب بموقف دولي حازم لحماية منشآت أونروا",
+      "page_num": 1,
+      "bytes": 71055,
+      "sha1": "b5e42e17e0b5f64262a9f093f4117bff2ed287d5"
+    },
+    {
+      "id": 44,
+      "file": "article_0044.html",
+      "url": "https://alqaheranews.net/news/176971/%D9%82%D8%B7%D8%B1-%D9%86%D9%88%D8%A7%D8%B5%D9%84-%D8%AC%D9%87%D9%88%D8%AF%D9%86%D8%A7-%D9%85%D8%B9-%D8%A3%D8%B7%D8%B1%D8%A7%D9%81-%D8%A7%D9%84%D8%AA%D9%88%D8%AA%D8%B1-%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D9%8A-%D8%A7%D9%84%D8%A5%D9%8A%D8%B1%D8%A7%D9%86%D9%8A-%D9%84%D9%84%D8%B9%D9%88%D8%AF%D8%A9-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D8%AA%D9%81%D8%A7%D9%88%D8%B6",
+      "title": "قطر: نواصل جهودنا مع أطراف التوتر الأمريكي الإيراني للعودة إلى التفاوض",
+      "page_num": 1,
+      "bytes": 69141,
+      "sha1": "6b1a1cc26f00edde14c0ecabcc42a791515e00a8"
+    },
+    {
+      "id": 45,
+      "file": "article_0045.html",
+      "url": "https://alqaheranews.net/news/176962/%D8%A7%D9%84%D8%B1%D8%A6%D8%A7%D8%B3%D8%A9-%D8%A7%D9%84%D8%A5%D9%8A%D8%B1%D8%A7%D9%86%D9%8A%D8%A9-%D9%86%D8%AA%D8%A7%D8%A6%D8%AC-%D9%85%D8%AB%D9%85%D8%B1%D8%A9-%D9%84%D8%B2%D9%8A%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D9%88%D9%81%D8%AF-%D8%A7%D9%84%D8%A8%D8%A7%D9%83%D8%B3%D8%AA%D8%A7%D9%86%D9%8A-%D8%B3%D8%AA%D8%AA%D8%B6%D8%AD-%D9%82%D8%B1%D9%8A%D8%A8%D8%A7",
+      "title": "الرئاسة الإيرانية: نتائج مثمرة لزيارة الوفد الباكستاني ستتضح قريبا",
+      "page_num": 1,
+      "bytes": 54491,
+      "sha1": "1d559c1cec519226e8aced04abef734ca2303619"
+    },
+    {
+      "id": 46,
+      "file": "article_0046.html",
+      "url": "https://alqaheranews.net/news/176964/%D9%88%D8%A7%D8%B4%D9%86%D8%B7%D9%86-%D8%AA%D8%B3%D8%AA%D8%B9%D8%AF-%D9%84%D8%A5%D8%B9%D8%A7%D8%AF%D8%A9-%D8%AF%D8%A8%D9%84%D9%88%D9%85%D8%A7%D8%B3%D9%8A%D9%8A%D9%87%D8%A7-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D8%B4%D8%B1%D9%82-%D8%A7%D9%84%D8%A3%D9%88%D8%B3%D8%B7",
+      "title": "واشنطن تستعد لإعادة دبلوماسييها إلى الشرق الأوسط",
+      "page_num": 1,
+      "bytes": 65856,
+      "sha1": "05d88995c593179c218d890133f96f25a999a5dc"
+    },
+    {
+      "id": 47,
+      "file": "article_0047.html",
+      "url": "https://alqaheranews.net/news/176963/%D8%AD%D8%A7%D9%85%D9%84%D8%A9-%D8%A7%D9%84%D8%B7%D8%A7%D8%A6%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D9%8A%D8%A9-%D8%A5%D8%A8%D8%B1%D8%A7%D9%87%D8%A7%D9%85-%D9%84%D9%8A%D9%86%D9%83%D9%88%D9%84%D9%86-%D8%AA%D8%B1%D8%B3%D9%88-%D9%81%D9%8A-%D8%AA%D8%A7%D9%8A%D9%84%D8%A7%D9%86%D8%AF-%D8%A7%D9%84%D8%A3%D8%B3%D8%A8%D9%88%D8%B9-%D8%A7%D9%84%D9%85%D9%82%D8%A8%D9%84",
+      "title": "حاملة الطائرات الأمريكية \"إبراهام لينكولن\" ترسو في تايلاند الأسبوع المقبل",
+      "page_num": 1,
+      "bytes": 59757,
+      "sha1": "52f5fe3109462b3508826ce5c48ae6736cd8ff3c"
+    },
+    {
+      "id": 48,
+      "file": "article_0048.html",
+      "url": "https://alqaheranews.net/news/159193/%D8%A7%D8%AD%D8%AA%D8%AC%D8%A7%D8%AC%D8%A7%D8%AA-%D9%81%D9%8A-%D8%B7%D9%87%D8%B1%D8%A7%D9%86-%D9%85%D8%B8%D8%A7%D9%87%D8%B1%D8%A7%D8%AA-%D8%AD%D8%A7%D8%B4%D8%AF%D8%A9-%D8%AA%D9%86%D8%AF%D9%8A%D8%AF%D8%A7-%D8%A8%D9%85%D9%82%D8%AA%D9%84-%D8%AE%D8%A7%D9%85%D9%86%D8%A6%D9%8A",
+      "title": "تنديدا بمقتل خامنئي.. احتجاجات حاشدة تجتاح طهران",
+      "page_num": 1,
+      "bytes": 96766,
+      "sha1": "2d2574a3c515c07e36125326fdb26e0bc143d6ab"
+    },
+    {
+      "id": 49,
+      "file": "article_0049.html",
+      "url": "https://alqaheranews.net/news/159610/%D8%A5%D9%81%D8%B7%D8%A7%D8%B1-%D8%A7%D9%84%D9%85%D8%B7%D8%B1%D9%8A%D8%A9-%D8%AD%D9%83%D8%A7%D9%8A%D8%A9-%D8%B4%D8%B9%D8%A8-%D9%8A%D8%B1%D8%B3%D9%85-%D8%A8%D9%87%D8%AC%D8%A9",
+      "title": "\"إفطار المطرية\" في مصر.. حكاية شعب يرسم بهجة",
+      "page_num": 1,
+      "bytes": 83505,
+      "sha1": "7e24f28adc1e1cb4cf3c6fc5f5c61a19296572b9"
+    },
+    {
+      "id": 50,
+      "file": "article_0050.html",
+      "url": "https://alqaheranews.net/news/160608/%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3-%D8%B9%D8%A8%D8%AF-%D8%A7%D9%84%D9%81%D8%AA%D8%A7%D8%AD-%D8%A7%D9%84%D8%B3%D9%8A%D8%B3%D9%89-%D9%8A%D8%B4%D8%A7%D8%B1%D9%83-%D9%81%D9%8A-%D8%AD%D9%81%D9%84-%D8%A5%D9%81%D8%B7%D8%A7%D8%B1-%D8%A7%D9%84%D8%A3%D8%B3%D8%B1%D8%A9-%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A%D8%A9",
+      "title": "الرئيس عبد الفتاح السيسى يشارك في حفل إفطار الأسرة المصرية",
+      "page_num": 1,
+      "bytes": 80070,
+      "sha1": "84e706a990eba2cb0690b86e983f4100e0a14409"
+    },
+    {
+      "id": 51,
+      "file": "article_0051.html",
+      "url": "https://alqaheranews.net/news/163352/%D8%A7%D9%84%D8%A5%D9%8A%D8%B1%D8%A7%D9%86%D9%8A%D9%88%D9%86-%D9%8A%D8%AD%D9%8A%D9%88%D9%86-%D9%85%D8%B1%D8%A7%D8%B3%D9%85-%D8%A3%D8%B1%D8%A8%D8%B9%D9%8A%D9%86-%D8%A7%D8%BA%D8%AA%D9%8A%D8%A7%D9%84-%D8%A7%D9%84%D9%85%D8%B1%D8%B4%D8%AF-%D8%A7%D9%84%D8%A5%D9%8A%D8%B1%D8%A7%D9%86%D9%8A",
+      "title": "الإيرانيون يحيون مراسم أربعين اغتيال المرشد الإيراني",
+      "page_num": 1,
+      "bytes": 81973,
+      "sha1": "ae878fe6ed93586489b72717f689cae8281c6b4a"
+    },
+    {
+      "id": 52,
+      "file": "article_0052.html",
+      "url": "https://alqaheranews.net/news/165048/%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9-%D9%88%D8%A7%D9%84%D8%A7%D8%AA%D8%AD%D8%A7%D8%AF-%D8%A7%D9%84%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A-%D8%A7%D9%86%D8%B7%D9%84%D8%A7%D9%82-%D8%AC%D9%88%D9%84%D8%A9-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D9%85%D9%86-%D8%A7%D9%84%D9%85%D8%A8%D8%A7%D8%AD%D8%AB%D8%A7%D8%AA-%D8%B1%D9%81%D9%8A%D8%B9%D8%A9-%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D9%88%D9%89-%D9%81%D9%8A-%D9%82%D8%A8%D8%B1%D8%B5-",
+      "title": "القاهرة والاتحاد الأوروبي.. انطلاق جولة جديدة من المباحثات في قبرص",
+      "page_num": 1,
+      "bytes": 83710,
+      "sha1": "d51d88a7d7430f65a19e58fb1662e8db9f2022d3"
+    },
+    {
+      "id": 53,
+      "file": "article_0053.html",
+      "url": "https://alqaheranews.net/news/165057/%D9%84%D9%82%D8%B7%D8%A7%D8%AA-%D9%84%D8%A3%D8%AE%D9%84%D8%A7%D8%A1-%D8%AA%D8%B1%D8%A7%D9%85%D8%A8-%D9%85%D9%86-%D8%AD%D9%81%D9%84-%D8%B9%D8%B4%D8%A7%D8%A1-%D8%A8%D8%A7%D9%84%D8%A8%D9%8A%D8%AA-%D8%A7%D9%84%D8%A7%D8%A8%D9%8A%D8%B6",
+      "title": "لقطات لإجلاء ترامب من حفل عشاء مراسلي البيت الأبيض",
+      "page_num": 1,
+      "bytes": 81641,
+      "sha1": "4c6a33634bf2b9270604947a7de54bff82507bb7"
+    },
+    {
+      "id": 54,
+      "file": "article_0054.html",
+      "url": "https://alqaheranews.net/news/166362/%D8%B1%D8%B3%D8%A7%D9%84%D8%A9-%D8%AA%D8%B6%D8%A7%D9%85%D9%86-%D9%85%D8%B5%D8%B1%D9%8A%D8%A9-%D9%85%D9%86-%D8%A3%D8%A8%D9%88%D8%B8%D8%A8%D9%8A-%D9%88%D9%85%D8%B3%D9%82%D8%B7-%D8%A3%D9%85%D9%86-%D8%A7%D9%84%D8%AE%D9%84%D9%8A%D8%AC-%D8%AC%D8%B2%D8%A1-%D9%84%D8%A7-%D9%8A%D8%AA%D8%AC%D8%B2%D8%A3-%D9%85%D9%86-%D8%A7%D9%84%D8%A3%D9%85%D9%86-%D8%A7%D9%84%D9%82%D9%88%D9%85%D9%8A-%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A",
+      "title": "رسالة  تضامن من أبوظبي ومسقط.. أمن الخليج امتداد للأمن القومي المصري",
+      "page_num": 1,
+      "bytes": 84423,
+      "sha1": "e7398828aabbf9d464d61aa82e92d03418f417b1"
+    },
+    {
+      "id": 55,
+      "file": "article_0055.html",
+      "url": "https://alqaheranews.net/news/166456/%D8%B1%D8%A6%D9%8A%D8%B3%D8%A7-%D9%85%D8%B5%D8%B1-%D9%88%D9%81%D8%B1%D9%86%D8%B3%D8%A7-%D9%8A%D9%81%D8%AA%D8%AA%D8%AD%D8%A7%D9%86-%D8%A7%D9%84%D8%B5%D8%B1%D8%AD-%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF-%D9%84%D8%AC%D8%A7%D9%85%D8%B9%D8%A9-%D8%B3%D9%86%D8%AC%D9%88%D8%B1-%D8%A8%D8%A7%D9%84%D8%A5%D8%B3%D9%83%D9%86%D8%AF%D8%B1%D9%8A%D8%A9",
+      "title": "رئيسا مصر وفرنسا يفتتحان الصرح الجديد لجامعة سنجور بالإسكندرية",
+      "page_num": 1,
+      "bytes": 84449,
+      "sha1": "be675a1e53c31b7ff100e0d516da7aacede2f61e"
+    },
+    {
+      "id": 56,
+      "file": "article_0056.html",
+      "url": "https://alqaheranews.net/news/166672/%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3-%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A-%D9%8A%D8%B5%D9%84-%D9%83%D9%8A%D9%86%D9%8A%D8%A7-%D9%84%D9%84%D8%A7%D9%86%D8%B6%D9%85%D8%A7%D9%85-%D8%A5%D9%84%D9%89-%D9%82%D8%A7%D8%AF%D8%A9-%D8%A3%D9%81%D8%B1%D9%8A%D9%82%D9%8A%D8%A7-%D9%88-%D9%85%D8%A7%D9%83%D8%B1%D9%88%D9%86-%D9%81%D9%8A-%D9%82%D9%85%D8%A9-%D8%A3%D9%81%D8%B1%D9%8A%D9%82%D9%8A%D8%A7-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D8%A3%D9%85%D8%A7%D9%85",
+      "title": "الرئيس المصري يصل كينيا للمشاركة بقمة \"إفريقيا إلى الأمام\"مع قادة القارة",
+      "page_num": 1,
+      "bytes": 77443,
+      "sha1": "f6a07890d4d660c844e0b2d080836883cb036095"
+    },
+    {
+      "id": 57,
+      "file": "article_0057.html",
+      "url": "https://alqaheranews.net/news/169264/%D9%85%D8%B5%D8%B1-%D8%AA%D8%B7%D9%84%D9%82-%D8%A5%D9%86%D8%AA%D8%A7%D8%AC-%D8%B3%D9%8A%D8%A7%D8%B1%D8%A9-%D9%86%D9%8A%D8%B3%D8%A7%D9%86-%D9%85%D8%A7%D8%AC%D9%86%D9%8A%D8%AA-%D9%83%D8%A3%D9%88%D9%84-%D8%B7%D8%B1%D8%A7%D8%B2-%D9%84%D9%84%D8%B4%D8%B1%D9%83%D8%A9-%D9%8A%D8%B5%D9%86%D8%B9-%D9%81%D9%8A-%D8%A5%D9%81%D8%B1%D9%8A%D9%82%D9%8A%D8%A7",
+      "title": "مصر.. إنتاج سيارة \"نيسان ماجنيت\" كأول طراز للشركة يُصنع في إفريقيا",
+      "page_num": 1,
+      "bytes": 83276,
+      "sha1": "086fabde761a76ae777f58d354201ad23a82db24"
+    },
+    {
+      "id": 58,
+      "file": "article_0058.html",
+      "url": "https://alqaheranews.net/news/170310/%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3-%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A-%D9%8A%D8%B4%D8%A7%D8%B1%D9%83-%D9%81%D9%8A-%D9%82%D9%85%D8%A9-%D9%85%D8%AC%D9%85%D9%88%D8%B9%D8%A9-%D8%A7%D9%84%D8%B3%D8%A8%D8%B9-G",
+      "title": "الرئيس المصري يشارك في قمة مجموعة السبع بفرنسا",
+      "page_num": 1,
+      "bytes": 85949,
+      "sha1": "63a7cf30c201300b47713ace7f6715c77d003d55"
+    },
+    {
+      "id": 59,
+      "file": "article_0059.html",
+      "url": "https://alqaheranews.net/news/171950/%D8%A7%D9%81%D8%AA%D8%AA%D8%A7%D8%AD-%D9%85%D9%82%D8%B1-%D8%A7%D9%84%D9%82%D9%8A%D8%A7%D8%AF%D8%A9-%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D8%B1%D8%A7%D8%AA%D9%8A%D8%AC%D9%8A%D8%A9-%D9%84%D9%84%D8%AF%D9%88%D9%84%D8%A9-%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A%D8%A9-%D8%A8%D8%A7%D9%84%D8%B9%D8%A7%D8%B5%D9%85%D8%A9-%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9",
+      "title": "افتتاح مقر القيادة الاستراتيجية للدولة المصرية بالعاصمة الجديدة",
+      "page_num": 1,
+      "bytes": 84583,
+      "sha1": "2f32984012ab046b4980d8ef836ac096961afd50"
+    },
+    {
+      "id": 60,
+      "file": "article_0060.html",
+      "url": "https://alqaheranews.net/news/172811/%D8%A7%D9%84%D9%81%D8%B1%D8%AD%D8%A9-%D9%85%D8%B3%D8%AA%D9%85%D8%B1%D8%A9-%D8%A7%D8%AD%D8%AA%D9%81%D8%A7%D9%84%D9%8A%D8%A9-%D8%B6%D8%AE%D9%85%D8%A9-%D9%84%D8%AA%D9%83%D8%B1%D9%8A%D9%85-%D9%85%D9%86%D8%AA%D8%AE%D8%A8-%D9%85%D8%B5%D8%B1-%D8%A8%D8%A7%D8%B3%D8%AA%D8%A7%D8%AF-%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9",
+      "title": "الفرحة مستمرة.. احتفالية ضخمة لتكريم منتخب مصر باستاد القاهرة",
+      "page_num": 1,
+      "bytes": 89180,
+      "sha1": "c69eccdb409095494ebe4b40ccbcbb29f13f6d6d"
+    },
+    {
+      "id": 61,
+      "file": "article_0061.html",
+      "url": "https://alqaheranews.net/news/172925/%D8%AA%D8%B6%D8%A7%D9%85%D9%86-%D9%88%D8%AF%D8%B9%D9%85-%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3-%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A-%D9%81%D9%8A-%D9%85%D9%85%D9%84%D9%83%D8%A9-%D8%A7%D9%84%D8%A8%D8%AD%D8%B1%D9%8A%D9%86-",
+      "title": "تضامن ودعم.. الرئيس المصري في مملكة البحرين",
+      "page_num": 1,
+      "bytes": 57722,
+      "sha1": "2782c160c10774a169b362cffd702ca4e9f89c70"
+    },
+    {
+      "id": 62,
+      "file": "article_0062.html",
+      "url": "https://alqaheranews.net/news/22741/%D8%A5%D9%84%D9%82%D8%A7%D8%A1-%D8%A7%D9%84%D9%82%D8%A8%D8%B6-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D9%85%D8%B4%D8%AA%D8%A8%D9%87-%D8%A8%D9%87-%D9%81%D9%8A-%D9%85%D8%AD%D8%A7%D9%88%D9%84%D8%A9-%D8%A7%D8%BA%D8%AA%D9%8A%D8%A7%D9%84-%D8%B1%D8%A6%D9%8A%D8%B3",
+      "title": "إلقاء القبض على المشتبه به في محاولة اغتيال رئيس الوزراء الياباني",
+      "page_num": 1,
+      "bytes": 61704,
+      "sha1": "f26706ee76f603fb2704253668db8eae94a7996d"
+    },
+    {
+      "id": 63,
+      "file": "article_0063.html",
+      "url": "https://alqaheranews.net/news/176948/%D9%85%D9%8A%D8%B1%D8%B2-%D8%A5%D8%B9%D9%84%D8%A7%D9%86-%D9%88%D8%B4%D9%8A%D9%83-%D8%B9%D9%86-%D9%87%D9%88%D9%8A%D8%A9-%D8%A7%D9%84%D8%AC%D9%86%D8%A7%D8%A9-%D9%81%D9%8A-%D9%87%D8%AC%D9%88%D9%85-%D9%85%D8%B3%D9%8A%D8%B1%D8%A9-%D9%85%D8%B7%D8%A7%D8%B1-%D9%84%D8%A7%D9%8A%D8%A8%D8%B2%D9%8A%D8%AC",
+      "title": "ميرز: إعلان وشيك عن هوية الجناة في هجوم مُسيّرة مطار لايبزيج",
+      "page_num": 1,
+      "bytes": 65860,
+      "sha1": "34276b7fdf9f512d8c208deaaca9c7962866d5e3"
+    },
+    {
+      "id": 64,
+      "file": "article_0064.html",
+      "url": "https://alqaheranews.net/news/176956/%D8%AC%D9%8A%D8%B4-%D8%A7%D9%84%D8%A7%D8%AD%D8%AA%D9%84%D8%A7%D9%84-%D9%8A%D9%86%D9%81%D8%B0-%D8%AA%D9%81%D8%AC%D9%8A%D8%B1%D8%A7-%D9%81%D9%8A-%D8%A8%D9%84%D8%AF%D8%A9-%D9%85%D9%8A%D8%B3-%D8%A7%D9%84%D8%AC%D8%A8%D9%84-%D8%AC%D9%86%D9%88%D8%A8-%D9%84%D8%A8%D9%86%D8%A7%D9%86",
+      "title": "جيش الاحتلال ينفذ تفجيرا في بلدة ميس الجبل جنوب لبنان",
+      "page_num": 1,
+      "bytes": 82858,
+      "sha1": "0afef342047694e215157af3c50aa1584a2b5cc4"
+    },
+    {
+      "id": 65,
+      "file": "article_0065.html",
+      "url": "https://alqaheranews.net/news/176946/-%D8%A7%D9%84%D9%82%D8%A8%D8%B6-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3-%D8%A7%D9%84%D8%A3%D8%B1%D9%85%D9%8A%D9%86%D9%8A-%D8%A7%D9%84%D8%B3%D8%A7%D8%A8%D9%82-%D9%83%D9%88%D8%AA%D8%B4%D8%A7%D8%B1%D9%8A%D8%A7%D9%86-%D8%A8%D8%AA%D9%87%D9%85-%D9%81%D8%B3%D8%A7%D8%AF",
+      "title": "القبض على الرئيس الأرميني السابق كوتشاريان بتهم فساد",
+      "page_num": 1,
+      "bytes": 65054,
+      "sha1": "7b1a1a02d15b6e2c1e39ab0daa3843f8aa4b4e7f"
+    },
+    {
+      "id": 66,
+      "file": "article_0066.html",
+      "url": "https://alqaheranews.net/news/176941/%D8%A8%D9%83%D9%8A%D9%86-%D8%AA%D8%B1%D9%81%D8%B6-%D8%AA%D9%87%D8%AF%D9%8A%D8%AF%D8%A7%D8%AA-%D9%88%D8%A7%D8%B4%D9%86%D8%B7%D9%86-%D8%A8%D9%81%D8%B1%D8%B6-%D8%B9%D9%82%D9%88%D8%A8%D8%A7%D8%AA-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D9%85%D8%AA%D8%B9%D8%A7%D9%85%D9%84%D9%8A%D9%86-%D9%85%D8%B9-%D8%A5%D9%8A%D8%B1%D8%A7%D9%86",
+      "title": "بكين ترفض تهديدات واشنطن بفرض عقوبات على المتعاملين مع إيران",
+      "page_num": 1,
+      "bytes": 58722,
+      "sha1": "9fe84398c8b7670d9a63f5d42d2260433ccd7aa3"
+    },
+    {
+      "id": 67,
+      "file": "article_0067.html",
+      "url": "https://alqaheranews.net/news/176937/%D9%88%D8%B2%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%AF%D9%81%D8%A7%D8%B9-%D8%A7%D9%84%D8%B1%D9%88%D8%B3%D9%8A%D8%A9-%D8%A7%D8%B3%D8%AA%D9%87%D8%AF%D9%81%D9%86%D8%A7-%D8%B3%D9%81%D9%8A%D9%86%D8%A9-%D9%81%D9%8A-%D9%85%D9%8A%D9%86%D8%A7%D8%A1-%D9%8A%D9%88%D8%AC%D9%86%D9%8A-%D8%AA%D8%AD%D9%85%D9%84-%D8%B4%D8%AD%D9%86%D8%A9-%D9%84%D9%84%D9%82%D9%88%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%B3%D9%84%D8%AD%D8%A9-%D8%A7%D9%84%D8%A3%D9%88%D9%83%D8%B1%D8%A7%D9%86%D9%8A%D8%A9",
+      "title": "روسيا تستهدف سفينة في ميناء يوجني تحمل شحنة للجيش الأوكراني",
+      "page_num": 1,
+      "bytes": 71599,
+      "sha1": "39bb0f1d32d23eafb32c772c382ad5d7bf425f10"
+    },
+    {
+      "id": 68,
+      "file": "article_0068.html",
+      "url": "https://alqaheranews.net/news/176938/%D9%88%D8%B2%D9%8A%D8%B1-%D8%A7%D9%84%D8%A3%D9%85%D9%86-%D8%A7%D9%84%D9%82%D9%88%D9%85%D9%8A-%D8%A7%D9%84%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84%D9%8A-%D8%A8%D8%AF%D8%A3%D9%86%D8%A7-%D8%B9%D9%85%D9%84%D9%8A%D8%A9-%D9%84%D8%A5%D8%AE%D9%84%D8%A7%D8%A1-%D9%85%D8%AC%D9%85%D8%B9-%D8%A7%D9%84%D8%A3%D9%88%D9%86%D8%B1%D9%88%D8%A7-%D9%81%D9%8A-%D8%A7%D9%84%D9%82%D8%AF%D8%B3",
+      "title": "وزير الأمن القومي الإسرائيلي: بدأنا عملية لإخلاء مجمع الأونروا في القدس",
+      "page_num": 1,
+      "bytes": 53536,
+      "sha1": "10f31fda70cf9c02bb49f6d925bc3a61dace6720"
+    },
+    {
+      "id": 69,
+      "file": "article_0069.html",
+      "url": "https://alqaheranews.net/news/176935/%D8%A7%D9%84%D9%83%D8%B1%D9%85%D9%84%D9%8A%D9%86-%D9%8A%D9%86%D9%81%D9%8A-%D8%AA%D8%B5%D8%B1%D9%8A%D8%AD%D8%A7%D8%AA-%D8%B2%D9%8A%D9%84%D9%8A%D9%86%D8%B3%D9%83%D9%8A-%D8%A8%D8%B4%D8%A3%D9%86-%D8%A7%D9%84%D8%AA%D8%AD%D8%B6%D9%8A%D8%B1-%D9%84%D8%AA%D8%B9%D8%A8%D8%A6%D8%A9-%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9-%D9%81%D9%8A-%D8%B1%D9%88%D8%B3%D9%8A%D8%A7",
+      "title": "الكرملين ينفي تصريحات زيلينسكي بشأن التحضير لتعبئة عسكرية في روسيا",
+      "page_num": 1,
+      "bytes": 61802,
+      "sha1": "b7281721be04aa76706257d1ca877c84d0bc79a0"
+    },
+    {
+      "id": 70,
+      "file": "article_0070.html",
+      "url": "https://alqaheranews.net/news/176932/%D8%A7%D9%84%D8%B9%D8%AB%D9%88%D8%B1-%D8%B9%D9%84%D9%89-%D9%85%D8%B3%D9%8A%D8%B1%D8%A9-%D8%AB%D8%A7%D9%84%D8%AB%D8%A9-%D9%88%D9%85%D8%AA%D9%81%D8%AC%D8%B1%D8%A7%D8%AA-%D8%B9%D9%82%D8%A8-%D9%85%D8%AD%D8%A7%D9%88%D9%84%D8%A9-%D9%87%D8%AC%D9%88%D9%85-%D8%B9%D9%84%D9%89-%D9%85%D8%B7%D8%A7%D8%B1-%D8%A3%D9%84%D9%85%D8%A7%D9%86%D9%8A",
+      "title": "العثور على مُسيّرة ثالثة ومتفجرات عقب محاولة هجوم على مطار ألماني",
+      "page_num": 1,
+      "bytes": 69065,
+      "sha1": "b97e419e1d205cf71578b87ea5b24c6d73c9ca63"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 2,
+    "articles": 70,
+    "article_fetch_failures": 0
+  }
+}

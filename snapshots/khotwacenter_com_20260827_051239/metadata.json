@@ -1,0 +1,660 @@
+{
+  "website": "khotwacenter",
+  "snapshot_date": "2026-08-27T05:19:50",
+  "pagination_type": "numbered pagination",
+  "scroll_mode": null,
+  "scroll_rounds_requested": null,
+  "load_more_selector": null,
+  "listing_url": "https://www.khotwacenter.com/category/%D8%A7%D9%84%D8%AF%D8%B1%D8%A7%D8%B3%D8%A7%D8%AA-%D9%88%D8%A7%D9%84%D8%A3%D8%A8%D8%AD%D8%A7%D8%AB/%D8%A8%D8%AD%D9%88%D8%AB-%D9%88%D8%AF%D8%B1%D8%A7%D8%B3%D8%A7%D8%AA/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA-%D8%AB%D9%82%D8%A7%D9%81%D9%8A%D8%A9/",
+  "input_urls": [
+    "https://www.khotwacenter.com/category/%D8%A7%D9%84%D8%AF%D8%B1%D8%A7%D8%B3%D8%A7%D8%AA-%D9%88%D8%A7%D9%84%D8%A3%D8%A8%D8%AD%D8%A7%D8%AB/%D8%A8%D8%AD%D9%88%D8%AB-%D9%88%D8%AF%D8%B1%D8%A7%D8%B3%D8%A7%D8%AA/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA-%D8%AB%D9%82%D8%A7%D9%81%D9%8A%D8%A9/",
+    "https://www.khotwacenter.com/category/%D8%A7%D9%84%D8%AF%D8%B1%D8%A7%D8%B3%D8%A7%D8%AA-%D9%88%D8%A7%D9%84%D8%A3%D8%A8%D8%AD%D8%A7%D8%AB/%D8%A8%D8%AD%D9%88%D8%AB-%D9%88%D8%AF%D8%B1%D8%A7%D8%B3%D8%A7%D8%AA/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA-%D8%AB%D9%82%D8%A7%D9%81%D9%8A%D8%A9/page/2/"
+  ],
+  "pagination_pattern": "https://www.khotwacenter.com/category/%D8%A7%D9%84%D8%AF%D8%B1%D8%A7%D8%B3%D8%A7%D8%AA-%D9%88%D8%A7%D9%84%D8%A3%D8%A8%D8%AD%D8%A7%D8%AB/%D8%A8%D8%AD%D9%88%D8%AB-%D9%88%D8%AF%D8%B1%D8%A7%D8%B3%D8%A7%D8%AA/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA-%D8%AB%D9%82%D8%A7%D9%81%D9%8A%D8%A9/page/{page}/",
+  "requirements": "title, date, author, article body text",
+  "run_dir": "orch_runs/run_20260827_051239",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://www.khotwacenter.com/category/%D8%A7%D9%84%D8%AF%D8%B1%D8%A7%D8%B3%D8%A7%D8%AA-%D9%88%D8%A7%D9%84%D8%A3%D8%A8%D8%AD%D8%A7%D8%AB/%D8%A8%D8%AD%D9%88%D8%AB-%D9%88%D8%AF%D8%B1%D8%A7%D8%B3%D8%A7%D8%AA/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA-%D8%AB%D9%82%D8%A7%D9%81%D9%8A%D8%A9/",
+      "file": "listing_page_001.html",
+      "bytes": 181157,
+      "sha1": "308f7340ca205d3efb67725befa80608d56e6ee0"
+    },
+    {
+      "page_num": 2,
+      "url": "https://www.khotwacenter.com/category/%D8%A7%D9%84%D8%AF%D8%B1%D8%A7%D8%B3%D8%A7%D8%AA-%D9%88%D8%A7%D9%84%D8%A3%D8%A8%D8%AD%D8%A7%D8%AB/%D8%A8%D8%AD%D9%88%D8%AB-%D9%88%D8%AF%D8%B1%D8%A7%D8%B3%D8%A7%D8%AA/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA-%D8%AB%D9%82%D8%A7%D9%81%D9%8A%D8%A9/page/2/",
+      "file": "listing_page_002.html",
+      "bytes": 182407,
+      "sha1": "f2c71e8b438754429bf22ac9f88c869438736129"
+    },
+    {
+      "page_num": 3,
+      "url": "https://www.khotwacenter.com/category/%D8%A7%D9%84%D8%AF%D8%B1%D8%A7%D8%B3%D8%A7%D8%AA-%D9%88%D8%A7%D9%84%D8%A3%D8%A8%D8%AD%D8%A7%D8%AB/%D8%A8%D8%AD%D9%88%D8%AB-%D9%88%D8%AF%D8%B1%D8%A7%D8%B3%D8%A7%D8%AA/%D9%85%D9%82%D8%A7%D9%84%D8%A7%D8%AA-%D8%AB%D9%82%D8%A7%D9%81%D9%8A%D8%A9/page/3/",
+      "file": "listing_page_003.html",
+      "bytes": 181980,
+      "sha1": "36b1c6ba38d1a9c55329b53e48cbba5b8d97c19b"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://www.khotwacenter.com/%d9%87%d9%88%d9%8a%d8%aa%d9%86%d8%a7-%d8%a7%d9%84%d8%aa%d8%a7%d8%a6%d9%87%d8%a9/",
+      "title": "هويتنا التائهة",
+      "page_num": 1,
+      "bytes": 343063,
+      "sha1": "2c7812ee661dc64f7f7635863c7b1946a115c626"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://www.khotwacenter.com/15179-2/",
+      "title": "النيوليبرالية الرقمية: نظرة نقدية للفيلسوف “بيونغ شول هان”",
+      "page_num": 1,
+      "bytes": 329323,
+      "sha1": "f2b983f54a48fac13666c8a54a45a786294cb7b2"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://www.khotwacenter.com/%d8%a8%d9%8a%d9%86-%d8%a7%d9%84%d8%af%d8%b9%d8%a7%d8%a1-%d9%88%d8%a7%d9%84%d8%a7%d8%b3%d8%aa%d8%ac%d8%af%d8%a7%d8%a1-%d8%a7%d9%84%d8%b1%d9%82%d9%85%d9%8a/",
+      "title": "بين الدعاء والاستجداء الرقمي",
+      "page_num": 1,
+      "bytes": 261218,
+      "sha1": "c5e871c0178999ae9eb65f48a8acdc9a0bdc565b"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d9%85%d8%b1%d8%a3%d8%a9-%d9%88%d8%a7%d9%84%d8%ad%d8%ac%d8%a7%d8%a8-%d9%81%d9%8a-%d8%a7%d9%84%d8%ae%d8%b7%d8%a7%d8%a8-%d8%a7%d9%84%d8%aa%d9%86%d9%88%d9%8a%d8%b1%d9%8a/",
+      "title": "المرأة والحجاب في الخطاب التنويري",
+      "page_num": 1,
+      "bytes": 391793,
+      "sha1": "43e009bbacc6956c06cdcda58fa58b8c3e24bcca"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d8%b9%d9%85%d9%84-%d9%88%d9%88%d9%82%d8%aa-%d8%a7%d9%84%d9%81%d8%b1%d8%a7%d8%ba-%d9%81%d9%86-%d8%a5%d8%af%d8%a7%d8%b1%d8%a9-%d8%a7%d9%84%d9%88%d9%82%d8%aa/",
+      "title": "العمل ووقت الفراغ: فن إدارة الوقت",
+      "page_num": 1,
+      "bytes": 320518,
+      "sha1": "62b1d3f79854324d61ce0dc22ec5761db14858a7"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://www.khotwacenter.com/%d8%a3%d9%86%d8%a7-%d8%a3%d8%b3%d8%aa%d8%ad%d9%82-%d9%88%d9%87%d9%85-%d8%a7%d9%84%d8%a7%d8%b3%d8%aa%d8%ad%d9%82%d8%a7%d9%82-%d9%88%d8%ad%d9%82%d9%8a%d9%82%d8%a9-%d8%a7%d9%84%d9%85%d8%ae%d9%84%d9%88/",
+      "title": "أنا أستحق: وهم الاستحقاق وحقيقة المخلوقية",
+      "page_num": 1,
+      "bytes": 311903,
+      "sha1": "01da27efb5d708744ae4f7fc336eafeb8ecf4d63"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d8%a5%d9%86%d8%b3%d8%a7%d9%86-%d8%a7%d9%84%d8%ad%d8%af%d8%a7%d8%ab%d9%8a-%d8%a8%d9%8a%d9%86-%d9%88%d9%87%d9%85-%d8%a7%d9%84%d8%ad%d8%b1%d9%8a%d8%a9-%d9%88%d8%ad%d9%86%d9%8a%d9%86-%d8%a7/",
+      "title": "الإنسان الحداثي بين وهم الحرية وحنين الثبات",
+      "page_num": 1,
+      "bytes": 329584,
+      "sha1": "9628b75eaf7d41311c19720a25ebbb64e4a94288"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d9%81%d8%b7%d8%b1%d8%a9-%d8%a7%d9%84%d9%85%d9%8a%d8%ab%d8%a7%d9%82-%d8%a7%d9%84%d8%a3%d9%88%d9%84-%d9%88%d8%a7%d9%84%d8%af%d9%84%d8%a7%d9%84%d8%a9-%d8%a7%d9%84%d8%b5%d9%84%d8%a8%d8%a9/",
+      "title": "الفطرة: الميثاق الأول والدلالة الصلبة في عالم سائل",
+      "page_num": 1,
+      "bytes": 334211,
+      "sha1": "0e101b15505c4ce758953fce6d7572341923f282"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d9%81%d8%b1%d8%af%d8%a7%d9%86%d9%8a%d8%a9-%d9%81%d9%8a-%d9%85%d8%ac%d8%aa%d9%85%d8%b9%d8%a7%d8%aa%d9%86%d8%a7-%d9%85%d8%b8%d8%a7%d9%87%d8%b1%d9%87%d8%a7-%d9%88%d8%b3%d8%a8%d9%84-%d8%aa/",
+      "title": "الفردانية في مجتمعاتنا: مظاهرها وسبل تجاوزها",
+      "page_num": 1,
+      "bytes": 416315,
+      "sha1": "7cf3f3aa0e6a37268f166b0890c6de418a7de1dc"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d9%82%d8%b1%d8%a2%d9%86-%d8%a7%d9%84%d9%83%d8%b1%d9%8a%d9%85-%d9%88%d9%85%d9%86%d9%87%d8%ac-%d8%a7%d9%84%d8%aa%d8%a7%d8%b1%d9%8a%d8%ae%d8%a7%d9%86%d9%8a%d8%a9/",
+      "title": "القرآن الكريم ومنهج التاريخانية",
+      "page_num": 1,
+      "bytes": 330204,
+      "sha1": "fbfd704bc12cbf33b07cca0c333f486dacd51ce0"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d8%b3%d9%86%d9%86-%d8%a7%d9%84%d8%a5%d9%84%d9%87%d9%8a%d8%a9-%d8%a8%d9%8a%d9%86-%d8%a7%d9%84%d9%88%d8%b9%d8%af-%d9%88%d8%a7%d9%84%d8%aa%d8%ad%d9%82%d9%82/",
+      "title": "السنن الإلهية بين الوعد والتحقق",
+      "page_num": 2,
+      "bytes": 262816,
+      "sha1": "f7078e1e6221c1a41de0ce435b7f2f66d848307f"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d8%a8%d9%88%d8%af%d9%83%d8%a7%d8%b3%d8%aa-%d9%88%d8%b5%d9%86%d8%a7%d8%b9%d8%a9-%d8%a7%d9%84%d9%85%d8%ad%d8%aa%d9%88%d9%89-%d8%a8%d9%8a%d9%86-%d8%a7%d9%84%d8%aa%d8%b1%d9%81%d9%8a%d9%87/",
+      "title": "البودكاست وصناعة المحتوى بين الترفيه والتأثير",
+      "page_num": 2,
+      "bytes": 400406,
+      "sha1": "7d41e579e610b25da060a6393c5ebb5228567d09"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d8%b1%d9%8a%d8%a7%d8%b6%d8%a9-%d9%81%d9%8a-%d8%ad%d9%8a%d8%a7%d8%aa%d9%86%d8%a7-%d8%a7%d9%84%d9%85%d8%b9%d8%a7%d8%b5%d8%b1%d8%a9/",
+      "title": "الرياضة في حياتنا المعاصرة",
+      "page_num": 2,
+      "bytes": 294274,
+      "sha1": "bafefcb59b7adef941bbfa86f0823bafbdde512b"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://www.khotwacenter.com/%d8%a3%d9%82%d8%b7%d8%a7%d8%a8-%d8%a7%d9%84%d8%aa%d9%83%d9%86%d9%88%d9%84%d9%88%d8%ac%d9%8a%d8%a7-%d9%88%d8%aa%d8%b4%d9%83%d9%8a%d9%84-%d8%a7%d9%84%d9%85%d8%ac%d8%aa%d9%85%d8%b9%d8%a7%d8%aa-%d8%a7/",
+      "title": "أقطاب التكنولوجيا وتشكيل المجتمعات الحديثة",
+      "page_num": 2,
+      "bytes": 303531,
+      "sha1": "ea87f7205ce5854caee66d9551a55102801b3218"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d8%b3%d8%aa%d8%b9%d8%a7%d8%af%d8%a9-%d8%a7%d9%84%d8%b5%d9%84%d8%a7%d8%a8%d8%a9-%d8%a7%d9%84%d8%a3%d8%ae%d9%84%d8%a7%d9%82%d9%8a%d8%a9-%d9%81%d9%8a-%d8%b9%d8%a7%d9%84%d9%85-%d8%a7%d9%84%d8%b3/",
+      "title": "استعادة الصلابة الأخلاقية في عالم السيولة والنسبية",
+      "page_num": 2,
+      "bytes": 287904,
+      "sha1": "8dbebbce657f1839ebac50ec193cc5ae71f7413a"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d9%86%d8%b3%d9%88%d9%8a%d8%a9-%d9%85%d8%b1%d8%a7%d8%ac%d8%b9%d8%a7%d8%aa-%d8%b6%d8%b1%d9%88%d8%b1%d9%8a%d8%a9/",
+      "title": "النسوية: مراجعات ضرورية",
+      "page_num": 2,
+      "bytes": 497208,
+      "sha1": "e67e387b64f2e492812d4439ca56610a8773ad99"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://www.khotwacenter.com/%d9%86%d9%82%d8%af-%d8%a7%d9%84%d8%ba%d8%b1%d8%a8-%d9%81%d9%8a-%d9%85%d9%8a%d8%b2%d8%a7%d9%86-%d8%a7%d9%84%d8%a8%d8%b4%d8%b1%d9%8a/",
+      "title": "نقد الغرب في ميزان البشري",
+      "page_num": 2,
+      "bytes": 274350,
+      "sha1": "0ddd65b62048f5d5130043bad7b2aa633263b7ad"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://www.khotwacenter.com/%d8%a5%d8%b3%d9%84%d8%a7%d9%85%d9%8a%d8%a9-%d8%a7%d9%84%d9%85%d8%b9%d8%b1%d9%81%d8%a9-%d9%85%d8%b4%d8%b1%d9%88%d8%b9%d9%8b%d8%a7-%d9%84%d9%84%d8%b9%d9%84%d9%85-%d9%88%d8%a7%d9%84%d8%a5%d9%86%d8%b3/",
+      "title": "إسلامية المعرفة مشروعًا للعلم والإنسان",
+      "page_num": 2,
+      "bytes": 309703,
+      "sha1": "ff4f661e76b7f66cfe39271caf19b0e2550c3855"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://www.khotwacenter.com/%d8%aa%d8%ac%d8%af%d9%8a%d8%af-%d8%a7%d9%84%d8%ae%d8%b7%d8%a7%d8%a8-%d8%a7%d9%84%d8%af%d9%8a%d9%86%d9%8a-%d8%ac%d8%af%d9%84-%d9%85%d8%b3%d8%aa%d9%85%d8%b1/",
+      "title": "تجديد الخطاب الديني: جدل مستمر",
+      "page_num": 2,
+      "bytes": 207507,
+      "sha1": "d3e06c4c0b45f40ca24779690a1053736646bdbb"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://www.khotwacenter.com/%d8%ba%d8%b2%d8%a9-%d9%88%d8%a8%d8%af%d8%a7%d9%8a%d8%a9-%d8%ac%d8%af%d9%8a%d8%af%d8%a9-%d9%84%d9%84%d8%aa%d8%a7%d8%b1%d9%8a%d8%ae/",
+      "title": "غزة وبداية جديدة للتاريخ",
+      "page_num": 2,
+      "bytes": 185961,
+      "sha1": "4fdd0faea599bee42fbe63c90e709bcf32b97f0c"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d8%aa%d8%b7%d9%88%d8%b1-%d8%a7%d9%84%d8%aa%d8%a7%d8%b1%d9%8a%d8%ae%d9%8a-%d9%84%d9%84%d8%ad%d8%ac%d8%a7%d8%a8-%d9%81%d9%8a-%d9%85%d8%b5%d8%b1/",
+      "title": "التطور التاريخي للحجاب في مصر",
+      "page_num": 2,
+      "bytes": 269902,
+      "sha1": "81123bde2d5de7e95badc2e6e2fd280e84a26bef"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://www.khotwacenter.com/darsh-13/",
+      "title": "أمهات مقاصد القرآن",
+      "page_num": 2,
+      "bytes": 202293,
+      "sha1": "8ea00642c7dd35199eabd98c23c7b3ef87919f2e"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d9%85%d8%b1%d8%a3%d8%a9-%d9%88%d8%a7%d9%84%d8%ac%d9%86%d8%af%d8%b1/",
+      "title": "المرأة والجندر",
+      "page_num": 2,
+      "bytes": 1501129,
+      "sha1": "0a9e3cf7d170a84558b93389589627e0fb0fedc8"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://www.khotwacenter.com/%d8%a5%d9%86%d8%b3%d8%a7%d9%86%d9%8a%d8%a9-%d8%a7%d9%84%d8%b3%d9%86%d8%a9-%d8%a7%d9%84%d9%86%d8%a8%d9%88%d9%8a%d8%a9-%d9%81%d9%8a-%d8%a7%d9%84%d8%ad%d9%8a%d8%a7%d8%a9-%d8%a7%d9%84%d8%b2%d9%88%d8%ac/",
+      "title": "إنسانية السنة النبوية في الحياة الزوجية",
+      "page_num": 2,
+      "bytes": 475577,
+      "sha1": "09d9e9f4113b5381c1c8c63606fd80a63db40e55"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://www.khotwacenter.com/%d9%85%d9%86-%d8%a7%d9%84%d9%83%d8%aa%d8%a7%d8%aa%d9%8a%d8%a8-%d8%a5%d9%84%d9%89-%d8%a7%d9%84%d9%85%d8%af%d8%a7%d8%b1%d8%b3-%d8%a7%d9%84%d8%af%d9%88%d9%84%d9%8a%d8%a9/",
+      "title": "مسيرة التعليم في مصر: من الكتاتيب إلى المدارس الدولية",
+      "page_num": 2,
+      "bytes": 388013,
+      "sha1": "7e5661f819824f289f9f6117a9a5e8bd4efa0bd5"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d8%af%d8%b1%d8%a7%d8%b3%d8%a7%d8%aa-%d8%a7%d9%84%d9%85%d8%b3%d8%aa%d9%82%d8%a8%d9%84%d9%8a%d8%a9/",
+      "title": "الدراسات المستقبلية",
+      "page_num": 2,
+      "bytes": 610287,
+      "sha1": "018beae4aab9c7fe07c2e6aa952eb391cc8b82f1"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://www.khotwacenter.com/%d9%85%d9%86%d8%a7%d9%87%d8%ac-%d8%a7%d9%84%d8%a5%d9%81%d8%aa%d8%a7%d8%a1-%d9%81%d9%8a-%d8%b9%d8%a7%d9%84%d9%85%d9%86%d8%a7-%d8%a7%d9%84%d9%85%d8%b9%d8%a7%d8%b5%d8%b1-%d9%88%d8%b9%d9%84%d8%a7%d9%82/",
+      "title": "مناهج الإفتاء في عالمنا المعاصر وعلاقتها بالمقاصد الشرعية",
+      "page_num": 2,
+      "bytes": 171589,
+      "sha1": "3ed5d5a3bf96f7e2850bcced954c693617ca0a90"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d8%b9%d9%86%d9%81-%d8%a7%d9%84%d9%85%d9%82%d8%af%d8%b3-%d8%ac%d8%af%d9%84-%d8%a7%d9%84%d8%af%d9%8a%d9%86-%d9%88%d8%a7%d9%84%d8%af%d9%86%d9%8a%d9%88%d9%8a%d8%8c-%d8%b1%d8%a4%d9%89-%d9%81/",
+      "title": "العنف المقدس: جدل الديني والدنيوي، رؤى فرنسية",
+      "page_num": 2,
+      "bytes": 237594,
+      "sha1": "6590e08466a0e141495b78ce7b3101c5fa9b339f"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://www.khotwacenter.com/%d8%aa%d9%82%d8%b3%d9%8a%d9%85-%d8%a7%d9%84%d9%85%d8%b5%d8%ad%d9%81-%d8%a7%d9%84%d8%b4%d8%b1%d9%8a%d9%81-%d8%aa%d8%a7%d8%b1%d9%8a%d8%ae-%d9%88%d8%ad%d9%90%d9%83%d9%85/",
+      "title": "تقسيم المصحف الشريف: تاريخ وحِكم!",
+      "page_num": 2,
+      "bytes": 273539,
+      "sha1": "114ee2e785c0877a6e8d0b9f3ab0c6ba2b104d83"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d8%a7%d9%82%d8%aa%d8%b5%d8%a7%d8%af-%d8%a7%d9%84%d8%a5%d8%b3%d9%84%d8%a7%d9%85%d9%8a/",
+      "title": "الاقتصاد الإسلامي",
+      "page_num": 2,
+      "bytes": 1353555,
+      "sha1": "4e2bd130cc0e29c7894ab8cc6077f8e2929dc7fb"
+    },
+    {
+      "id": 31,
+      "file": "article_0031.html",
+      "url": "https://www.khotwacenter.com/%d8%a3%d8%ad%d8%b3%d9%86-%d8%a7%d9%84%d9%82%d8%b5%d8%b5/",
+      "title": "أحسن القصص",
+      "page_num": 2,
+      "bytes": 157974,
+      "sha1": "3f75e68e9212a4ebd5ee7994ec4961a0befb08e9"
+    },
+    {
+      "id": 32,
+      "file": "article_0032.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d9%85%d8%b1%d9%83%d8%b2%d9%8a%d8%a9-%d8%a7%d9%84%d8%ba%d8%b1%d8%a8%d9%8a%d8%a9-%d9%88%d8%aa%d9%86%d8%a7%d9%82%d8%b6%d8%a7%d8%aa%d9%87%d8%a7-%d9%85%d8%b9-%d8%ad%d9%82%d9%88%d9%82/",
+      "title": "المركزية الغربية وتناقضاتها مع حقوق الإنسان",
+      "page_num": 2,
+      "bytes": 315790,
+      "sha1": "dfc8a82c3e441c4095f7907457087c3bfa45865e"
+    },
+    {
+      "id": 33,
+      "file": "article_0033.html",
+      "url": "https://www.khotwacenter.com/%d9%85%d8%af%d8%ae%d9%84-%d8%a5%d9%84%d9%89-%d8%a7%d9%84%d9%82%d8%b1%d8%a2%d9%86-%d8%a7%d9%84%d9%83%d8%b1%d9%8a%d9%85-%d8%ac-1%d8%9b-%d9%81%d9%8a-%d8%a7%d9%84%d8%aa%d8%b9%d8%b1%d9%8a%d9%81-%d8%a8/",
+      "title": "مدخل إلى القرآن الكريم. ج. 1؛ في التعريف بالقرآن",
+      "page_num": 2,
+      "bytes": 349908,
+      "sha1": "7233892592f3dd8c4cfbfa3d282159f32d347d84"
+    },
+    {
+      "id": 34,
+      "file": "article_0034.html",
+      "url": "https://www.khotwacenter.com/female-jurists-muftis-and-sheikhs-in-the-islamic-history/",
+      "title": "Female Jurists, Muftis and Sheikhs in the Islamic History",
+      "page_num": 2,
+      "bytes": 442645,
+      "sha1": "2366d04153fc7284dc863b1e32d0b20f3e84ca5b"
+    },
+    {
+      "id": 35,
+      "file": "article_0035.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d8%aa%d8%b1%d8%a8%d9%8a%d8%a9-%d8%a7%d9%84%d8%a5%d8%b3%d9%84%d8%a7%d9%85%d9%8a%d8%a9-%d9%82%d8%a7%d8%a6%d9%85%d8%a9-%d8%a8%d8%a8%d9%84%d9%8a%d9%88%d8%ac%d8%b1%d8%a7%d9%81%d9%8a%d8%a9/",
+      "title": "التربية الإسلامية: قائمة ببليوجرافية منتقاة",
+      "page_num": 2,
+      "bytes": 614813,
+      "sha1": "671325801659eea74d792d66e20c4ed5a0869682"
+    },
+    {
+      "id": 36,
+      "file": "article_0036.html",
+      "url": "https://www.khotwacenter.com/%d8%ad%d9%88%d8%a7%d8%b1-%d8%a7%d9%84%d9%85%d8%b9%d8%a7%d8%b1%d9%81-%d9%88%d8%a7%d9%84%d8%ab%d9%82%d8%a7%d9%81%d8%a7%d8%aa-%d9%88%d8%a8%d9%86%d8%a7%d8%a1-%d8%a7%d9%84%d8%b9%d9%84%d9%88%d9%85-%d8%a7/",
+      "title": "حوار المعارف والثقافات وبناء العلوم الاجتماعية",
+      "page_num": 2,
+      "bytes": 164438,
+      "sha1": "dd51cfbfba7a30227912e7d70653501001d17fa0"
+    },
+    {
+      "id": 37,
+      "file": "article_0037.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d8%b4%d9%87%d8%a7%d8%af%d8%a9-%d9%81%d9%8a-%d8%a7%d9%84%d9%82%d8%b1%d8%a2%d9%86-%d8%a7%d9%84%d9%83%d8%b1%d9%8a%d9%85/",
+      "title": "الشهادة في القرآن الكريم",
+      "page_num": 2,
+      "bytes": 300295,
+      "sha1": "9e90c97b169be3c88065cbb0b61afdfc79bfb1f8"
+    },
+    {
+      "id": 38,
+      "file": "article_0038.html",
+      "url": "https://www.khotwacenter.com/%d8%ad%d9%88%d9%84-%d8%a7%d9%84%d8%a7%d8%b3%d8%aa%d8%b4%d8%b1%d8%a7%d9%82-%d8%a7%d9%84%d8%ac%d8%af%d9%8a%d8%af/",
+      "title": "حول الاستشراق الجديد",
+      "page_num": 2,
+      "bytes": 418688,
+      "sha1": "b73eac13c2ab7dae2b33a5e9fdda68354d0ba01d"
+    },
+    {
+      "id": 39,
+      "file": "article_0039.html",
+      "url": "https://www.khotwacenter.com/%d8%b9-169-%d9%85%d8%ac%d9%84%d8%a9-%d8%a7%d9%84%d9%85%d8%b3%d9%84%d9%85-%d8%a7%d9%84%d9%85%d8%b9%d8%a7%d8%b5%d8%b1/",
+      "title": "ع. 169 مجلة المسلم المعاصر",
+      "page_num": 2,
+      "bytes": 158365,
+      "sha1": "ee505bb1b7b2a25b9b8ab3201cddc77e774c17ee"
+    },
+    {
+      "id": 40,
+      "file": "article_0040.html",
+      "url": "https://www.khotwacenter.com/%d9%81%d9%8a-%d8%aa%d8%b1%d8%a8%d9%8a%d8%a9-%d8%a7%d9%84%d9%86%d8%b4%d8%a1-%d8%a7%d9%84%d8%b5%d8%ba%d9%8a%d8%b1-%d9%88%d8%a2%d8%ab%d8%a7%d8%b1%d9%87/",
+      "title": "في تربية النشء الصغير وآثاره",
+      "page_num": 2,
+      "bytes": 190572,
+      "sha1": "b784399566f76bafd0ad239f5a16332e4342f50c"
+    },
+    {
+      "id": 41,
+      "file": "article_0041.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d8%a3%d8%b3%d8%b1%d8%a9-%d8%a7%d9%84%d9%85%d8%b3%d9%84%d9%85%d8%a9-%d8%a8%d9%8a%d9%86-%d8%a7%d9%84%d8%a7%d8%aa%d9%81%d8%a7%d9%82%d8%a7%d8%aa-%d8%a7%d9%84%d8%af%d9%88%d9%84%d9%8a%d8%a9/",
+      "title": "الأسرة المسلمة بين الاتفاقات الدولية والمقاصد العليا للشريعة",
+      "page_num": 2,
+      "bytes": 505508,
+      "sha1": "eb1016d556f0a69dcaa20d2a81d7d5f27a099872"
+    },
+    {
+      "id": 42,
+      "file": "article_0042.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d9%86%d8%b8%d8%b1%d9%8a%d8%a7%d8%aa-%d8%a7%d9%84%d9%86%d9%82%d8%af%d9%8a%d8%a9-%d9%84%d9%84%d8%b9%d9%88%d9%84%d9%85%d8%a9-2/",
+      "title": "النظريات النقدية للعولمة",
+      "page_num": 2,
+      "bytes": 232532,
+      "sha1": "a5ebd1defd36a26c1d875d90b7c61a48cae561d4"
+    },
+    {
+      "id": 43,
+      "file": "article_0043.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d8%aa%d8%ad%d9%8a%d8%b2-%d9%88%d8%a7%d9%84%d9%85%d9%88%d8%b6%d9%88%d8%b9%d9%8a%d8%a9-%d9%81%d9%8a-%d8%a7%d9%84%d8%b9%d9%84%d9%88%d9%85-%d8%a7%d9%84%d8%a7%d8%ac%d8%aa%d9%85%d8%a7%d8%b9/",
+      "title": "التحيز والموضوعية في العلوم الاجتماعية",
+      "page_num": 2,
+      "bytes": 364875,
+      "sha1": "5d7a198e41d41c297f044baccdab8923ec2dbbc8"
+    },
+    {
+      "id": 44,
+      "file": "article_0044.html",
+      "url": "https://www.khotwacenter.com/%d8%a8%d9%8a%d9%86-%d9%85%d8%ad%d9%85%d9%88%d8%af-%d8%b4%d8%a7%d9%83%d8%b1-%d9%88%d9%88%d8%a7%d8%a6%d9%84-%d8%ad%d9%84%d8%a7%d9%82/",
+      "title": "بين محمود شاكر ووائل حلاق",
+      "page_num": 2,
+      "bytes": 333920,
+      "sha1": "b6e6795afdb1ba295ca3ac04f89e0655a1d58a27"
+    },
+    {
+      "id": 45,
+      "file": "article_0045.html",
+      "url": "https://www.khotwacenter.com/%d8%aa%d8%b7%d8%a8%d9%8a%d9%82%d8%a7%d8%aa-%d8%a7%d9%84%d8%b0%d9%83%d8%a7%d8%a1-%d8%a7%d9%84%d8%a7%d8%b5%d8%b7%d9%86%d8%a7%d8%b9%d9%8a-%d9%88%d9%86%d8%b8%d8%b1%d8%a9-%d8%a7%d9%84%d9%85%d8%af%d8%b1/",
+      "title": "تطبيقات الذكاء الاصطناعي ونظرة المدرسة النقدية لتكنولوجيا الذكاء الاصطناعي",
+      "page_num": 3,
+      "bytes": 331397,
+      "sha1": "4268f636460764fbdade4bcd39686e279416c1e5"
+    },
+    {
+      "id": 46,
+      "file": "article_0046.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d8%a5%d8%b3%d9%84%d8%a7%d9%85-%d9%88%d8%a7%d9%84%d9%86%d8%b3%d9%88%d9%8a%d8%a9-%d9%88%d9%86%d8%b3%d8%a7%d8%a1-%d8%ba%d8%b2%d8%a9/",
+      "title": "الإسلام والنسوية ونساء غزة",
+      "page_num": 3,
+      "bytes": 414617,
+      "sha1": "c6ade9f02a4e75bdb89db94d82146964f906af0c"
+    },
+    {
+      "id": 47,
+      "file": "article_0047.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d8%a7%d8%b9%d8%aa%d8%af%d8%a7%d9%84-%d8%a7%d9%84%d9%85%d8%b9%d8%b1%d9%88%d9%81-%d8%a7%d9%84%d8%a5%d8%ad%d8%b3%d8%a7%d9%86/",
+      "title": "الاعتدال- المعروف- الإحسان",
+      "page_num": 3,
+      "bytes": 288288,
+      "sha1": "2238b4bf5cf26462922175eab91dab3f02c5b987"
+    },
+    {
+      "id": 48,
+      "file": "article_0048.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d8%b0%d9%83%d8%a7%d8%a1-%d8%a7%d9%84%d8%a7%d8%b5%d8%b7%d9%86%d8%a7%d8%b9%d9%8a-%d8%a8%d9%8a%d9%86-%d8%a7%d9%84%d9%81%d8%b1%d8%b5-%d9%88%d8%a7%d9%84%d8%aa%d8%ad%d8%af%d9%8a%d8%a7%d8%aa/",
+      "title": "الذكاء الاصطناعي بين الفرص والتحديات والمسئوليات",
+      "page_num": 3,
+      "bytes": 282522,
+      "sha1": "6aa1ba8fc194f7d46330726845dbc9ce96be7afe"
+    },
+    {
+      "id": 49,
+      "file": "article_0049.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d8%b1%d8%a4%d9%8a%d8%a9-%d8%a7%d9%84%d9%85%d8%b2%d8%af%d9%88%d8%ac%d8%a9-%d9%84%d8%b9%d9%86%d8%b5%d8%b1-%d8%a7%d9%84%d8%b2%d9%85%d9%86/",
+      "title": "الرؤية المزدوجة للزمن في التصور الإسلامي",
+      "page_num": 3,
+      "bytes": 206655,
+      "sha1": "5227fe06e44664cbbcd8e48bdb9258124d4e0ccf"
+    },
+    {
+      "id": 50,
+      "file": "article_0050.html",
+      "url": "https://www.khotwacenter.com/%d9%81%d9%8a-%d9%85%d8%ad%d8%b1%d8%a7%d8%a8-%d8%b7%d9%87-%d8%b9%d8%a8%d8%af-%d8%a7%d9%84%d8%b1%d8%ad%d9%85%d9%86-%d8%a8%d9%85%d9%86%d8%b8%d9%88%d8%b1-%d9%81%d9%82%d9%87-%d8%a7%d9%84%d8%ad%d9%8a%d8%a7/",
+      "title": "في محراب طه عبد الرحمن بمنظور فقه الحياة",
+      "page_num": 3,
+      "bytes": 362224,
+      "sha1": "60d3ed855851fa9095175e3f255dc36bbadc6181"
+    },
+    {
+      "id": 51,
+      "file": "article_0051.html",
+      "url": "https://www.khotwacenter.com/%d8%a5%d8%b3%d9%84%d8%a7%d9%85%d9%8a%d8%a9-%d8%a7%d9%84%d9%85%d8%b9%d8%b1%d9%81%d8%a9/",
+      "title": "إسلامية المعرفة",
+      "page_num": 3,
+      "bytes": 266390,
+      "sha1": "338d0e86fe0d31b8f3cda46cc074283a6660f534"
+    },
+    {
+      "id": 52,
+      "file": "article_0052.html",
+      "url": "https://www.khotwacenter.com/%d9%85%d9%88%d9%86%d8%af%d9%8a%d8%a7%d9%84-%d9%82%d8%b7%d8%b1-2022-%d9%81%d9%8a-%d9%85%d9%88%d8%a7%d8%ac%d9%87%d8%a9-%d8%a7%d9%84%d9%84%d8%a7%d8%a8%d8%af%d9%8a%d9%84-%d8%a7%d9%84%d8%ba%d8%b1%d8%a8/",
+      "title": "مونديال قطر 2022 في مواجهة اللابديل الغربي",
+      "page_num": 3,
+      "bytes": 268065,
+      "sha1": "0efbe4d7e44ef6c521d54537c4e6d61c8e80c002"
+    },
+    {
+      "id": 53,
+      "file": "article_0053.html",
+      "url": "https://www.khotwacenter.com/%d8%b9%d9%84%d8%a7%d9%82%d8%a9-%d8%a7%d9%84%d8%b2%d9%88%d8%ac%d9%8a%d9%86-%d9%85%d9%86-%d9%85%d9%86%d8%b8%d9%88%d8%b1-%d9%81%d9%82%d9%87-%d8%a7%d9%84%d8%ad%d9%8a%d8%a7%d8%a9/",
+      "title": "علاقة الزوجين من منظور فقه الحياة",
+      "page_num": 3,
+      "bytes": 454367,
+      "sha1": "c108d1c7a4cee04b0738c1fc9d9fd0840a8c208e"
+    },
+    {
+      "id": 54,
+      "file": "article_0054.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d8%a3%d8%b3%d8%b1%d8%a9-%d8%a7%d9%84%d9%85%d8%b3%d9%84%d9%85%d8%a9-%d9%88%d8%aa%d8%ad%d8%af%d9%8a-%d8%a7%d9%84%d9%86%d8%b3%d9%88%d9%8a%d8%a9/",
+      "title": "الأسرة المسلمة وتحدي النسوية",
+      "page_num": 3,
+      "bytes": 268381,
+      "sha1": "7d3dc936af2e42a0eb2e5da453305232b4d4af83"
+    },
+    {
+      "id": 55,
+      "file": "article_0055.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d8%b9%d9%82%d9%84-%d8%a7%d9%84%d8%a3%d8%ae%d9%84%d8%a7%d9%82%d9%8a-%d8%a7%d9%84%d8%b9%d8%b1%d8%a8%d9%8a-%d8%b9%d9%86%d8%af-%d8%a7%d9%84%d8%ac%d8%a7%d8%a8%d8%b1%d9%8a/",
+      "title": "العقل الأخلاقي العربي عند الجابري",
+      "page_num": 3,
+      "bytes": 410768,
+      "sha1": "34bf56f44e57d28b2f264dc5c66acf9c08e74043"
+    },
+    {
+      "id": 56,
+      "file": "article_0056.html",
+      "url": "https://www.khotwacenter.com/%d9%85%d8%ad%d9%85%d8%af-%d9%8a%d9%88%d9%86%d8%b3-%d9%85%d8%b5%d8%b1%d9%81%d9%8a-%d8%a7%d9%84%d9%81%d9%82%d8%b1%d8%a7%d8%a1/",
+      "title": "محمد يونس: مصرفي الفقراء",
+      "page_num": 3,
+      "bytes": 283961,
+      "sha1": "2251585ba3652c24d022139d3b7e4a8ba0b31160"
+    },
+    {
+      "id": 57,
+      "file": "article_0057.html",
+      "url": "https://www.khotwacenter.com/%d8%ac%d9%8a%d9%81%d8%b1%d8%b3%d9%88%d9%86-%d9%88%d8%a7%d9%84%d9%82%d8%b1%d8%a2%d9%86/",
+      "title": "جيفرسون والقرآن: الإسلام والآباء المؤسسون",
+      "page_num": 3,
+      "bytes": 369368,
+      "sha1": "05a4c275d50667333aa37ef274264687a5ac919d"
+    },
+    {
+      "id": 58,
+      "file": "article_0058.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d8%a5%d9%84%d8%ad%d8%a7%d8%af-%d9%88%d8%a7%d9%84%d9%85%d9%84%d8%ad%d8%af%d9%88%d9%86/",
+      "title": "الإلحاد والملحدون",
+      "page_num": 3,
+      "bytes": 202103,
+      "sha1": "2d6293e6e92e76075c5a981ba0d60c7935472239"
+    },
+    {
+      "id": 59,
+      "file": "article_0059.html",
+      "url": "https://www.khotwacenter.com/%d8%af-%d9%85%d8%ad%d9%85%d8%af-%d8%b9%d8%a8%d8%af-%d8%a7%d9%84%d9%84%d9%87-%d8%af%d8%b1%d8%a7%d8%b2/",
+      "title": "د. محمد عبد الله دراز",
+      "page_num": 3,
+      "bytes": 272669,
+      "sha1": "00eaa8ecd519fbf34c77082f46e75c27b9f57326"
+    },
+    {
+      "id": 60,
+      "file": "article_0060.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d8%b4%d9%8a%d8%ae-%d8%b9%d8%a8%d8%af-%d8%a7%d9%84%d8%ad%d9%85%d9%8a%d8%af-%d8%a8%d9%86-%d8%a8%d8%a7%d8%af%d9%8a%d8%b3-%d8%b1%d8%a7%d8%a6%d8%af-%d8%a7%d9%84%d8%ad%d8%b5%d8%a7%d9%86%d8%a9/",
+      "title": "الشيخ عبد الحميد بن باديس رائد الحصانة الحضارية والثقافية",
+      "page_num": 3,
+      "bytes": 286528,
+      "sha1": "a8c5adf39946826e2c6e58ca8668cf352352a574"
+    },
+    {
+      "id": 61,
+      "file": "article_0061.html",
+      "url": "https://www.khotwacenter.com/%d8%a3%d8%b5%d8%a7%d9%84%d8%a9-%d8%a7%d9%84%d8%a3%d9%81%d9%83%d8%a7%d8%b1-%d9%88%d9%81%d8%b9%d8%a7%d9%84%d9%8a%d8%aa%d9%87%d8%a7/",
+      "title": "أصالة الأفكار وفعاليتها",
+      "page_num": 3,
+      "bytes": 223018,
+      "sha1": "ecf688b55a0158255599bad1fc1ecd8175ec893e"
+    },
+    {
+      "id": 62,
+      "file": "article_0062.html",
+      "url": "https://www.khotwacenter.com/%d9%83%d9%8a%d9%81-%d8%aa%d8%b4%d9%83%d9%84-%d8%a7%d9%84%d8%a5%d8%b1%d9%87%d8%a7%d8%a8-%d8%a7%d9%84%d8%b5%d9%87%d9%8a%d9%88%d9%86%d9%8a%d8%9f/",
+      "title": "كيف تشكل الإرهاب الصهيوني؟",
+      "page_num": 3,
+      "bytes": 181569,
+      "sha1": "5a4ad4febd376102be546db443873269b7fd7e9c"
+    },
+    {
+      "id": 63,
+      "file": "article_0063.html",
+      "url": "https://www.khotwacenter.com/%d8%ae%d8%b1%d8%a7%d9%81%d8%a9-%d8%a7%d9%84%d8%aa%d9%86%d9%85%d9%8a%d8%a9/",
+      "title": "خرافة التنمية",
+      "page_num": 3,
+      "bytes": 158365,
+      "sha1": "898d4004b103815d2e2e201531990eb51d41118f"
+    },
+    {
+      "id": 64,
+      "file": "article_0064.html",
+      "url": "https://www.khotwacenter.com/%d9%81%d9%8a-%d8%a7%d9%84%d9%83%d8%b3%d9%84/",
+      "title": "في الكسل",
+      "page_num": 3,
+      "bytes": 190463,
+      "sha1": "e5169c1b186db412ef76dd7b12a5d7a8deccf089"
+    },
+    {
+      "id": 65,
+      "file": "article_0065.html",
+      "url": "https://www.khotwacenter.com/%d9%86%d8%ad%d9%88-%d9%86%d8%b8%d8%b1%d9%8a%d8%a9-%d8%b9%d8%a7%d9%85%d8%a9-%d9%81%d9%8a-%d8%a7%d9%84%d8%b2%d9%85%d9%86-%d8%a7%d9%84%d9%81%d9%82%d9%87%d9%8a/",
+      "title": "نحو نظرية عامة في الزمن الفقهي",
+      "page_num": 3,
+      "bytes": 308938,
+      "sha1": "6b4764c87ac2d946e1f51d476b5777e50c3587d5"
+    },
+    {
+      "id": 66,
+      "file": "article_0066.html",
+      "url": "https://www.khotwacenter.com/%d8%b3%d8%a4%d8%a7%d9%84-%d8%a7%d9%84%d8%b9%d9%85%d9%84-%d8%a8%d8%ad%d8%ab-%d8%b9%d9%86-%d8%a7%d9%84%d8%a3%d8%b5%d9%88%d9%84-%d8%a7%d9%84%d8%b9%d9%85%d9%84%d9%8a%d8%a9-%d9%81%d9%8a-%d8%a7%d9%84%d9%81/",
+      "title": "سؤال العمل: بحث عن الأصول العملية في الفكر والعلم",
+      "page_num": 3,
+      "bytes": 239318,
+      "sha1": "b1a26b18c6712205459dc75d87a07fedad75c371"
+    },
+    {
+      "id": 67,
+      "file": "article_0067.html",
+      "url": "https://www.khotwacenter.com/%d8%a7%d9%84%d8%a7%d8%ac%d8%aa%d9%87%d8%a7%d8%af-%d9%88%d8%a7%d9%84%d8%aa%d9%82%d9%84%d9%8a%d8%af-%d9%84%d8%af%d9%89-%d9%85%d8%ad%d9%85%d8%af-%d8%b9%d8%a8%d8%af%d9%87-%d9%82%d8%b1%d8%a7%d8%a1%d8%a9/",
+      "title": "الاجتهاد والتقليد لدى محمد عبده: قراءة في النص الكامل للفتاوى",
+      "page_num": 3,
+      "bytes": 458095,
+      "sha1": "44cca86a0c44badb478106198a15744d62a18af0"
+    },
+    {
+      "id": 68,
+      "file": "article_0068.html",
+      "url": "https://www.khotwacenter.com/%d9%85%d9%82%d8%a7%d8%b5%d8%af-%d8%a7%d9%84%d8%b4%d8%b1%d9%8a%d8%b9%d8%a9-%d8%a7%d9%84%d8%a5%d8%b3%d9%84%d8%a7%d9%85%d9%8a%d8%a9-%d9%85%d9%86-%d9%85%d9%82%d8%aa%d9%86%d9%8a%d8%a7%d8%aa-%d9%85%d8%b9/",
+      "title": "مقاصد الشريعة الإسلامية “من مقتنيات معرض القاهرة الدولي للكتاب 2024”",
+      "page_num": 3,
+      "bytes": 199295,
+      "sha1": "a5cad6c3eb8146fc696359a3d68b4c29445c5c40"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 3,
+    "articles": 68,
+    "article_fetch_failures": 0
+  }
+}

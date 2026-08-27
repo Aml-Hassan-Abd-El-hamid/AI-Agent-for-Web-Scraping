@@ -1,0 +1,354 @@
+{
+  "website": "ramseysolutions",
+  "snapshot_date": "2026-08-27T05:03:13",
+  "pagination_type": "numbered pagination",
+  "scroll_mode": null,
+  "scroll_rounds_requested": null,
+  "load_more_selector": null,
+  "listing_url": "https://www.ramseysolutions.com/articles",
+  "input_urls": [
+    "https://www.ramseysolutions.com/articles",
+    "https://www.ramseysolutions.com/articles?page=2#feed-content"
+  ],
+  "pagination_pattern": "https://www.ramseysolutions.com/articles?page={page}#feed-content",
+  "requirements": "title, date, author, article body text",
+  "run_dir": "orch_runs/run_20260827_043053",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://www.ramseysolutions.com/articles",
+      "file": "listing_page_001.html",
+      "bytes": 511881,
+      "sha1": "607c5c1a4f783c6c644af676a79a187e09f65949"
+    },
+    {
+      "page_num": 2,
+      "url": "https://www.ramseysolutions.com/articles?page=2#feed-content",
+      "file": "listing_page_002.html",
+      "bytes": 513162,
+      "sha1": "621595b6de1f84a9d840c3d68c31979295b1f02e"
+    },
+    {
+      "page_num": 3,
+      "url": "https://www.ramseysolutions.com/articles?page=3#feed-content",
+      "file": "listing_page_003.html",
+      "bytes": 513038,
+      "sha1": "42bb15fd5501232e50fedcd431e5ffcd6a2cb0bb"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://www.ramseysolutions.com/insurance/short-term-rental-insurance",
+      "title": "Short-Term Rental Insurance: How to Protect Your Airbnb or Vrbo",
+      "page_num": 1,
+      "bytes": 576270,
+      "sha1": "02f38e78428bd922a7763e4346842ac81eb2213b"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://www.ramseysolutions.com/budgeting/how-long-to-pay-off-debt",
+      "title": "How Long Does It Take to Pay Off Debt?",
+      "page_num": 1,
+      "bytes": 555432,
+      "sha1": "49bb64f8b1ca88f46b29672ee3673a7c0f6b8c41"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://www.ramseysolutions.com/retirement/how-to-build-wealth-in-your-50s-and-beyond",
+      "title": "How to Build Wealth in Your 50s and Beyond",
+      "page_num": 1,
+      "bytes": 589825,
+      "sha1": "139b9343c031bd688ecd4e133319fdf626b6d6c6"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://www.ramseysolutions.com/education/wa-ephrata-scotts-teacher",
+      "title": "From Elective to Essential",
+      "page_num": 1,
+      "bytes": 491886,
+      "sha1": "b73291a9b0b7844d7369287212fad0aa54f01b21"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://www.ramseysolutions.com/education/testimonial-FL-viera-jennifer-admin",
+      "title": "The Help They Didn’t Expect",
+      "page_num": 1,
+      "bytes": 487664,
+      "sha1": "e5fea230e23e0cf5bfad699272cf1fe81c29266b"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://www.ramseysolutions.com/business/financial-wellness-programs-for-employees",
+      "title": "Financial Wellness Programs for Employees: What HR Leaders Need to Know",
+      "page_num": 1,
+      "bytes": 545017,
+      "sha1": "6299cdb087cb70abce6653a49dadd3b8cc04e44e"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://www.ramseysolutions.com/retirement/how-to-build-wealth-in-your-40s",
+      "title": "How to Build Wealth in Your 40s",
+      "page_num": 1,
+      "bytes": 570800,
+      "sha1": "d9feb1cbec4db2d28c8463ad06366ebb99a7058d"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://www.ramseysolutions.com/financial-literacy/What-Your-Teenager-Actually-Needs-to-Know-About-Money-",
+      "title": "What Your Teenager Needs to Know About Money",
+      "page_num": 1,
+      "bytes": 494081,
+      "sha1": "d37d1082abb7b57fecf3826d9b1193967d00d5d6"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://www.ramseysolutions.com/education/testimonial-co-knuth-teacher",
+      "title": "Before Debt Becomes Their Default",
+      "page_num": 1,
+      "bytes": 486369,
+      "sha1": "b3762da16be7a02c3ce0199a1d6e35ba11414d58"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://www.ramseysolutions.com/retirement/how-to-build-wealth-in-your-20s",
+      "title": "How to Build Wealth in Your 20s",
+      "page_num": 2,
+      "bytes": 560364,
+      "sha1": "207bba10de374813468b6b048aaf8396a59be274"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://www.ramseysolutions.com/real-estate/bitcoin-mortgage",
+      "title": "What Is a Bitcoin Mortgage and Should You Get One?",
+      "page_num": 2,
+      "bytes": 554497,
+      "sha1": "3bca41268c5000c2b3c0fc3f2a29089d8d8635ce"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://www.ramseysolutions.com/budgeting/pocketguard-budgeting-app-review",
+      "title": "Can't Pick a Budget App? PocketGuard vs. EveryDollar 2026",
+      "page_num": 2,
+      "bytes": 556350,
+      "sha1": "929b09d953ba28450dfc6b488600986397d1cd3c"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://www.ramseysolutions.com/business/family-owned-business-iconic-american-companies",
+      "title": "7 Iconic American Companies Prove What a Family-Owned Business Can Become",
+      "page_num": 2,
+      "bytes": 575165,
+      "sha1": "8af4199fd8232215cfe2c418a68a839b7fc789a7"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://www.ramseysolutions.com/education/testimonial-tn-laquita-haywood-teacher",
+      "title": "Before It Ties Up Their Future",
+      "page_num": 2,
+      "bytes": 484644,
+      "sha1": "94b940761e688ce187498fd2f1bb5903653dc0e4"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://www.ramseysolutions.com/real-estate/how-to-avoid-underselling-your-home",
+      "title": "How to Avoid Underselling Your Home",
+      "page_num": 2,
+      "bytes": 578322,
+      "sha1": "88683e801350a466fad018ebf3927b2f15f63926"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://www.ramseysolutions.com/budgeting/gifts-for-dad",
+      "title": "Dad Doesn’t Want Another Tie for Father’s Day",
+      "page_num": 2,
+      "bytes": 501292,
+      "sha1": "f187eec866f027b9cfe3ba402d16147f7d0e7367"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://www.ramseysolutions.com/budgeting/what-to-do-when-you-go-over-budget",
+      "title": "What to Do When You Go Over Budget",
+      "page_num": 2,
+      "bytes": 541133,
+      "sha1": "8959523ec4f3fce7e2985e98f8603ad35b629cc5"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://www.ramseysolutions.com/education/testimonial-sd-parkston-tyler-teacher",
+      "title": "We’re Not Leaving Without a Plan",
+      "page_num": 2,
+      "bytes": 488873,
+      "sha1": "64f38499297611c1ccee68b8181d2efe8ca5d7bf"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://www.ramseysolutions.com/saving/side-hustle-ideas",
+      "title": "Read Article",
+      "page_num": 2,
+      "bytes": 555476,
+      "sha1": "629baba0e83699519a7b09b76f3c56c20eb3b76d"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://www.ramseysolutions.com/budgeting",
+      "title": "Budgeting",
+      "page_num": 2,
+      "bytes": 493435,
+      "sha1": "79b2a97656039275ab8846ef94cb8630d0b51f65"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://www.ramseysolutions.com/retirement",
+      "title": "Retirement",
+      "page_num": 2,
+      "bytes": 585527,
+      "sha1": "e3ac7f232ca1a0aa736906502489558c16784552"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://www.ramseysolutions.com/insurance",
+      "title": "Insurance",
+      "page_num": 2,
+      "bytes": 732494,
+      "sha1": "8a5b05ac8e7b4a05868c674a236f8b02798ffef5"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://www.ramseysolutions.com/real-estate/home-buying",
+      "title": "Home Buying",
+      "page_num": 2,
+      "bytes": 659176,
+      "sha1": "106d1ae127e69d9d199e325de7c3c499fb16295b"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://www.ramseysolutions.com/real-estate/home-selling",
+      "title": "Home Selling",
+      "page_num": 2,
+      "bytes": 591921,
+      "sha1": "878edfaa2f8e997a9cb7cddeab464e7294498a17"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://www.ramseysolutions.com/trending",
+      "title": "Trending",
+      "page_num": 2,
+      "bytes": 522689,
+      "sha1": "029fd1e9ca23bb04dcb637575e2bff307a712b4b"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://www.ramseysolutions.com/education/testimonial-ky-shepherdsville-eric-teacher",
+      "title": "You Can’t Measure This With Numbers",
+      "page_num": 3,
+      "bytes": 493469,
+      "sha1": "839377b974fb9bff944a32f722d41d34439b38ba"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://www.ramseysolutions.com/budgeting/weekly-spending-review",
+      "title": "Weekly Spending Review: How to Stay on Budget and Fix Overspending",
+      "page_num": 3,
+      "bytes": 542851,
+      "sha1": "15482b33e45788cd2d2f7916f3719e07e51a1874"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://www.ramseysolutions.com/budgeting/how-to-budget-using-multiple-bank-accounts",
+      "title": "How to Budget Using Multiple Bank Accounts",
+      "page_num": 3,
+      "bytes": 534363,
+      "sha1": "068aad078df6ad8ee58f7f1e2d9ecc09fbecaa9f"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://www.ramseysolutions.com/business/corporate-retreat",
+      "title": "The Benefits of a Corporate Retreat and How to Make Yours Work",
+      "page_num": 3,
+      "bytes": 550206,
+      "sha1": "56dbd06d24deec7c377447d4c09796da95d94fde"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://www.ramseysolutions.com/real-estate/how-to-avoid-overpaying-for-a-house",
+      "title": "How to Avoid Overpaying for a House",
+      "page_num": 3,
+      "bytes": 563849,
+      "sha1": "e406828d50a93a45c4bf52f46ccd3f723aa5ad5e"
+    },
+    {
+      "id": 31,
+      "file": "article_0031.html",
+      "url": "https://www.ramseysolutions.com/budgeting/how-to-budget-when-you-get-paid-monthly",
+      "title": "How to Budget When You Get Paid Monthly",
+      "page_num": 3,
+      "bytes": 538099,
+      "sha1": "be021a4ecd45b301484e57a0ddde1d01cb7edb62"
+    },
+    {
+      "id": 32,
+      "file": "article_0032.html",
+      "url": "https://www.ramseysolutions.com/budgeting/60-30-10-budget-rule",
+      "title": "The 60/30/10 Budget Rule Explained",
+      "page_num": 3,
+      "bytes": 562548,
+      "sha1": "fd78ee56f6dacde874890755e90c0c747730b5bb"
+    },
+    {
+      "id": 33,
+      "file": "article_0033.html",
+      "url": "https://www.ramseysolutions.com/budgeting/cash-stuffing",
+      "title": "Cash Stuffing: How It Works",
+      "page_num": 3,
+      "bytes": 550238,
+      "sha1": "b3cf359aa954d95850113f4697118e83e33c604d"
+    },
+    {
+      "id": 34,
+      "file": "article_0034.html",
+      "url": "https://www.ramseysolutions.com/insurance/types-of-long-term-care-insurance-policies",
+      "title": "Different Types of Long-Term Care Insurance Policies",
+      "page_num": 3,
+      "bytes": 880973,
+      "sha1": "8917a33ac5c50134972a7dd415082ea290cfa3f6"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 3,
+    "articles": 34,
+    "article_fetch_failures": 0
+  }
+}

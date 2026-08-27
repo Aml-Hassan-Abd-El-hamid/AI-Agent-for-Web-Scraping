@@ -1,0 +1,129 @@
+{
+  "website": "engineering.indeedblog",
+  "snapshot_date": "2026-08-27T14:40:52",
+  "pagination_type": "numbered pagination",
+  "scroll_mode": null,
+  "scroll_rounds_requested": null,
+  "load_more_selector": null,
+  "listing_url": "https://engineering.indeedblog.com/blog/category/engineering/",
+  "input_urls": [
+    "https://engineering.indeedblog.com/blog/category/engineering/",
+    "https://engineering.indeedblog.com/blog/category/engineering/page/2/"
+  ],
+  "pagination_pattern": "https://engineering.indeedblog.com/blog/category/engineering/page/{page}/",
+  "requirements": "title, date, author, article body text",
+  "run_dir": "orch_runs/run_20260827_143751",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://engineering.indeedblog.com/blog/category/engineering/",
+      "file": "listing_page_001.html",
+      "bytes": 78883,
+      "sha1": "0847776b0dec58ce479291c7115b3173d44e77b6"
+    },
+    {
+      "page_num": 2,
+      "url": "https://engineering.indeedblog.com/blog/category/engineering/page/2/",
+      "file": "listing_page_002.html",
+      "bytes": 72209,
+      "sha1": "ef9f3eae7169080f4299fe56441a546239311082"
+    },
+    {
+      "page_num": 3,
+      "url": "https://engineering.indeedblog.com/blog/category/engineering/page/3/",
+      "file": "listing_page_003.html",
+      "bytes": 72362,
+      "sha1": "145ee2777155206bea51fb0901e3dca24701d561"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://engineering.indeedblog.com/blog/2026/06/distilling-long-tail-user-behavior-into-scalable-embeddings-for-job-search/",
+      "title": "Distilling Long-Tail User Behavior into Scalable Embeddings for Job Search",
+      "page_num": 1,
+      "bytes": 90902,
+      "sha1": "6eb310b8efb840fdd7e00b4a13a1b8c28b2ad829"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://engineering.indeedblog.com/blog/2026/03/become-builders-not-coders/",
+      "title": "Become Builders, Not Coders",
+      "page_num": 1,
+      "bytes": 75584,
+      "sha1": "d55e76ced4a83668b5d67befb0bca6718928f6ca"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://engineering.indeedblog.com/blog/2024/01/composite-web-performance-metric/",
+      "title": "The Importance of Using a Composite Metric to Measure Performance",
+      "page_num": 1,
+      "bytes": 81949,
+      "sha1": "40bd4ed42f15f313bd22cad5252a55b48df9eec0"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://engineering.indeedblog.com/blog/2022/04/sre/",
+      "title": "Indeed SRE: An Inside Look",
+      "page_num": 2,
+      "bytes": 65330,
+      "sha1": "c626761fda300d1bb6e8ef93939c778833f8a318"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://engineering.indeedblog.com/blog/2022/01/speed-matters/",
+      "title": "Speed Matters, But It Isn’t Everything",
+      "page_num": 2,
+      "bytes": 65968,
+      "sha1": "5a815617318bc32f989b55728263a0bcfe794f91"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://engineering.indeedblog.com/blog/2019/12/cpu-throttling-regression-fix/",
+      "title": "Unthrottled: How a Valid Fix Becomes a Regression",
+      "page_num": 2,
+      "bytes": 72963,
+      "sha1": "e8009a6d10558048209c3ad668cd4e3be01bbb9c"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://engineering.indeedblog.com/blog/2019/12/unthrottled-fixing-cpu-limits-in-the-cloud/",
+      "title": "Unthrottled: Fixing CPU Limits in the Cloud",
+      "page_num": 3,
+      "bytes": 69640,
+      "sha1": "b03216fbcdbdf3035b481dc4154f6e07dd26cd8b"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://engineering.indeedblog.com/blog/2019/10/being-just-reliable-enough/",
+      "title": "Being Just Reliable Enough",
+      "page_num": 3,
+      "bytes": 62902,
+      "sha1": "3742c31ef7906adf47d5c788dd0ec52f06c5e033"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://engineering.indeedblog.com/blog/2019/09/jobs-filter/",
+      "title": "Jobs Filter: Improving the Job Seeker Experience",
+      "page_num": 3,
+      "bytes": 63038,
+      "sha1": "809226db40f25e45a3af046e100130aefa25d93f"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 3,
+    "articles": 9,
+    "article_fetch_failures": 0
+  }
+}

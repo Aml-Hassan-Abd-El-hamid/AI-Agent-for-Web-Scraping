@@ -1,0 +1,599 @@
+{
+  "website": "masrawy",
+  "snapshot_date": "2026-08-27T07:49:23",
+  "pagination_type": "load more button",
+  "scroll_mode": "load_more",
+  "scroll_rounds_requested": 2,
+  "load_more_selector": null,
+  "listing_url": "https://www.masrawy.com/today#Nav-Today",
+  "input_urls": [
+    "https://www.masrawy.com/today#Nav-Today"
+  ],
+  "pagination_pattern": null,
+  "requirements": "title, date, author, article body text",
+  "run_dir": "orch_runs/run_20260827_074346",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://www.masrawy.com/today#Nav-Today",
+      "file": "listing_page_001.html",
+      "bytes": 212394,
+      "sha1": "eb3c92b70d5f84d1b8d5fd67b8cdce7ce68cff84"
+    },
+    {
+      "page_num": 1,
+      "url": "https://www.masrawy.com/today#Nav-Today",
+      "file": "listing_page_001_expanded.html",
+      "bytes": 294815,
+      "sha1": "346488ec88b3a1dcfe6fde55c1deed8cedda99d6",
+      "expanded": true
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://www.masrawy.com/news/news_egypt/details/2026/8/27/3039078/%D9%84%D8%AA%D8%AC%D9%86%D8%A8-%D8%A2%D9%84%D8%A7%D9%85-%D8%A7%D9%84%D9%85%D8%B9%D8%AF%D8%A9-%D8%A8%D8%B9%D8%AF-%D8%AA%D9%86%D8%A7%D9%88%D9%84-%D8%A7%D9%84%D8%A8%D9%82%D9%88%D9%84%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D8%B5%D8%AD%D8%A9-%D8%AA%D9%82%D8%AF%D9%85-4-%D9%86%D8%B5%D8%A7%D8%A6%D8%AD-%D9%85%D9%87%D9%85%D8%A9#Archived",
+      "title": "أخبار مصرلتجنب آلام المعدة بعد تناول البقوليات.. الصحة تقدم 4 نصائح مهمة",
+      "page_num": 1,
+      "bytes": 227936,
+      "sha1": "0e8d6cf5fa5621b70fee746f322c224382b0d689"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://www.masrawy.com/news/news_egypt/details/2026/8/27/3039075/%D8%A7%D9%84%D8%B5%D8%AD%D8%A9-4-%D8%B9%D9%84%D8%A7%D9%85%D8%A7%D8%AA-%D8%AA%D8%B3%D8%AA%D8%AF%D8%B9%D9%8A-%D8%A7%D9%84%D9%83%D8%B4%D9%81-%D8%A7%D9%84%D9%85%D8%A8%D9%83%D8%B1-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%AB%D8%AF%D9%8A-%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84#Archived",
+      "title": "أخبار مصرالصحة: 4 علامات تستدعي الكشف المبكر على الثدي - تفاصيل",
+      "page_num": 1,
+      "bytes": 227745,
+      "sha1": "03096b9dcf8863402a88c80b6db3e8196a871f00"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://www.masrawy.com/news/education-alazhareducation/details/2026/8/27/3039072/%D9%8A%D8%AE%D8%AF%D9%85-%D9%85%D8%B5%D9%84%D8%AD%D8%A9-%D8%A7%D9%84%D9%88%D8%B7%D9%86-%D9%88%D9%81%D8%AF-%D8%A3%D8%B2%D9%87%D8%B1%D9%8A-%D9%8A%D8%B4%D9%8A%D8%AF-%D8%A8%D8%A7%D9%84%D8%AA%D8%B9%D8%A7%D9%88%D9%86-%D8%A8%D9%8A%D9%86-%D8%A7%D9%84%D8%A3%D8%B2%D9%87%D8%B1-%D9%88%D8%A7%D9%84%D9%85%D8%A4%D8%B3%D8%B3%D8%A7%D8%AA-%D8%A7%D9%84%D9%82%D8%B6%D8%A7%D8%A6%D9%8A%D8%A9-#Archived",
+      "title": "الأزهريخدم مصلحة الوطن.. وفد أزهري يشيد بالتعاون بين الأزهر والمؤسسات القضائية",
+      "page_num": 1,
+      "bytes": 238736,
+      "sha1": "7c54b693f7277311121072129ae7b86a466dde6c"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://www.masrawy.com/news/news_egypt/details/2026/8/27/3039067/%D9%88%D8%B2%D9%8A%D8%B1-%D8%A7%D9%84%D8%B9%D9%85%D9%84-%D9%88%D9%85%D8%AD%D8%A7%D9%81%D8%B8-%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9-%D9%8A%D9%81%D8%AA%D8%AA%D8%AD%D8%A7%D9%86-%D8%A7%D9%84%D8%A3%D8%AD%D8%AF-%D8%A7%D9%84%D9%85%D9%84%D8%AA%D9%82%D9%89-%D8%A7%D9%84%D9%82%D9%88%D9%85%D9%8A-%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A-%D9%84%D9%84%D8%AA%D9%88%D8%B8%D9%8A%D9%81#Archived",
+      "title": "أخبار مصروزير العمل ومحافظ القاهرة يفتتحان الأحد الملتقى القومي الثاني للتوظيف",
+      "page_num": 1,
+      "bytes": 231576,
+      "sha1": "1c25e61d091c53d365e26075b4600b8eab13dccb"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://www.masrawy.com/news/education-schooleducation/details/2026/8/27/3039064/%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D8%B7%D9%84%D8%A7%D8%A8-%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%88%D9%8A%D8%A9-%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D8%A9-%D9%8A%D8%A4%D8%AF%D9%88%D9%86-%D8%A7%D9%85%D8%AA%D8%AD%D8%A7%D9%86%D9%8A-%D8%A7%D9%84%D9%81%D9%8A%D8%B2%D9%8A%D8%A7%D8%A1-%D9%88%D8%A7%D9%84%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE-%D8%A7%D9%84%D8%AF%D9%88%D8%B1-%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A#Archived",
+      "title": "مدارساليوم.. طلاب الثانوية العامة يؤدون امتحاني الفيزياء والتاريخ الدور الثاني",
+      "page_num": 1,
+      "bytes": 238341,
+      "sha1": "85256150702bd0e66699d8daa5e6ad918f633df2"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://www.masrawy.com/news/news_publicaffairs/details/2026/8/27/3039112/%D8%B1%D8%A6%D9%8A%D8%B3%D8%A9-%D8%A7%D9%84%D8%AC%D9%86%D8%A7%D8%A6%D9%8A%D8%A9-%D8%A7%D9%84%D8%AF%D9%88%D9%84%D9%8A%D8%A9-%D9%84%D9%86-%D9%86%D8%B3%D8%AA%D8%B3%D9%84%D9%85-%D9%84%D8%B9%D9%82%D9%88%D8%A8%D8%A7%D8%AA-%D8%AA%D8%B1%D8%A7%D9%85%D8%A8#Archived",
+      "title": "شئون عربية و دوليةرئيسة الجنائية الدولية: لن نستسلم لعقوبات ترامب",
+      "page_num": 1,
+      "bytes": 227990,
+      "sha1": "b9921f058252149dd90d3483c95156f1d6d3e38a"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://www.masrawy.com/news/news_publicaffairs/details/2026/8/27/3039111/%D8%A8%D9%84%D9%88%D9%85%D8%A8%D8%B1%D8%AC-%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D8%A7-%D8%A3%D8%AD%D8%B1%D8%B2%D8%AA-%D8%A8%D8%B9%D8%B6-%D8%A7%D9%84%D8%AA%D9%82%D8%AF%D9%85-%D9%81%D9%8A-%D8%A5%D8%B2%D8%A7%D9%84%D8%A9-%D8%A7%D9%84%D8%A3%D9%84%D8%BA%D8%A7%D9%85-%D8%A7%D9%84%D9%85%D9%88%D8%AC%D9%88%D8%AF%D8%A9-%D8%A8%D8%A7%D9%84%D9%85%D9%8A%D8%A7%D9%87-%D8%A7%D9%84%D8%AF%D9%88%D9%84%D9%8A%D8%A9#Archived",
+      "title": "شئون عربية و دوليةبلومبرج: أمريكا أحرزت بعض التقدم في إزالة الألغام الموجودة بالمياه الدولية",
+      "page_num": 1,
+      "bytes": 229286,
+      "sha1": "11c8b533368c36f6366095becc7f338b81a6924b"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://www.masrawy.com/news/news_publicaffairs/details/2026/8/27/3039110/%D8%B1%D9%88%D8%B3%D9%8A%D8%A7-%D8%A3%D9%88%D9%83%D8%B1%D8%A7%D9%86%D9%8A%D8%A7-%D8%A3%D8%B6%D8%B9%D9%81%D8%AA-%D9%85%D9%88%D9%82%D9%81%D9%87%D8%A7-%D8%A7%D9%84%D8%AA%D9%81%D8%A7%D9%88%D8%B6%D9%8A-%D8%A8%D8%A7%D8%B9%D8%AA%D9%85%D8%A7%D8%AF%D9%87%D8%A7-%D8%A3%D8%B3%D8%A7%D9%84%D9%8A%D8%A8-%D8%A5%D8%B1%D9%87%D8%A7%D8%A8%D9%8A%D8%A9-%D8%B6%D8%AF-%D8%A7%D9%84%D9%85%D8%AF%D9%86%D9%8A%D9%8A%D9%86#Archived",
+      "title": "شئون عربية و دوليةروسيا: أوكرانيا أضعفت موقفها التفاوضي باعتمادها أساليب إرهابية ضد المدنيين",
+      "page_num": 1,
+      "bytes": 228987,
+      "sha1": "a697f56531e3e802adf7f964d6cb4c809a44971b"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://www.masrawy.com/news/news_publicaffairs/details/2026/8/27/3039109/%D9%85%D8%B1%D8%AA%D8%A8%D8%B7%D8%A9-%D8%A8%D8%A7%D9%84%D8%B5%D9%8A%D9%86-%D8%A7%D9%84%D8%B3%D9%84%D8%B7%D8%A7%D8%AA-%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D9%8A%D8%A9-%D8%AA%D8%B9%D8%B7%D9%84-%D9%82%D8%B1%D8%B5%D9%86%D8%A9-%D8%A7%D8%B3%D8%AA%D9%87%D8%AF%D9%81%D8%AA-130-%D8%AF%D9%88%D9%84%D8%A9#Archived",
+      "title": "شئون عربية و دوليةمرتبطة بالصين.. السلطات الأمريكية تعطل قرصنة استهدفت 130 دولة",
+      "page_num": 1,
+      "bytes": 230038,
+      "sha1": "d375e32d0edd6d405ff1631ab13b2c325441b85a"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://www.masrawy.com/news/news_cases/details/2026/8/27/3039107/%D8%A7%D9%86%D8%AF%D9%84%D8%A7%D8%B9-%D8%AD%D8%B1%D9%8A%D9%82-%D9%87%D8%A7%D8%A6%D9%84-%D9%81%D9%8A-%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%A7%D9%84%D9%85%D8%B8%D9%84%D8%A7%D8%AA-%D8%A8%D8%B4%D8%A8%D8%B1%D8%A7-%D9%85%D8%B5%D8%B1#Archived",
+      "title": "حوادث وقضايااندلاع حريق هائل في منطقة المظلات بشبرا مصر",
+      "page_num": 1,
+      "bytes": 225086,
+      "sha1": "103ceb66d99d67533953f69d40e6a8874b48060d"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://www.masrawy.com/news/news_egypt/details/2026/8/27/3039074/%D8%A7%D8%B1%D8%AA%D9%81%D8%A7%D8%B9-%D8%A7%D9%84%D8%AD%D8%B1%D8%A7%D8%B1%D8%A9-%D9%85%D8%B3%D8%AA%D9%85%D8%B1-%D8%AD%D8%A7%D9%84%D8%A9-%D8%A7%D9%84%D8%B7%D9%82%D8%B3-%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D9%88%D8%A7%D9%84%D8%A3%D8%B1%D8%B5%D8%A7%D8%AF-%D8%AA%D8%AD%D8%B0%D8%B1-%D9%82%D8%A7%D8%A6%D8%AF%D9%8A-%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B1%D8%A7%D8%AA#Archived",
+      "title": "أخبار مصرارتفاع الحرارة مستمر.. حالة الطقس اليوم والأرصاد تحذر قائدي السيارات",
+      "page_num": 1,
+      "bytes": 222081,
+      "sha1": "2261beff0ce8002e4b9d69556d67b149ea045462"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://www.masrawy.com/news/news_economy/details/2026/8/27/3039106/%D9%85%D8%A7%D8%B0%D8%A7-%D8%AD%D8%AF%D8%AB-%D9%84%D8%B3%D8%B9%D8%B1-%D8%A7%D9%84%D8%B0%D9%87%D8%A8-%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D8%AE%D9%85%D9%8A%D8%B3-%D9%81%D9%8A-%D8%A8%D8%AF%D8%A7%D9%8A%D8%A9-%D8%A7%D9%84%D8%AA%D8%B9%D8%A7%D9%85%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D8%B5%D8%A8%D8%A7%D8%AD%D9%8A%D8%A9-#Archived",
+      "title": "اقتصادماذا حدث لسعر الذهب اليوم الخميس في بداية التعاملات الصباحية؟",
+      "page_num": 1,
+      "bytes": 231111,
+      "sha1": "c0ae969e63a69dcb4dae2e79bc67e1a2f3b1e7d6"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://www.masrawy.com/news/news_publicaffairs/details/2026/8/27/3039105/%D9%87%D8%AC%D9%85%D8%A7%D8%AA-%D8%B5%D8%A7%D8%B1%D9%88%D8%AE%D9%8A%D8%A9-%D9%88%D9%85%D8%B3%D9%8A%D8%B1%D8%A7%D8%AA-%D8%B3%D9%84%D8%B3%D9%84%D8%A9-%D8%A7%D9%86%D9%81%D8%AC%D8%A7%D8%B1%D8%A7%D8%AA-%D8%AA%D9%87%D8%B2-%D9%83%D9%8A%D9%8A%D9%81-%D9%88%D8%B9%D8%AF%D8%A9-%D9%85%D8%AF%D9%86-%D8%A3%D9%88%D9%83%D8%B1%D8%A7%D9%86%D9%8A%D8%A9#Archived",
+      "title": "شئون عربية و دوليةهجمات صاروخية ومسيرات.. سلسلة انفجارات تهز كييف وعدة مدن أوكرانية",
+      "page_num": 1,
+      "bytes": 227824,
+      "sha1": "4b8096cc45edf8bacacdef9555df49903ecf11ef"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://www.masrawy.com/news/news_publicaffairs/details/2026/8/27/3039104/%D8%A8%D8%AD%D9%85%D8%A7%D9%8A%D8%A9-%D8%A7%D9%84%D8%A7%D8%AD%D8%AA%D9%84%D8%A7%D9%84-%D9%85%D8%B3%D8%AA%D9%88%D8%B7%D9%86%D9%88%D9%86-%D9%8A%D9%82%D8%AA%D8%AD%D9%85%D9%88%D9%86-%D9%82%D8%A8%D8%B1-%D9%8A%D9%88%D8%B3%D9%81-%D9%81%D9%8A-%D9%85%D8%AF%D9%8A%D9%86%D8%A9-%D9%86%D8%A7%D8%A8%D9%84%D8%B3#Archived",
+      "title": "شئون عربية و دوليةبحماية الاحتلال.. مستوطنون يقتحمون قبر يوسف في مدينة نابلس",
+      "page_num": 1,
+      "bytes": 228155,
+      "sha1": "a7e2e176b6237806275c121e655f289d2f597a40"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://www.masrawy.com/news/news_publicaffairs/details/2026/8/27/3039103/%D9%85%D8%AF%D9%8A%D8%B1-%D8%A7%D9%84%D9%85%D8%AE%D8%A7%D8%A8%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D9%8A%D8%A9-%D9%8A%D8%B2%D9%88%D8%B1-%D9%85%D9%88%D8%B3%D9%83%D9%88-%D8%A8%D8%B4%D9%83%D9%84-%D9%85%D9%81%D8%A7%D8%AC%D8%A6-%D9%85%D8%A7-%D8%A7%D9%84%D8%B3%D8%A8%D8%A8-#Archived",
+      "title": "شئون عربية و دوليةمدير المخابرات الأمريكية يزور موسكو بشكل مفاجئ.. ما السبب؟",
+      "page_num": 1,
+      "bytes": 229815,
+      "sha1": "5d4f72b64e1e80b920354926c07cc5727f3d0502"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://www.masrawy.com/news/news_egypt/details/2026/8/27/3039073/-%D8%B4%D8%A8%D9%88%D8%B1%D8%A9-%D9%83%D8%AB%D9%8A%D9%81%D8%A9-%D9%88%D8%B1%D9%8A%D8%A7%D8%AD-%D9%86%D8%B4%D8%B7%D8%A9-%D8%A3%D8%A8%D8%B1%D8%B2-%D8%A7%D9%84%D8%B8%D9%88%D8%A7%D9%87%D8%B1-%D8%A7%D9%84%D8%AC%D9%88%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D8%AA%D9%88%D9%82%D8%B9%D8%A9-%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D8%AE%D9%85%D9%8A%D8%B3#Archived",
+      "title": "أخبار مصر\"شبورة كثيفة ورياح نشطة\".. أبرز الظواهر الجوية المتوقعة اليوم الخميس",
+      "page_num": 1,
+      "bytes": 221269,
+      "sha1": "1337dc46668f7f04b9fbaa8b075eed25d5643ec5"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://www.masrawy.com/howa_w_hya/health/details/2026/8/27/3038915/5-%D8%B9%D8%A7%D8%AF%D8%A7%D8%AA-%D9%8A%D9%88%D9%85%D9%8A%D8%A9-%D9%82%D8%AF-%D8%AA%D8%B1%D9%81%D8%B9-%D8%B6%D8%BA%D8%B7-%D8%A7%D9%84%D8%AF%D9%85-%D9%88%D8%A3%D9%86%D8%AA-%D9%84%D8%A7-%D8%AA%D8%AF%D8%B1%D9%8A-#Archived",
+      "title": "نصائح طبية5 عادات يومية قد ترفع ضغط الدم وأنت لا تدري",
+      "page_num": 1,
+      "bytes": 228774,
+      "sha1": "91c6e55db80087ad65a37e2f72c8a5f226d4cf09"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://www.masrawy.com/news/news_publicaffairs/details/2026/8/27/3039102/%D9%85%D8%B5%D8%B1%D8%B9-12-%D8%B4%D8%AE%D8%B5%D8%A7-%D8%AC%D8%B1%D8%A7%D8%A1-%D8%AD%D8%B1%D8%A7%D8%A6%D9%82-%D8%A7%D9%84%D8%BA%D8%A7%D8%A8%D8%A7%D8%AA-%D9%81%D9%8A-%D8%B9%D8%AF%D8%A9-%D9%88%D9%84%D8%A7%D9%8A%D8%A7%D8%AA-%D8%AC%D8%B2%D8%A7%D8%A6%D8%B1%D9%8A%D8%A9#Archived",
+      "title": "شئون عربية و دوليةمصرع 12 شخصا جراء حرائق الغابات في عدة ولايات جزائرية",
+      "page_num": 1,
+      "bytes": 218652,
+      "sha1": "94d5a75f186f9aa1bab6ee49d2e6d1ec24224539"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://www.masrawy.com/news/news_publicaffairs/details/2026/8/27/3039101/%D9%84%D9%85%D9%88%D8%A7%D8%AC%D9%87%D8%A9-%D8%A7%D8%B1%D8%AA%D9%81%D8%A7%D8%B9-%D8%A7%D9%84%D8%A3%D8%B3%D8%B9%D8%A7%D8%B1-%D8%AA%D8%B1%D8%A7%D9%85%D8%A8-%D9%8A%D9%88%D9%82%D8%B9-%D9%85%D8%B1%D8%B3%D9%88%D9%85-%D8%A7-%D9%84%D8%B2%D9%8A%D8%A7%D8%AF%D8%A9-%D9%83%D9%85%D9%8A%D8%A7%D8%AA-%D9%84%D8%AD%D9%88%D9%85-%D8%A7%D9%84%D8%A3%D8%A8%D9%82%D8%A7%D8%B1#Archived",
+      "title": "شئون عربية و دوليةلمواجهة ارتفاع الأسعار.. ترامب يوقع مرسومًا لزيادة كميات ‌لحوم الأبقار",
+      "page_num": 1,
+      "bytes": 229334,
+      "sha1": "be78b6d33e64c1e531ca4d628fcf650a170801b2"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://www.masrawy.com/news/news_publicaffairs/details/2026/8/27/3039100/%D8%A5%D8%B3%D9%85%D8%A7%D8%B9%D9%8A%D9%84-%D8%A8%D9%82%D8%A7%D8%A6%D9%8A-%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D8%A9-%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D9%8A%D8%A9-%D8%AA%D8%AC%D8%A7%D9%87-%D8%A5%D9%8A%D8%B1%D8%A7%D9%86-%D8%AA%D8%AD%D9%88%D9%84%D8%AA-%D8%A5%D9%84%D9%89-%D9%85%D9%87%D8%B2%D9%84%D8%A9-%D8%AD%D9%82%D9%8A%D9%82%D9%8A%D8%A9#Archived",
+      "title": "شئون عربية و دوليةإسماعيل بقائي: السياسة الأمريكية تجاه إيران تحولت إلى مهزلة حقيقية",
+      "page_num": 1,
+      "bytes": 228828,
+      "sha1": "c7d94ce28021d18be910c7a9e5a28bd4efabb1dd"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://www.masrawy.com/news/news_egypt/details/2026/8/27/3039071/%D8%AD%D8%AA%D9%89-%D9%87%D8%B0%D8%A7-%D8%A7%D9%84%D9%85%D9%88%D8%B9%D8%AF-%D8%A7%D9%84%D8%B5%D8%AD%D9%81%D9%8A%D9%8A%D9%86-%D8%AA%D9%85%D8%AF-%D9%81%D8%AA%D8%B1%D8%A9-%D8%A7%D9%84%D8%AA%D9%82%D8%AF%D9%8A%D9%85-%D9%84%D9%85%D8%B3%D8%A7%D8%A8%D9%82%D8%A9-%D8%AC%D9%88%D8%A7%D8%A6%D8%B2-%D8%A7%D9%84%D8%B5%D8%AD%D8%A7%D9%81%D8%A9-%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A%D8%A9#Archived",
+      "title": "أخبار مصرحتى هذا الموعد.. \"الصحفيين\" تمد فترة التقديم لمسابقة جوائز الصحافة المصرية",
+      "page_num": 1,
+      "bytes": 232925,
+      "sha1": "25b08ec0c9e7f55cc59d8a4e19a4587dd66a2937"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://www.masrawy.com/arts/zoom/details/2026/8/27/3039084/-%D8%AC%D8%A7%D9%87%D8%B2%D9%8A%D9%86-%D9%88%D9%84%D8%A7-%D9%85%D9%86%D9%81%D8%B3%D9%86%D9%8A%D9%8A%D9%86-%D9%85%D8%AD%D9%85%D8%AF-%D8%B1%D9%85%D8%B6%D8%A7%D9%86-%D9%8A%D8%B9%D9%84%D9%86-%D9%85%D9%88%D8%B9%D8%AF-%D8%B7%D8%B1%D8%AD-%D9%83%D9%84%D9%8A%D8%A8-%D8%A8%D8%A7%D9%83%D9%88-#Archived",
+      "title": "زووم\"جاهزين ولا منفسنيين؟\".. محمد رمضان يعلن موعد طرح كليب \"باكو\"",
+      "page_num": 1,
+      "bytes": 245642,
+      "sha1": "bbe53a8edab4d0d1f4e593519d569f10f6754e64"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://www.masrawy.com/news/news_egypt/details/2026/8/27/3039070/-%D8%A7%D9%84%D9%82%D9%88%D9%85%D9%8A-%D9%84%D9%84%D9%85%D8%B1%D8%A3%D8%A9-%D9%8A%D8%B9%D8%B2%D8%B2-%D9%85%D9%87%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D8%AD%D9%88%D8%A7%D8%B1-%D9%88%D8%A7%D9%84%D8%AA%D9%81%D8%A7%D9%88%D8%B6-%D9%84%D8%AF%D9%89-%D8%B7%D9%84%D8%A7%D8%A8-%D8%A7%D9%84%D8%AA%D8%AF%D8%B1%D9%8A%D8%A8-%D8%A7%D9%84%D8%B5%D9%8A%D9%81%D9%8A#Archived",
+      "title": "أخبار مصر\"القومي للمرأة\" يعزز مهارات الحوار والتفاوض لدى طلاب التدريب الصيفي",
+      "page_num": 1,
+      "bytes": 229541,
+      "sha1": "b481f8b6fb455ffbe22ec4742f7bc7b5f9ad8999"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://www.masrawy.com/news/education-alazhareducation/details/2026/8/27/3039066/%D8%A7%D9%86%D8%AA%D9%87%D8%A7%D8%A1-%D8%A7%D9%85%D8%AA%D8%AD%D8%A7%D9%86%D8%A7%D8%AA-%D8%A7%D9%84%D8%AF%D9%88%D8%B1-%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A-%D9%84%D9%84%D8%AB%D8%A7%D9%86%D9%88%D9%8A%D8%A9-%D8%A7%D9%84%D8%A3%D8%B2%D9%87%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D9%8A%D9%88%D9%85#Archived",
+      "title": "الأزهرانتهاء امتحانات الدور الثاني للثانوية الأزهرية اليوم",
+      "page_num": 1,
+      "bytes": 237853,
+      "sha1": "33f26d9366f3702071bbb02ccfba5fb65f315bf7"
+    },
+    {
+      "id": 25,
+      "file": "article_0025.html",
+      "url": "https://www.masrawy.com/news/education-schooleducation/details/2026/8/27/3039065/%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D8%B7%D9%84%D8%A7%D8%A8-%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%88%D9%8A%D8%A9-%D8%A7%D9%84%D8%B9%D8%A7%D9%85%D8%A9-%D9%8A%D8%AE%D8%AA%D8%AA%D9%85%D9%88%D9%86-%D8%A7%D9%85%D8%AA%D8%AD%D8%A7%D9%86%D8%A7%D8%AA-%D8%A7%D9%84%D8%AF%D9%88%D8%B1-%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A-2026#ArchivedMore",
+      "title": "مدارساليوم.. طلاب الثانوية العامة يختتمون امتحانات الدور الثاني 2026",
+      "page_num": 1,
+      "bytes": 237497,
+      "sha1": "0b62203f2f678fe109391168c268dca77dab8dc1"
+    },
+    {
+      "id": 26,
+      "file": "article_0026.html",
+      "url": "https://www.masrawy.com/news/news_publicaffairs/details/2026/8/27/3039099/%D9%85%D8%B5%D8%AF%D8%B1-%D8%A3%D9%85%D9%86%D9%8A-%D8%A5%D8%B3%D9%82%D8%A7%D8%B7-%D9%85%D8%B3%D9%8A%D8%B1%D8%A9-%D9%81%D9%8A-%D8%B3%D9%88%D8%B1%D8%A7%D9%86-%D8%A8%D8%A3%D8%B1%D8%A8%D9%8A%D9%84-%D9%88%D8%A7%D9%86%D8%AF%D9%84%D8%A7%D8%B9-%D8%AD%D8%B1%D9%8A%D9%82#ArchivedMore",
+      "title": "شئون عربية و دوليةمصدر أمني: إسقاط مسيرة في سوران بأربيل واندلاع حريق",
+      "page_num": 1,
+      "bytes": 226469,
+      "sha1": "65c312f3260bf5153c5631f12afb85d63262a789"
+    },
+    {
+      "id": 27,
+      "file": "article_0027.html",
+      "url": "https://www.masrawy.com/news/news_egypt/details/2026/8/27/3039076/%D8%AD%D8%B2%D8%A8-%D8%A7%D9%84%D8%AD%D8%B1%D9%8A%D8%A9-%D8%B1%D8%B3%D8%A7%D8%A6%D9%84-%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3-%D8%A8%D8%A7%D8%AD%D8%AA%D9%81%D8%A7%D9%84%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D9%88%D9%84%D8%AF-%D8%A7%D9%84%D9%86%D8%A8%D9%88%D9%89-%D8%AA%D8%B1%D8%B3%D9%85-%D9%85%D9%84%D8%A7%D9%85%D8%AD-%D8%A7%D9%84%D8%AC%D9%85%D9%87%D9%88%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9#ArchivedMore",
+      "title": "أخبار مصرحزب الحرية: رسائل الرئيس باحتفالية المولد النبوى ترسم ملامح الجمهورية الجديدة",
+      "page_num": 1,
+      "bytes": 231513,
+      "sha1": "d20cbe06c8121779b42c949d9209c0c5df87ab94"
+    },
+    {
+      "id": 28,
+      "file": "article_0028.html",
+      "url": "https://www.masrawy.com/islameyat/others-islamic_ppl_news/details/2026/8/27/3039097/%D8%A3%D9%85%D9%8A%D9%86-%D8%A7%D9%84%D9%81%D8%AA%D9%88%D9%89-%D9%8A%D9%88%D8%B6%D8%AD-%D8%AD%D9%83%D9%85-%D8%AA%D8%B5%D9%88%D9%8A%D8%B1-%D8%A7%D9%84%D8%A8%D8%B9%D8%B6-%D9%84%D9%84%D8%AD%D9%88%D8%A7%D8%AF%D8%AB-%D9%82%D8%A8%D9%84-%D8%A5%D8%B3%D8%B9%D8%A7%D9%81-%D8%A7%D9%84%D9%85%D8%B5%D8%A7%D8%A8%D9%8A%D9%86-#ArchivedMore",
+      "title": "أخبارأمين الفتوى يوضح حكم تصوير البعض للحوادث قبل إسعاف المصابين",
+      "page_num": 1,
+      "bytes": 227444,
+      "sha1": "81c9e7283dd117ecb054b775be926ab9f46b7b14"
+    },
+    {
+      "id": 29,
+      "file": "article_0029.html",
+      "url": "https://www.masrawy.com/news/masrawytv/details/2026/8/27/3039096/%D9%85%D9%86-200-%D8%AC%D9%86%D9%8A%D9%87-%D9%84%D9%8010-%D8%A2%D9%84%D8%A7%D9%81-%D9%83%D9%85-%D8%AA%D9%83%D9%84%D9%81-%D8%A7%D9%84%D8%B3%D8%A8%D9%84%D8%A7%D9%8A%D8%B2-%D8%A7%D9%84%D8%A3%D8%B3%D8%B1-%D8%A7%D9%84%D9%85%D8%B5%D8%B1%D9%8A%D8%A9-#ArchivedMore",
+      "title": "مصراوى TVمن 200 جنيه لـ10 آلاف.. كم تكلف \"السبلايز\" الأسر المصرية؟",
+      "page_num": 1,
+      "bytes": 180557,
+      "sha1": "bb5d4f2fa3707d15d05c70545f9eddf646253407"
+    },
+    {
+      "id": 30,
+      "file": "article_0030.html",
+      "url": "https://www.masrawy.com/news/masrawytv/details/2026/8/27/3039095/%D9%82%D8%A8%D9%84-%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%D8%A7%D8%AA-2027-%D8%AA%D8%AD%D8%B1%D9%83-%D9%84%D9%85%D9%86%D8%B9-%D8%A5%D9%86%D9%81%D8%A7%D9%86%D8%AA%D9%8A%D9%86%D9%88-%D9%85%D9%86-%D8%A7%D9%84%D8%AA%D8%B1%D8%B4%D8%AD-%D9%84%D8%B1%D8%A6%D8%A7%D8%B3%D8%A9-%D9%81%D9%8A%D9%81%D8%A7#ArchivedMore",
+      "title": "مصراوى TVقبل انتخابات 2027.. تحرك لمنع إنفانتينو من الترشح لرئاسة فيفا",
+      "page_num": 1,
+      "bytes": 182640,
+      "sha1": "c06c66d89357af220a97e71381f0d776779f072d"
+    },
+    {
+      "id": 31,
+      "file": "article_0031.html",
+      "url": "https://www.masrawy.com/arts/zoom/details/2026/8/27/3039094/%D9%85%D8%B1%D9%88%D9%89-%D8%A7%D9%84%D9%84%D8%A8%D9%86%D8%A7%D9%86%D9%8A%D8%A9-%D8%AA%D8%B7%D8%B1%D8%AD-%D8%A3%D8%AD%D8%AF%D8%AB-%D8%A3%D8%B9%D9%85%D8%A7%D9%84%D9%87%D8%A7-%D8%A3%D8%BA%D9%86%D9%8A%D8%A9-%D8%B0%D9%8A%D8%B9%D9%88%D8%A7-%D8%A7%D9%84%D8%AE%D8%A8%D8%B1-%D9%81%D9%8A%D8%AF%D9%8A%D9%88#ArchivedMore",
+      "title": "زووممروى اللبنانية تطرح أحدث أعمالها أغنية \"ذيعوا الخبر\".. فيديو",
+      "page_num": 1,
+      "bytes": 236779,
+      "sha1": "ce2765b0bc54e2e08e6965ee88080354da978bd4"
+    },
+    {
+      "id": 32,
+      "file": "article_0032.html",
+      "url": "https://www.masrawy.com/islameyat/others-islamic_ppl_news/details/2026/8/27/3039093/%D9%85%D8%A7-%D8%AD%D9%83%D9%85-%D8%B5%D9%84%D8%A7%D8%A9-%D8%A7%D9%84%D9%85%D8%B1%D8%A3%D8%A9-%D8%A8%D8%A7%D9%84%D8%A8%D9%86%D8%B7%D9%84%D9%88%D9%86-%D8%AE%D8%A7%D8%B1%D8%AC-%D8%A7%D9%84%D9%85%D9%86%D8%B2%D9%84-%D8%A3%D9%85%D9%8A%D9%86-%D8%A7%D9%84%D9%81%D8%AA%D9%88%D9%89-%D9%8A%D9%88%D8%B6%D8%AD#ArchivedMore",
+      "title": "أخبارما حكم صلاة المرأة بالبنطلون خارج المنزل؟.. أمين الفتوى يوضح",
+      "page_num": 1,
+      "bytes": 227480,
+      "sha1": "47a152077bc22283f06c071cea0d9101832a2b83"
+    },
+    {
+      "id": 33,
+      "file": "article_0033.html",
+      "url": "https://www.masrawy.com/news/news_egypt/details/2026/8/27/3039092/%D8%A8%D8%B9%D8%AF-%D8%A7%D9%86%D9%81%D8%AC%D8%A7%D8%B1-%D9%85%D8%A7%D8%B3%D9%88%D8%B1%D8%A9-%D9%85%D9%8A%D8%A7%D9%87-%D8%AC%D9%87%D8%A7%D8%B2-6-%D8%A3%D9%83%D8%AA%D9%88%D8%A8%D8%B1-%D9%8A%D9%83%D8%B4%D9%81-%D9%85%D9%88%D8%B9%D8%AF-%D8%B9%D9%88%D8%AF%D8%A9-%D8%A7%D9%84%D9%85%D9%8A%D8%A7%D9%87-%D9%84%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9-%D8%B5%D9%88%D8%B1#ArchivedMore",
+      "title": "أخبار مصربعد انفجار ماسورة مياه.. جهاز 6 أكتوبر يكشف موعد عودة المياه للمدينة- صور",
+      "page_num": 1,
+      "bytes": 239791,
+      "sha1": "8b7149f58d81d7e9f9b369d03abc377759df0bd5"
+    },
+    {
+      "id": 34,
+      "file": "article_0034.html",
+      "url": "https://www.masrawy.com/news/news_egypt/details/2026/8/27/3039091/%D9%85%D8%A7%D8%B3-%D9%83%D9%87%D8%B1%D8%A8%D8%A7%D8%A6%D9%8A-%D8%AE%D9%84%D9%81-%D9%85%D9%86%D8%B7%D9%82%D8%A9-%D8%A7%D9%84%D8%A8%D8%B3%D8%AA%D8%A7%D9%86-%D9%88%D8%AC%D9%87%D8%A7%D8%B2-6-%D8%A3%D9%83%D8%AA%D9%88%D8%A8%D8%B1-%D8%AA%D9%85-%D8%A5%D8%B5%D9%84%D8%A7%D8%AD-%D8%A7%D9%84%D9%83%D8%A7%D8%A8%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D9%83%D9%87%D8%B1%D8%A8%D8%A7%D8%A6%D9%8A%D8%A9#ArchivedMore",
+      "title": "أخبار مصرماس كهربائي خلف منطقة البستان.. وجهاز 6 أكتوبر: تم إصلاح الكابلات الكهربائية",
+      "page_num": 1,
+      "bytes": 228221,
+      "sha1": "c07134726ae64c628cc9e4e26fcd013e0fbea627"
+    },
+    {
+      "id": 35,
+      "file": "article_0035.html",
+      "url": "https://www.masrawy.com/news/news_egypt/details/2026/8/27/3039069/-%D8%A7%D9%84%D9%82%D9%88%D9%85%D9%8A-%D9%84%D9%84%D9%85%D8%B1%D8%A3%D8%A9-%D9%8A%D9%86%D8%B8%D9%85-%D9%8A%D9%88%D9%85-%D8%A7-%D8%AA%D8%B9%D8%B1%D9%8A%D9%81%D9%8A-%D8%A7-%D9%84%D8%B7%D9%84%D8%A7%D8%A8-%D8%A7%D9%84%D8%AC%D8%A7%D9%85%D8%B9%D8%A7%D8%AA-%D8%B6%D9%85%D9%86-%D8%A7%D9%84%D8%AA%D8%AF%D8%B1%D9%8A%D8%A8-%D8%A7%D9%84%D8%B5%D9%8A%D9%81%D9%8A#ArchivedMore",
+      "title": "أخبار مصر\"القومي للمرأة\" ينظم يومًا تعريفيًا لطلاب الجامعات ضمن التدريب الصيفي",
+      "page_num": 1,
+      "bytes": 229488,
+      "sha1": "849c1da2c871831fda4a4558049c5a155fa63c2d"
+    },
+    {
+      "id": 36,
+      "file": "article_0036.html",
+      "url": "https://www.masrawy.com/howa_w_hya/health/details/2026/8/27/3038808/-%D9%87%D9%84-%D9%8A%D8%B3%D8%A7%D8%B9%D8%AF-%D8%A7%D9%84%D9%86%D8%B8%D8%A7%D9%85-%D8%A7%D9%84%D8%BA%D8%B0%D8%A7%D8%A6%D9%8A-%D8%A7%D9%84%D8%B5%D8%AD%D9%8A-%D8%B9%D9%84%D9%89-%D8%AA%D8%AD%D8%B3%D9%8A%D9%86-%D9%88%D8%B8%D8%A7%D8%A6%D9%81-%D8%A7%D9%84%D8%B1%D8%A6%D8%A9-#ArchivedMore",
+      "title": "نصائح طبيةهل يساعد النظام الغذائي الصحي على تحسين وظائف الرئة؟",
+      "page_num": 1,
+      "bytes": 228935,
+      "sha1": "80aa08371bedfc7ef46648221a81778553b3f4b1"
+    },
+    {
+      "id": 37,
+      "file": "article_0037.html",
+      "url": "https://www.masrawy.com/news/masrawytv/details/2026/8/27/3039090/%D8%A3%D9%84%D8%B9%D8%A7%D8%A8-%D8%A3%D8%B7%D9%81%D8%A7%D9%84-%D8%BA%D8%B2%D8%A9-%D8%AA%D8%B3%D8%A8%D8%A8-%D8%B1%D8%B9%D8%A8-%D8%A7-%D9%84%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84-%D9%88%D9%82%D8%B1%D8%A7%D8%B1-%D8%A8%D8%AD%D8%B8%D8%B1%D9%87%D8%A7#ArchivedMore",
+      "title": "مصراوى TVألعاب أطفال غزة تسبب رعبًا لإسرائيل.. وقرار بحظرها",
+      "page_num": 1,
+      "bytes": 180097,
+      "sha1": "67b30e67c1bc74629b30b896c0aade1c9def4c58"
+    },
+    {
+      "id": 38,
+      "file": "article_0038.html",
+      "url": "https://www.masrawy.com/news/news_egypt/details/2026/8/27/3039089/-%D8%A7%D9%84%D9%85%D9%8A%D8%A7%D9%87-%D8%BA%D8%B1%D9%82%D8%AA-%D8%A7%D9%84%D8%B4%D9%88%D8%A7%D8%B1%D8%B9-%D8%A7%D9%86%D9%81%D8%AC%D8%A7%D8%B1-%D9%85%D8%A7%D8%B3%D9%88%D8%B1%D8%A9-%D9%85%D9%8A%D8%A7%D9%87-%D9%81%D9%8A-%D9%85%D8%AF%D9%8A%D9%86%D8%A9-6-%D8%A3%D9%83%D8%AA%D9%88%D8%A8%D8%B1-%D9%81%D9%8A%D8%AF%D9%8A%D9%88-%D9%88%D8%B5%D9%88%D8%B1#ArchivedMore",
+      "title": "أخبار مصر\"المياه غرقت الشوارع\".. انفجار ماسورة مياه في مدينة 6 أكتوبر- فيديو وصور",
+      "page_num": 1,
+      "bytes": 230909,
+      "sha1": "44fd9b8b7e6c944a40fe32780a8494ada02e264f"
+    },
+    {
+      "id": 39,
+      "file": "article_0039.html",
+      "url": "https://www.masrawy.com/arts/agnaby/details/2026/8/27/3039088/%D9%88%D9%81%D8%A7%D8%A9-%D9%86%D8%AC%D9%85-%D8%A7%D9%84%D8%B3%D9%8A%D9%86%D9%85%D8%A7-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85%D9%8A%D8%A9-%D8%AA%D9%8A%D9%85-%D9%83%D8%A7%D8%B1%D9%8A-%D8%B9%D9%86-%D8%B9%D9%85%D8%B1-%D9%86%D8%A7%D9%87%D8%B2-%D8%A7%D9%84%D9%80-80-%D8%B9%D8%A7%D9%85-%D8%A7#ArchivedMore",
+      "title": "أجنبيوفاة نجم السينما العالمية تيم كاري عن عمر ناهز الـ 80 عامًا",
+      "page_num": 1,
+      "bytes": 217875,
+      "sha1": "782a8215c206a4ece053d2ea793641115045c811"
+    },
+    {
+      "id": 40,
+      "file": "article_0040.html",
+      "url": "https://www.masrawy.com/sports/sports_news/details/2026/8/27/3039087/%D8%A7%D9%84%D8%A3%D9%87%D9%84%D9%8A-%D9%8A%D8%B9%D9%84%D9%86-%D8%AA%D9%85%D8%AF%D9%8A%D8%AF-%D8%B9%D9%82%D8%AF-%D9%85%D8%B1%D9%88%D8%A7%D9%86-%D8%B9%D8%B7%D9%8A%D8%A9-%D8%AD%D8%AA%D9%89-2030#ArchivedMore",
+      "title": "رياضة محليةالأهلي يعلن تمديد عقد مروان عطية حتى 2030",
+      "page_num": 1,
+      "bytes": 271117,
+      "sha1": "7de0845a1c3ceb8a2d0ee04414b148a8ee2f9e4d"
+    },
+    {
+      "id": 41,
+      "file": "article_0041.html",
+      "url": "https://www.masrawy.com/islameyat/others-islamic_ppl_news/details/2026/8/27/3039086/%D9%87%D9%84-%D9%8A%D8%AC%D9%88%D8%B2-%D8%B5%D8%A8%D8%BA-%D8%A7%D9%84%D8%B4%D9%8A%D8%A8-%D8%A8%D8%A7%D9%84%D9%84%D9%88%D9%86-%D8%A7%D9%84%D8%A3%D8%B3%D9%88%D8%AF-%D9%84%D9%84%D8%B1%D8%AC%D8%A7%D9%84-%D8%A3%D9%85%D9%8A%D9%86-%D8%A7%D9%84%D9%81%D8%AA%D9%88%D9%89-%D9%8A%D8%AC%D9%8A%D8%A8#ArchivedMore",
+      "title": "أخبارهل يجوز صبغ الشيب باللون الأسود للرجال؟.. أمين الفتوى يجيب",
+      "page_num": 1,
+      "bytes": 226673,
+      "sha1": "248071444f1eb509181514a687704ea203f2090d"
+    },
+    {
+      "id": 42,
+      "file": "article_0042.html",
+      "url": "https://www.masrawy.com/news/news_egypt/details/2026/8/27/3039054/%D9%87%D9%84-%D8%A7%D9%84%D9%88%D8%B2%D9%86-%D8%A7%D9%84%D8%B2%D8%A7%D8%A6%D8%AF-%D9%8A%D8%B9%D9%8A%D8%AF-%D8%A7%D9%84%D8%BA%D8%B6%D8%B1%D9%88%D9%81-%D8%A8%D8%B9%D8%AF-%D8%A7%D9%84%D8%AC%D8%B1%D8%A7%D8%AD%D8%A9-%D8%A7%D9%84%D8%B5%D8%AD%D8%A9-%D8%AA%D9%88%D8%B6%D8%AD-%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D9%82%D8%A9-%D9%88%D8%AA%D9%83%D8%B4%D9%81-%D8%A7%D9%84%D8%AD%D9%84#ArchivedMore",
+      "title": "أخبار مصرهل الوزن الزائد يعيد الغضروف بعد الجراحة؟.. الصحة توضح العلاقة وتكشف الحل",
+      "page_num": 1,
+      "bytes": 229794,
+      "sha1": "967ee72a6a331063eef57fa7d0fc6a91cf40e146"
+    },
+    {
+      "id": 43,
+      "file": "article_0043.html",
+      "url": "https://www.masrawy.com/sports/sports_news/details/2026/8/27/3039083/%D8%A8%D8%B9%D8%AF-%D8%AA%D8%AC%D8%AF%D9%8A%D8%AF-%D8%B9%D9%82%D8%AF%D9%87-%D8%A5%D9%85%D8%A7%D9%85-%D8%B9%D8%A7%D8%B4%D9%88%D8%B1-%D9%8A%D8%AA%D8%AD%D8%AF%D8%AB-%D8%B9%D9%86-%D8%B9%D9%84%D8%A7%D9%82%D8%AA%D9%87-%D8%A8%D8%A7%D9%84%D8%AD%D8%B3%D9%8A%D9%86-%D8%B9%D9%85%D9%88%D8%AA%D8%A9-%D9%88%D8%AD%D9%82%D9%8A%D9%82%D8%A9-%D8%AA%D9%85%D8%B1%D8%AF%D9%87#ArchivedMore",
+      "title": "رياضة محليةبعد تجديد عقده.. إمام عاشور يتحدث عن علاقته بالحسين عموتة وحقيقة تمرده",
+      "page_num": 1,
+      "bytes": 263717,
+      "sha1": "5398755ac1cae776e322e2006b6fd031f2295f12"
+    },
+    {
+      "id": 44,
+      "file": "article_0044.html",
+      "url": "https://www.masrawy.com/news/news_publicaffairs/details/2026/8/27/3039082/%D8%AA%D8%B5%D8%B9%D9%8A%D8%AF-%D8%AC%D8%AF%D9%8A%D8%AF-%D9%81%D9%8A-%D8%A3%D8%B1%D8%A8%D9%8A%D9%84-%D9%85%D8%B3%D9%8A%D8%B1%D8%A7%D8%AA-%D8%AA%D8%B3%D8%AA%D9%87%D8%AF%D9%81-%D9%85%D9%82%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%B1%D8%B6%D8%A9-%D8%A7%D9%84%D8%A5%D9%8A%D8%B1%D8%A7%D9%86%D9%8A%D8%A9-%D8%A8%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82#ArchivedMore",
+      "title": "شئون عربية و دوليةتصعيد جديد في أربيل.. مسيرات تستهدف مقرات المعارضة الإيرانية بالعراق",
+      "page_num": 1,
+      "bytes": 228972,
+      "sha1": "b2048d90e3618219cec8d484c7bb81fbc236ed6b"
+    },
+    {
+      "id": 45,
+      "file": "article_0045.html",
+      "url": "https://www.masrawy.com/news/news_egypt/details/2026/8/27/3039053/%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D8%A5%D8%AC%D8%A7%D8%B2%D8%A9-%D8%B1%D8%B3%D9%85%D9%8A%D8%A9-%D8%A8%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9-%D8%A7%D9%84%D9%85%D9%88%D9%84%D8%AF-%D8%A7%D9%84%D9%86%D8%A8%D9%88%D9%8A-%D8%AA%D8%B9%D8%B1%D9%81-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D9%81%D8%A6%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D8%AD%D9%82%D8%A9-%D9%88%D8%AD%D9%82%D9%88%D9%82#ArchivedMore",
+      "title": "أخبار مصراليوم إجازة رسمية بمناسبة المولد النبوي.. تعرف على الفئات المستحقة وحقوق",
+      "page_num": 1,
+      "bytes": 229816,
+      "sha1": "cca5c5bdcab763f60674e098f2458f6bae4d778f"
+    },
+    {
+      "id": 46,
+      "file": "article_0046.html",
+      "url": "https://www.masrawy.com/howa_w_hya/health/details/2026/8/27/3038789/%D8%B9%D9%84%D8%A7%D9%85%D8%A7%D8%AA-%D8%AA%D8%B8%D9%87%D8%B1-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D9%88%D8%AC%D9%87-%D9%82%D8%AF-%D8%AA%D9%83%D8%B4%D9%81-%D9%85%D8%B4%D9%83%D9%84%D8%A7%D8%AA-%D9%81%D9%8A-%D8%A7%D9%84%D9%83%D9%84%D9%89#ArchivedMore",
+      "title": "نصائح طبيةعلامات تظهر على الوجه قد تكشف مشكلات في الكلى",
+      "page_num": 1,
+      "bytes": 230059,
+      "sha1": "b0e3cae0f71282082b5d3c1141ec5e83a543a961"
+    },
+    {
+      "id": 47,
+      "file": "article_0047.html",
+      "url": "https://www.masrawy.com/sports/sports_news/details/2026/8/27/3039068/-%D8%A7%D9%84%D9%84%D9%8A-%D9%85%D8%B9-%D8%A7%D9%84%D8%A3%D9%87%D9%84%D9%8A-%D9%83%D8%B3%D8%A8%D8%A7%D9%86-%D8%A3%D9%88%D9%84-%D8%AA%D8%B9%D9%84%D9%8A%D9%82-%D9%85%D9%86-%D8%A5%D9%85%D8%A7%D9%85-%D8%B9%D8%A7%D8%B4%D9%88%D8%B1-%D8%A8%D8%B9%D8%AF-%D8%AA%D8%AC%D8%AF%D9%8A%D8%AF-%D8%B9%D9%82%D8%AF%D9%87-%D9%85%D8%B9-%D8%A7%D9%84%D8%A3%D9%87%D9%84%D9%8A-#ArchivedMore",
+      "title": "رياضة محلية\"اللي مع الأهلي كسبان\" أول تعليق من إمام عاشور بعد تجديد عقده مع الأهلي",
+      "page_num": 1,
+      "bytes": 271828,
+      "sha1": "c76a583f15e6c8c37c6a6bbfc224d5e4428521ec"
+    },
+    {
+      "id": 48,
+      "file": "article_0048.html",
+      "url": "https://www.masrawy.com/news/news_publicaffairs/details/2026/8/27/3039062/%D8%B1%D8%A6%D9%8A%D8%B3-%D8%A7%D9%84%D9%88%D8%B2%D8%B1%D8%A7%D8%A1-%D8%A7%D9%84%D9%82%D8%B7%D8%B1%D9%8A-%D9%8A%D8%B5%D9%84-%D8%B7%D9%87%D8%B1%D8%A7%D9%86-%D9%84%D8%A8%D8%AD%D8%AB-%D8%AE%D9%81%D8%B6-%D8%A7%D9%84%D8%AA%D8%B5%D8%B9%D9%8A%D8%AF-%D9%88%D8%AD%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D9%84%D8%A7%D8%AD%D8%A9-%D9%81%D9%8A-%D9%85%D8%B6%D9%8A%D9%82-%D9%87%D8%B1%D9%85%D8%B2#ArchivedMore",
+      "title": "شئون عربية و دوليةرئيس الوزراء القطري يصل طهران لبحث خفض التصعيد وحرية الملاحة في مضيق هرمز",
+      "page_num": 1,
+      "bytes": 228985,
+      "sha1": "908e0816814f82783c97c501ef18f5e2c903fa21"
+    },
+    {
+      "id": 49,
+      "file": "article_0049.html",
+      "url": "https://www.masrawy.com/arts/zoom/details/2026/8/27/3039061/%D8%AD%D8%AF%D8%AB-%D8%A8%D8%A7%D9%84%D9%81%D9%86-%D8%A7%D8%B9%D8%AA%D8%B2%D8%A7%D9%84-%D8%AF%D8%A7%D9%84%D9%8A%D8%A7-%D9%85%D8%A8%D8%A7%D8%B1%D9%83-%D9%88%D8%AA%D8%B7%D9%88%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D8%AD%D8%A7%D9%84%D8%A9-%D8%A7%D9%84%D8%B5%D8%AD%D9%8A%D8%A9-%D9%84%D9%80-%D9%87%D8%A8%D8%A9-%D9%85%D8%AC%D8%AF%D9%8A-%D9%88%D9%85%D8%A8%D8%A7%D8%AF%D8%B1%D8%A9#ArchivedMore",
+      "title": "زوومحدث بالفن| اعتزال داليا مبارك وتطورات الحالة الصحية لـ هبة مجدي ومبادرة",
+      "page_num": 1,
+      "bytes": 203354,
+      "sha1": "e6ec65e506f947d443fab6864984d2e3b4e21854"
+    },
+    {
+      "id": 50,
+      "file": "article_0050.html",
+      "url": "https://www.masrawy.com/sports/sports-arab-international/details/2026/8/27/3039060/%D8%A8%D8%B9%D8%AF-%D8%A7%D9%84%D9%81%D9%88%D8%B2-%D8%B9%D9%84%D9%89-%D8%A3%D9%88%D9%83%D9%84%D8%A7%D9%86%D8%AF-%D8%A7%D9%84%D9%86%D8%A7%D8%AF%D9%8A-%D8%A7%D9%84%D8%A3%D9%87%D9%84%D9%8A-%D9%8A%D8%B6%D8%B1%D8%A8-%D9%85%D9%88%D8%B9%D8%AF%D8%A7-%D9%85%D8%B9-%D8%B5%D9%86%D8%AF%D8%A7%D9%88%D9%86%D8%B2-%D9%81%D9%8A-%D9%83%D8%A3%D8%B3-%D8%A5%D9%86%D8%AA%D8%B1%D9%83%D9%88%D9%86%D8%AA%D9%8A%D9%86%D9%86%D8%AA%D8%A7%D9%84#ArchivedMore",
+      "title": "رياضة عربية و عالميةبعد الفوز على أوكلاند.. النادي الأهلي يضرب موعدا مع صنداونز في كأس إنتركونتيننتال",
+      "page_num": 1,
+      "bytes": 255434,
+      "sha1": "0f768fd2e43bd9f86bd1e8d59519b61ec2e3d817"
+    },
+    {
+      "id": 51,
+      "file": "article_0051.html",
+      "url": "https://www.masrawy.com/news/news_publicaffairs/details/2026/8/27/3039059/%D9%82%D8%A7%D9%84%D9%8A%D8%A8%D8%A7%D9%81-%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D9%82%D8%A9-%D8%A8%D9%8A%D9%86-%D8%A7%D9%84%D8%B5%D9%8A%D9%86-%D9%88%D8%A5%D9%8A%D8%B1%D8%A7%D9%86-%D9%84%D8%A7-%D8%AA%D8%AD%D8%AA%D8%A7%D8%AC-%D8%A5%D9%84%D9%89-%D9%85%D9%88%D8%A7%D9%81%D9%82%D8%A9-%D8%A3%D8%AD%D8%AF#ArchivedMore",
+      "title": "شئون عربية و دوليةقاليباف: العلاقة بين الصين وإيران لا تحتاج إلى موافقة أحد",
+      "page_num": 1,
+      "bytes": 226828,
+      "sha1": "79f71bf268c435cf06ebf30f176e53d33c869c12"
+    },
+    {
+      "id": 52,
+      "file": "article_0052.html",
+      "url": "https://www.masrawy.com/arts/zoom/details/2026/8/27/3039058/-%D9%85%D9%8A%D8%B1%D9%86%D8%A7-%D8%AC%D9%85%D9%8A%D9%84-%D8%A8%D9%81%D8%B3%D8%AA%D8%A7%D9%86-%D8%AC%D8%B1%D9%8A%D8%A1-%D9%88%D9%87%D9%86%D8%AF-%D8%B5%D8%A8%D8%B1%D9%8A-%D8%A3%D9%85%D8%A7%D9%85-%D8%A7%D9%84%D8%A8%D8%AD%D8%B1-%D9%84%D9%82%D8%B7%D8%A7%D8%AA-%D9%84%D9%86%D8%AC%D9%88%D9%85-%D8%A7%D9%84%D9%81%D9%86-%D8%AE%D9%84%D8%A7%D9%84-24#ArchivedMore",
+      "title": "زوومميرنا جميل بفستان جريء وهند صبري أمام البحر.. لقطات لنجوم الفن خلال 24",
+      "page_num": 1,
+      "bytes": 243544,
+      "sha1": "3af9fcca73c34869b0dc75057a2f9ff35ecffa10"
+    },
+    {
+      "id": 53,
+      "file": "article_0053.html",
+      "url": "https://www.masrawy.com/news/news_egypt/details/2026/8/27/3039057/%D8%AD%D8%B2%D8%A8-%D8%A7%D9%84%D9%85%D8%A4%D8%AA%D9%85%D8%B1-%D9%83%D9%84%D9%85%D8%A9-%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3-%D8%A8%D8%A7%D8%AD%D8%AA%D9%81%D8%A7%D9%84%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D9%88%D9%84%D8%AF-%D8%AC%D9%85%D8%B9%D8%AA-%D8%A8%D9%8A%D9%86-%D9%82%D9%8A%D9%85-%D8%A7%D9%84%D8%B1%D8%B3%D8%A7%D9%84%D8%A9-%D9%88%D9%85%D9%82%D8%AA%D8%B6%D9%8A%D8%A7%D8%AA#ArchivedMore",
+      "title": "أخبار مصرحزب المؤتمر: كلمة الرئيس باحتفالية المولد جمعت بين قيم الرسالة ومقتضيات",
+      "page_num": 1,
+      "bytes": 222170,
+      "sha1": "df564f3ce3bb42454e473fc5672fbe334d0a164a"
+    },
+    {
+      "id": 54,
+      "file": "article_0054.html",
+      "url": "https://www.masrawy.com/sports/sports-arab-international/details/2026/8/27/3039056/%D9%84%D9%84%D9%85%D8%B1%D8%A9-%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A%D8%A9-%D8%AA%D9%88%D8%A7%D9%84%D9%8A%D8%A7-%D8%A3%D9%87%D9%84%D9%8A-%D8%AC%D8%AF%D8%A9-%D8%A5%D9%84%D9%89-%D8%B1%D8%A8%D8%B9-%D9%86%D9%87%D8%A7%D8%A6%D9%8A-%D9%83%D8%A3%D8%B3-%D8%A5%D9%86%D8%AA%D8%B1%D9%83%D9%88%D9%86%D8%AA%D9%8A%D9%86%D9%86%D8%AA%D8%A7%D9%84#ArchivedMore",
+      "title": "رياضة عربية و عالميةللمرة الثانية توالياً.. أهلي جدة إلى ربع نهائي كأس إنتركونتيننتال",
+      "page_num": 1,
+      "bytes": 254344,
+      "sha1": "d53dec203b0c32c980def310be400b54fca032a1"
+    },
+    {
+      "id": 55,
+      "file": "article_0055.html",
+      "url": "https://www.masrawy.com/news/news_cases/details/2026/8/27/3039055/%D8%AD%D9%83%D9%85-%D9%82%D8%B6%D8%A7%D8%A6%D9%8A-%D8%B6%D8%AF-%D9%85%D8%AA%D9%87%D9%85%D9%8A%D9%86-%D8%A8%D8%B3%D8%B1%D9%82%D8%A9-%D8%B3%D9%8A%D8%A7%D8%B1%D8%A9-%D8%A8%D8%A7%D9%84%D8%A5%D9%83%D8%B1%D8%A7%D9%87-%D9%81%D9%8A-%D8%A8%D8%AF%D8%B1#ArchivedMore",
+      "title": "حوادث وقضاياحكم قضائي ضد متهمين بسرقة سيارة بالإكراه في بدر",
+      "page_num": 1,
+      "bytes": 225871,
+      "sha1": "1684bbd8fbac530f7244418625ac5b1d7bc9ef7a"
+    },
+    {
+      "id": 56,
+      "file": "article_0056.html",
+      "url": "https://www.masrawy.com/sports/sports-arab-international/details/2026/8/27/3039052/%D9%85%D9%88%D8%A7%D8%B9%D9%8A%D8%AF-%D9%85%D8%A8%D8%A7%D8%B1%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D8%A7%D9%84%D8%A3%D8%B1%D8%A8%D8%B9%D8%A7%D8%A1-27-%D8%A3%D8%BA%D8%B3%D8%B7%D8%B3-%D9%88%D8%A7%D9%84%D9%82%D9%86%D9%88%D8%A7%D8%AA-%D8%A7%D9%84%D9%86%D8%A7%D9%82%D9%84%D8%A9-#ArchivedMore",
+      "title": "رياضة عربية و عالميةمواعيد مباريات اليوم الأربعاء 27 أغسطس والقنوات الناقلة",
+      "page_num": 1,
+      "bytes": 269150,
+      "sha1": "7c1f0f926f319aa86a6ec99fc74965714ea55d12"
+    },
+    {
+      "id": 57,
+      "file": "article_0057.html",
+      "url": "https://www.masrawy.com/news/news_cases/details/2026/8/27/3039051/-%D9%83%D9%8A%D9%81-%D9%88%D8%B3%D9%84%D8%A7%D8%AD-%D9%88%D9%81%D9%8A%D8%AF%D9%8A%D9%88%D9%87%D8%A7%D8%AA-%D8%AE%D8%A7%D8%AF%D8%B4%D8%A9-%D8%B3%D9%87%D8%B1%D8%A9-%D8%B5%D8%A7%D9%86%D8%B9%D8%AA%D9%8A-%D9%85%D8%AD%D8%AA%D9%88%D9%89-%D8%A8%D8%A7%D9%84%D8%AA%D8%AC%D9%85%D8%B9-%D8%AA%D9%86%D8%AA%D9%87%D9%8A-%D8%A8%D8%A7%D9%84%D9%83%D9%84%D8%A8%D8%B4%D8%A7%D8%AA#ArchivedMore",
+      "title": "حوادث وقضايا\"كيف وسلاح وفيديوهات خادشة\".. سهرة صانعتي محتوى بالتجمع تنتهي بالكلبشات",
+      "page_num": 1,
+      "bytes": 228763,
+      "sha1": "054f30a9b3818efb54eb62617cdf38240c43af77"
+    },
+    {
+      "id": 58,
+      "file": "article_0058.html",
+      "url": "https://www.masrawy.com/sports/sports-arab-international/details/2026/8/27/3039050/%D8%A8%D9%8A%D9%86%D9%87%D9%85%D8%A7-%D8%A7%D9%84%D8%B2%D9%85%D8%A7%D9%84%D9%83-%D9%88%D8%B1%D9%8A%D8%A7%D9%84-%D9%85%D8%AF%D8%B1%D9%8A%D8%AF-%D8%AA%D8%B9%D8%B1%D9%81-%D8%B9%D9%84%D9%89-%D9%86%D8%AA%D8%A7%D8%A6%D8%AC-%D9%85%D8%A8%D8%A7%D8%B1%D9%8A%D8%A7%D8%AA-%D8%A3%D9%85%D8%B3-%D8%A7%D9%84%D8%A3%D8%B1%D8%A8%D8%B9%D8%A7%D8%A1#ArchivedMore",
+      "title": "رياضة عربية و عالميةبينهما الزمالك وريال مدريد .. تعرف على نتائج مباريات أمس الأربعاء",
+      "page_num": 1,
+      "bytes": 271218,
+      "sha1": "52980d9937a8c5cbc9c9a2baccdbc06038bf4281"
+    },
+    {
+      "id": 59,
+      "file": "article_0059.html",
+      "url": "https://www.masrawy.com/arts/zoom/details/2026/8/27/3039049/-%D8%A3%D8%B3%D8%B7%D9%88%D8%B1%D8%A9-%D8%A7%D9%84%D8%AA%D8%A3%D9%84%D9%8A%D9%81-%D9%88%D8%A7%D9%84%D8%AF-%D9%85%D8%AD%D9%85%D8%AF-%D8%B3%D8%A7%D9%85%D9%8A-%D9%8A%D8%AD%D8%AA%D9%81%D9%84-%D8%A8%D8%B9%D9%8A%D8%AF-%D9%85%D9%8A%D9%84%D8%A7%D8%AF-%D9%86%D8%AC%D9%84%D9%87-%D8%A8%D8%B1%D8%B3%D8%A7%D9%84%D8%A9-%D9%85%D8%A4%D8%AB%D8%B1%D8%A9#ArchivedMore",
+      "title": "زووم\"أسطورة التأليف\".. والد محمد سامي يحتفل بعيد ميلاد نجله برسالة مؤثرة",
+      "page_num": 1,
+      "bytes": 228089,
+      "sha1": "254f9858fc21ac28a0b02f37316ec87ea1ba4fae"
+    },
+    {
+      "id": 60,
+      "file": "article_0060.html",
+      "url": "https://www.masrawy.com/news/news_publicaffairs/details/2026/8/27/3039048/%D9%87%D9%8A%D9%84%D8%A7%D8%B1%D9%8A-%D9%83%D9%84%D9%8A%D9%86%D8%AA%D9%88%D9%86-%D8%AA%D9%86%D8%AA%D9%82%D8%AF-%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9-%D8%AA%D8%B1%D8%A7%D9%85%D8%A8-%D9%84%D8%AD%D8%B1%D8%A8-%D8%A5%D9%8A%D8%B1%D8%A7%D9%86-%D9%88%D8%AA%D8%AD%D8%AF%D8%AF-%D8%B7%D8%B1%D9%8A%D9%82-%D8%A7%D9%84%D8%AE%D8%B1%D9%88%D8%AC-%D9%85%D9%86-%D8%A7%D9%84%D8%B5%D8%B1%D8%A7%D8%B9#ArchivedMore",
+      "title": "شئون عربية و دوليةهيلاري كلينتون تنتقد إدارة ترامب لحرب إيران وتحدد طريق الخروج من الصراع",
+      "page_num": 1,
+      "bytes": 234830,
+      "sha1": "c7f8b0fb74dd77b5bfab4f4792298ca23eafe0fd"
+    },
+    {
+      "id": 61,
+      "file": "article_0061.html",
+      "url": "https://www.masrawy.com/sports/sports-arab-international/details/2026/8/27/3039047/%D9%85%D9%88%D8%B9%D8%AF-%D9%85%D8%A8%D8%A7%D8%B1%D8%A7%D8%A9-%D8%B7%D8%B1%D8%A7%D8%A8%D8%B2%D9%88%D9%86-%D8%B3%D8%A8%D9%88%D8%B1-%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D9%81%D9%8A-%D8%A7%D9%84%D8%AF%D9%88%D8%B1%D9%8A-%D8%A7%D9%84%D8%A3%D9%88%D8%B1%D9%88%D8%A8%D9%8A-%D9%88%D8%A7%D9%84%D9%82%D9%86%D8%A7%D8%A9-%D8%A7%D9%84%D9%86%D8%A7%D9%82%D9%84%D8%A9#ArchivedMore",
+      "title": "رياضة عربية و عالميةموعد مباراة طرابزون سبور اليوم في الدوري الأوروبي والقناة الناقلة",
+      "page_num": 1,
+      "bytes": 260360,
+      "sha1": "cea8378a9ce3e81457083e15e3b6fca8fd453479"
+    },
+    {
+      "id": 62,
+      "file": "article_0062.html",
+      "url": "https://www.masrawy.com/howa_w_hya/relationship/details/2026/8/27/3038817/%D8%AD%D8%B8%D9%83-%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D9%88%D8%AA%D9%88%D9%82%D8%B9%D8%A7%D8%AA-%D8%A7%D9%84%D8%A3%D8%A8%D8%B1%D8%A7%D8%AC-27-8-%D9%81%D8%B1%D8%B5-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D9%84%D9%87%D8%B0%D8%A7-%D8%A7%D9%84%D8%A8%D8%B1%D8%AC-%D9%88%D8%AA%D8%AD%D8%B3%D9%86-%D9%85%D8%A7%D9%84%D9%8A-%D9%84%D9%87%D8%A4%D9%84%D8%A7%D8%A1-#ArchivedMore",
+      "title": "علاقاتحظك اليوم وتوقعات الأبراج 27-8: فرص جديدة لهذا البرج.. وتحسن مالي لهؤلاء",
+      "page_num": 1,
+      "bytes": 205921,
+      "sha1": "9caba3f27db38725e79b4762a2b0e5a5eb10b978"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 2,
+    "articles": 62,
+    "article_fetch_failures": 0
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "website": "eminenceorganics",
+  "snapshot_date": "2026-08-27T03:57:02",
+  "pagination_type": "numbered pagination",
+  "scroll_mode": null,
+  "scroll_rounds_requested": null,
+  "load_more_selector": null,
+  "listing_url": "https://eminenceorganics.com/us/blog/celebrity-skincare",
+  "input_urls": [
+    "https://eminenceorganics.com/us/blog/celebrity-skincare",
+    "https://eminenceorganics.com/us/blog/celebrity-skincare?csortb1=blogUpdateDate&csortd1=2&start=12&sz=12"
+  ],
+  "pagination_pattern": "https://eminenceorganics.com/us/blog/celebrity-skincare?csortb1=blogUpdateDate&csortd1=2&start=12&sz={page}",
+  "requirements": "title, date, author, article body text",
+  "run_dir": "orch_runs/run_20260827_035227",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare",
+      "file": "listing_page_001.html",
+      "bytes": 125835,
+      "sha1": "ee8a08351f5e4bb84a5fa619812c68083beea77d"
+    },
+    {
+      "page_num": 2,
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare?csortb1=blogUpdateDate&csortd1=2&start=12&sz=12",
+      "file": "listing_page_002.html",
+      "bytes": 126086,
+      "sha1": "655617cab9021ec4ed286ba10949592a2868985d"
+    },
+    {
+      "page_num": 3,
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare?csortb1=blogUpdateDate&csortd1=2&start=12&sz=24",
+      "file": "listing_page_003.html",
+      "bytes": 126086,
+      "sha1": "a0388a249f794297e580e60d4bff3a0663856cb4"
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare/hollywood-stars-who-use-eminence-organics.html",
+      "title": "9 Hollywood Stars Who Use Eminence Organics on Set",
+      "page_num": 1,
+      "bytes": 150244,
+      "sha1": "bd3d073ea81d78bdf8bac0e4b962424116d1cd00"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare/the-last-of-us-rebecca-lee.html",
+      "title": "“The Last of Us” Head of Makeup Shares Skin Care Secrets",
+      "page_num": 1,
+      "bytes": 132348,
+      "sha1": "41ce7ca56d662f2dd851e70637705ffb71167877"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare/the-white-lotus-season-3.html",
+      "title": "“The White Lotus” Makeup Head Reveals Secrets for Season 3 Looks",
+      "page_num": 1,
+      "bytes": 161269,
+      "sha1": "6782050932c73c92e0d3df3c60bacf92908fc13e"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare/hollywood-blockbuster-eminence-organics-budapest.html",
+      "title": "Blockbuster Buzz: Eminence Organics on Location in Budapest",
+      "page_num": 1,
+      "bytes": 131738,
+      "sha1": "4b2b29ce4807444cc693c75941e1d15f9efdc175"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare/celebrity-skin-care-4-stars-who-love-eminence.html",
+      "title": "Celebrity Skin Care: 6 Stars Who Love Eminence",
+      "page_num": 1,
+      "bytes": 165873,
+      "sha1": "f7e2dd7b8ece4201660fd7a53f6ca4098b6e296f"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare/celebrity-skin-care.html",
+      "title": "Celebrity Skin Care: 6 Stars Who Love Our Organic, Eco-Friendly Brand",
+      "page_num": 1,
+      "bytes": 150575,
+      "sha1": "3cef5d2725769a23b65d9a4455d18359011b48d3"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare/best-eminence-organics-face-masks-celebrities-use.html",
+      "title": "Best Eminence Organics Face Masks That Celebrities Use",
+      "page_num": 1,
+      "bytes": 154771,
+      "sha1": "157533949d6d6252ad9a2a58c0c91685cfd06bf7"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare/favorite-eminence-products-maitreyi-ramakrishnan-and-other-celeb-stars.html",
+      "title": "Favorite Eminence Products From Maitreyi Ramakrishnan & Other Celeb Stars",
+      "page_num": 1,
+      "bytes": 148809,
+      "sha1": "aaa26e7a7b621df361f0567e542c126fa3dcdabd"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare/euphoria-ted-lasso-stars-prep-their-skin-eminence.html",
+      "title": "“Euphoria” & “Ted Lasso” Stars Prep Their Skin With Eminence",
+      "page_num": 1,
+      "bytes": 149235,
+      "sha1": "3aa7be6e6da2428978552c3172cd8152f7964755"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare/best-skin-care-products-according-celebrities.html",
+      "title": "Best Skin Care Products According To Celebrities",
+      "page_num": 1,
+      "bytes": 167608,
+      "sha1": "cf826fc96952a63d2b46d8a4720b5a436eb90eef"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare/oscars-unveiling-skin-care-products-stars.html",
+      "title": "The Oscars: Skin Care Products To The Stars",
+      "page_num": 1,
+      "bytes": 176375,
+      "sha1": "aeb2ca3807cad687e587a804d7560a18f3041ecf"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare/celebrities-reveal-their-favorite-eminence-organic-skin-care-products.html",
+      "title": "Celebrities Reveal Their Favorite Eminence Organic Skin Care Products",
+      "page_num": 1,
+      "bytes": 142149,
+      "sha1": "9d6d88186eb5cce66437f3c778b912a04c910db7"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare/women-wellness-qa-lead-skin-care-trainer-natalie-pergar.html",
+      "title": "Women In Wellness: Q&A With Lead Skin Care Trainer Natalie Pergar",
+      "page_num": 2,
+      "bytes": 132207,
+      "sha1": "ae2ac93f14e08071b7c38c5ff68bb4cd6f18e4cc"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare/avengers-infinity-war-actors-adore-eminence-organic-skin-care.html",
+      "title": "“Avengers: Infinity War” Actors Adore Eminence Organic Skin Care",
+      "page_num": 2,
+      "bytes": 131703,
+      "sha1": "0cf9aee0cbb6b74216584dcd916b721bc244817d"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare/makeup-artist-gucci-westman-shares-top-beauty-tips.html",
+      "title": "Makeup Artist Gucci Westman Shares Top Beauty Tips",
+      "page_num": 2,
+      "bytes": 146194,
+      "sha1": "7cf5353910c98b1c02318d1f2779e3f957fc4143"
+    },
+    {
+      "id": 16,
+      "file": "article_0016.html",
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare/more-love-dita-von-teese.html",
+      "title": "More Love from Dita Von Teese!",
+      "page_num": 2,
+      "bytes": 129337,
+      "sha1": "57b306fe4375811aac6b77050850d5eff0f519bc"
+    },
+    {
+      "id": 17,
+      "file": "article_0017.html",
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare/throwback-our-favorite-celebrity-fans.html",
+      "title": "Throwback to Our Favorite Celebrity Fans",
+      "page_num": 2,
+      "bytes": 146500,
+      "sha1": "0ce8f6df851f0696ae8878e7a7407a82035cea61"
+    },
+    {
+      "id": 18,
+      "file": "article_0018.html",
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare/5-celebrities-share-their-eminence-organics-beauty-secrets.html",
+      "title": "5 Celebrities Share Their Eminence Organics Beauty Secrets",
+      "page_num": 2,
+      "bytes": 132826,
+      "sha1": "3541917682da820ac456ba00440b784671d2fd9b"
+    },
+    {
+      "id": 19,
+      "file": "article_0019.html",
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare/laura-dern-and-diane-ladds-favorite-eminence-products.html",
+      "title": "Laura Dern & Diane Ladd’s Favorite Eminence Products",
+      "page_num": 2,
+      "bytes": 143004,
+      "sha1": "f3e278b3e025ae697f68b8cb6d9423cd42a0a247"
+    },
+    {
+      "id": 20,
+      "file": "article_0020.html",
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare/eminence-skin-care-products-code-black-cast-loving.html",
+      "title": "Eminence Skin Care Products The \"Code Black\" Cast Is Loving",
+      "page_num": 2,
+      "bytes": 132606,
+      "sha1": "5f65dc84cab6c0467e7c580c5e25e7e0d5936970"
+    },
+    {
+      "id": 21,
+      "file": "article_0021.html",
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare/eva-longoria-falls-love-eminence-organic-skin-care.html",
+      "title": "Eva Longoria Falls In Love With Eminence Organic Skin Care",
+      "page_num": 2,
+      "bytes": 130891,
+      "sha1": "6d82e9880cbba43bf765c4c7a260862c673d2b1c"
+    },
+    {
+      "id": 22,
+      "file": "article_0022.html",
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare/actress-thandie-newton-swears-our-gorgeous-products.html",
+      "title": "Actress Thandie Newton Swears By Our 'Gorgeous' Products",
+      "page_num": 2,
+      "bytes": 126309,
+      "sha1": "cff834b443d3f02c554ac7330af462c56fba7fdf"
+    },
+    {
+      "id": 23,
+      "file": "article_0023.html",
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare/do-you-use-same-eminence-organics-facial-oil-jennifer-lawrence.html",
+      "title": "Do You Use The Same Facial Oil As Jennifer Lawrence?",
+      "page_num": 2,
+      "bytes": 131663,
+      "sha1": "47e1f00110ead6ec967f1a7603084aef726f6bda"
+    },
+    {
+      "id": 24,
+      "file": "article_0024.html",
+      "url": "https://eminenceorganics.com/us/blog/celebrity-skincare/caitriona-balfes-skin-care-routine-eminence-organics-set-outlander.html",
+      "title": "Caitriona Balfe’s Skin Care: Eminence Organics on the Set of Outlander",
+      "page_num": 2,
+      "bytes": 139312,
+      "sha1": "09769eeb124129a1d5d136c9cd0db06c888154ae"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 3,
+    "articles": 24,
+    "article_fetch_failures": 0
+  }
+}

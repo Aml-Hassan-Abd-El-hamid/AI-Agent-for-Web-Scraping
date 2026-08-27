@@ -1,0 +1,176 @@
+{
+  "website": "thearticle",
+  "snapshot_date": "2026-08-27T14:48:28",
+  "pagination_type": "load more button",
+  "scroll_mode": "load_more",
+  "scroll_rounds_requested": 3,
+  "load_more_selector": null,
+  "listing_url": "https://www.thearticle.com/",
+  "input_urls": [
+    "https://www.thearticle.com/"
+  ],
+  "pagination_pattern": null,
+  "requirements": "title, author, article body",
+  "run_dir": "orch_runs/run_20260827_144053",
+  "link_extraction_code_file": "link_extraction_code.py",
+  "listing_pages": [
+    {
+      "page_num": 1,
+      "url": "https://www.thearticle.com/",
+      "file": "listing_page_001.html",
+      "bytes": 104885,
+      "sha1": "c4541ebfe7867f8c5649ec12252d8e1c7226ee72"
+    },
+    {
+      "page_num": 1,
+      "url": "https://www.thearticle.com/",
+      "file": "listing_page_001_expanded.html",
+      "bytes": 105072,
+      "sha1": "7310e1bd93ad55b091014d932302860fd276db3c",
+      "expanded": true
+    }
+  ],
+  "articles": [
+    {
+      "id": 1,
+      "file": "article_0001.html",
+      "url": "https://www.thearticle.com/olivia-mannings-levant-trilogy-the-desert-war",
+      "title": "Olivia Manning’s ‘Levant Trilogy’: the Desert War",
+      "page_num": 1,
+      "bytes": 99297,
+      "sha1": "101e25af12717ce2fc7545362ab9d6be92d0f802"
+    },
+    {
+      "id": 2,
+      "file": "article_0002.html",
+      "url": "https://www.thearticle.com/two-british-chess-record-breakers",
+      "title": "Two British chess record-breakers",
+      "page_num": 1,
+      "bytes": 106336,
+      "sha1": "2cb5d705cd394f06d09af375bde63486120ac999"
+    },
+    {
+      "id": 3,
+      "file": "article_0003.html",
+      "url": "https://www.thearticle.com/andre-kertesz-the-cameras-eye",
+      "title": "André Kertész: the camera’s eye",
+      "page_num": 1,
+      "bytes": 94644,
+      "sha1": "0001cf56259d0331c5647feeeef9d05f077f8e13"
+    },
+    {
+      "id": 4,
+      "file": "article_0004.html",
+      "url": "https://www.thearticle.com/without-bullying-prevention-initiatives-private-schools-do-a-great-disservice-to-students-in-their-care",
+      "title": "Without bullying prevention initiatives, private schools do a great disservice to students in their care",
+      "page_num": 1,
+      "bytes": 71565,
+      "sha1": "caf93c859549e6c01307e88b2a5de5bb93ac2d0e"
+    },
+    {
+      "id": 5,
+      "file": "article_0005.html",
+      "url": "https://www.thearticle.com/duchamp-susan-polgar-and-the-64-squares",
+      "title": "Duchamp, Susan Polgar and the 64 squares",
+      "page_num": 1,
+      "bytes": 98100,
+      "sha1": "29d4754fc7e03e09c9c6054c0085ddddb5adf616"
+    },
+    {
+      "id": 6,
+      "file": "article_0006.html",
+      "url": "https://www.thearticle.com/uk-energy-policy-errors-and-solutions",
+      "title": "UK energy policy: errors and solutions",
+      "page_num": 1,
+      "bytes": 98902,
+      "sha1": "6fff9f1246ff115d4a96ac915b34ebc9147427da"
+    },
+    {
+      "id": 7,
+      "file": "article_0007.html",
+      "url": "https://www.thearticle.com/ed-miliband-should-learn-the-lesson-of-suez",
+      "title": "Ed Miliband should learn the lesson of Suez",
+      "page_num": 1,
+      "bytes": 88026,
+      "sha1": "65e5f782d0821b138f80bbe731a5217a51ade114"
+    },
+    {
+      "id": 8,
+      "file": "article_0008.html",
+      "url": "https://www.thearticle.com/john-stuart-mill-on-londons-water-supply-2",
+      "title": "John Stuart Mill on London’s water supply",
+      "page_num": 1,
+      "bytes": 85843,
+      "sha1": "ccaf1764a5681d0500e9a992745584bc20e99485"
+    },
+    {
+      "id": 9,
+      "file": "article_0009.html",
+      "url": "https://www.thearticle.com/the-transformation-of-the-lia-is-firmly-underway-but-the-next-step-we-take-is-critical",
+      "title": "The transformation of the LIA is firmly underway but the next step we take is critical",
+      "page_num": 1,
+      "bytes": 67915,
+      "sha1": "2bfb16520d6f8cc7bf5a3e64b6633a43e26f3a00"
+    },
+    {
+      "id": 10,
+      "file": "article_0010.html",
+      "url": "https://www.thearticle.com/lady-cs-lifelines-a-study-in-scarlet",
+      "title": "‘Lady C’s’ lifelines: a study in scarlet",
+      "page_num": 1,
+      "bytes": 93349,
+      "sha1": "528939c6ecc63c33a9ef9e1844754b6943078fe4"
+    },
+    {
+      "id": 11,
+      "file": "article_0011.html",
+      "url": "https://www.thearticle.com/whats-the-point-of-thearticle",
+      "title": "What’s the point of ‘TheArticle’?",
+      "page_num": 1,
+      "bytes": 86887,
+      "sha1": "251a2f4385309fd19bbd2bcb21e324b26559841d"
+    },
+    {
+      "id": 12,
+      "file": "article_0012.html",
+      "url": "https://www.thearticle.com/memorable-scenes-at-simpsons",
+      "title": "Memorable scenes at Simpson’s",
+      "page_num": 1,
+      "bytes": 107477,
+      "sha1": "806c6b9c5f94676923138e74c4d9a4cb45931045"
+    },
+    {
+      "id": 13,
+      "file": "article_0013.html",
+      "url": "https://www.thearticle.com/john-stuart-mill-on-londons-water-supply",
+      "title": "John Stuart Mill on London’s water supply",
+      "page_num": 1,
+      "bytes": 86014,
+      "sha1": "af6149f699963b19358980126802753041864eb6"
+    },
+    {
+      "id": 14,
+      "file": "article_0014.html",
+      "url": "https://www.thearticle.com/boisdale-the-very-finest-from-ages-past-in-a-modern-world",
+      "title": "Boisdale: the very finest from ages past in a modern world",
+      "page_num": 1,
+      "bytes": 68125,
+      "sha1": "8301a40193483dc810a8c82051a39b07afc70308"
+    },
+    {
+      "id": 15,
+      "file": "article_0015.html",
+      "url": "https://www.thearticle.com/wildfires-a-threat-to-national-security",
+      "title": "Wildfires: a threat to national security",
+      "page_num": 1,
+      "bytes": 88627,
+      "sha1": "056c0cb2dd4b73baa4124d50c7fa978bd9f35c9d"
+    }
+  ],
+  "article_fetch_failures": [],
+  "counts": {
+    "listing_pages": 2,
+    "articles": 15,
+    "article_fetch_failures": 0
+  }
+}
