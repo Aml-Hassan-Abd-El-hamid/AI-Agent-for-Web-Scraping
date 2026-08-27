@@ -765,7 +765,7 @@ async def main():
             print("   [r] Retry (generate new code)")
             print("   [q] Quit")
             decision = input("   → ").strip().lower()
-
+           
             if decision == 's':
                 output_filename = f"Gemma_extracted_data_{url.split('//')[1].split('/')[0].replace('.', '_')}.json"
                 with open(output_filename, 'w', encoding='utf-8') as f:
@@ -935,7 +935,10 @@ async def main_cli(url: str, api_key: str, model: str = 'gemma-3-27b-it', max_re
 
             # Emit the cleaned link set (nav/pagination links stripped out).
             result = {"article_links": good_links}
-            output_filename = f"Gemma_extracted_links_{rand_id}.json"
+             #check if Gemma_extracted_links folder exists, if not create it
+            if not os.path.exists("Gemma_extracted_links"):
+                os.makedirs("Gemma_extracted_links")
+            output_filename = f"Gemma_extracted_links/Gemma_extracted_links_{rand_id}.json"
             with open(output_filename, 'w', encoding='utf-8') as f:
                 json.dump(result, f, indent=2, ensure_ascii=False)
 

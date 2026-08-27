@@ -66,16 +66,6 @@ class DomainConfig:
     second_link: Optional[str]  # None for "infinite_scroll" or "load_more" pagination
     count: int             # number of pages/clicks/scrolls
     required_fields: str
-"""
-    DomainConfig(
-            domain = "nytimes",
-            pagination_type = "load_more",
-            first_link = "https://www.nytimes.com/reviews/movies",
-            second_link = None,
-            count = 2,
-            required_fields = DEFAULT_REQUIREMENTS 
-        ),
-"""
 domains = [
     DomainConfig(
         domain = "rogerebert",
@@ -330,7 +320,7 @@ domains = [
         pagination_type="numbered",
         first_link="https://www.youm7.com/Section/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B9%D8%A7%D8%AC%D9%84%D8%A9/65/1",
         second_link="https://www.youm7.com/Section/%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B9%D8%A7%D8%AC%D9%84%D8%A9/65/2",
-        count=3,
+        count=40,
         required_fields=DEFAULT_REQUIREMENTS
     ),
     DomainConfig(
@@ -469,7 +459,23 @@ domains = [
         second_link=None,
         count=2,
         required_fields=DEFAULT_REQUIREMENTS
-    )              
+    ),
+    DomainConfig(
+        domain="engineering.indeedblog",
+        pagination_type="numbered",
+        first_link="https://engineering.indeedblog.com/blog/category/engineering/",
+        second_link="https://engineering.indeedblog.com/blog/category/engineering/page/2/",
+        count=3,
+        required_fields=DEFAULT_REQUIREMENTS
+    ),
+    DomainConfig(
+        domain="thearticle",
+        pagination_type="load_more",
+        first_link="https://www.thearticle.com/",
+        second_link=None,
+        count=3,
+        required_fields="title, author, article body"
+    )
 ]
 
 
